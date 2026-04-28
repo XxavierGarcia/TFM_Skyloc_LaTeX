@@ -1,0 +1,454 @@
+\renewcommand{\thechapter}{A} 
+\chapter{Glossary}
+\label{Glossary}
+
+\noindent
+\textbf{Regla de Bayes} \\[1ex] 
+\hangindent=4em Dado un conjunto de datos observados $D$, la probabilidad posterior del parámetro $\theta$ está dada por:
+$p(\theta | D) = p(D | \theta)\, p(\theta)/p(D)$
+donde $p(D | \theta)$ representa la verosimilitud, $p(\theta)$ es la probabilidad previa del valor $\theta$, y $p(D)$ es la probabilidad marginal del dato observado $D$.
+
+
+\bigskip
+
+\noindent
+\textbf{Verosimilitud} \\[1ex]
+\hangindent=4em  Probabilidad condicional $p(D | \theta)$ de los datos observados $D$, dado un valor hipotético del parámetro $\theta$ que a menudo se escribe como $\mathscr{L}(D)$. Cuando se considera para todos los posibles valores del parámetro $\theta$, $p(D | \theta)$ define una función de verosimilitud.
+    
+\bigskip
+
+\noindent
+\textbf{Prior} \\[1ex] 
+\hangindent=4em  Probabilidad previa $p(\theta)$ de los valores del parámetro $\theta$, antes de considerar los datos $D$. Debe especificarse antes de realizar las observaciones y se pueden considerar muchos tipos.
+
+\bigskip
+
+\noindent
+\textbf{Posterior} \\[1ex] 
+\hangindent=4em  Probabilidad posterior $p(\theta | D)$ de los valores del parámetro $\theta$, basada en la evidencia actual (los datos $D$) y en el conocimiento previo. La distribución posterior describe nuestro estado de conocimiento actualizado sobre los posibles valores de los parámetros. Se calcula mediante el producto entre el prior y la verosimilitud.
+
+
+\renewcommand{\thechapter}{B} 
+\chapter{Proofs and derivations}
+\label{Proofs and derivations}
+
+
+\section{Derivation of the Christoffel symbols in terms of the metric}
+
+We begin with the geometric definition of the Christoffel symbols using basis vectors:
+
+\begin{equation}
+\vec{e}_\lambda \Gamma^\lambda_{\alpha \nu} = \partial_\alpha \vec{e}_\nu \ .
+\label{eqoriginal}
+\end{equation}
+
+To proceed, we compute the derivative of the inner product between two basis vectors:
+
+\begin{equation}
+\partial_\alpha (\vec{e}_\mu \cdot \vec{e}_\nu) = \vec{e}_\mu \cdot \partial_\alpha \vec{e}_\nu + \vec{e}_\nu \cdot \partial_\alpha \vec{e}_\mu
+\Rightarrow \vec{e}_\mu \cdot \partial_\alpha \vec{e}_\nu = \partial_\alpha (\vec{e}_\mu \cdot \vec{e}_\nu) - \vec{e}_\nu \cdot \partial_\alpha \vec{e}_\mu \ .
+\label{eq B2}
+\end{equation}
+
+We now multiply both sides of equation \eqref{eqoriginal} by the basis vector $\vec{e}_\mu$:
+
+\begin{equation}
+\vec{e}_\mu \cdot (\vec{e}_\lambda \Gamma^\lambda_{\alpha \nu}) = \vec{e}_\mu \cdot (\partial_\alpha \vec{e}_\nu) \ .
+\end{equation}
+
+Substituting equations \eqref{eq B2} and \eqref{eqoriginal} into the expression above, we obtain:
+
+\begin{equation}
+\vec{e}_\mu \cdot (\vec{e}_\lambda \Gamma^\lambda_{\alpha \nu}) = \partial_\alpha (\vec{e}_\mu \cdot \vec{e}_\nu) - \vec{e}_\nu \cdot (\vec{e}_\lambda \Gamma^\lambda_{\alpha \mu}) \ .
+\label{B4}
+\end{equation}
+
+Next, we generate two additional equations by cyclically permuting the indices:
+
+\begin{equation}
+\vec{e}_\alpha \cdot \vec{e}_\lambda \Gamma^\lambda_{\nu \mu} = \partial_\mu (\vec{e}_\alpha \cdot \vec{e}_\mu) - \vec{e}_\mu \cdot \vec{e}_\lambda \Gamma^\lambda_{\nu \alpha} \ ,
+\label{B5}
+\end{equation}
+
+\begin{equation}
+\vec{e}_\alpha \cdot \vec{e}_\lambda \Gamma^\lambda_{\mu \nu} = \partial_\mu (\vec{e}_\alpha \cdot \vec{e}_\nu) - \vec{e}_\nu \cdot \vec{e}_\lambda \Gamma^\lambda_{\mu \alpha} \ .
+\label{B6}
+\end{equation}
+
+We now add equations \eqref{B4} and \eqref{B5}, and subtract equation \eqref{B6}, yielding:
+
+
+\begin{align}
+\vec{e}_\mu \cdot \vec{e}_\lambda \Gamma^\lambda_{\alpha \nu} 
++ \vec{e}_\alpha \cdot \vec{e}_\lambda \Gamma^\lambda_{\nu \mu} 
+- \vec{e}_\alpha \cdot \vec{e}_\lambda \Gamma^\lambda_{\mu \nu} 
+&= \partial_\alpha (\vec{e}_\mu \cdot \vec{e}_\nu) 
+- \vec{e}_\nu \cdot \vec{e}_\lambda \Gamma^\lambda_{\alpha \mu} + \partial_\nu (\vec{e}_\alpha \cdot \vec{e}_\mu) \\
+&\quad - \vec{e}_\mu \cdot \vec{e}_\lambda \Gamma^\lambda_{\nu \alpha} - \partial_\mu (\vec{e}_\alpha \cdot \vec{e}_\nu) 
++ \vec{e}_\nu \cdot \vec{e}_\lambda \Gamma^\lambda_{\mu \alpha} \ .
+\end{align}
+
+
+At this point, we make use of the symmetry property of Christoffel symbols: \( \Gamma^\lambda_{\mu \nu} = \Gamma^\lambda_{\nu \mu} \). This allows us to cancel several terms on both sides, simplifying the expression to:
+
+\begin{equation}
+2 \vec{e}_\mu \cdot \vec{e}_\lambda \Gamma^\lambda_{\alpha \nu} = \partial_\alpha (\vec{e}_\mu \cdot \vec{e}_\nu) + \partial_\nu (\vec{e}_\alpha \cdot \vec{e}_\mu) - \partial_\mu (\vec{e}_\alpha \cdot \vec{e}_\nu) \ .
+\end{equation}
+
+We now multiply both sides by \( \vec{\hspace{0.15em}e}^\mu \cdot \vec{\hspace{0.15em}e}^\rho \) and divide by 2:
+
+\begin{equation}
+(\vec{\hspace{0.15em}e}^\mu \cdot \vec{\hspace{0.15em}e}^\rho)(\vec{e}_\mu \cdot \vec{e}_\lambda) \Gamma^\lambda_{\alpha \nu}
+= \frac{1}{2} \vec{\hspace{0.15em}e}^\mu \cdot \vec{\hspace{0.15em}e}^\rho \left(
+\partial_\alpha (\vec{e}_\mu \cdot \vec{e}_\nu)
++ \partial_\nu (\vec{e}_\alpha \cdot \vec{e}_\mu)
+- \partial_\mu (\vec{e}_\alpha \cdot \vec{e}_\nu)
+\right) \ .
+\end{equation}
+
+We now apply the identity:
+
+\begin{equation}
+(\vec{\hspace{0.15em}e}^\mu \cdot \vec{\hspace{0.15em}e}^\rho)(\vec{e}_\mu \cdot \vec{e}_\lambda) = g^{\mu \rho}g_{\mu \lambda} = \delta^\rho_\lambda \ .
+\end{equation}
+
+This yields the expression:
+
+\begin{equation}
+\delta^\rho_\lambda \Gamma^\lambda_{\alpha \nu} = \Gamma^\rho_{\alpha \nu} = \frac{1}{2} \vec{\hspace{0.15em}e}^\mu \cdot \vec{\hspace{0.15em}e}^\rho \left( \partial_\alpha (\vec{e}_\mu \cdot \vec{e}_\nu) + \partial_\mu (\vec{e}_\alpha \cdot \vec{e}_\nu) - \partial_\nu (\vec{e}_\alpha \cdot \vec{e}_\mu) \right) \ ,
+\end{equation}
+
+
+we finally obtain the well-known expression for the Christoffel symbols in terms of the metric tensor \cite{llibretheoreticalminimum}:
+
+\begin{equation}
+\Gamma^\rho_{\alpha \nu} = \frac{1}{2} g^{\mu \rho} \left( \partial_\alpha g_{\mu \nu} + \partial_\mu g_{\alpha \nu} - \partial_\nu g_{\alpha \mu} \right) \ .
+\end{equation}
+
+
+\section{Proof that the connection is not a tensor}
+
+p.111 \cite{LlibreBertJanssen}
+
+
+Al final posar:
+
+If the additional term on the right-hand side were missing, this would represent the standard transformation rule for a tensor of type (1, 2). However, the inclusion of this extra term indicates that the transformation rule is linearly non-uniform, and thus \(\Gamma^a_{bc}\) is not a tensor. Any quantity \(\Gamma^a_{bc}\) that transforms according to eqref{} is referred to as an affine connection or, in some cases, simply an affinity. A manifold equipped with a consistent connection defined on it is termed an affine manifold \cite{llibreraydinverno2003relativity}.
+
+\section{Derivation of the relativistic continuity and Euler equations}
+\label{Derivation of the relativistic continuity and Euler equations}
+
+Starting point is the local conservation of the stress--energy tensor,
+\[
+\nabla_\mu T^{\mu\nu} = 0 .
+\]
+
+For a perfect fluid the stress--energy tensor is
+\[
+T^{\mu\nu} = (\rho + P) u^\mu u^\nu + P g^{\mu\nu},
+\]
+where $\rho$ is the energy density, $P$ the pressure, and $u^\mu$ the four-velocity of the fluid.
+
+\subsection*{Continuity Equation}
+
+We project $\nabla_\mu T^{\mu\nu} = 0$ along the fluid four-velocity $u_\nu$:
+\[
+u_\nu \nabla_\mu T^{\mu\nu} = 0 .
+\]
+
+Substituting $T^{\mu\nu}$ gives
+\[
+u_\nu \nabla_\mu \big[ (\rho + P) u^\mu u^\nu + P g^{\mu\nu} \big] = 0 .
+\]
+
+Expanding,
+\[
+u_\nu \nabla_\mu \big[(\rho+P) u^\mu u^\nu\big] + u_\nu \nabla_\mu (P g^{\mu\nu}) = 0 .
+\]
+
+The second term reduces to $u^\mu \nabla_\mu P$. The first term expands as
+\[
+u_\nu \big[ (\nabla_\mu (\rho+P)) u^\mu u^\nu + (\rho+P)\nabla_\mu(u^\mu u^\nu)\big] .
+\]
+
+Using $u_\nu u^\nu = -1$ and $u_\nu \nabla_\mu u^\nu = 0$ (normalization condition), we obtain
+\[
+u^\mu \nabla_\mu \rho + (\rho + P) \nabla_\mu u^\mu = 0 .
+\]
+
+This is the \textbf{relativistic continuity equation}, expressing conservation of energy density along the flow.
+
+
+\subsection*{Relativistic Euler Equation}
+
+Next, we project orthogonally to $u^\nu$ using the spatial projector
+\[
+h^{\mu\nu} = g^{\mu\nu} + u^\mu u^\nu .
+\]
+
+Applying $h^{\sigma}_{\;\;\nu}\nabla_\mu T^{\mu\nu} = 0$, we isolate the spatial dynamics:
+\[
+(\rho+P) u^\mu \nabla_\mu u^\sigma = - h^{\sigma\nu} \nabla_\nu P .
+\]
+
+Or equivalently,
+\[
+(\rho + P) u^\mu \nabla_\mu u^\nu = -(g^{\mu\nu} + u^\mu u^\nu)\nabla_\mu P .
+\]
+
+This is the relativistic Euler equation, the covariant generalization of Newton’s second law for a fluid: the left-hand side is ``inertia times acceleration,'' while the right-hand side represents the force due to pressure gradients.
+
+---
+
+\subsection*{Summary}
+
+The two relations obtained from $\nabla_\mu T^{\mu\nu} = 0$ are:
+\[
+u^\mu \nabla_\mu \rho + (\rho + P)\nabla_\mu u^\mu = 0,
+\]
+\[
+(\rho + P) u^\mu \nabla_\mu u^\nu = -(g^{\mu\nu} + u^\mu u^\nu)\nabla_\mu P,
+\]
+corresponding respectively to the continuity equation (energy conservation) and the Euler equation (momentum conservation).
+
+\section{Einstein field equations (Newtonian weak--field limit)}
+\label{Appendix:Einstein field equations (Newtonian limit)}
+
+\section{Derivation of the Einstein--Hilbert action}
+\label{Appendix Einstein-Hilbert action}
+
+
+\subsection{Motivation from coordinate changes}
+
+Consider $\mathbb{R}^2$ with the flat metric $g = 1$. 
+In Cartesian coordinates $(x,y)$, the area element is
+
+\begin{equation}
+dA = dx \, dy \ .
+\end{equation}
+
+Switching to polar coordinates $(r,\theta)$ we have
+
+\begin{equation}
+x = r \cos\theta \ , 
+\qquad 
+y = r \sin\theta \ .
+\end{equation}
+
+The area element transforms as
+
+\begin{equation}
+dA = |J|\, dr \, d\theta =  
+\begin{vmatrix}
+\partial_r x & \partial_\theta x \\
+\partial_r y & \partial_\theta y
+\end{vmatrix}
+=
+\begin{vmatrix}
+\cos\theta & -r \sin\theta \\
+\sin\theta & r \cos\theta
+\end{vmatrix}
+= r \, dr \, d\theta \ .
+\end{equation}
+
+\subsection{Relation to the metric}
+
+The Jacobian determinant is related to the metric coefficients.  
+In polar coordinates, the metric becomes
+
+\begin{equation}
+g_{\mu\nu} = 
+\begin{pmatrix}
+1 & 0 \\
+0 & r^2
+\end{pmatrix} \ , 
+\qquad 
+\det g = r^2 \ .
+\end{equation}
+
+Thus, the area element can be written as
+
+\begin{equation}
+dA = \sqrt{|g|} \, dr \, d\theta \ .
+\end{equation}
+
+This shows that in a general coordinate system the invariant integration measure is
+
+\begin{equation}
+d^n x \, \sqrt{|g|} \ .
+\end{equation}
+
+\subsection{Extension to curved manifolds}
+
+For a general pseudo--Riemannian manifold we therefore define the invariant volume element as
+
+\begin{equation}
+dV \equiv \sqrt{|g|} \, d^n x \ .
+\end{equation}
+
+In the Lorentzian case the determinant of the metric is negative, $g < 0$, so we conventionally write
+
+\begin{equation}
+dV = \sqrt{-g} \, d^n x \ .
+\end{equation}
+
+\subsection{Einstein--Hilbert action}
+
+With this measure, the natural scalar action for the gravitational field is
+
+\begin{equation}
+S_{EH} = \frac{1}{16 \pi G} \int_{M} d^4x \, \sqrt{-g} \, R \ ,
+\end{equation}
+
+whose variation with respect to the metric gives Einstein's field equations \cite{Garcia2019RelativityCourse}.
+
+
+
+
+
+\renewcommand{\thechapter}{E} 
+\chapter{Reproducibility tutorial. Linux environment and supercomputing tasks.}
+\label{Reproducibility tutorial}
+
+
+The motivation for including this section comes from the desire to make life easier for future students who will use the same tools, especially since many parts of this tutorial came with their fair share of headaches.
+
+This appendix provides a detailed, step-by-step overview of the workflow followed to run my experiments on a Linux-based high-performance computing (HPC) system. The goal is to ensure full reproducibility and transparency. The system used was Picasso, which uses a Linux environment and the SLURM workload manager.
+
+\section*{Accessing the Supercomputer}
+Access to the HPC cluster was provided via secure shell (SSH). The connection was established using:
+
+\begin{verbatim}
+ssh username@cluster.domain.edu
+\end{verbatim}
+
+For convenience, an SSH configuration file was set up:
+
+\begin{verbatim}
+# ~/.ssh/config
+Host mycluster
+    HostName cluster.domain.edu
+    User myusername
+    IdentityFile ~/.ssh/id_rsa
+\end{verbatim}
+
+\subsection*{3. File and Directory Organization}
+The working directory was structured as follows:
+
+\begin{verbatim}
+/home/username/
+ project/
+  data/
+   scripts/
+    results/
+   logs/
+\end{verbatim}
+
+This structure helped maintain organization and simplified automation.
+
+\subsection*{4. Working Environment}
+The HPC system used a module system to load required software. The Python environment was prepared as follows:
+
+\begin{verbatim}
+module load python/3.10
+python -m venv env
+source env/bin/activate
+\end{verbatim}
+
+Additional Python packages were installed using \texttt{pip} or \texttt{requirements.txt}.
+
+\subsection*{5. Key Commands and Utilities}
+Here is a summary of the most commonly used commands:
+
+\begin{center}
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Command} & \textbf{Description} \\
+\hline
+\texttt{ssh} & Secure connection to the HPC server. \\
+\texttt{scp} & Copy files between local and remote systems. \\
+\texttt{sbatch} & Submit job scripts to SLURM. \\
+\texttt{squeue} & View active jobs in the queue. \\
+\texttt{ls} & List files and directories. \\
+\texttt{ll} & Detailed list of files (usually alias for ls -l). \\
+\texttt{cd} & Change directory. \\
+\texttt{pwd} & Show current working directory. \\
+\texttt{mkdir} & Create a new directory. \\
+\texttt{rm} & Remove files or directories. \\
+\texttt{cp} & Copy files or directories. \\
+\texttt{mv} & Move or rename files or directories. \\
+\texttt{less} & View file contents page by page. \\
+\texttt{tail} & Display the last lines of a file (useful for logs). \\
+\texttt{head} & Display the first lines of a file. \\
+\texttt{grep} & Search for patterns in files. \\
+\texttt{nano} & Simple terminal text editor. \\
+\texttt{df} & Show disk space usage. \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{6. Job Submission and SLURM Scripts}
+Jobs were submitted to the scheduler using SLURM. Below is a sample job script:
+
+\begin{verbatim}
+#!/bin/bash
+#SBATCH --job-name=my_job
+#SBATCH --output=logs/output_%j.txt
+#SBATCH --error=logs/error_%j.txt
+#SBATCH --time=01:00:00
+#SBATCH --mem=4G
+#SBATCH --cpus-per-task=2
+
+module load python/3.10
+source env/bin/activate
+python scripts/my_script.py
+\end{verbatim}
+
+To submit this job:
+\begin{verbatim}
+sbatch job.sh
+\end{verbatim}
+
+To check job status:
+\begin{verbatim}
+squeue -u myusername
+\end{verbatim}
+
+\subsection*{7. Running the Experiments}
+Experiments were launched using prepared scripts with configurable arguments. For example:
+
+\begin{verbatim}
+python train_model.py --dataset data/input.csv --epochs 50 --lr 0.001
+\end{verbatim}
+
+Each run was logged using `tee` and redirected output:
+
+\begin{verbatim}
+python script.py > logs/run1.out 2>&1
+\end{verbatim}
+
+\subsection*{8. Troubleshooting and Common Issues}
+Typical problems encountered included:
+
+\begin{itemize}
+  \item \textbf{Module conflicts:} Solved by purging modules with \texttt{module purge}.
+  \item \textbf{Permission errors:} Solved by adjusting file permissions via \texttt{chmod}.
+  \item \textbf{Job hangs:} Resolved by checking SLURM node load and memory limits.
+\end{itemize}
+
+\subsection*{9. Optimization and Performance Tuning (Optional)}
+Where relevant, job parameters were optimized to use resources efficiently. For example:
+
+\begin{itemize}
+  \item Multi-threading enabled via \texttt{--cpus-per-task}.
+  \item Memory profiling using \texttt{/usr/bin/time -v}.
+  \item Parallel jobs launched via SLURM job arrays.
+\end{itemize}
+
+\subsection*{10. Additional Resources}
+\begin{itemize}
+  \item SLURM documentation: \url{https://slurm.schedmd.com/documentation.html}
+  \item SSH key setup: \url{https://www.ssh.com/academy/ssh/keygen}
+  \item GitHub repository : 
+\end{itemize}
+
