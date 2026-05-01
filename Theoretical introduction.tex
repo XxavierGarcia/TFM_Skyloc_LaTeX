@@ -554,19 +554,19 @@ Although their formal definitions can appear opaque, tensors are indispensable t
 The basic algebraic operations familiar from vector spaces, such as scalar multiplication, addition, and the formation of inner and outer products, extend naturally to tensors of any rank, regardless of whether their indices are covariant or contravariant. These operations, which allow us to construct new tensors from existing ones, are often most clearly understood through illustrative examples \cite{llibretensorcalculus}.
 
 
-\textbf{Scalar multiplication} Multiplying a tensor by a scalar $a$ yields a new tensor of the same type
+\textbf{Scalar multiplication.} Multiplying a tensor by a scalar $a$ yields a new tensor of the same type
 \begin{equation}
     T_{\mu \nu}=a S_{\mu \nu} \ .
 \end{equation}
-\textbf{Addition and subtraction} Tensors of the same rank and index configuration can be added by summing their corresponding components to produce another tensor of the same type. Subtraction is simply addition with one tensor multiplied by a negative scalar
+\textbf{Addition and subtraction.} Tensors of the same rank and index configuration can be added by summing their corresponding components to produce another tensor of the same type. Subtraction is simply addition with one tensor multiplied by a negative scalar
 \begin{equation}
 T^\mu{ }_\nu=S^\mu{ }_\nu+R^\mu{ }_\nu \ .
 \end{equation}
-\textbf{Multiplication} The product of two tensors results in another tensor whose rank equals the sum of the ranks of the original tensors
+\textbf{Multiplication.} The product of two tensors results in another tensor whose rank equals the sum of the ranks of the original tensors
 \begin{equation}
 T_\sigma^{\mu \nu \rho}=A_\sigma^\mu S^\nu R^\rho \ .
 \end{equation}
-\textbf{Contraction} The rank of a tensor can be reduced by contraction, which pairs one contravariant and one covariant index and sums over it, mapping a $(r,s)$ tensor to a $(r-1,s-1)$ tensor
+\textbf{Contraction.} The rank of a tensor can be reduced by contraction, which pairs one contravariant and one covariant index and sums over it, mapping a $(r,s)$ tensor to a $(r-1,s-1)$ tensor
 \begin{equation}
 T_\nu=S_{\mu \nu} R^\mu \ .
 \end{equation}
@@ -583,7 +583,7 @@ R^{\mu}{}_{\mu} &= R  \ , \\
 S^{\mu \nu}{}_{\mu \nu} &= S \ .
 \end{aligned}
 \end{equation}
-\textbf{Raising and lowering indices} A fundamental operation in tensor analysis is the contraction with the metric tensor $g_{\mu\nu}$ (see $\S$\ref{metric tensor} for more details) and its inverse $g^{\mu\nu}$ (sometimes referred to as the dual metric) to raise and lower indices in tensor expressions. This procedure allows us to convert vectors and covectors into one another by raising and lowering indices
+\textbf{Raising and lowering indices.} A fundamental operation in tensor analysis is the contraction with the metric tensor $g_{\mu\nu}$ (see $\S$\ref{metric tensor} for more details) and its inverse $g^{\mu\nu}$ (sometimes referred to as the dual metric) to raise and lower indices in tensor expressions. This procedure allows us to convert vectors and covectors into one another by raising and lowering indices
 \begin{equation}
 \begin{aligned}
 T_\nu &= g_{\mu\nu} T^\mu \ , \\
@@ -1002,7 +1002,7 @@ which, using the explicit form of the covariant derivative, becomes
 \begin{equation}
     \frac{dU^\mu}{d\lambda} + \Gamma^{\mu}_{\rho\sigma} \, U^\rho \frac{dx^\sigma}{d\lambda} = 0 \ .
 \end{equation}
-Substituting \(U^\rho = \frac{dx^\rho}{d\lambda}\), one arrives at the standard \emph{geodesic equation} \cite{llibrecarroll2004lectures}:
+Substituting \(U^\rho = \frac{dx^\rho}{d\lambda}\), one arrives at the standard geodesic equation \cite{llibrecarroll2004lectures}:
 \begin{equation}
     \frac{d^2 x^\mu}{d\lambda^2} + \Gamma^{\mu}_{\rho\sigma} \frac{dx^\rho}{d\lambda} \frac{dx^\sigma}{d\lambda} = 0 \ .
     \label{geodesicequation}
@@ -1426,18 +1426,18 @@ To make this more concrete, we now consider a simple example of a perfect fluid:
 
 The simplest example of a perfect fluid is cold matter, usually called dust. It is described as a collection of non-interacting particles at rest with respect to each other in a Lorentz frame, or equivalently as a perfect fluid with vanishing pressure \cite{llibrecarroll2004lectures}. Although a realistic dust cloud may swirl in a complicated way, one can always consider a sufficiently small fluid element where the average velocity of the particles is the same.  
 
-With $P=0$, the stress-energy tensor becomes \cite{llibretongGR}
+With $P=0$, the stress-energy tensor becomes 
 \begin{equation}
 T^{\mu\nu}_{\text{(dust)}} = \rho \, U^{\mu} U^{\nu} \ ,
 \end{equation}
-where $\rho$ is the rest-frame energy density.  
+where $\rho$ is the rest-frame energy density \cite{llibretongGR}.  
 In the comoving frame of the fluid, with $U^{\mu} = (1,0,0,0)$, the only non-vanishing component is $T^{00} = \rho$, which simply represents the matter density. Hence, non--interacting matter exerts no pressure.
 
 
 
 \subsubsection{Conservation of the energy--momentum tensor}
 
-A key property of the energy--momentum tensor is that it satisfies the conservation law \cite{Llibre_Peter_Collier_unacosadificildecomprender}
+A key property of the energy-momentum tensor is that it satisfies the conservation law \cite{Llibre_Peter_Collier_unacosadificildecomprender}
 \begin{equation}
 \nabla_\mu T^{\mu\nu} = 0 \ .
 \end{equation}
@@ -1473,7 +1473,7 @@ suggested in his later years, but rather through a gradual process in which phys
 
 In 1913, together with Marcel Grossmann\footnote{Marcel Grossmann (1878--1936) was a friend, classmate, and early collaborator of Einstein.}, Einstein introduced the Entwurf theory, an early attempt at a relativistic theory of gravitation \cite{EinsteinGrossmann1913}. Its field equations already displayed much of the mathematical framework that would later appear in general relativity, but they were covariant only under a restricted class of coordinate transformations.
 
-After having established the momentum--energy equation for material processes (mechanical, electrical, and others) in the presence of a gravitational field, Einstein and Grossmann turned to the more fundamental task: to determine the differential equations governing the field itself, namely, the equations for the metric components $g_{ik}$. In analogy with Newton’s theory, they sought a generalization of the Poisson equation
+After having established the momentum-energy equation for material processes (mechanical, electrical, and others) in the presence of a gravitational field, Einstein and Grossmann turned to the more fundamental task: to determine the differential equations governing the field itself, namely, the equations for the metric components $g_{ik}$. In analogy with Newton’s theory, they sought a generalization of the Poisson equation
 \begin{equation}
 \nabla^2 \phi = 4\pi G \rho \ .
 \end{equation}
@@ -1481,7 +1481,7 @@ They argued that the field equations should be second order, and proposed that t
 \begin{equation}
 \kappa \, \Theta_{\mu\nu} = \Gamma_{(\mu\nu)} \ ,
 \end{equation}
-where $\kappa$ is a coupling constant, $\Theta_{\mu\nu}$ the energy--momentum tensor of matter, and $\Gamma_{\mu\nu}$ a contravariant tensor of second rank constructed from the metric and its derivatives \cite{howeinsteinfoundhisequations}. Although this construction ensured the conservation of energy and momentum, the resulting equations were not generally covariant, but only valid under linear transformations. Einstein himself emphasized that it was not possible, at that stage, to obtain second--order equations that were simultaneously a true generalization of the Laplacian and a tensor under arbitrary coordinate changes.
+where $\kappa$ is a coupling constant, $\Theta_{\mu\nu}$ the energy-momentum tensor of matter, and $\Gamma_{\mu\nu}$ a contravariant tensor of second rank constructed from the metric and its derivatives \cite{howeinsteinfoundhisequations}. Although this construction ensured the conservation of energy and momentum, the resulting equations were not generally covariant, but only valid under linear transformations. Einstein himself emphasized that it was not possible, at that stage, to obtain second-order equations that were simultaneously a true generalization of the Laplacian and a tensor under arbitrary coordinate changes.
 
 The Entwurf theory thus represented a crucial but incomplete step. It incorporated the basic dynamical structure of general relativity, but fell short of Einstein’s guiding principle of general covariance. Over the following two years Einstein gradually moved beyond it. In November 1915 he presented to the Prussian Academy a sequence of communications (see Section $\S$\ref{Einstein's journey to general relativity}) in which he successively improved the covariance and physical adequacy of his field equations. 
 
@@ -1513,8 +1513,6 @@ It is important to note that while the Ricci tensor and the metric tensor were a
 Einstein's equations constitute a system of ten coupled, second-order nonlinear partial differential equations, which makes them extremely challenging to solve analytically. No general method is known, and the solutions that have been obtained usually rely on assuming a high degree of symmetry or on applying specialized techniques (see Section $\S$\ref{solutionseinsteinequations}). 
 
 Although Einstein's equations formally involve ten components, the condition $\nabla_\mu G^{\mu\nu} = 0$ provides four constraints, leaving only six equations that are genuinely independent. This implies that, out of the ten components of the metric, only six are determined by Einstein's equations and correspond to physical degrees of freedom. The remaining four are non-physical components that express the freedom in the choice of coordinates \cite{LlibreBertJanssen}.
-
-EN EL VACIO $G^{\mu\nu}=0$ ???
 
 \subsubsection{Formal derivation from the Einstein–Hilbert action}
 
@@ -2020,7 +2018,7 @@ subject to appropriate boundary or initial conditions.
 
 Each solution corresponds to a possible spacetime geometry associated with a particular distribution of matter and energy. Broadly speaking, they can be grouped into three categories: 
 \begin{itemize}
-    \item \textbf{Exact analytical solutions}: such as the Schwarzschild, Kerr, or Friedmann--Lemaître--Robertson--Walker (FLRW) metrics. 
+    \item \textbf{Exact analytical solutions}: such as the Schwarzschild, Kerr, or Friedmann-Lemaître-Robertson-Walker (FLRW) metrics. 
     \item \textbf{Approximate solutions}: derived through perturbative methods, for instance weak-field expansions describing GW.  
     \item \textbf{Numerical solutions}: obtained via large-.scale simulations, such as those modeling the merger of two black holes.  
 \end{itemize}
@@ -2239,7 +2237,7 @@ According to the so-called no-hair theorem, black holes are surprisingly simple 
 
 \begin{itemize}
     \item Schwarzschild black holes, defined only by mass.  
-    \item Reissner--Nordström black holes, with mass and electric charge.  
+    \item Reissner-Nordström black holes, with mass and electric charge.  
     \item Kerr black holes, with mass and rotation.  
     \item Kerr-Newman black holes, with mass, charge, and rotation.  
 \end{itemize}
@@ -3088,18 +3086,22 @@ Compact binary coalescences (CBCs) are systems formed by two compact objects suc
 
 To date, nearly all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first binary neutron star detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs, with binary black hole mergers dominating the observed population.
 
-The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data. Future space based detectors such as LISA will extend observations to other sources, including white dwarf binaries and extreme mass ratio inspirals, providing further insight into compact object populations and their formation.
-
+The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data. Future space based detectors such as LISA will extend observations to other sources, including white dwarf (WD) binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
 
 
 \subsection{Burst events}  
-Short-duration, poorly modeled signals can arise from events such as core-collapse supernovae or magnetar flares, where the waveform is not well predicted by theory. Although these are rarer and more difficult to confirm, search pipelines designed for unmodeled bursts are specifically tuned to detect such transient, high‑frequency events.
 
-\subsection{Continuous sources}
 
-GWs emitted by individual sources that evolve very slowly over time are termed continuous signals. A prime example is a rapidly rotating neutron star that is not perfectly symmetric, for instance, due to a “mountain” or structural deformation, leading to persistent emission of GWs at stable frequencies over months to years. Another speculative case involves ultralight boson clouds orbiting BHs, which may radiate quasi-periodically for extended periods.
+\subsection{Continuous waves}
 
-\subsection{Stochastic background}
+Continuous gravitational waves (CWs) are expected to be emitted by rapidly rotating compact objects, particularly NSs with small deviations from perfect axial symmetry. These asymmetries produce a time varying quadrupole moment, enabling the continuous emission of gravitational radiation. The resulting signal is nearly monochromatic, typically at a frequency related to the star’s rotation, and evolves very slowly due to spindown effects \cite{monochromatic_CWs}.
+
+In contrast to CBCs, CW signals are extremely long lived but much weaker in amplitude, as they originate from small deformations in the source. As a result, their detection requires long observation times, often spanning months or years, in order to accumulate sufficient signal to noise ratio (SNR). Despite their low amplitude, once detected, these signals can be tracked over extended periods, allowing for precise studies of the source properties.
+
+The strength of the emission depends on factors such as the rotation rate and internal structure of the NS, including its equation of state and crust properties \cite{CWs_source}. In addition to isolated NSs, other potential sources of CWs have been proposed, such as boson clouds \cite{Boson_clouds_CWs} around rapidly spinning BHs or compact binaries in very early inspiral stages. Although no CW signal has been confirmed so far, current searches have placed increasingly stringent upper limits, improving the prospects for future detections.
+
+
+\subsection{Stochastic backgrounds}
 
 A stochastic GW background emerges from the superposition of many unresolved weak sources. Astrophysical contributions may include the aggregate effect of distant CBCs across cosmic history, while cosmological contributions may arise from early-universe processes such as inflation, phase transitions, or cosmic strings. Detecting this diffuse background could unravel information about star formation history and the physics of the primeval universe.
 
