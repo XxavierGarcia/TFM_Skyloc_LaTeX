@@ -2995,13 +2995,21 @@ where the triple dot denotes the third time derivative. This formula quantifies 
 \section{Astrophysical sources}
 \label{Astrophysical_sources_GW}
 
-GW astronomy identifies four broad categories of astrophysical signals, each characterized by distinct time‑scales, amplitudes, and expected sources. These categories are commonly referred to as transient (CBCs and bursts), Continuous Waves (CWs) and stochastic backgrounds \cite{Astrophysicalsources}.
+GW astronomy identifies four broad categories of astrophysical signals, each characterized by distinct time-scales, amplitudes, and expected sources. These categories are commonly referred to as transient (CBCs and bursts), Continuous Waves (CWs) and stochastic backgrounds (see Fig. \ref{fig:sources}) \cite{Astrophysicalsources}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.67\linewidth]{Figures/GW_types.png}
+    \caption{Classification of GW sources according to their temporal character (transient vs.\ persistent) and the availability of accurate waveform models (modelled vs.\ unmodelled), encompassing CBCs, burst events, continuous waves, and the stochastic background. Credit: Shanika Galaudage (@astronerdika).}
+    \label{fig:sources}
+\end{figure}
+
 
 \subsection{Compact Binary Coalescences}  
 
 Compact binary coalescences (CBCs) are systems formed by two compact objects such as black holes (BHs), neutron stars (NSs), or a combination of both, which inspiral and merge due to the emission of GWs. These systems are classified as binary black holes (BBH), binary neutron stars (BNS), or neutron star and black hole binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the detectable signal depends on the masses, ranging from fractions of a second for BBH mergers to much longer signals for BNS systems.
 
-To date, nearly all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first binary neutron star detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs, with binary black hole mergers dominating the observed population.
+To date, nearly all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first binary neutron star detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs, with binary BH mergers dominating the observed population.
 
 The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data. Future space based detectors such as LISA will extend observations to other sources, including white dwarf (WD) binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
 
@@ -3045,14 +3053,14 @@ Current GW detectors are based on laser interferometry, using a modified Michels
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{Figures/Layout_LIGO.png}
+    \includegraphics[width=0.74\linewidth]{Figures/Layout_LIGO.png}
     \caption{Optical layout of the advanced LIGO interferometer, illustrating the Fabry-Pérot arm cavities, the power recycling mirror (PRM) at the input port, and the signal recycling mirror (SRM) at the output port. Source: \cite{Layout_LIGO}.}
     \label{fig:layout_LIGO}
 \end{figure}
 
 In the absence of a GW, the lengths of the two arms are adjusted so that the interference at the output is destructive, resulting in minimal detected light. When a GW passes through the detector, it induces a differential stretching and compression of the arms, analogous to the tidal deformation described in \S\ref{geodesic_eq_sec} by the geodesic deviation equation \eqref{geodesicdeviation}. This changes the optical path lengths and produces a phase difference between the two beams, leading to a measurable signal at the photodetector.
 
-The quantity measured is the strain $h(t)$, defined as the relative change in the arm lengths, $h \sim \Delta L / L$. This is precisely the quantity appearing in the TT metric perturbation \eqref{polarizationmodes}: the two polarization amplitudes $A_+$ and $A_\times$ directly set the scale of the fractional length change experienced by the detector arms. For typical detectors with arm lengths of a few kilometers, the expected variations are extremely small, of order $10^{-21}$, requiring highly sensitive instrumentation.
+The quantity measured is the strain $h(t)$, defined as the relative change in the arm lengths, $h \sim \Delta L / L$ (see \S\ref{antenna_patterns_sec}). This is precisely the quantity appearing in the TT metric perturbation \eqref{polarizationmodes}: the two polarization amplitudes $A_+$ and $A_\times$ directly set the scale of the fractional length change experienced by the detector arms. For typical detectors with arm lengths of a few kilometers, the expected variations are extremely small, of order $10^{-21}$, requiring highly sensitive instrumentation.
 
 Modern interferometers incorporate several enhancements to increase their sensitivity. These include Fabry-Pérot cavities in the arms, which effectively increase the optical path length, and power and signal recycling mirrors, which enhance the circulating power and the detector response. Despite these improvements, the measurement remains extremely challenging due to the tiny magnitude of the effect, set ultimately by the quadrupole formula discussed in \S\ref{quadrupole_sec} and the astrophysical distances involved.
 
@@ -3079,13 +3087,15 @@ where $h_+$ and $h_\times$ denote the plus and cross polarizations \cite{TriasCo
 \begin{equation}
 h_{ij} = h_+ (e_+)_{ij} + h_\times (e_\times)_{ij}.
 \end{equation}
-
-The detector is described in its own frame $(\bar{x},\bar{y},\bar{z})$, where the interferometer arms lie in the $(\bar{x},\bar{y})$ plane and are oriented along unit vectors $\hat{\mathbf{n}}_1$ and $\hat{\mathbf{n}}_2$, separated by an opening angle $\zeta$. In the long-wavelength limit, the dimensionless strain measured by the interferometer is
+The detector is described in its own frame $(\bar{x},\bar{y},\bar{z})$, where the interferometer arms lie in the $(\bar{x},\bar{y})$ plane and are oriented along unit vectors $\hat{\mathbf{n}}_1$ and $\hat{\mathbf{n}}_2$, separated by an angle $\zeta$. In the long-wavelength limit, the dimensionless strain measured by the interferometer is defined as the difference between the relative length changes induced in the two arms, and can be written as
 \begin{equation}
-h(t) = \frac{1}{2}\hat{\mathbf{n}}_1^T \bar{H}(t)\hat{\mathbf{n}}_1
-      - \frac{1}{2}\hat{\mathbf{n}}_2^T \bar{H}(t)\hat{\mathbf{n}}_2,
+h(t)
+= \frac{\Delta L_{\text{arms}}(t)}{L}=\frac{L_1(t)-L_2(t)}{L}=\frac{\delta L_1(t)}{L}-\frac{\delta L_2(t)}{L}=\frac{1}{2}\,\hat{\mathbf{n}}_1^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_1
+ - \frac{1}{2}\,\hat{\mathbf{n}}_2^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_2 ,
+\label{strainscalar}
 \end{equation}
-where $\bar{H}$ is the spatial perturbation expressed in the detector frame \cite{PhysRevD.58.063001}. 
+where $\bar{H}$ is the spatial perturbation expressed in the detector frame and $L_i(t) = L + \delta L_i(t)$. The ordering of the arms is chosen such that $\hat{\mathbf{n}}_1 \times \hat{\mathbf{n}}_2$ points outward from the Earth's surface \cite{PhysRevD.58.063001}. 
+
 
 The transformation between the wave and detector frames is described by a sequence of Euler rotations,
 \begin{equation}
