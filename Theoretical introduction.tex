@@ -3041,22 +3041,21 @@ Today, GW observations are routinely performed by a global network of ground-bas
 
 \subsection{Interferometric detection principle}
 
-Current GW detectors are based on laser interferometry, using a modified Michelson configuration, as illustrated in Fig.~\ref{fig:layout_LIGO}. A coherent laser beam is split into two perpendicular arms by a beam splitter. The light travels along each arm, is reflected by mirrors, and recombines at the beam splitter, producing an interference pattern that is measured by a photodetector.
+Current GW detectors are based on laser interferometry, using a modified Michelson configuration, as illustrated in Fig.~\ref{fig:layout_LIGO}. A coherent laser beam is split into two perpendicular arms by a beam splitter. The light travels along each arm, is reflected by mirrors, and recombines at the beam splitter, producing an interference pattern that is measured by a photodetector \cite{Layout_LIGO}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.75\linewidth]{Figures/Layout_LIGO.png}
-    \caption{Layout of the LIGO interferometer. Source: \cite{Layout_LIGO}}
+    \caption{Optical layout of the advanced LIGO interferometer, illustrating the Fabry-Pérot arm cavities, the power recycling mirror (PRM) at the input port, and the signal recycling mirror (SRM) at the output port. Source: \cite{Layout_LIGO}.}
     \label{fig:layout_LIGO}
 \end{figure}
 
-In the absence of a gravitational wave, the lengths of the two arms are adjusted so that the interference at the output is destructive, resulting in minimal detected light. When a gravitational wave passes through the detector, it induces a differential stretching and compression of the arms, analogous to the tidal deformation described in \S\ref{geodesic_eq_sec} by the geodesic deviation equation \eqref{geodesicdeviation}. This changes the optical path lengths and produces a phase difference between the two beams, leading to a measurable signal at the photodetector.
+In the absence of a GW, the lengths of the two arms are adjusted so that the interference at the output is destructive, resulting in minimal detected light. When a GW passes through the detector, it induces a differential stretching and compression of the arms, analogous to the tidal deformation described in \S\ref{geodesic_eq_sec} by the geodesic deviation equation \eqref{geodesicdeviation}. This changes the optical path lengths and produces a phase difference between the two beams, leading to a measurable signal at the photodetector.
 
 The quantity measured is the strain $h(t)$, defined as the relative change in the arm lengths, $h \sim \Delta L / L$. This is precisely the quantity appearing in the TT metric perturbation \eqref{polarizationmodes}: the two polarization amplitudes $A_+$ and $A_\times$ directly set the scale of the fractional length change experienced by the detector arms. For typical detectors with arm lengths of a few kilometers, the expected variations are extremely small, of order $10^{-21}$, requiring highly sensitive instrumentation.
 
-More concretely, the effect of a passing GW on the test masses forming the detector mirrors is governed by equation~\eqref{solutioneqdeviation}. For an arm oriented along $\hat{\mathbf{n}}$, the fractional change in proper length is $\Delta L / L = \tfrac{1}{2} h_{ij}^{\rm TT} \hat{n}^i \hat{n}^j$, where $h_{ij}^{\rm TT}$ is the TT metric perturbation \eqref{polarizationmodes}. The differential response between two orthogonal arms then selects the combination $h_+ F_+ + h_\times F_\times$ described in \S\ref{antenna_patterns_sec} by the antenna pattern functions.
-
 Modern interferometers incorporate several enhancements to increase their sensitivity. These include Fabry-Pérot cavities in the arms, which effectively increase the optical path length, and power and signal recycling mirrors, which enhance the circulating power and the detector response. Despite these improvements, the measurement remains extremely challenging due to the tiny magnitude of the effect, set ultimately by the quadrupole formula discussed in \S\ref{quadrupole_sec} and the astrophysical distances involved.
+
 
 \subsection{Detector response}
 
