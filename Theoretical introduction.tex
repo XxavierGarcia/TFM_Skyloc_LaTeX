@@ -2097,7 +2097,6 @@ If a singularity is not covered by a horizon, it is referred to as a naked singu
 
 
 To determine the nature of a singularity, one typically computes curvature invariants, which are scalar quantities constructed from contractions of the Riemann tensor and do not depend on the choice of coordinates:
-
 \begin{equation}
 R, \quad R_{\mu\nu}R^{\mu\nu}, \quad R_{\mu\nu\alpha\beta}R^{\mu\nu\alpha\beta}, \quad R_{\mu\nu\alpha\beta}R^{\mu\alpha\nu\beta}.
 \end{equation}
@@ -2108,11 +2107,9 @@ In the case of the Schwarzschild solution, particular attention is paid to the r
 At first sight, both $g_{tt}$ and $g_{rr}$ behave pathologically there ($g_{tt}$ vanishes while $g_{rr}$ diverges), raising the question of whether $r=r_{s}$ represents a physical or a coordinate singularity. 
 Since the Schwarzschild spacetime is Ricci-flat, both $R$ and $R_{\mu\nu}R^{\mu\nu}$ vanish identically. 
 However, the Kretschmann scalar,
-
-\[
-K \equiv R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} = \frac{48G^2M^{2}}{r^{6}},
-\]
-
+\begin{equation}
+     K \equiv R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} = \frac{48G^2M^{2}}{r^{6}},   
+\end{equation}
 reveals the true structure: it diverges only at $r=0$, while remaining perfectly finite at $r=2GM$. 
 Thus, $r=0$ corresponds to a genuine physical singularity, whereas $r=2GM$ is merely a coordinate singularity. 
 Nevertheless, unlike the trivial coordinate singularity at $\theta = 0,\pi$, the singularity at $r=2GM$ has important physical implications. 
@@ -2999,7 +2996,7 @@ GW astronomy identifies four broad categories of astrophysical signals, each cha
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.67\linewidth]{Figures/GW_types.png}
+    \includegraphics[width=0.68\linewidth]{Figures/GW_types.png}
     \caption{Classification of GW sources according to their temporal character (transient vs.\ persistent) and the availability of accurate waveform models (modelled vs.\ unmodelled), encompassing CBCs, burst events, continuous waves, and the stochastic background. Credit: Shanika Galaudage (@astronerdika).}
     \label{fig:sources}
 \end{figure}
@@ -3067,97 +3064,226 @@ Modern interferometers incorporate several enhancements to increase their sensit
 
 \subsection{Detector response}
 
-The response of an interferometric detector depends on the relative orientation between the incoming gravitational wave and the detector arms. This is described by antenna pattern functions, which determine the sensitivity to different sky locations and polarization states. As a result, a single detector has limited directional sensitivity, making a network of detectors essential for accurate sky localization and parameter estimation.
+The response of an interferometric detector depends on the relative orientation between the incoming GW and the detector arms. This is described by antenna pattern functions, which determine the sensitivity to different sky locations and polarization states. As a result, a single detector has limited directional sensitivity, making a network of detectors essential for accurate sky localization and parameter estimation.
+
 
 \subsubsection{Antenna pattern of a ground-based interferometric detector}
 \label{antenna_patterns_sec}
 
-Here we derive the response of a ground-based Michelson interferometer to a plane GW in the long-wavelength approximation, where the detector arm length is much smaller than the reduced wavelength of the wave. In this regime, the GW can be treated as spatially uniform across the detector.
+Here we derive the response of a ground-based Michelson interferometer to a plane GW in the long-wavelength approximation, where the detector arm length is much smaller than the reduced wavelength of the wave. 
 
-In the wave frame $(x',y',z')$, with $z'$ along the propagation direction, the metric perturbation in TT gauge reads
+
+A complete description of the detection problem requires three distinct 
+Cartesian frames \cite{TriasCornellana2011GW}. The wave frame
+$(x',y',z')$ has its $z'$-axis aligned with the propagation direction; 
+in this frame the TT metric perturbation takes the standard form 
 \begin{equation}
-h_{ij} =
+H =
 \begin{pmatrix}
 h_+ & h_\times & 0 \\
 h_\times & -h_+ & 0 \\
 0 & 0 & 0
 \end{pmatrix},
+\label{strain_tensor}
 \end{equation}
-where $h_+$ and $h_\times$ denote the plus and cross polarizations \cite{TriasCornellana2011GW}. Equivalently,
-\begin{equation}
-h_{ij} = h_+ (e_+)_{ij} + h_\times (e_\times)_{ij}.
-\end{equation}
-The detector is described in its own frame $(\bar{x},\bar{y},\bar{z})$, where the interferometer arms lie in the $(\bar{x},\bar{y})$ plane and are oriented along unit vectors $\hat{\mathbf{n}}_1$ and $\hat{\mathbf{n}}_2$, separated by an angle $\zeta$. In the long-wavelength limit, the dimensionless strain measured by the interferometer is defined as the difference between the relative length changes induced in the two arms, and can be written as
-\begin{equation}
-h(t)
-= \frac{\Delta L_{\text{arms}}(t)}{L}=\frac{L_1(t)-L_2(t)}{L}=\frac{\delta L_1(t)}{L}-\frac{\delta L_2(t)}{L}=\frac{1}{2}\,\hat{\mathbf{n}}_1^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_1
- - \frac{1}{2}\,\hat{\mathbf{n}}_2^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_2 ,
-\label{strainscalar}
-\end{equation}
-where $\bar{H}$ is the spatial perturbation expressed in the detector frame and $L_i(t) = L + \delta L_i(t)$. The ordering of the arms is chosen such that $\hat{\mathbf{n}}_1 \times \hat{\mathbf{n}}_2$ points outward from the Earth's surface \cite{PhysRevD.58.063001}. 
+where $h_+$ and $h_\times$ denote the plus and cross polarizations.
+The detector frame $(\bar{x},\bar{y},\bar{z})$ has its $\bar{z}$-axis pointing toward the local zenith and the two arms lying in the $(\bar{x},\bar{y})$ plane 
+along unit vectors $\hat{\mathbf{n}}_1$ and $\hat{\mathbf{n}}_2$, 
+separated by an opening angle $\zeta$. Finally, an ecliptic frame $(x,y,z)$ centered 
+at the Solar System Barycenter serves as a common inertial reference 
+for source localization. The relative orientation of the wave and 
+detector frames is parametrized by the polar angles 
+$(\bar{\theta}_N, \bar{\phi}_N)$ specifying the source direction in 
+the detector frame, and the polarization angle $\psi$ (see 
+Fig.~\ref{fig:antennapatternscoord}).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.59\linewidth]{Figures/antennapatterncoordinates.png}
+    \caption{Geometric relationship between the detector frame $(\bar{x},\bar{y},\bar{z})$ and the wave frame $(x',y',z')$. The interferometer arms lie in the $(\bar{x},\bar{y})$ plane, with $\bar{z}$ pointing toward the local zenith. The angles $\bar{\theta}_N$ and $\bar{\phi}_N$ give the polar and azimuthal coordinates of the incoming wave direction in the detector frame, and $\psi$ denotes the rotation of the polarization axes about the propagation direction. Own production based on the source: \cite{ABADIE2010223}.}
+    \label{fig:antennapatternscoord}
+\end{figure}
 
 
-The transformation between the wave and detector frames is described by a sequence of Euler rotations,
+The observable quantity is the differential arm-length variation induced 
+by the passing wave. Working to first order in $h$ and applying the 
+geodesic deviation equation \eqref{eq:geodesiceq} in the detector 
+frame, the fractional length change of a single arm oriented along 
+$\hat{\mathbf{n}}$ is
 \begin{equation}
-M = R_z(-\bar{\phi}_N)\, R_y(-\bar{\theta}_N + \pi)\, R_z(\psi),
+    \frac{\delta L(t)}{L} = \frac{1}{2}\,\hat{\mathbf{n}}^{T}
+    \tilde{H}(t)\,\hat{\mathbf{n}},
 \end{equation}
-where $(\bar{\theta}_N,\bar{\phi}_N)$ specify the source direction in the detector frame and $\psi$ is the polarization angle. The perturbation in the detector frame is then $\bar{H} = M H M^T$.
+where $\tilde{H}(t) = M H(t) M^T$ is the wave-frame strain tensor 
+\eqref{strain_tensor} rotated into the detector frame by the orthogonal matrix 
+$M$. The scalar strain measured by the interferometer is then
+\begin{equation}
+    h(t)= \frac{\Delta L_{\text{arms}}(t)}{L}=\frac{L_1(t)-L_2(t)}{L}=\frac{\delta L_1(t)}{L}-\frac{\delta L_2(t)}{L}=\frac{1}{2}\,\hat{\mathbf{n}}_1^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_1 - \frac{1}{2}\,\hat{\mathbf{n}}_2^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_2 ,
+    \label{eq:strain_detector}
+\end{equation}
+where the sign convention follows from choosing 
+$\hat{\mathbf{n}}_1 \times \hat{\mathbf{n}}_2$ to point outward from 
+the Earth's surface \cite{PhysRevD.58.063001}.
 
-The detector response can be written in the standard form
+The frame transformation is given by the sequence of Euler rotations
 \begin{equation}
-h(t) = F_{+}(\psi,\zeta,\bar{\theta}_N,\bar{\phi}_N)\, h_+(t)
-     + F_{\times}(\psi,\zeta,\bar{\theta}_N,\bar{\phi}_N)\, h_\times(t),
+    M = R_z(-\bar{\phi}_N)\,R_y(-\bar{\theta}_N+\pi)\,R_z(\psi),
 \end{equation}
-where $F_{+}$ and $F_{\times}$ are the antenna pattern functions. After straightforward algebra, one obtains
-\begin{equation}
-F_{+} = \sin\zeta \left[
-\frac{1}{2}(1+\cos^2\bar{\theta}_N)\cos 2\bar{\phi}_N \cos 2\psi
-- \cos\bar{\theta}_N \sin 2\bar{\phi}_N \sin 2\psi
-\right],
-\end{equation}
-\begin{equation}
-F_{\times} = -\sin\zeta \left[
-\frac{1}{2}(1+\cos^2\bar{\theta}_N)\cos 2\bar{\phi}_N \sin 2\psi
-+ \cos\bar{\theta}_N \sin 2\bar{\phi}_N \cos 2\psi
-\right].
-\end{equation}
+which encodes both the sky location of the source and the orientation 
+of the polarization axes relative to the detector.
 
-For orthogonal arms ($\zeta=\pi/2$), these expressions reduce to the standard antenna patterns of a ground-based interferometer. A polarization-independent measure of the directional sensitivity is given by
-\begin{equation}
-|F| = \sqrt{F_+^2 + F_\times^2}.
-\end{equation}
 
-The sky distribution of the polarization-averaged response $|F|$ is shown in Fig.~\ref{fig:antennapatternsavg}. The characteristic quadrupolar structure reflects the spin-2 nature of GWs and the geometrical projection of the tidal field onto the detector arms.
+Substituting the explicit form of $M$ and the arm vectors into 
+\eqref{eq:strain_detector}, and simplifying with standard trigonometric 
+identities, the detector response takes the form
+\begin{equation}
+    h(t) = F_{+}(\psi,\zeta,\bar{\theta}_N,\bar{\phi}_N)\,h_+(t)
+          + F_{\times}(\psi,\zeta,\bar{\theta}_N,\bar{\phi}_N)\,h_\times(t),
+    \label{eq:hoft}
+\end{equation}
+where the antenna pattern functions are \cite{TriasCornellana2011GW, 
+PhysRevD.58.063001}
+\begin{align}
+F_{+} &= \sin\zeta\left[
+    \frac{1}{2}(1+\cos^2\bar{\theta}_N)\cos 2\bar{\phi}_N\cos 2\psi
+    - \cos\bar{\theta}_N\sin 2\bar{\phi}_N\sin 2\psi
+    \right], \label{eq:Fplus} \\[4pt]
+F_{\times} &= -\sin\zeta\left[
+    \frac{1}{2}(1+\cos^2\bar{\theta}_N)\cos 2\bar{\phi}_N\sin 2\psi
+    + \cos\bar{\theta}_N\sin 2\bar{\phi}_N\cos 2\psi
+    \right]. \label{eq:Fcross}
+\end{align}
+These expressions satisfy the symmetry relations
+\begin{equation}
+    F_{+}\!\left(\psi+\tfrac{\pi}{4}\right) = F_{\times}(\psi),
+    \qquad
+    F_{+,\times}\!\left(\psi+\tfrac{\pi}{2}\right) = -F_{+,\times}(\psi),
+\end{equation}
+reflecting the spin-2 character of GWs: a $\pi/4$ rotation of the 
+polarization angle exchanges the two modes, while a $\pi/2$ rotation 
+reverses their sign.
+
+A polarization-independent measure of the directional sensitivity is 
+provided by the quadrature sum
+\begin{equation}
+    |F| = \sqrt{F_+^2 + F_\times^2},
+\end{equation}
+shown in Fig.~\ref{fig:antennapatternsavg} for $\zeta=\pi/2$. The 
+characteristic quadrupolar structure reflects the tensorial nature of 
+the GW strain and the geometric projection onto the detector arms. 
+The individual patterns $F_+$ and $F_\times$ are displayed in 
+Fig.~\ref{fig:antennapatternsFxFplus} for several values of $\psi$; 
+each successive column corresponds to a $\pi/8$ increment in 
+polarization angle, illustrating the interchange symmetry above.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\linewidth]{Figures/antenna_patterns_averaged.png}
-    \caption{Polarization-averaged antenna pattern $|F|$ of a ground-based interferometer with orthogonal arms ($\zeta = \pi/2$), shown as a function of the sky location angles $(\bar{\theta}_N,\bar{\phi}_N)$. This figure is an original result produced in this project.}
+    \caption{Polarization-averaged antenna pattern $|F|$ of a 
+    ground-based interferometer with orthogonal arms ($\zeta=\pi/2$), 
+    as a function of sky angles $(\bar{\theta}_N,\bar{\phi}_N)$. 
+    Original result.}
     \label{fig:antennapatternsavg}
 \end{figure}
-
-The individual antenna patterns for the plus and cross polarizations are displayed in Fig.~\ref{fig:antennapatternsFxFplus}. The dependence on the polarization angle $\psi$ corresponds to a rotation of the quadrupolar pattern on the sky.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.97\linewidth]{Figures/antenna_patterns_Fx_F+.png}
-    \caption{Individual antenna patterns for the plus ($F_+$, top row) and cross ($F_\times$, bottom row) polarizations, for $\zeta=\pi/2$. Each column corresponds to a different polarization angle $\psi$. These figures are original results produced in this project.}
+    \caption{Antenna patterns for the plus ($F_+$, top) and cross 
+    ($F_\times$, bottom) polarizations for $\zeta=\pi/2$ and 
+    representative values of $\psi$. Original result.}
     \label{fig:antennapatternsFxFplus}
 \end{figure}
-
-We can see that the antenna patterns satisfy the following symmetry properties
-\begin{equation}
-F_{+}\!\left(\psi+\frac{\pi}{4}\right)=F_{\times}(\psi),
-\qquad
-F_{+,\times}\!\left(\psi+\frac{\pi}{2}\right)=-F_{+,\times}(\psi).
-\end{equation}
-These properties reflect the fact that a rotation of the polarization angle by
-$\pi/4$ interchanges the two polarization states, while a rotation by $\pi/2$ changes
-the sign of both polarizations.
 
 \newpage
 
 \subsection{Noise and sensitivity}
+\label{sec:noise}
+
+A GW with strain $h \sim 10^{-21}$ produces a differential arm-length 
+change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three 
+orders of magnitude smaller than the diameter of a proton. Achieving 
+sensitivity at this level requires identifying and suppressing a broad 
+set of noise sources that would otherwise overwhelm the signal. These 
+are conveniently characterised by the one-sided power spectral density 
+(PSD) $S_n(f)$, defined as the Fourier transform of the 
+autocorrelation function of the detector output. The square root 
+$\sqrt{S_n(f)}$, expressed in units of Hz$^{-1/2}$, defines the 
+\emph{sensitivity curve} of the instrument and sets the threshold 
+below which signals are inaccessible.
+
+Noise sources are broadly divided into two categories 
+\cite{PhysRevLett.116.061102}. \emph{Fundamental} noise arises 
+directly from the measurement principle and cannot be removed without 
+redesigning the detector; it includes quantum, thermal, seismic, and 
+Newtonian contributions. \emph{Technical} noise is not intrinsic to 
+the design but still limits performance; examples include laser 
+frequency and intensity fluctuations, electromagnetic coupling, 
+scattered light, and length and angular control noise.
+
+\paragraph{Quantum noise.}
+The quantum nature of light introduces two competing contributions. 
+\emph{Shot noise} originates from the Poissonian arrival statistics 
+of photons at the output photodetector: the resulting phase uncertainty 
+scales as $1/\sqrt{N_\gamma}$, so it decreases with increasing 
+circulating power and dominates the sensitivity above $\sim\!200$\,Hz. 
+\emph{Radiation-pressure noise} arises from amplitude fluctuations of 
+the intracavity field, which exert a stochastic force on the mirror 
+surfaces; this contribution grows with laser power and becomes 
+significant at low frequencies. The two effects are related by the 
+Heisenberg uncertainty principle and together set the \emph{standard 
+quantum limit} for a free test mass. Both can be partially mitigated 
+by injecting \emph{squeezed vacuum} at the output port, a technique 
+now incorporated in the Advanced LIGO detectors 
+\cite{PhysRevLett.116.061102}.
+
+\paragraph{Thermal noise.}
+Any component at finite temperature undergoes stochastic mechanical 
+motion. The fluctuation-dissipation theorem relates the amplitude of 
+these fluctuations to the mechanical loss angle of the material, so 
+low-loss materials are employed throughout: 40-kg fused-silica test 
+masses with dielectric mirror coatings, suspended by fused-silica 
+fibers. Thermal noise dominates the sensitivity in the intermediate 
+band, roughly $40$--$200$\,Hz. Cryogenic operation, as adopted by 
+KAGRA, provides an alternative route to suppressing this contribution.
+
+\paragraph{Seismic and Newtonian noise.}
+Ground motion couples mechanically to the test masses through the 
+suspension chain. The quadruple-pendulum isolation system attenuates 
+seismic vibrations by more than ten orders of magnitude above 
+$\sim\!10$\,Hz, but residual motion still dominates the sensitivity 
+below $\sim\!40$\,Hz. A related and fundamentally irreducible 
+contribution is \emph{Newtonian noise} (gravity-gradient noise): 
+density fluctuations in the surrounding ground and atmosphere produce 
+direct gravitational forces on the test masses that cannot be shielded. 
+Subtraction strategies based on seismometer arrays are under active 
+development for future detector generations.
+
+\paragraph{Non-stationary artefacts.}
+The noise process is approximately Gaussian but not stationary. Two 
+classes of artefact degrade the data quality. \emph{Lines} are 
+persistent narrow-band features visible as peaks in the PSD, arising 
+from power-line harmonics (50 or 60\,Hz and their multiples), mirror 
+suspension violin modes, calibration injections, and environmental 
+electromagnetic coupling. \emph{Glitches} are short-duration transient 
+bursts of excess power whose morphology can mimic astrophysical signals, 
+reducing the efficiency of matched-filter pipelines. Both are monitored 
+through a network of $\gtrsim\!2\times10^5$ auxiliary channels 
+(magnetometers, accelerometers, photodetectors, microphones, and 
+others) that record the state of the instrument and its environment 
+continuously \cite{PhysRevLett.116.061102}.
+
+The combination of all noise contributions defines the 
+detector sensitivity curve, shown schematically in 
+Fig.~\ref{fig:noise_curve}. The three regimes described above — 
+seismic at low frequencies, thermal in the intermediate band, and 
+quantum at high frequencies — are clearly visible, and their 
+interplay determines the accessible frequency range of 
+$\sim\!10$--$5000$\,Hz for current ground-based detectors.
+
+
+
+
 \subsection{Current detector network}
 
 The current ground based network consists of the Advanced LIGO detectors in the United States, Advanced Virgo in Europe, and KAGRA in Japan. The joint operation of these detectors improves detection confidence, parameter estimation, and sky localization. The network has been crucial for the success of gravitational wave astronomy, particularly during the O1, O2, O3, and O4 observing runs.
