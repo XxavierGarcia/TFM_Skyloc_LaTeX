@@ -3213,7 +3213,7 @@ Its square root $\sqrt{S_n(f)}$, expressed in units of Hz$^{-1/2}$, defines the 
 
 Noise sources are broadly divided into two categories. 
 Fundamental noise arises directly from the measurement principle and cannot be removed without redesigning the detector. 
-Technical noise is not intrinsic to the design but still limits performance. The main contributions are the following \cite{noise_aLIGO}:
+Technical noise is not intrinsic to the design but still limits performance. The main contributions are the following \cite{noise_aLIGO,noise_budget_O4}:
 
 \begin{itemize}
 
@@ -3230,16 +3230,7 @@ Technical noise is not intrinsic to the design but still limits performance. The
     becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. Squeezed-light injection redistributes the quantum uncertainty between the two quadratures, allowing simultaneous 
     reduction of both contributions below the standard quantum limit.
 
-    \item \textbf{Thermal noise.} Any component at finite temperature 
-    undergoes stochastic mechanical motion. Via the 
-    fluctuation-dissipation theorem, the amplitude of these 
-    fluctuations is proportional to the mechanical loss angle of the 
-    material. It affects the test masses, their dielectric mirror 
-    coatings, and the suspension fibers, and dominates the sensitivity 
-    in the intermediate band of roughly $40$--$200$\,Hz. Low-loss 
-    fused-silica substrates and fibers are employed to minimize this 
-    contribution; cryogenic operation, as adopted by KAGRA, provides 
-    an alternative route to its suppression.
+    \item \textbf{Thermal noise.} Any component at finite temperature undergoes stochastic mechanical motion. Via the fluctuation-dissipation theorem\footnote{The fluctuation-dissipation theorem states that any dissipative mechanism in a system in thermal equilibrium is necessarily accompanied by a fluctuating force of the same origin. In interferometric detectors, mechanical losses in the test masses, coatings, and suspension fibers therefore set a fundamental limit on their positional stability \cite{Kubo1966}.}, the amplitude of these fluctuations is proportional to the mechanical loss angle of the material. It affects the test masses, their dielectric mirror coatings, and the suspension fibers, and dominates the sensitivity in the intermediate band of roughly $40$--$200$\,Hz. Low-loss fused-silica substrates and fibers are employed to minimize this contribution; cryogenic operation, as adopted by KAGRA, provides an alternative route to its suppression.
 
     \item \textbf{Seismic noise.} Ground motion couples mechanically 
     to the test masses through the suspension chain. The 
@@ -3273,9 +3264,14 @@ Technical noise is not intrinsic to the design but still limits performance. The
 
 The noise process is approximately Gaussian but not stationary. Two classes of artefact further degrade the data quality. Lines are persistent narrow-band features visible as peaks above the noise floor in the PSD, arising from power-line harmonics (50 or 60\,Hz and their multiples), mirror suspension violin modes, calibration injections, and environmental electromagnetic coupling \cite{lines_noise}. Glitches are short-duration transient bursts of excess power whose morphology can mimic astrophysical signals, reducing the efficiency of detection pipelines \cite{Glitches}.
 
-The interplay of all these contributions shapes the detector sensitivity curve shown in Fig.~\ref{fig:noise_curve}, where three distinct regimes are visible: seismic noise at low frequencies, thermal noise in the intermediate band, and quantum noise at high frequencies. Together they define the accessible frequency range of $\sim\!10$--$5000$\,Hz for current ground-based detectors.
+The interplay of all these contributions shapes the detector sensitivity curve shown in Fig.~\ref{fig:noise_budget}, where three distinct regimes are clearly visible: control and seismic noise below $\sim\!50$\,Hz, a combination of thermal and quantum noise in the intermediate band ($50$--$500$\,Hz), and shot noise above $\sim\!500$\,Hz. Together they define the accessible frequency range of $\sim\!10$--$5000$\,Hz for current ground-based detectors. The sharp spectral peaks superimposed on the broadband noise floor correspond to the lines discussed above, most prominently the 60\,Hz power-line harmonic and the mirror suspension violin modes.
 
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.68\linewidth]{Figures/noise_budget_O4_LLO.png}
+    \caption{Strain noise amplitude spectral density of the LIGO Livingston detector during O4, together with the O3 LLO and O4 LHO curves for comparison. Dashed lines indicate noise contributions estimated from analytical models or independent component measurements; dotted lines correspond to noise projected from auxiliary witness channels. The black curve gives the quadrature sum of all known noise sources. Three regimes are apparent: control noise dominates below $\sim\!50$\,Hz, a combination of quantum and thermal noise governs the intermediate band, and shot noise sets the high-frequency floor above $\sim\!500$\,Hz. Narrow spectral lines from power-line harmonics, violin modes, and calibration injections are visible throughout the spectrum. Source: \cite{noise_budget_O4}.}
+    \label{fig:noise_budget}
+\end{figure}
 
 
 
