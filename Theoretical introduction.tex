@@ -3200,86 +3200,81 @@ polarization angle, illustrating the interchange symmetry above.
 \subsection{Noise and sensitivity}
 \label{sec:noise}
 
-A GW with strain $h \sim 10^{-21}$ produces a differential arm-length 
-change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three 
-orders of magnitude smaller than the diameter of a proton. Achieving 
-sensitivity at this level requires identifying and suppressing a broad 
-set of noise sources that would otherwise overwhelm the signal. These 
-are conveniently characterised by the one-sided power spectral density 
-(PSD) $S_n(f)$, defined as the Fourier transform of the 
-autocorrelation function of the detector output. The square root 
-$\sqrt{S_n(f)}$, expressed in units of Hz$^{-1/2}$, defines the 
-\emph{sensitivity curve} of the instrument and sets the threshold 
-below which signals are inaccessible.
+A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three 
+orders of magnitude smaller than the diameter of a proton. Achieving sensitivity at this level requires identifying and suppressing a broad 
+set of noise sources that would otherwise overwhelm the signal. These are conveniently characterised by the one-sided power spectral density (PSD) $S_n(f)$, defined as the Fourier transform of the autocorrelation function of the detector output: 
+\begin{equation}
+    S(f) = \int C(\tau)\, e^{-i 2\pi f \tau} \, d\tau ,
+\end{equation}
+where $C(\tau) = \langle n(t) n(t+\tau) \rangle$ is the autocorrelation function of the noise process $n(t)$, and $\langle \cdot \rangle$ denotes an ensemble average.
+Its square root $\sqrt{S_n(f)}$, expressed in units of Hz$^{-1/2}$, defines the sensitivity curve of the instrument and sets the threshold below which signals are inaccessible.
 
-Noise sources are broadly divided into two categories 
-\cite{PhysRevLett.116.061102}. \emph{Fundamental} noise arises 
-directly from the measurement principle and cannot be removed without 
-redesigning the detector; it includes quantum, thermal, seismic, and 
-Newtonian contributions. \emph{Technical} noise is not intrinsic to 
-the design but still limits performance; examples include laser 
-frequency and intensity fluctuations, electromagnetic coupling, 
-scattered light, and length and angular control noise.
 
-\paragraph{Quantum noise.}
-The quantum nature of light introduces two competing contributions. 
-\emph{Shot noise} originates from the Poissonian arrival statistics 
-of photons at the output photodetector: the resulting phase uncertainty 
-scales as $1/\sqrt{N_\gamma}$, so it decreases with increasing 
-circulating power and dominates the sensitivity above $\sim\!200$\,Hz. 
-\emph{Radiation-pressure noise} arises from amplitude fluctuations of 
-the intracavity field, which exert a stochastic force on the mirror 
-surfaces; this contribution grows with laser power and becomes 
-significant at low frequencies. The two effects are related by the 
-Heisenberg uncertainty principle and together set the \emph{standard 
-quantum limit} for a free test mass. Both can be partially mitigated 
-by injecting \emph{squeezed vacuum} at the output port, a technique 
-now incorporated in the Advanced LIGO detectors 
-\cite{PhysRevLett.116.061102}.
 
-\paragraph{Thermal noise.}
-Any component at finite temperature undergoes stochastic mechanical 
-motion. The fluctuation-dissipation theorem relates the amplitude of 
-these fluctuations to the mechanical loss angle of the material, so 
-low-loss materials are employed throughout: 40-kg fused-silica test 
-masses with dielectric mirror coatings, suspended by fused-silica 
-fibers. Thermal noise dominates the sensitivity in the intermediate 
-band, roughly $40$--$200$\,Hz. Cryogenic operation, as adopted by 
-KAGRA, provides an alternative route to suppressing this contribution.
+Noise sources are broadly divided into two categories. 
+Fundamental noise arises directly from the measurement principle and cannot be removed without redesigning the detector. 
+Technical noise is not intrinsic to the design but still limits performance. The main contributions are the following \cite{noise_aLIGO}:
 
-\paragraph{Seismic and Newtonian noise.}
-Ground motion couples mechanically to the test masses through the 
-suspension chain. The quadruple-pendulum isolation system attenuates 
-seismic vibrations by more than ten orders of magnitude above 
-$\sim\!10$\,Hz, but residual motion still dominates the sensitivity 
-below $\sim\!40$\,Hz. A related and fundamentally irreducible 
-contribution is \emph{Newtonian noise} (gravity-gradient noise): 
-density fluctuations in the surrounding ground and atmosphere produce 
-direct gravitational forces on the test masses that cannot be shielded. 
-Subtraction strategies based on seismometer arrays are under active 
-development for future detector generations.
+\begin{itemize}
 
-\paragraph{Non-stationary artefacts.}
-The noise process is approximately Gaussian but not stationary. Two 
-classes of artefact degrade the data quality. \emph{Lines} are 
-persistent narrow-band features visible as peaks in the PSD, arising 
-from power-line harmonics (50 or 60\,Hz and their multiples), mirror 
-suspension violin modes, calibration injections, and environmental 
-electromagnetic coupling. \emph{Glitches} are short-duration transient 
-bursts of excess power whose morphology can mimic astrophysical signals, 
-reducing the efficiency of matched-filter pipelines. Both are monitored 
-through a network of $\gtrsim\!2\times10^5$ auxiliary channels 
-(magnetometers, accelerometers, photodetectors, microphones, and 
-others) that record the state of the instrument and its environment 
-continuously \cite{PhysRevLett.116.061102}.
+    \item \textbf{Shot noise.} The Poissonian arrival statistics of 
+    photons at the output photodetector produce a phase uncertainty 
+    scaling as $1/\sqrt{N_\gamma}$, where $N_\gamma$ is the number of 
+    detected photons per unit time. This contribution decreases with 
+    increasing circulating power and dominates the sensitivity above 
+    $\sim\!200$\,Hz. It can be partially mitigated by injecting squeezed vacuum at the output port, a technique already incorporated 
+    in the Advanced LIGO and Advanced Virgo detectors.
 
-The combination of all noise contributions defines the 
-detector sensitivity curve, shown schematically in 
-Fig.~\ref{fig:noise_curve}. The three regimes described above — 
-seismic at low frequencies, thermal in the intermediate band, and 
-quantum at high frequencies — are clearly visible, and their 
-interplay determines the accessible frequency range of 
-$\sim\!10$--$5000$\,Hz for current ground-based detectors.
+    \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of 
+    the intracavity field exert a stochastic force on the mirror surfaces, inducing position noise that grows with laser power and 
+    becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. Squeezed-light injection redistributes the quantum uncertainty between the two quadratures, allowing simultaneous 
+    reduction of both contributions below the standard quantum limit.
+
+    \item \textbf{Thermal noise.} Any component at finite temperature 
+    undergoes stochastic mechanical motion. Via the 
+    fluctuation-dissipation theorem, the amplitude of these 
+    fluctuations is proportional to the mechanical loss angle of the 
+    material. It affects the test masses, their dielectric mirror 
+    coatings, and the suspension fibers, and dominates the sensitivity 
+    in the intermediate band of roughly $40$--$200$\,Hz. Low-loss 
+    fused-silica substrates and fibers are employed to minimize this 
+    contribution; cryogenic operation, as adopted by KAGRA, provides 
+    an alternative route to its suppression.
+
+    \item \textbf{Seismic noise.} Ground motion couples mechanically 
+    to the test masses through the suspension chain. The 
+    quadruple-pendulum isolation system attenuates seismic vibrations 
+    by more than ten orders of magnitude above $\sim\!10$\,Hz, but 
+    residual motion from microseisms, wind, and anthropogenic 
+    activity still limits the sensitivity below $\sim\!40$\,Hz.
+
+    \item \textbf{Newtonian noise.} Density fluctuations in the 
+    surrounding ground and atmosphere produce direct gravitational 
+    forces on the test masses that cannot be shielded mechanically. 
+    This contribution, also known as gravity-gradient noise, sets a 
+    fundamental floor at low frequencies for surface-based detectors. 
+    Active subtraction strategies based on seismometer arrays are 
+    under development for future detector generations.
+
+    \item \textbf{Control noise.} Servo loops are required to maintain 
+    the arm cavities on resonance and keep the optical components 
+    aligned. The sensors and actuators in these feedback systems 
+    introduce noise that couples into the gravitational-wave channel, 
+    representing the dominant technical limitation at low frequencies.
+
+    \item \textbf{Residual gas noise.} Despite the ultra-high vacuum 
+    environment ($<1\,\mu$Pa in the beam tubes), residual molecules 
+    scatter laser photons and cause fluctuations in the optical path length. This contribution is generally subdominant but must be controlled to avoid limiting the sensitivity in specific frequency bands.
+
+    \item \textbf{Other technical noise sources.} Laser frequency and intensity fluctuations, electromagnetic coupling, scattered light, and photodetector dark noise contribute across various frequency ranges. These are monitored and subtracted using a network of 
+    $\gtrsim\!2\times10^5$ auxiliary channels (including magnetometers, accelerometers, microphones and photodetectors) that record the state of the instrument and its environment continuously.
+
+\end{itemize}
+
+The noise process is approximately Gaussian but not stationary. Two classes of artefact further degrade the data quality. Lines are persistent narrow-band features visible as peaks above the noise floor in the PSD, arising from power-line harmonics (50 or 60\,Hz and their multiples), mirror suspension violin modes, calibration injections, and environmental electromagnetic coupling \cite{lines_noise}. Glitches are short-duration transient bursts of excess power whose morphology can mimic astrophysical signals, reducing the efficiency of detection pipelines \cite{Glitches}.
+
+The interplay of all these contributions shapes the detector sensitivity curve shown in Fig.~\ref{fig:noise_curve}, where three distinct regimes are visible: seismic noise at low frequencies, thermal noise in the intermediate band, and quantum noise at high frequencies. Together they define the accessible frequency range of $\sim\!10$--$5000$\,Hz for current ground-based detectors.
+
 
 
 
