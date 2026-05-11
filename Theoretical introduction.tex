@@ -3257,7 +3257,7 @@ The noise process is approximately Gaussian but not stationary. Two classes of a
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{Figures/narrow_lines.png}
+    \includegraphics[width=0.8\linewidth]{Figures/narrow_lines.png}
     \caption{High-resolution amplitude spectral density ($\Delta f = 1/1800$\,Hz) of LIGO Hanford strain data illustrating three representative line artefacts. Left: a broad spectral feature associated with mirror suspension roll-mode resonances. Centre: an isolated narrow line of unknown origin. Right: two frequency combs with distinct spacings, marked by upright and inverted triangles, alongside broader noise structures. Source: \cite{glitches_lines_noises}.}
     \label{fig:lines_noise}
 \end{figure}
@@ -3267,7 +3267,7 @@ Glitches are short-duration transient bursts of excess power whose morphology ca
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{Figures/glitches.png}
+    \includegraphics[width=0.74\linewidth]{Figures/glitches.png}
     \caption{Time-frequency spectrograms of representative glitch classes recorded at LHO and LLO. Slow and Fast Scattering artefacts are attributed to light scattered by optics under increased ground motion, while the origin of Extremely Loud, Tomte, Low Frequency Burst, and Low Frequency Lines glitches remains unidentified. Source: \cite{glitches_lines_noises}.}
     \label{fig:glitches_noise}
 \end{figure}
@@ -3277,8 +3277,8 @@ The interplay of all these contributions shapes the detector sensitivity curve s
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.76\linewidth]{Figures/noise_budget_O4_LLO.png}
-    \caption{Strain noise amplitude spectral density of the LIGO Livingston detector during O4, together with the O3 LLO and O4 LHO curves for comparison. Dashed lines indicate noise contributions estimated from analytical models or independent component measurements; dotted lines correspond to noise projected from auxiliary witness channels. The black curve gives the quadrature sum of all known noise sources. Three regimes are apparent: control noise dominates below $\sim\!50$\,Hz, a combination of quantum and thermal noise governs the intermediate band, and shot noise sets the high-frequency floor above $\sim\!500$\,Hz. Narrow spectral lines from power-line harmonics, violin modes, and calibration injections are visible throughout the spectrum. Source: \cite{noise_budget_O4}.}
+    \includegraphics[width=0.77\linewidth]{Figures/noise_budget_O4_LLO.png}
+    \caption{Strain noise amplitude spectral density of the LLO detector during O4, together with the O3 LLO and O4 LHO curves for comparison. Dashed lines indicate noise contributions estimated from analytical models or independent component measurements; dotted lines correspond to noise projected from auxiliary witness channels. The black curve gives the quadrature sum of all known noise sources. Three regimes are apparent: control noise dominates below $\sim\!50$\,Hz, a combination of quantum and thermal noise governs the intermediate band, and shot noise sets the high-frequency floor above $\sim\!500$\,Hz. Narrow spectral lines from power-line harmonics, violin modes, and calibration injections are visible throughout the spectrum. Source: \cite{noise_budget_O4}.}
     \label{fig:noise_budget}
 \end{figure}
 
@@ -3286,16 +3286,37 @@ The interplay of all these contributions shapes the detector sensitivity curve s
 
 \subsection{Current detector network}
 
-The current ground based network consists of the Advanced LIGO detectors in the United States, Advanced Virgo in Europe, and KAGRA in Japan. The joint operation of these detectors improves detection confidence, parameter estimation, and sky localization. The network has been crucial for the success of gravitational wave astronomy, particularly during the O1, O2, O3, and O4 observing runs.
 
+A single interferometer provides limited directional information: the antenna pattern functions derived in \S\ref{antenna_patterns_sec} show that a ground-based detector is nearly blind along certain sky directions. A global network of detectors is therefore essential, both to confirm detections through coincident observations and to localise 
+sources on the sky via time delay triangulation. Sky localisation precision improves with the number of detectors, their mutual separation, and their individual sensitivities. The current network consists of four facilities operating in the frequency band $\sim\!10$-$5000$\,Hz:
+
+\begin{itemize}
+
+    \item \textbf{Advanced LIGO} \cite{Advanced_ligo} 
+    comprises two 4-km detectors: LIGO Hanford (H1) in Washington State and LIGO Livingston (L1) in Louisiana, separated by $\sim\!3000$\,km. Operated by the LIGO Scientific Collaboration (LSC), they have been the primary instruments for GW detections 
+    since the first observation of a binary black hole merger in September 2015 \cite{GW150914}. A third Advanced LIGO detector, LIGO-India, is currently under construction and expected to join the network in 2030.
+
+    \item \textbf{Advanced Virgo} \cite{Advanced_VIRGO} is a 3-km interferometer located in Cascina, Italy, operated by the Virgo Collaboration. It joined the network in the final month of O2, contributing to the first three-detector observation of a binary black hole merger (GW170814) and to the precise sky localisation of the binary neutron star merger GW170817 \cite{GW170817}. Although its sensitivity is somewhat below that of the LIGO instruments, its geographic separation from the US sites significantly improves source localisation.
+
+    \item \textbf{KAGRA} \cite{} is a 3-km cryogenic underground detector situated 200\,m beneath the Kamioka mountain in Gifu Prefecture, Japan. Its subterranean location provides natural seismic and atmospheric shielding, and its test masses are cooled to cryogenic temperatures ($\sim\!20$\,K) to suppress thermal noise, making it the first second-generation detector to adopt this approach. KAGRA participated in a short joint observing run with GEO\,600 at the end of O3, and has been part of the network since O4.
+
+    \item \textbf{GEO\,600} \cite{} is a 600-m detector near 
+    Hannover, Germany, operated jointly by British and German 
+    institutions. Its shorter arms make it significantly less 
+    sensitive than the kilometre-scale instruments, so it does not contribute to standard astrophysical searches. Instead, it operates in \emph{astrowatch} mode during maintenance periods of the other detectors and serves as a testbed for advanced instrumentation techniques (including squeezed-light injection) before their deployment in larger facilities. GEO\,600 is scheduled to conclude operations in 2026, marking the end of its role as the longest-running interferometric GW detector in Europe.
+
+\end{itemize}
+
+The evolution of the network across observing runs is illustrated in Fig.~\ref{fig:runs_O1234}. During O1 and the majority of O2, only H1 and L1 were operational; Virgo joined for the final weeks of O2 and participated throughout O3. A brief joint run (O3GK) at the close of O3 included GEO\,600 and KAGRA. Since O4, the network comprises all four facilities, with the BNS inspiral range (the standard figure 
+of merit for detector sensitivity) improving progressively across runs as a result of the upgrades discussed in 
+\S\ref{sec:noise}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{Figures/Runs_timeline.png}
-    \caption{. Source: \cite{runs_timeline_O1234}.}
+    \includegraphics[width=0.77\linewidth]{Figures/Runs_timeline.png}
+    \caption{Timeline of LVK observing runs from the first detection in 2015 through the start of O4b in April 2024. Colored bars indicate the periods during which each detector was operating, together with the typical BNS inspiral range achieved in each run. GEO astrowatch and KAGRA O4a periods (light gray) were not included in the main GW analyses. Virgo joined the network in the final month of O2 and operated throughout O3; a short joint O3GK run also included GEO and KAGRA. Markers along the bottom indicate GW candidates from GWTC-1.0 through GWTC-4.0 with astrophysical probability $\geq 50\%$. Source: \cite{runs_timeline_O1234}.}
     \label{fig:runs_O1234}
 \end{figure}
-
 
 
 
