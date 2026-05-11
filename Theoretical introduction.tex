@@ -3173,10 +3173,7 @@ polarization angle, illustrating the interchange symmetry above.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\linewidth]{Figures/antenna_patterns_averaged.png}
-    \caption{Polarization-averaged antenna pattern $|F|$ of a 
-    ground-based interferometer with orthogonal arms ($\zeta=\pi/2$), 
-    as a function of sky angles $(\bar{\theta}_N,\bar{\phi}_N)$. 
-    Original result.}
+    \caption{Polarization-averaged antenna pattern $|F|$ of a ground-based interferometer with orthogonal arms ($\zeta=\pi/2$), as a function of sky angles $(\bar{\theta}_N,\bar{\phi}_N)$. Original result.}
     \label{fig:antennapatternsavg}
 \end{figure}
 
@@ -3256,21 +3253,21 @@ Technical noise is not intrinsic to the design but still limits performance. The
 
 \end{itemize}
 
-The noise process is approximately Gaussian but not stationary. Two classes of artefact further degrade the data quality. Lines are persistent narrow-band features visible as peaks above the noise floor in the PSD, arising from power-line harmonics (50 or 60\,Hz and their multiples), mirror suspension violin modes, calibration injections, and environmental electromagnetic coupling (see Fig.~\ref{fig:lines_noise})\cite{lines_noise}. 
+The noise process is approximately Gaussian but not stationary. Two classes of artefact further degrade the data quality. Lines are persistent narrow-band features visible as peaks above the noise floor in the PSD, arising from power-line harmonics (50 or 60\,Hz and their multiples), mirror suspension violin modes, calibration injections, and environmental electromagnetic coupling (see Fig.~\ref{fig:lines_noise}) \cite{lines_noise}. 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.69\linewidth]{Figures/narrow_lines.png}
+    \includegraphics[width=0.75\linewidth]{Figures/narrow_lines.png}
     \caption{High-resolution amplitude spectral density ($\Delta f = 1/1800$\,Hz) of LIGO Hanford strain data illustrating three representative line artefacts. Left: a broad spectral feature associated with mirror suspension roll-mode resonances. Centre: an isolated narrow line of unknown origin. Right: two frequency combs with distinct spacings, marked by upright and inverted triangles, alongside broader noise structures. Source: \cite{glitches_lines_noises}.}
     \label{fig:lines_noise}
 \end{figure}
 
 
-Glitches are short-duration transient bursts of excess power whose morphology can mimic astrophysical signals, reducing the efficiency of detection pipelines \cite{Glitches}.
+Glitches are short-duration transient bursts of excess power whose morphology can mimic astrophysical signals, reducing the efficiency of detection pipelines (see Fig.~\ref{fig:glitches_noise}) \cite{Glitches}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.69\linewidth]{Figures/glitches.png}
+    \includegraphics[width=0.75\linewidth]{Figures/glitches.png}
     \caption{Time-frequency spectrograms of representative glitch classes recorded at LHO and LLO. Slow and Fast Scattering artefacts are attributed to light scattered by optics under increased ground motion, while the origin of Extremely Loud, Tomte, Low Frequency Burst, and Low Frequency Lines glitches remains unidentified. Source: \cite{glitches_lines_noises}.}
     \label{fig:glitches_noise}
 \end{figure}
@@ -3290,6 +3287,17 @@ The interplay of all these contributions shapes the detector sensitivity curve s
 \subsection{Current detector network}
 
 The current ground based network consists of the Advanced LIGO detectors in the United States, Advanced Virgo in Europe, and KAGRA in Japan. The joint operation of these detectors improves detection confidence, parameter estimation, and sky localization. The network has been crucial for the success of gravitational wave astronomy, particularly during the O1, O2, O3, and O4 observing runs.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/Runs_timeline.png}
+    \caption{. Source: \cite{runs_timeline_O1234}.}
+    \label{fig:runs_O1234}
+\end{figure}
+
+
+
 
 \subsection{Future detectors}
 
