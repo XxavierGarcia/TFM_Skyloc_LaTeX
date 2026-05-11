@@ -1,7 +1,7 @@
 \chapter{Introduction to General Relativity}
 \label{Introduction_to_General_Relativity}
 
-Nowadays, general relativity is fundamental to our understanding of modern astrophysics. Whether we’re studying black holes, quasars, or gravitational lensing, Einstein’s theory provides the essential framework. Efforts to detect gravitational waves (GW) are a direct test of one of his key theoretical predictions. It marks a remarkable chapter in the story of one of the most influential equations of the 20th century.
+Nowadays, general relativity is fundamental to our understanding of modern astrophysics. Whether we’re studying black holes (BHs), quasars, or gravitational lensing, Einstein’s theory provides the essential framework. Efforts to detect gravitational waves (GWs) are a direct test of one of his key theoretical predictions. It marks a remarkable chapter in the story of one of the most influential equations of the 20th century.
 
 \section{Motivation and Historical Background}
 
@@ -13,7 +13,7 @@ The centenary of general relativity marks not only one of the greatest theoretic
 \begin{itemize}
   \item \textbf{1905–1907:} Following his groundbreaking special relativity paper \cite{einstein1905originalpaper}, Einstein seeks a relativistic framework for gravitation, which results in the formulation of general relativity in 1915.
   
-  \item \textbf{1916:} Within months, Karl Schwarzschild finds the first exact solution to Einstein's equations \cite{paperschwarzschild1916_pointmass}, revealing the theoretical existence of black holes, a concept reinforced in 1917 when Einstein applies his theory to cosmology.
+  \item \textbf{1916:} Within months, Karl Schwarzschild finds the first exact solution to Einstein's equations \cite{paperschwarzschild1916_pointmass}, revealing the theoretical existence of BHs, a concept reinforced in 1917 when Einstein applies his theory to cosmology.
   \item \textbf{1919:} Arthur Eddington’s eclipse expedition confirms the bending of starlight by the Sun’s gravity \cite{Eddingtonsexpedition}, providing one of the first key empirical validations of the theory. 
   \item \textbf{1927–1929:} Georges Lemaître and Edwin Hubble independently establish the expanding universe paradigm \cite{LemaitreHubble}, linking general relativity to the observable evolution of the cosmos.
   \item \textbf{1960s–1970s:} After decades of theoretical neglect, interest in general relativity resurges. Joseph Weber pioneers early experimental searches for GW \cite{JosephWeber}, and the discovery of the Hulse–Taylor pulsar in 1974 offers indirect but compelling evidence that energy is indeed carried away by gravitational radiation.
@@ -51,7 +51,7 @@ The equivalence principle provides a compelling foundation for the development o
 
 \subsubsection{The weak equivalence principle}
 
-The origins of special relativity can be traced back to the 17\textsuperscript{th} century, when Galileo Galilei introduced what would later be known as the Principle of relativity. In a broader sense, the roots of general relativity also reach back to this period. Thinkers such as Galilei and Simon Stevin (1548--1620) began to recognize that the velocity reached by freely falling objects is independent of their mass, a realization that contradicted both everyday intuition and the Aristotelian view of physics \cite{LlibreBertJanssen}.
+The origins of special relativity can be traced back to the 17\textsuperscript{th} century, when Galileo Galilei introduced what would later be known as the Principle of relativity. In a broader sense, the roots of general relativity also reach back to this period. Thinkers such as Galilei and Simon Stevin (1548-1620) began to recognize that the velocity reached by freely falling objects is independent of their mass, a realization that contradicted both everyday intuition and the Aristotelian view of physics \cite{LlibreBertJanssen}.
 
 A famous, though historically inaccurate, anecdote claims that Galileo dropped spheres of different masses from the Leaning Tower of Pisa to prove they would hit the ground simultaneously. In reality, Galileo derived his conclusions on free fall by rolling spheres down inclined planes, results which he presented in his 1590 manuscript De Motu \cite{DeMotuGalilei}.
 
@@ -789,7 +789,7 @@ Some key properties of Christoffel symbols are:
     \item In an $n$-dimensional Riemannian manifold, there are theoretically $n^3$ such coefficients, though this number is reduced by the symmetry condition.
 \end{itemize}
 
-The term ``Christoffel symbols'' honors the mathematician Elwin Christoffel (1829--1900), who first introduced them in the context of differential geometry. Although sometimes informally dubbed ``Christ-awful symbols'' due to their apparent complexity, this perception tends to fade with familiarity \cite{llibretheoreticalminimum}. What initially seems intricate is, in fact, a systematic way of incorporating the effects of curvature into the formulation of differential operators . 
+The term ``Christoffel symbols'' honors the mathematician Elwin Christoffel (1829-1900), who first introduced them in the context of differential geometry. Although sometimes informally dubbed ``Christ-awful symbols'' due to their apparent complexity, this perception tends to fade with familiarity \cite{llibretheoreticalminimum}. What initially seems intricate is, in fact, a systematic way of incorporating the effects of curvature into the formulation of differential operators . 
 
 These connection coefficients are essential for extending the familiar notion of differentiation to the curved spacetimes of general relativity, setting the stage for the definition of the covariant derivative, which we address next.
 
@@ -1065,7 +1065,7 @@ S = -m \int_{\tau_1}^{\tau_2} \mathcal{L} \, d\tau \ , \quad \text{where} \quad 
 \end{equation}
 with \( m \) representing the particle's mass and \( \dot{x}^\mu=dx^{\mu}/d\tau \).
 
-Applying the Euler--Lagrange equations to this Lagrangian, 
+Applying the Euler-Lagrange equations to this Lagrangian, 
 the stationarity condition $\delta S = 0$ yields
 \begin{equation}
     \frac{d}{d\tau}\left(\frac{\partial L}{\partial \dot{x}^\lambda}\right) 
@@ -1100,13 +1100,13 @@ Substituting back into the equation \eqref{lagrangederivativeterm}:
 The derivative of L respect $x^{\lambda}$ is:
 \begin{equation}
 \frac{\partial L}{\partial x^\lambda}
-= \frac{1}{2L}\frac{\partial I}{\partial x^\lambda} \ , \quad \frac{\partial I}{\partial x^\lambda} = -\partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu \ .
+= \frac{1}{2L}\frac{\partial I}{\partial x^\lambda} \ , \quad \frac{\partial I}{\partial x^\lambda} = -\partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu .
 \end{equation}
 Substituting back:
 
 \begin{equation}
 \frac{\partial L}{\partial x^\lambda}
-= \frac{-1}{2L} \partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu \ .
+= \frac{-1}{2L} \partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu .
 \end{equation}
 
 Substituting into equation \eqref{eulerlagrange} we get:
@@ -1366,29 +1366,29 @@ We have now established the necessary mathematical foundations, provided by diff
 \subsection{The energy-momentun tensor}
 \label{The energy-momentun tensor}
 
-We begin by introducing the energy–momentum tensor (also known as the stress--energy tensor), which appears on the right--hand side of Einstein’s field equations. Up to this point, using differential geometry and the equivalence principle, we have interpreted gravity as the curvature of spacetime. However, we have not yet addressed what actually generates that curvature. In Newtonian physics, mass is regarded as the source of the gravitational field.  However, special relativity establishes that the mass of an object is merely one of the possible manifestations of energy, and that it is possible to convert one into the other through the well-known relation \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
+We begin by introducing the energy-momentum tensor (also known as the stress-energy tensor), which appears on the right-hand side of Einstein’s field equations. Up to this point, using differential geometry and the equivalence principle, we have interpreted gravity as the curvature of spacetime. However, we have not yet addressed what actually generates that curvature. In Newtonian physics, mass is regarded as the source of the gravitational field.  However, special relativity establishes that the mass of an object is merely one of the possible manifestations of energy, and that it is possible to convert one into the other through the well-known relation \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
 \begin{equation}
 E^2 = p^2 c^2 + m^2 c^4 \ .
 \label{energy-momentum}
 \end{equation}
 Therefore, it is reasonable to postulate that the source of the gravitational field in general relativity must encompass not only mass but also energy and momentum. 
 
-Now, we need to find a practical way to represent this source of curvature. This is precisely where the energy--momentum tensor $T^{\mu\nu}$ comes into play. This tensor encapsulates the macroscopic properties of a given physical system, modeled as a fluid\footnote{In general relativity, all relevant forms of matter can be modeled as perfect fluids (a perfect fluid is one that can be fully characterized solely by its pressure and density), ranging from stars and electromagnetic fields to the entire universe \cite{llibrecarroll2004lectures}.}, including quantities such as velocity, pressure, density, and other relevant parameters, thereby representing the system’s total energy and momentum content. Moreover, the tensor describes the flux of four-momentum \( p^{\mu} \) across a hypersurface of constant \( x^{\nu} \). Therefore we identify \( T^{\mu\nu} \) as the source term in the field equations. 
+Now, we need to find a practical way to represent this source of curvature. This is precisely where the energy-momentum tensor $T^{\mu\nu}$ comes into play. This tensor encapsulates the macroscopic properties of a given physical system, modeled as a fluid\footnote{In general relativity, all relevant forms of matter can be modeled as perfect fluids (a perfect fluid is one that can be fully characterized solely by its pressure and density), ranging from stars and electromagnetic fields to the entire universe \cite{llibrecarroll2004lectures}.}, including quantities such as velocity, pressure, density, and other relevant parameters, thereby representing the system’s total energy and momentum content. Moreover, the tensor describes the flux of four-momentum \( p^{\mu} \) across a hypersurface of constant \( x^{\nu} \). Therefore we identify \( T^{\mu\nu} \) as the source term in the field equations. 
 
-Since the energy--momentum tensor is a rank--2 tensor, its components can be represented in the form of a \(4 \times 4\) matrix:
+Since the energy-momentum tensor is a rank-2 tensor, its components can be represented in the form of a \(4 \times 4\) matrix:
 
 \begin{figure}[h!]
     \centering
     \hspace{1.9cm}
     \includegraphics[width=0.7\linewidth]{Figures/energy momentum tensor.png}
-    \caption{Schematic representation of the energy--momentum tensor $T_{\mu\nu}$ as a $4 \times 4$ matrix. The components include the energy density ($T_{00}$), energy flux ($T_{0i}$), momentum density ($T_{i0}$), momentum flux ($T_{ij}$), as well as pressure and shear stress terms. Source: \cite{energymomentumtensor}.}
+    \caption{Schematic representation of the energy-momentum tensor $T_{\mu\nu}$ as a $4 \times 4$ matrix. The components include the energy density ($T_{00}$), energy flux ($T_{0i}$), momentum density ($T_{i0}$), momentum flux ($T_{ij}$), as well as pressure and shear stress terms. Source: \cite{energymomentumtensor}.}
     \label{fig:placeholder}
 \end{figure}
 
 These components can be described as follows:
 
 \begin{itemize}
-    \item $T_{00}$ represents the flux of the time component ($\mu=0$) of the four--momentum across a hypersurface of constant $t$ (i.e., normal vector $x^0$). Physically, this corresponds to the energy density in space-time. 
+    \item $T_{00}$ represents the flux of the time component ($\mu=0$) of the four-momentum across a hypersurface of constant $t$ (i.e., normal vector $x^0$). Physically, this corresponds to the energy density in space-time. 
     
     \item $T_{i0} = T_{0i}$ denotes the momentum density (momentum per unit volume) or, equivalently, the energy flux. It can be interpreted as the flow of relativistic mass through a spatial hypersurface with normal vector $x^i$.
     
@@ -1412,7 +1412,7 @@ U^{\mu} = \left(U^{0}, U^{1}, U^{2}, U^{3}\right)
 Thus, $U^{0} = c\gamma$. In the comoving rest frame (CRF), $\gamma = 1$, so we obtain 
 $U^{0} = c$ and $U^{0} U^{0} = c^{2}$.
 
-A comoving observer, one who moves together with the fluid and therefore shares its four--velocity $U^\mu$, perceives the fluid as locally isotropic. For such an observer, the four--velocity reduces to $U^{\mu} = (1,0,0,0)$, and the stress-energy tensor simplifies to
+A comoving observer, one who moves together with the fluid and therefore shares its four-velocity $U^\mu$, perceives the fluid as locally isotropic. For such an observer, the four-velocity reduces to $U^{\mu} = (1,0,0,0)$, and the stress-energy tensor simplifies to
 \begin{equation}
 T^{\mu\nu} = \text{diag}(\rho, P, P, P) \ ,
 \end{equation}
@@ -1431,11 +1431,11 @@ With $P=0$, the stress-energy tensor becomes
 T^{\mu\nu}_{\text{(dust)}} = \rho \, U^{\mu} U^{\nu} \ ,
 \end{equation}
 where $\rho$ is the rest-frame energy density \cite{llibretongGR}.  
-In the comoving frame of the fluid, with $U^{\mu} = (1,0,0,0)$, the only non-vanishing component is $T^{00} = \rho$, which simply represents the matter density. Hence, non--interacting matter exerts no pressure.
+In the comoving frame of the fluid, with $U^{\mu} = (1,0,0,0)$, the only non-vanishing component is $T^{00} = \rho$, which simply represents the matter density. Hence, non-interacting matter exerts no pressure.
 
 
 
-\subsubsection{Conservation of the energy--momentum tensor}
+\subsubsection{Conservation of the energy-momentum tensor}
 
 A key property of the energy-momentum tensor is that it satisfies the conservation law \cite{Llibre_Peter_Collier_unacosadificildecomprender}
 \begin{equation}
@@ -1446,7 +1446,7 @@ In flat spacetime, this reduces to
 \partial_\mu T^{\mu\nu} = 0 \ ,
 \end{equation}
 which encompasses both energy and momentum conservation. By projecting this relation along 
-the fluid four--velocity one obtains the relativistic continuity equation (see Appendix $\S$\ref{Derivation of the relativistic continuity and Euler equations} for the derivations),
+the fluid four-velocity one obtains the relativistic continuity equation (see Appendix $\S$\ref{Derivation of the relativistic continuity and Euler equations} for the derivations),
 \begin{equation}
 u^\mu \nabla_\mu \rho + (\rho + P)\nabla_\mu u^\mu = 0 \ ,
 \end{equation}
@@ -1471,7 +1471,7 @@ physically meaningful system.
 Einstein did not reach his field equations in one sudden step of mathematical inspiration, as he sometimes
 suggested in his later years, but rather through a gradual process in which physical intuition and formal reasoning worked hand in hand \cite{HowEinsteinfoundhisfieldequations}.
 
-In 1913, together with Marcel Grossmann\footnote{Marcel Grossmann (1878--1936) was a friend, classmate, and early collaborator of Einstein.}, Einstein introduced the Entwurf theory, an early attempt at a relativistic theory of gravitation \cite{EinsteinGrossmann1913}. Its field equations already displayed much of the mathematical framework that would later appear in general relativity, but they were covariant only under a restricted class of coordinate transformations.
+In 1913, together with Marcel Grossmann\footnote{Marcel Grossmann (1878-1936) was a friend, classmate, and early collaborator of Einstein.}, Einstein introduced the Entwurf theory, an early attempt at a relativistic theory of gravitation \cite{EinsteinGrossmann1913}. Its field equations already displayed much of the mathematical framework that would later appear in general relativity, but they were covariant only under a restricted class of coordinate transformations.
 
 After having established the momentum-energy equation for material processes (mechanical, electrical, and others) in the presence of a gravitational field, Einstein and Grossmann turned to the more fundamental task: to determine the differential equations governing the field itself, namely, the equations for the metric components $g_{ik}$. In analogy with Newton’s theory, they sought a generalization of the Poisson equation
 \begin{equation}
@@ -1504,9 +1504,9 @@ The decisive step came on 25 November 1915, when Einstein realized that adding a
 \begin{equation}
 R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R = \kappa T_{\mu\nu} \ ,
 \end{equation}
-where $R_{\mu\nu}$ is the Ricci tensor, $R$ the Ricci scalar, $g_{\mu\nu}$ the metric tensor, and $T_{\mu\nu}$ the energy--momentum tensor of matter and fields. The constant $\kappa = 8\pi G / c^4$ ensures consistency with Newton’s theory in the weak-field limit (see Appendix $\S$\ref{Appendix:Einstein field equations (Newtonian limit)} for the derivation).
+where $R_{\mu\nu}$ is the Ricci tensor, $R$ the Ricci scalar, $g_{\mu\nu}$ the metric tensor, and $T_{\mu\nu}$ the energy-momentum tensor of matter and fields. The constant $\kappa = 8\pi G / c^4$ ensures consistency with Newton’s theory in the weak-field limit (see Appendix $\S$\ref{Appendix:Einstein field equations (Newtonian limit)} for the derivation).
 
-It is important to note that while the Ricci tensor and the metric tensor were already known from the work of Gregorio Ricci-Curbastro and Tullio Levi-Civita in the context of differential geometry, the specific combination appearing on the left-hand side, known today as the Einstein tensor $G_{\mu\nu} \equiv R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R$, was formulated by Einstein in 1915 \cite{llibretheoreticalminimum}. This tensor was designed to have zero covariant divergence, $\nabla^\mu G_{\mu\nu} = 0$, ensuring consistency with the local conservation of energy and momentum and making it the natural choice to relate spacetime curvature to the energy--momentum content.
+It is important to note that while the Ricci tensor and the metric tensor were already known from the work of Gregorio Ricci-Curbastro and Tullio Levi-Civita in the context of differential geometry, the specific combination appearing on the left-hand side, known today as the Einstein tensor $G_{\mu\nu} \equiv R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R$, was formulated by Einstein in 1915 \cite{llibretheoreticalminimum}. This tensor was designed to have zero covariant divergence, $\nabla^\mu G_{\mu\nu} = 0$, ensuring consistency with the local conservation of energy and momentum and making it the natural choice to relate spacetime curvature to the energy-momentum content.
 
 
 
@@ -1521,7 +1521,7 @@ We will now derive Einstein’s field equations starting from the Einstein–Hil
 
 For clarity, the derivation will be presented step by step, as carrying it out all at once can be rather difficult to follow.
 
-We begin by considering the variation of the square root of the negative determinant of the metric tensor ($\S$\ref{Variation_of_the_squareroot}), a quantity that will play a crucial role in our derivation. Next, we will compute the contraction of the Christoffel symbols ($\S$\ref{Contraction_Christoffelsymbol}), followed by the variation of the Ricci scalar ($\S$\eqref{Variation_Ricciscalar}). Finally, we will obtain the variation of the Einstein–Hilbert action itself ($\S$\ref{Einstein--Hilbert action}).
+We begin by considering the variation of the square root of the negative determinant of the metric tensor ($\S$\ref{Variation_of_the_squareroot}), a quantity that will play a crucial role in our derivation. Next, we will compute the contraction of the Christoffel symbols ($\S$\ref{Contraction_Christoffelsymbol}), followed by the variation of the Ricci scalar ($\S$\eqref{Variation_Ricciscalar}). Finally, we will obtain the variation of the Einstein-Hilbert action itself ($\S$\ref{Einstein-Hilbert action}).
 
 Before proceeding with these steps, we first define the Einstein–Hilbert action.
 
@@ -1534,14 +1534,14 @@ From analytical mechanics we know the advantages of the Lagrangian formulation: 
 respect to the system's degrees of freedom one directly obtains the equations of motion. In this sense, 
 the Lagrangian provides a compact representation of the dynamics of a system or a theory. Moreover, in many cases it is more straightforward to identify the symmetries of a system through its Lagrangian rather than directly from the equations of motion. For instance, the trajectory of a free particle in a curved spacetime can be derived from an action principle, leading to the geodesic equation \eqref{geodesicequation} \cite{LlibreBertJanssen}. 
 
-It is therefore natural to ask whether gravity itself can be described by an action. The answer is provided by the Einstein--Hilbert action, which yields Einstein's field equations in vacuum and is expressed as (see Appendix $\S$\ref{Appendix Einstein-Hilbert action} for the derivation)
+It is therefore natural to ask whether gravity itself can be described by an action. The answer is provided by the Einstein-Hilbert action, which yields Einstein's field equations in vacuum and is expressed as (see Appendix $\S$\ref{Appendix Einstein-Hilbert action} for the derivation)
 \begin{equation}
 S_{EH} = \frac{c^4}{16 \pi G} \int_{\mathcal{M}} d^4x \, \sqrt{-g} \, R \ ,
 \end{equation}
 where $g = \det(g_{\mu\nu})$ is the determinant of the metric and $R$ is the Ricci scalar. The minus sign inside the square root appears because the underlying spacetime is Lorentzian: the metric possesses one negative eigenvalue, which makes its determinant 
 $g = \det(g_{\mu\nu})$ negative \cite{llibretongGR}.
 
-In this way, the Einstein--Hilbert action plays for general relativity the same role that the Lagrangian 
+In this way, the Einstein-Hilbert action plays for general relativity the same role that the Lagrangian 
 does in analytical mechanics: it encodes the dynamics of the gravitational field in a compact and elegant form.
 
 
@@ -1808,10 +1808,10 @@ which transforms as a tensor, we obtain the compact result
 \end{equation}
 
 
-\paragraph{Variation of the Hilbert--Einstein action}
+\paragraph{Variation of the Hilbert-Einstein action}
 
 
-Now we can compute the variation of the Einstein--Hilbert action:
+Now we can compute the variation of the Einstein-Hilbert action:
 \begin{align}
 \delta S_{EH} &= \delta \int d^4x \, \sqrt{-g}\, R 
 = \int d^4x \, \delta \!\left(\sqrt{-g}\, R\right) \\
@@ -1854,7 +1854,7 @@ Therefore,
 
 
 The last term is a surface contribution. For compact manifolds without boundary, this term vanishes identically and will therefore be set to zero in this thesis.
-In contrast, for spacetimes with a boundary it does not vanish, and in order to make the Einstein--Hilbert action well-defined under metric variations, one must add the Gibbons--Hawking--York boundary term.
+In contrast, for spacetimes with a boundary it does not vanish, and in order to make the Einstein-Hilbert action well-defined under metric variations, one must add the Gibbons-Hawking-York boundary term.
 
 This additional piece is constructed from the trace of the extrinsic curvature of the boundary, denoted by $K$, and modifies the action in the following way \cite{BoundaryTerms}:
 \begin{equation}
@@ -1897,7 +1897,7 @@ g^{\alpha\beta} \left(\delta g_{\alpha\beta}\right) = - g_{\alpha\beta} \, \delt
 \end{equation}
 donde hemos utilizado la propiedad de simetria del tensor metrico $g^{\beta\alpha}=g^{\alpha\beta}$.
 
-Thus, the variation of the Einstein--Hilbert action can be written as
+Thus, the variation of the Einstein-Hilbert action can be written as
 \begin{equation}
 \delta S 
 = \int d^4x \left[ -\tfrac{1}{2}\sqrt{-g}\, g_{\alpha\beta} R \, \delta g^{\alpha\beta} 
@@ -1967,7 +1967,7 @@ Applying the variational principle considering $\delta S = 0$ we obtain:
 \end{equation}
 
 
-Identifying the energy--momentum tensor as
+Identifying the energy-momentum tensor as
 \begin{equation}
 T_{\alpha\beta} = g_{\alpha\beta} \, \mathcal{L}_{m} - 2 \frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}} 
  = \frac{-2}{\sqrt{-g}} 
@@ -2020,7 +2020,7 @@ Each solution corresponds to a possible spacetime geometry associated with a par
 \begin{itemize}
     \item \textbf{Exact analytical solutions}: such as the Schwarzschild, Kerr, or Friedmann-Lemaître-Robertson-Walker (FLRW) metrics. 
     \item \textbf{Approximate solutions}: derived through perturbative methods, for instance weak-field expansions describing GW.  
-    \item \textbf{Numerical solutions}: obtained via large-.scale simulations, such as those modeling the merger of two black holes.  
+    \item \textbf{Numerical solutions}: obtained via large-scale simulations, such as those modeling the merger of two BHs.  
 \end{itemize}
 
 The vast variety of solutions illustrates the richness of general relativity: each one represents a distinct possible universe governed by Einstein’s equations.
@@ -2033,7 +2033,7 @@ Einstein himself initially believed that his equations were so complicated that 
 \label{Schwarzschild solution}
 
 
-In vacuum, Einstein’s field equations reduce to $R_{\mu\nu} = 0$. At first sight, one might be tempted to consider the trivial choice $g_{\mu\nu}=0$. However, this is not allowed: the metric must be a non-degenerate tensor field with a well-defined inverse, a requirement already assumed in the derivation of the field equations from the variational principle\footnote{Ultimately, this constraint likely suggests that the gravitational field is not fundamental and should be replaced by another description in scenarios where $\det g_{\mu\nu}$ becomes small \cite{llibretongGR}.}. This condition, $\det g_{\mu\nu} \neq 0$, immediately implies that the simplest Ricci-flat\footnote{Metrics that satisfy the vacuum equations are referred to as Ricci--flat. Although Ricci--flat solutions are generally not flat, they still represent valid vacuum solutions (assuming no cosmological constant is present) \cite{LlibreBertJanssen}.} solution is not the trivial one but rather Minkowski spacetime, which corresponds to flat geometry in the absence of matter or energy:
+In vacuum, Einstein’s field equations reduce to $R_{\mu\nu} = 0$. At first sight, one might be tempted to consider the trivial choice $g_{\mu\nu}=0$. However, this is not allowed: the metric must be a non-degenerate tensor field with a well-defined inverse, a requirement already assumed in the derivation of the field equations from the variational principle\footnote{Ultimately, this constraint likely suggests that the gravitational field is not fundamental and should be replaced by another description in scenarios where $\det g_{\mu\nu}$ becomes small \cite{llibretongGR}.}. This condition, $\det g_{\mu\nu} \neq 0$, immediately implies that the simplest Ricci-flat\footnote{Metrics that satisfy the vacuum equations are referred to as Ricci-flat. Although Ricci-flat solutions are generally not flat, they still represent valid vacuum solutions (assuming no cosmological constant is present) \cite{LlibreBertJanssen}.} solution is not the trivial one but rather Minkowski spacetime, which corresponds to flat geometry in the absence of matter or energy:
 \begin{equation}
     ds^2 = -dt^2 + dx^2 + dy^2 + dz^2 \ .
 \end{equation}
@@ -2046,7 +2046,7 @@ ds^2 = -\left(1 - \frac{2GM}{r}\right) dt^2
 \end{equation}
 where $M$ denotes the mass of the central object \cite{Llibre_Peter_Collier_unacosadificildecomprender}. 
 
-This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury (see Appendix $\S$\ref{perihelion precession of Mercury})), as well as to predict the bending of light by gravity (see Appendix $\S$\ref{bending of light by gravity}). Most notably, it predicts the existence of black holes, one of the most striking consequences of general relativity that we will se in this section.
+This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury (see Appendix $\S$\ref{perihelion precession of Mercury})), as well as to predict the bending of light by gravity (see Appendix $\S$\ref{bending of light by gravity}). Most notably, it predicts the existence of BHs, one of the most striking consequences of general relativity that we will se in this section.
 
 It is important to understand that there are two different Schwarzschild solutions. 
 The first one is the exterior Schwarzschild solution \eqref{exteriorSchwarz}, which applies to the region 
@@ -2077,9 +2077,9 @@ This means that, far away from the source, the gravitational field is essentiall
 One of the most striking features appears in the limit of very small $r$.
 As $r \to 0$, the metric components diverge:
 \begin{equation}
-\lim_{r \to 0} \left(1 - \frac{2GM}{r}\right) \to \infty
+\lim_{r \to 0} \left(1 - \frac{2GM}{r}\right) \to \infty.
 \end{equation}
-This divergence is called a singularity, showing that the solution is no longer physically valid at $r=0$. At this point, believed to lie at the center of a black hole, spacetime reaches infinite curvature, matter is compressed to infinite density, and the laws of physics break down. In the context of general relativity this represents a central problem that demands careful study \cite{SchwarzschildSolutionlimit}.
+This divergence is called a singularity, showing that the solution is no longer physically valid at $r=0$. At this point, believed to lie at the center of a BH, spacetime reaches infinite curvature, matter is compressed to infinite density, and the laws of physics break down. In the context of general relativity this represents a central problem that demands careful study \cite{SchwarzschildSolutionlimit}.
 
 More generally, metrics derived from Einstein’s field equations often present singularities in certain regions of spacetime, where some components of $g_{\mu\nu}$ or its determinant either vanish or diverge. 
 It is important to distinguish between two different types of singularities. 
@@ -2092,7 +2092,7 @@ Thus, such coordinate singularities carry no physical content and will not conce
 
 By contrast, a physical singularity corresponds to a genuine divergence of spacetime curvature. 
 In the vicinity of such a singularity, the gravitational field becomes arbitrarily strong and tidal forces grow without bound. 
-Hawking and Penrose showed in 1969 \cite{Penrose1969} that within any closed trapped surface, a physical singularity must exist, which implies that the central singularity of a black hole is indeed physical\footnote{According to the cosmic censorship conjecture, however, such singularities are always hidden behind an event horizon, preventing them from being observed directly and thus avoiding violations of causality. 
+Hawking and Penrose showed in 1969 \cite{Penrose1969} that within any closed trapped surface, a physical singularity must exist, which implies that the central singularity of a BH is indeed physical\footnote{According to the cosmic censorship conjecture, however, such singularities are always hidden behind an event horizon, preventing them from being observed directly and thus avoiding violations of causality. 
 If a singularity is not covered by a horizon, it is referred to as a naked singularity \cite{Penrose1969}.}. 
 
 
@@ -2113,7 +2113,7 @@ However, the Kretschmann scalar,
 reveals the true structure: it diverges only at $r=0$, while remaining perfectly finite at $r=2GM$. 
 Thus, $r=0$ corresponds to a genuine physical singularity, whereas $r=2GM$ is merely a coordinate singularity. 
 Nevertheless, unlike the trivial coordinate singularity at $\theta = 0,\pi$, the singularity at $r=2GM$ has important physical implications. 
-The radius $r=2GM$ defines the Schwarzschild radius, marking the event horizon of the black hole. 
+The radius $r=2GM$ defines the Schwarzschild radius, marking the event horizon of the BH. 
 Standard Schwarzschild coordinates become ill-defined at this surface: they are adequate for describing the exterior region $r > 2GM$, but fail inside the horizon and are completely unsuitable at $r = 2GM$. 
 
 \subsubsection{Causal structure and radial null geodesics}
@@ -2143,10 +2143,10 @@ This relation determines the slope of light rays in the $(t,r)$ plane \cite{llib
         \caption{Ingoing and outgoing null geodesics in Schwarzschild coordinates.}
         \label{light cones schwarz}
     \end{subfigure}
-    \caption{Light cones in the $t-r$ plane of Schwarzschild spacetime. Far from the black hole ($r \gg 2GM$), cones open symmetrically at $\pm 45^\circ$, as in flat space. As $r \to 2GM$, the cones progressively close, signaling the presence of the event horizon as a causal boundary. Outside the horizon ($r > 2GM$), the structure resembles Minkowski spacetime. At the horizon ($r=2GM$), the cones degenerate, and inside they invert, pointing inexorably toward the singularity at $r=0$. Original illustrations based on the sources: \cite{llibrecarroll2004lectures, LlibreBertJanssen}.}
+    \caption{Light cones in the $t-r$ plane of Schwarzschild spacetime. Far from the BH ($r \gg 2GM$), cones open symmetrically at $\pm 45^\circ$, as in flat space. As $r \to 2GM$, the cones progressively close, signaling the presence of the event horizon as a causal boundary. Outside the horizon ($r > 2GM$), the structure resembles Minkowski spacetime. At the horizon ($r=2GM$), the cones degenerate, and inside they invert, pointing inexorably toward the singularity at $r=0$. Original illustrations based on the sources: \cite{LlibreBertJanssen, llibrecarroll2004lectures}.}
     \label{fig:null geodesics}
 \end{figure}
-0
+
 
 Inside the horizon, the situation changes qualitatively. The cones flip orientation and point entirely toward decreasing $r$, forcing all causal trajectories, null and timelike, towards the singularity at $r=0$ (see Fig. \ref{light cones tilted}).
 
@@ -2160,9 +2160,9 @@ where $C_0$ is an integration constant. The logarithmic term is negligible at la
 This leads to an apparent paradox: in Schwarzschild coordinates, no object or signal seems to reach $r=2GM$ as seen by a distant observer. Light from an infalling astronaut, for example, arrives increasingly delayed, redshifted, and fainter, so that from infinity we only ever see them freeze and fade at the horizon. Yet in their own proper time, the crossing occurs in a perfectly finite interval. The issue lies not in the physics but in the coordinates.  
 
 
-To understand how the interior and exterior regions are connected, and to clarify the causal structure, one needs coordinates that remain regular at $r=2GM$. Standard Schwarzschild coordinates work outside the horizon but break down exactly there, failing to describe geodesics---whether massive or massless---at the surface. The apparent inversion of time and pathological tipping of the light cones signal this inadequacy.  
+To understand how the interior and exterior regions are connected, and to clarify the causal structure, one needs coordinates that remain regular at $r=2GM$. Standard Schwarzschild coordinates work outside the horizon but break down exactly there, failing to describe geodesics (whether massive or massless) at the surface. The apparent inversion of time and pathological tipping of the light cones signal this inadequacy.  
 
-To follow smoothly the motion of particles or photons across the horizon, one introduces coordinates that treat $r=2GM$ as a coordinate singularity rather than a physical one. A classic choice are the advanced Eddington--Finkelstein coordinates \cite{Eddington--Finkelsteincoordinates}, defined through the transformation
+To follow smoothly the motion of particles or photons across the horizon, one introduces coordinates that treat $r=2GM$ as a coordinate singularity rather than a physical one. A classic choice are the advanced Eddington-Finkelstein coordinates \cite{Eddington--Finkelsteincoordinates}, defined through the transformation
 \begin{equation}
     \tilde{t} = t + 2M \log(r - 2M),
 \end{equation}
@@ -2181,17 +2181,17 @@ which is manifestly regular at $r=2GM$ and allows geodesics, ingoing or outgoing
     \begin{subfigure}[t]{0.45\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Figures/Tilting light cones.png}
-        \caption{Tilting of light cones in Eddington--Finkelstein coordinates. The arrows illustrate possible worldlines of particles.}
+        \caption{Tilting of light cones in Eddington-Finkelstein coordinates. The arrows illustrate possible worldlines of particles.}
         \label{}
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}[t]{0.46\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Figures/Eddington coordinates.png}
-        \caption{Ingoing and outgoing null geodesics in Eddington--Finkelstein coordinates.}
+        \caption{Ingoing and outgoing null geodesics in Eddington-Finkelstein coordinates.}
         \label{fig:EFK coodinates}
     \end{subfigure}
-    \caption{In Eddington--Finkelstein coordinates, the geometry is clarified. For $r \gg 2GM$, light cones resemble those of flat spacetime, opening symmetrically at $\pm 45^\circ$. Closer to the horizon, the cones tip progressively inward. Ingoing null geodesics always remain at $45^\circ$, while outgoing ones tilt more and more as $r \to 2GM$, signaling the increasing difficulty of escaping. At the horizon, the tilt reaches $90^\circ$: an outgoing photon emitted at $r=2GM$ remains trapped. For $r<2GM$, all cones are tipped inward, so even outward-directed light inevitably falls to the singularity. Original illustrations based on the sources: \cite{Llibre_Peter_Collier_unacosadificildecomprender, LlibreBertJanssen}.}
+    \caption{In Eddington-Finkelstein coordinates, the geometry is clarified. For $r \gg 2GM$, light cones resemble those of flat spacetime, opening symmetrically at $\pm 45^\circ$. Closer to the horizon, the cones tip progressively inward. Ingoing null geodesics always remain at $45^\circ$, while outgoing ones tilt more and more as $r \to 2GM$, signaling the increasing difficulty of escaping. At the horizon, the tilt reaches $90^\circ$: an outgoing photon emitted at $r=2GM$ remains trapped. For $r<2GM$, all cones are tipped inward, so even outward-directed light inevitably falls to the singularity. Original illustrations based on the sources: \cite{LlibreBertJanssen, Llibre_Peter_Collier_unacosadificildecomprender}.}
     \label{fig:null geodesics}
 \end{figure}
 
@@ -2200,9 +2200,9 @@ which is manifestly regular at $r=2GM$ and allows geodesics, ingoing or outgoing
 
 \subsubsection{Black holes in general relativity}
 
-A discussion of general relativity would be incomplete without addressing black holes. In this section, we have already seen that they naturally emerge from the Schwarzschild solution. We will not delve deeply into their technical details, but we will introduce the essential concepts required to understand, in later sections, the phenomenon of GW. 
+A discussion of general relativity would be incomplete without addressing BHs. In this section, we have already seen that they naturally emerge from the Schwarzschild solution. We will not delve deeply into their technical details, but we will introduce the essential concepts required to understand, in later sections, the phenomenon of GW. 
 
-Black holes are regions of spacetime where gravity is so intense that nothing, not even light, can escape. According to general relativity, they form when matter becomes sufficiently compressed, curving spacetime to the point that a boundary, called the event horizon, appears (see Fig. \ref{fig:diagram_BH}). This surface acts as a one-way limit: once matter or radiation crosses it, escape is no longer possible. Inside, all trajectories inevitably lead toward a central singularity, where curvature becomes infinite (see Fig. \ref{fig:diagram_BH_complex}).  
+BHs are regions of spacetime where gravity is so intense that nothing, not even light, can escape. According to general relativity, they form when matter becomes sufficiently compressed, curving spacetime to the point that a boundary, called the event horizon, appears (see Fig. \ref{fig:diagram_BH}). This surface acts as a one-way limit: once matter or radiation crosses it, escape is no longer possible. Inside, all trajectories inevitably lead toward a central singularity, where curvature becomes infinite (see Fig. \ref{fig:diagram_BH_complex}).  
 \begin{figure}[h!]
     \centering
     \begin{subfigure}[t]{0.3\linewidth}
@@ -2218,39 +2218,39 @@ Black holes are regions of spacetime where gravity is so intense that nothing, n
         \caption{}
         \label{fig:diagram_BH_complex}
     \end{subfigure}
-    \caption{(a) Simplified depiction of a black hole. The event horizon (red line) marks the boundary beyond which nothing can escape. Inside, all paths lead to the singularity (blue dot). (b) More detailed diagram showing the causal structure of a Schwarzschild black hole. The light cones tip inward as one approaches the horizon, and inside they point entirely toward the singularity, indicating that all causal trajectories inevitably end there. Source: \cite{nobel2020blackholes}. }
+    \caption{(a) Simplified depiction of a BH. The event horizon (red line) marks the boundary beyond which nothing can escape. Inside, all paths lead to the singularity (blue dot). (b) More detailed diagram showing the causal structure of a Schwarzschild BH. The light cones tip inward as one approaches the horizon, and inside they point entirely toward the singularity, indicating that all causal trajectories inevitably end there. Source: \cite{nobel2020blackholes}. }
     \label{}
 \end{figure}
-Although the term black hole was popularized by John Wheeler in 1967, the idea traces back to the 18th century, when John Michell and Pierre-Simon Laplace speculated that a star of sufficient density could trap its own light. Their reasoning was based on Newtonian gravity and the notion of escape velocity. While not fully correct, their intuition coincidentally pointed to the same critical radius later derived by Schwarzschild in general relativity \cite{Llibre_Peter_Collier_unacosadificildecomprender}.  
+Although the term BH was popularized by John Wheeler in 1967, the idea traces back to the 18th century, when John Michell and Pierre-Simon Laplace speculated that a star of sufficient density could trap its own light. Their reasoning was based on Newtonian gravity and the notion of escape velocity. While not fully correct, their intuition coincidentally pointed to the same critical radius later derived by Schwarzschild in general relativity \cite{Llibre_Peter_Collier_unacosadificildecomprender}.  
 
-In nature, black holes most commonly arise from the evolution of massive stars. For stars like the Sun, nuclear fusion generates enough thermal pressure to counterbalance gravity, maintaining equilibrium for billions of years. Once the fuel is exhausted, smaller stars contract into white dwarfs, supported by electron degeneracy pressure. Chandrasekhar showed in 1931 that such stars cannot exceed about 1.4 $M_\odot$; beyond that threshold, gravity overwhelms electron pressure \cite{Llibre_Peter_Collier_unacosadificildecomprender}.  
+In nature, BHs most commonly arise from the evolution of massive stars. For stars like the Sun, nuclear fusion generates enough thermal pressure to counterbalance gravity, maintaining equilibrium for billions of years. Once the fuel is exhausted, smaller stars contract into white dwarfs, supported by electron degeneracy pressure. Chandrasekhar showed in 1931 that such stars cannot exceed about 1.4 $M_\odot$; beyond that threshold, gravity overwhelms electron pressure \cite{Llibre_Peter_Collier_unacosadificildecomprender}.  
 
-More massive stars collapse further, producing neutron stars, stabilized for a time by neutron degeneracy pressure. However, Oppenheimer and collaborators demonstrated that above roughly two to three solar masses, not even this force is sufficient. The star then undergoes unstoppable collapse, crossing its Schwarzschild radius and forming a black hole.  
+More massive stars collapse further, producing NSs, stabilized for a time by neutron degeneracy pressure. However, Oppenheimer and collaborators demonstrated that above roughly two to three solar masses, not even this force is sufficient. The star then undergoes unstoppable collapse, crossing its Schwarzschild radius and forming a BH.  
 
-Astrophysical evidence confirms that stellar collapse is not the only mechanism. Observations show the existence of supermassive black holes, with millions to billions of solar masses, at the centers of galaxies, likely formed through accretion and mergers over cosmic time \cite{LlibreBertJanssen}.  
+Astrophysical evidence confirms that stellar collapse is not the only mechanism. Observations show the existence of supermassive BHs, with millions to billions of solar masses, at the centers of galaxies, likely formed through accretion and mergers over cosmic time \cite{LlibreBertJanssen}.  
 
 
-According to the so-called no-hair theorem, black holes are surprisingly simple objects. From the perspective of an outside observer, they can be fully described by only three physical quantities: mass $M$, electric charge $Q$, and angular momentum $J$. This gives rise to four main idealized solutions in general relativity:  
+According to the so-called no-hair theorem, BHs are surprisingly simple objects. From the perspective of an outside observer, they can be fully described by only three physical quantities: mass $M$, electric charge $Q$, and angular momentum $J$. This gives rise to four main idealized solutions in general relativity:  
 
 \begin{itemize}
-    \item Schwarzschild black holes, defined only by mass.  
-    \item Reissner-Nordström black holes, with mass and electric charge.  
-    \item Kerr black holes, with mass and rotation.  
-    \item Kerr-Newman black holes, with mass, charge, and rotation.  
+    \item Schwarzschild BHs, defined only by mass.  
+    \item Reissner-Nordström BHs, with mass and electric charge.  
+    \item Kerr BHs, with mass and rotation.  
+    \item Kerr-Newman BHs, with mass, charge, and rotation.  
 \end{itemize}
 
-In practice, astrophysical black holes are expected to be nearly neutral, as any net charge would quickly be neutralized by surrounding plasma. Therefore, the most relevant solutions are Schwarzschild (non-rotating) and Kerr (rotating) black holes. The latter are believed to describe most real black holes, as they likely inherit angular momentum from their progenitor stars or accretion disks.
+In practice, astrophysical BHs are expected to be nearly neutral, as any net charge would quickly be neutralized by surrounding plasma. Therefore, the most relevant solutions are Schwarzschild (non-rotating) and Kerr (rotating) BHs. The latter are believed to describe most real BHs, as they likely inherit angular momentum from their progenitor stars or accretion disks.
 
-Black holes can also be classified by mass:
+BHs can also be classified by mass:
 
 \begin{itemize}
     \item \textbf{Stellar-mass black holes (SBHs):} Formed from the collapse of massive stars (typically with $M \gtrsim 20 M_\odot$), they span from a few to hundreds of solar masses. They are often found in binary systems, where they can accrete matter from a companion star and emit X-rays.
 
-    \item \textbf{Intermediate-mass black holes (IMBHs):} These black holes are expected to lie in the mass range $10^2$–$10^5 M_\odot$. While no unambiguous detections exist, several candidates have been suggested from low-luminosity active galactic nuclei, X-ray sources and accretion disk spectra. The strongest evidence comes from gravitational-wave events: GW190521, the merger of $85^{+21}_{-14} M_\odot$ and $66^{+17}_{-18} M_\odot$ black holes that produced a $142^{+28}_{-16} M_\odot$ remnant \cite{GW190521}, and the more recent GW231123, where black holes of $137^{+22}_{-17} M_\odot$ and $103^{+20}_{-52} M_\odot$ merged into a $225^{+26}_{-43}M_\odot$ remnant \cite{gw231123}.
-    \item \textbf{Supermassive black holes (SMBHs):} Located at the centers of galaxies, they range from millions to billions of solar masses. Their origin is still uncertain, but they grow by accretion and mergers. The Milky Way’s central black hole, Sagittarius A*, has a mass of about $4 \times 10^6 M_\odot$.
+    \item \textbf{Intermediate-mass black holes (IMBHs):} These BHs are expected to lie in the mass range $10^2$–$10^5 M_\odot$. While no unambiguous detections exist, several candidates have been suggested from low-luminosity active galactic nuclei, X-ray sources and accretion disk spectra. The strongest evidence comes from GW events: GW190521, the merger of $85^{+21}_{-14} M_\odot$ and $66^{+17}_{-18} M_\odot$ BHs that produced a $142^{+28}_{-16} M_\odot$ remnant \cite{GW190521}, and the more recent GW231123, where BHs of $137^{+22}_{-17} M_\odot$ and $103^{+20}_{-52} M_\odot$ merged into a $225^{+26}_{-43}M_\odot$ remnant \cite{gw231123}.
+    \item \textbf{Supermassive black holes (SMBHs):} Located at the centers of galaxies, they range from millions to billions of solar masses. Their origin is still uncertain, but they grow by accretion and mergers. The Milky Way’s central BH, Sagittarius A*, has a mass of about $4 \times 10^6 M_\odot$.
 \end{itemize}
 
-In addition to these categories, theorists also propose the existence of primordial black holes (PBHs). These could have formed within the first second after the Big Bang, when extreme densities allowed matter to collapse directly into black holes. Their possible masses are thought to range from as little as $10^{-5}$ grams up to about $10^5 M_\odot$. Quantum effects predict that lighter PBHs would have evaporated over time, but more massive ones could still remain scattered across the universe \cite{nasa_blackholes_types}.
+In addition to these categories, theorists also propose the existence of primordial black holes (PBHs). These could have formed within the first second after the Big Bang, when extreme densities allowed matter to collapse directly into BHs. Their possible masses are thought to range from as little as $10^{-5}$ grams up to about $10^5 M_\odot$. Quantum effects predict that lighter PBHs would have evaporated over time, but more massive ones could still remain scattered across the universe \cite{nasa_blackholes_types}.
 
  In summary, this chapter introduced the basics of General relativity. In the next chapter, we shift our focus to the most significant solution of Einstein’s equations: gravitational waves.
 
@@ -2261,19 +2261,19 @@ AREGLAR PART SUMMARY
 \chapter{Gravitational wave theory}
 \label{Gravitational--wave theory}
 
-We have now reached the central topic of this thesis and of the most remarkable predictions of Einstein’s general relativity : gravitational waves. In this chapter, we introduce their theoretical foundations, starting by outlining how they naturally arise from the linearized approximation of the EFE ($\S$\ref{Gravitational_waves_linearized_gravity}). We then discuss the properties and energy content of these waves, emphasizing their physical effects and the geometric interpretation of gravitational radiation. The chapter also introduces the main astrophysical sources ($\S$\ref{Astrophysical_sources_GW}), such as compact binary coalescences (CBCs), which produce the strongest detectable signals. Finally, we provide a brief overview of detection methods and bayesian statistics as well as parameter estimation (ACABAR D'ESCRIURE BÉ), providing a general overview that complements the theoretical framework developed in this chapter.
+We have now reached the central topic of this thesis and of the most remarkable predictions of Einstein’s general relativity: GWs. In this chapter, we introduce their theoretical foundations, starting by outlining how they naturally arise from the linearized approximation of the EFE ($\S$\ref{Gravitational_waves_linearized_gravity}). We then discuss the properties and energy content of these waves, emphasizing their physical effects and the geometric interpretation of gravitational radiation. The chapter also introduces the main astrophysical sources ($\S$\ref{Astrophysical_sources_GW}), such as compact binary coalescences (CBCs), which produce the strongest detectable signals. Finally, we provide a brief overview of detection methods and bayesian statistics as well as parameter estimation (ACABAR D'ESCRIURE BÉ), providing a general overview that complements the theoretical framework developed in this chapter.
 
 \section{Gravitational waves in linearized gravity}
 \label{Gravitational_waves_linearized_gravity}
 
 
-In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}. He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether gravitational waves were genuine physical phenomena remained under debate .} \cite{GW150914}. 
+In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}. He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether GWs were genuine physical phenomena remained under debate .} \cite{GW150914}. 
 
-GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving black holes (BH-BH), neutron stars (NS-NS), or mixed black hole-neutron star (BH-NS) mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of general relativity, obtained by expanding the Einstein field equations around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
+GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving BHs (BH-BH), neutron stars (NS-NS), or mixed black hole-neutron star (BH-NS) mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of general relativity, obtained by expanding the Einstein field equations around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
 
 The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss, provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct gravitational-wave astronomy \cite{GW150914}.
 
-Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO Scientific Collaboration (LSC) achieved the first direct detection of GWs, GW150914 \cite{PrimeradeteccioGW150914}, a signal originating from a binary black hole merger. This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
+Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO Scientific Collaboration (LSC) achieved the first direct detection of GWs, GW150914 \cite{PrimeradeteccioGW150914}, a signal originating from a binary black hole merger (BBH). This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
 
 
  
@@ -2357,8 +2357,6 @@ All index operations from this point onward will be performed using the Minkowsk
 \begin{equation}
     h^{\mu\nu} = \eta^{\mu\rho} \eta^{\nu\sigma} h_{\rho\sigma}.
 \end{equation}
-
-
 Our goal is to determine the equation of motion satisfied by the perturbations $h_{\mu\nu}$, which can be obtained by expanding Einstein’s equations to first order. We begin by considering the Christoffel symbols \eqref{eq:christoffelsymbols}, given by
 \begin{equation}
     \Gamma^\rho_{\mu\nu} = \frac{1}{2} g^{\rho\lambda}
@@ -2425,7 +2423,7 @@ where we have interchanged the dummy indices $(\lambda \leftrightarrow \rho)$ an
 - \Box h_{\mu \sigma} 
 - \partial_{\mu} \partial_{\sigma} h \right) - \frac{1}{2} \eta_{\mu \sigma} \left( \partial^{\nu} \partial^{\rho} h_{\nu\rho} - \Box h \right) = 8\pi G T_{\mu \sigma}.
 \end{equation}
-Since a weak gravitational field corresponds to small spacetime curvature, we can safely assume the absence of matter sources, setting $T_{\mu \sigma} = 0$.
+Since a weak gravitational field corresponds to small spacetime curvature, we can safely assume the absence of matter sources, setting $T_{\mu \sigma} = 0$ we obtain
 \begin{equation}
 G_{\mu \sigma} \equiv \partial_\mu \partial^{\lambda} h_{\lambda \sigma} + \partial^{\rho} \partial_{\sigma} h_{\mu \rho}
 - \Box h_{\mu \sigma} 
@@ -2531,7 +2529,7 @@ Imposing the Lorenz condition simplifies the linearized Einstein equations \eqre
 \end{equation}
 which is the standard wave equation in flat spacetime. 
 
-\subsubsection{Solving the wave equation and the Transverse–Traceless gauge}
+\subsubsection{Solving the wave equation and the Transverse-Traceless gauge}
 
 We are now interested in solving the linearized equation \eqref{linearized_wave_equation} to find the form of GWs. The general solution of the linearized wave equation can be written as a superposition of plane waves:
 \begin{equation}
@@ -2895,42 +2893,40 @@ This expression explicitly enforces causality: the metric perturbation at $(t,\m
 We are interested in the radiation observed far from the source, in the wave zone, where 
 $r = |\mathbf{x}|$ is much larger than both the source size $R$ and the gravitational wavelength $\lambda$. 
 In this regime one expands
-\[
-|\mathbf{x}-\mathbf{x}'| \simeq r - \mathbf{n}\cdot\mathbf{x}',
+\begin{equation}
+\mathbf{x}-\mathbf{x}'| \simeq r - \mathbf{n}\cdot\mathbf{x}',
 \qquad
 \mathbf{n} = \frac{\mathbf{x}}{r},
-\]
+\end{equation}
 and keeps only the leading terms in $1/r$ and in $v/c$.
 
 Conservation laws severely restrict the possible radiative multipoles. By \href{https://en.wikipedia.org/wiki/Birkhoff%27s_theorem_(relativity)}{Birkhoff’s theorem}, any spherically symmetric mass distribution produces a static exterior solution, so a time-varying monopole term cannot radiate. Furthermore, the first time derivative of the mass dipole moment is proportional to the total linear momentum of the system, which is conserved for an isolated source. As a result, both monopole and dipole radiation are absent in general relativity.
 
 The leading contribution to gravitational radiation therefore arises at quadrupole order. Keeping the lowest non-vanishing term in the multipole expansion and restricting to non-relativistic sources, one finds that the dominant spatial components of the metric perturbation are
-\[
-\bar h_{ij}(t,\mathbf{x}) 
-= \frac{2G}{c^4 r} \,
+\begin{equation}
+\bar h_{ij}(t,\mathbf{x}) = \frac{2G}{c^4 r} \,
 \ddot I_{ij}(t - r/c),
-\]
+\end{equation}
 where
-\[
-I_{ij}(t) = \int_{\mathcal{S}} \rho(t,\mathbf{x})\, x_i x_j \, d^3x
-\]
+\begin{equation}
+I_{ij}(t) = \int_{\mathcal{S}} \rho(t,\mathbf{x})\, x_i x_j \, d^3x,
+\end{equation}
 is the (Newtonian) mass moment of inertia tensor of the source $\mathcal{S}$ and $\rho$ is the (Newtonian) mass density.
 
 At this stage the solution is still written in harmonic gauge and is not yet transverse nor traceless. 
 The radiative degrees of freedom are obtained by extracting the TT part of the spatial metric perturbation. 
 Outside the source, where $T_{\mu\nu}=0$, this can be done by applying the TT projection operator,
-\[
+\begin{equation}
 h_{ij}^{\rm TT} = \Lambda_{ij,kl}\,\bar h_{kl},
-\]
+\end{equation}
 with
-\[
+\begin{equation}
 \Lambda_{ij,kl} = P_{ik}P_{jl} - \frac{1}{2}P_{ij}P_{kl},
 \qquad
 P_{ij} = \delta_{ij} - n_i n_j.
-\]
-
+\end{equation}
 It is convenient to introduce the traceless mass quadrupole moment,
-\[
+\begin{equation}
 \mathcal{I}_{ij}(t)
 =
 \int \rho(t,\mathbf{x})
@@ -2938,20 +2934,18 @@ It is convenient to introduce the traceless mass quadrupole moment,
 x_i x_j - \frac{1}{3} r^2 \delta_{ij}
 \right)
 d^3x,
-\]
+\end{equation}
 which differs from $I_{ij}$ only by a trace term. 
-Since the TT projection automatically removes traces, 
-one may equivalently replace $I_{ij}$ by $\mathcal{I}_{ij}$ in the radiative formula.
+Since the TT projection automatically removes traces, one may equivalently replace $I_{ij}$ by $\mathcal{I}_{ij}$ in the radiative formula.
 
-Combining the far-zone expansion with the TT projection, 
-the metric perturbation takes the form
-\[
+Combining the far-zone expansion with the TT projection, the metric perturbation takes the form
+\begin{equation}
 h_{ij}^{\rm TT}(t,\mathbf{x})
 =
 \frac{2G}{c^4 r}
 \Lambda_{ij,kl}\,
 \ddot{\mathcal{I}}_{kl}(t - r/c).
-\]
+\end{equation}  
 
 This is Einstein’s quadrupole formula: 
 the gravitational radiation measured far from an isolated source 
@@ -2996,7 +2990,7 @@ GW astronomy identifies four broad categories of astrophysical signals, each cha
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.68\linewidth]{Figures/GW_types.png}
+    \includegraphics[width=0.69\linewidth]{Figures/GW_types.png}
     \caption{Classification of GW sources according to their temporal character (transient vs.\ persistent) and the availability of accurate waveform models (modelled vs.\ unmodelled), encompassing CBCs, burst events, continuous waves, and the stochastic background. Credit: Shanika Galaudage (@astronerdika).}
     \label{fig:sources}
 \end{figure}
@@ -3004,7 +2998,7 @@ GW astronomy identifies four broad categories of astrophysical signals, each cha
 
 \subsection{Compact Binary Coalescences}  
 
-Compact binary coalescences (CBCs) are systems formed by two compact objects such as black holes (BHs), neutron stars (NSs), or a combination of both, which inspiral and merge due to the emission of GWs. These systems are classified as binary black holes (BBH), binary neutron stars (BNS), or neutron star and black hole binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the detectable signal depends on the masses, ranging from fractions of a second for BBH mergers to much longer signals for BNS systems.
+Compact binary coalescences (CBCs) are systems formed by two compact objects such as BHs, NSs, or a combination of both, which inspiral and merge due to the emission of GWs. These systems are classified as BBHs, binary neutron stars (BNS), or neutron star and BH binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the detectable signal depends on the masses, ranging from fractions of a second for BBH mergers to much longer signals for BNS systems.
 
 To date, nearly all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first binary neutron star detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs, with binary BH mergers dominating the observed population.
 
@@ -3202,7 +3196,9 @@ polarization angle, illustrating the interchange symmetry above.
 
 A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three 
 orders of magnitude smaller than the diameter of a proton. Achieving sensitivity at this level requires identifying and suppressing a broad 
-set of noise sources that would otherwise overwhelm the signal. These are conveniently characterised by the one-sided power spectral density (PSD) $S_n(f)$, defined as the Fourier transform of the autocorrelation function of the detector output: 
+set of noise sources that would otherwise overwhelm the signal. These are conveniently characterised by the one-sided power spectral density (PSD) $S_n(f)$ \cite{PSD_book}, defined as the Fourier transform of the autocorrelation function\footnote{
+The autocorrelation function measures how strongly a signal is correlated with a delayed version of itself as a function of the time lag $\tau$. In the context of detector noise, it quantifies the degree to which noise fluctuations at different times remain statistically related \cite{autocorrelation_function}.
+} of the detector output: 
 \begin{equation}
     S(f) = \int C(\tau)\, e^{-i 2\pi f \tau} \, d\tau ,
 \end{equation}
@@ -3230,7 +3226,7 @@ Technical noise is not intrinsic to the design but still limits performance. The
     becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. Squeezed-light injection redistributes the quantum uncertainty between the two quadratures, allowing simultaneous 
     reduction of both contributions below the standard quantum limit.
 
-    \item \textbf{Thermal noise.} Any component at finite temperature undergoes stochastic mechanical motion. Via the fluctuation-dissipation theorem\footnote{The fluctuation-dissipation theorem states that any dissipative mechanism in a system in thermal equilibrium is necessarily accompanied by a fluctuating force of the same origin. In interferometric detectors, mechanical losses in the test masses, coatings, and suspension fibers therefore set a fundamental limit on their positional stability \cite{Kubo1966}.}, the amplitude of these fluctuations is proportional to the mechanical loss angle of the material. It affects the test masses, their dielectric mirror coatings, and the suspension fibers, and dominates the sensitivity in the intermediate band of roughly $40$--$200$\,Hz. Low-loss fused-silica substrates and fibers are employed to minimize this contribution; cryogenic operation, as adopted by KAGRA, provides an alternative route to its suppression.
+    \item \textbf{Thermal noise.} Any component at finite temperature undergoes stochastic mechanical motion. Via the fluctuation-dissipation theorem\footnote{The fluctuation-dissipation theorem states that any dissipative mechanism in a system in thermal equilibrium is necessarily accompanied by a fluctuating force of the same origin. In interferometric detectors, mechanical losses in the test masses, coatings, and suspension fibers therefore set a fundamental limit on their positional stability \cite{Kubo1966}.}, the amplitude of these fluctuations is proportional to the mechanical loss angle of the material. It affects the test masses, their dielectric mirror coatings, and the suspension fibers, and dominates the sensitivity in the intermediate band of roughly $40$-$200$\,Hz. Low-loss fused-silica substrates and fibers are employed to minimize this contribution; cryogenic operation, as adopted by KAGRA, provides an alternative route to its suppression.
 
     \item \textbf{Seismic noise.} Ground motion couples mechanically 
     to the test masses through the suspension chain. The 
@@ -3244,17 +3240,15 @@ Technical noise is not intrinsic to the design but still limits performance. The
     forces on the test masses that cannot be shielded mechanically. 
     This contribution, also known as gravity-gradient noise, sets a 
     fundamental floor at low frequencies for surface-based detectors. 
-    Active subtraction strategies based on seismometer arrays are 
-    under development for future detector generations.
+
 
     \item \textbf{Control noise.} Servo loops are required to maintain 
     the arm cavities on resonance and keep the optical components 
     aligned. The sensors and actuators in these feedback systems 
-    introduce noise that couples into the gravitational-wave channel, 
+    introduce noise that couples into the GW channel, 
     representing the dominant technical limitation at low frequencies.
 
-    \item \textbf{Residual gas noise.} Despite the ultra-high vacuum 
-    environment ($<1\,\mu$Pa in the beam tubes), residual molecules 
+    \item \textbf{Residual gas noise.} Despite the ultra-high vacuum environment ($<1\,\mu$Pa in the beam tubes), residual molecules 
     scatter laser photons and cause fluctuations in the optical path length. This contribution is generally subdominant but must be controlled to avoid limiting the sensitivity in specific frequency bands.
 
     \item \textbf{Other technical noise sources.} Laser frequency and intensity fluctuations, electromagnetic coupling, scattered light, and photodetector dark noise contribute across various frequency ranges. These are monitored and subtracted using a network of 
@@ -3262,13 +3256,31 @@ Technical noise is not intrinsic to the design but still limits performance. The
 
 \end{itemize}
 
-The noise process is approximately Gaussian but not stationary. Two classes of artefact further degrade the data quality. Lines are persistent narrow-band features visible as peaks above the noise floor in the PSD, arising from power-line harmonics (50 or 60\,Hz and their multiples), mirror suspension violin modes, calibration injections, and environmental electromagnetic coupling \cite{lines_noise}. Glitches are short-duration transient bursts of excess power whose morphology can mimic astrophysical signals, reducing the efficiency of detection pipelines \cite{Glitches}.
-
-The interplay of all these contributions shapes the detector sensitivity curve shown in Fig.~\ref{fig:noise_budget}, where three distinct regimes are clearly visible: control and seismic noise below $\sim\!50$\,Hz, a combination of thermal and quantum noise in the intermediate band ($50$--$500$\,Hz), and shot noise above $\sim\!500$\,Hz. Together they define the accessible frequency range of $\sim\!10$--$5000$\,Hz for current ground-based detectors. The sharp spectral peaks superimposed on the broadband noise floor correspond to the lines discussed above, most prominently the 60\,Hz power-line harmonic and the mirror suspension violin modes.
+The noise process is approximately Gaussian but not stationary. Two classes of artefact further degrade the data quality. Lines are persistent narrow-band features visible as peaks above the noise floor in the PSD, arising from power-line harmonics (50 or 60\,Hz and their multiples), mirror suspension violin modes, calibration injections, and environmental electromagnetic coupling (see Fig.~\ref{fig:lines_noise})\cite{lines_noise}. 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.68\linewidth]{Figures/noise_budget_O4_LLO.png}
+    \includegraphics[width=0.67\linewidth]{Figures/narrow_lines.png}
+    \caption{Source: \cite{glitches_lines_noises}.}
+    \label{fig:lines_noise}
+\end{figure}
+
+
+Glitches are short-duration transient bursts of excess power whose morphology can mimic astrophysical signals, reducing the efficiency of detection pipelines \cite{Glitches}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.67\linewidth]{Figures/glitches.png}
+    \caption{Source: \cite{glitches_lines_noises}.}
+    \label{fig:glitches_noise}
+\end{figure}
+
+
+The interplay of all these contributions shapes the detector sensitivity curve shown in Fig.~\ref{fig:noise_budget}, where three distinct regimes are clearly visible: control and seismic noise below $\sim\!50$\,Hz, a combination of thermal and quantum noise in the intermediate band ($50$-$500$\,Hz), and shot noise above $\sim\!500$\,Hz. Together they define the accessible frequency range of $\sim\!10$-$5000$\,Hz for current ground-based detectors. The sharp spectral peaks superimposed on the broadband noise floor correspond to the lines discussed above, most prominently the 60\,Hz power-line harmonic and the mirror suspension violin modes.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.76\linewidth]{Figures/noise_budget_O4_LLO.png}
     \caption{Strain noise amplitude spectral density of the LIGO Livingston detector during O4, together with the O3 LLO and O4 LHO curves for comparison. Dashed lines indicate noise contributions estimated from analytical models or independent component measurements; dotted lines correspond to noise projected from auxiliary witness channels. The black curve gives the quadrature sum of all known noise sources. Three regimes are apparent: control noise dominates below $\sim\!50$\,Hz, a combination of quantum and thermal noise governs the intermediate band, and shot noise sets the high-frequency floor above $\sim\!500$\,Hz. Narrow spectral lines from power-line harmonics, violin modes, and calibration injections are visible throughout the spectrum. Source: \cite{noise_budget_O4}.}
     \label{fig:noise_budget}
 \end{figure}
