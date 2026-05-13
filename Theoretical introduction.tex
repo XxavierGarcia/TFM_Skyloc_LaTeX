@@ -591,7 +591,8 @@ T^\nu &= g^{\mu\nu} T_\mu \ .
 \end{aligned}
 \end{equation}
 Raising or lowering an index does not alter its relative position among the other indices. Furthermore, free indices (those not summed over) must match on both sides of an equation, while dummy indices (summed over) appear only once within each term.
-\textbf{Symmetrization and antisymmetrization} A tensor is symmetric in a set of indices if it remains unchanged when those indices are interchanged. For example, if
+
+\textbf{Symmetrization and antisymmetrization.} A tensor is symmetric in a set of indices if it remains unchanged when those indices are interchanged. For example, if
 \begin{equation}
 S_{\mu\nu\rho} = S_{\nu\mu\rho} \ ,
 \end{equation}
@@ -640,7 +641,7 @@ These definitions extend naturally to higher-rank tensors, even when the indices
 
 Until now, we have not introduced the most crucial element. There is a single object that, when defined on a manifold, surpasses all others in importance for understanding gravity: the metric tensor. The presence of a metric opens the door to a wide range of new concepts, which together form the framework known as Riemannian geometry \cite{llibretongGR}.
 
-A differentiable manifold equipped with a symmetric metric tensor is called a Riemannian manifold (after Bernhard Riemann). In GR, the metric plays a fundamental role: it defines the separation between nearby points in spacetime and determines the curvature of the manifold. In flat spacetime, far from matter and energy, the metric approximates the Minkowski metric $\eta_{\mu\nu}$ of special relativity \cite{llibreschutzGR}. Near massive objects, such as in the Schwarzschild solution, the metric adapts to reflect spacetime curvature (see $\S$\ref{Schwarzschild solution} for more details).
+A differentiable manifold equipped with a symmetric metric tensor is called a Riemannian manifold. In GR, the metric plays a fundamental role: it defines the separation between nearby points in spacetime and determines the curvature of the manifold. In flat spacetime, far from matter and energy, the metric approximates the Minkowski metric $\eta_{\mu\nu}$ of special relativity \cite{llibreschutzGR}. Near massive objects, such as in the Schwarzschild solution, the metric adapts to reflect spacetime curvature (see $\S$\ref{Schwarzschild solution} for more details).
 
 A metric tensor $g$ on a differentiable manifold $\mathcal{M}$ is a $(0,2)$ tensor field that allows the definition of an inner product on each tangent space $T_p(\mathcal{M})$. It satisfies:
 \begin{itemize}
@@ -712,7 +713,7 @@ where $g^{\mu\nu}$ is the inverse metric, satisfying
 \begin{equation}
 g_{\mu\nu} g^{\nu\rho} = \delta_\mu^\rho \ .
 \end{equation}
-The signature of the metric distinguishes between different geometries: Riemannian metrics are positive-definite $(+,+,+,\dots)$, while Lorentzian metrics have signature $(+,-,-,\dots,-)$ or $(-,+,+,\dots,+)$ as in spacetime. Once the metric is known, the geometry and, in the case of GR, the gravitational field, are completely determined.
+The signature of the metric distinguishes between different geometries: Riemannian metrics are positive-definite $(+,+,+,\dots)$, while Lorentzian metrics have signature $(+,-,-,\dots,-)$ or $(-,+,+,\dots,+)$ as in spacetime. Once the metric is known, the geometry and the gravitational field (in the case of GR) are completely determined.
 
 
 
@@ -789,7 +790,7 @@ Some key properties of Christoffel symbols are:
     \item In an $n$-dimensional Riemannian manifold, there are theoretically $n^3$ such coefficients, though this number is reduced by the symmetry condition.
 \end{itemize}
 
-The term ``Christoffel symbols'' honors the mathematician Elwin Christoffel (1829-1900), who first introduced them in the context of differential geometry. Although sometimes informally dubbed ``Christ-awful symbols'' due to their apparent complexity, this perception tends to fade with familiarity \cite{llibretheoreticalminimum}. What initially seems intricate is, in fact, a systematic way of incorporating the effects of curvature into the formulation of differential operators . 
+The term ``Christoffel symbols'' honors the mathematician Elwin Christoffel (1829--1900), who first introduced them in the context of differential geometry. Although sometimes informally dubbed ``Christ-awful symbols'' due to their apparent complexity, this perception tends to fade with familiarity \cite{llibretheoreticalminimum}. What initially seems intricate is, in fact, a systematic way of incorporating the effects of curvature into the formulation of differential operators . 
 
 These connection coefficients are essential for extending the familiar notion of differentiation to the curved spacetimes of GR, setting the stage for the definition of the covariant derivative, which we address next.
 
@@ -898,10 +899,7 @@ To understand the geometry of curved spaces, one must move beyond the familiar t
 
 This leads to a fundamental question: how can we define the idea of keeping a vector “unchanged” as we move it along a path in a curved space? The answer lies in the notion of parallel transport. Parallel transport provides a rule for moving vectors along curves in a manifold in such a way that they remain as “constant” as possible according to the geometry of the space.
 
-In flat space, transporting a vector around a closed loop brings it back unchanged. 
-
-
-But in curved spaces, the result of parallel transport around a loop generally depends on the path taken, reflecting the intrinsic curvature of the manifold (see Fig. \ref{fig:paraleltransportflat}). 
+In flat space, transporting a vector around a closed loop brings it back unchanged. But in curved spaces, the result of parallel transport around a loop generally depends on the path taken, reflecting the intrinsic curvature of the manifold (see Fig. \ref{fig:paraleltransportflat}). 
 
 \begin{figure}[h!]
     \centering
@@ -933,7 +931,7 @@ The change of the basis can be expressed as
 \begin{equation}
 \frac{d e_\alpha}{d\lambda}
 = \frac{\partial e_\alpha}{\partial x^\beta}\,\frac{dx^\beta}{d\lambda}
-= \Gamma^\gamma_{\alpha\beta}\,\frac{dx^\beta}{d\lambda}\,e_\gamma \ .
+= \Gamma^\gamma_{\alpha\beta}\,\frac{dx^\beta}{d\lambda}\,e_\gamma \ ,
 \end{equation}
 were we have used the definition of the Christoffel symbols \eqref{christoffelsymbols}.
 
@@ -958,7 +956,7 @@ Parallel transport of $\vec{V}$ along the curve is then defined by the condition
 \quad\Longleftrightarrow\quad
 \frac{dV^\gamma}{d\lambda} + \Gamma^\gamma_{\alpha\beta}\,V^\alpha\,\frac{dx^\beta}{d\lambda} = 0 \ .
 \end{equation}
-This is a linear first–order system of ordinary differential equations for the components $V^\gamma(\lambda)$, which, given initial data $V^\gamma(\lambda_0)$, has a unique solution along the curve.
+This is a linear first order system of ordinary differential equations for the components $V^\gamma(\lambda)$, which, given initial data $V^\gamma(\lambda_0)$, has a unique solution along the curve.
 
 For a tensor $T^{\mu_1\ldots\mu_p}{}_{\nu_1\ldots\nu_q}$ the parallel transport along a trajectory $x^\mu(\lambda)$ is defined by requiring that, for every point on the curve,
 
@@ -1069,10 +1067,10 @@ Applying the Euler-Lagrange equations to this Lagrangian,
 the stationarity condition $\delta S = 0$ yields
 \begin{equation}
     \frac{d}{d\tau}\left(\frac{\partial L}{\partial \dot{x}^\lambda}\right) 
-    - \frac{\partial L}{\partial x^\lambda} = 0 \ ,
+    - \frac{\partial L}{\partial x^\lambda} = 0 \ .
     \label{eulerlagrange}
 \end{equation}
-Let
+We define the quantity
 \begin{equation}
 I(x,\dot{x}) \equiv - g_{\mu\nu}(x)\, \dot{x}^\mu \dot{x}^\nu \ .
 \end{equation}
@@ -1103,12 +1101,10 @@ The derivative of L respect $x^{\lambda}$ is:
 = \frac{1}{2L}\frac{\partial I}{\partial x^\lambda} \ , \quad \frac{\partial I}{\partial x^\lambda} = -\partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu .
 \end{equation}
 Substituting back:
-
 \begin{equation}
 \frac{\partial L}{\partial x^\lambda}
 = \frac{-1}{2L} \partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu .
 \end{equation}
-
 Substituting into equation \eqref{eulerlagrange} we get:
 \begin{equation}
 \frac{d}{d\tau}\!\left(\frac{-g_{\lambda\nu}\dot{x}^\nu}{L}\right)
@@ -1121,8 +1117,7 @@ Multiplying by $L$ and rearranging:
 + \frac{1}{2}\,\partial_\lambda g_{\mu\nu}\,\dot{x}^\mu \dot{x}^\nu = 0.
 \end{equation}
 Expanding the total derivative
-\(\dfrac{d}{d\tau}\big(g_{\lambda\nu}\dot x^\nu\big)\). Since \(g_{\lambda\nu}=g_{\lambda\nu}(x(\tau))\),
-use the chain rule:
+\(\dfrac{d}{d\tau}\big(g_{\lambda\nu}\dot x^\nu\big)\), since \(g_{\lambda\nu}=g_{\lambda\nu}(x(\tau))\) we use the chain rule:
 \[
 \frac{d}{d\tau}\big(g_{\lambda\nu}(x(\tau))\dot x^\nu\big)
 = \frac{d g_{\lambda\nu}}{d\tau}\,\dot x^\nu + g_{\lambda\nu}\,\ddot x^\nu.
@@ -1199,7 +1194,7 @@ To fully characterize a geodesic, one must impose a normalization condition on t
 g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu =
 \begin{cases}
 -\,c^2 & \text{timelike geodesics (massive particles),} \\[2mm]
-0 & \text{null geodesics (light rays or massless particles),} \\[1mm]
+\, \, \, \, \, \, 0 & \text{null geodesics (light rays or massless particles),} \\[1mm]
 +\,c^2 & \text{spacelike curves (mathematical, non-physical).}
 \end{cases}
 \end{equation}
