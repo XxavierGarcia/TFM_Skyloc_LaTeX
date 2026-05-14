@@ -1836,7 +1836,6 @@ Applying the principle of least action, we write
 + \int d^4x \, \sqrt{-g}\, R_{\alpha\beta}\, \delta g^{\alpha\beta}
 + \int d^4x \, \sqrt{-g}\, \nabla_\mu J^\mu = 0.
 \end{align}
-
 The divergence term can be expressed as
 \begin{equation}
 \begin{aligned}
@@ -1894,9 +1893,9 @@ Taking the trace of a tensor $T^\mu{}_\nu$ gives
 Applying this to the metric variation, we obtain
 \begin{equation}
 Tr\Big[ g^{\beta\gamma}(\delta g_{\alpha\beta})= - g_{\alpha\beta}\delta g^{\beta\gamma}\Big]\;\;\;\Rightarrow\;\;\;
-g^{\alpha\beta} \left(\delta g_{\alpha\beta}\right) = - g_{\alpha\beta} \, \delta g^{\alpha\beta}.
+g^{\alpha\beta} \left(\delta g_{\alpha\beta}\right) = - g_{\alpha\beta} \, \delta g^{\alpha\beta},
 \end{equation}
-donde hemos utilizado la propiedad de simetria del tensor metrico $g^{\beta\alpha}=g^{\alpha\beta}$.
+where we have used the symmetry of the metric tensor $g^{\beta\alpha}=g^{\alpha\beta}$.
 
 Thus, the variation of the Einstein-Hilbert action can be written as
 \begin{equation}
@@ -1925,7 +1924,7 @@ We now consider the variation of the total action
 \begin{equation}
 \delta S = \frac{c^4}{16 \pi G} \int d^{4}x \, \sqrt{-g}\, \delta g^{\alpha\beta}
 \left( R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R \right)
-+ \delta \left( \int d^{4}x \, \sqrt{-g}\, \mathcal{L}_{m} \right) \, ,
++ \delta \left( \int d^{4}x \, \sqrt{-g}\, \mathcal{L}_{m} \right)  .
 \end{equation}
 The variation of the matter action reads
 \begin{equation}
@@ -2117,7 +2116,7 @@ which yields
 \begin{equation}
 \frac{dt}{dr} = \pm \left(1 - \frac{2GM}{r}\right)^{-1}.
 \end{equation}
-This relation determines the slope of light rays in the $(t,r)$ plane \cite{llibrecarroll2004lectures}. For large $r$, one recovers the familiar behavior of Minkowski space with slopes $\pm 1$. However, as $r \to 2GM$, the slope diverges, and the light cones ``close up''.
+This relation determines the slope of light rays in the $(t,r)$ plane \cite{llibrecarroll2004lectures}. For large $r$, one recovers the familiar behavior of Minkowski space with slopes $\pm 1$. However, as $r \to 2GM$, the slope diverges, and the light cones ``close up'' (see Fig. \ref{light cones tilted}).
 
 \begin{figure}[h!]
     \centering
@@ -2139,7 +2138,7 @@ This relation determines the slope of light rays in the $(t,r)$ plane \cite{llib
 \end{figure}
 
 
-Inside the horizon, the situation changes qualitatively. The cones flip orientation and point entirely toward decreasing $r$, forcing all causal trajectories, null and timelike, towards the singularity at $r=0$ (see Fig. \ref{light cones tilted}).
+Inside the horizon, the situation changes qualitatively. The cones flip orientation and point entirely toward decreasing $r$, forcing all causal trajectories, null and timelike, towards the singularity at $r=0$.
 
 The explicit integration of the null geodesics further clarifies this behavior:
 \begin{equation}
@@ -2185,8 +2184,6 @@ which is manifestly regular at $r=2GM$ and allows geodesics, ingoing or outgoing
     \caption{In Eddington-Finkelstein coordinates, the geometry is clarified. For $r \gg 2GM$, light cones resemble those of flat spacetime, opening symmetrically at $\pm 45^\circ$. Closer to the horizon, the cones tip progressively inward. Ingoing null geodesics always remain at $45^\circ$, while outgoing ones tilt more and more as $r \to 2GM$, signaling the increasing difficulty of escaping. At the horizon, the tilt reaches $90^\circ$: an outgoing photon emitted at $r=2GM$ remains trapped. For $r<2GM$, all cones are tipped inward, so even outward-directed light inevitably falls to the singularity. Original illustrations based on the sources: \cite{LlibreBertJanssen, Llibre_Peter_Collier_unacosadificildecomprender}.}
     \label{fig:null geodesics}
 \end{figure}
-
-
 
 
 \subsubsection{Black holes in general relativity}
@@ -2237,22 +2234,19 @@ BHs can also be classified by mass:
 \begin{itemize}
     \item \textbf{Stellar-mass black holes (SBHs):} Formed from the collapse of massive stars (typically with $M \gtrsim 20 M_\odot$), they span from a few to hundreds of solar masses. They are often found in binary systems, where they can accrete matter from a companion star and emit X-rays.
 
-    \item \textbf{Intermediate-mass black holes (IMBHs):} These BHs are expected to lie in the mass range $10^2$–$10^5 M_\odot$. While no unambiguous detections exist, several candidates have been suggested from low-luminosity active galactic nuclei, X-ray sources and accretion disk spectra. The strongest evidence comes from GW events: GW190521, the merger of $85^{+21}_{-14} M_\odot$ and $66^{+17}_{-18} M_\odot$ BHs that produced a $142^{+28}_{-16} M_\odot$ remnant \cite{GW190521}, and the more recent GW231123, where BHs of $137^{+22}_{-17} M_\odot$ and $103^{+20}_{-52} M_\odot$ merged into a $225^{+26}_{-43}M_\odot$ remnant \cite{gw231123}.
+    \item \textbf{Intermediate-mass black holes (IMBHs):} These BHs are expected to lie in the mass range $10^2$--$10^5 M_\odot$. While no unambiguous detections exist, several candidates have been suggested from low-luminosity active galactic nuclei, X-ray sources and accretion disk spectra. The strongest evidence comes from GW events: GW190521, the merger of $85^{+21}_{-14} M_\odot$ and $66^{+17}_{-18} M_\odot$ BHs that produced a $142^{+28}_{-16} M_\odot$ remnant \cite{GW190521}, and the more recent GW231123, where BHs of $137^{+22}_{-17} M_\odot$ and $103^{+20}_{-52} M_\odot$ merged into a $225^{+26}_{-43}M_\odot$ remnant \cite{gw231123}.
     \item \textbf{Supermassive black holes (SMBHs):} Located at the centers of galaxies, they range from millions to billions of solar masses. Their origin is still uncertain, but they grow by accretion and mergers. The Milky Way’s central BH, Sagittarius A*, has a mass of about $4 \times 10^6 M_\odot$.
 \end{itemize}
 
 In addition to these categories, theorists also propose the existence of primordial black holes (PBHs). These could have formed within the first second after the Big Bang, when extreme densities allowed matter to collapse directly into BHs. Their possible masses are thought to range from as little as $10^{-5}$ grams up to about $10^5 M_\odot$. Quantum effects predict that lighter PBHs would have evaporated over time, but more massive ones could still remain scattered across the universe \cite{nasa_blackholes_types}.
 
- In summary, this chapter introduced the basics of GR. In the next chapter, we shift our focus to the most significant solution of Einstein’s equations: gravitational waves.
-
-AREGLAR PART SUMMARY
-
+In summary, this chapter has laid the mathematical and physical foundations of GR, progressing from the geometry of curved spacetime and the tools of differential geometry (parallel transport, geodesics, and the Riemann tensor) to the EFE and their most astrophysically relevant solutions: BHs. These concepts constitute the theoretical backbone upon which the remainder of this thesis is built. In the next chapter we turn to the central subject of this work: GWs, which emerge naturally as propagating solutions of the linearized Einstein equations and represent one of the most profound predictions of GR.
 
 
 \chapter{Gravitational wave theory}
 \label{Gravitational--wave theory}
 
-We have now reached the central topic of this thesis and of the most remarkable predictions of Einstein’s GR: GWs. In this chapter, we introduce their theoretical foundations, starting by outlining how they naturally arise from the linearized approximation of the EFE ($\S$\ref{Gravitational_waves_linearized_gravity}). We then discuss the properties and energy content of these waves, emphasizing their physical effects and the geometric interpretation of gravitational radiation. The chapter also introduces the main astrophysical sources ($\S$\ref{Astrophysical_sources_GW}), such as compact binary coalescences (CBCs), which produce the strongest detectable signals. Finally, we provide a brief overview of detection methods and bayesian statistics as well as parameter estimation (ACABAR D'ESCRIURE BÉ), providing a general overview that complements the theoretical framework developed in this chapter.
+We have now reached the central topic of this thesis and one of the most remarkable predictions of Einstein's GR: GWs. In this chapter, we introduce their theoretical foundations, beginning with their natural emergence from the linearized EFE ($\S$\ref{Gravitational_waves_linearized_gravity}), and characterize their polarization states and physical action on test masses via the geodesic deviation equation. We then survey the main astrophysical source classes ($\S$\ref{Astrophysical_sources_GW}) and discuss the detection principle underlying current interferometric observatories, covering antenna pattern functions, noise sources, and the global detector network ($\S$\ref{}). The chapter closes with an overview of the Bayesian parameter estimation framework used to extract source properties from GW signals ($\S$\ref{}), establishing the statistical foundation for the data analysis presented in subsequent chapters.
 
 \section{Gravitational waves in linearized gravity}
 \label{Gravitational_waves_linearized_gravity}
@@ -2260,9 +2254,9 @@ We have now reached the central topic of this thesis and of the most remarkable 
 
 In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}. He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether GWs were genuine physical phenomena remained under debate .} \cite{GW150914}. 
 
-GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving BHs (BH-BH), neutron stars (NS-NS), or mixed black hole-neutron star (BH-NS) mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of GR, obtained by expanding the EFE around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
+GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving BHs (BH-BH), NSs (NS-NS), or mixed BH-NS mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of GR, obtained by expanding the EFE around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
 
-The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss, provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct gravitational-wave astronomy \cite{GW150914}.
+The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss, provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct GW astronomy \cite{GW150914}.
 
 Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO Scientific Collaboration (LSC) achieved the first direct detection of GWs, GW150914 \cite{PrimeradeteccioGW150914}, a signal originating from a binary black hole merger (BBH). This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
 
@@ -2540,7 +2534,7 @@ Therefore, GWs correspond to massless excitations of the gravitational field tha
 
 Furthermore, applying the Lorenz gauge condition \eqref{Lorenz_gauge_condition} to the wave equation \eqref{waveequation}, we can prove that:
 \begin{equation}
-A_{\mu\nu} k^\mu = 0.
+A_{\mu\nu} k^\mu = 0,
 \end{equation}
 which shows that GWs are transverse with respect to their direction of propagation.
 
@@ -2593,7 +2587,7 @@ where $h_{\mu\nu}^{\text{TT}}$ represents the metric perturbation in the TT gaug
 
 \subsection{Polarization states}
 
-Considering a wave propagating in the $z$-direction, we can choose the wave four-vector as $k^\mu = (\omega/c, 0, 0, \omega/c)$. The Lorenz gauge \eqref{Lorenz_gauge_condition} implies $A_{\mu 0} + A_{\mu 3} = 0$\, \footnote{If the gauge condition requires $h_{\mu 0}=0$ for all spacetime points and the metric perturbation is written as 
+Considering a wave propagating in the $z$-direction, we can choose the wave four-vector as $k^\mu = (\omega/c, 0, 0, \omega/c)$. The Lorenz gauge \eqref{Lorenz_gauge_condition} implies $A_{\mu 0} + A_{\mu 3} = 0$\footnote{If the gauge condition requires $h_{\mu 0}=0$ for all spacetime points and the metric perturbation is written as 
 $h_{\mu\nu}=A_{\mu\nu}e^{i k_\rho x^\rho}$, the exponential factor never vanishes. 
 Therefore, the only way for $h_{\mu 0}$ to be identically zero is that the corresponding amplitude components vanish $A_{\mu 0}=0$ (and, by symmetry, $A_{0\mu}=0$) \cite{llibretongGR}.} and the additional TT gauge conditions lead to $A_{\mu 0} = 0$.  
 Thus, the only non-zero components of the amplitude tensor are $A_{11}$, $A_{22}$, and $A_{12} = A_{21}$. The traceless condition $A^{i}{}_{i} = 0$ further implies that $A_{11} + A_{22} = 0$, allowing us to express the TT perturbation as
@@ -2977,7 +2971,7 @@ where the triple dot denotes the third time derivative. This formula quantifies 
 \section{Astrophysical sources}
 \label{Astrophysical_sources_GW}
 
-GW astronomy identifies four broad categories of astrophysical signals, each characterized by distinct time-scales, amplitudes, and expected sources. These categories are commonly referred to as transient (CBCs and bursts), Continuous Waves (CWs) and stochastic backgrounds (see Fig. \ref{fig:sources}) \cite{Astrophysicalsources}.
+GW astronomy identifies four broad categories of astrophysical signals, each characterized by distinct time-scales, amplitudes, and expected sources. These categories are commonly referred to as transient (compact binary coalescences (CBCs) and bursts), continuous waves (CWs) and stochastic backgrounds (see Fig. \ref{fig:sources}) \cite{Astrophysicalsources}.
 
 \begin{figure}[h!]
     \centering
@@ -2989,19 +2983,17 @@ GW astronomy identifies four broad categories of astrophysical signals, each cha
 
 \subsection{Compact Binary Coalescences}  
 
-Compact binary coalescences (CBCs) are systems formed by two compact objects such as BHs, NSs, or a combination of both, which inspiral and merge due to the emission of GWs. These systems are classified as BBHs, binary neutron stars (BNS), or neutron star and BH binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the detectable signal depends on the masses, ranging from fractions of a second for BBH mergers to much longer signals for BNS systems.
+CBCs are systems formed by two compact objects such as BHs, NSs, or a combination of both, which inspiral and merge due to the emission of GWs. These systems are classified as BBHs, binary neutron stars (BNS), or neutron star and BH binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the detectable signal depends on the masses, ranging from fractions of a second for BBH mergers to much longer signals for BNS systems.
 
-To date, nearly all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first binary neutron star detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs, with binary BH mergers dominating the observed population.
+To date, nearly all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first BNS detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs, with binary BH mergers dominating the observed population.
 
-The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data. Future space based detectors such as LISA will extend observations to other sources, including white dwarf (WD) binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
+The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data. Future space based detectors such as LISA (see $\S$\ref{spacebased_detectors}) will extend observations to other sources, including white dwarf binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
 
 
 \subsection{Burst events}  
-Gravitational wave bursts are short duration signals produced by highly energetic and often poorly modelled astrophysical events. Typical sources include core collapse supernovae, gravitational collapses, highly eccentric compact binary mergers, and more speculative scenarios such as cosmic strings \cite{burst_events}. In addition, burst like emission can be associated with transient phenomena such as gamma ray bursts linked to NS or NS-BH mergers.
+GW bursts are short duration signals produced by highly energetic and often poorly modelled astrophysical events. Typical sources include core collapse supernovae, gravitational collapses, highly eccentric compact binary mergers, and more speculative scenarios such as cosmic strings \cite{burst_events}. In addition, burst like emission can be associated with transient phenomena such as gamma ray bursts linked to NS or NS-BH mergers.
 
 These signals typically last from a fraction of a second to a few tens of seconds and are characterized by their unpredictable morphology. Unlike CBCs or CWs, burst signals do not have accurate waveform models, which makes their detection more challenging. Instead of matched filtering techniques, searches rely on identifying excess power or coherent transients across multiple detectors \cite{monochromatic_CWs}.
-
-Due to their complex and uncertain origin, burst searches play an important role in exploring unexpected or poorly understood sources of GWs, complementing the more model dependent searches and expanding the discovery potential of current detector networks.
 
 \subsection{Continuous waves}
 
@@ -3335,6 +3327,7 @@ detector to be built in Maharashtra, India. Although it will not exceed the sens
 geographic location will substantially improve sky localisation and detection confidence for the global network.
 
 \paragraph{Space-based detectors.}
+\label{spacebased_detectors}
 Ground-based detectors are fundamentally limited below $\sim\!10$\,Hz by seismic and Newtonian noise. Space-based missions overcome this barrier by operating in a quiet gravitational environment, opening the mHz frequency window inaccessible from the ground.
 
 The \textbf{Laser Interferometer Space Antenna} (LISA) \cite{} is the flagship ESA mission, scheduled for launch in the mid-2030s. It consists of three spacecraft in heliocentric orbit forming a near-equilateral triangle with $2.5\times10^6$\,km arms. Because the arm lengths are unequal and variable, standard Michelson cancellation of laser frequency noise is not possible; instead, Time Delay Interferometry (TDI) is employed to suppress this noise in post-processing. LISA will cover the band $\sim\!10^{-4}$--$10^{-1}$\,Hz, giving access to sources 
