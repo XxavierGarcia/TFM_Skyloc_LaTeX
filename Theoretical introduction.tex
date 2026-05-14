@@ -723,7 +723,7 @@ We’ve now laid the groundwork for a deeper look into the mathematics of curved
 
 \begin{itemize}
     \item Geodesics (see $\S$\ref{Geodesics and curvature}), the “straightest possible” paths between any two points on a Riemannian manifold, and thus the natural trajectories of free particles moving through curved spacetime.  
-    \item The Riemann curvature tensor (see $\S$\ref{Riemann curvature tensor}), which encodes how space bends. A particular version of this tensor appears on the left-hand side of the fundamental object of GR, the Einstein field equations.
+    \item The Riemann curvature tensor (see $\S$\ref{Riemann curvature tensor}), which encodes how space bends. A particular version of this tensor appears on the left-hand side of the fundamental object of GR, the Einstein field equations (EFE).
 \end{itemize}
 
 Parallel transport of a vector (see $\S$\ref{parallel transport}) plays a key role in both of these concepts. But before we can understand how to transport vectors, we must first know how to differentiate tensor fields. To make this possible, we introduce what are known as connection coefficients or Christoffel symbols (denoted by the symbol $\Gamma$). These coefficients allow us to compare vectors located at different points on a manifold. Once the metric of the manifold is known, we can compute the connection coefficients, unlocking our ability to define derivatives and do much more. This is why the metric is central to understanding Riemannian manifolds, and therefore the geometry of spacetime itself \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
@@ -1209,13 +1209,21 @@ In many cases, particularly when the spacetime admits symmetries or when the met
 \label{Riemann curvature tensor}
 
 
-The concept of curvature in differential geometry can be understood through the notion of parallel transport. We have already seen that in a flat manifold, transporting a vector in parallel around an infinitesimal closed loop returns it to its original value. However, in a curved manifold, the final vector differs from the initial one. This deviation provides a quantitative measure of the manifold’s intrinsic curvature.
+In \S\ref{parallel transport} we established that parallel transport around a closed loop in a curved manifold generically returns a vector in a different orientation from its initial one (see Fig.~\ref{fig:paraleltransportflat}). This path-dependence is not an artifact of the coordinate system but reflects the intrinsic geometry of the manifold. The Riemann curvature tensor provides a precise, coordinate-independent quantification of this effect.
 
-Rather than directly following how a vector changes under parallel transport to express the curvature tensor through connection coefficients, it is often more practical to analyze a related operation: the commutator of two covariant derivatives.
+To make this concrete, consider the parallel transport condition derived in \S\ref{parallel transport},
+\begin{equation}
+    \frac{DV^\gamma}{d\lambda} 
+    = \frac{dV^\gamma}{d\lambda} 
+    + \Gamma^\gamma_{\alpha\beta}\,V^\alpha\,\frac{dx^\beta}{d\lambda} = 0,
+\end{equation}
+which governs how the components of a vector change as it is 
+transported along a curve. If we transport $V^\lambda$ around an infinitesimal closed loop, the net change in its components depends on the order in which we traverse the two directions spanning the loop. This order-dependence can be captured algebraically by examining the commutator of two covariant derivatives: acting first with $\nabla_\mu$ and then $\nabla_\nu$, versus the reverse order. In flat space, partial derivatives commute, so this commutator vanishes identically. In a curved manifold, the Christoffel symbols $\Gamma^\gamma_{\alpha\beta}$ introduce additional terms that survive, 
+encoding the failure of parallel transport to be path-independent.
 
-Geometrically, the relationship becomes clear by considering parallel transport around a closed loop. The covariant derivative of a tensor along a specified direction quantifies the deviation of the tensor from remaining unchanged when parallel transported in that direction (which would be zero for true parallel transport). Therefore, the commutator of two covariant derivatives measures the discrepancy between transporting a tensor first along one direction and then along another, compared to performing these steps in reverse order \cite{llibrecarroll2004lectures}.
+Consider transporting a vector $V^\lambda$ around an infinitesimal parallelogram with sides $dx^\mu$ and $dx^\nu$ 
+(see Fig.~\ref{fig:riemanntensorparalelogram}).
 
-Consider transporting a vector $V^\lambda$ around an infinitesimal parallelogram with sides $dx^\mu$ and $dx^\nu$ (see Fig. \ref{fig:riemanntensorparalelogram}). 
 
 \begin{figure}[h!]
     \centering
@@ -1274,7 +1282,7 @@ while the second term involves the antisymmetric part of the connection,
 \begin{equation}
 T^\lambda_{\ \mu\nu} = \Gamma^\lambda_{\mu\nu} - \Gamma^\lambda_{\nu\mu} \ ,
 \end{equation}
-known as the torsion tensor. Since we have already introduced the concept of torsion earlier, we can now give a more precise interpretation: torsion quantifies the failure of an infinitesimal parallelogram to close. Specifically, if the vector $dx^\mu$ is parallel transported along $dx^\nu$ to yield $dx'^\mu$, and $dx^\nu$ is parallel transported along $dx^\mu$ to yield $dx'^\nu$, these two resulting vectors will not, in general, meet at the same point. In other words, the sequence $dx^\mu \rightarrow dx^\nu \rightarrow dx'^\mu \rightarrow dx'^\nu$ does not necessarily form a closed parallelogram. Only for symmetric connections (such as the Levi-Civita connection) does the torsion tensor vanish, ensuring that the paths $dx^\mu$–$dx^\nu$ and $dx^\nu$–$dx^\mu$ yield a closed loop \cite{LlibreBertJanssen}.
+known as the torsion tensor. Since we have already introduced the concept of torsion earlier, we can now give a more precise interpretation: torsion quantifies the failure of an infinitesimal parallelogram to close. Specifically, if the vector $dx^\mu$ is parallel transported along $dx^\nu$ to yield $dx'^\mu$, and $dx^\nu$ is parallel transported along $dx^\mu$ to yield $dx'^\nu$, these two resulting vectors will not, in general, meet at the same point. In other words, the sequence $dx^\mu \rightarrow dx^\nu \rightarrow dx'^\mu \rightarrow dx'^\nu$ does not necessarily form a closed parallelogram. Only for symmetric connections (such as the Levi-Civita connection) does the torsion tensor vanish, ensuring that the paths $dx^\mu$-$dx^\nu$ and $dx^\nu$-$dx^\mu$ yield a closed loop \cite{LlibreBertJanssen}.
 
 When torsion vanishes, only the curvature term remains, providing a direct measure of the manifold's geometric curvature. In this case, the commutator can be expressed compactly as
 \begin{equation}
@@ -1329,7 +1337,7 @@ implying that parallel transport is path-independent: any vector transported alo
 
 \subsubsection{Ricci tensor and Ricci scalar}
 
-The complete, uncontracted Riemann curvature tensor does not explicitly appear in Einstein’s field equations. Rather, it is contracted to yield two curvature invariants: the Ricci tensor and the Ricci scalar. These quantities are subsequently combined to construct the Einstein tensor, which forms the geometric side (left-hand side) of Einstein’s field equations \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
+The complete, uncontracted Riemann curvature tensor does not explicitly appear in EFE. Rather, it is contracted to yield two curvature invariants: the Ricci tensor and the Ricci scalar. These quantities are subsequently combined to construct the Einstein tensor, which forms the geometric side (left-hand side) of EFE \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
 
 
 \paragraph{Ricci tensor}
@@ -1355,13 +1363,13 @@ As the name suggests, the Ricci scalar is a scalar and thus an invariant under g
 
 \section{Einstein field equations}
 
-We have now established the necessary mathematical foundations, provided by differential geometry, and complemented them with physical insight from the equivalence principle, allowing us to address Einstein’s field equations. These equations describe how spacetime curvature is determined by the distribution of energy and momentum, offering the precise formulation of gravity in GR. In what follows, we will examine their structure and implications, beginning with intuitive arguments inspired by Einstein’s original reasoning, and then deriving them rigorously from an action principle.
+We have now established the necessary mathematical foundations, provided by differential geometry, and complemented them with physical insight from the equivalence principle, allowing us to address EFE. These equations describe how spacetime curvature is determined by the distribution of energy and momentum, offering the precise formulation of gravity in GR. In what follows, we will examine their structure and implications, beginning with intuitive arguments inspired by Einstein’s original reasoning, and then deriving them rigorously from an action principle.
 
 
 \subsection{The energy-momentun tensor}
 \label{The energy-momentun tensor}
 
-We begin by introducing the energy-momentum tensor (also known as the stress-energy tensor), which appears on the right-hand side of Einstein’s field equations. Up to this point, using differential geometry and the equivalence principle, we have interpreted gravity as the curvature of spacetime. However, we have not yet addressed what actually generates that curvature. In Newtonian physics, mass is regarded as the source of the gravitational field.  However, special relativity establishes that the mass of an object is merely one of the possible manifestations of energy, and that it is possible to convert one into the other through the well-known relation \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
+We begin by introducing the energy-momentum tensor (also known as the stress-energy tensor), which appears on the right-hand side of EFE. Up to this point, using differential geometry and the equivalence principle, we have interpreted gravity as the curvature of spacetime. However, we have not yet addressed what actually generates that curvature. In Newtonian physics, mass is regarded as the source of the gravitational field.  However, special relativity establishes that the mass of an object is merely one of the possible manifestations of energy, and that it is possible to convert one into the other through the well-known relation \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
 \begin{equation}
 E^2 = p^2 c^2 + m^2 c^4 \ .
 \label{energy-momentum}
@@ -1370,14 +1378,14 @@ Therefore, it is reasonable to postulate that the source of the gravitational fi
 
 Now, we need to find a practical way to represent this source of curvature. This is precisely where the energy-momentum tensor $T^{\mu\nu}$ comes into play. This tensor encapsulates the macroscopic properties of a given physical system, modeled as a fluid\footnote{In GR, all relevant forms of matter can be modeled as perfect fluids (a perfect fluid is one that can be fully characterized solely by its pressure and density), ranging from stars and electromagnetic fields to the entire universe \cite{llibrecarroll2004lectures}.}, including quantities such as velocity, pressure, density, and other relevant parameters, thereby representing the system’s total energy and momentum content. Moreover, the tensor describes the flux of four-momentum \( p^{\mu} \) across a hypersurface of constant \( x^{\nu} \). Therefore we identify \( T^{\mu\nu} \) as the source term in the field equations. 
 
-Since the energy-momentum tensor is a rank-2 tensor, its components can be represented in the form of a \(4 \times 4\) matrix:
+Since the energy-momentum tensor is a rank-2 tensor, its components can be represented in the form of a \(4 \times 4\) matrix (see Fig.~\ref{fig:energymomentummatrix}).
 
 \begin{figure}[h!]
     \centering
     \hspace{1.9cm}
     \includegraphics[width=0.7\linewidth]{Figures/energy momentum tensor.png}
     \caption{Schematic representation of the energy-momentum tensor $T_{\mu\nu}$ as a $4 \times 4$ matrix. The components include the energy density ($T_{00}$), energy flux ($T_{0i}$), momentum density ($T_{i0}$), momentum flux ($T_{ij}$), as well as pressure and shear stress terms. Source: \cite{energymomentumtensor}.}
-    \label{fig:placeholder}
+    \label{fig:energymomentummatrix}
 \end{figure}
 
 These components can be described as follows:
@@ -1404,7 +1412,7 @@ U^{\mu} = \left(U^{0}, U^{1}, U^{2}, U^{3}\right)
 = (c\gamma, \gamma \vec{v}) 
 = \gamma (c, \vec{v}) \ .
 \end{equation}
-Thus, $U^{0} = c\gamma$. In the comoving rest frame (CRF), $\gamma = 1$, so we obtain 
+Thus, $U^{0} = c\gamma$. In the comoving rest frame, $\gamma = 1$, so we obtain 
 $U^{0} = c$ and $U^{0} U^{0} = c^{2}$.
 
 A comoving observer, one who moves together with the fluid and therefore shares its four-velocity $U^\mu$, perceives the fluid as locally isotropic. For such an observer, the four-velocity reduces to $U^{\mu} = (1,0,0,0)$, and the stress-energy tensor simplifies to
@@ -1413,7 +1421,7 @@ T^{\mu\nu} = \text{diag}(\rho, P, P, P) \ ,
 \end{equation}
 assuming the metric $\eta^{\mu\nu} = \text{diag}(-1,1,1,1)$.
 
-To make this more concrete, we now consider a simple example of a perfect fluid:
+To make this more concrete, we now consider a simple example of a perfect fluid.
 
 
 
@@ -1466,7 +1474,7 @@ physically meaningful system.
 Einstein did not reach his field equations in one sudden step of mathematical inspiration, as he sometimes
 suggested in his later years, but rather through a gradual process in which physical intuition and formal reasoning worked hand in hand \cite{HowEinsteinfoundhisfieldequations}.
 
-In 1913, together with Marcel Grossmann\footnote{Marcel Grossmann (1878-1936) was a friend, classmate, and early collaborator of Einstein.}, Einstein introduced the Entwurf theory, an early attempt at a relativistic theory of gravitation \cite{EinsteinGrossmann1913}. Its field equations already displayed much of the mathematical framework that would later appear in GR, but they were covariant only under a restricted class of coordinate transformations.
+In 1913, together with Marcel Grossmann\footnote{Marcel Grossmann (1878--1936) was a friend, classmate, and early collaborator of Einstein.}, Einstein introduced the Entwurf theory, an early attempt at a relativistic theory of gravitation \cite{EinsteinGrossmann1913}. Its field equations already displayed much of the mathematical framework that would later appear in GR, but they were covariant only under a restricted class of coordinate transformations.
 
 After having established the momentum-energy equation for material processes (mechanical, electrical, and others) in the presence of a gravitational field, Einstein and Grossmann turned to the more fundamental task: to determine the differential equations governing the field itself, namely, the equations for the metric components $g_{ik}$. In analogy with Newton’s theory, they sought a generalization of the Poisson equation
 \begin{equation}
@@ -1509,16 +1517,16 @@ Einstein's equations constitute a system of ten coupled, second-order nonlinear 
 
 Although Einstein's equations formally involve ten components, the condition $\nabla_\mu G^{\mu\nu} = 0$ provides four constraints, leaving only six equations that are genuinely independent. This implies that, out of the ten components of the metric, only six are determined by Einstein's equations and correspond to physical degrees of freedom. The remaining four are non-physical components that express the freedom in the choice of coordinates \cite{LlibreBertJanssen}.
 
-\subsubsection{Formal derivation from the Einstein–Hilbert action}
+\subsubsection{Formal derivation from the Einstein-Hilbert action}
 
 
-We will now derive Einstein’s field equations starting from the Einstein–Hilbert action. Although this is not the original method used by Einstein, it provides a more modern and elegant approach, as it is based on the principle of least action. This formulation is particularly useful since the principle of least action plays a central role in theoretical physics.
+We will now derive EFE starting from the Einstein-Hilbert action. Although this is not the original method used by Einstein, it provides a more modern and elegant approach, as it is based on the principle of least action. This formulation is particularly useful since the principle of least action plays a central role in theoretical physics.
 
 For clarity, the derivation will be presented step by step, as carrying it out all at once can be rather difficult to follow.
 
-We begin by considering the variation of the square root of the negative determinant of the metric tensor ($\S$\ref{Variation_of_the_squareroot}), a quantity that will play a crucial role in our derivation. Next, we will compute the contraction of the Christoffel symbols ($\S$\ref{Contraction_Christoffelsymbol}), followed by the variation of the Ricci scalar ($\S$\eqref{Variation_Ricciscalar}). Finally, we will obtain the variation of the Einstein-Hilbert action itself ($\S$\ref{Einstein-Hilbert action}).
+We begin by considering the variation of the square root of the negative determinant of the metric tensor ($\S$\ref{Variation_of_the_squareroot}), a quantity that will play a crucial role in our derivation. Next, we will compute the contraction of the Christoffel symbols ($\S$\ref{Contraction_Christoffelsymbol}), followed by the variation of the Ricci scalar ($\S$\ref{Variation_Ricciscalar}). Finally, we will obtain the variation of the Einstein-Hilbert action itself ($\S$\ref{Variation_of_Hilbert_Einstein_action}).
 
-Before proceeding with these steps, we first define the Einstein–Hilbert action.
+Before proceeding with these steps, we first define the Einstein-Hilbert action.
 
 
 \paragraph{Einstein-Hilbert action}
@@ -1529,7 +1537,7 @@ From analytical mechanics we know the advantages of the Lagrangian formulation: 
 respect to the system's degrees of freedom one directly obtains the equations of motion. In this sense, 
 the Lagrangian provides a compact representation of the dynamics of a system or a theory. Moreover, in many cases it is more straightforward to identify the symmetries of a system through its Lagrangian rather than directly from the equations of motion. For instance, the trajectory of a free particle in a curved spacetime can be derived from an action principle, leading to the geodesic equation \eqref{geodesicequation} \cite{LlibreBertJanssen}. 
 
-It is therefore natural to ask whether gravity itself can be described by an action. The answer is provided by the Einstein-Hilbert action, which yields Einstein's field equations in vacuum and is expressed as (see Appendix $\S$\ref{Appendix Einstein-Hilbert action} for the derivation)
+It is therefore natural to ask whether gravity itself can be described by an action. The answer is provided by the Einstein-Hilbert action, which yields EFE in vacuum and is expressed as (see Appendix $\S$\ref{Appendix Einstein-Hilbert action} for the derivation)
 \begin{equation}
 S_{EH} = \frac{c^4}{16 \pi G} \int_{\mathcal{M}} d^4x \, \sqrt{-g} \, R \ ,
 \end{equation}
@@ -1618,7 +1626,7 @@ Finally, writing $\det g \equiv g$, we obtain
 \label{variationofmetric}
 \end{equation}
 
-This result is one of the fundamental steps in deriving Einstein’s field equations \cite{Garcia2019RelativityCourse}.
+This result is one of the fundamental steps in deriving EFE \cite{Garcia2019RelativityCourse}.
 
 
 
@@ -1804,6 +1812,7 @@ which transforms as a tensor, we obtain the compact result
 
 
 \paragraph{Variation of the Hilbert-Einstein action}
+\label{Variation_of_Hilbert_Einstein_action}
 
 
 Now we can compute the variation of the Einstein-Hilbert action:
@@ -1882,10 +1891,7 @@ Taking the trace of a tensor $T^\mu{}_\nu$ gives
 \begin{equation}
 \mathrm{Tr}\, T^\mu{}_\nu = T^0{}_0 + T^1{}_1 + T^2{}_2 + T^3{}_3 = T^\mu{}_\mu \ .
 \end{equation}
-
 Applying this to the metric variation, we obtain
-
-
 \begin{equation}
 Tr\Big[ g^{\beta\gamma}(\delta g_{\alpha\beta})= - g_{\alpha\beta}\delta g^{\beta\gamma}\Big]\;\;\;\Rightarrow\;\;\;
 g^{\alpha\beta} \left(\delta g_{\alpha\beta}\right) = - g_{\alpha\beta} \, \delta g^{\alpha\beta}.
@@ -1898,16 +1904,13 @@ Thus, the variation of the Einstein-Hilbert action can be written as
 = \int d^4x \left[ -\tfrac{1}{2}\sqrt{-g}\, g_{\alpha\beta} R \, \delta g^{\alpha\beta} 
 + \sqrt{-g}\, R_{\alpha\beta}\, \delta g^{\alpha\beta} \right] .
 \end{equation}
-
-
 Therefore, imposing $\delta S = 0$, we obtain
 \begin{equation}
 \delta S 
 = \int d^4x \, \sqrt{-g} 
 \left(R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R \right)\delta g^{\alpha\beta} = 0.
 \end{equation}
-
-Since the variations $\delta g^{\alpha\beta}$ are arbitrary, this yields the Einstein field equations in vacuum:
+Since the variations $\delta g^{\alpha\beta}$ are arbitrary, this yields the EFE in vacuum:
 \begin{equation}
 G_{\alpha\beta} := R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R = 0.
 \end{equation}
@@ -1916,7 +1919,6 @@ In order to include matter fields in the theory, we add an additional term to th
 \begin{equation}
     S = S_{EH} + S_{GHY} + S_M  = \frac{c^4}{16 \pi G}\int_{\mathcal{M}} d^{4}x\,\sqrt{-g}\,R \;+\; \frac{c^4}{8 \pi G} \int_{\mathcal{\partial M}} d^{3}x\,\sqrt{|h|}\,K + \int_{\mathcal{M}} d^{4}x\,\sqrt{-g}\,\mathcal{L_\text{m}} \ ,
 \end{equation}
-
 where $\mathcal{L}_{m}$ denotes the matter Lagrangian density.
 
 We now consider the variation of the total action 
@@ -1944,7 +1946,6 @@ the full variation of the matter action becomes
 \left[ - g_{\alpha\beta} \mathcal{L}_{m} \,  
 + \frac{\delta \mathcal{L}_{m}}{\delta g^{\alpha\beta}} \right] \, .
 \end{equation}
-
 Gathering all contributions, the total variation of the action reads
 \begin{equation}
 \delta S = \int d^{4}x \, \sqrt{-g}\,\delta g^{\alpha\beta} 
@@ -1952,23 +1953,19 @@ Gathering all contributions, the total variation of the action reads
 + \tfrac{1}{2} \Big(-g_{\alpha\beta} \mathcal{L}_{m} 
 + 2\frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}}\Big) \right] \ .
 \end{equation}
-
 Applying the variational principle considering $\delta S = 0$ we obtain:
-
 \begin{equation}
      R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R  
 = -\frac{8 \pi G}{c^4} \Big(-g_{\alpha\beta} \mathcal{L}_{m} 
-+ 2\frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}}\Big) 
++ 2\frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}}\Big). 
 \end{equation}
-
-
 Identifying the energy-momentum tensor as
 \begin{equation}
 T_{\alpha\beta} = g_{\alpha\beta} \, \mathcal{L}_{m} - 2 \frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}} 
  = \frac{-2}{\sqrt{-g}} 
 \frac{\delta (\sqrt{-g}\,\mathcal{L}_{m})}{\delta g^{\alpha\beta}} \ ,
 \end{equation}
-we finally obtain the Einstein field equations in the form
+we finally obtain the EFE in the form
 \begin{equation}
 R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R 
 = \frac{8\pi G}{c^{4}}\, T_{\alpha\beta} \, .
@@ -1978,7 +1975,7 @@ R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R
 \subsection{The cosmological constant}
 
 
-So far we have justified Einstein’s field equations in two distinct ways: first, as the natural covariant extension of Poisson’s equation for the Newtonian potential; and second, as the outcome of varying the simplest possible action constructed from the metric. Before exploring explicit solutions, it is instructive to examine possible modifications of these equations. Among the many conceivable generalizations, a particularly important one is the introduction of a cosmological constant $\Lambda$ \cite{llibrecarroll2004lectures}.
+So far we have justified EFE in two distinct ways: first, as the natural covariant extension of Poisson’s equation for the Newtonian potential; and second, as the outcome of varying the simplest possible action constructed from the metric. Before exploring explicit solutions, it is instructive to examine possible modifications of these equations. Among the many conceivable generalizations, a particularly important one is the introduction of a cosmological constant $\Lambda$ \cite{llibrecarroll2004lectures}.
 
 The action is then modified to include this additional contribution,
 \begin{equation}
@@ -1991,8 +1988,7 @@ R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R + g_{\alpha\beta}\Lambda
 = \frac{8 \pi G}{c^{4}}\, T_{\alpha\beta} \, .
 \label{einsteinequations}
 \end{equation}
-
-Historically, Einstein introduced the cosmological constant in 1917 as a way to obtain a static universe without beginning or end, effectively behaving like a repulsive or ``antigravitational'' pressure. However, soon after, it was realized that the static solutions of the field equations were unstable. In 1929, the American astronomer Edwin Hubble (1889–1953) discovered that the universe is in fact expanding, a result fully consistent with the original, unmodified field equations. This led Einstein to famously refer to the cosmological constant as ``the biggest blunder'' of his life.  
+Historically, Einstein introduced the cosmological constant in 1917 as a way to obtain a static universe without beginning or end, effectively behaving like a repulsive or ``antigravitational'' pressure. However, soon after, it was realized that the static solutions of the field equations were unstable. In 1929, the American astronomer Edwin Hubble (1889--1953) discovered that the universe is in fact expanding, a result fully consistent with the original, unmodified field equations. This led Einstein to famously refer to the cosmological constant as ``the biggest blunder'' of his life.  
 
 Ironically, observations in 1998 with the Hubble Space Telescope revealed that the universe is not only expanding but doing so at an accelerated rate. One possible explanation invokes a pervasive dark energy that fills space and may be effectively described by the cosmological constant. Thus, what Einstein once dismissed as his greatest mistake has regained scientific relevance: dark energy and the cosmological constant now appear essential to account for the accelerated expansion of the universe, even though their true physical nature remains one of the deepest mysteries in modern physics \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
 
@@ -2003,7 +1999,7 @@ The modern challenge, however, lies in the so-called cosmological constant probl
 \section{Relevant solutions to Einstein’s equations}
 \label{solutionseinsteinequations}
 
-Einstein’s field equations are extremely challenging to solve because of their intrinsic nonlinearity. Unlike linear systems, the superposition of two independent solutions does not in general produce a new one. The physical origin of this nonlinearity is simple: spacetime curvature is generated by the presence of matter and energy, yet the curvature itself carries energy and momentum, thereby acting as an additional source of curvature. In other words, gravity is not only coupled to matter and energy but also to itself, which makes the field equations nonlinear by nature.
+EFE are extremely challenging to solve because of their intrinsic nonlinearity. Unlike linear systems, the superposition of two independent solutions does not in general produce a new one. The physical origin of this nonlinearity is simple: spacetime curvature is generated by the presence of matter and energy, yet the curvature itself carries energy and momentum, thereby acting as an additional source of curvature. In other words, gravity is not only coupled to matter and energy but also to itself, which makes the field equations nonlinear by nature.
 
 Concretely, to “find a solution” means to determine a metric tensor $g_{\mu\nu}$ (and, when relevant, a compatible matter configuration) that satisfies
 \[
@@ -2013,14 +2009,14 @@ subject to appropriate boundary or initial conditions.
 
 Each solution corresponds to a possible spacetime geometry associated with a particular distribution of matter and energy. Broadly speaking, they can be grouped into three categories: 
 \begin{itemize}
-    \item \textbf{Exact analytical solutions}: such as the Schwarzschild, Kerr, or Friedmann-Lemaître-Robertson-Walker (FLRW) metrics. 
+    \item \textbf{Exact analytical solutions}: such as the Schwarzschild, Kerr, or Friedmann-Lemaître-Robertson-Walker metrics. 
     \item \textbf{Approximate solutions}: derived through perturbative methods, for instance weak-field expansions describing GW.  
     \item \textbf{Numerical solutions}: obtained via large-scale simulations, such as those modeling the merger of two BHs.  
 \end{itemize}
 
 The vast variety of solutions illustrates the richness of GR: each one represents a distinct possible universe governed by Einstein’s equations.
 
-Einstein himself initially believed that his equations were so complicated that no exact solution would ever be found. Remarkably, only a few months after the formulation of GR in 1915, Karl Schwarzschild (1873–1916) obtained the first exact solution, describing the spacetime of a static, spherically symmetric object. Since then, dozens, indeed hundreds, of exact solutions have been discovered \cite{LlibreBertJanssen}. In this section we will explore the Schwarzschild solution.
+Einstein himself initially believed that his equations were so complicated that no exact solution would ever be found. Remarkably, only a few months after the formulation of GR in 1915, Karl Schwarzschild (1873--1916) obtained the first exact solution, describing the spacetime of a static, spherically symmetric object. Since then, dozens, indeed hundreds, of exact solutions have been discovered \cite{LlibreBertJanssen}. In this section we will explore the Schwarzschild solution.
 
 
 
@@ -2028,7 +2024,7 @@ Einstein himself initially believed that his equations were so complicated that 
 \label{Schwarzschild solution}
 
 
-In vacuum, Einstein’s field equations reduce to $R_{\mu\nu} = 0$. At first sight, one might be tempted to consider the trivial choice $g_{\mu\nu}=0$. However, this is not allowed: the metric must be a non-degenerate tensor field with a well-defined inverse, a requirement already assumed in the derivation of the field equations from the variational principle\footnote{Ultimately, this constraint likely suggests that the gravitational field is not fundamental and should be replaced by another description in scenarios where $\det g_{\mu\nu}$ becomes small \cite{llibretongGR}.}. This condition, $\det g_{\mu\nu} \neq 0$, immediately implies that the simplest Ricci-flat\footnote{Metrics that satisfy the vacuum equations are referred to as Ricci-flat. Although Ricci-flat solutions are generally not flat, they still represent valid vacuum solutions (assuming no cosmological constant is present) \cite{LlibreBertJanssen}.} solution is not the trivial one but rather Minkowski spacetime, which corresponds to flat geometry in the absence of matter or energy:
+In vacuum, EFE reduce to $R_{\mu\nu} = 0$. At first sight, one might be tempted to consider the trivial choice $g_{\mu\nu}=0$. However, this is not allowed: the metric must be a non-degenerate tensor field with a well-defined inverse, a requirement already assumed in the derivation of the field equations from the variational principle\footnote{Ultimately, this constraint likely suggests that the gravitational field is not fundamental and should be replaced by another description in scenarios where $\det g_{\mu\nu}$ becomes small \cite{llibretongGR}.}. This condition, $\det g_{\mu\nu} \neq 0$, immediately implies that the simplest Ricci-flat\footnote{Metrics that satisfy the vacuum equations are referred to as Ricci-flat. Although Ricci-flat solutions are generally not flat, they still represent valid vacuum solutions (assuming no cosmological constant is present) \cite{LlibreBertJanssen}.} solution is not the trivial one but rather Minkowski spacetime, which corresponds to flat geometry in the absence of matter or energy:
 \begin{equation}
     ds^2 = -dt^2 + dx^2 + dy^2 + dz^2 \ .
 \end{equation}
@@ -2041,7 +2037,7 @@ ds^2 = -\left(1 - \frac{2GM}{r}\right) dt^2
 \end{equation}
 where $M$ denotes the mass of the central object \cite{Llibre_Peter_Collier_unacosadificildecomprender}. 
 
-This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury (see Appendix $\S$\ref{perihelion precession of Mercury})), as well as to predict the bending of light by gravity (see Appendix $\S$\ref{bending of light by gravity}). Most notably, it predicts the existence of BHs, one of the most striking consequences of GR that we will se in this section.
+This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury), as well as to predict the bending of light by gravity (see Section $\S$\ref{Electromagnetic_gravitational_lensing}). Most notably, it predicts the existence of BHs, one of the most striking consequences of GR that we will se in this section.
 
 It is important to understand that there are two different Schwarzschild solutions. 
 The first one is the exterior Schwarzschild solution \eqref{exteriorSchwarz}, which applies to the region 
@@ -2076,7 +2072,7 @@ As $r \to 0$, the metric components diverge:
 \end{equation}
 This divergence is called a singularity, showing that the solution is no longer physically valid at $r=0$. At this point, believed to lie at the center of a BH, spacetime reaches infinite curvature, matter is compressed to infinite density, and the laws of physics break down. In the context of GR this represents a central problem that demands careful study \cite{SchwarzschildSolutionlimit}.
 
-More generally, metrics derived from Einstein’s field equations often present singularities in certain regions of spacetime, where some components of $g_{\mu\nu}$ or its determinant either vanish or diverge. 
+More generally, metrics derived from EFE often present singularities in certain regions of spacetime, where some components of $g_{\mu\nu}$ or its determinant either vanish or diverge. 
 It is important to distinguish between two different types of singularities. 
 The first type are coordinate singularities, which are merely artifacts of the chosen coordinate system. 
 For example, in spherical coordinates the determinant $|g| = r^{2}\sin^{2}\theta$ vanishes as $r \to 0$, even though in Cartesian coordinates the origin is a perfectly regular point. 
@@ -2264,7 +2260,7 @@ We have now reached the central topic of this thesis and of the most remarkable 
 
 In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}. He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether GWs were genuine physical phenomena remained under debate .} \cite{GW150914}. 
 
-GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving BHs (BH-BH), neutron stars (NS-NS), or mixed black hole-neutron star (BH-NS) mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of GR, obtained by expanding the Einstein field equations around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
+GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving BHs (BH-BH), neutron stars (NS-NS), or mixed black hole-neutron star (BH-NS) mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of GR, obtained by expanding the EFE around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
 
 The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss, provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct gravitational-wave astronomy \cite{GW150914}.
 
@@ -2276,7 +2272,7 @@ Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO 
 \subsection{Linearized gravity}
 
 GR describes gravity as the manifestation of spacetime curvature.
-The dynamics of the gravitational field are governed by Einstein’s field equations \cite{maggiore2007gravitational},
+The dynamics of the gravitational field are governed by EFE \cite{maggiore2007gravitational},
 \begin{equation}
 G_{\mu\nu} \equiv R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8\pi G \, T_{\mu\nu},
 \label{eq:einsteinfieldeqs}
@@ -2412,7 +2408,7 @@ R &\approx \eta^{\mu\sigma} R_{\mu\sigma} \approx \frac{1}{2} \left(\partial_\mu
 where we have interchanged the dummy indices $(\lambda \leftrightarrow \rho)$ and $(\mu \leftrightarrow \sigma)$ in the first term, and used $h^{\sigma}_{\rho}=\eta^{\sigma \nu}h_{\rho \nu}$ in the final equality.
 
  Once we have these, using the expressions \eqref{linearizedriemann} and \eqref{lienarizedricci} we can compute the linearization of the  Einstein tensor $G_{\mu \nu}=R_{\mu \nu}-(1/2)\eta_{\mu \nu}R$ for a given source
- $T_{\mu \sigma}$ and obtain the linearized form of the Einstein field equations \eqref{eq:einsteinfieldeqs}
+ $T_{\mu \sigma}$ and obtain the linearized form of the EFE \eqref{eq:einsteinfieldeqs}
 \begin{equation}
 \frac{1}{2} \left(\partial_\mu \partial^{\lambda} h_{\lambda \sigma} + \partial^{\rho} \partial_{\sigma} h_{\mu \rho}
 - \Box h_{\mu \sigma} 
@@ -2458,7 +2454,7 @@ G_{\mu\sigma}
 + \Box\bar{h} \right).
 \end{aligned}
 \end{equation}
-Finally, by collecting and simplifying all terms, we obtain the compact linearized form of the Einstein field equations in vacuum, written in terms of the trace reversed perturbation $\bar{h}_{\mu\nu}$:
+Finally, by collecting and simplifying all terms, we obtain the compact linearized form of the EFE in vacuum, written in terms of the trace reversed perturbation $\bar{h}_{\mu\nu}$:
 \begin{equation}
 G_{\mu\sigma} \equiv
 \partial_\mu\partial^{\lambda}\bar{h}_{\lambda\sigma}
@@ -3322,6 +3318,39 @@ of merit for detector sensitivity) improving progressively across runs as a resu
 
 
 \subsection{Future detectors}
+\label{sec:future_detectors}
+
+The current LVK network has demonstrated the transformative potential of GW astronomy, but its sensitivity and frequency coverage remain limited by fundamental and technical noise sources discussed in \S\ref{sec:noise}. The next generation of detectors, both ground-based and space-based, aims to extend the accessible parameter 
+space by one to two orders of magnitude in strain sensitivity and to cover a much broader frequency band.
+
+\paragraph{Ground-based third-generation detectors.}
+The \textbf{Einstein Telescope} (ET) \cite{} is the European 
+third-generation concept, designed as an equilateral triangle with 10-km arms hosted underground to suppress seismic and Newtonian noise. Each side hosts a \emph{xylophone} configuration: two nested interferometers, one optimised for high frequencies at room temperature and one for low frequencies operating cryogenically, jointly covering the band $\sim\!2$--$10^4$\,Hz. The triangular geometry provides full sky coverage and allows simultaneous measurement of both GW polarizations with a single facility \cite{einstein_online_3g}.
+
+\textbf{Cosmic Explorer} (CE) \cite{} is the US counterpart, 
+conceived as an L-shaped interferometer with 40-km arms — roughly ten times the length of Advanced LIGO — retaining the proven Michelson topology while achieving a strain sensitivity improvement of approximately one order of magnitude. Together, ET and CE would form a third-generation network capable of detecting CBC mergers throughout the majority of the observable Universe.
+
+\textbf{LIGO India} \cite{} is a planned Advanced LIGO-class 
+detector to be built in Maharashtra, India. Although it will not exceed the sensitivity of the current LIGO instruments, its 
+geographic location will substantially improve sky localisation and detection confidence for the global network.
+
+\paragraph{Space-based detectors.}
+Ground-based detectors are fundamentally limited below $\sim\!10$\,Hz by seismic and Newtonian noise. Space-based missions overcome this barrier by operating in a quiet gravitational environment, opening the mHz frequency window inaccessible from the ground.
+
+The \textbf{Laser Interferometer Space Antenna} (LISA) \cite{} is the flagship ESA mission, scheduled for launch in the mid-2030s. It consists of three spacecraft in heliocentric orbit forming a near-equilateral triangle with $2.5\times10^6$\,km arms. Because the arm lengths are unequal and variable, standard Michelson cancellation of laser frequency noise is not possible; instead, Time Delay Interferometry (TDI) is employed to suppress this noise in post-processing. LISA will cover the band $\sim\!10^{-4}$--$10^{-1}$\,Hz, giving access to sources 
+including massive black hole mergers, EMRIs, and the early inspiral of compact binaries centuries before they enter the ground-based band. The feasibility of the key technologies was demonstrated by the LISA Pathfinder mission in 2015-2017.
+
+Further space-based concepts under study include the Japanese 
+\textbf{DECIGO} \cite{}, targeting the decihertz band 
+($\sim\!0.1$--$10$\,Hz) that bridges LISA and ground-based 
+detectors, and the Chinese missions \textbf{TianQin} and 
+\textbf{Taiji} \cite{}, which share a similar frequency range to 
+LISA with different orbital configurations.
+
+The combination of third-generation ground-based detectors and 
+space-based observatories is expected to provide continuous frequency 
+coverage from $\sim\!10^{-4}$\,Hz to several kHz by the early 2030s, 
+enabling a new era of multi-band GW astronomy.
 
 
 
@@ -3385,6 +3414,7 @@ This thesis focuses on the search for these particular type of waves.
 \end{figure}
 
 \section{Electromagnetic gravitational lensing}
+\label{Electromagnetic_gravitational_lensing}
 Thesis Offermans i Hector estellas tfm
 \subsection{Light deflection}
 \subsection{Weak and strong lensing regimes}
