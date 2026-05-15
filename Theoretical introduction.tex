@@ -2971,7 +2971,7 @@ where the triple dot denotes the third time derivative. This formula quantifies 
 \section{Astrophysical sources}
 \label{Astrophysical_sources_GW}
 
-GW astronomy identifies four broad categories of astrophysical signals, each characterized by distinct time-scales, amplitudes, and expected sources. These categories are commonly referred to as transient (compact binary coalescences (CBCs) and bursts), continuous waves (CWs) and stochastic backgrounds (see Fig. \ref{fig:sources}) \cite{Astrophysicalsources}.
+GW astronomy identifies four broad categories of astrophysical signals, each characterized by distinct time-scales, amplitudes, and expected sources. These categories are commonly referred to as transient (compact binary coalescences (CBCs) and bursts), continuous waves (CWs) and stochastic gravitational wave background (SGWB) (see Fig. \ref{fig:sources}) \cite{Astrophysicalsources}.
 
 \begin{figure}[h!]
     \centering
@@ -2983,11 +2983,22 @@ GW astronomy identifies four broad categories of astrophysical signals, each cha
 
 \subsection{Compact Binary Coalescences}  
 
-CBCs are systems formed by two compact objects such as BHs, NSs, or a combination of both, which inspiral and merge due to the emission of GWs. These systems are classified as BBHs, binary neutron stars (BNS), or neutron star and BH binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the detectable signal depends on the masses, ranging from fractions of a second for BBH mergers to much longer signals for BNS systems.
+CBCs are systems formed by two compact objects such as BHs, NSs, or a combination of both, which inspiral and merge due to the emission of GWs (see Fig.~\ref{fig:inspiral_merger_ringdown}). 
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.73\linewidth]{Figures/inspiral_merger_ringdown.jpg}
+    \caption{The three phases of a CBC: the inspiral, during which the two compact objects lose energy through GW emission and progressively approach each other; the merger, when the objects collide and coalesce; and the ringdown, in which the remnant settles into a stationary configuration by radiating the remaining perturbations. The corresponding gravitational waveform, showing the characteristic chirp of increasing frequency and amplitude, is displayed beneath each phase. Credit: Illustration by Lucy Reading-Ikkanda.}
+    \label{fig:inspiral_merger_ringdown}
+\end{figure}
+
+
+These systems are classified as BBHs, binary neutron stars (BNS), or NS and BH binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the detectable signal depends on the masses, ranging from fractions of a second for BBH mergers to much longer signals for BNS systems.
 
 To date, nearly all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first BNS detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs, with binary BH mergers dominating the observed population.
 
-The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data. Future space based detectors such as LISA (see $\S$\ref{spacebased_detectors}) will extend observations to other sources, including white dwarf binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
+The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data. Future space based detectors such as the Laser Interferometer Space Antenna (LISA) (see $\S$\ref{spacebased_detectors}) will extend observations to other sources, including white dwarf binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
 
 
 \subsection{Burst events}  
@@ -2997,7 +3008,7 @@ These signals typically last from a fraction of a second to a few tens of second
 
 \subsection{Continuous waves}
 
-Continuous gravitational waves (CWs) are expected to be emitted by rapidly rotating compact objects, particularly NSs with small deviations from perfect axial symmetry. These asymmetries produce a time varying quadrupole moment, enabling the continuous emission of gravitational radiation. The resulting signal is nearly monochromatic, typically at a frequency related to the star’s rotation, and evolves very slowly due to spindown effects \cite{monochromatic_CWs}.
+CWs are expected to be emitted by rapidly rotating compact objects, particularly NSs with small deviations from perfect axial symmetry. These asymmetries produce a time varying quadrupole moment, enabling the continuous emission of gravitational radiation. The resulting signal is nearly monochromatic, typically at a frequency related to the star’s rotation, and evolves very slowly due to spindown effects \cite{monochromatic_CWs}.
 
 In contrast to CBCs, CW signals are extremely long lived but much weaker in amplitude, as they originate from small deformations in the source. As a result, their detection requires long observation times, often spanning months or years, in order to accumulate sufficient signal to noise ratio (SNR). Despite their low amplitude, once detected, these signals can be tracked over extended periods, allowing for precise studies of the source properties.
 
@@ -3006,9 +3017,8 @@ The strength of the emission depends on factors such as the rotation rate and in
 
 \subsection{Stochastic backgrounds}
 
-The stochastic gravitational wave background (SGWB) is a diffuse signal produced by the superposition of many unresolved sources, which are either too weak or too numerous to be individually detected. This background can have both astrophysical and cosmological origins \cite{stochastic_backgrounds}. Astrophysical contributions arise from the cumulative effect of distant CBCs or populations of compact binaries such as WD systems, while cosmological contributions may be generated in the early Universe through processes such as inflation or phase transitions.
+SGWB is a diffuse signal produced by the superposition of many unresolved sources, which are either too weak or too numerous to be individually detected. This background can have both astrophysical and cosmological origins \cite{stochastic_backgrounds}. Astrophysical contributions arise from the cumulative effect of distant CBCs or populations of compact binaries such as WD systems, while cosmological contributions may be generated in the early Universe through processes such as inflation or phase transitions.
 
-The properties of the SGWB depend on the frequency band of the detector. Ground based interferometers are sensitive to backgrounds produced by compact binaries, whereas pulsar timing arrays probe much lower frequencies, and future space based missions such as LISA are expected to observe signals from galactic binary populations, particularly WD binaries \cite{SGWB_LISA}, which may even dominate the measured strain.
 
 Although no definitive detection has yet been achieved by ground based detectors, current analyses have placed increasingly stringent upper limits on the energy density of the background \cite{detection_SGWB}. Detecting the SGWB would provide unique information about the population of unresolved sources and could offer a direct probe of physical processes in the early Universe, complementing observations of the cosmic microwave background.
 
@@ -3050,10 +3060,7 @@ The response of an interferometric detector depends on the relative orientation 
 Here we derive the response of a ground-based Michelson interferometer to a plane GW in the long-wavelength approximation, where the detector arm length is much smaller than the reduced wavelength of the wave. 
 
 
-A complete description of the detection problem requires three distinct 
-Cartesian frames \cite{TriasCornellana2011GW}. The wave frame
-$(x',y',z')$ has its $z'$-axis aligned with the propagation direction; 
-in this frame the TT metric perturbation takes the standard form 
+A complete description of the detection problem requires three distinct Cartesian frames \cite{TriasCornellana2011GW}. The wave frame $(x',y',z')$ has its $z'$-axis aligned with the propagation direction; in this frame the TT metric perturbation takes the standard form 
 \begin{equation}
 H =
 \begin{pmatrix}
@@ -3064,15 +3071,7 @@ h_\times & -h_+ & 0 \\
 \label{strain_tensor}
 \end{equation}
 where $h_+$ and $h_\times$ denote the plus and cross polarizations.
-The detector frame $(\bar{x},\bar{y},\bar{z})$ has its $\bar{z}$-axis pointing toward the local zenith and the two arms lying in the $(\bar{x},\bar{y})$ plane 
-along unit vectors $\hat{\mathbf{n}}_1$ and $\hat{\mathbf{n}}_2$, 
-separated by an opening angle $\zeta$. Finally, an ecliptic frame $(x,y,z)$ centered 
-at the Solar System Barycenter serves as a common inertial reference 
-for source localization. The relative orientation of the wave and 
-detector frames is parametrized by the polar angles 
-$(\bar{\theta}_N, \bar{\phi}_N)$ specifying the source direction in 
-the detector frame, and the polarization angle $\psi$ (see 
-Fig.~\ref{fig:antennapatternscoord}).
+The detector frame $(\bar{x},\bar{y},\bar{z})$ has its $\bar{z}$-axis pointing toward the local zenith and the two arms lying in the $(\bar{x},\bar{y})$ plane along unit vectors $\hat{\mathbf{n}}_1$ and $\hat{\mathbf{n}}_2$, separated by an opening angle $\zeta$. Finally, an ecliptic frame $(x,y,z)$ centered at the Solar System Barycenter serves as a common inertial reference for source localization. The relative orientation of the wave and detector frames is parametrized by the polar angles $(\bar{\theta}_N, \bar{\phi}_N)$ specifying the source direction in the detector frame, and the polarization angle $\psi$ (see Fig.~\ref{fig:antennapatternscoord}).
 
 \begin{figure}[h!]
     \centering
@@ -3082,10 +3081,7 @@ Fig.~\ref{fig:antennapatternscoord}).
 \end{figure}
 
 
-The observable quantity is the differential arm-length variation induced 
-by the passing wave. Working to first order in $h$ and applying the 
-geodesic deviation equation \eqref{eq:geodesiceq} in the detector 
-frame, the fractional length change of a single arm oriented along 
+The observable quantity is the differential arm-length variation induced by the passing wave. Working to first order in $h$ and applying the geodesic deviation equation \eqref{eq:geodesiceq} in the detector frame, the fractional length change of a single arm oriented along 
 $\hat{\mathbf{n}}$ is
 \begin{equation}
     \frac{\delta L(t)}{L} = \frac{1}{2}\,\hat{\mathbf{n}}^{T}
@@ -3277,11 +3273,11 @@ sources on the sky via time delay triangulation. Sky localisation precision impr
 
     \item \textbf{Advanced LIGO} \cite{Advanced_ligo} 
     comprises two 4-km detectors: LIGO Hanford (H1) in Washington State and LIGO Livingston (L1) in Louisiana, separated by $\sim\!3000$\,km. Operated by the LIGO Scientific Collaboration (LSC), they have been the primary instruments for GW detections 
-    since the first observation of a binary black hole merger in September 2015 \cite{GW150914}. A third Advanced LIGO detector, LIGO-India, is currently under construction and expected to join the network in 2030.
+    since the first observation of a BBH merger in September 2015 \cite{GW150914}. A third Advanced LIGO detector, LIGO-India, is currently under construction and expected to join the network in 2030.
 
-    \item \textbf{Advanced Virgo (V1)} \cite{Advanced_VIRGO} is a 3-km interferometer located in Cascina, Italy, operated by the Virgo Collaboration. It joined the network in the final month of O2, contributing to the first three-detector observation of a binary black hole merger (GW170814) and to the precise sky localisation of the binary neutron star merger GW170817 \cite{GW170817}. Although its sensitivity is somewhat below that of the LIGO instruments, its geographic separation from the US sites significantly improves source localisation.
+    \item \textbf{Advanced Virgo (V1)} \cite{Advanced_VIRGO} is a 3-km interferometer located in Cascina, Italy, operated by the Virgo Collaboration. It joined the network in the final month of O2, contributing to the first three-detector observation of a BBH merger (GW170814 \cite{GW170814}) and to the precise sky localisation of the BNS merger GW170817 \cite{GW170817}. Although its sensitivity is somewhat below that of the LIGO instruments, its geographic separation from the US sites significantly improves source localisation.
 
-    \item \textbf{KAGRA (K1)} \cite{KAGRA} is a 3-km cryogenic underground detector situated 200\,m beneath the Kamioka mountain in Gifu Prefecture, Japan. Its subterranean location provides natural seismic and atmospheric shielding, and its test masses are cooled to cryogenic temperatures ($\sim\!20$\,K) to suppress thermal noise, making it the first second-generation detector to adopt this approach. KAGRA participated in a short joint observing run with GEO\,600 at the end of O3, and has been part of the network since O4.
+    \item \textbf{KAGRA (K1)} \cite{KAGRA} is a 3-km cryogenic underground detector situated 200\,m beneath the Kamioka mountain in Gifu Prefecture, Japan. Its subterranean location provides natural seismic and atmospheric shielding, and its test masses are cooled to cryogenic temperatures ($\sim\!20$\,K) to suppress thermal noise, making it the first second-generation detector to adopt this approach. KAGRA participated in a short joint observing run with GEO600 at the end of O3, and has been part of the network since O4.
 
     \item \textbf{GEO600} \cite{GEO600} is a 600-m detector near Hannover, Germany, operated jointly by British and German institutions. Its shorter arms make it significantly less sensitive than the kilometre-scale instruments, so it does not contribute to standard astrophysical searches. Instead, it operates in astrowatch mode during maintenance periods of the other detectors and serves as a testbed for advanced instrumentation techniques (including squeezed-light injection) before their deployment in larger facilities. GEO600 is scheduled to conclude operations in 2026, marking the end of its role as the longest-running interferometric GW detector in Europe.
 
@@ -3296,14 +3292,14 @@ sources on the sky via time delay triangulation. Sky localisation precision impr
 \end{figure}
 
 
-The evolution of the network across observing runs is illustrated in Fig.~\ref{fig:runs_O1234}. During O1 and the majority of O2, only H1 and L1 were operational; Virgo joined for the final weeks of O2 and participated throughout O3. A brief joint run (O3GK) at the close of O3 included GEO\,600 and KAGRA. Since O4, the network comprises all four facilities, with the BNS inspiral range (the standard figure 
+The evolution of the network across observing runs is illustrated in Fig.~\ref{fig:runs_O1234}. During O1 and the majority of O2, only H1 and L1 were operational; Virgo joined for the final weeks of O2 and participated throughout O3. A brief joint run (O3GK) at the close of O3 included GEO600 and KAGRA. Since O4, the network comprises all four facilities, with the BNS inspiral range (the standard figure 
 of merit for detector sensitivity) improving progressively across runs as a result of the upgrades discussed in 
 \S\ref{sec:noise}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.79\linewidth]{Figures/Runs_timeline.png}
-    \caption{Timeline of LVK observing runs from the first detection in 2015 through O4a. Colored bars indicate the periods during which each detector was operating, together with the typical BNS inspiral range achieved in each run. GEO astrowatch and KAGRA O4a periods (light gray) were not included in the main GW analyses. Virgo joined the network in the final month of O2 and operated throughout O3; a short joint O3GK run also included GEO and KAGRA. Tick marks along the top indicate GW candidates from GWTC-1 through GWTC-4 with astrophysical probability $\geq 50\%$. Source: \cite{runs_timeline_O1234}.}
+    \caption{Timeline of LVK observing runs from the first detection in 2015 through O4a. Colored bars indicate the periods during which each detector was operating, together with the typical BNS inspiral range achieved in each run. GEO astrowatch and KAGRA O4a periods (light gray) were not included in the main GW analyses. Virgo joined the network in the final month of O2 and operated throughout O3; a short joint O3GK run also included GEO600 and KAGRA. Tick marks along the top indicate GW candidates from GWTC-1 through GWTC-4 with astrophysical probability $\geq 50\%$. Source: \cite{runs_timeline_O1234}.}
     \label{fig:runs_O1234}
 \end{figure}
 
@@ -3312,38 +3308,29 @@ of merit for detector sensitivity) improving progressively across runs as a resu
 \subsection{Future detectors}
 \label{sec:future_detectors}
 
-The current LVK network has demonstrated the transformative potential of GW astronomy, but its sensitivity and frequency coverage remain limited by fundamental and technical noise sources discussed in \S\ref{sec:noise}. The next generation of detectors, both ground-based and space-based, aims to extend the accessible parameter 
-space by one to two orders of magnitude in strain sensitivity and to cover a much broader frequency band.
+The current LVK network has demonstrated the transformative potential of GW astronomy, but its sensitivity and frequency coverage remain limited by fundamental and technical noise sources discussed in \S\ref{sec:noise}. The next generation of detectors, both ground-based and space-based, aims to extend the accessible parameter space by one to two orders of magnitude in strain sensitivity and to cover a much broader frequency band.
 
-\paragraph{Ground-based third-generation detectors.}
-The \textbf{Einstein Telescope} (ET) \cite{} is the European 
-third-generation concept, designed as an equilateral triangle with 10-km arms hosted underground to suppress seismic and Newtonian noise. Each side hosts a \emph{xylophone} configuration: two nested interferometers, one optimised for high frequencies at room temperature and one for low frequencies operating cryogenically, jointly covering the band $\sim\!2$--$10^4$\,Hz. The triangular geometry provides full sky coverage and allows simultaneous measurement of both GW polarizations with a single facility \cite{einstein_online_3g}.
+\subsubsection{Ground-based third-generation detectors.}
 
-\textbf{Cosmic Explorer} (CE) \cite{} is the US counterpart, 
-conceived as an L-shaped interferometer with 40-km arms — roughly ten times the length of Advanced LIGO — retaining the proven Michelson topology while achieving a strain sensitivity improvement of approximately one order of magnitude. Together, ET and CE would form a third-generation network capable of detecting CBC mergers throughout the majority of the observable Universe.
+\begin{itemize}
+    \item   \textbf{Einstein Telescope} (ET) \cite{Einsteintelescope} is the European third-generation concept, designed as an equilateral triangle with 10-km arms hosted underground to suppress seismic and Newtonian noise. Each side hosts a xylophone configuration: two nested interferometers, one optimised for high frequencies at room temperature and one for low frequencies operating cryogenically, jointly covering the band $\sim\!2$-$10^4$\,Hz. The triangular geometry provides full sky coverage and allows simultaneous measurement of both GW polarizations with a single facility.
+    \item \textbf{Cosmic Explorer} (CE) \cite{evans2021horizonstudycosmicexplorer} is the US counterpart, conceived as an L-shaped interferometer with 40-km arms (roughly ten times the length of Advanced LIGO) retaining the proven Michelson topology while achieving a strain sensitivity improvement of approximately one order of magnitude. Together, ET and CE would form a third-generation network capable of detecting CBC mergers throughout the majority of the observable Universe.
+    \item \textbf{LIGO India} \cite{LIGO_INDIA} is a planned Advanced LIGO-class detector to be built in Maharashtra, India. Although it will not exceed the sensitivity of the current LIGO instruments, its geographic location will substantially improve sky localisation and detection confidence for the global network.
+\end{itemize}
 
-\textbf{LIGO India} \cite{} is a planned Advanced LIGO-class 
-detector to be built in Maharashtra, India. Although it will not exceed the sensitivity of the current LIGO instruments, its 
-geographic location will substantially improve sky localisation and detection confidence for the global network.
 
-\paragraph{Space-based detectors.}
+\subsubsection{Space-based detectors.}
 \label{spacebased_detectors}
 Ground-based detectors are fundamentally limited below $\sim\!10$\,Hz by seismic and Newtonian noise. Space-based missions overcome this barrier by operating in a quiet gravitational environment, opening the mHz frequency window inaccessible from the ground.
 
-The \textbf{Laser Interferometer Space Antenna} (LISA) \cite{} is the flagship ESA mission, scheduled for launch in the mid-2030s. It consists of three spacecraft in heliocentric orbit forming a near-equilateral triangle with $2.5\times10^6$\,km arms. Because the arm lengths are unequal and variable, standard Michelson cancellation of laser frequency noise is not possible; instead, Time Delay Interferometry (TDI) is employed to suppress this noise in post-processing. LISA will cover the band $\sim\!10^{-4}$--$10^{-1}$\,Hz, giving access to sources 
-including massive black hole mergers, EMRIs, and the early inspiral of compact binaries centuries before they enter the ground-based band. The feasibility of the key technologies was demonstrated by the LISA Pathfinder mission in 2015-2017.
+\begin{itemize}
+    \item \textbf{LISA} \cite{LISA_detector} is the flagship ESA mission, scheduled for launch in the mid-2030s. It consists of three spacecraft in heliocentric orbit forming a near-equilateral triangle with $2.5\times10^6$\,km arms. Because the arm lengths are unequal and variable, standard Michelson cancellation of laser frequency noise is not possible; instead, Time Delay Interferometry (TDI) is employed to suppress this noise in post-processing. LISA will cover the band $\sim\!10^{-4}$--$10^{-1}$\,Hz, giving access to sources including massive BH mergers, EMRIs, and the early inspiral of compact binaries centuries before they enter the ground-based band. The feasibility of the key technologies was demonstrated by the LISA Pathfinder mission in 2015-2017.
+\end{itemize}
 
 Further space-based concepts under study include the Japanese 
-\textbf{DECIGO} \cite{}, targeting the decihertz band 
-($\sim\!0.1$--$10$\,Hz) that bridges LISA and ground-based 
-detectors, and the Chinese missions \textbf{TianQin} and 
-\textbf{Taiji} \cite{}, which share a similar frequency range to 
-LISA with different orbital configurations.
+DECIGO \cite{DECIGO_detector}, targeting the decihertz band ($\sim\!0.1$-$10$\,Hz) that bridges LISA and ground-based detectors, and the Chinese missions TianQin and Taiji \cite{TianQin_detector}, which share a similar frequency range to LISA with different orbital configurations.
 
-The combination of third-generation ground-based detectors and 
-space-based observatories is expected to provide continuous frequency 
-coverage from $\sim\!10^{-4}$\,Hz to several kHz by the early 2030s, 
-enabling a new era of multi-band GW astronomy.
+The combination of third-generation ground-based detectors and space-based observatories is expected to provide continuous frequency coverage from $\sim\!10^{-4}$\,Hz to several kHz by the late 2030s, enabling a new era of multi-band GW astronomy.
 
 
 
