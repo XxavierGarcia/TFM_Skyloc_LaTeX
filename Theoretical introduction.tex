@@ -3176,7 +3176,8 @@ set of noise sources that would otherwise overwhelm the signal. These are conven
 The autocorrelation function measures how strongly a signal is correlated with a delayed version of itself as a function of the time lag $\tau$. In the context of detector noise, it quantifies the degree to which noise fluctuations at different times remain statistically related \cite{autocorrelation_function}.
 } of the detector output: 
 \begin{equation}
-    S(f) = \int C(\tau)\, e^{-i 2\pi f \tau} \, d\tau ,
+    S_n(f) = \int C(\tau)\, e^{-i 2\pi f \tau} \, d\tau ,
+\label{PSD_eq}
 \end{equation}
 where $C(\tau) = \langle n(t) n(t+\tau) \rangle$ is the autocorrelation function of the noise process $n(t)$, and $\langle \cdot \rangle$ denotes an ensemble average.
 Its square root $\sqrt{S_n(f)}$, expressed in units of Hz$^{-1/2}$, defines the sensitivity curve of the instrument and sets the threshold below which signals are inaccessible.
@@ -3333,49 +3334,188 @@ DECIGO \cite{DECIGO_detector}, targeting the decihertz band ($\sim\!0.1$-$10$\,H
 The combination of third-generation ground-based detectors and space-based observatories is expected to provide continuous frequency coverage from $\sim\!10^{-4}$\,Hz to several kHz by the late 2030s, enabling a new era of multi-band GW astronomy.
 
 
-
-
-
 \section{Gravitational wave data analysis}
+\label{sec:data_analysis}
 
-mirar doctorat Maria Teresa
+The preceding sections established the theoretical framework for GW generation and propagation, and the experimental techniques employed to detect them. The remaining challenge is to extract astrophysical information from the noisy output of the detectors. This requires combining signal processing, physical modelling, and statistical 
+inference. The workflow proceeds in three stages: first, matched filtering is used to identify candidate events buried in the noise ($\S$\ref{sec:matched_filtering}); second, accurate waveform models are needed to compare against the data ($\S$\ref{sec:waveform_models}); and third, Bayesian parameter estimation is applied to the detected signal to infer the properties of the source ($\S$\ref{sec:PE}).
+
 \subsection{Matched filtering and signal-to-noise ratio}
-mirar cecilio magrada primer paragraf, tambe lluc planas
+\label{sec:matched_filtering}
+
+\subsubsection{Detector output and noise model}
+
+The output of a GW detector can be written as the sum of a 
+GW signal and instrumental noise,
+\begin{equation}
+    s(t) = h(t;\boldsymbol{\theta}) + n(t),
+    \label{eq:detector_output}
+\end{equation}
+where $h(t;\boldsymbol{\theta})$ is the GW strain parametrized by the source parameters $\boldsymbol{\theta}$, and $n(t)$ is the noise contribution. With the sensitivity of current detectors, the noise amplitude is several orders of magnitude larger than the signal, $|h(t;\boldsymbol{\theta})| \ll |n(t)|$, so a detection cannot be claimed by direct inspection of $s(t)$ \cite{maggiore2007gravitational}. A systematic method is therefore required to extract the buried signal.
+
+Although the true noise is non-stationary and non-Gaussian (exhibiting glitches and spectral lines as discussed in 
+\S\ref{sec:noise}) a tractable analytic framework is obtained by modelling it as a zero-mean, stationary Gaussian random process fully characterized by its one-sided power spectral density (PSD) 
+$S_n(f)$ \eqref{PSD_eq},
+\begin{equation}
+    \langle \tilde{n}^*(f)\,\tilde{n}(f') \rangle 
+    = \frac{1}{2}\,S_n(f)\,\delta(f - f'),
+    \label{eq:PSD}
+\end{equation}
+where tildes denote Fourier transforms, $\delta(f-f')$ is the Dirac delta encoding the statistical independence of different frequency components, and $\langle\cdot\rangle$ denotes an ensemble average, which for a single detector is identified with a time average via the ergodic theorem\footnote{dsdppdmcwpmcpwomofpwoepowfpofepomfpowmcpomwdc}. Under this Gaussian noise model, the probability density of a noise realization $n(t)$ is
+\begin{equation}
+    p(n) \propto \exp\!\left(-\frac{1}{2}(n|n)\right),
+\end{equation}
+where we have introduced the noise-weighted inner product (Wiener scalar product) between two real time series $a(t)$ and 
+$b(t)$,
+\begin{equation}
+    (a|b) \equiv 4\,\mathrm{Re}\int_0^\infty 
+    \frac{\tilde{a}^*(f)\,\tilde{b}(f)}{S_n(f)}\,df.
+    \label{eq:inner_product}
+\end{equation}
+This inner product weights frequency bins inversely by the noise power, so that frequency bands where the detector is more sensitive contribute more to the overlap between two waveforms.
+
+\subsubsection{The matched filter and optimal SNR}
+
+Given a template waveform $h_m(t;\boldsymbol{\theta})$ representing our best theoretical model of the expected signal (see $\S$\ref{sec:waveform_models}), the matched filter is the linear filter $K(t)$ that maximizes the SNR. The SNR is defined as the ratio of the expected filtered output when a signal is present to the root-mean-square of the filtered output when only noise is present. Concretely, one filters the detector output by computing the scalar product
+\begin{equation}
+    \hat{s} = \int_{-\infty}^{\infty} s(t)\,K(t)\,dt,
+\end{equation}
+and seeks the $K(t)$ that maximizes the ratio of the expected value of $\hat{s}$ when a signal is present to the root-mean-square of $\hat{s}$ when only noise is present. Applying the Cauchy-Schwarz inequality to this optimization in the frequency domain, one finds that the optimal filter is proportional to the signal template weighted by the inverse PSD,
+\begin{equation}
+    \tilde{K}(f) \propto \frac{\tilde{h}_m(f)}{S_n(f)},
+    \label{eq:optimal_filter}
+\end{equation}
+which down-weights frequency bands where the detector is noisier. This is the key intuition behind matched filtering: rather than treating all frequencies equally, the filter suppresses contributions from noisy bands and amplifies those where the detector is most sensitive.
+
+With this optimal filter, the SNR is
+\begin{equation}
+    \mathrm{SNR} \equiv \rho = \frac{(h_m|s)}{\sqrt{\langle(h_m|n)(n|h_m)\rangle}} 
+    = \frac{(h_m|s)}{\sqrt{(h_m|h_m)}} 
+    = (\hat{h}_m|s),
+    \label{eq:SNR_MF}
+\end{equation}
+where we have used the property $\langle(a|n)(n|b)\rangle = (a|b)$ of the Wiener inner product, and defined the normalized template
+\begin{equation}
+    \hat{h}_m \equiv \frac{h_m}{(h_m|h_m)^{1/2}}.
+\end{equation}
+Substituting 
+\eqref{eq:detector_output} and assuming the noise is uncorrelated with the template, $\langle(h_m|n)\rangle = 0$, the expectation value of $\rho$ reduces to $\langle\rho\rangle = (\hat{h}_m|h)$, which is maximized when the template exactly matches the signal, $h_m = h$. In that ideal case one recovers the optimal SNR,
+\begin{equation}
+    \rho_\mathrm{opt}^2 = (h|h) 
+    = 4\int_0^\infty \frac{|\tilde{h}(f)|^2}{S_n(f)}\,df,
+    \label{eq:optimal_SNR}
+\end{equation}
+which quantifies the intrinsic detectability of a waveform given the detector noise \cite{Optimal_SNR}. In practice, $\rho$ is computed as a time series by sliding the template across the data; a detection candidate is declared when $\rho$ exceeds a predefined threshold, typically $\rho \gtrsim 8$ for a single detector and requiring coincident triggers across the network to suppress noise transients.
+
+The matched filter is optimal only under the Gaussian noise 
+assumption of \eqref{eq:PSD}. In practice, non-Gaussianities and glitches can produce large values of $\rho$ in the absence of a real signal, making data quality vetoes and multi-detector coincidence requirements essential components of any GW search pipeline. Furthermore, since $\rho$ depends on the match between the template and the true signal, the effectiveness of matched filtering is directly tied to the accuracy of the waveform models discussed in the following section.
+
 \subsection{Waveform models for CBCs}
-alica C
+\label{sec:waveform_models}
+
+Matched filtering and parameter estimation both require accurate theoretical predictions of the GW signal as a function of the source parameters. For CBCs, the waveform evolves through three distinct 
+phases (see Fig.~\ref{fig:inspiral_merger_ringdown}): the 
+\emph{inspiral}, governed by the post-Newtonian (PN) expansion of the quadrupole formula \eqref{}; the \emph{merger}, which requires full numerical relativity (NR) simulations; and the \emph{ringdown}, described analytically by quasi-normal modes of the remnant BH. 
+Current waveform families combine these regimes into a single coherent model through two main approaches. 
+\emph{Effective-one-body} (EOB) models map the two-body problem onto an effective single-body problem, resumming the PN series and calibrating to NR. \emph{Phenomenological} models (IMRPhenom) instead fit closed-form frequency-domain expressions directly to hybrid PN--NR waveforms. Both families are continuously refined to include the effects of spin precession, orbital eccentricity, and tidal deformability for NS components.
+
 
 \subsection{Bayesian parameter estimation}
+\label{sec:PE}
+
+Once a GW candidate has been identified, the goal is to determine what kind of source produced it and to measure its physical properties. Concretely, we seek to answer questions such as: what were the masses and spins of the merging objects? From which direction on the sky did the signal arrive? How far away was the source? The answers are encoded in the shape of the detected waveform, since the parameters of the binary uniquely determine the gravitational wave signal it emits. Parameter estimation (PE) is 
+the systematic procedure by which we compare the space of possible waveforms to the observed data and assign credible ranges to each source parameter.
+
+The parameters of a GW signal fall into two categories 
+\cite{zenodo_gwosc}. \emph{Intrinsic parameters} describe the binary itself: the component masses $m_1, m_2$ and their 
+dimensionless spin vectors $\boldsymbol{\chi}_1, \boldsymbol{\chi}_2$, and, for BNS systems, the tidal deformabilities $\Lambda_{1,2}$. \emph{Extrinsic parameters} encode how the merger is observed from Earth: the sky location $(\alpha, \delta)$, luminosity distance $d_L$, inclination angle $\iota$, polarization angle $\psi$, and coalescence time $t_c$. Together these constitute the parameter vector $\boldsymbol{\theta}$ over which inference is performed.
+
 \subsubsection{Bayes' theorem and posterior inference}
+\label{sec:bayes}
+
+The natural framework for GW parameter estimation is Bayesian inference, which provides a principled way to update prior knowledge about the source parameters in light of the observed data. Given detector strain data $d$ and a waveform model $\mathcal{M}$, Bayes' theorem relates the \emph{posterior} distribution 
+$p(\boldsymbol{\theta}|d,\mathcal{M})$ to the \emph{likelihood} 
+$\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})$ and the \emph{prior} 
+$p(\boldsymbol{\theta}|\mathcal{M})$ through
+\begin{equation}
+    p(\boldsymbol{\theta}|d,\mathcal{M}) = 
+    \frac{\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})\,
+    p(\boldsymbol{\theta}|\mathcal{M})}{\mathcal{Z}(\mathcal{M})},
+    \label{eq:bayes}
+\end{equation}
+where the \emph{evidence} $\mathcal{Z}(\mathcal{M}) = 
+\int \mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})\,
+p(\boldsymbol{\theta}|\mathcal{M})\,d\boldsymbol{\theta}$ 
+normalizes the posterior. For Gaussian, stationary noise with PSD $S_n(f)$, the likelihood takes the form
+\begin{equation}
+    \ln\mathcal{L}(d|\boldsymbol{\theta}) = 
+    -\frac{1}{2}(d - h(\boldsymbol{\theta})\,|\,
+    d - h(\boldsymbol{\theta})),
+    \label{eq:likelihood}
+\end{equation}
+where $(\cdot|\cdot)$ is the noise-weighted inner product defined in \eqref{eq:SNR} and $h(\boldsymbol{\theta})$ is the waveform template evaluated at parameters $\boldsymbol{\theta}$. The posterior encodes the full probability distribution of the source parameters 
+given the data, and its marginals yield credible intervals for each individual parameter.
+
 \subsubsection{Hypothesis testing and the Bayes factor}
+\label{sec:bayes_factor}
+
+Beyond parameter estimation within a fixed model, Bayesian inference also provides a framework for comparing competing hypotheses. Given two models $\mathcal{M}_1$ and $\mathcal{M}_2$ — for instance, the hypothesis that the data contains a GW signal versus the hypothesis that it contains only noise — the \emph{Bayes factor} is defined as the ratio of their evidences,
+
+\begin{equation}
+    \mathcal{B}_{12} = 
+    \frac{\mathcal{Z}(\mathcal{M}_1)}{\mathcal{Z}(\mathcal{M}_2)}.
+    \label{eq:bayes_factor}
+\end{equation}
+
+A Bayes factor $\mathcal{B}_{12} \gg 1$ favours $\mathcal{M}_1$ 
+over $\mathcal{M}_2$. In GW astronomy, Bayes factors are used to 
+compare different waveform models, to assess whether a signal 
+requires spin precession or tidal effects, and to test GR against 
+alternative theories of gravity.
 
 \subsubsection{Stochastic sampling methods}
+\label{sec:sampling}
 
-\paragraph{Markov Chain Monte Carlo}
-\paragraph{Nested sampling}
+The posterior distribution \eqref{eq:bayes} lives in a 
+high-dimensional parameter space — typically 15 dimensions for a 
+BBH and more for systems with precessing spins or tidal effects — 
+and cannot be evaluated analytically. Stochastic sampling algorithms 
+are therefore employed to explore the posterior efficiently and 
+produce a set of representative samples from which any marginal 
+distribution or credible interval can be estimated.
+
+\paragraph{Markov Chain Monte Carlo.}
+Markov Chain Monte Carlo (MCMC) methods construct a random walk 
+through parameter space whose stationary distribution is the target 
+posterior. At each step, a new point $\boldsymbol{\theta}'$ is 
+proposed and accepted or rejected according to the 
+Metropolis--Hastings criterion, which ensures detailed balance. 
+Parallel tempering, in which multiple chains at different 
+\emph{temperatures} explore the posterior simultaneously and 
+exchange states, is commonly used to improve mixing and avoid 
+entrapment in local maxima.
+
+\paragraph{Nested sampling.}
+Nested sampling \cite{} is an alternative algorithm designed to 
+compute the evidence $\mathcal{Z}$ directly while simultaneously 
+producing posterior samples as a byproduct. A fixed number of 
+\emph{live points} are drawn from the prior and iteratively replaced 
+by new points of higher likelihood, progressively shrinking the 
+prior volume. The evidence is accumulated as a one-dimensional 
+integral over the likelihood-ordered prior mass. Nested sampling is 
+particularly well-suited to GW PE because it handles multimodal 
+posteriors — common when sky position or inclination angle are poorly 
+constrained — and provides a reliable estimate of $\mathcal{Z}$ for 
+model comparison. The algorithms \textsc{Dynesty} and 
+\textsc{MultiNest} are the most widely used implementations in GW 
+astronomy, interfaced through the \textsc{Bilby} \cite{} inference 
+library.
 
 
 
 
 
 
-mirar maria teresa phd
-
-el seguent text l'has tret de: https://zenodo.org/records/17014085
-
-After detecting a GW signal, we would like to learn about what kind of compact object produced the signal. We can then answer questions like:
-
-What type of source was it likely to be? BBH, BNS, NSBH or MassGap.
-How massive were the black holes or neutron stars that collided?
-Which direction on the sky did the signal come from?
-The properties (or parameters) of the merging objects decide the shape of the gravitational waveform signal. Parameter estimation is a detailed analysis of the shape of the signal waveform. We compare many possible waveforms to the observed signal and find credible ranges for the parameters of the source.
-
-There are two types of parameters that describe a gravitational wave signal.
-
-Intrinsic parameters are properties of the binary itself, including the masses and spins of the compact objects.
-Extrinsic parameters are properties which describe how we view the merger from the Earth. This includes the position of the source in the sky, the distance to the source, and its orientation.
-More information on parameter estimation can be found in the GWOSC Open Data Workshop.
-
-The result of parameter estimation analysis is a list of posterior samples for each parameter. The samples represents the posterior distribution of the parameter, which tells us the most credible values of the signal parameters. This notebook shows you how to read and plot parameter estimation samples as a starting point for use in your own analysis.
 
 
 
