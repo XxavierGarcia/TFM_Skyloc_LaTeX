@@ -2246,7 +2246,7 @@ In summary, this chapter has laid the mathematical and physical foundations of G
 \chapter{Gravitational wave theory}
 \label{Gravitational--wave theory}
 
-We have now reached the central topic of this thesis and one of the most remarkable predictions of Einstein's GR: GWs. In this chapter, we introduce their theoretical foundations, beginning with their natural emergence from the linearized EFE ($\S$\ref{Gravitational_waves_linearized_gravity}), and characterize their polarization states and physical action on test masses via the geodesic deviation equation. We then survey the main astrophysical source classes ($\S$\ref{Astrophysical_sources_GW}) and discuss the detection principle underlying current interferometric observatories, covering antenna pattern functions, noise sources, and the global detector network ($\S$\ref{}). The chapter closes with an overview of the Bayesian parameter estimation framework used to extract source properties from GW signals ($\S$\ref{}), establishing the statistical foundation for the data analysis presented in subsequent chapters.
+We have now reached the central topic of this thesis and one of the most remarkable predictions of Einstein's GR: GWs. In this chapter, we introduce their theoretical foundations, beginning with their natural emergence from the linearized EFE ($\S$\ref{Gravitational_waves_linearized_gravity}), and characterize their polarization states and physical action on test masses via the geodesic deviation equation. We then survey the main astrophysical source classes ($\S$\ref{Astrophysical_sources_GW}) and discuss the detection principle underlying current interferometric observatories, covering antenna pattern functions, noise sources, and the global detector network ($\S$\ref{}). The chapter closes with an overview of the Bayesian parameter estimation (PE) framework used to extract source properties from GW signals ($\S$\ref{}), establishing the statistical foundation for the data analysis presented in subsequent chapters.
 
 \section{Gravitational waves in linearized gravity}
 \label{Gravitational_waves_linearized_gravity}
@@ -3051,7 +3051,7 @@ Modern interferometers incorporate several enhancements to increase their sensit
 
 \subsection{Detector response}
 
-The response of an interferometric detector depends on the relative orientation between the incoming GW and the detector arms. This is described by antenna pattern functions, which determine the sensitivity to different sky locations and polarization states. As a result, a single detector has limited directional sensitivity, making a network of detectors essential for accurate sky localization and parameter estimation.
+The response of an interferometric detector depends on the relative orientation between the incoming GW and the detector arms. This is described by antenna pattern functions, which determine the sensitivity to different sky locations and polarization states. As a result, a single detector has limited directional sensitivity, making a network of detectors essential for accurate sky localization and PE.
 
 
 \subsubsection{Antenna pattern of a ground-based interferometric detector}
@@ -3075,7 +3075,7 @@ The detector frame $(\bar{x},\bar{y},\bar{z})$ has its $\bar{z}$-axis pointing t
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.59\linewidth]{Figures/antennapatterncoordinates.png}
+    \includegraphics[width=0.58\linewidth]{Figures/antennapatterncoordinates.png}
     \caption{Geometric relationship between the detector frame $(\bar{x},\bar{y},\bar{z})$ and the wave frame $(x',y',z')$. The interferometer arms lie in the $(\bar{x},\bar{y})$ plane, with $\bar{z}$ pointing toward the local zenith. The angles $\bar{\theta}_N$ and $\bar{\phi}_N$ give the polar and azimuthal coordinates of the incoming wave direction in the detector frame, and $\psi$ denotes the rotation of the polarization axes about the propagation direction. Own production based on the source: \cite{ABADIE2010223}.}
     \label{fig:antennapatternscoord}
 \end{figure}
@@ -3338,7 +3338,7 @@ The combination of third-generation ground-based detectors and space-based obser
 \label{sec:data_analysis}
 
 The preceding sections established the theoretical framework for GW generation and propagation, and the experimental techniques employed to detect them. The remaining challenge is to extract astrophysical information from the noisy output of the detectors. This requires combining signal processing, physical modelling, and statistical 
-inference. The workflow proceeds in three stages: first, matched filtering is used to identify candidate events buried in the noise ($\S$\ref{sec:matched_filtering}); second, accurate waveform models are needed to compare against the data ($\S$\ref{sec:waveform_models}); and third, Bayesian parameter estimation is applied to the detected signal to infer the properties of the source ($\S$\ref{sec:PE}).
+inference. The workflow proceeds in three stages: first, matched filtering is used to identify candidate events buried in the noise ($\S$\ref{sec:matched_filtering}); second, accurate waveform models are needed to compare against the data ($\S$\ref{sec:waveform_models}); and third, Bayesian PE is applied to the detected signal to infer the properties of the source ($\S$\ref{sec:PE}).
 
 \subsection{Matched filtering and signal-to-noise ratio}
 \label{sec:matched_filtering}
@@ -3361,7 +3361,8 @@ $S_n(f)$ \eqref{PSD_eq},
     = \frac{1}{2}\,S_n(f)\,\delta(f - f'),
     \label{eq:PSD}
 \end{equation}
-where tildes denote Fourier transforms, $\delta(f-f')$ is the Dirac delta encoding the statistical independence of different frequency components, and $\langle\cdot\rangle$ denotes an ensemble average, which for a single detector is identified with a time average via the ergodic theorem\footnote{dsdppdmcwpmcpwomofpwoepowfpofepomfpowmcpomwdc}. Under this Gaussian noise model, the probability density of a noise realization $n(t)$ is
+where tildes denote Fourier transforms, $\delta(f-f')$ is the Dirac delta encoding the statistical independence of different frequency components, and $\langle\cdot\rangle$ denotes an ensemble average, which for a single detector is identified with a time average via the ergodic theorem\footnote{The ergodic theorem states that, for a stationary random process, time averages computed from a single sufficiently long realization are equivalent to ensemble averages over all possible realizations. In practice, this means that the PSD $S_n(f)$ can be 
+estimated directly from a single stretch of detector data, for example via the Welch method, without requiring multiple independent noise realizations.}. Under this Gaussian noise model, the probability density of a noise realization $n(t)$ is
 \begin{equation}
     p(n) \propto \exp\!\left(-\frac{1}{2}(n|n)\right),
 \end{equation}
@@ -3408,22 +3409,24 @@ Substituting
 which quantifies the intrinsic detectability of a waveform given the detector noise \cite{Optimal_SNR}. In practice, $\rho$ is computed as a time series by sliding the template across the data; a detection candidate is declared when $\rho$ exceeds a predefined threshold, typically $\rho \gtrsim 8$ for a single detector and requiring coincident triggers across the network to suppress noise transients.
 
 The matched filter is optimal only under the Gaussian noise 
-assumption of \eqref{eq:PSD}. In practice, non-Gaussianities and glitches can produce large values of $\rho$ in the absence of a real signal, making data quality vetoes and multi-detector coincidence requirements essential components of any GW search pipeline. Furthermore, since $\rho$ depends on the match between the template and the true signal, the effectiveness of matched filtering is directly tied to the accuracy of the waveform models discussed in the following section.
+assumption of \eqref{eq:PSD}. In practice, non-Gaussianities and glitches can produce large values of $\rho$ in the absence of a real signal. To mitigate this, matched-filter searches are implemented through dedicated pipelines such as \textsc{PyCBC} \cite{PYCBC} and \textsc{GstLAL} \cite{GSTLAL}, which supplement the SNR with a $\chi^2$ consistency test (verifying that the signal power across different frequency bands is consistent with the template) and require coincident triggers across multiple detectors to suppress noise transients. The data is further classified by data quality vetoes that exclude periods of poor detector performance. A candidate event is then ranked by a combined detection statistic and assigned a false alarm rate; events passing a significance threshold are passed to the PE stage described in \S\ref{sec:PE}. Finally, since $\rho$ depends directly on the match between the template and the true signal, the effectiveness of the entire pipeline is tied to the accuracy of the waveform models discussed in the following section.
 
 \subsection{Waveform models for CBCs}
 \label{sec:waveform_models}
 
-Matched filtering and parameter estimation both require accurate theoretical predictions of the GW signal as a function of the source parameters. For CBCs, the waveform evolves through three distinct 
-phases (see Fig.~\ref{fig:inspiral_merger_ringdown}): the 
-\emph{inspiral}, governed by the post-Newtonian (PN) expansion of the quadrupole formula \eqref{}; the \emph{merger}, which requires full numerical relativity (NR) simulations; and the \emph{ringdown}, described analytically by quasi-normal modes of the remnant BH. 
-Current waveform families combine these regimes into a single coherent model through two main approaches. 
-\emph{Effective-one-body} (EOB) models map the two-body problem onto an effective single-body problem, resumming the PN series and calibrating to NR. \emph{Phenomenological} models (IMRPhenom) instead fit closed-form frequency-domain expressions directly to hybrid PN--NR waveforms. Both families are continuously refined to include the effects of spin precession, orbital eccentricity, and tidal deformability for NS components.
 
+The matched filter derived in \S\ref{sec:matched_filtering} requires a template $h_m(t;\boldsymbol{\theta})$ that accurately represents the expected GW signal as a function of the source parameters. The quality of both the search and the subsequent PE depends directly on how faithfully these templates reproduce the true signal: a mismatch between template and signal reduces the recovered SNR \eqref{eq:SNR_MF} and biases the inferred parameters. In practice, matched-filter searches correlate the data against banks of $\sim\!10^5$ templates covering the CBC parameter space, while PE requires evaluating $\sim\!10^7$--$10^9$ waveforms \cite{template_bank}. Each template evaluation must therefore be both accurate and computationally cheap.
+
+For a CBC, the GW signal evolves through the three phases described in \S\ref{Astrophysical_sources_GW} (inspiral, merger, and ringdown) and no single analytic method covers all three. During the inspiral, Post-Newtonian (PN) theory provides accurate closed-form waveforms by expanding the EFE in powers of $v^2/c^2$ \cite{Post-Newtonian}, but breaks down near merger where velocities approach $c$. The merger phase requires full numerical relativity (NR) simulations of the EFE \cite{Numerical_relativity}, which are highly accurate but computationally prohibitive and serve primarily to calibrate analytic models. The ringdown is described analytically by the quasi-normal modes (QNMs) of the remnant compact object.
+
+To cover the full frequency evolution, these approaches are combined into inspiral-merger-ringdown (IMR) waveform families. Effective One Body (EOB) models reformulate the two-body problem as an effective single-body problem, resumming the PN series and matching to NR near merger; current implementations include SEOBNRv5HM and SEOBNRv5PHM \cite{SEOBNRv5HM, SEOBNRv5PHM}, which incorporate higher multipole modes and spin precession. Phenomenological models (IMRPhenom) fit closed-form frequency-domain expressions to hybrid PN-NR waveforms across the three phases; the latest generation, IMRPhenomXPHM \cite{}, is calibrated to $\sim\!400$ NR simulations spanning mass ratios up to $q=1000$ and dimensionless spins $|\chi_i|\lesssim 1$. NR surrogate models (NRSur) interpolate directly over NR simulations without an underlying analytic ansatz, achieving the highest fidelity at the cost of a restricted parameter 
+space; NRHybSur3dq8 \cite{} combines a PN-EOB inspiral with NR near merger, but is limited to non-precessing BBHs with $q\leq 8$. All three families have been progressively extended to include precessing spins, higher multipole modes, and tidal effects for NS components. Fast frequency-domain approximants such as TaylorF2 or 
+IMRPhenomD are favoured for matched-filter searches, while more sophisticated models are employed in PE, where waveform accuracy directly impacts posterior reliability.
 
 \subsection{Bayesian parameter estimation}
 \label{sec:PE}
 
-Once a GW candidate has been identified, the goal is to determine what kind of source produced it and to measure its physical properties. Concretely, we seek to answer questions such as: what were the masses and spins of the merging objects? From which direction on the sky did the signal arrive? How far away was the source? The answers are encoded in the shape of the detected waveform, since the parameters of the binary uniquely determine the gravitational wave signal it emits. Parameter estimation (PE) is 
+Once a GW candidate has been identified, the goal is to determine what kind of source produced it and to measure its physical properties. Concretely, we seek to answer questions such as: what were the masses and spins of the merging objects? From which direction on the sky did the signal arrive? How far away was the source? The answers are encoded in the shape of the detected waveform, since the parameters of the binary uniquely determine the gravitational wave signal it emits. PE is 
 the systematic procedure by which we compare the space of possible waveforms to the observed data and assign credible ranges to each source parameter.
 
 The parameters of a GW signal fall into two categories 
@@ -3433,7 +3436,7 @@ dimensionless spin vectors $\boldsymbol{\chi}_1, \boldsymbol{\chi}_2$, and, for 
 \subsubsection{Bayes' theorem and posterior inference}
 \label{sec:bayes}
 
-The natural framework for GW parameter estimation is Bayesian inference, which provides a principled way to update prior knowledge about the source parameters in light of the observed data. Given detector strain data $d$ and a waveform model $\mathcal{M}$, Bayes' theorem relates the \emph{posterior} distribution 
+The natural framework for GW PE is Bayesian inference, which provides a principled way to update prior knowledge about the source parameters in light of the observed data. Given detector strain data $d$ and a waveform model $\mathcal{M}$, Bayes' theorem relates the \emph{posterior} distribution 
 $p(\boldsymbol{\theta}|d,\mathcal{M})$ to the \emph{likelihood} 
 $\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})$ and the \emph{prior} 
 $p(\boldsymbol{\theta}|\mathcal{M})$ through
@@ -3459,7 +3462,7 @@ given the data, and its marginals yield credible intervals for each individual p
 \subsubsection{Hypothesis testing and the Bayes factor}
 \label{sec:bayes_factor}
 
-Beyond parameter estimation within a fixed model, Bayesian inference also provides a framework for comparing competing hypotheses. Given two models $\mathcal{M}_1$ and $\mathcal{M}_2$ — for instance, the hypothesis that the data contains a GW signal versus the hypothesis that it contains only noise — the \emph{Bayes factor} is defined as the ratio of their evidences,
+Beyond PE within a fixed model, Bayesian inference also provides a framework for comparing competing hypotheses. Given two models $\mathcal{M}_1$ and $\mathcal{M}_2$ — for instance, the hypothesis that the data contains a GW signal versus the hypothesis that it contains only noise — the \emph{Bayes factor} is defined as the ratio of their evidences,
 
 \begin{equation}
     \mathcal{B}_{12} = 
