@@ -303,8 +303,156 @@ S_{EH} = \frac{1}{16 \pi G} \int_{M} d^4x \, \sqrt{-g} \, R \ ,
 whose variation with respect to the metric gives EFE \cite{Garcia2019RelativityCourse}.
 
 
-
 \renewcommand{\thechapter}{E} 
+\chapter{Parameters CBC}
+\label{Reproducibility tutorial}
+
+
+
+\renewcommand{\arraystretch}{1.3}
+
+\begin{longtable}{lcp{9.7cm}}
+
+\caption{Parameters describing a CBC system with quasi-circular orbits \cite{GWTC4_PE}. Parameters used in this work are indicated with $\star$.}
+\label{tab:CBC_parameters} \\
+
+\hline\hline
+\multicolumn{1}{c}{Parameter name} &
+\multicolumn{1}{c}{Symbol} &
+\multicolumn{1}{c}{Definition [Dimensions]} \\
+\midrule
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\tablename\ \thetable\ continued}} \\
+
+\hline\hline
+\multicolumn{1}{c}{Parameter name} &
+\multicolumn{1}{c}{Symbol} &
+\multicolumn{1}{c}{Definition [Dimensions]} \\
+\midrule
+\endhead
+
+\hline
+\multicolumn{3}{r}{{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+%------------------------------------------------
+\addlinespace[7pt]
+\multicolumn{3}{l}{\textit{Mass parameters}} \\
+\hline
+\addlinespace[5pt]
+
+Primary/secondary mass & $m_1,\,m_2^\star$ &
+Mass of the more (less) massive component, $m_1\geq m_2$ $[M_\odot]$ \\
+
+Chirp mass & $\mathcal{M}$ &
+$\mathcal{M}=\eta^{3/5}M$ $[M_\odot]$ \\
+
+Total mass & $M$ &
+$M=m_1+m_2$ $[M_\odot]$ \\
+
+Final mass & $M_f$ &
+Mass of the remnant $[M_\odot]$ \\
+
+Mass ratio & $q$ &
+$q=m_2/m_1\leq 1$ [dimensionless] \\
+
+Symmetric mass ratio & $\eta$ &
+$\eta=m_1m_2/M^2\leq 1/4$ [dimensionless] \\
+
+Radiated energy & $E_\mathrm{rad}$ &
+$E_\mathrm{rad}=(M-M_f)c^2$ [energy] \\
+
+%------------------------------------------------
+\addlinespace[7pt]
+\multicolumn{3}{l}{\textit{Spin parameters}} \\
+\hline
+\addlinespace[5pt]
+
+Spin vectors & $\mathbf{S}_1,\,\mathbf{S}_2$ &
+Spin angular momentum of the primary/secondary [ang. mom.] \\
+
+Spin magnitudes & $\chi_1,\,\chi_2^\star$ &
+$\chi_{1,2}=c|\mathbf{S}_{1,2}|/(Gm_{1,2}^2)\leq 1$ [dimensionless] \\
+
+Remnant spin & $\chi_f$ &
+$\chi_f=cS_f/(GM_f^2)\leq 1$ [dimensionless] \\
+
+Orbital ang. momentum & $\mathbf{L}$ &
+Instantaneous orbital angular momentum [ang. mom.] \\
+
+Total ang. momentum & $\mathbf{J}$ &
+$\mathbf{J}=\mathbf{L}+\mathbf{S}_1+\mathbf{S}_2$ [ang. mom.] \\
+
+Tilt angles & $\theta_1,\,\theta_2^\star$ &
+Angle between $\mathbf{S}_{1,2}$ and $\mathbf{L}$ [angle] \\
+
+Spin azimuthal difference & $\phi_{12}^\star$ &
+Angle between $\mathbf{L}\times(\mathbf{S}_1\times\mathbf{L})$ and $\mathbf{L}\times(\mathbf{S}_2\times\mathbf{L})$ [angle] \\
+
+Effective inspiral spin & $\chi_\mathrm{eff}$ &
+$(m_1\chi_{1z}+m_2\chi_{2z})/M$ [dimensionless] \\
+
+Precession spin & $\chi_p$ &
+Avg.\ over precession cycles (see Eq.~(16) of \cite{GWTC4_PE}) [dimensionless] \\
+
+%------------------------------------------------
+\newpage
+\multicolumn{3}{l}{\textit{Tidal parameters}} \\
+\hline
+\addlinespace[5pt]
+
+Tidal deformabilities & $\Lambda_1,\,\Lambda_2$ &
+Dimensionless tidal deformability; $\Lambda_{1,2}=0$ for BHs [dimensionless] \\
+
+Effective tidal deform. & $\tilde{\Lambda}$ &
+Dominant tidal combination; $\tilde{\Lambda}=0$ for BBH [dimensionless] \\
+
+%------------------------------------------------
+\addlinespace[6pt]
+\multicolumn{3}{l}{\textit{Extrinsic parameters}} \\
+\hline
+\addlinespace[5pt]
+
+Luminosity distance & $D_L^\star$ &
+Distance to the source [Mpc] \\
+
+Redshift & $z$ &
+Computable from $D_L$ assuming a cosmological model [dimensionless] \\
+
+Source inclination & $\theta_{JN}^\star$ &
+Angle between $\mathbf{J}$ and line of sight $\mathbf{N}$ [angle] \\
+
+Orbital inclination & $\iota$ &
+Angle between $\mathbf{L}$ and $\mathbf{N}$ [angle] \\
+
+Coalescence time & $t_c^\star$ &
+GPS time at the geocenter [time] \\
+
+Coalescence phase & $\phi_c^\star$ &
+Orbital phase at coalescence [angle] \\
+
+Right ascension & $\alpha^\star$ &
+Celestial longitude [angle] \\
+
+Declination & $\delta^\star$ &
+Celestial latitude [angle] \\
+
+Polarization angle & $\psi^\star$ &
+Rotates polarizations in the plane orthogonal to propagation [angle] \\
+
+Azimuthal spin angle & $\phi_{JL}^\star$ &
+Angle between $\mathbf{J}$ and $\mathbf{L}$ projected on the sky plane [angle] \\
+\end{longtable}
+
+
+
+
+\renewcommand{\thechapter}{F} 
 \chapter{Reproducibility tutorial. Linux environment and supercomputing tasks.}
 \label{Reproducibility tutorial}
 
