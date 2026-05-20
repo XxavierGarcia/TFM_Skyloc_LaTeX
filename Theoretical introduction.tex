@@ -3436,16 +3436,18 @@ conveniently decomposed into their dimensionless magnitudes
 $\chi_{1,2} = c|\mathbf{S}_{1,2}|/(Gm_{1,2}^2) \leq 1$, the tilt angles $\theta_{1,2}$ between each spin and the orbital angular momentum $\mathbf{L}$, and the azimuthal angle $\phi_{12}$ between the two spin components in the orbital plane. For BNS or NSBH systems, the tidal deformabilities $\Lambda_{1,2}$ are additional intrinsic parameters encoding the NS equation of state. In practice, several derived combinations of the intrinsic parameters appear naturally in the waveform and are therefore better constrained by the data: the chirp mass $\mathcal{M} = (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$, which governs the leading-order frequency evolution; the effective inspiral spin $\chi_\mathrm{eff} = (m_1\chi_{1z} + m_2\chi_{2z})/(m_1+m_2)$, which captures the spin-orbit coupling along $\mathbf{L}$; and the effective precession spin $\chi_p$, which parametrizes the in-plane spin components responsible for orbital precession.
 
 The extrinsic parameters describe the location and orientation of the binary relative to the detector network: the sky position $(\alpha, \delta)$ (right ascension and declination), the luminosity distance $D_L$, the inclination angle $\theta_{JN}$ between the total angular momentum $\mathbf{J}$ and the line of sight, the polarization angle $\psi$, the coalescence phase $\phi_c$, and the 
-geocentric coalescence time $t_c$. The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{parameters_CBC}.
+geocentric coalescence time $t_c$. The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{parameters_CBC}. A complete description of all parameters, including their definitions and dimensions, is provided in Appendix~$\S$\ref{Parameters_CBC_appendix}.
 
 Not all parameters are equally well constrained by a given 
 observation. The chirp mass is typically the best-measured intrinsic quantity, as it directly controls the rate of frequency evolution visible in the detector band. Individual masses and mass ratio $q = m_2/m_1$ are less well constrained, and spin parameters are generally poorly measured unless the signal has high SNR or a long 
-inspiral in band. Among the extrinsic parameters, the sky position and distance are often poorly constrained by a single detector, improving significantly with a multi-detector network via time-delay triangulation (see \S\ref{sec:}).
+inspiral in band. Among the extrinsic parameters, the sky position and distance are often poorly constrained by a single detector, improving significantly with a multi-detector network via time-delay triangulation \cite{triangulation_GW}.
 
 In the present work, the injection parameters used to simulate the CBC signal are $\{m_1, m_2, D_L, \chi_1, \\ \chi_2, \theta_1, \theta_2, \phi_{12}, \phi_{JL}, \theta_{JN}, \psi, \phi_c, t_c, \alpha, \delta\}$, corresponding to the full 15-dimensional parameter space of a precessing BBH system.
 
 \subsubsection{Bayes' theorem and posterior inference}
 \label{sec:bayes}
+
+
 
 The natural framework for GW PE is Bayesian inference, which provides a principled way to update prior knowledge about the source parameters in light of the observed data. Given detector strain data $d$ and a waveform model $\mathcal{M}$, Bayes' theorem relates the \emph{posterior} distribution 
 $p(\boldsymbol{\theta}|d,\mathcal{M})$ to the \emph{likelihood} 
