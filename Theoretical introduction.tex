@@ -2244,7 +2244,7 @@ In summary, this chapter has laid the mathematical and physical foundations of G
 
 
 \chapter{Gravitational wave theory}
-\label{Gravitational--wave theory}
+\label{Gravitational-wave theory}
 
 We have now reached the central topic of this thesis and one of the most remarkable predictions of Einstein's GR: GWs. In this chapter, we introduce their theoretical foundations, beginning with their natural emergence from the linearized EFE ($\S$\ref{Gravitational_waves_linearized_gravity}), and characterize their polarization states and physical action on test masses via the geodesic deviation equation. We then survey the main astrophysical source classes ($\S$\ref{Astrophysical_sources_GW}) and discuss the detection principle underlying current interferometric observatories, covering antenna pattern functions, noise sources, and the global detector network ($\S$\ref{}). The chapter closes with an overview of the Bayesian parameter estimation (PE) framework used to extract source properties from GW signals ($\S$\ref{}), establishing the statistical foundation for the data analysis presented in subsequent chapters.
 
@@ -3447,47 +3447,86 @@ In the present work, the injection parameters used to simulate the CBC signal ar
 \subsubsection{Bayes' theorem and posterior inference}
 \label{sec:bayes}
 
+The natural framework for GW PE is Bayesian inference, which 
+provides a systematic way to update prior knowledge about the source parameters using the observed data. Unlike frequentist statistics, which interprets probability as the limiting frequency of repeated experiments, Bayesian inference treats probability as a degree of belief that is updated as new information becomes available. This distinction is particularly relevant in GW astronomy, 
+where astrophysical events are unique and non-repeatable, making frequentist interpretations difficult to apply. The direct link between data and model provided by GR (where a BBH is fully described by just 15 parameters) makes Bayesian inference especially well-suited to this field \cite{}.
 
-
-The natural framework for GW PE is Bayesian inference, which provides a principled way to update prior knowledge about the source parameters in light of the observed data. Given detector strain data $d$ and a waveform model $\mathcal{M}$, Bayes' theorem relates the \emph{posterior} distribution 
-$p(\boldsymbol{\theta}|d,\mathcal{M})$ to the \emph{likelihood} 
-$\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})$ and the \emph{prior} 
-$p(\boldsymbol{\theta}|\mathcal{M})$ through
+Given detector strain data $d$ and a waveform model $\mathcal{M}$, Bayes' theorem relates the posterior distribution $p(\boldsymbol{\theta}|d,\mathcal{M})$ to the likelihood $\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})$ and the prior $p(\boldsymbol{\theta}|\mathcal{M})$ through
 \begin{equation}
     p(\boldsymbol{\theta}|d,\mathcal{M}) = 
     \frac{\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})\,
     p(\boldsymbol{\theta}|\mathcal{M})}{\mathcal{Z}(\mathcal{M})},
     \label{eq:bayes}
 \end{equation}
-where the \emph{evidence} $\mathcal{Z}(\mathcal{M}) = 
+where the evidence $\mathcal{Z}(\mathcal{M}) = 
 \int \mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})\,
 p(\boldsymbol{\theta}|\mathcal{M})\,d\boldsymbol{\theta}$ 
-normalizes the posterior. For Gaussian, stationary noise with PSD $S_n(f)$, the likelihood takes the form
+normalizes the posterior. Each term has a distinct physical 
+interpretation. The likelihood $\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})$ quantifies how probable the observed data are given a particular set of source parameters (it encodes the noise model of the detector). The prior $p(\boldsymbol{\theta}|\mathcal{M})$ encodes our knowledge of the parameters before the measurement; for instance, 
+an isotropic prior is assigned to the sky location, reflecting the absence of any preferred direction. The posterior is the central quantity of interest: it encodes the full probability distribution of the source parameters given the data, and its one-dimensional marginals,
 \begin{equation}
-    \ln\mathcal{L}(d|\boldsymbol{\theta}) = 
-    -\frac{1}{2}(d - h(\boldsymbol{\theta})\,|\,
-    d - h(\boldsymbol{\theta})),
+    p(\theta_i|d,\mathcal{M}) = 
+    \int \prod_{j\neq i} d\theta_j\; 
+    p(\boldsymbol{\theta}|d,\mathcal{M}),
+\end{equation}
+yield credible intervals for individual parameters after integrating out all others.
+
+For Gaussian, stationary noise characterized by the PSD $S_n(f)$ 
+introduced in \S\ref{sec:noise}, the likelihood takes the form of a 
+Gaussian in the residual between the data and the waveform template,
+\begin{equation}
+    \mathcal{L}(d|\boldsymbol{\theta}) \propto 
+    \exp\!\left(-\frac{1}{2}
+    \bigl(d - h(\boldsymbol{\theta})\,\big|\,
+    d - h(\boldsymbol{\theta})\bigr)\right),
     \label{eq:likelihood}
 \end{equation}
-where $(\cdot|\cdot)$ is the noise-weighted inner product defined in \eqref{eq:SNR} and $h(\boldsymbol{\theta})$ is the waveform template evaluated at parameters $\boldsymbol{\theta}$. The posterior encodes the full probability distribution of the source parameters 
-given the data, and its marginals yield credible intervals for each individual parameter.
+where $(\cdot|\cdot)$ is the noise-weighted inner product defined in \eqref{eq:inner_product} and $h(\boldsymbol{\theta})$ is the waveform template evaluated at parameters $\boldsymbol{\theta}$. This is the frequency-domain generalization of the standard Gaussian likelihood to coloured noise \cite{likelihood_formula}: rather than weighting all frequencies equally by a constant $\sigma^2$, the inner product weights each frequency bin by $1/S_n(f)$, suppressing contributions from noisy bands and amplifying those where the detector is most sensitive. Taking the logarithm, one recovers \eqref{eq:likelihood} in the 
+log form used in practice. This expression makes explicit the connection between PE and matched filtering: maximizing 
+$\ln\mathcal{L}$ over $\boldsymbol{\theta}$ is equivalent to finding the template that best matches the data in the noise-weighted sense of \S\ref{sec:matched_filtering}, with the prior regularizing the solution across the full parameter space.
+
+Because the posterior \eqref{eq:bayes} is a 15-dimensional 
+distribution for a precessing BBH, it cannot be evaluated analytically. Stochastic sampling methods are therefore required to explore it efficiently, as discussed in 
+\S\ref{sec:sampling}.
 
 \subsubsection{Hypothesis testing and the Bayes factor}
 \label{sec:bayes_factor}
 
-Beyond PE within a fixed model, Bayesian inference also provides a framework for comparing competing hypotheses. Given two models $\mathcal{M}_1$ and $\mathcal{M}_2$ — for instance, the hypothesis that the data contains a GW signal versus the hypothesis that it contains only noise — the \emph{Bayes factor} is defined as the ratio of their evidences,
 
+Beyond parameter estimation within a fixed model, Bayesian inference also provides a rigorous framework for comparing competing hypotheses. The natural quantity for this is the odds ratio between two models $\mathcal{M}_1$ and $\mathcal{M}_2$,
+\begin{equation}
+    \mathcal{O}_{12} = 
+    \frac{p(\mathcal{M}_1|d)}{p(\mathcal{M}_2|d)} =
+    \frac{\mathcal{Z}(\mathcal{M}_1)}{\mathcal{Z}(\mathcal{M}_2)}
+    \cdot
+    \frac{p(\mathcal{M}_1)}{p(\mathcal{M}_2)},
+    \label{eq:odds}
+\end{equation}
+where the second factor is the prior odds, encoding our relative belief in the two models before observing the data. When both models are considered equally plausible a priori, the prior odds is unity and the odds ratio reduces to the Bayes factor,
 \begin{equation}
     \mathcal{B}_{12} = 
-    \frac{\mathcal{Z}(\mathcal{M}_1)}{\mathcal{Z}(\mathcal{M}_2)}.
+    \frac{\mathcal{Z}(\mathcal{M}_1)}{\mathcal{Z}(\mathcal{M}_2)},
     \label{eq:bayes_factor}
 \end{equation}
+which measures the factor by which the data update our relative belief between the two models. A value $\mathcal{B}_{12} \gg 1$ favours $\mathcal{M}_1$, while $\mathcal{B}_{12} \ll 1$ favours $\mathcal{M}_2$; by convention, $|\ln\mathcal{B}_{12}| \geq 8$ is often taken as the threshold for strong evidence in favour of one hypothesis over the other \cite{Jeffreys, bayesfactor_8}.
 
-A Bayes factor $\mathcal{B}_{12} \gg 1$ favours $\mathcal{M}_1$ 
-over $\mathcal{M}_2$. In GW astronomy, Bayes factors are used to 
-compare different waveform models, to assess whether a signal 
-requires spin precession or tidal effects, and to test GR against 
-alternative theories of gravity.
+The most fundamental application in GW astronomy is the 
+signal-vs-noise Bayes factor, where $\mathcal{M}_1$ is the 
+hypothesis that the data contain a GW signal and $\mathcal{M}_2$ is the noise-only hypothesis. In this case,
+\begin{equation}
+    \mathcal{Z}_S = \int 
+    \mathcal{L}(d|\boldsymbol{\theta})\,
+    p(\boldsymbol{\theta})\,d\boldsymbol{\theta}, 
+    \qquad
+    \mathcal{Z}_N = \mathcal{L}(d|\boldsymbol{\theta}=0),
+\end{equation}
+and $\mathcal{B}_{SN} = \mathcal{Z}_S/\mathcal{Z}_N$ quantifies how much more probable the data are under the signal hypothesis than under pure noise.
+
+Beyond detection, Bayes factors are used throughout GW data 
+analysis to address a variety of model selection questions: whether a signal requires spin precession or tidal deformability, which waveform approximant better describes the data, or whether the observations are consistent with GR or favour an alternative theory of gravity \cite{likelihood_formula}. In each case the Bayes factor 
+naturally penalizes more complex models through an Occam factor: a model with a large prior volume that is only marginally better supported by the data will yield a lower evidence than a simpler model with a tighter parameter space, reflecting the Bayesian preference for parsimony.
+
+It is important to note that computing $\mathcal{Z}$ requires integrating the likelihood over the entire prior volume, which is precisely what nested sampling is designed to do efficiently, as discussed in \S\ref{nested_sampling}.
 
 \subsubsection{Stochastic sampling methods}
 \label{sec:sampling}
@@ -3512,6 +3551,7 @@ exchange states, is commonly used to improve mixing and avoid
 entrapment in local maxima.
 
 \paragraph{Nested sampling.}
+\label{nested_sampling}
 Nested sampling \cite{} is an alternative algorithm designed to 
 compute the evidence $\mathcal{Z}$ directly while simultaneously 
 producing posterior samples as a byproduct. A fixed number of 
