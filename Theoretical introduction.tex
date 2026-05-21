@@ -3436,7 +3436,7 @@ conveniently decomposed into their dimensionless magnitudes
 $\chi_{1,2} = c|\mathbf{S}_{1,2}|/(Gm_{1,2}^2) \leq 1$, the tilt angles $\theta_{1,2}$ between each spin and the orbital angular momentum $\mathbf{L}$, and the azimuthal angle $\phi_{12}$ between the two spin components in the orbital plane. For BNS or NSBH systems, the tidal deformabilities $\Lambda_{1,2}$ are additional intrinsic parameters encoding the NS equation of state. In practice, several derived combinations of the intrinsic parameters appear naturally in the waveform and are therefore better constrained by the data: the chirp mass $\mathcal{M} = (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$, which governs the leading-order frequency evolution; the effective inspiral spin $\chi_\mathrm{eff} = (m_1\chi_{1z} + m_2\chi_{2z})/(m_1+m_2)$, which captures the spin-orbit coupling along $\mathbf{L}$; and the effective precession spin $\chi_p$, which parametrizes the in-plane spin components responsible for orbital precession.
 
 The extrinsic parameters describe the location and orientation of the binary relative to the detector network: the sky position $(\alpha, \delta)$ (right ascension and declination), the luminosity distance $D_L$, the inclination angle $\theta_{JN}$ between the total angular momentum $\mathbf{J}$ and the line of sight, the polarization angle $\psi$, the coalescence phase $\phi_c$, and the 
-geocentric coalescence time $t_c$. The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{parameters_CBC}. A complete description of all parameters, including their definitions and dimensions, is provided in Appendix~$\S$\ref{Parameters_CBC_appendix}.
+geocentric coalescence time $t_c$. The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{likelihood_formula}. A complete description of all parameters, including their definitions and dimensions, is provided in Appendix~$\S$\ref{Parameters_CBC_appendix}.
 
 Not all parameters are equally well constrained by a given 
 observation. The chirp mass is typically the best-measured intrinsic quantity, as it directly controls the rate of frequency evolution visible in the detector band. Individual masses and mass ratio $q = m_2/m_1$ are less well constrained, and spin parameters are generally poorly measured unless the signal has high SNR or a long 
@@ -3449,7 +3449,7 @@ In the present work, the injection parameters used to simulate the CBC signal ar
 
 The natural framework for GW PE is Bayesian inference, which 
 provides a systematic way to update prior knowledge about the source parameters using the observed data. Unlike frequentist statistics, which interprets probability as the limiting frequency of repeated experiments, Bayesian inference treats probability as a degree of belief that is updated as new information becomes available. This distinction is particularly relevant in GW astronomy, 
-where astrophysical events are unique and non-repeatable, making frequentist interpretations difficult to apply. The direct link between data and model provided by GR (where a BBH is fully described by just 15 parameters) makes Bayesian inference especially well-suited to this field \cite{}.
+where astrophysical events are unique and non-repeatable, making frequentist interpretations difficult to apply. The direct link between data and model provided by GR (where a BBH is fully described by just 15 parameters) makes Bayesian inference especially well-suited to this field \cite{bayesfactor_8}.
 
 Given detector strain data $d$ and a waveform model $\mathcal{M}$, Bayes' theorem relates the posterior distribution $p(\boldsymbol{\theta}|d,\mathcal{M})$ to the likelihood $\mathcal{L}(d|\boldsymbol{\theta},\mathcal{M})$ and the prior $p(\boldsymbol{\theta}|\mathcal{M})$ through
 \begin{equation}
@@ -3481,7 +3481,7 @@ Gaussian in the residual between the data and the waveform template,
     d - h(\boldsymbol{\theta})\bigr)\right),
     \label{eq:likelihood}
 \end{equation}
-where $(\cdot|\cdot)$ is the noise-weighted inner product defined in \eqref{eq:inner_product} and $h(\boldsymbol{\theta})$ is the waveform template evaluated at parameters $\boldsymbol{\theta}$. This is the frequency-domain generalization of the standard Gaussian likelihood to coloured noise \cite{likelihood_formula}: rather than weighting all frequencies equally by a constant $\sigma^2$, the inner product weights each frequency bin by $1/S_n(f)$, suppressing contributions from noisy bands and amplifying those where the detector is most sensitive. Taking the logarithm, one recovers \eqref{eq:likelihood} in the 
+where $(\cdot|\cdot)$ is the noise-weighted inner product defined in \eqref{eq:inner_product} and $h(\boldsymbol{\theta})$ is the waveform template evaluated at parameters $\boldsymbol{\theta}$. This is the frequency-domain generalization of the standard Gaussian likelihood to coloured noise: rather than weighting all frequencies equally by a constant $\sigma^2$, the inner product weights each frequency bin by $1/S_n(f)$, suppressing contributions from noisy bands and amplifying those where the detector is most sensitive \cite{likelihood_formula}. Taking the logarithm, one recovers \eqref{eq:likelihood} in the 
 log form used in practice. This expression makes explicit the connection between PE and matched filtering: maximizing 
 $\ln\mathcal{L}$ over $\boldsymbol{\theta}$ is equivalent to finding the template that best matches the data in the noise-weighted sense of \S\ref{sec:matched_filtering}, with the prior regularizing the solution across the full parameter space.
 
@@ -3493,7 +3493,7 @@ distribution for a precessing BBH, it cannot be evaluated analytically. Stochast
 \label{sec:bayes_factor}
 
 
-Beyond parameter estimation within a fixed model, Bayesian inference also provides a rigorous framework for comparing competing hypotheses. The natural quantity for this is the odds ratio between two models $\mathcal{M}_1$ and $\mathcal{M}_2$,
+Beyond PE within a fixed model, Bayesian inference also provides a rigorous framework for comparing competing hypotheses. The natural quantity for this is the odds ratio between two models $\mathcal{M}_1$ and $\mathcal{M}_2$,
 \begin{equation}
     \mathcal{O}_{12} = 
     \frac{p(\mathcal{M}_1|d)}{p(\mathcal{M}_2|d)} =
@@ -3531,44 +3531,77 @@ It is important to note that computing $\mathcal{Z}$ requires integrating the li
 \subsubsection{Stochastic sampling methods}
 \label{sec:sampling}
 
-The posterior distribution \eqref{eq:bayes} lives in a 
-high-dimensional parameter space — typically 15 dimensions for a 
-BBH and more for systems with precessing spins or tidal effects — 
-and cannot be evaluated analytically. Stochastic sampling algorithms 
-are therefore employed to explore the posterior efficiently and 
-produce a set of representative samples from which any marginal 
-distribution or credible interval can be estimated.
+As we mentioned in this section, the posterior distribution \eqref{eq:bayes} lives in a high-dimensional parameter space (15 dimensions for a precessing BBH and cannot be evaluated analytically. A brute-force grid approach is equally intractable: with just 10 bins per dimension, evaluating the likelihood on the full grid would require $10^{15}$ waveform computations, far beyond any feasible computational budget. Stochastic sampling algorithms are therefore employed to explore the posterior efficiently, concentrating evaluations in the regions of parameter space where the posterior has significant support. The two dominant families used in GW astronomy are Markov Chain Monte Carlo (MCMC) \cite{MCMC_ref,MCMC_ref2} and nested sampling \cite{Nested_sampling_image}, whose complementary strategies are illustrated in Fig.~\ref{fig:MCMC_vs_nested}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.72\linewidth]{Figures/MCMC_vs_nestedsampling.png}
+    \caption{Schematic comparison of the two main stochastic sampling strategies. MCMC draws samples directly from the posterior via a random walk, combining them to reconstruct the distribution. Nested sampling instead decomposes the posterior into nested likelihood slices, samples from each slice independently, and combines the weighted samples to recover the posterior and compute the evidence $\mathcal{Z}$. Source: \cite{MCMC_vs_NS}.}
+    \label{fig:MCMC_vs_nested}
+\end{figure}
+
+The output of both methods is a set of posterior samples 
+$\{\boldsymbol{\theta}_k\}$ drawn from $p(\boldsymbol{\theta}|d,\mathcal{M})$, such that the density of samples in any region of parameter space is proportional to the posterior probability there. These samples can then be used to compute expectation values of any quantity of interest, to construct marginalized one- and two-dimensional 
+posterior distributions for individual parameters, and to report credible intervals (the Bayesian analog of confidence intervals).
 
 \paragraph{Markov Chain Monte Carlo.}
-Markov Chain Monte Carlo (MCMC) methods construct a random walk 
-through parameter space whose stationary distribution is the target 
-posterior. At each step, a new point $\boldsymbol{\theta}'$ is 
-proposed and accepted or rejected according to the 
-Metropolis--Hastings criterion, which ensures detailed balance. 
-Parallel tempering, in which multiple chains at different 
-\emph{temperatures} explore the posterior simultaneously and 
-exchange states, is commonly used to improve mixing and avoid 
-entrapment in local maxima.
+\label{MCMC}
+
+MCMC methods construct a random walk through parameter space whose stationary distribution is the target posterior \cite{}, as depicted in Fig.~\ref{fig:}. The most widely used variant is the Metropolis-Hastings algorithm, which proceeds as follows: starting from an initial point $\boldsymbol{\theta}_0$, at each iteration a new point $\boldsymbol{\theta}'$ is proposed from a proposal distribution $q(\boldsymbol{\theta}'|\boldsymbol{\theta}_t)$, and accepted with probability
+\begin{equation}
+    A = \min\!\left(1,\,
+    \frac{p(\boldsymbol{\theta}'|d)\,
+          q(\boldsymbol{\theta}_t|\boldsymbol{\theta}')}
+         {p(\boldsymbol{\theta}_t|d)\,
+          q(\boldsymbol{\theta}'|\boldsymbol{\theta}_t)}
+    \right).
+    \label{eq:MH}
+\end{equation}
+If $A \geq 1$ the proposal is always accepted; otherwise it is accepted with probability $A$. This acceptance rule ensures detailed balance and guarantees that the chain converges to the correct stationary distribution. By recording the position of the chain at each accepted step, one accumulates draws from the posterior.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.72\linewidth]{Figures/}
+    \caption{Illustration of the Metropolis-Hastings random walk in parameter space. Starting from initial samples drawn from the prior $\pi(\boldsymbol{\lambda})$, walkers explore the parameter space following the acceptance criterion \eqref{eq:MH}, progressively converging toward the high-probability region of the posterior $p(\boldsymbol{\lambda}|s)$. Source: \cite{}.}
+    \label{fig:MCMC_walk}
+\end{figure}
+
+Several practical considerations arise. The early phase of the chain (the \emph{burn-in}) is strongly dependent on the starting point and must be discarded before the chain has reached its stationary distribution. Successive samples within a chain are autocorrelated, so the chain must be \emph{thinned} by retaining only samples separated by the autocorrelation length to obtain approximately independent draws. Finally, MCMC walkers can become trapped in a single mode of a multimodal posterior — a common situation in GW PE, where the sky position degeneracy produces two nearly symmetric modes. \emph{Parallel tempering} mitigates 
+this by running multiple chains at different temperatures 
+(i.e., with artificially flattened posteriors) that periodically exchange states, allowing the cold chain to escape local maxima by borrowing proposals from hotter, more diffuse chains.
 
 \paragraph{Nested sampling.}
 \label{nested_sampling}
-Nested sampling \cite{} is an alternative algorithm designed to 
-compute the evidence $\mathcal{Z}$ directly while simultaneously 
-producing posterior samples as a byproduct. A fixed number of 
-\emph{live points} are drawn from the prior and iteratively replaced 
-by new points of higher likelihood, progressively shrinking the 
-prior volume. The evidence is accumulated as a one-dimensional 
-integral over the likelihood-ordered prior mass. Nested sampling is 
-particularly well-suited to GW PE because it handles multimodal 
-posteriors — common when sky position or inclination angle are poorly 
-constrained — and provides a reliable estimate of $\mathcal{Z}$ for 
-model comparison. The algorithms \textsc{Dynesty} and 
-\textsc{MultiNest} are the most widely used implementations in GW 
-astronomy, interfaced through the \textsc{Bilby} \cite{} inference 
-library.
 
+Nested sampling \cite{} is an algorithm designed primarily to compute the evidence $\mathcal{Z}$ directly, with posterior samples produced as a byproduct. It is particularly well-suited to GW PE because it handles multimodal posteriors naturally and provides the evidence required for model comparison via the Bayes factor 
+\eqref{eq:bayes_factor}. The geometric interpretation of the algorithm is shown in Fig.~\ref{fig:nested_sampling}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.72\linewidth]{Figures/}
+    \caption{Geometric interpretation of nested sampling. Left: iso-likelihood contours in parameter space, with the discarded live points $L_1 > L_2 > L_3$ marking successive likelihood shells. Right: the corresponding one-dimensional mapping $\mathcal{L}(X)$ as a function of the enclosed prior volume $X$, where the evidence $\mathcal{Z}$ is approximated as the area under the curve via the trapezoid rule. Source: \cite{}.}
+    \label{fig:nested_sampling}
+\end{figure}
 
+The algorithm proceeds as follows. A fixed number $N_\mathrm{live}$ of \emph{live points} are drawn uniformly from the prior. At each iteration, the live point with the lowest likelihood $\mathcal{L}_\mathrm{min}$ is removed and replaced by a new point drawn from the prior subject to the constraint $\mathcal{L} > \mathcal{L}_\mathrm{min}$, progressively shrinking the prior volume explored. The discarded point contributes to the evidence integral via the trapezoid rule,
+\begin{equation}
+    \mathcal{Z} \approx \sum_i \mathcal{L}_i\, w_i,
+    \qquad
+    w_i = X_{i-1} - X_i,
+\end{equation}
+where $X_i$ is the fraction of the prior volume enclosed by the $i$-th likelihood contour, estimated statistically from the number of live points. The algorithm terminates when the fractional contribution of the remaining prior volume to $\mathcal{Z}$ falls below a predefined threshold. Posterior samples are obtained by reweighting the discarded points by $\mathcal{L}_i w_i / \mathcal{Z}$.
+
+The main algorithmic challenge is drawing new live points 
+efficiently from the likelihood-constrained prior. The most 
+widely used implementations in GW astronomy are 
+\textsc{MultiNest} \cite{}, which approximates the 
+iso-likelihood contour with a set of ellipsoids that can be 
+sampled exactly, and \textsc{Dynesty} \cite{}, which uses 
+dynamic live-point allocation to concentrate computational 
+effort where the posterior has the most support. Both are 
+accessible through the \textsc{Bilby} \cite{} inference 
+library, which provides a modular Python interface for CBC 
+parameter estimation and is used in this work.
 
 
 
