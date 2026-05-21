@@ -2240,6 +2240,8 @@ BHs can also be classified by mass:
 
 In addition to these categories, theorists also propose the existence of primordial black holes (PBHs). These could have formed within the first second after the Big Bang, when extreme densities allowed matter to collapse directly into BHs. Their possible masses are thought to range from as little as $10^{-5}$ grams up to about $10^5 M_\odot$. Quantum effects predict that lighter PBHs would have evaporated over time, but more massive ones could still remain scattered across the universe \cite{nasa_blackholes_types}.
 
+\vspace{0.5cm}
+
 In summary, this chapter has laid the mathematical and physical foundations of GR, progressing from the geometry of curved spacetime and the tools of differential geometry (parallel transport, geodesics, and the Riemann tensor) to the EFE and their most astrophysically relevant solutions: BHs. These concepts constitute the theoretical backbone upon which the remainder of this thesis is built. In the next chapter we turn to the central subject of this work: GWs, which emerge naturally as propagating solutions of the linearized Einstein equations and represent one of the most profound predictions of GR.
 
 
@@ -3087,28 +3089,22 @@ $\hat{\mathbf{n}}$ is
     \frac{\delta L(t)}{L} = \frac{1}{2}\,\hat{\mathbf{n}}^{T}
     \tilde{H}(t)\,\hat{\mathbf{n}},
 \end{equation}
-where $\tilde{H}(t) = M H(t) M^T$ is the wave-frame strain tensor 
-\eqref{strain_tensor} rotated into the detector frame by the orthogonal matrix 
-$M$. The scalar strain measured by the interferometer is then
+where $\tilde{H}(t) = M H(t) M^T$ is the wave-frame strain tensor \eqref{strain_tensor} rotated into the detector frame by the orthogonal matrix $M$. The scalar strain measured by the interferometer is then
 \begin{equation}
     h(t)= \frac{\Delta L_{\text{arms}}(t)}{L}=\frac{L_1(t)-L_2(t)}{L}=\frac{\delta L_1(t)}{L}-\frac{\delta L_2(t)}{L}=\frac{1}{2}\,\hat{\mathbf{n}}_1^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_1 - \frac{1}{2}\,\hat{\mathbf{n}}_2^T \cdot \tilde{H}(t)\,\hat{\mathbf{n}}_2 ,
     \label{eq:strain_detector}
 \end{equation}
 where the sign convention follows from choosing 
-$\hat{\mathbf{n}}_1 \times \hat{\mathbf{n}}_2$ to point outward from 
-the Earth's surface \cite{PhysRevD.58.063001}.
+$\hat{\mathbf{n}}_1 \times \hat{\mathbf{n}}_2$ to point outward from the Earth's surface \cite{PhysRevD.58.063001}.
 
 The frame transformation is given by the sequence of Euler rotations
 \begin{equation}
     M = R_z(-\bar{\phi}_N)\,R_y(-\bar{\theta}_N+\pi)\,R_z(\psi),
 \end{equation}
-which encodes both the sky location of the source and the orientation 
-of the polarization axes relative to the detector.
+which encodes both the sky location of the source and the orientation of the polarization axes relative to the detector.
 
 
-Substituting the explicit form of $M$ and the arm vectors into 
-\eqref{eq:strain_detector}, and simplifying with standard trigonometric 
-identities, the detector response takes the form
+Substituting the explicit form of $M$ and the arm vectors into \eqref{eq:strain_detector}, and simplifying with standard trigonometric identities, the detector response takes the form
 \begin{equation}
     h(t) = F_{+}(\psi,\zeta,\bar{\theta}_N,\bar{\phi}_N)\,h_+(t)
           + F_{\times}(\psi,\zeta,\bar{\theta}_N,\bar{\phi}_N)\,h_\times(t),
@@ -3132,22 +3128,14 @@ These expressions satisfy the symmetry relations
     \qquad
     F_{+,\times}\!\left(\psi+\tfrac{\pi}{2}\right) = -F_{+,\times}(\psi),
 \end{equation}
-reflecting the spin-2 character of GWs: a $\pi/4$ rotation of the 
-polarization angle exchanges the two modes, while a $\pi/2$ rotation 
-reverses their sign.
+reflecting the spin-2 character of GWs: a $\pi/4$ rotation of the polarization angle exchanges the two modes, while a $\pi/2$ rotation reverses their sign.
 
-A polarization-independent measure of the directional sensitivity is 
-provided by the quadrature sum
+A polarization-independent measure of the directional sensitivity is provided by the quadrature sum
 \begin{equation}
     |F| = \sqrt{F_+^2 + F_\times^2},
 \end{equation}
-shown in Fig.~\ref{fig:antennapatternsavg} for $\zeta=\pi/2$. The 
-characteristic quadrupolar structure reflects the tensorial nature of 
-the GW strain and the geometric projection onto the detector arms. 
-The individual patterns $F_+$ and $F_\times$ are displayed in 
-Fig.~\ref{fig:antennapatternsFxFplus} for several values of $\psi$; 
-each successive column corresponds to a $\pi/8$ increment in 
-polarization angle, illustrating the interchange symmetry above.
+shown in Fig.~\ref{fig:antennapatternsavg} for $\zeta=\pi/2$. The characteristic quadrupolar structure reflects the tensorial nature of the GW strain and the geometric projection onto the detector arms. The individual patterns $F_+$ and $F_\times$ are displayed in 
+Fig.~\ref{fig:antennapatternsFxFplus} for several values of $\psi$; each successive column corresponds to a $\pi/8$ increment in polarization angle, illustrating the interchange symmetry above.
 
 \begin{figure}[h!]
     \centering
@@ -3159,20 +3147,15 @@ polarization angle, illustrating the interchange symmetry above.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.97\linewidth]{Figures/antenna_patterns_Fx_F+.png}
-    \caption{Antenna patterns for the plus ($F_+$, top) and cross 
-    ($F_\times$, bottom) polarizations for $\zeta=\pi/2$ and 
-    representative values of $\psi$. Original result.}
+    \caption{Antenna patterns for the plus ($F_+$, top) and cross ($F_\times$, bottom) polarizations for $\zeta=\pi/2$ and representative values of $\psi$. Original result.}
     \label{fig:antennapatternsFxFplus}
 \end{figure}
 
-\newpage
 
 \subsection{Noise and sensitivity}
 \label{sec:noise}
 
-A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three 
-orders of magnitude smaller than the diameter of a proton. Achieving sensitivity at this level requires identifying and suppressing a broad 
-set of noise sources that would otherwise overwhelm the signal. These are conveniently characterised by the one-sided power spectral density (PSD) $S_n(f)$ \cite{PSD_book}, defined as the Fourier transform of the autocorrelation function\footnote{
+A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three orders of magnitude smaller than the diameter of a proton. Achieving sensitivity at this level requires identifying and suppressing a broad set of noise sources that would otherwise overwhelm the signal. These are conveniently characterised by the one-sided power spectral density (PSD) $S_n(f)$ \cite{PSD_book}, defined as the Fourier transform of the autocorrelation function\footnote{
 The autocorrelation function measures how strongly a signal is correlated with a delayed version of itself as a function of the time lag $\tau$. In the context of detector noise, it quantifies the degree to which noise fluctuations at different times remain statistically related \cite{autocorrelation_function}.
 } of the detector output: 
 \begin{equation}
@@ -3185,48 +3168,25 @@ Its square root $\sqrt{S_n(f)}$, expressed in units of Hz$^{-1/2}$, defines the 
 
 
 Noise sources are broadly divided into two categories. 
-Fundamental noise arises directly from the measurement principle and cannot be removed without redesigning the detector. 
-Technical noise is not intrinsic to the design but still limits performance. The main contributions are the following \cite{noise_aLIGO,noise_budget_O4}:
+Fundamental noise arises directly from the measurement principle and cannot be removed without redesigning the detector. Technical noise is not intrinsic to the design but still limits performance. The main contributions are the following \cite{noise_aLIGO,noise_budget_O4}:
 
 \begin{itemize}
 
-    \item \textbf{Shot noise.} The Poissonian arrival statistics of 
-    photons at the output photodetector produce a phase uncertainty 
-    scaling as $1/\sqrt{N_\gamma}$, where $N_\gamma$ is the number of 
-    detected photons per unit time. This contribution decreases with 
-    increasing circulating power and dominates the sensitivity above 
-    $\sim\!200$\,Hz. It can be partially mitigated by injecting squeezed vacuum at the output port, a technique already incorporated 
+    \item \textbf{Shot noise.} The Poissonian arrival statistics of photons at the output photodetector produce a phase uncertainty scaling as $1/\sqrt{N_\gamma}$, where $N_\gamma$ is the number of detected photons per unit time. This contribution decreases with increasing circulating power and dominates the sensitivity above $\sim\!200$\,Hz. It can be partially mitigated by injecting squeezed vacuum at the output port, a technique already incorporated 
     in the Advanced LIGO and Advanced Virgo detectors.
 
-    \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of 
-    the intracavity field exert a stochastic force on the mirror surfaces, inducing position noise that grows with laser power and 
-    becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. Squeezed-light injection redistributes the quantum uncertainty between the two quadratures, allowing simultaneous 
-    reduction of both contributions below the standard quantum limit.
+    \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of the intracavity field exert a stochastic force on the mirror surfaces, inducing position noise that grows with laser power and becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. Squeezed-light injection redistributes the quantum uncertainty between the two quadratures, allowing simultaneous reduction of both contributions below the standard quantum limit.
 
     \item \textbf{Thermal noise.} Any component at finite temperature undergoes stochastic mechanical motion. Via the fluctuation-dissipation theorem\footnote{The fluctuation-dissipation theorem states that any dissipative mechanism in a system in thermal equilibrium is necessarily accompanied by a fluctuating force of the same origin. In interferometric detectors, mechanical losses in the test masses, coatings, and suspension fibers therefore set a fundamental limit on their positional stability \cite{Kubo1966}.}, the amplitude of these fluctuations is proportional to the mechanical loss angle of the material. It affects the test masses, their dielectric mirror coatings, and the suspension fibers, and dominates the sensitivity in the intermediate band of roughly $40$-$200$\,Hz. Low-loss fused-silica substrates and fibers are employed to minimize this contribution; cryogenic operation, as adopted by KAGRA, provides an alternative route to its suppression.
 
-    \item \textbf{Seismic noise.} Ground motion couples mechanically 
-    to the test masses through the suspension chain. The 
-    quadruple-pendulum isolation system attenuates seismic vibrations 
-    by more than ten orders of magnitude above $\sim\!10$\,Hz, but 
-    residual motion from microseisms, wind, and anthropogenic 
-    activity still limits the sensitivity below $\sim\!40$\,Hz.
+    \item \textbf{Seismic noise.} Ground motion couples mechanically to the test masses through the suspension chain. The quadruple-pendulum isolation system attenuates seismic vibrations by more than ten orders of magnitude above $\sim\!10$\,Hz, but residual motion from microseisms, wind, and anthropogenic activity still limits the sensitivity below $\sim\!40$\,Hz.
 
-    \item \textbf{Newtonian noise.} Density fluctuations in the 
-    surrounding ground and atmosphere produce direct gravitational 
-    forces on the test masses that cannot be shielded mechanically. 
-    This contribution, also known as gravity-gradient noise, sets a 
-    fundamental floor at low frequencies for surface-based detectors. 
+    \item \textbf{Newtonian noise.} Density fluctuations in the surrounding ground and atmosphere produce direct gravitational forces on the test masses that cannot be shielded mechanically. This contribution, also known as gravity-gradient noise, sets a fundamental floor at low frequencies for surface-based detectors. 
 
 
-    \item \textbf{Control noise.} Servo loops are required to maintain 
-    the arm cavities on resonance and keep the optical components 
-    aligned. The sensors and actuators in these feedback systems 
-    introduce noise that couples into the GW channel, 
-    representing the dominant technical limitation at low frequencies.
+    \item \textbf{Control noise.} Servo loops are required to maintain the arm cavities on resonance and keep the optical components aligned. The sensors and actuators in these feedback systems introduce noise that couples into the GW channel, representing the dominant technical limitation at low frequencies.
 
-    \item \textbf{Residual gas noise.} Despite the ultra-high vacuum environment ($<1\,\mu$Pa in the beam tubes), residual molecules 
-    scatter laser photons and cause fluctuations in the optical path length. This contribution is generally subdominant but must be controlled to avoid limiting the sensitivity in specific frequency bands.
+    \item \textbf{Residual gas noise.} Despite the ultra-high vacuum environment ($<1\,\mu$Pa in the beam tubes), residual molecules scatter laser photons and cause fluctuations in the optical path length. This contribution is generally subdominant but must be controlled to avoid limiting the sensitivity in specific frequency bands.
 
     \item \textbf{Other technical noise sources.} Laser frequency and intensity fluctuations, electromagnetic coupling, scattered light, and photodetector dark noise contribute across various frequency ranges. These are monitored and subtracted using a network of 
     $\gtrsim\!2\times10^5$ auxiliary channels (including magnetometers, accelerometers, microphones and photodetectors) that record the state of the instrument and its environment continuously.
@@ -3531,11 +3491,11 @@ It is important to note that computing $\mathcal{Z}$ requires integrating the li
 \subsubsection{Stochastic sampling methods}
 \label{sec:sampling}
 
-As we mentioned in this section, the posterior distribution \eqref{eq:bayes} lives in a high-dimensional parameter space (15 dimensions for a precessing BBH and cannot be evaluated analytically. A brute-force grid approach is equally intractable: with just 10 bins per dimension, evaluating the likelihood on the full grid would require $10^{15}$ waveform computations, far beyond any feasible computational budget. Stochastic sampling algorithms are therefore employed to explore the posterior efficiently, concentrating evaluations in the regions of parameter space where the posterior has significant support. The two dominant families used in GW astronomy are Markov Chain Monte Carlo (MCMC) \cite{MCMC_ref,MCMC_ref2} and nested sampling \cite{Nested_sampling_image}, whose complementary strategies are illustrated in Fig.~\ref{fig:MCMC_vs_nested}.
+As we mentioned in this section, the posterior distribution \eqref{eq:bayes} lives in a high-dimensional parameter space (15 dimensions for a precessing BBH) and cannot be evaluated analytically. A brute-force grid approach is equally intractable: with just 10 bins per dimension, evaluating the likelihood on the full grid would require $10^{15}$ waveform computations, far beyond any feasible computational budget. Stochastic sampling algorithms are therefore employed to explore the posterior efficiently, concentrating evaluations in the regions of parameter space where the posterior has significant support. The two dominant families used in GW astronomy are Markov Chain Monte Carlo (MCMC) \cite{MCMC_ref,MCMC_ref2} and nested sampling \cite{Nested_sampling_image}, whose complementary strategies are illustrated in Fig.~\ref{fig:MCMC_vs_nested}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.72\linewidth]{Figures/MCMC_vs_nestedsampling.png}
+    \includegraphics[width=0.73\linewidth]{Figures/MCMC_vs_nestedsampling.png}
     \caption{Schematic comparison of the two main stochastic sampling strategies. MCMC draws samples directly from the posterior via a random walk, combining them to reconstruct the distribution. Nested sampling instead decomposes the posterior into nested likelihood slices, samples from each slice independently, and combines the weighted samples to recover the posterior and compute the evidence $\mathcal{Z}$. Source: \cite{MCMC_vs_NS}.}
     \label{fig:MCMC_vs_nested}
 \end{figure}
@@ -3547,7 +3507,7 @@ posterior distributions for individual parameters, and to report credible interv
 \paragraph{Markov Chain Monte Carlo.}
 \label{MCMC}
 
-MCMC methods construct a random walk through parameter space whose stationary distribution is the target posterior \cite{}, as depicted in Fig.~\ref{fig:}. The most widely used variant is the Metropolis-Hastings algorithm, which proceeds as follows: starting from an initial point $\boldsymbol{\theta}_0$, at each iteration a new point $\boldsymbol{\theta}'$ is proposed from a proposal distribution $q(\boldsymbol{\theta}'|\boldsymbol{\theta}_t)$, and accepted with probability
+MCMC methods construct a random walk through parameter space whose stationary distribution is the target posterior, as shown in Fig.~\ref{fig:MCMC_walk}. The most widely used variant is the Metropolis-Hastings algorithm, which proceeds as follows: starting from an initial point $\boldsymbol{\theta}_0$ (often drawn from the prior), at each iteration $t$ a new point $\boldsymbol{\theta}'$ is proposed from a proposal distribution $q(\boldsymbol{\theta}'|\boldsymbol{\theta}_t)$ (a common choice for $q$ is a Gaussian distribution with mean $\boldsymbol{\theta}_t$ and some fixed covariance matrix), and accepted with probability
 \begin{equation}
     A = \min\!\left(1,\,
     \frac{p(\boldsymbol{\theta}'|d)\,
@@ -3557,67 +3517,53 @@ MCMC methods construct a random walk through parameter space whose stationary di
     \right).
     \label{eq:MH}
 \end{equation}
-If $A \geq 1$ the proposal is always accepted; otherwise it is accepted with probability $A$. This acceptance rule ensures detailed balance and guarantees that the chain converges to the correct stationary distribution. By recording the position of the chain at each accepted step, one accumulates draws from the posterior.
+If $A \geq 1$ the proposal is always accepted; otherwise it is accepted with probability $A$. When the proposal distribution $q$ is symmetric, i.e.\ $q(\boldsymbol{\theta}'|\boldsymbol{\theta}_t) = q(\boldsymbol{\theta}_t|\boldsymbol{\theta}')$, the ratio of proposals cancels and $A$ reduces to the simple likelihood ratio $p(\boldsymbol{\theta}'|d)/p(\boldsymbol{\theta}_t|d)$. This acceptance rule ensures detailed balance and guarantees that the chain converges to the correct stationary distribution. By recording the position of the chain at each accepted step, one accumulates draws from the posterior.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.72\linewidth]{Figures/}
-    \caption{Illustration of the Metropolis-Hastings random walk in parameter space. Starting from initial samples drawn from the prior $\pi(\boldsymbol{\lambda})$, walkers explore the parameter space following the acceptance criterion \eqref{eq:MH}, progressively converging toward the high-probability region of the posterior $p(\boldsymbol{\lambda}|s)$. Source: \cite{}.}
+    \includegraphics[width=0.61\linewidth]{Figures/MCMC_image}
+    \caption{Illustration of the Metropolis-Hastings random walk in parameter space. Starting from initial samples drawn from the prior $\pi(\boldsymbol{\theta})$, walkers explore the parameter space following the acceptance criterion \eqref{eq:MH}, progressively converging toward the high-probability region of the posterior $p(\boldsymbol{\theta}|y)$. Source: \cite{image_MCMC}.}
     \label{fig:MCMC_walk}
 \end{figure}
 
-Several practical considerations arise. The early phase of the chain (the \emph{burn-in}) is strongly dependent on the starting point and must be discarded before the chain has reached its stationary distribution. Successive samples within a chain are autocorrelated, so the chain must be \emph{thinned} by retaining only samples separated by the autocorrelation length to obtain approximately independent draws. Finally, MCMC walkers can become trapped in a single mode of a multimodal posterior — a common situation in GW PE, where the sky position degeneracy produces two nearly symmetric modes. \emph{Parallel tempering} mitigates 
+Several practical considerations arise. The early phase of the chain (the burn-in) is strongly dependent on the starting point and must be discarded before the chain has reached its stationary distribution. Successive samples within a chain are autocorrelated, so the chain must be thinned by retaining only samples separated by the autocorrelation length to obtain approximately independent draws. Finally, MCMC walkers can become trapped in a single mode of a multimodal posterior, a common situation in GW PE, where the sky position degeneracy produces two nearly symmetric modes. Parallel tempering mitigates 
 this by running multiple chains at different temperatures 
-(i.e., with artificially flattened posteriors) that periodically exchange states, allowing the cold chain to escape local maxima by borrowing proposals from hotter, more diffuse chains.
+(i.e., with artificially flattened posteriors) that periodically exchange states, allowing the cold chain to escape local maxima by borrowing proposals from hotter, more diffuse chains \cite{likelihood_formula}.
 
 \paragraph{Nested sampling.}
 \label{nested_sampling}
 
-Nested sampling \cite{} is an algorithm designed primarily to compute the evidence $\mathcal{Z}$ directly, with posterior samples produced as a byproduct. It is particularly well-suited to GW PE because it handles multimodal posteriors naturally and provides the evidence required for model comparison via the Bayes factor 
-\eqref{eq:bayes_factor}. The geometric interpretation of the algorithm is shown in Fig.~\ref{fig:nested_sampling}.
+Nested sampling is an algorithm designed primarily to compute the evidence $\mathcal{Z}$ directly, with posterior samples produced as a byproduct. It is particularly well-suited to GW PE because it handles multimodal posteriors naturally and provides the evidence required for model comparison via the Bayes factor \eqref{eq:bayes_factor}. 
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.72\linewidth]{Figures/}
-    \caption{Geometric interpretation of nested sampling. Left: iso-likelihood contours in parameter space, with the discarded live points $L_1 > L_2 > L_3$ marking successive likelihood shells. Right: the corresponding one-dimensional mapping $\mathcal{L}(X)$ as a function of the enclosed prior volume $X$, where the evidence $\mathcal{Z}$ is approximated as the area under the curve via the trapezoid rule. Source: \cite{}.}
-    \label{fig:nested_sampling}
-\end{figure}
-
-The algorithm proceeds as follows. A fixed number $N_\mathrm{live}$ of \emph{live points} are drawn uniformly from the prior. At each iteration, the live point with the lowest likelihood $\mathcal{L}_\mathrm{min}$ is removed and replaced by a new point drawn from the prior subject to the constraint $\mathcal{L} > \mathcal{L}_\mathrm{min}$, progressively shrinking the prior volume explored. The discarded point contributes to the evidence integral via the trapezoid rule,
+The algorithm proceeds as follows. A fixed number $N_\text{live}$ of live points are drawn uniformly from the prior. At each iteration, the live point with the lowest likelihood $\mathcal{L}_\mathrm{min}$ is removed and replaced by a new point drawn from the prior subject to the constraint $\mathcal{L} > \mathcal{L}_\mathrm{min}$, progressively shrinking the prior volume explored. The discarded point contributes to the evidence integral via the trapezoid rule,
 \begin{equation}
     \mathcal{Z} \approx \sum_i \mathcal{L}_i\, w_i,
     \qquad
     w_i = X_{i-1} - X_i,
 \end{equation}
-where $X_i$ is the fraction of the prior volume enclosed by the $i$-th likelihood contour, estimated statistically from the number of live points. The algorithm terminates when the fractional contribution of the remaining prior volume to $\mathcal{Z}$ falls below a predefined threshold. Posterior samples are obtained by reweighting the discarded points by $\mathcal{L}_i w_i / \mathcal{Z}$.
+where $X_i$ is the fraction of the prior volume enclosed by the $i$-th likelihood contour, estimated statistically from the number of live points. The algorithm terminates when the fractional contribution of the remaining prior volume to $\mathcal{Z}$ falls below a predefined threshold. Posterior samples are obtained by reweighting the discarded points by $\mathcal{L}_i w_i / \mathcal{Z}$. The geometric interpretation of the algorithm is shown in Fig.~\ref{fig:nested_sampling}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.63\linewidth]{Figures/Nested_sampling.png}
+    \caption{Geometric interpretation of nested sampling. Left: iso-likelihood contours in parameter space, with the discarded live points $\mathcal{L}_1 > \mathcal{L}_2 > \mathcal{L}_3 > \mathcal{L}_4$ marking successive likelihood shells. Right: the corresponding one-dimensional mapping $\mathcal{L}(X)$ as a function of the enclosed prior volume $X$, where the evidence $\mathcal{Z}$ is approximated as the area under the curve via the trapezoid rule. Source: \cite{nestedsampling}.}
+    \label{fig:nested_sampling}
+\end{figure}
 
 The main algorithmic challenge is drawing new live points 
 efficiently from the likelihood-constrained prior. The most 
 widely used implementations in GW astronomy are 
-\textsc{MultiNest} \cite{}, which approximates the 
+\textsc{MultiNest} \cite{MULTINEST}, which approximates the 
 iso-likelihood contour with a set of ellipsoids that can be 
-sampled exactly, and \textsc{Dynesty} \cite{}, which uses 
-dynamic live-point allocation to concentrate computational 
-effort where the posterior has the most support. Both are 
-accessible through the \textsc{Bilby} \cite{} inference 
-library, which provides a modular Python interface for CBC 
-parameter estimation and is used in this work.
+sampled exactly, and \textsc{Dynesty} \cite{MCMC_vs_NS}, which uses dynamic live-point allocation to concentrate computational effort where the posterior has the most support. Both are accessible through the \textsc{Bilby} \cite{BILBY} inference library, which provides a modular Python interface for CBC PE and is used in this work.
 
 
+\vspace{0.5cm}
 
 
+In summary, this chapter has established the theoretical and experimental foundations of GW astronomy. Beginning from the linearized EFE, we derived the existence of GWs as propagating spacetime perturbations, characterized their two polarization states, and quantified their effect on test masses through the geodesic deviation equation. We then surveyed the main astrophysical source classes and described the detection principle underlying current interferometric observatories, from the antenna pattern functions and noise budget to the global detector network. The chapter closed with the Bayesian PE framework (matched filtering, waveform models, and stochastic sampling) that allows us to extract source properties from detected signals. These tools constitute the methodological backbone of the analysis presented in the following chapters.
 
 
-
-
-............
-
-In summary, in this chapter we analyzed gravitational waves and explored spacetime horizons. Our study concluded with black hole thermodynamics, reveal
-ing a challenge: the inconsistency between black holes as depicted in General Rel
-ativity, where they cannot emit anything, and the prediction that they possess a
-temperature, consequently radiating energy. This discrepancy leads us to introduce the framework of Quantum Field Theory in curved spacetime in the next chapter, where this problem finds resolution.
-
-ARREGLAR PART SUMMARY
 
 
 \chapter{Gravitational lensing}
