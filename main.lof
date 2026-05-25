@@ -31,7 +31,6 @@
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Illustration of the Metropolis-Hastings random walk in parameter space. Starting from initial samples drawn from the prior $\pi (\boldsymbol {\theta })$, walkers explore the parameter space following the acceptance criterion \eqref {eq:MH}, progressively converging toward the high-probability region of the posterior $p(\boldsymbol {\theta }|y)$. Source: \blx@tocontentsinit {0}\cite {image_MCMC}.}}{89}{figure.2.16}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Geometric interpretation of nested sampling. Left: iso-likelihood contours in parameter space, with the discarded live points $\mathcal {L}_1 > \mathcal {L}_2 > \mathcal {L}_3 > \mathcal {L}_4$ marking successive likelihood shells. Right: the corresponding one-dimensional mapping $\mathcal {L}(X)$ as a function of the enclosed prior volume $X$, where the evidence $\mathcal {Z}$ is approximated as the area under the curve via the trapezoid rule. Source: \blx@tocontentsinit {0}\cite {nestedsampling}.}}{90}{figure.2.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces (MIRAR TONG)}}{91}{figure.3.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
