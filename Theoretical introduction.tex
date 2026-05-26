@@ -3077,7 +3077,7 @@ The detector frame $(\bar{x},\bar{y},\bar{z})$ has its $\bar{z}$-axis pointing t
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.575\linewidth]{Figures/antennapatterncoordinates.png}
+    \includegraphics[width=0.57\linewidth]{Figures/antennapatterncoordinates.png}
     \caption{Geometric relationship between the detector frame $(\bar{x},\bar{y},\bar{z})$ and the wave frame $(x',y',z')$. The interferometer arms lie in the $(\bar{x},\bar{y})$ plane, with $\bar{z}$ pointing toward the local zenith. The angles $\bar{\theta}_N$ and $\bar{\phi}_N$ give the polar and azimuthal coordinates of the incoming wave direction in the detector frame, and $\psi$ denotes the rotation of the polarization axes about the propagation direction. Own production based on the source: \cite{ABADIE2010223}.}
     \label{fig:antennapatternscoord}
 \end{figure}
@@ -3139,14 +3139,14 @@ Fig.~\ref{fig:antennapatternsFxFplus} for several values of $\psi$; each success
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.48\linewidth]{Figures/antenna_patterns_averaged.png}
+    \includegraphics[width=0.47\linewidth]{Figures/antenna_patterns_averaged.png}
     \caption{Polarization-averaged antenna pattern $|F|$ of a ground-based interferometer with orthogonal arms ($\zeta=\pi/2$), as a function of sky angles $(\bar{\theta}_N,\bar{\phi}_N)$. Original result.}
     \label{fig:antennapatternsavg}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.97\linewidth]{Figures/antenna_patterns_Fx_F+.png}
+    \includegraphics[width=0.96\linewidth]{Figures/antenna_patterns_Fx_F+.png}
     \caption{Antenna patterns for the plus ($F_+$, top) and cross ($F_\times$, bottom) polarizations for $\zeta=\pi/2$ and representative values of $\psi$. Original result.}
     \label{fig:antennapatternsFxFplus}
 \end{figure}
@@ -3259,7 +3259,7 @@ of merit for detector sensitivity) improving progressively across runs as a resu
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.79\linewidth]{Figures/Runs_timeline.png}
+    \includegraphics[width=0.785\linewidth]{Figures/Runs_timeline.png}
     \caption{Timeline of LVK observing runs from the first detection in 2015 through O4a. Colored bars indicate the periods during which each detector was operating, together with the typical BNS inspiral range achieved in each run. GEO astrowatch and KAGRA O4a periods (light gray) were not included in the main GW analyses. Virgo joined the network in the final month of O2 and operated throughout O3; a short joint O3GK run also included GEO600 and KAGRA. Tick marks along the top indicate GW candidates from GWTC-1 through GWTC-4 with astrophysical probability $\geq 50\%$. Source: \cite{runs_timeline_O1234}.}
     \label{fig:runs_O1234}
 \end{figure}
@@ -3563,49 +3563,157 @@ sampled exactly, and \textsc{Dynesty} \cite{MCMC_vs_NS}, which uses dynamic live
 
 In summary, this chapter has established the theoretical and experimental foundations of GW astronomy. Beginning from the linearized EFE, we derived the existence of GWs as propagating spacetime perturbations, characterized their two polarization states, and quantified their effect on test masses through the geodesic deviation equation. We then surveyed the main astrophysical source classes and described the detection principle underlying current interferometric observatories, from the antenna pattern functions and noise budget to the global detector network. The chapter closed with the Bayesian PE framework (matched filtering, waveform models, and stochastic sampling) that allows us to extract source properties from detected signals. These tools constitute the methodological backbone of the analysis presented in the following chapters.
 
-
-
-
+\newpage
 \chapter{Gravitational lensing of gravitational waves}
-\label{Gravitational lensing}
+\label{ch:lensing}
+knknlnl
 
 \section{Gravitational lensing}
 \label{sec:lensing_intro}
-% Introducción general al lensing gravitacional
-% Analogía con EM, diferencias con GW
-% Por qué es relevante para GW astronomy
+kkl
+
+\subsection{The lensing effect}
+\subsection{Differences between electromagnetic and gravitational wave lensing}
+\subsection{Relevance for gravitational wave astronomy}
 
 \section{Geometric optics regime}
 \label{sec:geometric_optics}
-% Lens equation
-% Einstein radius
-% Multiple images: tipos (Type I, II, III)
-% Magnification
-% Time delay
+
+\subsection{The lens equation}
+\subsubsection{Deflection angle}
+\subsubsection{Thin lens approximation}
+\subsection{Einstein radius and image formation}
+\subsection{Magnification and time delay}
+\subsubsection{Geometric and Shapiro time delay}
+\subsubsection{Magnification}
+\subsection{Lens models}
+\subsubsection{Point mass lens}
+\subsubsection{Singular isothermal sphere}
 
 \section{Strong lensing of gravitational waves}
 \label{sec:strong_lensing}
-% Condición para strong lensing vs weak lensing
-% Amplification factor en geometric optics
-% Morfología de las imágenes lensadas
-% Morse phase y su efecto en la forma de onda
+
+\subsection{Strong vs weak lensing}
+
+\subsection{Image types and Morse phase}
+\subsubsection{Type I, II and III images}
+\subsubsection{Effect of the Morse phase on the waveform}
+% Aquí explicas tanto el efecto físico (Hilbert transform)
+% como que la diferencia de fase entre imágenes es un parámetro
+
+
+\subsection{Amplification factor in the geometric optics limit}
 
 \section{Lensed gravitational wave signals}
 \label{sec:lensed_signal}
-% Cómo se modifica h(t) bajo lensing
-% Relación entre los parámetros de las imágenes
-% Parámetros de lensing: magnification ratio, time delay
-% Por qué los parámetros aparentes difieren de los intrínsecos
 
-\section{Sky localization of lensed pairs}
+\subsection{Modification of the gravitational wave strain}
+\subsection{Apparent vs intrinsic parameters}
+\subsubsection{Redshifted masses}
+\subsubsection{Magnification bias on luminosity distance}
+\subsection{Lensing parameters}
+\subsubsection{Magnification ratio}
+\subsubsection{Time delay between images}
+
+
+\section{Sky localization of lensed image pairs}
 \label{sec:sky_localization_lensing}
-% Por qué el lensing mejora la sky localization
-% Joint PE de dos imágenes
-% Hipótesis lensing vs no-lensing (Bayes factor)
-% Estado del arte: búsquedas en GWTC
+
+\subsection{Sky localization with a single GW image}
+\subsection{Joint parameter estimation of lensed pairs}
+\subsection{Lensing hypothesis testing}
+\subsubsection{Lensing vs non-lensing Bayes factor}
+\subsubsection{Overlap integral}
+
+................
 
 
 
+**The lensing effect**
+Explicación física de qué es el lensing gravitacional: la luz (y las OGs) se curvan al pasar cerca de una masa. Analogía con una lente óptica. Breve historia: predicción de Einstein, primera observación en 1919. Mencionar que aplica igual a GWs que a EM.
+
+**Differences between EM and GW lensing**
+- Las GWs son coherentes (tienen fase), las ondas EM normalmente no → el lensing produce interferencia en GWs
+- Las GWs tienen dos polarizaciones → el lensing las afecta de forma específica
+- No hay absorción ni dispersión en el medio interestelar para GWs
+- La fuente de GW es puntual y bien modelada → más fácil detectar anomalías
+
+**Relevance for GW astronomy**
+Por qué importa para tu trabajo: las GWs lensadas pueden confundirse con eventos independientes, pueden usarse para cosmología (tiempo de retardo  $H_0$), y el lensing fuerte produce múltiples imágenes que es exactamente lo que estudias.
+
+---
+
+**Deflection angle**
+Derivación del ángulo de deflexión de un rayo que pasa a distancia $\xi$ de una masa $M$: $\hat{\alpha} = 4GM/c^2\xi$. Comparar con el resultado newtoniano (factor 2).
+
+**Thin lens approximation**
+La deflexión ocurre en un plano — el plano de la lente. Justificación: la lente es mucho más delgada que las distancias fuente-lente y lente-observador. Esto simplifica enormemente la geometría.
+
+**The lens equation**
+La ecuación que relaciona la posición de la fuente $\beta$, la posición de la imagen $\theta$ y el ángulo de deflexión $\hat{\alpha}$:
+$$\boldsymbol{\beta} = \boldsymbol{\theta} - \boldsymbol{\alpha}(\boldsymbol{\theta})$$
+Esto es el punto de partida para todo lo que sigue.
+
+**Einstein radius and image formation**
+El radio de Einstein $\theta_E$ como escala natural del lensing. Cuándo se forman múltiples imágenes (cuando la fuente está dentro del radio de Einstein). El anillo de Einstein como caso especial de alineación perfecta.
+
+**Geometric and Shapiro time delay**
+El tiempo de retardo entre imágenes tiene dos contribuciones: geométrica (caminos de distinta longitud) y de Shapiro (la luz se ralentiza en el pozo gravitacional). La combinación da el tiempo de retardo total $\Delta t$ entre imágenes — clave para tu análisis.
+
+**Magnification**
+El lensing conserva la brillancia superficial pero distorsiona el área → magnificación $\mu$. Para GWs, una imagen magnificada tiene mayor SNR. El ratio de magnificación entre las dos imágenes $\mu_1/\mu_2$ es un parámetro observable.
+
+**Point mass lens**
+El modelo más simple: toda la masa concentrada en un punto. Solución analítica exacta. Produce siempre dos imágenes. Es el modelo que usa LER/Hanabi → justifica por qué lo introduces.
+
+**Singular isothermal sphere (SIS)**
+Modelo de galaxia más realista: perfil de densidad $\rho \propto r^{-2}$. Puede producir dos imágenes con igual magnificación. Mencionarlo brevemente como alternativa al punto masa.
+
+---
+
+**Strong vs weak lensing**
+Definición operativa: strong lensing cuando $\theta_E \gtrsim$ separación angular de la fuente → múltiples imágenes resolvibles. Weak lensing: solo distorsión suave, no hay imágenes múltiples. Para GWs no se "ven" las imágenes separadas pero sí se detectan como eventos distintos → por eso el strong lensing es detectable.
+
+**Type I, II and III images**
+Clasificación según la topología del tiempo de retardo: mínimo (Type I), silla de montura (Type II), máximo (Type III). Cada tipo tiene una signatura de fase diferente.
+
+**Effect of the Morse phase on the waveform**
+El tipo de imagen determina una fase adicional en la forma de onda: Type I → $n=0$, Type II → $n=1/2$ (transformada de Hilbert), Type III → $n=1$. Esto es crucial porque cambia la morfología de la señal detectada y puede confundirse con un cambio en los parámetros de la fuente.
+
+**Amplification factor in the geometric optics limit**
+La forma compacta $F_j = \sqrt{\mu_j}\exp(-2\pi i f t_j \pm i\pi n_j)$ que multiplica la señal sin lensing. Es exactamente lo que implementa Hanabi → conecta directamente con tu metodología.
+
+---
+
+**Modification of the GW strain**
+La señal lensada es $\tilde{h}_L(f) = F(f)\,\tilde{h}(f)$ donde $F$ es el factor de amplificación. En geometric optics cada imagen es una copia de la señal original con distinta amplitud, fase y tiempo de llegada.
+
+**Redshifted masses**
+Una imagen más magnificada parece más cercana → masa aparente diferente de la masa intrínseca. En particular $m^\mathrm{det} = (1+z_L)m^\mathrm{src}$. Si no se sabe que hay lensing se infieren masas incorrectas — relevante para interpretar tus posteriors.
+
+**Magnification bias on luminosity distance**
+La magnificación $\mu$ cambia la distancia luminosa aparente: $D_L^\mathrm{app} = D_L/\sqrt{\mu}$. Una imagen magnificada parece más cercana. Esto afecta directamente a la sky localization porque $D_L$ y $(\alpha,\delta)$ están correlacionados.
+
+**Magnification ratio, time delay, Morse phase difference**
+Los tres parámetros observables que caracterizan un par de imágenes lensadas. Son los parámetros de lensing que LER inyecta y que Bilby recupera. Introducirlos aquí los justifica antes de usarlos en resultados.
+
+---
+
+**Sky localization with a single GW image**
+Recordar del capítulo anterior: una sola imagen da una región anular en el cielo. La distancia y la inclinación están degeneradas. Sin EM counterpart la localización es pobre.
+
+**Joint parameter estimation of lensed pairs**
+Con dos imágenes que comparten los mismos parámetros intrínsecos ($m_1, m_2, \chi_i$) pero tienen diferentes parámetros extrínsecos aparentes, el análisis conjunto rompe degeneraciones. El joint posterior en $(\alpha,\delta)$ es la intersección de las dos regiones individuales → mucho más pequeña. Esta es la motivación central de tu proyecto.
+
+**Lensing vs non-lensing Bayes factor**
+El formalismo ya introducido en §\ref{sec:bayes_factor} aplicado al caso específico: $\mathcal{M}_L$ (los dos eventos son imágenes del mismo BBH) vs $\mathcal{M}_{NL}$ (son dos BBH independientes). El Bayes factor cuantifica qué hipótesis favorecen los datos.
+
+**Overlap integral**
+Métrica alternativa de consistencia: mide el solapamiento entre los posteriors de las dos imágenes en los parámetros intrínsecos compartidos. Si las dos imágenes son del mismo evento, los posteriors en $m_1, m_2, \chi_i$ deben ser compatibles.
+---------------
+
+
+................
 This overview of gravitational lensing of GW marks the conclusion of the first part of the thesis. Now, we have all the necessary tools to describe the results obtained in this study.
 
 ARREGLAR PART SUMMARY

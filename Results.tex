@@ -14,32 +14,79 @@ isfying Einstein’s equations.
 
 
 \newpage
-\chapter{Results 1}
-
-blablabla....
 
 
+\chapter{Simulation setup and implementation}
+\label{Simulation_setup}
 
-To summarize, in this chapter we have shown how to design a system where the
- analogue of a gravitational wave propagates on the top of an acoustic flat metric.
- Remarkably, this perturbation satisfies Einstein’s equations in vacuum, being it a
- perturbation with the same space-time dependence as the gravitational wave one
- propagating on the same flat background. This is the first time that the dynamics
- of a gravitational scenario is reproduced in an analogue model. The ability to
- reproduce a gravitational wave in an analogue system is a relevant achievement for
- its interesting implications. To start with, we can think of simulating a gravitational
- wave over a metric with an acoustic horizon: this is what we study in the next
- chapter. In Chapter 6 we indeed design a system where an analogue black hole is
- excited by an impinging gravitational wave-like perturbation. To do that we use the
- analogue gravitational wave found in this chapter through transformation I (c). We
- choose to work with this specific case because there everything is considered up to
- O(), while for the other transformations dominant terms are of order O().
+\section{Lensed BBH population with LER}
+% Explicar qué es LER y para qué lo usas
+% Parámetros: npool, event_type BBH, ifos L1 H1
+% PSD: T2500310-v2_O5a_strain_psd (O5 design sensitivity)
+% Waveform: IMRPhenomXPHM, spin precession
+% Criterio de selección: 500 eventos con SNR >= 10 en ambas imágenes
 
-\chapter{Results 2}
+\section{Injected parameter distributions}
+% Plots de m1, m2 con crosses de los valores inyectados
+% Distribución de masas, spins, distancias
+% Histogram SNR de L1, H1 y joint para ambas imágenes
+% Plots LER de los parámetros de lensing: time delay, magnification ratio
 
 
+\chapter{Parameter estimation pipeline}
+\label{Parameter_estimation_pipeline}
 
-blablabla....
+\section{Lensed waveform generation with Hanabi}
+% Qué es Hanabi y cómo genera señales lensadas
+% strongly_lensed_BBH_waveform con IMRPhenomXPNR
+% image_type (Morse phase), relative_magnification
+% Cómo se conecta LER → Hanabi → Bilby
+
+\section{Bilby configuration and joint analysis}
+% Estructura del ini file: label, outdir, request-cpus=128
+% Sampler: dynesty, nlive=1000, naccept=60, acceptance-walk
+% n-triggers=2, trigger-ini-files (image1 + image2)
+% common-parameters: chirp_mass, mass_ratio, spins, ra, dec, psi, phase
+% lensing-prior-dict: relative_magnification, image_type DiscreteUniform
+% Por qué se hace análisis conjunto (joint) y no individual
+
+\section{Automation and infrastructure}
+% Cómo automatizas la creación de ini files para 500 inyecciones
+% Submission a Picasso con SLURM
+% Gestión de outputs y JSON results
+
+\section{Residuals and parameter recovery}
+% Violin plots  
+% residuals (parámetros recuperados vs inyectados)
+% Scatter plots
+\subsection{SNR comparison}
+% Comparación entre el SNR calculado por LER y el recuperado por Bilby
+% Validación del setup}
+
+\chapter{Sky localization}
+\label{Skyloc}
+
+\section{Sky map generation}
+% ligo-skymap-from-samples: genera el skymap.fits a partir 
+% de los posterior samples de Bilby
+% --disable-distance-map, --trials 1
+% Se hace para cada imagen individual y para el joint
+
+\section{Sky area and constellation analysis}
+% ligo-skymap-stats: extrae el área al 90% de credibilidad
+% ligo-skymap-constellations: asigna la región a constelaciones
+% Plot SNR vs sky area 90%
+% Plot SNR vs constellation
+
+\section{Comparison between single image and joint analysis}
+% PDF y CDF del sky area comparando:
+%   - imagen individual (la mejor, mayor SNR)
+%   - análisis joint de las dos imágenes
+% Mejora cuantitativa en la localización
+
+
+
+FUTURE WOOOORKKK
 
 
 To summarize, in this chapter we have developed the description of an acoustic
