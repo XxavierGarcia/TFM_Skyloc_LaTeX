@@ -3575,12 +3575,34 @@ manifest in the observed strain and in the inferred source parameters (\S\ref{se
 \section{Gravitational lensing}
 \label{sec:lensing_intro}
 
+Gravitational lensing is a direct consequence of GR: massive objects curve spacetime, and any particle following a geodesic of that curved spacetime — including massless ones such as photons or GWs — will have its trajectory deflected. The phenomenon was first predicted by Einstein and confirmed observationally by Eddington during the solar eclipse of 1919, when the apparent positions of stars near the Sun 
+were displaced by exactly the amount predicted by GR \cite{}. Since then, gravitational lensing has become one of the most powerful tools in observational astrophysics, providing information about the mass distribution of the Universe independently of its luminous content.
 
-
-
+When a GW propagates from its source to a detector, any massive structure along the line of sight acts as a gravitational lens, deflecting and focusing the wave. Depending on the geometry of the configuration and the mass of the lens, the lensing effect can manifest in three distinct regimes \cite{}. \emph{Strong lensing} occurs when the source, lens, and observer are sufficiently well 
+aligned that multiple images of the same source are produced, each arriving at the detector at different times and with different amplitudes; the lens is typically a galaxy or galaxy cluster. \emph{Microlensing} is caused by compact objects such as stars or black holes and produces a time-varying magnification rather than spatially resolved images. \emph{Weak lensing} results from the cumulative effect of large-scale structure and produces a small but 
+coherent distortion of the signal. In this work we focus exclusively on the strong lensing regime, which is the only one capable of producing the multiple detectable images that are central to our analysis.
 
 \subsection{Differences between electromagnetic and gravitational wave lensing}
+
+Although the geometric deflection of EM waves and GWs by a 
+gravitational lens follows the same underlying physics, several important differences arise from the distinct nature of the two types of radiation \cite{}.
+
+The most fundamental difference concerns the \emph{wavelength regime}. The wavelengths of GWs detectable by ground-based interferometers range from roughly 10\,km to 1\,Mm, many orders of magnitude larger than those of optical or radio waves. This has a direct consequence for lensing: the relevant parameter is the ratio $\lambda_\mathrm{GW}/\lambda_E$, where $\lambda_E$ is the Einstein radius of the lens expressed as a length. When $\lambda_\mathrm{GW} \ll \lambda_E$, the geometric optics approximation is valid and lensing affects GWs much as it does light. However, when $\lambda_\mathrm{GW} \gtrsim \lambda_E$ — which can occur for low-mass lenses such as stars or intermediate-mass black holes — wave optics must be used and diffraction effects become important, producing frequency-dependent modulations of the waveform amplitude 
+and phase that have no EM analog at cosmological distances. For the galaxy-scale lenses relevant to this work, $\lambda_E \sim \mathcal{O}(\mathrm{kpc})$, placing the problem firmly in the geometric optics regime.
+
+A second key difference is \emph{coherence}. GWs are coherent waves with a well-defined phase, whereas EM waves from astrophysical sources are generally incoherent. As a result, lensed GW images can interfere with each other if their time delay is shorter than the duration of the signal — an effect with no counterpart in standard EM lensing observations.
+
+Finally, unlike EM signals, GWs are not absorbed, scattered, or dispersed by the intergalactic medium or by the lens galaxy itself. This means that the lensed GW signal encodes clean information about the source and the lensing potential, uncontaminated by dust extinction or plasma dispersion.
+
 \subsection{Relevance for gravitational wave astronomy}
+
+No confirmed detection of gravitational lensing of GWs has been reported to date, despite dedicated searches in GWTC-1 through GWTC-4 \cite{GWTC4_introduction}. Nevertheless, as detector sensitivities improve and the rate of detected events grows, the detection of lensed GW signals is expected to become feasible within the next observing runs, with predictions suggesting more than one strongly lensed event per year at design sensitivity \cite{}.
+
+Such a detection would open a rich set of scientific applications. The combination of lensing time delays with the GW standard siren measurement of luminosity distance provides an independent route to cosmological parameters, in particular the Hubble constant $H_0$, without relying on an electromagnetic distance ladder \cite{}. Lensing also provides a unique probe of the dark matter distribution in lens galaxies, since the image positions and flux ratios are sensitive to the mass profile of the lens independently of its luminosity \cite{}. Furthermore, the detection of lensed events would allow tests of GR in the strong-field regime by comparing the propagation speed of GWs and light through the same lensing potential \cite{}.
+
+From an observational standpoint, lensing also affects the apparent properties of the detected GW source. A magnified image appears closer and more massive than it truly is, potentially biasing the inferred population of compact binary mergers \cite{}. Identifying lensed events is therefore important not only as a scientific opportunity but also as a systematic effect that must be controlled in population studies.
+
+In this work we exploit a specific consequence of strong lensing: the production of multiple detectable images of the same BBH merger, each carrying spatial information about the source location. By performing a joint Bayesian analysis of two lensed images, we investigate how the sky localization of the source can be dramatically improved compared to the analysis of a single image, providing a direct motivation for lensing searches in current and future GW catalogs.
 
 \section{Geometric optics regime}
 \label{sec:geometric_optics}
