@@ -3580,43 +3580,44 @@ GR \cite{Eddingtonsexpedition}. Since then, gravitational lensing has become one
 
 When a GW propagates from its source to a detector, massive 
 structures along the line of sight act as gravitational lenses (galaxies, galaxy clusters,
-and other compact objects). Depending on the geometry and lens mass, three regimes are distinguished \cite{lensing_regimes}: strong lensing, caused by galaxies or galaxy clusters, produces multiple images of the same source arriving at different times and with different amplitudes; microlensing, caused by compact objects, produces overlapping images whose interference can modulate the observed strain; and weak lensing, due to large-scale structure, induces small coherent distortions. This work focuses exclusively on the strong lensing regime.
+and other compact objects). Depending on the geometry and lens mass, three regimes are distinguished \cite{lensing_regimes}: strong lensing, caused by galaxies or galaxy clusters, produces multiple images of the same source arriving at different times and with different amplitudes; microlensing, caused by compact objects, produces overlapping images whose interference can modulate the observed strain; and weak lensing, due to large-scale structure, induces small coherent distortions. Figure~\ref{fig:diagram_GW_lensing_Regimes} illustrates the general picture of GW lensing, including both strong-lensing and microlensing effects. This work focuses exclusively on the strong lensing regime.
+
+\newpage
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.86\linewidth]{Figures/Millilens.pdf}
+    \caption{Schematic representation of GW lensing. A galaxy acting as a macrolens can produce multiple images of the same GW signal, arriving at the detector with different magnifications and time delays. Compact objects embedded within the lens galaxy (microlenses) can further perturb these images, introducing additional amplification, interference, and diffraction effects. The images shown at the bottom illustrate examples of strong gravitational lensing observed in electromagnetic astronomy. Original illustration based on sources: \cite{LIGO_lensing_image, Figure_micro_strong_lensing}.}
+    \label{fig:diagram_GW_lensing_Regimes}
+\end{figure}
+
+
 
 \subsection{Differences between electromagnetic and gravitational 
 wave lensing}
 
 Although the deflection of EM waves and GWs follows the same 
-underlying physics, several important differences arise from their distinct nature \cite{}.
+underlying physics, several important differences arise from their distinct nature. The most fundamental concerns the wavelength regime. GWs detectable by ground-based interferometers have wavelengths ranging from roughly 10\,km to 1\,Mm, far larger than EM wavelengths. The relevant parameter is the ratio $\lambda_\mathrm{GW}/\lambda_E$, where $\lambda_E$ is the Einstein radius of the lens (see $\S$\ref{???}). When $\lambda_\mathrm{GW} \ll \lambda_E$, the geometric optics approximation is valid. When $\lambda_\mathrm{GW} \gtrsim \lambda_E$ (which can occur for low-mass lenses) wave optics must be used and diffraction produces frequency-dependent modulations of the waveform with no EM analog \cite{Wave_optics_GW}. Figure~\ref{fig:wave_optics_regime} illustrates the lens-mass scales associated with these two regimes. For the galaxy-scale lenses relevant to this work, $\lambda_E \sim \mathcal{O}(\mathrm{kpc})$, placing the problem firmly in the geometric optics regime.
 
-The most fundamental concerns the wavelength regime. GWs detectable by ground-based interferometers have wavelengths ranging from roughly 10\,km to 1\,Mm, far larger than EM wavelengths. The relevant parameter is the ratio $\lambda_\mathrm{GW}/\lambda_E$, where $\lambda_E$ is the Einstein radius of the lens. When $\lambda_\mathrm{GW} \ll \lambda_E$, the geometric optics approximation is valid. When $\lambda_\mathrm{GW} \gtrsim \lambda_E$ (which can occur for low-mass lenses) wave optics must be used and 
-diffraction produces frequency-dependent modulations of the waveform with no EM analog \cite{Wave_optics_GW}. For the galaxy-scale lenses relevant to this work, $\lambda_E \sim \mathcal{O}(\mathrm{kpc})$, placing the problem firmly in the geometric optics regime.
-
-A second difference is coherence. GWs are coherent waves with a well-defined phase, so lensed images can interfere if their time delay is shorter than the signal duration — an effect absent in standard EM lensing. Finally, unlike EM signals, GWs are not absorbed or dispersed by the intergalactic medium, encoding clean information about the source and lensing potential.
+A second difference is coherence. GWs are coherent waves with a well-defined phase, so lensed images can interfere if their time delay is shorter than the signal duration (an effect absent in standard EM lensing). Finally, unlike EM signals, GWs are not absorbed or dispersed by the intergalactic medium, encoding clean information about the source and lensing potential.
 
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.63\linewidth]{Figures/wave_optics_lensing.jpg}
-    \caption{Illustration of the mass scales at which wave optics effects become relevant for gravitationally lensed signals. The geometric optics regime is valid when the wavelength of the radiation is much smaller than the scale of the lensing potential. The wave optics regime is valid when the wavelength is comparable to the scale of the lensing potential. Because the wavelength of GWs detected by the current ground-based detectors is typically much larger than the wavelength of most light sources, wave optics effects can become relevant for lenses below <=100M. Since other GW detectors like LISA will be sensitive to even longer wavelengths, wave optics effects will be even more important. The precise mass scale also depends on the lensing configuration, such as the distance from the caustic, where wave optics effects can become more prominent close to a caustic when the magnification is large. Credit: Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences (2025). DOI: 10.1098/rsta.2024.0134.}
+    \caption{Illustration of the lens-mass scales relevant for gravitationally lensed signals. Depending on the relation between the radiation wavelength and the characteristic scale of the lensing potential, lensing occurs in either the geometric optics or wave optics regime. While geometric optics describes distinct propagation paths, wave optics accounts for diffraction and interference effects. Due to their long wavelengths, GW can exhibit wave-optics effects for relatively low lens masses. Source: \cite{multi_messenger_gravitational_lensing}.}
     \label{fig:wave_optics_regime}
 \end{figure}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\linewidth]{Figures/diagram_regimes_GW_lensing.png}
-    \caption{Diagram exemplifying the distinct regimes of GW
-lensing. We denote ML the lens mass, R its characteristic size and, $\lambda$ the wavelength of the incoming wave. In this work we are primarily concerned with the strong gravity, wave optics regime (top left), particularly in the application of BH perturbation theory to explore the phenomenology of GW distortions in this part of parameter space. We will also make an explicit connection to lensing characteristics in the weak gravity, wave optics regime (top right). Source: \cite{diagram_GWlensing}.}
-    \label{fig:diagram_GW_lensing_Regimes}
-\end{figure}
 
 
 \subsection{Relevance for gravitational wave astronomy}
 
-No confirmed detection of gravitational lensing of GWs has been reported despite dedicated searches in GWTC-1 through GWTC-4 \cite{GWTC4_introduction}. As detector sensitivities improve, detection is expected to become feasible within the next observing runs, with predictions suggesting more than one strongly lensed event per year at design sensitivity \cite{}.
+No confirmed detection of gravitational lensing of GWs has been reported despite dedicated searches in GWTC-1 through GWTC-4 \cite{GWTC4_introduction}. As detector sensitivities improve, detection is expected to become feasible within the next observing runs, with predictions suggesting more than one strongly lensed event per year at design sensitivity \cite{Hannuksela_2019}.
 
-Such detections would open a rich set of applications: measuring the Hubble constant via lensing time delays combined with GW standard sirens \cite{}, probing dark matter distributions in lens galaxies \cite{}, and testing GR by comparing the propagation speed of GWs and light through the same lensing potential \cite{}. Lensing also biases the apparent properties of detected sources (a magnified image appears closer and more massive than it truly is) making the identification of lensed events important for controlling systematics in population studies \cite{}.
+Such detections would open a rich set of applications: measuring the Hubble constant via lensing time delays combined with GW standard sirens \cite{Schutz1986, hubble_constant_lensing}, probing dark matter distributions in lens galaxies \cite{jana2024probingnaturedarkmatter}, and testing GR by comparing the propagation speed of GWs and light through the same lensing potential \cite{test_GR_lensing}. Lensing also biases the apparent properties of detected sources (a magnified image appears closer and more massive than it truly is) making the identification of lensed events important for controlling systematics in population studies \cite{population_lensing}.
 
-In this work we exploit a specific consequence of strong lensing: the production of multiple detectable images of the same BBH merger. By performing a joint Bayesian analysis of two lensed images we investigate how sky localization can be dramatically improved compared to the analysis of a single image.
+In addition, multiple images of the same source provide repeated observations that can be combined to improve PE and sky localization \cite{hubble_constant_lensing, Chen_2025}. This last application is the central motivation of the present work: by performing a joint Bayesian analysis of two strongly lensed images of the same BBH merger, we investigate how the sky localization of the source can be dramatically improved compared to the analysis of a single image.
+
 
 \section{Geometric optics regime}
 \label{sec:geometric_optics}
