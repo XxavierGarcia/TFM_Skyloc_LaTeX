@@ -3568,18 +3568,19 @@ In summary, this chapter has established the theoretical and experimental founda
 \label{ch:lensing}
 
 
-Having established the theoretical and observational foundations of GW astronomy in the preceding chapter, we now turn to a phenomenon that lies at the heart of this thesis: the gravitational lensing of GWs. We begin with the basics of gravitational lensing and its particular 
-features in the GW context (\S\ref{sec:lensing_intro}), before developing the geometric optics formalism that governs strong lensing (\S\ref{sec:geometric_optics}). We then characterize the signatures that strong lensing imprints on GW signals, including image classification, the Morse phase, and the amplification factor (\S\ref{sec:strong_lensing}), and describe how these signatures 
-manifest in the observed strain and in the inferred source parameters (\S\ref{sec:lensed_signal}). The chapter closes with a discussion of how the joint analysis of lensed image pairs can be exploited to improve sky localization (\S\ref{sec:sky_localization_lensing}), motivating the methodology developed in the subsequent chapters.
+Having established the theoretical and observational foundations of GW astronomy in the preceding chapter, we now turn to a phenomenon that lies at the heart of this thesis: the gravitational lensing of GWs. We begin with the basics of gravitational lensing and its particular features in the GW context (\S\ref{sec:lensing_intro}), before developing the geometric optics formalism that governs strong 
+lensing (\S\ref{sec:geometric_optics}). We then characterize the signatures that strong lensing imprints on GW signals, including the amplification factor, image classification, the Morse phase, and their effect on the observed strain and inferred source parameters (\S\ref{sec:strong_lensing}). The chapter closes with a discussion of how the joint analysis of lensed image pairs can be exploited to improve sky localization (\S\ref{sec:sky_localization_lensing}), 
+motivating the methodology developed in the subsequent chapters.
 
 \section{Gravitational lensing}
 \label{sec:lensing_intro}
 
-Gravitational lensing is a direct consequence of GR: massive objects curve spacetime, and any particle following a geodesic (including massless ones such as photons or GWs) will have its trajectory deflected. The phenomenon was confirmed observationally by Eddington during the solar eclipse of 1919, when the apparent positions of stars near the Sun were displaced by exactly the amount predicted by 
-GR \cite{Eddingtonsexpedition}. Since then, gravitational lensing has become one of the most powerful tools in observational astrophysics, providing information about the mass distribution of the Universe independently of its luminous content.
+Gravitational lensing is a direct consequence of GR: massive objects curve spacetime, and any particle following a geodesic (including massless ones such as photons or GWs) will have its trajectory deflected \cite{EM_lensing,GW_lensing_original, Lensing_phase_effects}. The phenomenon was confirmed observationally by Eddington during the solar eclipse of 1919, when the apparent positions of stars near the Sun were displaced by exactly the amount predicted by 
+GR \cite{Eddingtonsexpedition}. Since then, gravitational lensing has become one of the most powerful tools in observational astrophysics, providing information about the mass distribution of the Universe independently of its luminous content \cite{Lensing_in_astronomy}.
 
 When a GW propagates from its source to a detector, massive 
-structures along the line of sight act as gravitational lenses. Depending on the geometry and lens mass, three regimes are distinguished \cite{lensing_regimes}: strong lensing, caused by galaxies or galaxy clusters, produces multiple images of the same source arriving at different times and with different amplitudes; microlensing, caused by compact objects, produces a time-varying magnification; and weak lensing, from large-scale structure, induces small coherent distortions. This work focuses exclusively on the strong lensing regime.
+structures along the line of sight act as gravitational lenses (galaxies, galaxy clusters,
+and other compact objects). Depending on the geometry and lens mass, three regimes are distinguished \cite{lensing_regimes}: strong lensing, caused by galaxies or galaxy clusters, produces multiple images of the same source arriving at different times and with different amplitudes; microlensing, caused by compact objects, produces overlapping images whose interference can modulate the observed strain; and weak lensing, due to large-scale structure, induces small coherent distortions. This work focuses exclusively on the strong lensing regime.
 
 \subsection{Differences between electromagnetic and gravitational 
 wave lensing}
@@ -3588,7 +3589,7 @@ Although the deflection of EM waves and GWs follows the same
 underlying physics, several important differences arise from their distinct nature \cite{}.
 
 The most fundamental concerns the wavelength regime. GWs detectable by ground-based interferometers have wavelengths ranging from roughly 10\,km to 1\,Mm, far larger than EM wavelengths. The relevant parameter is the ratio $\lambda_\mathrm{GW}/\lambda_E$, where $\lambda_E$ is the Einstein radius of the lens. When $\lambda_\mathrm{GW} \ll \lambda_E$, the geometric optics approximation is valid. When $\lambda_\mathrm{GW} \gtrsim \lambda_E$ (which can occur for low-mass lenses) wave optics must be used and 
-diffraction produces frequency-dependent modulations of the waveform with no EM analog. For the galaxy-scale lenses relevant to this work, $\lambda_E \sim \mathcal{O}(\mathrm{kpc})$, placing the problem firmly in the geometric optics regime.
+diffraction produces frequency-dependent modulations of the waveform with no EM analog \cite{Wave_optics_GW}. For the galaxy-scale lenses relevant to this work, $\lambda_E \sim \mathcal{O}(\mathrm{kpc})$, placing the problem firmly in the geometric optics regime.
 
 A second difference is coherence. GWs are coherent waves with a well-defined phase, so lensed images can interfere if their time delay is shorter than the signal duration — an effect absent in standard EM lensing. Finally, unlike EM signals, GWs are not absorbed or dispersed by the intergalactic medium, encoding clean information about the source and lensing potential.
 
@@ -3600,7 +3601,13 @@ A second difference is coherence. GWs are coherent waves with a well-defined pha
     \label{fig:wave_optics_regime}
 \end{figure}
 
-
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Figures/diagram_regimes_GW_lensing.png}
+    \caption{Diagram exemplifying the distinct regimes of GW
+lensing. We denote ML the lens mass, R its characteristic size and, $\lambda$ the wavelength of the incoming wave. In this work we are primarily concerned with the strong gravity, wave optics regime (top left), particularly in the application of BH perturbation theory to explore the phenomenology of GW distortions in this part of parameter space. We will also make an explicit connection to lensing characteristics in the weak gravity, wave optics regime (top right). Source: \cite{diagram_GWlensing}.}
+    \label{fig:diagram_GW_lensing_Regimes}
+\end{figure}
 
 
 \subsection{Relevance for gravitational wave astronomy}
@@ -3628,25 +3635,28 @@ In this work we exploit a specific consequence of strong lensing: the production
 \section{Strong lensing of gravitational waves}
 \label{sec:strong_lensing}
 
+\section{Strong lensing of gravitational waves}
+\label{sec:strong_lensing}
+
 \subsection{Strong vs weak lensing}
+
+\subsection{Amplification factor in the geometric optics limit}
+% Aquí introduces F(f) = sqrt(mu) exp(...)
+% Es el puente entre geometric optics y la señal
 
 \subsection{Image types and Morse phase}
 \subsubsection{Type I, II and III images}
 \subsubsection{Effect of the Morse phase on the waveform}
-% Aquí explicas tanto el efecto físico (Hilbert transform)
-% como que la diferencia de fase entre imágenes es un parámetro
 
+\subsection{Lensed gravitational wave strain}
+% Aquí metes h_L = F * h, que es consecuencia directa del amplification factor
+% Ya no necesitas una sección separada
 
-\subsection{Amplification factor in the geometric optics limit}
-
-\section{Lensed gravitational wave signals}
-\label{sec:lensed_signal}
-
-\subsection{Modification of the gravitational wave strain}
 \subsection{Apparent vs intrinsic parameters}
 \subsubsection{Redshifted masses}
 \subsubsection{Magnification bias on luminosity distance}
-\subsection{Lensing parameters}
+
+\subsection{Lensing observables}
 \subsubsection{Magnification ratio}
 \subsubsection{Time delay between images}
 
