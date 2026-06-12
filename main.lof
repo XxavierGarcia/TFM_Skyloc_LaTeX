@@ -33,6 +33,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic representation of GW lensing. A galaxy acting as a macrolens can produce multiple images of the same GW signal, arriving at the detector with different magnifications and time delays. Compact objects embedded within the lens galaxy (microlenses) can further perturb these images, introducing additional amplification, interference, and diffraction effects. The images shown at the bottom illustrate examples of strong gravitational lensing observed in electromagnetic astronomy. Original illustration based on sources: \blx@tocontentsinit {0}\cite {LIGO_lensing_image, Figure_micro_strong_lensing}.}}{92}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of the lens-mass scales relevant for gravitationally lensed signals. Depending on the relation between the radiation wavelength and the characteristic scale of the lensing potential, lensing occurs in either the geometric optics or wave optics regime. While geometric optics describes distinct propagation paths, wave optics accounts for diffraction and interference effects. Due to their long wavelengths, GW can exhibit wave-optics effects for relatively low lens masses. Source: \blx@tocontentsinit {0}\cite {multi_messenger_gravitational_lensing}.}}{93}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Geometry of gravitational lensing. Source: \blx@tocontentsinit {0}\cite {Sachs2008LensingAngles}.}}{94}{figure.3.3}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

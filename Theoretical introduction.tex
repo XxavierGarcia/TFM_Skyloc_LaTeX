@@ -3571,6 +3571,7 @@ In summary, this chapter has established the theoretical and experimental founda
 Having established the theoretical and observational foundations of GW astronomy in the preceding chapter, we now turn to a phenomenon that lies at the heart of this thesis: the gravitational lensing of GWs. We begin with the basics of gravitational lensing and its particular features in the GW context (\S\ref{sec:lensing_intro}), before developing the geometric optics formalism that governs strong 
 lensing (\S\ref{sec:geometric_optics}). We then characterize the signatures that strong lensing imprints on GW signals, including the amplification factor, image classification, the Morse phase, and their effect on the observed strain and inferred source parameters (\S\ref{sec:strong_lensing}). The chapter closes with a discussion of how the joint analysis of lensed image pairs can be exploited to improve sky localization (\S\ref{sec:sky_localization_lensing}), 
 motivating the methodology developed in the subsequent chapters.
+CANVIAR AQUEST PARAGRAF 
 
 \section{Gravitational lensing}
 \label{sec:lensing_intro}
@@ -3619,132 +3620,43 @@ Such detections would open a rich set of applications: measuring the Hubble cons
 In addition, multiple images of the same source provide repeated observations that can be combined to improve PE and sky localization \cite{hubble_constant_lensing, Chen_2025}. This last application is the central motivation of the present work: by performing a joint Bayesian analysis of two strongly lensed images of the same BBH merger, we investigate how the sky localization of the source can be dramatically improved compared to the analysis of a single image.
 
 
-\section{Geometric optics regime}
+\section{Gravitational lensing formalism}
 \label{sec:geometric_optics}
 
+\subsection{Deflection of light by a gravitational field}
 
-blasnalsnl
+
+
 
 \subsection{The lens equation}
-\subsubsection{Deflection angle}
-\subsubsection{Thin lens approximation}
-\subsection{Einstein radius and image formation}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.53\linewidth]{Figures/Gravitational-lensing-angles.png}
+    \caption{Geometry of gravitational lensing. Source: \cite{Sachs2008LensingAngles}.}
+    \label{fig:lensing_geometry}
+\end{figure}
+
+\subsection{Einstein radius and multiple image formation}
 \subsection{Magnification and time delay}
-\subsubsection{Geometric and Shapiro time delay}
-\subsubsection{Magnification}
 \subsection{Lens models}
 \subsubsection{Point mass lens}
 \subsubsection{Singular isothermal sphere}
 
 \section{Strong lensing of gravitational waves}
 \label{sec:strong_lensing}
+\subsection{From geometric optics to the amplification factor}
+\subsection{Image classification and the Morse phase}
+\subsection{Effect of lensing on the observed gravitational wave signal}
+\subsubsection{Modification of the strain}
+\subsubsection{Apparent vs intrinsic source parameters}
+\subsection{Lensing observables: magnification ratio and time delay}
 
-
-\subsection{Strong vs weak lensing}
-
-\subsection{Amplification factor in the geometric optics limit}
-% Aquí introduces F(f) = sqrt(mu) exp(...)
-% Es el puente entre geometric optics y la señal
-
-\subsection{Image types and Morse phase}
-\subsubsection{Type I, II and III images}
-\subsubsection{Effect of the Morse phase on the waveform}
-
-\subsection{Lensed gravitational wave strain}
-% Aquí metes h_L = F * h, que es consecuencia directa del amplification factor
-% Ya no necesitas una sección separada
-
-\subsection{Apparent vs intrinsic parameters}
-\subsubsection{Redshifted masses}
-\subsubsection{Magnification bias on luminosity distance}
-
-\subsection{Lensing observables}
-\subsubsection{Magnification ratio}
-\subsubsection{Time delay between images}
-
-
-\section{Sky localization of lensed image pairs}
+\section{Sky localization with lensed image pairs}
 \label{sec:sky_localization_lensing}
-\subsection{Sky localization with a single GW image}
+\subsection{Limitations of single-image sky localization}
 \subsection{Joint parameter estimation of lensed pairs}
-\subsection{Lensing hypothesis testing}
-
-................
-
-
-
-
-
-
-
-**Deflection angle**
-Derivación del ángulo de deflexión de un rayo que pasa a distancia $\xi$ de una masa $M$: $\hat{\alpha} = 4GM/c^2\xi$. Comparar con el resultado newtoniano (factor 2).
-
-**Thin lens approximation**
-La deflexión ocurre en un plano — el plano de la lente. Justificación: la lente es mucho más delgada que las distancias fuente-lente y lente-observador. Esto simplifica enormemente la geometría.
-
-**The lens equation**
-La ecuación que relaciona la posición de la fuente $\beta$, la posición de la imagen $\theta$ y el ángulo de deflexión $\hat{\alpha}$:
-$$\boldsymbol{\beta} = \boldsymbol{\theta} - \boldsymbol{\alpha}(\boldsymbol{\theta})$$
-Esto es el punto de partida para todo lo que sigue.
-
-**Einstein radius and image formation**
-El radio de Einstein $\theta_E$ como escala natural del lensing. Cuándo se forman múltiples imágenes (cuando la fuente está dentro del radio de Einstein). El anillo de Einstein como caso especial de alineación perfecta.
-
-**Geometric and Shapiro time delay**
-El tiempo de retardo entre imágenes tiene dos contribuciones: geométrica (caminos de distinta longitud) y de Shapiro (la luz se ralentiza en el pozo gravitacional). La combinación da el tiempo de retardo total $\Delta t$ entre imágenes — clave para tu análisis.
-
-**Magnification**
-El lensing conserva la brillancia superficial pero distorsiona el área → magnificación $\mu$. Para GWs, una imagen magnificada tiene mayor SNR. El ratio de magnificación entre las dos imágenes $\mu_1/\mu_2$ es un parámetro observable.
-
-**Point mass lens**
-El modelo más simple: toda la masa concentrada en un punto. Solución analítica exacta. Produce siempre dos imágenes. Es el modelo que usa LER/Hanabi → justifica por qué lo introduces.
-
-**Singular isothermal sphere (SIS)**
-Modelo de galaxia más realista: perfil de densidad $\rho \propto r^{-2}$. Puede producir dos imágenes con igual magnificación. Mencionarlo brevemente como alternativa al punto masa.
-
----
-
-**Strong vs weak lensing**
-Definición operativa: strong lensing cuando $\theta_E \gtrsim$ separación angular de la fuente → múltiples imágenes resolvibles. Weak lensing: solo distorsión suave, no hay imágenes múltiples. Para GWs no se "ven" las imágenes separadas pero sí se detectan como eventos distintos → por eso el strong lensing es detectable.
-
-**Type I, II and III images**
-Clasificación según la topología del tiempo de retardo: mínimo (Type I), silla de montura (Type II), máximo (Type III). Cada tipo tiene una signatura de fase diferente.
-
-**Effect of the Morse phase on the waveform**
-El tipo de imagen determina una fase adicional en la forma de onda: Type I → $n=0$, Type II → $n=1/2$ (transformada de Hilbert), Type III → $n=1$. Esto es crucial porque cambia la morfología de la señal detectada y puede confundirse con un cambio en los parámetros de la fuente.
-
-**Amplification factor in the geometric optics limit**
-La forma compacta $F_j = \sqrt{\mu_j}\exp(-2\pi i f t_j \pm i\pi n_j)$ que multiplica la señal sin lensing. Es exactamente lo que implementa Hanabi → conecta directamente con tu metodología.
-
----
-
-**Modification of the GW strain**
-La señal lensada es $\tilde{h}_L(f) = F(f)\,\tilde{h}(f)$ donde $F$ es el factor de amplificación. En geometric optics cada imagen es una copia de la señal original con distinta amplitud, fase y tiempo de llegada.
-
-**Redshifted masses**
-Una imagen más magnificada parece más cercana → masa aparente diferente de la masa intrínseca. En particular $m^\mathrm{det} = (1+z_L)m^\mathrm{src}$. Si no se sabe que hay lensing se infieren masas incorrectas — relevante para interpretar tus posteriors.
-
-**Magnification bias on luminosity distance**
-La magnificación $\mu$ cambia la distancia luminosa aparente: $D_L^\mathrm{app} = D_L/\sqrt{\mu}$. Una imagen magnificada parece más cercana. Esto afecta directamente a la sky localization porque $D_L$ y $(\alpha,\delta)$ están correlacionados.
-
-**Magnification ratio, time delay, Morse phase difference**
-Los tres parámetros observables que caracterizan un par de imágenes lensadas. Son los parámetros de lensing que LER inyecta y que Bilby recupera. Introducirlos aquí los justifica antes de usarlos en resultados.
-
----
-
-**Sky localization with a single GW image**
-Recordar del capítulo anterior: una sola imagen da una región anular en el cielo. La distancia y la inclinación están degeneradas. Sin EM counterpart la localización es pobre.
-
-**Joint parameter estimation of lensed pairs**
-Con dos imágenes que comparten los mismos parámetros intrínsecos ($m_1, m_2, \chi_i$) pero tienen diferentes parámetros extrínsecos aparentes, el análisis conjunto rompe degeneraciones. El joint posterior en $(\alpha,\delta)$ es la intersección de las dos regiones individuales → mucho más pequeña. Esta es la motivación central de tu proyecto.
-
-**Lensing vs non-lensing Bayes factor**
-El formalismo ya introducido en §\ref{sec:bayes_factor} aplicado al caso específico: $\mathcal{M}_L$ (los dos eventos son imágenes del mismo BBH) vs $\mathcal{M}_{NL}$ (son dos BBH independientes). El Bayes factor cuantifica qué hipótesis favorecen los datos.
-
-**Overlap integral**
-Métrica alternativa de consistencia: mide el solapamiento entre los posteriors de las dos imágenes en los parámetros intrínsecos compartidos. Si las dos imágenes son del mismo evento, los posteriors en $m_1, m_2, \chi_i$ deben ser compatibles.
----------------
+\subsection{Identifying lensed events: the lensing Bayes factor}
 
 
 ................
