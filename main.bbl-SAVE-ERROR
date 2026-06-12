@@ -95,8 +95,8 @@
       \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \strng{authorfullhashraw}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annalen der Physik}
@@ -130,8 +130,8 @@
       \strng{authornamehash}{5c27dd36414b88b00f26489bd05f68a6}
       \strng{authorfullhash}{5c27dd36414b88b00f26489bd05f68a6}
       \strng{authorfullhashraw}{5c27dd36414b88b00f26489bd05f68a6}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Translated in 2008 by Larissa Borissova and Dmitri Rabounski}
@@ -457,8 +457,8 @@
       \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \strng{authorfullhashraw}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \field{extraname}{3}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sitzungsberichte der Königlich Preu{ß}ischen Akademie der Wissenschaften zu Berlin}
@@ -491,8 +491,8 @@
       \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \strng{authorfullhashraw}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \field{extraname}{4}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sitzungsberichte der Königlich Preu{ß}ischen Akademie der Wissenschaften zu Berlin}
@@ -805,8 +805,8 @@
       \strng{authornamehash}{e1841c0c41b5a5ffe8310253191fe07f}
       \strng{authorfullhash}{e1841c0c41b5a5ffe8310253191fe07f}
       \strng{authorfullhashraw}{e1841c0c41b5a5ffe8310253191fe07f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{http://www.damtp.cam.ac.uk/user/tong/gr.html}}
@@ -985,8 +985,8 @@
       \strng{authornamehash}{c7ee73659f3bd4881d83d1db4615272f}
       \strng{authorfullhash}{c7ee73659f3bd4881d83d1db4615272f}
       \strng{authorfullhashraw}{c7ee73659f3bd4881d83d1db4615272f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The Science Absolute of Space}
@@ -1014,8 +1014,8 @@
       \strng{authornamehash}{8199d0ab11818e68c13eda43bffe85fb}
       \strng{authorfullhash}{8199d0ab11818e68c13eda43bffe85fb}
       \strng{authorfullhashraw}{8199d0ab11818e68c13eda43bffe85fb}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{News, Coordinated Science Laboratory, University of Illinois}
@@ -1142,8 +1142,8 @@
       \strng{authornamehash}{823fb27b2597b1f5afa2e7f5e554371a}
       \strng{authorfullhash}{823fb27b2597b1f5afa2e7f5e554371a}
       \strng{authorfullhashraw}{823fb27b2597b1f5afa2e7f5e554371a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://education.nationalgeographic.org/resource/the-cartographers-dilemma/}}
@@ -1329,8 +1329,8 @@
       \strng{authornamehash}{2e1eb70757e8ef323bef36afd1bd0053}
       \strng{authorfullhash}{2e1eb70757e8ef323bef36afd1bd0053}
       \strng{authorfullhashraw}{2e1eb70757e8ef323bef36afd1bd0053}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{An Overview of Gravitational Waves}
@@ -1363,6 +1363,7 @@
       \strng{authornamehash}{69322df311ba11556d04c3c893524d58}
       \strng{authorfullhash}{69322df311ba11556d04c3c893524d58}
       \strng{authorfullhashraw}{69322df311ba11556d04c3c893524d58}
+      \field{extraname}{1}
       \field{sortinit}{8}
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
@@ -1421,8 +1422,8 @@
       \strng{authornamehash}{d7a25dcf27d22a162ebf09cac395fe4b}
       \strng{authorfullhash}{d7a25dcf27d22a162ebf09cac395fe4b}
       \strng{authorfullhashraw}{d7a25dcf27d22a162ebf09cac395fe4b}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{gr-qc}
@@ -13982,8 +13983,8 @@
       \strng{authorfullhash}{215b13243dfaded73129d9709a8481dc}
       \strng{authorfullhashraw}{215b13243dfaded73129d9709a8481dc}
       \field{extraname}{4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issue}{16}
@@ -20787,8 +20788,8 @@
       \strng{authorfullhash}{475d3422cf7bbba2be389c10155228e5}
       \strng{authorfullhashraw}{475d3422cf7bbba2be389c10155228e5}
       \field{extraname}{5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issue}{2}
@@ -29130,8 +29131,8 @@
       \strng{authorfullhash}{559d1e42ecf4ae60e1e68a360599b35c}
       \strng{authorfullhashraw}{559d1e42ecf4ae60e1e68a360599b35c}
       \field{extraname}{6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issue}{4}
@@ -74546,4 +74547,548 @@
       \strng{authorfullhash}{b4aead78665d085cc516406c6e297f57}
       \strng{authorfullhashraw}{b4aead78665d085cc516406c6e297f57}
       \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Astrophysical Journal Supplement Series}
+      \field{month}{4}
+      \field{number}{2}
+      \field{title}{Bilby: A User-friendly Bayesian Inference Library for Gravitational-wave Astronomy}
+      \field{volume}{241}
+      \field{year}{2019}
+      \field{pages}{27}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3847/1538-4365/ab06fc
+      \endverb
+    \endentry
+    \entry{EM_lensing}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=13ec57e42d0d317ab4367b484e01079f}{%
+           family={Bartelmann},
+           familyi={B\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{13ec57e42d0d317ab4367b484e01079f}
+      \strng{fullhash}{13ec57e42d0d317ab4367b484e01079f}
+      \strng{fullhashraw}{13ec57e42d0d317ab4367b484e01079f}
+      \strng{bibnamehash}{13ec57e42d0d317ab4367b484e01079f}
+      \strng{authorbibnamehash}{13ec57e42d0d317ab4367b484e01079f}
+      \strng{authornamehash}{13ec57e42d0d317ab4367b484e01079f}
+      \strng{authorfullhash}{13ec57e42d0d317ab4367b484e01079f}
+      \strng{authorfullhashraw}{13ec57e42d0d317ab4367b484e01079f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Classical and Quantum Gravity}
+      \field{month}{11}
+      \field{number}{23}
+      \field{title}{Gravitational lensing}
+      \field{volume}{27}
+      \field{year}{2010}
+      \field{pages}{233001}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/0264-9381/27/23/233001
+      \endverb
+    \endentry
+    \entry{GW_lensing_original}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=f2a6954f63456009792934611b93cbbd}{%
+           family={Ohanian},
+           familyi={O\bibinitperiod},
+           given={Hans\bibnamedelima C.},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{f2a6954f63456009792934611b93cbbd}
+      \strng{fullhash}{f2a6954f63456009792934611b93cbbd}
+      \strng{fullhashraw}{f2a6954f63456009792934611b93cbbd}
+      \strng{bibnamehash}{f2a6954f63456009792934611b93cbbd}
+      \strng{authorbibnamehash}{f2a6954f63456009792934611b93cbbd}
+      \strng{authornamehash}{f2a6954f63456009792934611b93cbbd}
+      \strng{authorfullhash}{f2a6954f63456009792934611b93cbbd}
+      \strng{authorfullhashraw}{f2a6954f63456009792934611b93cbbd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1572-9575}
+      \field{journaltitle}{International Journal of Theoretical Physics}
+      \field{month}{6}
+      \field{number}{6}
+      \field{title}{On the Focusing of Gravitational Radiation}
+      \field{volume}{9}
+      \field{year}{1974}
+      \field{pages}{425\bibrangedash 437}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/BF01810927
+      \endverb
+    \endentry
+    \entry{Lensing_phase_effects}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=04c20bdabcf2ac29d9d656500fac0ec5}{%
+           family={Ezquiaga},
+           familyi={E\bibinitperiod},
+           given={Jose\bibnamedelima María},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=00b3dea7d632917486b21a711857c297}{%
+           family={Holz},
+           familyi={H\bibinitperiod},
+           given={Daniel\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b134113b331667441c40e2993aa7ad45}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Wayne},
+           giveni={W\bibinitperiod}}}%
+        {{hash=00b69c8d16b22c9865aa02226250acb2}{%
+           family={Lagos},
+           familyi={L\bibinitperiod},
+           given={Macarena},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4517cb47549e9e42f6bfd204ca9456a7}{%
+           family={Wald},
+           familyi={W\bibinitperiod},
+           given={Robert\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{8b1bd19ac89d059c0f39509f9634497b}
+      \strng{fullhash}{f4405bb5a95ff7fd996d1b7df5ca9a07}
+      \strng{fullhashraw}{f4405bb5a95ff7fd996d1b7df5ca9a07}
+      \strng{bibnamehash}{8b1bd19ac89d059c0f39509f9634497b}
+      \strng{authorbibnamehash}{8b1bd19ac89d059c0f39509f9634497b}
+      \strng{authornamehash}{8b1bd19ac89d059c0f39509f9634497b}
+      \strng{authorfullhash}{f4405bb5a95ff7fd996d1b7df5ca9a07}
+      \strng{authorfullhashraw}{f4405bb5a95ff7fd996d1b7df5ca9a07}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{6}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{month}{3}
+      \field{title}{Phase effects from strong gravitational lensing of gravitational waves}
+      \field{volume}{103}
+      \field{year}{2021}
+      \field{pages}{064047}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.103.064047
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevD.103.064047
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevD.103.064047
+      \endverb
+    \endentry
+    \entry{Lensing_in_astronomy}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=625903144a0884300751e7da5b22e34e}{%
+           family={Wambsganss},
+           familyi={W\bibinitperiod},
+           given={Joachim},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{625903144a0884300751e7da5b22e34e}
+      \strng{fullhash}{625903144a0884300751e7da5b22e34e}
+      \strng{fullhashraw}{625903144a0884300751e7da5b22e34e}
+      \strng{bibnamehash}{625903144a0884300751e7da5b22e34e}
+      \strng{authorbibnamehash}{625903144a0884300751e7da5b22e34e}
+      \strng{authornamehash}{625903144a0884300751e7da5b22e34e}
+      \strng{authorfullhash}{625903144a0884300751e7da5b22e34e}
+      \strng{authorfullhashraw}{625903144a0884300751e7da5b22e34e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1433-8351}
+      \field{journaltitle}{Living Reviews in Relativity}
+      \field{month}{12}
+      \field{number}{1}
+      \field{title}{Gravitational Lensing in Astronomy}
+      \field{volume}{1}
+      \field{year}{1998}
+      \field{pages}{12}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.12942/lrr-1998-12
+      \endverb
+    \endentry
+    \entry{lensing_regimes}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=ab0d1ecba5a2dfaf7b72bae9d27bb1be}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhiwei},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=3145aa57454c0466575f8fe721e78df1}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Youjun},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {National Astromonical Observatories, CAS}%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{da621564de9aa0b9b8cdaac1c589fded}
+      \strng{fullhash}{da621564de9aa0b9b8cdaac1c589fded}
+      \strng{fullhashraw}{da621564de9aa0b9b8cdaac1c589fded}
+      \strng{bibnamehash}{da621564de9aa0b9b8cdaac1c589fded}
+      \strng{authorbibnamehash}{da621564de9aa0b9b8cdaac1c589fded}
+      \strng{authornamehash}{da621564de9aa0b9b8cdaac1c589fded}
+      \strng{authorfullhash}{da621564de9aa0b9b8cdaac1c589fded}
+      \strng{authorfullhashraw}{da621564de9aa0b9b8cdaac1c589fded}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Research in Astronomy and Astrophysics}
+      \field{month}{4}
+      \field{number}{6}
+      \field{title}{Gravitational Lensing of Gravitational Waves from Astrophysical Sources: Theory, Detection, and Applications}
+      \field{volume}{26}
+      \field{year}{2026}
+      \field{pages}{062001}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1674-4527/ae4bad
+      \endverb
+    \endentry
+    \entry{LIGO_lensing_image}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7015b406ea2a6ab9180abb36abceea49}{%
+           family={{LIGO Scientific Collaboration}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{7015b406ea2a6ab9180abb36abceea49}
+      \strng{fullhash}{7015b406ea2a6ab9180abb36abceea49}
+      \strng{fullhashraw}{7015b406ea2a6ab9180abb36abceea49}
+      \strng{bibnamehash}{7015b406ea2a6ab9180abb36abceea49}
+      \strng{authorbibnamehash}{7015b406ea2a6ab9180abb36abceea49}
+      \strng{authornamehash}{7015b406ea2a6ab9180abb36abceea49}
+      \strng{authorfullhash}{7015b406ea2a6ab9180abb36abceea49}
+      \strng{authorfullhashraw}{7015b406ea2a6ab9180abb36abceea49}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ligo.org}}
+      \field{note}{Accessed: 2026-06-01}
+      \field{title}{Gravitational-wave lensing illustration}
+    \endentry
+    \entry{Figure_micro_strong_lensing}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=ab4c011cca4ea621d8d500ac940f4fba}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=76b63f1618a3986d646a7171c2d8895a}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Isaac\bibnamedelimb C\bibnamedelima F},
+           giveni={I\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=78e0e6ea838c373c0266e643f4b69a80}{%
+           family={Leong},
+           familyi={L\bibinitperiod},
+           given={Samson\bibnamedelimb H\bibnamedelima W},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=97cc1a3c80deb1ba32f57fe985b4ff47}{%
+           family={More},
+           familyi={M\bibinitperiod},
+           given={Anupreeta},
+           giveni={A\bibinitperiod}}}%
+        {{hash=871778cf9a8f69afaca5aeb0a12645f3}{%
+           family={Hannuksela},
+           familyi={H\bibinitperiod},
+           given={Otto\bibnamedelima A},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e7d6293e51e3cddd2dda0d5d09848c70}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tjonnie\bibnamedelimb G\bibnamedelima F},
+           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b9d38a3dd1701fc8c2ffb8fa8df1652}
+      \strng{fullhash}{52dd03ca52f4cf14ae174b33f1dbd412}
+      \strng{fullhashraw}{52dd03ca52f4cf14ae174b33f1dbd412}
+      \strng{bibnamehash}{1b9d38a3dd1701fc8c2ffb8fa8df1652}
+      \strng{authorbibnamehash}{1b9d38a3dd1701fc8c2ffb8fa8df1652}
+      \strng{authornamehash}{1b9d38a3dd1701fc8c2ffb8fa8df1652}
+      \strng{authorfullhash}{52dd03ca52f4cf14ae174b33f1dbd412}
+      \strng{authorfullhashraw}{52dd03ca52f4cf14ae174b33f1dbd412}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0035-8711}
+      \field{journaltitle}{Monthly Notices of the Royal Astronomical Society}
+      \field{month}{11}
+      \field{number}{3}
+      \field{title}{Exploring the hidden Universe: a novel phenomenological approach for recovering arbitrary gravitational-wave millilensing configurations}
+      \field{volume}{525}
+      \field{year}{2023}
+      \field{pages}{4149\bibrangedash 4160}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1093/mnras/stad1302
+      \endverb
+    \endentry
+    \entry{Wave_optics_GW}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=70bfedde88dafac661de335ed4a01076}{%
+           family={Takahashi},
+           familyi={T\bibinitperiod},
+           given={Ryuichi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=676b4f56aef10be1cebd131ae7fbd9cb}{%
+           family={Nakamura},
+           familyi={N\bibinitperiod},
+           given={Takashi},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{8faad5d096ac0af98bb12b9f3988d42b}
+      \strng{fullhash}{8faad5d096ac0af98bb12b9f3988d42b}
+      \strng{fullhashraw}{8faad5d096ac0af98bb12b9f3988d42b}
+      \strng{bibnamehash}{8faad5d096ac0af98bb12b9f3988d42b}
+      \strng{authorbibnamehash}{8faad5d096ac0af98bb12b9f3988d42b}
+      \strng{authornamehash}{8faad5d096ac0af98bb12b9f3988d42b}
+      \strng{authorfullhash}{8faad5d096ac0af98bb12b9f3988d42b}
+      \strng{authorfullhashraw}{8faad5d096ac0af98bb12b9f3988d42b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Astrophysical Journal}
+      \field{month}{10}
+      \field{number}{2}
+      \field{title}{Wave Effects in the Gravitational Lensing of Gravitational Waves from Chirping Binaries}
+      \field{volume}{595}
+      \field{year}{2003}
+      \field{pages}{1039}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1086/377430
+      \endverb
+    \endentry
+    \entry{multi_messenger_gravitational_lensing}{article}{}{}
+      \name{author}{41}{}{%
+        {{hash=410a10d31772a841d869957378461a6c}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Graham\bibnamedelima P.},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=b6563bd8661af6ab921444d672f0f78d}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Tessa},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f9e534054fe9f438a37036078834e016}{%
+           family={Birrer},
+           familyi={B\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7191aeb9b89ce1766bd90b97e64f9850}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={Christine\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=2c25e7f0378c2f30c94eebba108903f8}{%
+           family={Ezquiaga},
+           familyi={E\bibinitperiod},
+           given={Jose\bibnamedelima Maria},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=89545f944c756fd667699775ba98958b}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Srashti},
+           giveni={S\bibinitperiod}}}%
+        {{hash=871778cf9a8f69afaca5aeb0a12645f3}{%
+           family={Hannuksela},
+           familyi={H\bibinitperiod},
+           given={Otto\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=3374486e448a3f6c94952a1698298307}{%
+           family={Hemanta},
+           familyi={H\bibinitperiod},
+           given={Phurailatpam},
+           giveni={P\bibinitperiod}}}%
+        {{hash=fa01788d08c350acca0534ee450537f9}{%
+           family={Hendry},
+           familyi={H\bibinitperiod},
+           given={Martin\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=91845790e0c6457d9e80068ccce76320}{%
+           family={Janquart},
+           familyi={J\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a297934b8a45b2bf77492d238843ca60}{%
+           family={Keitel},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3083f11c01143d5d7f8e0111f80ca3b0}{%
+           family={Levan},
+           familyi={L\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c84f6afc25ded8f747c93db4dc7fab9d}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={Rico\bibnamedelimb K.\bibnamedelimi L.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=97cc1a3c80deb1ba32f57fe985b4ff47}{%
+           family={More},
+           familyi={M\bibinitperiod},
+           given={Anupreeta},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1c05d3dad0effde69cb22ce06d56139d}{%
+           family={Nicholl},
+           familyi={N\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e547abb16369b00dcc01b35b2368bc35}{%
+           family={Pastor-Marazuela},
+           familyi={P\bibinithyphendelim M\bibinitperiod},
+           given={Inés},
+           giveni={I\bibinitperiod}}}%
+        {{hash=89e14ca169bc274bef2dfc2384414914}{%
+           family={Ponte\bibnamedelima Pérez},
+           familyi={P\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Andrés\bibnamedelima I.},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=a10a674eabfe18220be396980eeb340b}{%
+           family={Ubach},
+           familyi={U\bibinitperiod},
+           given={Helena},
+           giveni={H\bibinitperiod}}}%
+        {{hash=02ac7765832bea922fbc1121c3e041c4}{%
+           family={Uronen},
+           familyi={U\bibinitperiod},
+           given={Laura\bibnamedelima E.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=cbc2a7e07fdf64bbc8c50dacc47a0cf4}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Mick},
+           giveni={M\bibinitperiod}}}%
+        {{hash=274caeb173bebbcccba3cdaa1910fc6a}{%
+           family={Zumalacarregui},
+           familyi={Z\bibinitperiod},
+           given={Miguel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=36b556d5425a708634344b76d6b8a08f}{%
+           family={Bianco},
+           familyi={B\bibinitperiod},
+           given={Federica},
+           giveni={F\bibinitperiod}}}%
+        {{hash=627f300ead6d9a3c5c0171a933b847ed}{%
+           family={Çalişkan},
+           familyi={Ç\bibinitperiod},
+           given={Mesut},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5fd1df61c8515ae8e0e279930f85c958}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={Juno\bibnamedelimb C.\bibnamedelimi L.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=b8b44d6d9d2efae43b328cff4af036be}{%
+           family={Colangeli},
+           familyi={C\bibinitperiod},
+           given={Elena},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9ce4e9350ea8586d80911b5722b4314f}{%
+           family={Gompertz},
+           familyi={G\bibinitperiod},
+           given={Benjamin\bibnamedelima P.},
+           giveni={B\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=c7b39256f4efcd4f3d61ba71b0139cd6}{%
+           family={Haines},
+           familyi={H\bibinitperiod},
+           given={Christopher\bibnamedelima P.},
+           giveni={C\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=05753f2dd7ccdb2bcc61051294a15a6e}{%
+           family={Hayes},
+           familyi={H\bibinitperiod},
+           given={Erin\bibnamedelima E.},
+           giveni={E\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=1ea9938fcf457149a57010bc4a52557c}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d7858dd6e4379dd8e3a519c9ba81e9bd}{%
+           family={Lamb},
+           familyi={L\bibinitperiod},
+           given={Gavin\bibnamedelima P.},
+           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=ab4c011cca4ea621d8d500ac940f4fba}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f91165425308ed810aa76f931f22051c}{%
+           family={Mandhai},
+           familyi={M\bibinitperiod},
+           given={Soheb},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7a667e93550702a4652d1be380cdbbc8}{%
+           family={Narola},
+           familyi={N\bibinitperiod},
+           given={Harsh},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1480bb23b18d497132012df0d0f03604}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Quynh\bibnamedelima Lan},
+           giveni={Q\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=63f013d5a34192ba9b83c8a288e51b41}{%
+           family={Poon},
+           familyi={P\bibinitperiod},
+           given={Jason\bibnamedelimb S.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=048a0b2777be1add3dde837a460d0fb3}{%
+           family={Ryczanowski},
+           familyi={R\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9609c87e27204cf11eaea9a9b1137896}{%
+           family={Seo},
+           familyi={S\bibinitperiod},
+           given={Eungwang},
+           giveni={E\bibinitperiod}}}%
+        {{hash=54417ecd2f859982e659e5ac4097f847}{%
+           family={Shajib},
+           familyi={S\bibinitperiod},
+           given={Anowar\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=a07eef2c75d24d82777e32fdf2002963}{%
+           family={Shan},
+           familyi={S\bibinitperiod},
+           given={Xikai},
+           giveni={X\bibinitperiod}}}%
+        {{hash=8943cbed43352d5a43a940ba03ee4518}{%
+           family={Tanvir},
+           familyi={T\bibinitperiod},
+           given={Nial},
+           giveni={N\bibinitperiod}}}%
+        {{hash=dbb608193fe7374cd7f85c840a5b1681}{%
+           family={Vujeva},
+           familyi={V\bibinitperiod},
+           given={Luka},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce978d97164083f848cc38ac15d7f564}
+      \strng{fullhash}{1c28a352975b568cbeaac66d0e924ced}
+      \strng{fullhashraw}{1c28a352975b568cbeaac66d0e924ced}
+      \strng{bibnamehash}{ce978d97164083f848cc38ac15d7f564}
+      \strng{auth
