@@ -3623,22 +3623,129 @@ In addition, multiple images of the same source provide repeated observations th
 \section{Gravitational lensing formalism}
 \label{sec:geometric_optics}
 
+
+
 \subsection{Deflection of light by a gravitational field}
 
+The deflection of light by a gravitational field can be derived by studying null geodesics in a perturbed spacetime. Our Universe is well described by a spatially flat Friedmann-Robertson-Walker (FRW) metric, but for the scales relevant to lensing we can work locally with Minkowski spacetime as a starting point and incorporate cosmological corrections later through angular diameter distances.
 
+The presence of a massive lens introduces inhomogeneities in the spacetime metric. Treating the lens in the weak-field limit (slow-moving, $v \ll c$, and small curvature), the energy-momentum tensor is dominated by the energy density component $T^{00} = \rho$, with all other components negligible. Linearizing the EFE to first order in the metric perturbation $\gamma_{\mu\nu}$, and neglecting time derivatives since the lens evolves slowly, the spatial 
+components satisfy a Poisson equation whose solution yields the perturbed metric \cite{lensing_metric}
+\begin{equation}
+    ds^2 = -(1+2U)\,dt^2 + (1-2U)\,\delta_{ij}\,dx^i\,dx^j,
+    \label{eq:perturbed_metric}
+\end{equation}
+where $U(\mathbf{x})$ is the Newtonian gravitational potential of the lens, satisfying $\nabla^2 U = 4\pi G\rho$. This is the same linearization procedure applied in 
+\S\ref{Gravitational_waves_linearized_gravity} to derive the 
+GW wave equation, now applied to a static mass distribution 
+rather than a radiating source.
 
+A photon travelling along a null geodesic of 
+\eqref{eq:perturbed_metric} at closest approach distance $\xi$ from a mass $M$ (the impact parameter) accumulates a total deflection angle \cite{deflection_angle}
+\begin{equation}
+    \hat{\alpha} = \frac{4GM}{c^2 \xi},
+    \label{eq:deflection_angle}
+\end{equation}
+twice the value predicted by Newtonian gravity, and confirmed by Eddington's 1919 measurement. Since the deflection is linear in the perturbation, the contributions of multiple masses add linearly, so any mass distribution can be treated as a superposition of point-mass deflectors. The thin lens approximation, introduced in the following section, formalizes this by concentrating the entire deflection into a single plane.
 
 \subsection{The lens equation}
 
+The standard framework for gravitational lensing adopts the 
+thin lens approximation: all deflection is assumed to occur at a single plane perpendicular to the line of sight, the lens plane, while the source lies on a parallel source plane \cite{essentialsstronggravitationallensing}. This approximation is valid when the physical extent of the lens is much smaller than the distances between observer, lens, and source. The geometry of the problem is illustrated in 
+Fig.~\ref{fig:lensing_geometry}, which defines the angular 
+positions $\boldsymbol{\theta}$ (image) and $\boldsymbol{\beta}$ (source), the angular diameter distances $D_L$, $D_S$, and $D_{LS}$, and the impact parameter $\boldsymbol{\xi} = D_L\boldsymbol{\theta}$. 
+
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.53\linewidth]{Figures/Gravitational-lensing-angles.png}
-    \caption{Geometry of gravitational lensing. Source: \cite{Sachs2008LensingAngles}.}
+    \includegraphics[width=0.53\linewidth]{Figures/Lensing_geometry.pdf}
+    \caption{Geometry of gravitational lensing in the thin lens approximation. The observer (O), lens (L), and source (S) define the angular diameter distances $D_L$, $D_S$, and $D_{LS}$. The true source position $\boldsymbol{\beta}$ and the apparent image position $\boldsymbol{\theta}$ are related by the lens equation 
+    through the reduced deflection angle $\boldsymbol{\alpha}$. Adapted from the source: \cite{Sachs2008LensingAngles}.}
     \label{fig:lensing_geometry}
 \end{figure}
 
+Projecting the geometry onto the source plane and applying the small-angle approximation, one obtains the lens equation
+\begin{equation}
+    \boldsymbol{\beta} = \boldsymbol{\theta} - 
+    \boldsymbol{\alpha}(\boldsymbol{\theta}),
+    \label{eq:lens_equation}
+\end{equation}
+where the reduced deflection angle is defined as
+\begin{equation}
+    \boldsymbol{\alpha}(\boldsymbol{\theta}) \equiv 
+    \frac{D_{LS}}{D_S}\,\hat{\boldsymbol{\alpha}}(\boldsymbol{\theta}).
+\end{equation}
+The lens equation maps each image position $\boldsymbol{\theta}$ to a unique source position $\boldsymbol{\beta}$, but the inverse mapping can be multi-valued: a single source can produce multiple images. Equivalently, by Fermat's principle, images form at the stationary points of the Fermat potential (or scaled time delay surface)
+\begin{equation}
+    \tau(\boldsymbol{\theta}, \boldsymbol{\beta}) = 
+    \frac{1}{2}|\boldsymbol{\theta} - \boldsymbol{\beta}|^2 
+    - \psi(\boldsymbol{\theta}),
+    \label{eq:fermat_potential}
+\end{equation}
+where $\psi(\boldsymbol{\theta})$ is the projected gravitational potential of the lens, obtained from the Newtonian potential $U(\boldsymbol{\xi},Z)$ by integration along the line of sight,
+\begin{equation}
+    \psi(\boldsymbol{\theta}) =
+    \frac{2D_{LS}}{D_S D_L}
+    \int U(\boldsymbol{\xi}, Z)\,dZ.
+\end{equation}
+The deflection angle is then $\boldsymbol{\alpha} = 
+\nabla_{\boldsymbol{\theta}}\psi$, and the lens equation 
+\eqref{eq:lens_equation} is recovered from $\nabla_{\boldsymbol{\theta}}\tau = 0$.
+
 \subsection{Einstein radius and multiple image formation}
+
+For a point mass $M$ located at the origin, the lens equation \eqref{eq:lens_equation} admits an analytic solution. When the source lies exactly behind the lens ($\boldsymbol{\beta} = 0$), perfect circular symmetry produces a ring image at the Einstein radius
+\begin{equation}
+    \theta_E = \sqrt{\frac{4GM}{c^2}\frac{D_{LS}}{D_L D_S}},
+    \label{eq:einstein_radius}
+\end{equation}
+which sets the characteristic angular scale of lensing. For a general source position, the lens equation reduces to a quadratic in $|\boldsymbol{\theta}|$, always producing exactly two images at positions
+\begin{equation}
+    \theta_{1,2} = \frac{1}{2}\left(\beta \pm 
+    \sqrt{\beta^2 + 4\theta_E^2}\right),
+    \label{eq:image_positions}
+\end{equation}
+where $\beta = |\boldsymbol{\beta}|$. The image at $\theta_1 > \theta_E$ lies outside the Einstein ring, while $\theta_2 < \theta_E$ lies inside. More generally, multiple images form whenever the projected surface mass density exceeds the 
+critical surface density
+\begin{equation}
+    \Sigma_\mathrm{cr} = \frac{c^2}{4\pi G}
+    \frac{D_S}{D_L D_{LS}},
+\end{equation}
+which is the threshold for the convergence $\kappa \equiv 
+\Sigma/\Sigma_\mathrm{cr}$ to exceed unity. The topology of the Fermat potential \eqref{eq:fermat_potential} determines the number of images: they always appear and disappear in pairs, so the total number of images is always odd.
+
 \subsection{Magnification and time delay}
+
+Since gravitational lensing preserves surface brightness but 
+distorts the solid angle subtended by a source, it produces a net magnification. The magnification of each image is given by the inverse determinant of the Jacobian matrix of the lens mapping,
+\begin{equation}
+    \mu = \frac{1}{\det \mathbf{A}}, \qquad 
+    A_{ij} = \delta_{ij} - \frac{\partial^2 \psi}{\partial\theta_i\,\partial\theta_j}.
+    \label{eq:magnification}
+\end{equation}
+The sign of $\mu$ encodes the parity of the image: images at 
+minima and maxima of $\tau$ have positive magnification, while images at saddle points have negative magnification (i.e. they are mirror-inverted). For the point mass lens, the magnifications of the two images are
+\begin{equation}
+    \mu_{1,2} = \frac{u^2 + 2}{2u\sqrt{u^2+4}} \pm \frac{1}{2},
+    \qquad u \equiv \frac{\beta}{\theta_E},
+\end{equation}
+where $u$ is the normalized source-lens separation. The total magnification $|\mu_1| + |\mu_2|$ is always greater than unity and diverges as $u \to 0$.
+
+The arrival time of each image is delayed with respect to an 
+unlensed ray by two contributions. The geometric delay arises from the longer path length of the deflected ray, while the Shapiro delay \cite{} results from the slowing of the signal in the gravitational potential of the lens. Together, they yield the time delay between two images $i$ and $j$
+\begin{equation}
+    \Delta t_{ij} = \frac{(1+z_L)}{c}
+    \frac{D_L D_S}{D_{LS}}\,
+    \left[\tau(\boldsymbol{\theta}_i,\boldsymbol{\beta}) - 
+    \tau(\boldsymbol{\theta}_j,\boldsymbol{\beta})\right],
+    \label{eq:time_delay}
+\end{equation}
+where the $(1+z_L)$ factor accounts for the cosmological 
+redshifting of the delay at the lens. For galaxy-scale lenses, $\Delta t_{ij}$ ranges from minutes to months \cite{}, and constitutes one of the key observables in GW lensing searches.
+
+
+
+
+
 \subsection{Lens models}
 \subsubsection{Point mass lens}
 \subsubsection{Singular isothermal sphere}
