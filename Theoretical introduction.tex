@@ -3704,19 +3704,26 @@ which sets the characteristic angular scale of lensing. For a general source pos
     \sqrt{\beta^2 + 4\theta_E^2}\right),
     \label{eq:image_positions}
 \end{equation}
-where $\beta = |\boldsymbol{\beta}|$. The image at $\theta_1 > \theta_E$ lies outside the Einstein ring, while $\theta_2 < \theta_E$ lies inside. More generally, multiple images form when the projected surface mass density $\Sigma(\boldsymbol{\theta})$ of the lens exceeds the critical surface density
+where $\beta = |\boldsymbol{\beta}|$. The image at $\theta_1 > \theta_E$ lies outside the Einstein ring, while $\theta_2 < \theta_E$ lies inside. More generally, multiple images form when the projected surface mass density of the lens,
+\begin{equation}
+    \Sigma(\boldsymbol{\xi}) = 
+    \int \rho(\boldsymbol{\xi}, Z)\,dZ,
+\end{equation}
+obtained by integrating the three-dimensional mass density 
+$\rho$ of the lens along the line of sight coordinate $Z$, 
+exceeds the critical surface density
 \begin{equation}
     \Sigma_\mathrm{cr} = \frac{c^2}{4\pi G}
     \frac{D_S}{D_L D_{LS}},
     \label{eq:critical_density}
 \end{equation}
-a combination of distances that sets the lensing strength for a given geometry. It is convenient to introduce the dimensionless 
-\emph{convergence}
+a combination of distances that sets the lensing strength for a given geometry. It is convenient to introduce the dimensionless convergence
 \begin{equation}
-    \kappa(\boldsymbol{\theta}) \equiv 
-    \frac{\Sigma(\boldsymbol{\theta})}{\Sigma_\mathrm{cr}},
+    \kappa(\boldsymbol{\xi}) \equiv 
+    \frac{\Sigma(\boldsymbol{\xi})}{\Sigma_\mathrm{cr}},
 \end{equation}
-which measures the projected mass density in units of the critical value. When $\kappa > 1$ in some region of the lens plane, the lensing effect is strong enough to produce multiple images. Equivalently, $\kappa$ satisfies the two-dimensional Poisson equation $\nabla^2\psi = 2\kappa$, linking the lensing potential to the projected mass distribution of the lens. The topology of the Fermat potential \eqref{eq:fermat_potential} determines the number of images: they always appear and disappear in pairs, so the total number of images is always odd.
+which measures the projected mass density in units of the critical value. When $\kappa > 1$ in some region of the lens plane, the lensing effect is strong enough to produce multiple images. Equivalently, $\kappa$ satisfies the two-dimensional Poisson equation $\nabla^2\psi = 2\kappa$, linking the lensing potential to the projected mass distribution of the lens. The topology of the Fermat potential \eqref{eq:fermat_potential} determines the number of images: they always appear and disappear in pairs, so the total number of images is always odd \cite{odd_theorem}.
+
 
 \subsection{Magnification and time delay}
 
