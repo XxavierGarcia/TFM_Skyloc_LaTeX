@@ -3259,8 +3259,8 @@ of merit for detector sensitivity) improving progressively across runs as a resu
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.785\linewidth]{Figures/Runs_timeline.png}
-    \caption{Timeline of LVK observing runs from the first detection in 2015 through O4a. Colored bars indicate the periods during which each detector was operating, together with the typical BNS inspiral range achieved in each run. GEO astrowatch and KAGRA O4a periods (light gray) were not included in the main GW analyses. Virgo joined the network in the final month of O2 and operated throughout O3; a short joint O3GK run also included GEO600 and KAGRA. Tick marks along the top indicate GW candidates from GWTC-1 through GWTC-4 with astrophysical probability $\geq 50\%$. Source: \cite{runs_timeline_O1234}.}
+    \includegraphics[width=0.8\linewidth]{Figures/timeline_LVK.png}
+    \caption{Timeline of LVK observing runs from the first detection in 2015 through the start of O4c in January 2025. Colored bars indicate the periods during which each detector was operating, together with the typical BNS inspiral range achieved in each run. GEO\,600 astrowatch and KAGRA O4a periods (light gray) were not included in the main GW analyses. In O1 and O4a only LHO and LLO participated; Virgo joined for the final month of O2 and operated throughout O3a, O3b and O4b. A short joint O3GK run also included GEO\,600 and KAGRA. Tick marks along the top indicate GW candidates from GWTC-1 through GWTC-5 with astrophysical probability $\geq 50\%$. Source: \cite{GWTC5}.}
     \label{fig:runs_O1234}
 \end{figure}
 
@@ -3521,7 +3521,7 @@ If $A \geq 1$ the proposal is always accepted; otherwise it is accepted with pro
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.61\linewidth]{Figures/MCMC_image}
+    \includegraphics[width=0.605\linewidth]{Figures/MCMC_image}
     \caption{Illustration of the Metropolis-Hastings random walk in parameter space. Starting from initial samples drawn from the prior $\pi(\boldsymbol{\theta})$, walkers explore the parameter space following the acceptance criterion \eqref{eq:MH}, progressively converging toward the high-probability region of the posterior $p(\boldsymbol{\theta}|y)$. Source: \cite{image_MCMC}.}
     \label{fig:MCMC_walk}
 \end{figure}
@@ -3691,6 +3691,17 @@ The deflection angle is then $\boldsymbol{\alpha} =
 \nabla_{\boldsymbol{\theta}}\psi$, and the lens equation 
 \eqref{eq:lens_equation} is recovered from $\nabla_{\boldsymbol{\theta}}\tau = 0$.
 
+Since stationary points of $\tau$ always appear and disappear in pairs (a minimum together with a saddle point, or a maximum together with a saddle point) as the source position varies, the total number of images is always odd \cite{odd_theorem}: there is always at least one image corresponding to the global minimum of $\tau$, and any additional images appear in pairs of two. The wavefront interpretation of this result is illustrated in Fig.~\ref{fig:wavefronts}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.76\linewidth]{Figures/light_deflection}
+    \caption{Wavefront picture of gravitational lensing. Left: light rays from a distant source are deflected near the centre, where the gravitational field is strongest. Centre: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. Right: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
+    \label{fig:wavefronts}
+\end{figure}
+
+
+
 \subsection{Einstein radius and multiple image formation}
 
 For a point mass $M$ located at the origin, the lens equation \eqref{eq:lens_equation} admits an analytic solution. When the source lies exactly behind the lens ($\boldsymbol{\beta} = 0$), perfect circular symmetry produces a ring image at the Einstein radius
@@ -3722,37 +3733,23 @@ a combination of distances that sets the lensing strength for a given geometry. 
     \kappa(\boldsymbol{\xi}) \equiv 
     \frac{\Sigma(\boldsymbol{\xi})}{\Sigma_\mathrm{cr}},
 \end{equation}
-which measures the projected mass density in units of the critical value. When $\kappa > 1$ in some region of the lens plane, the lensing effect is strong enough to produce multiple images. Equivalently, $\kappa$ satisfies the two-dimensional Poisson equation $\nabla^2\psi = 2\kappa$, linking the lensing potential to the projected mass distribution of the lens. The topology of the Fermat potential \eqref{eq:fermat_potential} determines the number of images: they always appear and disappear in pairs, so the total number of images is always odd \cite{odd_theorem}.
+which measures the projected mass density in units of the critical value. When $\kappa > 1$ in some region of the lens plane, the lensing effect is strong enough to produce multiple images. Equivalently, $\kappa$ satisfies the two-dimensional Poisson equation $\nabla^2\psi = 2\kappa$, linking the lensing potential to the projected mass distribution of the lens.
 
-\caption{Wavefront picture of gravitational lensing. \emph{Left}: 
-light rays from a distant source are deflected near the centre, 
-where the gravitational field is strongest. \emph{Centre}: the 
-corresponding wavefronts at a fixed time. The small closed loop 
-arises from rays undergoing very large deflections. \emph{Right}: 
-a second wavefront traced backwards from the observer (dashed) 
-is superimposed on the frozen source wavefront (solid). Lensed 
-images form where the two wavefronts share the same local 
-direction of propagation, which corresponds to the stationary 
-points of the Fermat potential \eqref{eq:fermat_potential}. 
-Source: \cite{}.}
 
 
 \subsection{Magnification and time delay}
+
 
 Since gravitational lensing preserves surface brightness but 
 distorts the solid angle subtended by a source, it produces a net magnification. The magnification of each image is given by the inverse determinant of the Jacobian matrix of the lens mapping,
 \begin{equation}
     \mu = \frac{1}{\det \mathbf{A}}, \qquad 
-    A_{ij} = \delta_{ij} - \frac{\partial^2 \psi}{\partial\theta_i\,\partial\theta_j}.
+    A_{ij} = \delta_{ij} - 
+    \frac{\partial^2 \psi}{\partial\theta_i\,\partial\theta_j}.
     \label{eq:magnification}
 \end{equation}
 The sign of $\mu$ encodes the parity of the image: images at 
-minima and maxima of $\tau$ have positive magnification, while images at saddle points have negative magnification (i.e. they are mirror-inverted). For the point mass lens (see $\S$\ref{pointmass_lens}), the magnifications of the two images are
-\begin{equation}
-    \mu_{1,2} = \frac{u^2 + 2}{2u\sqrt{u^2+4}} \pm \frac{1}{2},
-    \qquad u \equiv \frac{\beta}{\theta_E},
-\end{equation}
-where $u$ is the normalized source-lens separation. The total magnification $|\mu_1| + |\mu_2|$ is always greater than unity and diverges as $u \to 0$.
+minima and maxima of $\tau$ have positive magnification, while images at saddle points have negative magnification (i.e.\ they are mirror-inverted). Explicit expressions for the magnifications of each image type are given in \S\ref{sec:lens_models} for the specific lens models considered in this work.
 
 The arrival time of each image is delayed with respect to an 
 unlensed ray by two contributions. The geometric delay arises from the longer path length of the deflected ray, while the Shapiro delay \cite{Shapiro1964, shapiro_delay} results from the slowing of the signal in the gravitational potential of the lens. Together, they yield the time delay between two images $i$ and $j$
@@ -3768,11 +3765,88 @@ redshifting of the delay at the lens. For galaxy-scale lenses, $\Delta t_{ij}$ r
 
 
 
-
 \subsection{Lens models}
+\label{sec:lens_models}
+
+The choice of lens model determines the deflection angle 
+$\hat{\boldsymbol{\alpha}}$ and hence all lensing observables. While real lenses are complex, extended, and often non-circular, a small set of idealized models captures the essential physics and is widely used in both analytical work and population studies.
+
 \subsubsection{Point mass lens}
-\label{pointmass_lens}
+
+The simplest model treats the entire lens mass $M$ as 
+concentrated at a single point, so that the projected surface mass density is $\Sigma(\boldsymbol{\xi}) = M\delta^{(2)}(\boldsymbol{\xi})$. The deflection angle is then exactly \eqref{eq:deflection_angle}, and the lens equation reduces to a quadratic whose two solutions are the image positions \eqref{eq:image_positions}. The corresponding magnifications are
+\begin{equation}
+    \mu_{\pm} = \frac{1}{2} \pm 
+    \frac{u^2 + 2}{2u\sqrt{u^2 + 4}},
+    \qquad u \equiv \frac{\beta}{\theta_E},
+\end{equation}
+where $u$ is the normalized source-lens separation. The positive image ($\mu_+$) is always magnified, while the negative image ($\mu_-$) can be magnified or demagnified. The total magnification diverges as $u \to 0$ (Einstein ring) and approaches unity for $u \gg 1$ (no lensing). The time delay between the two images is
+\begin{equation}
+    \Delta t = 4M_{Lz}\left[
+    \frac{u\sqrt{u^2+4}}{2} + 
+    \ln\frac{\sqrt{u^2+4}+u}{\sqrt{u^2+4}-u}
+    \right],
+\end{equation}
+where $M_{Lz} = M_L(1+z_L)$ is the redshifted lens mass. 
+Although idealized, the point mass model is used in LER to 
+compute lensing observables analytically in the geometric 
+optics limit, making it the relevant model for this work.
+
 \subsubsection{Singular isothermal sphere}
+
+A more realistic description of galaxy-scale lenses is the 
+singular isothermal sphere (SIS), which models the lens as a 
+self-gravitating gas of stars with a Maxwellian velocity 
+distribution characterized by a constant velocity dispersion 
+$\sigma_v$. The three-dimensional density profile is
+\begin{equation}
+    \rho(r) = \frac{\sigma_v^2}{2\pi G r^2},
+\end{equation}
+which yields a flat rotation curve $v_c = \sqrt{2}\,\sigma_v$, 
+consistent with observations of early-type galaxies. Projecting 
+onto the lens plane gives the convergence
+\begin{equation}
+    \kappa(\theta) = \frac{\theta_E}{2\theta}, 
+    \qquad 
+    \theta_E = 4\pi\frac{\sigma_v^2}{c^2}\frac{D_{LS}}{D_S},
+    \label{eq:SIS_Einstein}
+\end{equation}
+and the deflection angle has the particularly simple form 
+$\boldsymbol{\alpha} = \theta_E\,\hat{\boldsymbol{\theta}}$, 
+independent of the image position. When $u \leq 1$ (source 
+inside the Einstein radius) two images form with magnifications 
+$\mu_{\pm} = \pm 1 + 1/u$ and time delay $\Delta t = 8M_{Lz}u$; 
+for $u > 1$ only a single image is produced. The central 
+density singularity renders the central image unobservable, 
+a convenient feature when no central image is detected.
+
+The SIS is the standard model for strong lensing by individual galaxies \cite{}. Its elliptical generalization, the singular isothermal ellipsoid (SIE), extends the convergence to elliptical isocontours parametrized by the projected axis ratio $q_l$, and is the model most commonly adopted in population studies of galaxy-galaxy lensing \cite{}. External shear can be added to either model to account for the tidal field of surrounding mass. For galaxy cluster lenses, more complex profiles are required, typically a Navarro-Frenk-White (NFW) dark matter halo combined with a SIS profile for the brightest central galaxy \cite{}.
+
+\subsubsection{Extended power-law lens models}
+
+Observations of early-type galaxies show that their density 
+slopes are close to isothermal but not exactly so, with a 
+distribution of slopes $\gamma \sim \mathcal{N}(2.0, 0.2)$ 
+\cite{}. A more flexible family is the \emph{elliptical power law} (EPL), which generalizes the SIE by allowing the density slope to vary freely. The three-dimensional density profile is
+\begin{equation}
+    \rho(r) \propto r^{-\gamma},
+\end{equation}
+where $\gamma = 2$ recovers the isothermal case. The projected convergence for an elliptical mass distribution with axis ratio $q_l$ takes the form
+\begin{equation}
+    \kappa(\boldsymbol{\theta}) = 
+    \frac{3-\gamma}{2}
+    \left(\frac{\theta_E}{\sqrt{q_l\theta_1^2 + 
+    \theta_2^2/q_l}}\right)^{\gamma-1},
+\end{equation}
+where $\theta_1$ and $\theta_2$ are coordinates aligned with 
+the major and minor axes of the lens. For $\gamma = 2$ and 
+$q_l = 1$ this reduces to the SIS convergence 
+\eqref{eq:SIS_Einstein}.
+
+The EPL model is the standard choice for population studies of galaxy-scale GW lensing, as its variable slope and ellipticity naturally produce the range of image configurations observed in strongly lensed systems \cite{}. In practice, external shear is added to account for the tidal contribution of the lens environment, yielding the EPL+shear model that is the current standard in strong lensing analyses \cite{} and the model adopted in LER for the generation of the lensed GW population used in this work.
+
+
+
 
 \section{Strong lensing of gravitational waves}
 \label{sec:strong_lensing}
@@ -3803,6 +3877,10 @@ THESIS OFFERMANS!!!!!!!!!!
 
 \section{Sky localization with lensed image pairs}
 \label{sec:sky_localization_lensing}
+
+
+POSA RIMATGE ALPHA DECLINATION PAPER GWTC5
+
 \subsection{Limitations of single-image sky localization}
 \subsection{Joint parameter estimation of lensed pairs}
 \subsection{Identifying lensed events: the lensing Bayes factor}
