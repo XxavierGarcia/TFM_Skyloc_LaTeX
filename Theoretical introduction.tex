@@ -3735,7 +3735,7 @@ distorts the solid angle subtended by a source, it produces a net magnification.
     \label{eq:magnification}
 \end{equation}
 The sign of $\mu$ encodes the parity of the image: images at 
-minima and maxima of $\tau$ have positive magnification, while images at saddle points have negative magnification (i.e. they are mirror-inverted). For the point mass lens, the magnifications of the two images are
+minima and maxima of $\tau$ have positive magnification, while images at saddle points have negative magnification (i.e. they are mirror-inverted). For the point mass lens (see $\S$\ref{pointmass_lens}), the magnifications of the two images are
 \begin{equation}
     \mu_{1,2} = \frac{u^2 + 2}{2u\sqrt{u^2+4}} \pm \frac{1}{2},
     \qquad u \equiv \frac{\beta}{\theta_E},
@@ -3743,7 +3743,7 @@ minima and maxima of $\tau$ have positive magnification, while images at saddle 
 where $u$ is the normalized source-lens separation. The total magnification $|\mu_1| + |\mu_2|$ is always greater than unity and diverges as $u \to 0$.
 
 The arrival time of each image is delayed with respect to an 
-unlensed ray by two contributions. The geometric delay arises from the longer path length of the deflected ray, while the Shapiro delay \cite{} results from the slowing of the signal in the gravitational potential of the lens. Together, they yield the time delay between two images $i$ and $j$
+unlensed ray by two contributions. The geometric delay arises from the longer path length of the deflected ray, while the Shapiro delay \cite{Shapiro1964, shapiro_delay} results from the slowing of the signal in the gravitational potential of the lens. Together, they yield the time delay between two images $i$ and $j$
 \begin{equation}
     \Delta t_{ij} = \frac{(1+z_L)}{c}
     \frac{D_L D_S}{D_{LS}}\,
@@ -3752,20 +3752,38 @@ unlensed ray by two contributions. The geometric delay arises from the longer pa
     \label{eq:time_delay}
 \end{equation}
 where the $(1+z_L)$ factor accounts for the cosmological 
-redshifting of the delay at the lens. For galaxy-scale lenses, $\Delta t_{ij}$ ranges from minutes to months \cite{}, and constitutes one of the key observables in GW lensing searches.
-
+redshifting of the delay at the lens. For galaxy-scale lenses, $\Delta t_{ij}$ ranges from minutes to months \cite{lensing_regimes}, and constitutes one of the key observables in GW lensing searches.
 
 
 
 
 \subsection{Lens models}
 \subsubsection{Point mass lens}
+\label{pointmass_lens}
 \subsubsection{Singular isothermal sphere}
 
 \section{Strong lensing of gravitational waves}
 \label{sec:strong_lensing}
 \subsection{From geometric optics to the amplification factor}
 \subsection{Image classification and the Morse phase}
+
+rom these results, we can define three types of images [22]:
+• Type I images: these appear at a minimum of the time delay surface. Therefore, this
+requires that the Hessian matrix (and hence A) be positive-definite, i.e. that all its
+eigenvalues be positive (since it is a symmetric matrix). For that, we need detA > 0
+and Tr A >0. Given Eq. (2.41) and since detA > 0, the magnification is also positive
+(the image is not reversed).
+• Type II images: they appear at a saddle point of the time delay surface. In that
+case, A must be indefinite and have eigenvalues of opposite signs, i.e. detA < 0. The
+magnification is therefore negative, and the image is reversed.
+• Type III images: they appear at a maximum of the time delay surface, which means
+that A is negative-definite. This requires detA > 0 and Tr A < 0, so that the magni
+fication is positive.
+
+THESIS OFFERMANS!!!!!!!!!!
+
+
+
 \subsection{Effect of lensing on the observed gravitational wave signal}
 \subsubsection{Modification of the strain}
 \subsubsection{Apparent vs intrinsic source parameters}
