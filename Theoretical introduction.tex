@@ -3571,7 +3571,8 @@ In summary, this chapter has established the theoretical and experimental founda
 Having established the theoretical and observational foundations of GW astronomy in the preceding chapter, we now turn to a phenomenon that lies at the heart of this thesis: the gravitational lensing of GWs. We begin with the basics of gravitational lensing and its particular features in the GW context (\S\ref{sec:lensing_intro}), before developing the geometric optics formalism that governs strong 
 lensing (\S\ref{sec:geometric_optics}). We then characterize the signatures that strong lensing imprints on GW signals, including the amplification factor, image classification, the Morse phase, and their effect on the observed strain and inferred source parameters (\S\ref{sec:strong_lensing}). The chapter closes with a discussion of how the joint analysis of lensed image pairs can be exploited to improve sky localization (\S\ref{sec:sky_localization_lensing}), 
 motivating the methodology developed in the subsequent chapters.
-CANVIAR AQUEST PARAGRAF 
+
+ACTUALITZAR AQUEST PARAGRAF 
 
 \section{Gravitational lensing}
 \label{sec:lensing_intro}
@@ -3646,7 +3647,7 @@ A photon travelling along a null geodesic of
     \hat{\alpha} = \frac{4GM}{c^2 \xi},
     \label{eq:deflection_angle}
 \end{equation}
-twice the value predicted by Newtonian gravity, and confirmed by Eddington's 1919 measurement. Since the deflection is linear in the perturbation, the contributions of multiple masses add linearly, so any mass distribution can be treated as a superposition of point-mass deflectors. The thin lens approximation, introduced in the following section, formalizes this by concentrating the entire deflection into a single plane.
+twice the value predicted by Newtonian gravity, and confirmed by Eddington's 1919 measurement \cite{Eddingtonsexpedition}. Since the deflection is linear in the perturbation, the contributions of multiple masses add linearly, so any mass distribution can be treated as a superposition of point-mass deflectors. The thin lens approximation, introduced in the following section, formalizes this by concentrating the entire deflection into a single plane.
 
 \subsection{The lens equation}
 
@@ -3695,7 +3696,7 @@ Since stationary points of $\tau$ always appear and disappear in pairs (a minimu
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.76\linewidth]{Figures/light_deflection}
+    \includegraphics[width=0.77\linewidth]{Figures/light_deflection}
     \caption{Wavefront picture of gravitational lensing. Left: light rays from a distant source are deflected near the centre, where the gravitational field is strongest. Centre: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. Right: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
     \label{fig:wavefronts}
 \end{figure}
@@ -3769,18 +3770,18 @@ redshifting of the delay at the lens. For galaxy-scale lenses, $\Delta t_{ij}$ r
 \label{sec:lens_models}
 
 The choice of lens model determines the deflection angle 
-$\hat{\boldsymbol{\alpha}}$ and hence all lensing observables. While real lenses are complex, extended, and often non-circular, a small set of idealized models captures the essential physics and is widely used in both analytical work and population studies.
+$\hat{\boldsymbol{\alpha}}$ and hence all lensing observables. While real lenses are complex, extended, and often non-circular, a small set of idealized models captures the essential physics and is widely used in both analytical work and population studies \cite{essentialsstronggravitationallensing}.
 
 \subsubsection{Point mass lens}
 
 The simplest model treats the entire lens mass $M$ as 
-concentrated at a single point, so that the projected surface mass density is $\Sigma(\boldsymbol{\xi}) = M\delta^{(2)}(\boldsymbol{\xi})$. The deflection angle is then exactly \eqref{eq:deflection_angle}, and the lens equation reduces to a quadratic whose two solutions are the image positions \eqref{eq:image_positions}. The corresponding magnifications are
+concentrated at a single point, so that the projected surface mass density is $\Sigma(\boldsymbol{\xi}) = M\delta^{(2)}(\boldsymbol{\xi})$ \cite{pointmasslens}. The deflection angle is then exactly \eqref{eq:deflection_angle}, and the lens equation reduces to a quadratic whose two solutions are the image positions \eqref{eq:image_positions}. The corresponding magnifications are
 \begin{equation}
     \mu_{\pm} = \frac{1}{2} \pm 
     \frac{u^2 + 2}{2u\sqrt{u^2 + 4}},
     \qquad u \equiv \frac{\beta}{\theta_E},
 \end{equation}
-where $u$ is the normalized source-lens separation. The positive image ($\mu_+$) is always magnified, while the negative image ($\mu_-$) can be magnified or demagnified. The total magnification diverges as $u \to 0$ (Einstein ring) and approaches unity for $u \gg 1$ (no lensing). The time delay between the two images is
+where $u$ is the normalized source-lens separation \cite{essentialsstronggravitationallensing}. The positive image ($\mu_+$) is always magnified, while the negative image ($\mu_-$) can be magnified or demagnified. The total magnification diverges as $u \to 0$ (Einstein ring) and approaches unity for $u \gg 1$ (no lensing). The time delay between the two images is
 \begin{equation}
     \Delta t = 4M_{Lz}\left[
     \frac{u\sqrt{u^2+4}}{2} + 
@@ -3802,9 +3803,11 @@ $\sigma_v$. The three-dimensional density profile is
 \begin{equation}
     \rho(r) = \frac{\sigma_v^2}{2\pi G r^2},
 \end{equation}
-which yields a flat rotation curve $v_c = \sqrt{2}\,\sigma_v$, 
-consistent with observations of early-type galaxies. Projecting 
-onto the lens plane gives the convergence
+which yields a flat rotation curve $v_c = \sqrt{2}\,\sigma_v$, consistent with observations of early-type galaxies \cite{lensing_regimes}. Projecting onto the lens plane gives the surface mass density
+\begin{equation}
+    \Sigma(\xi) = \frac{\sigma_v^2}{2G\xi},
+\end{equation}
+which depends only on the radial distance $\xi = |\boldsymbol{\xi}|$, confirming that the SIS is an axisymmetric lens \cite{SIS_lensing}. Expressing this in terms of the convergence gives
 \begin{equation}
     \kappa(\theta) = \frac{\theta_E}{2\theta}, 
     \qquad 
@@ -3814,24 +3817,24 @@ onto the lens plane gives the convergence
 and the deflection angle has the particularly simple form 
 $\boldsymbol{\alpha} = \theta_E\,\hat{\boldsymbol{\theta}}$, 
 independent of the image position. When $u \leq 1$ (source 
-inside the Einstein radius) two images form with magnifications 
-$\mu_{\pm} = \pm 1 + 1/u$ and time delay $\Delta t = 8M_{Lz}u$; 
-for $u > 1$ only a single image is produced. The central 
-density singularity renders the central image unobservable, 
-a convenient feature when no central image is detected.
+inside the Einstein radius) two images form with magnifications $\mu_{\pm} = \pm 1 + 1/u$ and time delay $\Delta t = 8M_{Lz}u$; for $u > 1$ only a single image is produced \cite{pointmasslens}. 
+The central density singularity renders the central image 
+unobservable, a convenient feature when no central image is 
+detected.
 
-The SIS is the standard model for strong lensing by individual galaxies \cite{}. Its elliptical generalization, the singular isothermal ellipsoid (SIE), extends the convergence to elliptical isocontours parametrized by the projected axis ratio $q_l$, and is the model most commonly adopted in population studies of galaxy-galaxy lensing \cite{}. External shear can be added to either model to account for the tidal field of surrounding mass. For galaxy cluster lenses, more complex profiles are required, typically a Navarro-Frenk-White (NFW) dark matter halo combined with a SIS profile for the brightest central galaxy \cite{}.
+The SIS is the standard model for strong lensing by individual galaxies. Its elliptical generalization, the singular isothermal ellipsoid (SIE), extends the convergence to elliptical isocontours parametrized by the projected axis ratio $q_l$, and is the model most commonly adopted in population studies of galaxy-galaxy lensing \cite{SIS_standardmodel}. External shear can be added to either model to account for the tidal field of surrounding mass. For galaxy cluster lenses, more complex profiles are required, typically a Navarro-Frenk-White (NFW) dark matter halo combined with a SIS profile for the brightest central galaxy \cite{lensing_regimes}.
+
 
 \subsubsection{Extended power-law lens models}
 
 Observations of early-type galaxies show that their density 
 slopes are close to isothermal but not exactly so, with a 
 distribution of slopes $\gamma \sim \mathcal{N}(2.0, 0.2)$ 
-\cite{}. A more flexible family is the \emph{elliptical power law} (EPL), which generalizes the SIE by allowing the density slope to vary freely. The three-dimensional density profile is
+\cite{EPL_lensing}. A more flexible family is the elliptical power law (EPL), which generalizes the SIE by allowing the density slope to vary freely. The three-dimensional density profile is
 \begin{equation}
     \rho(r) \propto r^{-\gamma},
 \end{equation}
-where $\gamma = 2$ recovers the isothermal case. The projected convergence for an elliptical mass distribution with axis ratio $q_l$ takes the form
+where $\gamma = 2$ recovers the isothermal case \cite{EPLmodel}. The projected convergence for an elliptical mass distribution with axis ratio $q_l$ takes the form
 \begin{equation}
     \kappa(\boldsymbol{\theta}) = 
     \frac{3-\gamma}{2}
@@ -3843,8 +3846,7 @@ the major and minor axes of the lens. For $\gamma = 2$ and
 $q_l = 1$ this reduces to the SIS convergence 
 \eqref{eq:SIS_Einstein}.
 
-The EPL model is the standard choice for population studies of galaxy-scale GW lensing, as its variable slope and ellipticity naturally produce the range of image configurations observed in strongly lensed systems \cite{}. In practice, external shear is added to account for the tidal contribution of the lens environment, yielding the EPL+shear model that is the current standard in strong lensing analyses \cite{} and the model adopted in LER for the generation of the lensed GW population used in this work.
-
+The EPL model is the standard choice for population studies of galaxy-scale GW lensing, as its variable slope and ellipticity naturally produce the range of image configurations observed in strongly lensed systems \cite{EPL_standard}. In practice, external shear is added to account for the tidal contribution of the lens environment, yielding the EPL + shear model that is the current standard in strong lensing analyses \cite{EPL_plus_shear} and the model adopted in LER for the generation of the lensed GW population used in this work.
 
 
 
