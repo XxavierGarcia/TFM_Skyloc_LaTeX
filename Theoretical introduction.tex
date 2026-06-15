@@ -3568,11 +3568,15 @@ In summary, this chapter has established the theoretical and experimental founda
 \label{ch:lensing}
 
 
-Having established the theoretical and observational foundations of GW astronomy in the preceding chapter, we now turn to a phenomenon that lies at the heart of this thesis: the gravitational lensing of GWs. We begin with the basics of gravitational lensing and its particular features in the GW context (\S\ref{sec:lensing_intro}), before developing the geometric optics formalism that governs strong 
-lensing (\S\ref{sec:geometric_optics}). We then characterize the signatures that strong lensing imprints on GW signals, including the amplification factor, image classification, the Morse phase, and their effect on the observed strain and inferred source parameters (\S\ref{sec:strong_lensing}). The chapter closes with a discussion of how the joint analysis of lensed image pairs can be exploited to improve sky localization (\S\ref{sec:sky_localization_lensing}), 
-motivating the methodology developed in the subsequent chapters.
+Having established the theoretical and observational foundations of GW astronomy in the preceding chapter, we now turn to a phenomenon that lies at the heart of this thesis: the gravitational lensing of GWs. We begin with the basics of gravitational lensing and its particular features in the GW context (\S\ref{sec:lensing_intro}), before developing the geometric optics formalism that governs strong lensing, 
+including the lens equation, image formation, magnification, 
+time delay, and the main lens models used in the literature 
+(\S\ref{sec:geometric_optics}). We then characterize the 
+signatures that strong lensing imprints on GW signals, 
+including the amplification factor, image classification, the Morse phase, and their effect on the observed strain and 
+inferred source parameters (\S\ref{sec:strong_lensing}). The 
+chapter closes with a discussion of how the joint analysis of lensed image pairs can be exploited to improve sky localization (\S\ref{sec:sky_localization_lensing}), motivating the methodology developed in the subsequent chapters.
 
-ACTUALITZAR AQUEST PARAGRAF 
 
 \section{Gravitational lensing}
 \label{sec:lensing_intro}
@@ -3594,23 +3598,28 @@ and other compact objects). Depending on the geometry and lens mass, three regim
 
 
 
-\subsection{Differences between electromagnetic and gravitational 
-wave lensing}
+\subsection{Particularities of gravitational wave lensing}
 
-Although the deflection of EM waves and GWs follows the same 
-underlying physics, several important differences arise from their distinct nature. The most fundamental concerns the wavelength regime. GWs detectable by ground-based interferometers have wavelengths ranging from roughly 10\,km to 1\,Mm, far larger than EM wavelengths. The relevant parameter is the ratio $\lambda_\mathrm{GW}/\lambda_E$, where $\lambda_E$ is the Einstein radius of the lens (see $\S$\ref{???}). When $\lambda_\mathrm{GW} \ll \lambda_E$, the geometric optics approximation is valid. When $\lambda_\mathrm{GW} \gtrsim \lambda_E$ (which can occur for low-mass lenses) wave optics must be used and diffraction produces frequency-dependent modulations of the waveform with no EM analog \cite{Wave_optics_GW}. Figure~\ref{fig:wave_optics_regime} illustrates the lens-mass scales associated with these two regimes. For the galaxy-scale lenses relevant to this work, $\lambda_E \sim \mathcal{O}(\mathrm{kpc})$, placing the problem firmly in the geometric optics regime.
+The deflection of GWs by a gravitational field follows the same geometric principles as for light, but several properties of GWs lead to qualitatively different lensing phenomenology.
 
-A second difference is coherence. GWs are coherent waves with a well-defined phase, so lensed images can interfere if their time delay is shorter than the signal duration (an effect absent in standard EM lensing). Finally, unlike EM signals, GWs are not absorbed or dispersed by the intergalactic medium, encoding clean information about the source and lensing potential.
+The most fundamental difference is the wavelength regime. GWs detectable by ground-based interferometers have wavelengths ranging from roughly 10\,km to 1\,Mm, many orders of magnitude larger than EM wavelengths. The key parameter governing the lensing regime is the ratio $\lambda_\mathrm{GW}/r_E$, where $r_E = D_L\theta_E$ is the physical Einstein radius of the lens (see $\S$\ref{Einstein_radius}). When $\lambda_\mathrm{GW} \ll r_E$, each image travels along a distinct geometric path and the standard geometric optics formalism applies. When $\lambda_\mathrm{GW} \gtrsim r_E$, diffraction becomes important and wave optics must be used, producing frequency-dependent modulations of the waveform amplitude and phase with no EM analog \cite{Wave_optics_GW}. For galaxy-scale lenses ($r_E \sim \mathcal{O}(\mathrm{kpc})$), 
+ground-based GW detectors always operate in the geometric 
+optics regime. Wave optics effects become relevant for lower 
+mass lenses such as stars or intermediate-mass black holes, 
+which fall outside the scope of this work. Fig.~\ref{fig:wave_optics_regime} summarizes the lens-mass 
+scales associated with each regime.
 
+A second key difference is coherence. GWs are coherent waves with a well-defined amplitude and phase, so when two lensed images arrive within a time shorter than the signal duration they can interfere, producing observable beating patterns in the waveform. This effect has no counterpart in standard EM lensing, where sources are typically incoherent.
+
+Finally, unlike EM radiation, GWs propagate through the 
+intergalactic medium and through the lens galaxy itself without absorption or dispersion. The lensed GW signal therefore encodes clean information about the source and the lensing potential, uncontaminated by dust extinction or plasma effects that complicate EM observations.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.63\linewidth]{Figures/wave_optics_lensing.jpg}
+    \includegraphics[width=0.62\linewidth]{Figures/wave_optics_lensing.jpg}
     \caption{Illustration of the lens-mass scales relevant for gravitationally lensed signals. Depending on the relation between the radiation wavelength and the characteristic scale of the lensing potential, lensing occurs in either the geometric optics or wave optics regime. While geometric optics describes distinct propagation paths, wave optics accounts for diffraction and interference effects. Due to their long wavelengths, GW can exhibit wave-optics effects for relatively low lens masses. Source: \cite{multi_messenger_gravitational_lensing}.}
     \label{fig:wave_optics_regime}
 \end{figure}
-
-
 
 \subsection{Relevance for gravitational wave astronomy}
 
@@ -3696,7 +3705,7 @@ Since stationary points of $\tau$ always appear and disappear in pairs (a minimu
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.77\linewidth]{Figures/light_deflection}
+    \includegraphics[width=0.78\linewidth]{Figures/light_deflection}
     \caption{Wavefront picture of gravitational lensing. Left: light rays from a distant source are deflected near the centre, where the gravitational field is strongest. Centre: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. Right: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
     \label{fig:wavefronts}
 \end{figure}
@@ -3704,13 +3713,14 @@ Since stationary points of $\tau$ always appear and disappear in pairs (a minimu
 
 
 \subsection{Einstein radius and multiple image formation}
+\label{Einstein_radius}
 
 For a point mass $M$ located at the origin, the lens equation \eqref{eq:lens_equation} admits an analytic solution. When the source lies exactly behind the lens ($\boldsymbol{\beta} = 0$), perfect circular symmetry produces a ring image at the Einstein radius
 \begin{equation}
     \theta_E = \sqrt{\frac{4GM}{c^2}\frac{D_{LS}}{D_L D_S}},
     \label{eq:einstein_radius}
 \end{equation}
-which sets the characteristic angular scale of lensing. For a general source position, the lens equation reduces to a quadratic in $|\boldsymbol{\theta}|$, always producing exactly two images at positions
+which sets the characteristic angular scale of lensing \cite{essentialsstronggravitationallensing}. For a general source position, the lens equation reduces to a quadratic in $|\boldsymbol{\theta}|$, always producing exactly two images at positions
 \begin{equation}
     \theta_{1,2} = \frac{1}{2}\left(\beta \pm 
     \sqrt{\beta^2 + 4\theta_E^2}\right),
@@ -3788,7 +3798,7 @@ where $u$ is the normalized source-lens separation \cite{essentialsstronggravita
     \ln\frac{\sqrt{u^2+4}+u}{\sqrt{u^2+4}-u}
     \right],
 \end{equation}
-where $M_{Lz} = M_L(1+z_L)$ is the redshifted lens mass. 
+where $M_{Lz} = M_L(1+z_L)$ is the redshifted lens mass \cite{zhang2026timedomaindeeplearningpairwise}.  
 Although idealized, the point mass model is used in LER to 
 compute lensing observables analytically in the geometric 
 optics limit, making it the relevant model for this work.
@@ -3847,6 +3857,7 @@ $q_l = 1$ this reduces to the SIS convergence
 \eqref{eq:SIS_Einstein}.
 
 The EPL model is the standard choice for population studies of galaxy-scale GW lensing, as its variable slope and ellipticity naturally produce the range of image configurations observed in strongly lensed systems \cite{EPL_standard}. In practice, external shear is added to account for the tidal contribution of the lens environment, yielding the EPL + shear model that is the current standard in strong lensing analyses \cite{EPL_plus_shear} and the model adopted in LER for the generation of the lensed GW population used in this work.
+
 
 
 
