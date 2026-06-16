@@ -3878,7 +3878,7 @@ galaxy-scale lenses.
 \subsection{From geometric optics to the amplification factor}
 
 The effect of lensing on a GW signal is fully characterized 
-in the frequency domain by the \emph{amplification factor} 
+in the frequency domain by the amplification factor 
 $F(f)$, defined as the ratio between the lensed and unlensed 
 strain amplitudes \cite{}
 \begin{equation}
@@ -3903,26 +3903,51 @@ where $x$ and $y$ are dimensionless coordinates in the lens
 and source planes, $\phi(x,y)$ is the Fermat potential 
 \eqref{eq:fermat_potential}, and $w \equiv 8\pi G M_{Lz} f$ 
 is a dimensionless frequency with $M_{Lz}$ the redshifted 
-effective lens mass. In the geometric optics limit 
-$w \to \infty$, the integral is dominated by the stationary 
-points of $\phi$, and each image $J$ contributes one term
+effective lens mass. The behavior of $F$ depends critically 
+on the value of $w$, which for a given source frequency $f$ 
+is set by the lens mass. Figure~\ref{fig:amplification_regimes} illustrates this dependence for three representative lens masses.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.98\linewidth]
+    {Figures/GWL_regimes.pdf}
+    \caption{Left: modulus of the dimensionless 
+    amplification factor $|F(w)|$ as a function of 
+    dimensionless frequency $w = 8\pi GM_{Lz}f$ for an 
+    SIS lens with impact parameter $y = 0.7$. Three 
+    regimes are distinguished: perturbative (low $w$, 
+    negligible lensing), wave optics (intermediate $w$, 
+    diffraction and interference), and geometric optics 
+    (high $w$, $|F|$ converges to the sum of image 
+    magnifications). Right: time-domain waveforms 
+    of a $30+30\,M_\odot$ BBH system (unlensed in black, 
+    lensed in colour) for three effective lens masses 
+    representative of each regime (panels a, b, c). In 
+    the geometric optics limit (panel c), the two images 
+    are clearly separated in time by $\Delta t_{12}$ and 
+    have distinct amplitudes $\sqrt{|\mu_1|}$ and 
+    $\sqrt{|\mu_2|}$. Source: \cite{amplificationfactor_figure}.}
+    \label{fig:amplification_regimes}
+\end{figure}
+In the geometric optics limit $w \to \infty$, the integral 
+is dominated by the stationary points of $\phi$, and each 
+image $j$ contributes one term
 \begin{equation}
-    F(f) = \sum_J |\mu_J|^{1/2}
-    \exp\!\left(2\pi i f\,\Delta t_J - i\pi n_J\right),
+    F(f) = \sum_j |\mu_j|^{1/2}
+    \exp\!\left(2\pi i f\,\Delta t_j - i\pi n_j\right),
     \label{eq:GO_amplification}
 \end{equation}
-where $\mu_J$ is the magnification \eqref{eq:magnification} 
-evaluated at image $J$, $\Delta t_J$ is the arrival time 
+where $\mu_j$ is the magnification \eqref{eq:magnification} 
+evaluated at image $j$, $\Delta t_j$ is the arrival time 
 delay \eqref{eq:time_delay} relative to a reference image, 
-and $n_J$ is the Morse index introduced in the following 
+and $n_j$ is the Morse index introduced in the following 
 section.
 
 \subsection{Image classification and the Morse phase}
 
-The Morse index $n_J$ classifies each image according to 
+The Morse index $n_j$ classifies each image according to 
 the topology of the Fermat potential at its location \cite{}
 \begin{equation}
-    n_J = \begin{cases}
+    n_j = \begin{cases}
         0   & \text{Type I (minimum of } \phi\text{)} \\
         1/2 & \text{Type II (saddle point of } \phi\text{)} \\
         1   & \text{Type III (maximum of } \phi\text{)}
@@ -3934,14 +3959,23 @@ the image: Type I and III images have $\det\mathbf{A} > 0$
 (positive parity), while Type II images have 
 $\det\mathbf{A} < 0$ (negative parity, mirror-inverted), 
 consistent with the magnification matrix defined in 
-\eqref{eq:magnification}. Galaxy-scale lenses typically 
-produce two bright images of Type I and II. A faint central 
-image of Type III can in principle exist, but is usually 
-demagnified below detectability by the central mass 
-concentration of the lens.
+\eqref{eq:magnification}. The structure of the arrival-time 
+surface and the resulting image positions are illustrated 
+in Fig.~\ref{fig:arrival_time_surface} for three different 
+source positions with the same lens potential.
 
-The factor $e^{-i\pi n_J}$ in \eqref{eq:GO_amplification} 
-is the \emph{Morse phase}. A Type I image ($n=0$) leaves 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.88\linewidth]
+    {Figures/arrival_times.png}
+    \caption{Contour maps of the Fermat potential $\tau(\boldsymbol{\theta})$ for three different source positions with the same lens potential, shown qualitatively in the image plane $\boldsymbol{\theta}$. Type I images (minima) are marked in blue, Type II (saddle points) in red, and Type III (maxima) in green. The thick black contours pass through the saddle points. The figure is intended to illustrate the topological structure of the arrival-time surface rather than a specific lens model or parameter space. Source: \cite{essentialsstronggravitationallensing}.}
+    \label{fig:arrival_time_surface}
+\end{figure}
+
+Galaxy-scale lenses typically produce two bright images of Type I and II. A faint central image of Type III can in principle exist, but is usually demagnified below detectability by the central mass concentration of the lens.
+
+The factor $e^{-i\pi n_j}$ in \eqref{eq:GO_amplification} 
+is the Morse phase. A Type I image ($n=0$) leaves 
 the waveform morphology unchanged. A Type III image ($n=1$) 
 introduces an overall sign flip. A Type II image ($n=1/2$) 
 applies a $\pi/2$ phase shift equivalent to a Hilbert 
@@ -4004,34 +4038,18 @@ different times.
 
 \subsection{Lensing observables}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.6\linewidth]
-    {Figures/diagram_lensing.png}
-    \caption{Schematic illustration of strong gravitational 
-    lensing of GWs. A BBH merger (source plane, top right) 
-    is lensed by an intervening galaxy (lens plane, centre), 
-    producing two images observed at the detector (observer 
-    plane, bottom left). The two rays correspond to the 
-    distinct null geodesics connecting source and observer 
-    through the lens. The angular diameter distances $D_L$, 
-    $D_S$, and $D_{LS}$, and the dimensionless impact 
-    parameters $x$ (lens plane) and $y$ (source plane) 
-    are indicated. Source: \cite{}.}
-    \label{fig:lensing_geometry_3D}
-\end{figure}
 
 In a joint analysis of two lensed images the absolute 
 lensing parameters $\boldsymbol{\Lambda}_j$ are not 
 individually measurable; only their relative values 
 between the two images are observable. The primary 
 lensing observables for an image pair are the 
-\emph{relative magnification}
+relative magnification
 \begin{equation}
     \mu_{\mathrm{rel}} \equiv \frac{\mu_2}{\mu_1},
     \label{eq:magnification_ratio}
 \end{equation}
-the \emph{time delay} $\Delta t = t_2 - t_1$ already 
+the time delay $\Delta t = t_2 - t_1$ already 
 defined in \eqref{eq:time_delay}, and the difference 
 in Morse indices $\Delta n = n_2 - n_1$. For galaxy-scale 
 lenses, $\Delta t$ ranges from minutes to months, while 
