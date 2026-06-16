@@ -3772,7 +3772,7 @@ unlensed ray by two contributions. The geometric delay arises from the longer pa
     \label{eq:time_delay}
 \end{equation}
 where the $(1+z_L)$ factor accounts for the cosmological 
-redshifting of the delay at the lens. For galaxy-scale lenses, $\Delta t_{ij}$ ranges from minutes to months \cite{lensing_regimes}, and constitutes one of the key observables in GW lensing searches.
+redshifting of the delay at the lens. For galaxy-scale lenses, $\Delta t_{ij}$ ranges from minutes to months \cite{time_delay}, and constitutes one of the key observables in GW lensing searches.
 
 
 
@@ -3863,30 +3863,185 @@ The EPL model is the standard choice for population studies of galaxy-scale GW l
 
 \section{Strong lensing of gravitational waves}
 \label{sec:strong_lensing}
+
+Strong gravitational lensing occurs when a GW propagates 
+through the gravitational potential of a sufficiently massive 
+foreground object, producing multiple images of the same 
+source. In GW astronomy these images manifest as repeated 
+signals arriving at the detector with identical intrinsic 
+parameters but different amplitudes, arrival times, and 
+phases \cite{}. This section develops the theoretical 
+framework that describes these effects within the geometric 
+optics limit relevant for ground-based detectors and 
+galaxy-scale lenses.
+
 \subsection{From geometric optics to the amplification factor}
+
+The effect of lensing on a GW signal is fully characterized 
+in the frequency domain by the \emph{amplification factor} 
+$F(f)$, defined as the ratio between the lensed and unlensed 
+strain amplitudes \cite{}
+\begin{equation}
+    F(f) \equiv \frac{\tilde{h}(f)}{\tilde{h}_0(f)},
+    \label{eq:amplification_factor}
+\end{equation}
+where $\tilde{h}_0(f)$ and $\tilde{h}(f)$ are the Fourier 
+transforms of the unlensed and lensed strains respectively. 
+The amplification factor depends solely on the mass density 
+profile of the lens and the source position relative to it, 
+decoupling cleanly from the intrinsic source parameters.
+
+In the general wave optics case, $F(f)$ is given by a 
+Fresnel-Kirchhoff diffraction integral over the lens plane 
+\cite{}
+\begin{equation}
+    F(w) = \frac{w}{2\pi i}
+    \int d^2x\, \exp\!\left(iw\,\phi(x,y)\right),
+    \label{eq:amplification_integral}
+\end{equation}
+where $x$ and $y$ are dimensionless coordinates in the lens 
+and source planes, $\phi(x,y)$ is the Fermat potential 
+\eqref{eq:fermat_potential}, and $w \equiv 8\pi G M_{Lz} f$ 
+is a dimensionless frequency with $M_{Lz}$ the redshifted 
+effective lens mass. In the geometric optics limit 
+$w \to \infty$, the integral is dominated by the stationary 
+points of $\phi$, and each image $J$ contributes one term
+\begin{equation}
+    F(f) = \sum_J |\mu_J|^{1/2}
+    \exp\!\left(2\pi i f\,\Delta t_J - i\pi n_J\right),
+    \label{eq:GO_amplification}
+\end{equation}
+where $\mu_J$ is the magnification \eqref{eq:magnification} 
+evaluated at image $J$, $\Delta t_J$ is the arrival time 
+delay \eqref{eq:time_delay} relative to a reference image, 
+and $n_J$ is the Morse index introduced in the following 
+section.
+
 \subsection{Image classification and the Morse phase}
 
-rom these results, we can define three types of images [22]:
-• Type I images: these appear at a minimum of the time delay surface. Therefore, this
-requires that the Hessian matrix (and hence A) be positive-definite, i.e. that all its
-eigenvalues be positive (since it is a symmetric matrix). For that, we need detA > 0
-and Tr A >0. Given Eq. (2.41) and since detA > 0, the magnification is also positive
-(the image is not reversed).
-• Type II images: they appear at a saddle point of the time delay surface. In that
-case, A must be indefinite and have eigenvalues of opposite signs, i.e. detA < 0. The
-magnification is therefore negative, and the image is reversed.
-• Type III images: they appear at a maximum of the time delay surface, which means
-that A is negative-definite. This requires detA > 0 and Tr A < 0, so that the magni
-fication is positive.
+The Morse index $n_J$ classifies each image according to 
+the topology of the Fermat potential at its location \cite{}
+\begin{equation}
+    n_J = \begin{cases}
+        0   & \text{Type I (minimum of } \phi\text{)} \\
+        1/2 & \text{Type II (saddle point of } \phi\text{)} \\
+        1   & \text{Type III (maximum of } \phi\text{)}
+    \end{cases}
+    \label{eq:morse_index}
+\end{equation}
+This classification is directly related to the parity of 
+the image: Type I and III images have $\det\mathbf{A} > 0$ 
+(positive parity), while Type II images have 
+$\det\mathbf{A} < 0$ (negative parity, mirror-inverted), 
+consistent with the magnification matrix defined in 
+\eqref{eq:magnification}. Galaxy-scale lenses typically 
+produce two bright images of Type I and II. A faint central 
+image of Type III can in principle exist, but is usually 
+demagnified below detectability by the central mass 
+concentration of the lens.
 
-THESIS OFFERMANS!!!!!!!!!!
+The factor $e^{-i\pi n_J}$ in \eqref{eq:GO_amplification} 
+is the \emph{Morse phase}. A Type I image ($n=0$) leaves 
+the waveform morphology unchanged. A Type III image ($n=1$) 
+introduces an overall sign flip. A Type II image ($n=1/2$) 
+applies a $\pi/2$ phase shift equivalent to a Hilbert 
+transform of the time-domain signal. For non-precessing 
+binaries with only the dominant quadrupole mode, this phase 
+shift is degenerate with the coalescence phase and cannot 
+be detected \cite{}. For signals with spin precession or 
+higher-order multipole moments, such as those generated 
+with IMRPhenomXPHM in this work, the Morse phase produces 
+measurable imprints on the waveform \cite{}.
 
+\subsection{Lensed gravitational wave strain and apparent 
+source parameters}
 
+Combining the geometric optics amplification factor 
+\eqref{eq:GO_amplification} with the unlensed waveform, 
+the frequency-domain strain of the $j$-th lensed image is
+\begin{equation}
+    \tilde{h}^j_L(f;\,\boldsymbol{\theta},\boldsymbol{\Lambda}_j)
+    = \sqrt{\mu_j}\,
+    e^{2\pi i f t_j}\,
+    e^{i\pi n_j\,\mathrm{sign}(f)}\,
+    \tilde{h}_U(f;\,\boldsymbol{\theta}),
+    \label{eq:lensed_strain}
+\end{equation}
+where $\tilde{h}_U(f;\boldsymbol{\theta})$ is the unlensed 
+waveform with binary parameters $\boldsymbol{\theta}$, and 
+$\boldsymbol{\Lambda}_j = \{\mu_j, t_j, n_j\}$ collects 
+the lensing parameters of image $j$. The three multiplicative 
+factors encode amplitude rescaling, time delay, and Morse 
+phase respectively. All images share the same intrinsic 
+parameters $\boldsymbol{\theta}$, which is the fundamental 
+property exploited in joint PE analyses of lensed pairs.
 
-\subsection{Effect of lensing on the observed gravitational wave signal}
-\subsubsection{Modification of the strain}
-\subsubsection{Apparent vs intrinsic source parameters}
-\subsection{Lensing observables: magnification ratio and time delay}
+Because \eqref{eq:lensed_strain} enters the detector 
+identically to an unlensed signal, a PE pipeline that does 
+not account for lensing will infer biased source parameters. 
+The factor $\sqrt{\mu_j}$ is degenerate with the luminosity 
+distance, since $h \propto D_L^{-1}$, yielding an apparent 
+distance
+\begin{equation}
+    D_L^{\mathrm{obs},j} = \frac{D_L}{\sqrt{\mu_j}},
+    \label{eq:apparent_DL}
+\end{equation}
+so a magnified image appears closer than the true source. 
+Since redshift is inferred from $D_L$, the source-frame 
+masses are also biased: the inferred chirp mass 
+$\mathcal{M}_c^{\mathrm{obs}} = 
+(1+\tilde{z})\mathcal{M}_c^{\mathrm{src}}$ corresponds to 
+an incorrect redshift $\tilde{z}$, and lensed events at 
+high redshift may be misidentified as nearby events with 
+anomalously massive black holes \cite{}. Similarly, the 
+apparent coalescence time is
+\begin{equation}
+    t_c^{\mathrm{obs},j} = t_c + t_j,
+    \label{eq:apparent_tc}
+\end{equation}
+so the two images of the same event appear to arrive at 
+different times.
+
+\subsection{Lensing observables}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]
+    {Figures/diagram_lensing.png}
+    \caption{Schematic illustration of strong gravitational 
+    lensing of GWs. A BBH merger (source plane, top right) 
+    is lensed by an intervening galaxy (lens plane, centre), 
+    producing two images observed at the detector (observer 
+    plane, bottom left). The two rays correspond to the 
+    distinct null geodesics connecting source and observer 
+    through the lens. The angular diameter distances $D_L$, 
+    $D_S$, and $D_{LS}$, and the dimensionless impact 
+    parameters $x$ (lens plane) and $y$ (source plane) 
+    are indicated. Source: \cite{}.}
+    \label{fig:lensing_geometry_3D}
+\end{figure}
+
+In a joint analysis of two lensed images the absolute 
+lensing parameters $\boldsymbol{\Lambda}_j$ are not 
+individually measurable; only their relative values 
+between the two images are observable. The primary 
+lensing observables for an image pair are the 
+\emph{relative magnification}
+\begin{equation}
+    \mu_{\mathrm{rel}} \equiv \frac{\mu_2}{\mu_1},
+    \label{eq:magnification_ratio}
+\end{equation}
+the \emph{time delay} $\Delta t = t_2 - t_1$ already 
+defined in \eqref{eq:time_delay}, and the difference 
+in Morse indices $\Delta n = n_2 - n_1$. For galaxy-scale 
+lenses, $\Delta t$ ranges from minutes to months, while 
+$\mu_{\mathrm{rel}}$ can span several orders of magnitude 
+depending on the source-lens alignment. The Morse index 
+difference $\Delta n$ is detectable when the signal carries 
+precession or higher-mode content. Together, 
+$\{\mu_{\mathrm{rel}}, \Delta t, \Delta n\}$ constitute 
+the complete set of lensing parameters sampled by Bilby 
+in the joint PE analysis carried out in this work.
 
 \section{Sky localization with lensed image pairs}
 \label{sec:sky_localization_lensing}
