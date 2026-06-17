@@ -3877,23 +3877,25 @@ galaxy-scale lenses.
 
 \subsection{From geometric optics to the amplification factor}
 
-The effect of lensing on a GW signal is fully characterized 
-in the frequency domain by the amplification factor 
-$F(f)$, defined as the ratio between the lensed and unlensed 
-strain amplitudes \cite{}
+The effect of lensing on a GW signal can be modeled by an 
+amplification factor $F(f;\boldsymbol{\phi})$ 
+modifying the unlensed waveform in the frequency domain 
+\cite{pointmasslens}
 \begin{equation}
-    F(f) \equiv \frac{\tilde{h}(f)}{\tilde{h}_0(f)},
+    \tilde{h}_L(f;\,\boldsymbol{\theta},\boldsymbol{\phi}) = 
+    F(f;\,\boldsymbol{\phi})\,
+    \tilde{h}_U(f;\,\boldsymbol{\theta}),
     \label{eq:amplification_factor}
 \end{equation}
-where $\tilde{h}_0(f)$ and $\tilde{h}(f)$ are the Fourier 
-transforms of the unlensed and lensed strains respectively. 
-The amplification factor depends solely on the mass density 
-profile of the lens and the source position relative to it, 
-decoupling cleanly from the intrinsic source parameters.
+where $\boldsymbol{\theta}$ represents the usual binary 
+parameters and $\boldsymbol{\phi}$ the lensing parameters. 
+The simplicity of this relation arises because $F$ depends 
+solely on the mass density profile of the lens and the 
+source position relative to it, decoupling cleanly from 
+the intrinsic source parameters.
 
-In the general wave optics case, $F(f)$ is given by a 
-Fresnel-Kirchhoff diffraction integral over the lens plane 
-\cite{}
+In the general wave optics case, $F(f;\,\boldsymbol{\phi})$ is given by a Fresnel-Kirchhoff diffraction integral over the lens plane 
+\cite{Schneider1992GravitationalLenses}
 \begin{equation}
     F(w) = \frac{w}{2\pi i}
     \int d^2x\, \exp\!\left(iw\,\phi(x,y)\right),
@@ -3932,8 +3934,8 @@ In the geometric optics limit $w \to \infty$, the integral
 is dominated by the stationary points of $\phi$, and each 
 image $j$ contributes one term
 \begin{equation}
-    F(f) = \sum_j |\mu_j|^{1/2}
-    \exp\!\left(2\pi i f\,\Delta t_j - i\pi n_j\right),
+    F(f, \boldsymbol{\phi}) = \sum_j \sqrt{\mu_j} \,
+    e^{-2\pi i f\,\Delta t_j + i\pi n_j},
     \label{eq:GO_amplification}
 \end{equation}
 where $\mu_j$ is the magnification \eqref{eq:magnification} 
@@ -3945,7 +3947,7 @@ section.
 \subsection{Image classification and the Morse phase}
 
 The Morse index $n_j$ classifies each image according to 
-the topology of the Fermat potential at its location \cite{}
+the topology of the Fermat potential at its location \cite{morse_index}
 \begin{equation}
     n_j = \begin{cases}
         0   & \text{Type I (minimum of } \phi\text{)} \\
@@ -3985,7 +3987,7 @@ shift is degenerate with the coalescence phase and cannot
 be detected \cite{}. For signals with spin precession or 
 higher-order multipole moments, such as those generated 
 with IMRPhenomXPHM in this work, the Morse phase produces 
-measurable imprints on the waveform \cite{}.
+measurable imprints on the waveform \cite{Lensing_phase_effects}.
 
 \subsection{Lensed gravitational wave strain and apparent 
 source parameters}
@@ -3994,16 +3996,15 @@ Combining the geometric optics amplification factor
 \eqref{eq:GO_amplification} with the unlensed waveform, 
 the frequency-domain strain of the $j$-th lensed image is
 \begin{equation}
-    \tilde{h}^j_L(f;\,\boldsymbol{\theta},\boldsymbol{\Lambda}_j)
+    \tilde{h}^j_L(f;\,\boldsymbol{\theta},\boldsymbol{\phi}_j)
     = \sqrt{\mu_j}\,
-    e^{2\pi i f t_j}\,
-    e^{i\pi n_j\,\mathrm{sign}(f)}\,
+    e^{\left (2\pi i f t_j-i\pi n_j\,\mathrm{sign}(f)\right )}\,
     \tilde{h}_U(f;\,\boldsymbol{\theta}),
     \label{eq:lensed_strain}
 \end{equation}
 where $\tilde{h}_U(f;\boldsymbol{\theta})$ is the unlensed 
 waveform with binary parameters $\boldsymbol{\theta}$, and 
-$\boldsymbol{\Lambda}_j = \{\mu_j, t_j, n_j\}$ collects 
+$\boldsymbol{\phi}_j = \{\mu_j, t_j, n_j\}$ collects 
 the lensing parameters of image $j$. The three multiplicative 
 factors encode amplitude rescaling, time delay, and Morse 
 phase respectively. All images share the same intrinsic 
