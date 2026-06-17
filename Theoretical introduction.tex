@@ -3865,15 +3865,7 @@ The EPL model is the standard choice for population studies of galaxy-scale GW l
 \label{sec:strong_lensing}
 
 Strong gravitational lensing occurs when a GW propagates 
-through the gravitational potential of a sufficiently massive 
-foreground object, producing multiple images of the same 
-source. In GW astronomy these images manifest as repeated 
-signals arriving at the detector with identical intrinsic 
-parameters but different amplitudes, arrival times, and 
-phases \cite{}. This section develops the theoretical 
-framework that describes these effects within the geometric 
-optics limit relevant for ground-based detectors and 
-galaxy-scale lenses.
+through the gravitational potential of a sufficiently massive foreground object, producing multiple images of the same source. In GW astronomy these images manifest as repeated signals arriving at the detector with identical intrinsic parameters but different amplitudes, arrival times, and phases \cite{Lensing_phase_effects}. This section develops the theoretical framework that describes these effects within the geometric optics limit relevant for ground-based detectors and galaxy-scale lenses.
 
 \subsection{From geometric optics to the amplification factor}
 
@@ -3894,23 +3886,32 @@ solely on the mass density profile of the lens and the
 source position relative to it, decoupling cleanly from 
 the intrinsic source parameters.
 
-In the general wave optics case, $F(f;\,\boldsymbol{\phi})$ is given by a Fresnel-Kirchhoff diffraction integral over the lens plane 
+In the general wave optics case, $F(f;\boldsymbol{\phi})$ is given by a Fresnel-Kirchhoff diffraction integral over the lens plane 
 \cite{Schneider1992GravitationalLenses}
 \begin{equation}
     F(w) = \frac{w}{2\pi i}
-    \int d^2x\, \exp\!\left(iw\,\phi(x,y)\right),
+    \int d^2x\, e^{iw\,\phi(x,y)},
     \label{eq:amplification_integral}
 \end{equation}
 where $x$ and $y$ are dimensionless coordinates in the lens 
 and source planes, $\phi(x,y)$ is the Fermat potential 
-\eqref{eq:fermat_potential}, and $w \equiv 8\pi G M_{Lz} f$ 
-is a dimensionless frequency with $M_{Lz}$ the redshifted 
-effective lens mass. The behavior of $F$ depends critically 
-on the value of $w$, which for a given source frequency $f$ 
-is set by the lens mass. Figure~\ref{fig:amplification_regimes} illustrates this dependence for three representative lens masses.
+\eqref{eq:fermat_potential}, and
+\begin{equation}
+    w \equiv 8\pi G M_{Lz} f
+\end{equation}
+is a dimensionless frequency proportional to the product 
+of the lens mass and the GW frequency, with $M_{Lz} = 
+M_L(1+z_L)$ the redshifted effective lens mass. The value 
+of $w$ controls the lensing regime: for $w \ll 1$ lensing 
+effects are negligible (perturbative regime); for $w \sim 1$ 
+diffraction and interference are important (wave optics 
+regime); and for $w \gg 1$ the geometric optics limit 
+applies. For a fixed GW frequency $f$, the transition 
+between regimes is set by the lens mass, as illustrated 
+in Fig.~\ref{fig:amplification_regimes}.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.98\linewidth]
+    \includegraphics[width=\linewidth]
     {Figures/GWL_regimes.pdf}
     \caption{Left: modulus of the dimensionless 
     amplification factor $|F(w)|$ as a function of 
@@ -3930,19 +3931,19 @@ is set by the lens mass. Figure~\ref{fig:amplification_regimes} illustrates this
     $\sqrt{|\mu_2|}$. Source: \cite{amplificationfactor_figure}.}
     \label{fig:amplification_regimes}
 \end{figure}
+
+
 In the geometric optics limit $w \to \infty$, the integral 
 is dominated by the stationary points of $\phi$, and each 
 image $j$ contributes one term
 \begin{equation}
-    F(f, \boldsymbol{\phi}) = \sum_j \sqrt{\mu_j} \,
-    e^{-2\pi i f\,\Delta t_j + i\pi n_j},
+    F(f;\boldsymbol{\phi}) = \sum_j \sqrt{\mu_j}\,
+    e^{2\pi i f t_j - i\pi n_j\,\mathrm{sign}(f)},
     \label{eq:GO_amplification}
 \end{equation}
 where $\mu_j$ is the magnification \eqref{eq:magnification} 
-evaluated at image $j$, $\Delta t_j$ is the arrival time 
-delay \eqref{eq:time_delay} relative to a reference image, 
-and $n_j$ is the Morse index introduced in the following 
-section.
+evaluated at image $j$, $t_j$ is the arrival time of image 
+$j$ relative to a reference, and $n_j$ is the Morse index introduced in the following section.
 
 \subsection{Image classification and the Morse phase}
 
@@ -3998,7 +3999,7 @@ the frequency-domain strain of the $j$-th lensed image is
 \begin{equation}
     \tilde{h}^j_L(f;\,\boldsymbol{\theta},\boldsymbol{\phi}_j)
     = \sqrt{\mu_j}\,
-    e^{\left (2\pi i f t_j-i\pi n_j\,\mathrm{sign}(f)\right )}\,
+    e^{2\pi i f t_j - i\pi n_j\,\mathrm{sign}(f)}\,
     \tilde{h}_U(f;\,\boldsymbol{\theta}),
     \label{eq:lensed_strain}
 \end{equation}
@@ -4041,7 +4042,7 @@ different times.
 
 
 In a joint analysis of two lensed images the absolute 
-lensing parameters $\boldsymbol{\Lambda}_j$ are not 
+lensing parameters $\boldsymbol{\phi}_j$ are not 
 individually measurable; only their relative values 
 between the two images are observable. The primary 
 lensing observables for an image pair are the 
