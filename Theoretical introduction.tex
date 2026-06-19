@@ -3198,7 +3198,7 @@ The noise process is approximately Gaussian but not stationary. Two classes of a
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.84\linewidth]{Figures/narrow_lines.png}
-    \caption{High-resolution amplitude spectral density ($\Delta f = 1/1800$\,Hz) of LIGO Hanford strain data illustrating three representative line artefacts. Left: a broad spectral feature associated with mirror suspension roll-mode resonances. Centre: an isolated narrow line of unknown origin. Right: two frequency combs with distinct spacings, marked by upright and inverted triangles, alongside broader noise structures. Source: \cite{glitches_lines_noises}.}
+    \caption{High-resolution amplitude spectral density ($\Delta f = 1/1800$\,Hz) of LIGO Hanford strain data illustrating three representative line artefacts. \textit{Left:} a broad spectral feature associated with mirror suspension roll-mode resonances. \textit{Centre:} an isolated narrow line of unknown origin. \textit{Right:} two frequency combs with distinct spacings, marked by upright and inverted triangles, alongside broader noise structures. Source: \cite{glitches_lines_noises}.}
     \label{fig:lines_noise}
 \end{figure}
 
@@ -3546,7 +3546,7 @@ where $X_i$ is the fraction of the prior volume enclosed by the $i$-th likelihoo
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.63\linewidth]{Figures/Nested_sampling.png}
-    \caption{Geometric interpretation of nested sampling. Left: iso-likelihood contours in parameter space, with the discarded live points $\mathcal{L}_1 > \mathcal{L}_2 > \mathcal{L}_3 > \mathcal{L}_4$ marking successive likelihood shells. Right: the corresponding one-dimensional mapping $\mathcal{L}(X)$ as a function of the enclosed prior volume $X$, where the evidence $\mathcal{Z}$ is approximated as the area under the curve via the trapezoid rule. Source: \cite{nestedsampling}.}
+    \caption{Geometric interpretation of nested sampling. \textit{Left:} iso-likelihood contours in parameter space, with the discarded live points $\mathcal{L}_1 > \mathcal{L}_2 > \mathcal{L}_3 > \mathcal{L}_4$ marking successive likelihood shells. \textit{Right:} the corresponding one-dimensional mapping $\mathcal{L}(X)$ as a function of the enclosed prior volume $X$, where the evidence $\mathcal{Z}$ is approximated as the area under the curve via the trapezoid rule. Source: \cite{nestedsampling}.}
     \label{fig:nested_sampling}
 \end{figure}
 
@@ -3705,7 +3705,7 @@ Since stationary points of $\tau$ always appear and disappear in pairs (a minimu
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.78\linewidth]{Figures/light_deflection}
+    \includegraphics[width=0.79\linewidth]{Figures/light_deflection}
     \caption{Wavefront picture of gravitational lensing. Left: light rays from a distant source are deflected near the centre, where the gravitational field is strongest. Centre: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. Right: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
     \label{fig:wavefronts}
 \end{figure}
@@ -3879,8 +3879,11 @@ modifying the unlensed waveform in the frequency domain
     \tilde{h}_U(f;\,\boldsymbol{\theta}),
     \label{eq:amplification_factor}
 \end{equation}
-where $\boldsymbol{\theta}$ represents the usual binary 
-parameters and $\boldsymbol{\phi}$ the lensing parameters. 
+where $\tilde{h}_U(f;\boldsymbol{\theta})$ is the 
+frequency-domain unlensed strain with binary parameters 
+$\boldsymbol{\theta}$, $\tilde{h}_L(f;\boldsymbol{\theta},
+\boldsymbol{\phi})$ is the corresponding lensed strain, 
+and $\boldsymbol{\phi}$ collects the lensing parameters. 
 The simplicity of this relation arises because $F$ depends 
 solely on the mass density profile of the lens and the 
 source position relative to it, decoupling cleanly from 
@@ -3897,31 +3900,33 @@ where $x$ and $y$ are dimensionless coordinates in the lens
 and source planes, $\phi(x,y)$ is the Fermat potential 
 \eqref{eq:fermat_potential}, and
 \begin{equation}
-    w \equiv 8\pi G M_{Lz} f
+    w \equiv 8\pi G M_{Lz} f = 4\pi R_S f = \frac{2R_S}{\lambda},
 \end{equation}
 is a dimensionless frequency proportional to the product 
 of the lens mass and the GW frequency, with $M_{Lz} = 
-M_L(1+z_L)$ the redshifted effective lens mass. The value 
-of $w$ controls the lensing regime: for $w \ll 1$ lensing 
-effects are negligible (perturbative regime); for $w \sim 1$ 
+M_L(1+z_L)$ the redshifted effective lens mass, 
+$R_S = 2GM_{Lz}/c^2$ the corresponding Schwarzschild 
+radius, and $\lambda = c/f$ the GW wavelength. The value 
+of $w$ controls the lensing regime: for $w \ll 1$ 
+(equivalently $\lambda \gg R_S$) lensing effects are 
+negligible (perturbative regime); for $w \sim 1$ 
 diffraction and interference are important (wave optics 
-regime); and for $w \gg 1$ the geometric optics limit 
-applies. For a fixed GW frequency $f$, the transition 
-between regimes is set by the lens mass, as illustrated 
+regime); and for $w \gg 1$ (equivalently $\lambda \ll R_S$) 
+the geometric optics limit applies. For a fixed GW frequency $f$, the transition between regimes is set by the lens mass, as illustrated 
 in Fig.~\ref{fig:amplification_regimes}.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]
     {Figures/GWL_regimes.pdf}
-    \caption{Left: modulus of the dimensionless 
+    \caption{\textit{Left:} modulus of the dimensionless 
     amplification factor $|F(w)|$ as a function of 
-    dimensionless frequency $w = 8\pi GM_{Lz}f$ for an 
+    dimensionless frequency $w = 8\pi GM_{Lz}f$ for a 
     SIS lens with impact parameter $y = 0.7$. Three 
     regimes are distinguished: perturbative (low $w$, 
     negligible lensing), wave optics (intermediate $w$, 
     diffraction and interference), and geometric optics 
     (high $w$, $|F|$ converges to the sum of image 
-    magnifications). Right: time-domain waveforms 
+    magnifications). \textit{Right:} time-domain waveforms 
     of a $30+30\,M_\odot$ BBH system (unlensed in black, 
     lensed in colour) for three effective lens masses 
     representative of each regime (panels a, b, c). In 
@@ -3985,7 +3990,7 @@ applies a $\pi/2$ phase shift equivalent to a Hilbert
 transform of the time-domain signal. For non-precessing 
 binaries with only the dominant quadrupole mode, this phase 
 shift is degenerate with the coalescence phase and cannot 
-be detected \cite{}. For signals with spin precession or 
+be detected. For signals with spin precession or 
 higher-order multipole moments, such as those generated 
 with IMRPhenomXPHM in this work, the Morse phase produces 
 measurable imprints on the waveform \cite{Lensing_phase_effects}.
@@ -4003,14 +4008,9 @@ the frequency-domain strain of the $j$-th lensed image is
     \tilde{h}_U(f;\,\boldsymbol{\theta}),
     \label{eq:lensed_strain}
 \end{equation}
-where $\tilde{h}_U(f;\boldsymbol{\theta})$ is the unlensed 
-waveform with binary parameters $\boldsymbol{\theta}$, and 
-$\boldsymbol{\phi}_j = \{\mu_j, t_j, n_j\}$ collects 
-the lensing parameters of image $j$. The three multiplicative 
-factors encode amplitude rescaling, time delay, and Morse 
-phase respectively. All images share the same intrinsic 
-parameters $\boldsymbol{\theta}$, which is the fundamental 
-property exploited in joint PE analyses of lensed pairs.
+where $\boldsymbol{\phi}_j = \{\mu_j, t_j, n_j\}$ 
+collects the lensing parameters of image $j$, consistent 
+with the general form \eqref{eq:amplification_factor} \cite{theligoscientificcollaboration2026gwtc40searchesgravitationalwavelensing}. The three multiplicative factors encode amplitude rescaling, time delay, and Morse phase respectively. All images share the same intrinsic parameters $\boldsymbol{\theta}$, which is the fundamental property exploited in joint PE analyses of lensed pairs.
 
 Because \eqref{eq:lensed_strain} enters the detector 
 identically to an unlensed signal, a PE pipeline that does 
@@ -4029,8 +4029,7 @@ $\mathcal{M}_c^{\mathrm{obs}} =
 (1+\tilde{z})\mathcal{M}_c^{\mathrm{src}}$ corresponds to 
 an incorrect redshift $\tilde{z}$, and lensed events at 
 high redshift may be misidentified as nearby events with 
-anomalously massive black holes \cite{}. Similarly, the 
-apparent coalescence time is
+anomalously massive black holes \cite{degenerate_lens_properties}. Similarly, the apparent coalescence time is
 \begin{equation}
     t_c^{\mathrm{obs},j} = t_c + t_j,
     \label{eq:apparent_tc}
@@ -4051,23 +4050,21 @@ relative magnification
     \mu_{\mathrm{rel}} \equiv \frac{\mu_2}{\mu_1},
     \label{eq:magnification_ratio}
 \end{equation}
-the time delay $\Delta t = t_2 - t_1$ already 
-defined in \eqref{eq:time_delay}, and the difference 
-in Morse indices $\Delta n = n_2 - n_1$. For galaxy-scale 
-lenses, $\Delta t$ ranges from minutes to months, while 
-$\mu_{\mathrm{rel}}$ can span several orders of magnitude 
-depending on the source-lens alignment. The Morse index 
-difference $\Delta n$ is detectable when the signal carries 
-precession or higher-mode content. Together, 
-$\{\mu_{\mathrm{rel}}, \Delta t, \Delta n\}$ constitute 
-the complete set of lensing parameters sampled by Bilby 
-in the joint PE analysis carried out in this work.
+the time delay between images $\Delta t = t_2 - t_1$ 
+\eqref{eq:time_delay}, and the difference in Morse 
+indices $\Delta n = n_2 - n_1$ \cite{PE_lensing_bayes}. The relative magnification can span several orders of magnitude depending on the source-lens alignment, while $\Delta n$ is only detectable when the signal carries precession or higher-mode content. Together, $\{\mu_{\mathrm{rel}}, \Delta t, \Delta n\}$ constitute the complete set of lensing parameters sampled by Bilby in the joint PE analysis carried out in this work.
 
 \section{Sky localization with lensed image pairs}
 \label{sec:sky_localization_lensing}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]
+    {Figures/skyloc.png}
+    \caption{Relationship between the sky location in equatorial coordinates, the polarization angle, and the GW coordinate frame. The direction from the source to Earth is N and the vector X defines a reference direction on the transverse plane called the wave plane. The location of the source on the sky in the equatorial coordinate system is given by its R.A. $\alpha$ and decl. $\delta$. The polarization angle $\psi$ is the angle counterclockwise about N between the equatorial plane and X. Also shown is the Greenwich sidereal time (GST), the angle between the first point of Aries and the prime meridian, and the Greenwich hour angle (GHA) of the source, GHA = GST-$\alpha$. NCP is the north celestial pole. Source: \cite{}.}
+    \label{fig:skyloc}
+\end{figure}
 
-POSA RIMATGE ALPHA DECLINATION PAPER GWTC5
 
 \subsection{Limitations of single-image sky localization}
 \subsection{Joint parameter estimation of lensed pairs}
