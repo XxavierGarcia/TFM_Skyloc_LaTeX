@@ -109,13 +109,8 @@ gravity or to the rocket's acceleration. This leads to two equivalent formulatio
 \end{minipage}
 \end{center}
 
-However, this equivalence breaks down for general gravitational fields, where tidal forces ---
-arising from field inhomogeneities --- allow a free-falling observer to detect the presence of
-gravity \cite{LlibreBertJanssen}. For instance, two freely falling objects in Earth's radial
-field slowly converge toward the center rather than following parallel paths (see
-Fig.~\ref{fig:earth_lab_frame}). Since tidal forces are proportional to the gradient of the
-field, they vanish at sufficiently small scales, and the equivalence principle recovers its
-validity locally.
+However, this equivalence breaks down for general gravitational fields, where tidal forces (arising from field inhomogeneities) allow a free-falling observer to detect the presence of gravity \cite{LlibreBertJanssen}. For instance, two freely falling objects in Earth's radial
+field slowly converge toward the center rather than following parallel paths. Since tidal forces are proportional to the gradient of the field, they vanish at sufficiently small scales, and the equivalence principle recovers its validity locally.
 
 \begin{center}
 \begin{minipage}{0.9\textwidth}
@@ -134,31 +129,7 @@ validity locally.
 \end{center}
 
 
-\subsubsection{Mathematical implications (local inertial frame)}
-
-
-The local validity of the Equivalence principle implies that, in small regions, gravity can be eliminated through a suitable choice of coordinates, making spacetime appear flat (locally Minkowskian). 
-
-Mathematically, at any point \( P \) in spacetime, it is possible to choose coordinates \( x'^\alpha \) such that the metric becomes locally flat:
-\begin{equation}
-g'_{\mu\nu}(x'_P) = \eta_{\mu\nu} \ ,
-\end{equation}
-where \( \eta_{\mu\nu} = \mathrm{diag}(-1, 1, 1, 1) \) is the Minkowski metric. This implies that spacetime is locally Minkowskian, though globally it may be curved due to gravitational inhomogeneities \cite{Llibrehartle2003gravity}.
-
-Indeed, it is not possible to find coordinates in which \( g_{\mu\nu}= \eta_{\mu\nu} \)  everywhere. If such coordinates existed globally, the spacetime would be flat.
-
-However, at any point \( P \), it is always possible to choose a coordinate system (normal coordinates) such that:
-\begin{equation}
-    g_{\mu \nu}^{\prime}\left(x_P^{\prime}\right)=\eta_{\mu \nu} \ ,\left.\quad \frac{\partial g_{\mu \nu}^{\prime}}{\partial x^{\prime \alpha}}\right|_{x=x_P}=0 \ .
-\end{equation}
-That is, the metric is locally flat at \( P \), and its first derivatives vanish. The curvature of spacetime is encoded in the second derivatives of the metric, which in general do not vanish \cite{llibretongGR}:
-\begin{equation}
-\partial_\lambda \partial_\rho g_{\mu\nu}(P) \neq 0 \ .
-\end{equation}
-A coordinate system that meets these two conditions at a point $P$ is referred to as a local inertial frame. Within a sufficiently small neighborhood of $P$, it mimics the behavior of an inertial frame in flat spacetime. Such frames can exist at any point, but always require a different coordinate system.
-
-This local flatness underlies the geometric interpretation of gravity in GR: free particles follow geodesics of curved spacetime, and geodesic deviation leads to effects that mimic gravitational forces. In this framework, gravity is not a force but a consequence of curvature.
-
+The local validity of the equivalence principle has a precise mathematical counterpart: at any point of spacetime it is always possible to choose coordinates in which the metric tensor (introduced formally in $\S$\ref{metric tensor}) reduces locally to the Minkowski form $\eta_{\mu\nu}$. This idea, made rigorous through the concept of normal coordinates, underlies the geometric interpretation of gravity developed in the following sections.
 
 \section{The description of curved spacetime}
 
@@ -174,21 +145,24 @@ To describe this curved geometry, Euclidean tools are no longer sufficient. Inst
 \subsection{From euclidean to non-euclidean geometry}
 
 
-The geometry most familiar to us, euclidean geometry, describes flat space. In this framework, parallel lines never meet, and the angles of a triangle always sum to 180 degrees. These properties stem from the foundational work of the Greek mathematician \href{https://en.wikipedia.org/wiki/Euclid}{Euclid}, who around 300 BC compiled much of the mathematical knowledge of his time in a 13-book series known as ``The Elements'' \footnote{For over two millennia, The Elements has served as the definitive reference on the geometry of flat spaces, so much so that this branch is often referred to as euclidean geometry. Since its first printed edition in Venice in 1482, The Elements has seen the publication of at least 1{,}000 editions, making it the second most published book in history, surpassed only by the Bible \cite{LlibreBertJanssen}.
-} \cite{Elements}. In it, he formulated five postulates from which he derived hundreds of theorems, laying the groundwork for classical geometry. Among these, the fifth, the parallel postulate, stood out for its complexity and lack of intuitive clarity, prompting centuries of efforts to prove it from the others \cite{LLibreNon-Euclideangeometry}.  
+The geometry most familiar to us, Euclidean geometry, describes flat space: parallel lines never meet, and the angles of a triangle always sum to 180\textdegree{}. These properties stem from the work of the Greek mathematician \href{https://en.wikipedia.org/wiki/Euclid}{Euclid}, who around 300 BC formulated five postulates from which he derived hundreds of theorems \cite{Elements}. Among these, the fifth, the parallel postulate, stood out for its complexity, prompting centuries of efforts to prove it from 
+the others \cite{LLibreNon-Euclideangeometry}.
 
-Eventually, mathematicians like Nikolai I. Lobachevsky \cite{Llibrelobachevsky} and János Bolyai \cite{LLibrebolyai} abandoned the idea of proving the fifth postulate and instead explored what would happen if it were replaced. They discovered that entirely new, self-consistent geometries could be built where the rules of parallelism and triangle angles differed, collectively known as non-euclidean geometries (see Fig. \ref{fig:noneuclidean}). For instance, on a curved surface like a sphere (spherical geometry), parallel lines do not exist, and triangle angles add up to more than 180\textdegree{}. In hyperbolic geometry, the opposite is true: there are infinitely many parallel lines through a point, and triangle angles sum to less than 180\textdegree{}.
+Eventually, mathematicians like Nikolai I. Lobachevsky \cite{Llibrelobachevsky} and János Bolyai \cite{LLibrebolyai} explored what would happen if the parallel postulate were replaced, discovering entirely new self-consistent 
+geometries (see Fig.~\ref{fig:noneuclidean}). On a sphere, parallel lines do not exist and triangle angles exceed 180\textdegree{}; in hyperbolic geometry, infinitely many parallel lines pass through a point and triangle 
+angles sum to less than 180\textdegree{}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.67\linewidth]{Figures/non_euclidean.png}
-    \caption{Representation of the three main types of geometry: Euclidean (flat), spherical (positive curvature), and hyperbolic (negative curvature). In each case, the sum of the angles of a triangle differs: it equals 180\textdegree{} in Euclidean geometry, exceeds 180\textdegree{} in spherical geometry, and is less than 180\textdegree{} in hyperbolic geometry. Source: \cite{Imatgenoneuclidean}.}
+    \caption{Representation of the three main types of geometry: Euclidean (flat), spherical (positive curvature), and hyperbolic (negative curvature). In each case, the sum of the angles of a triangle differs: 
+    it equals 180\textdegree{} in Euclidean geometry, exceeds 180\textdegree{} in spherical geometry, and is less than 180\textdegree{} in hyperbolic geometry. Source: \cite{Imatgenoneuclidean}.}
     \label{fig:noneuclidean}
 \end{figure}
 
-
-
-These ideas were once mathematical curiosities, but they became essential when Einstein formulated GR. In his theory, space-time is not flat but curved by the presence of mass and energy. The shortest paths, geodesics (see $\S$\ref{Geodesics and curvature}), no longer appear straight in the Euclidean sense but follow the curvature of space-time. This curved geometry, pioneered by \href{https://es.wikipedia.org/wiki/Bernhard_Riemann}{Bernhard Riemann}, provides the mathematical language to describe gravitational phenomena, replacing Newton’s force with the geometry of space-time itself.
+These ideas became essential when Einstein formulated GR. In his theory, spacetime is curved by the presence of mass and energy, and the shortest paths, geodesics (see $\S$\ref{Geodesics and curvature}), follow the curvature of spacetime rather than straight Euclidean lines. This curved 
+geometry, pioneered by \href{https://es.wikipedia.org/wiki/Bernhard_Riemann}{Bernhard Riemann}, provides the mathematical language to describe gravitational phenomena, 
+replacing Newton's force with the geometry of spacetime itself.
 
 
 
@@ -335,238 +309,37 @@ This notational shortcut was first introduced by Einstein in his 1916 paper The 
 \end{equation}
 However, shortly after equation 7, he casually notes that whenever an index appears twice, summation is to be assumed, and from then on, he stops writing summation symbols.
 
-This convention is especially useful when working with vector and tensor algebra. For instance, we can represent the components of a column vector with upper indices, and those of a row vector with lower indices:
-\begin{equation}
-\begin{aligned}
-    \vec{u} = u^i \quad \text{for} \quad i = 1, 2, 3, \dots, M \ , \\
-    \vec{v} = v_j \quad \text{for} \quad j = 1, 2, 3, \dots, N \ .
-\end{aligned}
-\end{equation}
-Here, $\vec{u}$ is a column vector of dimension $M \times 1$, and $\vec{v}$ is a row vector of dimension $1 \times N$. Their inner product, using Einstein notation, is:
-\begin{equation}
-    \vec{u} \cdot \vec{v} = u^i v_i \ ,
-\end{equation}
-which implies a summation over the index $i$.
 
-We can also use this notation to construct matrices. For example, the outer (tensor) product of a column vector and a row vector is:
-\begin{equation}
-    \vec{A} = \vec{u} \otimes \vec{v} \ ,
-\end{equation}
-and in component form:
-\begin{equation}
-    A^i_{\ j} = u^i v_j = (u \otimes v)^i_{\ j} \ ,
-\end{equation}
-where the upper index $i$ denotes the row and the lower index $j$ the column.
-
-The product of two matrices $A$ and $B$ to form a new matrix $C = AB$ becomes:
-\begin{equation}
-    C^i_{\ j} = A^i_{\ k} B^k_{\ j} \ .
-\end{equation}
-Here, the repeated index $k$ is summed over, while $i$ and $j$ remain free indices\footnote{Indices that appear once in a term are called free indices.}; they must appear identically on both sides of the equation. Note that we can change the order of multiplication:
-\begin{equation}
-    A^i_{\ k} B^k_{\ j} = B^k_{\ j} A^i_{\ k} \ ,
-\end{equation}
-but generally,
-\begin{equation}
-    A^i_{\ k} B^k_{\ j} \neq B^i_{\ k} A^k_{\ j} \ .
-\end{equation}
 The Einstein summation convention offers a powerful and elegant notational tool, widely used in physics and mathematics to simplify the representation of tensor equations \cite{LlibreBertJanssen, llibretheoreticalminimum}.
 
-
-\subsubsection{Scalars, vectors and one-forms} 
-
-In order to understand the formal structure and transformation properties of tensors in differential geometry and mathematical physics, it is essential to establish a foundational understanding of the objects from which tensors generalize: scalars, vectors, and one-forms. These entities constitute the building blocks of tensor calculus and each embodies a specific geometric and algebraic role in the representation of physical quantities and differential structures \cite{llibretensorcalculus}.
-    
-\paragraph{Scalars}
-
-
-A scalar is defined as a quantity that is invariant under changes of coordinates. In physical and mathematical terms, this means that the value of a scalar remains the same regardless of the observer’s reference frame or the coordinate chart used.
-
-Typical examples of scalar quantities include temperature, mass, and electric charge. These quantities are completely described by a single numerical value and do not depend on direction or orientation. Since scalars do not transform under coordinate changes, they serve as invariant reference points in both geometrical and physical analyses.
-
-\paragraph{Vectors (contravariant)}
-
-A vector is a geometric object characterized by both its magnitude and direction. In the context of differential geometry, vectors are identified as elements of the tangent space at a point on a differentiable manifold. When expressed in a local coordinate basis $\left\{ \frac{\partial}{\partial x^i} \right\}$\footnote{Given a local coordinate system $(x^1, \dots, x^n)$ on a manifold $\mathcal{M}$, 
-the vectors $\frac{\partial}{\partial x^i}\big|_p$ represent the tangent directions at a point $p \in \mathcal{M}$. 
-They form the natural basis of the tangent space $T_p\mathcal{M}$ corresponding to the chosen coordinates \cite{Coordinatebasis}.}, a vector $\vec{v}$ is written as:
-\begin{equation}
-\vec{v} = v^i \frac{\partial}{\partial x^i} \ .
-\end{equation}
-Here, the set $\{ v^i \}$ represents the components of the vector with respect to the given coordinate system. These components are said to be contravariant, since under a coordinate change \(x \mapsto x'\) they transform according to the Jacobian matrix of the transformation:
-\begin{equation}
-v'^{j} = \frac{\partial x'^j}{\partial x^i} v^i \ .
-\end{equation}
-This transformation law ensures that the geometric meaning of the vector, independent of coordinates, remains intact, while its components adjust to reflect the change in basis vectors. 
-
-\paragraph{One-forms (covariant vectors)}
-
-A one-form, also referred to as a covariant vector\footnote{The concepts of covariant and contravariant were first introduced by James Joseph Sylvester in 1851 \cite{Contravariant_covariant}.
-} or linear form, is an element of the dual space\footnote{The dual space \(\mathcal{V}^*\) of a vector space \(\mathcal{V}\) is defined as the collection of all linear maps \(\ell: \mathcal{V} \to \mathbb{R}\) that assign a real number to each vector in \(\mathcal{V}\).  
-For a manifold \(\mathcal{M}\), the tangent space \(T_p \mathcal{M}\) at a point \(p\) possesses a corresponding dual space, the cotangent space \(T_p^* \mathcal{M}\), whose elements are called covectors. One-forms are smooth assignments of a covector in \(T_p^* \mathcal{M}\) to each point \cite{Coordinatebasis}. } to the tangent space. Whereas vectors act as directional derivatives on scalar fields, one-forms act on vectors to produce scalars through a process of dual pairing. In coordinates, a one-form $\omega$ is written as:
-\begin{equation}
-\omega = \omega_i \, dx^i \ .
-\end{equation}
-Here, $\{ dx^i \}$ denotes the dual basis to $\left\{ \frac{\partial}{\partial x^i} \right\}$, and the components $\omega_i$ are said to be covariant. Their transformation under a coordinate change is governed by the inverse Jacobian:
-\begin{equation}
-\omega'_j = \frac{\partial x^i}{\partial x'^j} \omega_i \ .
-\end{equation}
 
 \subsubsection{Tensors}
 
 
-The concept of a tensor is often cited as one of the most confusing topics for physics students. This confusion stems not from the intrinsic complexity of tensors, but rather from the overwhelming variety of definitions and the abstract formalism in which they are typically introduced. Many definitions focus not on what a tensor is, but on how it transforms under coordinate changes, which, though mathematically correct, offers little intuitive insight at first encounter.
 
-At a fundamental level, a tensor can be seen as a generalization of familiar mathematical objects such as scalars and vectors.  
-A scalar, which is a tensor of rank zero, is a single quantity invariant under coordinate transformations,  
-whereas a vector, a rank-one tensor, has components that transform linearly with respect to these changes.
+Tensors are the natural language of GR: they are geometric objects whose components transform consistently under coordinate changes, ensuring that physical laws remain valid in any reference frame \cite{llibretensorcalculus}. They generalize the familiar notions of scalars (invariant under coordinate changes), contravariant vectors 
+(components transforming via the Jacobian of the coordinate change), and covariant vectors or one-forms (components transforming via the inverse Jacobian).
 
-
-Tensors are commonly classified in two ways \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
-
-\begin{enumerate}
-    \item By their rank or order, which corresponds to the total number of indices.  
-    \item By their type $(n,m)$, where $n$ denotes the number of contravariant (upper) indices 
-    and $m$ denotes the number of covariant (lower) indices.  
-\end{enumerate}
-
+Tensors are commonly classified by their type $(r,s)$, where $r$ denotes the number of contravariant (upper) indices and $s$ the number of covariant (lower) indices \cite{Llibre_Peter_Collier_unacosadificildecomprender}. 
 Some illustrative examples are:
 
 \begin{itemize}
-    \item A scalar $T$ (e.g., temperature) carries no indices; it is a rank-$0$ tensor of type $(0,0)$.  
-    \item A contravariant vector \(V^{\beta}\) carries a single upper index, making it a rank-one tensor of type \((1,0)\).  
-    \item A covector or one-form $W_\alpha$ has one lower index, making it a rank-$1$ tensor of type $(0,1)$.  
-    \item A mixed tensor \(T^\alpha_{\ \gamma}\) possesses one upper and one lower index, thus qualifying as a rank-two tensor of type \((1,1)\). 
-    \item A purely contravariant tensor $S^{\beta\alpha}$ with two upper indices is rank $2$ and type $(2,0)$.  
-    \item The Riemann curvature tensor $R^l{}_{ijk}$, which will be studied later, has one upper and three lower indices, making it a rank-$4$ tensor of type $(1,3)$.  
+    \item A scalar $T$ carries no indices; it is a rank-$0$ tensor of type $(0,0)$.
+    \item A contravariant vector $V^{\beta}$ is a rank-$1$ tensor of type $(1,0)$, and a one-form $W_\alpha$ is of type $(0,1)$.
+    \item A mixed tensor $T^\alpha_{\ \gamma}$ is of type $(1,1)$, and the Riemann curvature tensor $R^l{}_{ijk}$, studied in 
+    $\S$\ref{Riemann curvature tensor}, is of type $(1,3)$.
 \end{itemize}
 
-In general, a tensor of rank \(n\) in a $d$-dimensional space has $d^n$ components, each labeled by $n$ indices, 
-and its components transform according to precise rules under coordinate changes.
-
-These transformation rules are key. A rank-3 tensor of type (2, 1) transforms as:
-\begin{equation}
-T_\gamma^{\prime \alpha \beta}=\frac{\partial x^{\prime \alpha}}{\partial x^\mu} \frac{\partial x^{\prime \beta}}{\partial x^\nu} \frac{\partial x^\rho}{\partial x^{\prime \gamma}} T_\rho^{\mu \nu},
-\end{equation}
-where the prime symbol identifies the new coordinates and the transformed tensor.
- 
-More generally, a tensor of type $(r,s)$ transforms as:
+In general, a tensor of rank $n$ in a $d$-dimensional space has $d^n$ components, transforming under coordinate changes according to
 \begin{equation}
 T'^{i_1' \dots i_r'}_{j_1' \dots j_s'} = 
 \left( \prod_{k=1}^r \frac{\partial x'^{i_k'}}{\partial x^{i_k}} \right)
 \left( \prod_{l=1}^s \frac{\partial x^{j_l}}{\partial x'^{j_l'}} \right)
 T^{i_1 \dots i_r}_{j_1 \dots j_s} \ .
 \end{equation}
-Such transformation behavior ensures that if a tensor equation holds in one coordinate system, it holds in all coordinate systems, an essential feature for any generally covariant physical theory, such as GR.
+This transformation law ensures that if a tensor equation holds in one coordinate system, it holds in all, an essential feature of any generally covariant theory such as GR. Formally, a tensor of type $(r,s)$ can be seen as a multilinear map taking $r$ one-forms and $s$ vectors as inputs and returning a real number \cite{Theory_of_Gravitational_Waves_arxiv}.
 
-
-In practical terms, tensors enable us to express physical laws in a form that is independent of the observer’s frame of reference. For instance, if all components of a tensor vanish in one frame, they vanish in every frame. Similarly, if two tensors are equal in one coordinate system, they are equal in all. This coordinate-independence makes tensors the natural language for formulating physical laws that must remain valid regardless of how we choose to describe spacetime.
-
-Tensors are not just abstract algebraic objects, they have clear geometric and physical interpretations. In mechanics, they describe stress and strain; in electrodynamics, they represent fields; and in GR, they encode curvature, energy, and momentum. 
-
-Formally, a tensor of type $(r,s)$ can be seen as a multilinear map:
-\begin{equation}
-T: \underbrace{T^*_p \times \cdots \times T^*_p}_{k \text{ dual vectors}} \times \underbrace{T_p \times \cdots \times T_p}_{l \text{ vectors}} \rightarrow \mathbb{R} \ ,
-\end{equation}
-which takes $r$ covectors and $s$ vectors as inputs and returns a real number, 
-linear in each argument \cite{Theory_of_Gravitational_Waves_arxiv}. 
-In this view, upper indices correspond to ``slots'' for one-forms, 
-and lower indices to ``slots'' for vectors. 
-When all slots are filled, the tensor produces a scalar.
-
-
-In a spacetime with no preferred coordinate system, as in GR, it is natural and necessary to express physical laws using tensor equations. These equations remain valid regardless of how we label spacetime points. In this context, tensors are not merely mathematical tools; they are the very grammar of the theory. 
-
-Although their formal definitions can appear opaque, tensors are indispensable to modern physics. They allow us to write laws that are both general and coordinate-independent, making them essential for understanding and formulating the principles of reneral relativity.
-
-
-
-\paragraph{Rules of tensor algebra}
-\label{Rules of tensor algebra}
-
-The basic algebraic operations familiar from vector spaces, such as scalar multiplication, addition, and the formation of inner and outer products, extend naturally to tensors of any rank, regardless of whether their indices are covariant or contravariant. These operations, which allow us to construct new tensors from existing ones, are often most clearly understood through illustrative examples \cite{llibretensorcalculus}.
-
-
-\textbf{Scalar multiplication.} Multiplying a tensor by a scalar $a$ yields a new tensor of the same type
-\begin{equation}
-    T_{\mu \nu}=a S_{\mu \nu} \ .
-\end{equation}
-\textbf{Addition and subtraction.} Tensors of the same rank and index configuration can be added by summing their corresponding components to produce another tensor of the same type. Subtraction is simply addition with one tensor multiplied by a negative scalar
-\begin{equation}
-T^\mu{ }_\nu=S^\mu{ }_\nu+R^\mu{ }_\nu \ .
-\end{equation}
-\textbf{Multiplication.} The product of two tensors results in another tensor whose rank equals the sum of the ranks of the original tensors
-\begin{equation}
-T_\sigma^{\mu \nu \rho}=A_\sigma^\mu S^\nu R^\rho \ .
-\end{equation}
-\textbf{Contraction.} The rank of a tensor can be reduced by contraction, which pairs one contravariant and one covariant index and sums over it, mapping a $(r,s)$ tensor to a $(r-1,s-1)$ tensor
-\begin{equation}
-T_\nu=S_{\mu \nu} R^\mu \ .
-\end{equation}
-Contracting all indices of an even-order tensor yields a scalar\footnote{The proof is straightforward. Under a coordinate transformation,
-\begin{equation}
-R'^{\mu}{}_{\mu} = \frac{\partial x'^{\mu}}{\partial x^{\rho}} \frac{\partial x^{\nu}}{\partial x'^{\mu}} R^{\rho}{}_{\nu} 
-= \delta^{\nu}_{\rho} R^{\rho}{}_{\nu} 
-= R^{\rho}{}_{\rho},
-\end{equation}
-showing that the contraction produces an invariant quantity, namely a scalar \cite{llibretensorcalculus}.}. 
-\begin{equation}
-\begin{aligned}
-R^{\mu}{}_{\mu} &= R  \ , \\
-S^{\mu \nu}{}_{\mu \nu} &= S \ .
-\end{aligned}
-\end{equation}
-\textbf{Raising and lowering indices.} A fundamental operation in tensor analysis is the contraction with the metric tensor $g_{\mu\nu}$ (see $\S$\ref{metric tensor} for more details) and its inverse $g^{\mu\nu}$ (sometimes referred to as the dual metric) to raise and lower indices in tensor expressions. This procedure allows us to convert vectors and covectors into one another by raising and lowering indices
-\begin{equation}
-\begin{aligned}
-T_\nu &= g_{\mu\nu} T^\mu \ , \\
-T^\nu &= g^{\mu\nu} T_\mu \ .
-\end{aligned}
-\end{equation}
-Raising or lowering an index does not alter its relative position among the other indices. Furthermore, free indices (those not summed over) must match on both sides of an equation, while dummy indices (summed over) appear only once within each term.
-
-\textbf{Symmetrization and antisymmetrization.} A tensor is symmetric in a set of indices if it remains unchanged when those indices are interchanged. For example, if
-\begin{equation}
-S_{\mu\nu\rho} = S_{\nu\mu\rho} \ ,
-\end{equation}
-it is symmetric in its first two indices. If it is invariant under all permutations of three indices, it is symmetric in all three. Examples of such tensors include the metric tensor and the Einstein tensor.
-
-Similarly, a tensor is antisymmetric in certain indices if swapping them changes its sign; e.g.,
-\begin{equation}
-A_{\mu\nu\rho} = -A_{\rho\nu\mu} \ ,
-\end{equation}
-means antisymmetry in the first and third indices. The Riemann curvature tensor \( R^h_{\;ijk} \) (see $\S$\ref{Riemann curvature tensor} for more details) is antisymmetric in both its first and second index pairs:
-\begin{equation}
-R^h_{\;ijk} = -R^h_{\;jik} = -R^h_{\;ij\,k} \ .
-\end{equation}
-When a tensor exhibits symmetry or antisymmetry across all of its indices, it is referred to as symmetric or antisymmetric (sometimes described as fully symmetric or antisymmetric). The metric tensor \( g_{\mu\nu} \) and its inverse possess symmetry in their indices, whereas the Levi-Civita tensor \( \epsilon_{\mu\nu\rho\sigma} \) is characterized by antisymmetry.
-
-
-Given any tensor, we can symmetrise or antisymmetrise over a chosen set of upper or lower indices.
-
-Symmetrisation:
-\begin{equation}
-T_{(\mu_1 \mu_2 \dots \mu_p)} = \frac{1}{p!} \sum_{\text{perms}} T_{\mu_1 \mu_2 \dots \mu_p} \ .
-\end{equation}
-Antisymmetrisation:
-\begin{equation}
-T_{[\mu_1 \mu_2 \dots \mu_p]} = \frac{1}{p!} \sum_{\text{perms}} (\pm 1) \, T_{\mu_1 \mu_2 \dots \mu_p} \ ,
-\end{equation}
-where the sign \((\pm 1)\) depends on whether the permutation is even or odd.
-
-Parentheses \((\dots)\) denote symmetrisation, and square brackets \([\dots]\) denote antisymmetrisation. To exclude certain indices, we use vertical bars:
-\begin{equation}
-T_{(\mu|\rho|\nu)} = \frac{1}{2} \left( T_{\mu\rho\nu} + T_{\nu\rho\mu} \right).
-\end{equation}
-Including the factor \( 1/p! \) ensures that repeated symmetrisation or antisymmetrisation of an already (anti)symmetric tensor has no effect.
-
-For a rank-2 tensor \( T_{\mu\nu} \), the symmetric and antisymmetric parts are:
-\begin{equation}
-T_{\left(\mu\nu\right)} = \frac{1}{2} (T_{\mu\nu} + T_{\nu\mu}) \ , 
-\quad
-T_{[\mu\nu]} = \frac{1}{2} (T_{\mu\nu} - T_{\nu\mu}) \ .
-\end{equation}
-These definitions extend naturally to higher-rank tensors, even when the indices involved are not adjacent \cite{llibrecarroll2004lectures}.
-
+In GR, tensors are not merely mathematical tools: they encode curvature, energy, and momentum, and constitute the grammar through which the field equations are written.
 
 \subsection{Metric tensor}
 \label{metric tensor}
@@ -637,7 +410,7 @@ ds^2 = dr^2 + r^2\, d\theta^2 + r^2 \sin^2\theta\, d\varphi^2, \quad g_{ij} = \m
 \end{equation}
 In general, $g_{\mu\nu}$ is a symmetric $4 \times 4$ matrix in spacetime, with $10$ independent components. Because coordinate transformations can adjust 4 of them, only $6$ components contain independent physical information \cite{Llibrehartle2003gravity}.
 
-The metric tensor is the tool that enables the computation of lengths, angles, areas, and volumes in a manifold. In physics, it encodes the gravitational field in GR. It also acts as a bridge between contravariant and covariant vectors (as we have seen in $\S$\ref{Rules of tensor algebra}):
+The metric tensor is the tool that enables the computation of lengths, angles, areas, and volumes in a manifold. In physics, it encodes the gravitational field in GR. It also acts as a bridge between contravariant and covariant vectors:
 \begin{equation}
 v_\mu = g_{\mu\nu} v^\nu, \quad v^\mu = g^{\mu\nu} v_\nu \ ,
 \end{equation}
@@ -647,6 +420,8 @@ g_{\mu\nu} g^{\nu\rho} = \delta_\mu^\rho \ .
 \end{equation}
 The signature of the metric distinguishes between different geometries: Riemannian metrics are positive-definite $(+,+,+,\dots)$, while Lorentzian metrics have signature $(+,-,-,\dots,-)$ or $(-,+,+,\dots,+)$ as in spacetime. Once the metric is known, the geometry and the gravitational field (in the case of GR) are completely determined.
 
+A particularly relevant example in the context of this work is the weak-field perturbed metric, which describes spacetime in the presence of a slowly varying Newtonian gravitational potential. This metric reduces to the Minkowski form in the absence of matter and governs 
+the deflection of GWs as they propagate through a gravitational lens, as developed in $\S$\ref{sec:geometric_optics}.
 
 
 \subsection{Affine connection and curvature}
@@ -914,7 +689,6 @@ The idea of a geodesic can be formalized in several equivalent ways when conside
     \item A geodesic is a curve whose length remains stationary under small variations of its shape.
     \item A more local definition states that a geodesic is a curve that, at each point, is as straight as possible.
 \end{enumerate}
-There are also several equivalent ways to derive geodesics, each providing complementary insights.
 
 \paragraph{Geometric derivation}
 
@@ -940,201 +714,22 @@ Substituting \(U^\rho = \frac{dx^\rho}{d\lambda}\), one arrives at the standard 
 
 Thus, the geodesic equation emerges naturally as the geometric condition ensuring that the tangent vector remains invariant under parallel transport.
 
-
-\paragraph{Coordinate form and free fall}
-
-
-Complementarily, the same equation can be derived from a physical perspective, starting from the principle of inertia in a locally inertial frame.
-
-In such a frame, for example, that of a freely falling observer, the Christoffel symbols vanish, and the motion of a freely falling particle is described simply by 
-\begin{equation}
-    \frac{d^2 X^\alpha}{d\tau^2} = 0 \ ,
-    \label{eq:freefalllocal}
-\end{equation}
-where $\tau$ denotes the particle's proper time and $X^\alpha$ are coordinates in the local inertial frame \cite{llibretensorcalculus}.  
-
-We now relate the locally inertial coordinates $X^\alpha$ to a general coordinate system $x^\mu$ through a transformation
-\begin{equation}
-    X^\alpha = X^\alpha(x^\mu(\tau)) \ .
-\end{equation}
-Since $X^\alpha$ depends on all $x^\mu$, differentiating equation \eqref{eq:freefalllocal} and applying the chain rule gives
-\begin{equation}
-    \frac{\partial X^\alpha}{\partial x^\mu} \frac{d^2 x^\mu}{d\tau^2} 
-    + \frac{\partial^2 X^\alpha}{\partial x^\mu \partial x^\nu} 
-      \frac{dx^\mu}{d\tau} \frac{dx^\nu}{d\tau} = 0 \ ,
-\end{equation}
-
-where we have used $\frac{d}{d\tau}
-= \frac{dx^\nu}{d\tau}\,\frac{\partial}{\partial x^\nu}$ for the second term.
-
-Multiplying by $\frac{\partial x^\lambda}{\partial X^\alpha}$ and using
-\begin{equation}
-    \frac{\partial x^\lambda}{\partial X^\alpha} \frac{\partial X^\alpha}{\partial x^\mu} 
-    = \delta^\lambda_\mu \ ,
-\end{equation}
-we obtain
-\begin{equation}
-    \frac{d^2 x^\lambda}{d\tau^2} 
-    + \Gamma^{\lambda}_{\mu\nu} \frac{dx^\mu}{d\tau} \frac{dx^\nu}{d\tau} = 0 \ ,
-    \label{newtons2nlaw}
-\end{equation}
-where the connection coefficients appear naturally as
-\begin{equation}
-    \Gamma^{\lambda}_{\mu\nu} 
-    = \frac{\partial x^\lambda}{\partial X^\alpha} 
-      \frac{\partial^2 X^\alpha}{\partial x^\mu \partial x^\nu} \ .
-\end{equation}
 The main physical significance of geodesics in GR lies in the fact that they describe the trajectories of freely falling particles, objects experiencing no proper acceleration. Within this framework, the geodesic equation serves as the relativistic analogue of Newton's second law, \(\vec{F} = m \vec{a}\), specifically in the case where \(\vec{F} = 0\).
-
-
-\paragraph{Action principle and lagrangian formulation}
-
-Geodesics can also be derived from a variational principle. We consider the relativistic action of a particle traveling through spacetime, given by
-\begin{equation}
-S = -m \int_{\tau_1}^{\tau_2} \mathcal{L} \, d\tau \ , \quad \text{where} \quad \mathcal{L} = \sqrt{-g_{\mu\nu}(x) \dot{x}^\mu \dot{x}^\nu} \ ,
-\end{equation}
-with \( m \) representing the particle's mass and \( \dot{x}^\mu=dx^{\mu}/d\tau \).
-
-Applying the Euler-Lagrange equations to this Lagrangian, 
-the stationarity condition $\delta S = 0$ yields
-\begin{equation}
-    \frac{d}{d\tau}\left(\frac{\partial L}{\partial \dot{x}^\lambda}\right) 
-    - \frac{\partial L}{\partial x^\lambda} = 0 \ .
-    \label{eulerlagrange}
-\end{equation}
-We define the quantity
-\begin{equation}
-I(x,\dot{x}) \equiv - g_{\mu\nu}(x)\, \dot{x}^\mu \dot{x}^\nu \ .
-\end{equation}
-Then, we compute:
-\begin{equation}
-\frac{\partial L}{\partial \dot{x}^\lambda} = \frac{1}{2L} \frac{\partial I}{\partial \dot{x}^\lambda} \ , \quad \frac{\partial I}{\partial \dot{x}^\lambda} = - g_{\mu\nu} \frac{\partial (\dot{x}^\mu \dot{x}^\nu)}{\partial \dot{x}^\lambda} \ .
-\label{lagrangederivativeterm}
-\end{equation}
-The derivative inside is
-\begin{equation}
-\frac{\partial (\dot{x}^\mu \dot{x}^\nu)}{\partial \dot{x}^\lambda} = \delta^\mu_\lambda \dot{x}^\nu + \dot{x}^\mu \delta^\nu_\lambda \ ,
-\end{equation}
-so we have:
-\begin{equation}
-\frac{\partial I}{\partial \dot{x}^\lambda} = - g_{\mu\nu} (\delta^\mu_\lambda \dot{x}^\nu + \dot{x}^\mu \delta^\nu_\lambda) =  - g_{\lambda\nu} \dot{x}^\nu - g_{\mu\lambda} \dot{x}^\mu \ .
-\end{equation}
-Since the metric is symmetric, \(g_{\mu\nu} = g_{\nu\mu}\), we can rename the index \(\mu \to \nu\) in the second term:
-\begin{equation}
-- g_{\mu\lambda} \dot{x}^\mu = - g_{\lambda\mu} \dot{x}^\mu = - g_{\lambda\nu} \dot{x}^\nu \ , \quad \frac{\partial I}{\partial \dot{x}^\lambda} = - g_{\lambda\nu} \dot{x}^\nu - g_{\lambda\nu} \dot{x}^\nu = - 2\, g_{\lambda\nu} \dot{x}^\nu \ .
-\end{equation}
-Substituting back into the equation \eqref{lagrangederivativeterm}:
-\begin{equation}
-\frac{\partial L}{\partial \dot{x}^\lambda} = \frac{1}{2 L} \, (-2 g_{\lambda\nu} \dot{x}^\nu) = - \frac{g_{\lambda\nu} \dot{x}^\nu}{L}.
-\end{equation}
-The derivative of L respect $x^{\lambda}$ is:
-\begin{equation}
-\frac{\partial L}{\partial x^\lambda}
-= \frac{1}{2L}\frac{\partial I}{\partial x^\lambda} \ , \quad \frac{\partial I}{\partial x^\lambda} = -\partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu .
-\end{equation}
-Substituting back:
-\begin{equation}
-\frac{\partial L}{\partial x^\lambda}
-= \frac{-1}{2L} \partial_\lambda g_{\mu\nu}(x)\,\dot{x}^\mu \dot{x}^\nu .
-\end{equation}
-Substituting into equation \eqref{eulerlagrange} we get:
-\begin{equation}
-\frac{d}{d\tau}\!\left(\frac{-g_{\lambda\nu}\dot{x}^\nu}{L}\right)
-+ \frac{1}{2L}\,\partial_\lambda g_{\mu\nu}\,\dot{x}^\mu \dot{x}^\nu = 0.
-\end{equation}
-Multiplying by $L$ and rearranging:
-\begin{equation}
--\,\frac{d}{d\tau}\!\big(g_{\lambda\nu}\dot{x}^\nu\big)
-+ \frac{\dot{L}}{L}\,g_{\lambda\nu}\dot{x}^\nu
-+ \frac{1}{2}\,\partial_\lambda g_{\mu\nu}\,\dot{x}^\mu \dot{x}^\nu = 0.
-\end{equation}
-Expanding the total derivative
-\(\dfrac{d}{d\tau}\big(g_{\lambda\nu}\dot x^\nu\big)\), since \(g_{\lambda\nu}=g_{\lambda\nu}(x(\tau))\) we use the chain rule:
-\[
-\frac{d}{d\tau}\big(g_{\lambda\nu}(x(\tau))\dot x^\nu\big)
-= \frac{d g_{\lambda\nu}}{d\tau}\,\dot x^\nu + g_{\lambda\nu}\,\ddot x^\nu.
-\]
-But
-\[
-\frac{d g_{\lambda\nu}}{d\tau} = \partial_\sigma g_{\lambda\nu}\,\frac{dx^\sigma}{d\tau}
-= \partial_\sigma g_{\lambda\nu}\,\dot x^\sigma.
-\]
-So
-\[
-\frac{d}{d\tau}\big(g_{\lambda\nu}\dot x^\nu\big)
-= \partial_\sigma g_{\lambda\nu}\,\dot x^\sigma\dot x^\nu + g_{\lambda\nu}\ddot x^\nu.
-\]
-Substituting:
-\begin{equation}
--\partial_\sigma g_{\lambda\nu}\,\dot x^\sigma\dot x^\nu - g_{\lambda\nu}\ddot x^\nu + \frac{\dot{L}}{L}\,g_{\lambda\nu}\dot{x}^\nu
-+ \frac{1}{2}\,\partial_\lambda g_{\mu\nu}\,\dot{x}^\mu \dot{x}^\nu = 0.
-\end{equation}
-The product $\dot x^\sigma \dot x^\nu$ is symmetric in the indices $(\sigma,\nu)$.  
-Therefore, we can replace $\partial_\sigma g_{\lambda\nu}$ by its symmetrized form:
-\[
-\partial_\sigma g_{\lambda\nu}\,\dot x^\sigma \dot x^\nu
-= \tfrac{1}{2}\left(\partial_\sigma g_{\lambda\nu} + \partial_\nu g_{\lambda\sigma}\right)
-\dot x^\sigma \dot x^\nu.
-\]
-Grouping terms quadratic in the velocities:
-\begin{equation}
--\,g_{\lambda\nu}\ddot{x}^\nu
-- \frac{1}{2}\big(\partial_\sigma g_{\lambda\nu}
-+ \partial_\nu g_{\lambda\sigma}
-- \partial_\lambda g_{\sigma\nu}\big)\dot{x}^\sigma \dot{x}^\nu
-+ \frac{\dot{L}}{L}\,g_{\lambda\nu}\dot{x}^\nu = 0.
-\end{equation}
-Multiplying by $g^{\rho\lambda}$ and using the definition of the Christoffel symbols,
-\begin{equation}
-\Gamma^{\rho}{}_{\sigma\nu}
-\equiv \frac{1}{2}g^{\rho\lambda}\big(\partial_\sigma g_{\lambda\nu}
-+ \partial_\nu g_{\lambda\sigma}
-- \partial_\lambda g_{\sigma\nu}\big),
-\end{equation}
-we obtain the geodesic equation in non-affine form:
-\begin{equation}
-\ddot{x}^\rho + \Gamma^{\rho}{}_{\sigma\nu}\,\dot{x}^\sigma \dot{x}^\nu
-= f(\tau)\,\dot{x}^\rho,
-\qquad
-f(\tau) \equiv \frac{d}{d\tau}\ln L = \frac{\dot{L}}{L}.
-\end{equation}
-The term on the right-hand side arises because, in general, $L$ is not constant along the curve.  
-However, it disappears if we choose a parameterization such that 
-\begin{equation}
-L = \sqrt{-g_{\mu\nu}(x)\,\dot x^\mu \dot x^\nu} = \text{const}.
-\end{equation}
-This is achieved by picking the proper time $\tau$ as the parameter. In fact, more generally, any affine parameter works, that is, any parameter related to proper time by a linear transformation
-\begin{equation}
-\tilde{\tau} = a\tau + b, \qquad a,b \in \mathbb{R}.
-\end{equation}
-For such choices we have
-\begin{equation}
-\frac{dL}{d\tilde{\tau}} = 0,
-\end{equation}
-so the right-hand side vanishes and we have
-\begin{equation}
-\ddot x^\mu + \Gamma^\mu_{\nu\rho}\dot x^\nu \dot x^\rho = 0,
-\end{equation}
-which is the geodesic equation in curved spacetime.
 
 
 \paragraph{Normalization condition}
 
-
 To fully characterize a geodesic, one must impose a normalization condition on the tangent vector $\dot{x}^\mu = dx^\mu/d\tau$:
 \begin{equation}
 g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu =
-\begin{cases}
--\,c^2 & \text{timelike geodesics (massive particles),} \\[2mm]
+\begin{cases}-\,c^2 & \text{timelike geodesics (massive particles),} \\[2mm]
 \, \, \, \, \, \, 0 & \text{null geodesics (light rays or massless particles),} \\[1mm]
-+\,c^2 & \text{spacelike curves (mathematical, non-physical).}
++\,c^2 & \text{spacelike curves (non-physical).}
 \end{cases}
 \end{equation}
-
-This condition, which follows directly from the spacetime interval $ds^2 = g_{\mu\nu} dx^\mu dx^\nu$, classifies the nature of the curve. For timelike geodesics, $\tau$ corresponds to the particle’s proper time, and the normalization ensures future-directed evolution without dependence on the particle’s mass, reflecting the equivalence principle. For null geodesics, the tangent vector is lightlike, and $\tau$ becomes an affine parameter, as proper time is undefined for massless particles. Spacelike curves, with positive norm, are non-physical and serve purely in the mathematical study of spacetime geometry \cite{llibrecarroll2004lectures}.
-
-In many cases, particularly when the spacetime admits symmetries or when the metric depends on a single coordinate, the normalization condition can suffice to determine the geodesic trajectory without explicitly solving the full geodesic equations. In general, however, the geodesic equation itself is necessary to obtain the complete path.
-
+This condition follows directly from the spacetime interval 
+$ds^2 = g_{\mu\nu} dx^\mu dx^\nu$. For timelike geodesics, $\tau$ is the proper time of the particle; for null geodesics, proper time is undefined and $\tau$ becomes an affine parameter. In many cases, particularly when the spacetime admits symmetries, this condition alone 
+suffices to determine the geodesic trajectory without solving the full geodesic equation \cite{llibrecarroll2004lectures}.
 
 
 \subsubsection{Riemann curvature tensor}
@@ -1295,7 +890,33 @@ As the name suggests, the Ricci scalar is a scalar and thus an invariant under g
 
 \section{Einstein field equations}
 
-We have now established the necessary mathematical foundations, provided by differential geometry, and complemented them with physical insight from the equivalence principle, allowing us to address EFE. These equations describe how spacetime curvature is determined by the distribution of energy and momentum, offering the precise formulation of gravity in GR. In what follows, we will examine their structure and implications, beginning with intuitive arguments inspired by Einstein’s original reasoning, and then deriving them rigorously from an action principle.
+
+The mathematical framework developed in the preceding sections, together with the physical insight of the equivalence principle, leads naturally to the central result of GR. The Einstein field equations (EFE) relate the curvature of spacetime, encoded in the Einstein tensor
+\begin{equation}
+G_{\mu\nu} \equiv R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \ ,
+\end{equation}
+to the energy and momentum content of matter, described by the energy-momentum tensor $T_{\mu\nu}$ (see $\S$\ref{The energy-momentun tensor}):
+\begin{equation}
+G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu} \ .
+\label{einsteinequations}
+\end{equation}
+This is a system of ten coupled, second-order nonlinear partial differential equations whose solutions determine the metric $g_{\mu\nu}$ given a distribution of matter and energy. The constant $8\pi G/c^4$ ensures consistency with Newtonian gravity in the weak-field limit. 
+In vacuum, $T_{\mu\nu} = 0$, the equations reduce to
+\begin{equation}
+R_{\mu\nu} = \frac{1}{2} g_{\mu\nu} R \ ,
+\end{equation}
+which further simplifies, upon contraction, to $R = 0$ and therefore
+\begin{equation}
+R_{\mu\nu} = 0 \ ,
+\end{equation}
+known as the vacuum Einstein equations. Although the equations formally involve ten components, the contracted Bianchi identity 
+\begin{equation}
+\nabla^\mu G_{\mu\nu} = 0 \ ,
+\end{equation}
+provides four constraints, leaving only six independent equations. The remaining four degrees of freedom reflect the freedom in the choice of coordinates \cite{LlibreBertJanssen}.
+
+Einstein's equations are highly nonlinear, which makes them extremely challenging to solve analytically. No general method is known, and exact solutions typically rely on assuming a high degree of symmetry. Nevertheless, they encode a remarkably rich physical content: they describe the propagation of GWs, the bending of light, the expansion 
+of the universe, and the formation of BHs, all consequences of the same geometric framework.
 
 
 \subsection{The energy-momentun tensor}
@@ -1353,579 +974,27 @@ T^{\mu\nu} = \text{diag}(\rho, P, P, P) \ ,
 \end{equation}
 assuming the metric $\eta^{\mu\nu} = \text{diag}(-1,1,1,1)$.
 
-To make this more concrete, we now consider a simple example of a perfect fluid.
-
-
-
-\subsubsection{Dust or cold matter}
-
-The simplest example of a perfect fluid is cold matter, usually called dust. It is described as a collection of non-interacting particles at rest with respect to each other in a Lorentz frame, or equivalently as a perfect fluid with vanishing pressure \cite{llibrecarroll2004lectures}. Although a realistic dust cloud may swirl in a complicated way, one can always consider a sufficiently small fluid element where the average velocity of the particles is the same.  
-
-With $P=0$, the stress-energy tensor becomes 
-\begin{equation}
-T^{\mu\nu}_{\text{(dust)}} = \rho \, U^{\mu} U^{\nu} \ ,
-\end{equation}
-where $\rho$ is the rest-frame energy density \cite{llibretongGR}.  
-In the comoving frame of the fluid, with $U^{\mu} = (1,0,0,0)$, the only non-vanishing component is $T^{00} = \rho$, which simply represents the matter density. Hence, non-interacting matter exerts no pressure.
-
-
-
-\subsubsection{Conservation of the energy-momentum tensor}
 
 A key property of the energy-momentum tensor is that it satisfies the conservation law \cite{Llibre_Peter_Collier_unacosadificildecomprender}
 \begin{equation}
-\nabla_\mu T^{\mu\nu} = 0 \ .
+\nabla_\mu T^{\mu\nu} = 0 \ ,
 \end{equation}
-In flat spacetime, this reduces to
-\begin{equation}
-\partial_\mu T^{\mu\nu} = 0 \ ,
-\end{equation}
-which encompasses both energy and momentum conservation. By projecting this relation along 
-the fluid four-velocity one obtains the relativistic continuity equation (see Appendix $\S$\ref{Derivation of the relativistic continuity and Euler equations} for the derivations),
-\begin{equation}
-u^\mu \nabla_\mu \rho + (\rho + P)\nabla_\mu u^\mu = 0 \ ,
-\end{equation}
-expressing the conservation of energy density as the fluid evolves.  
-
-Projecting orthogonally to $u^\mu$ leads instead to the relativistic Euler equation,
-\begin{equation}
-(\rho + P)u^\mu \nabla_\mu u^\nu = -(g^{\mu\nu} + u^\mu u^\nu)\nabla_\mu P \ ,
-\end{equation}
-which generalizes Newton’s second law, with pressure gradients acting as the force density \cite{llibretongGR}.  
-
-In curved spacetime the same covariant condition $\nabla_\mu T^{\mu\nu} = 0$ 
-remains valid, ensuring that energy and momentum are locally conserved for any 
-physically meaningful system.
-
-
-\subsection{Derivation of the Einstein field equations}
-
-\subsubsection{Heuristic derivation}
-
-
-Einstein did not reach his field equations in one sudden step of mathematical inspiration, as he sometimes
-suggested in his later years, but rather through a gradual process in which physical intuition and formal reasoning worked hand in hand \cite{HowEinsteinfoundhisfieldequations}.
-
-In 1913, together with Marcel Grossmann\footnote{Marcel Grossmann (1878--1936) was a friend, classmate, and early collaborator of Einstein.}, Einstein introduced the Entwurf theory, an early attempt at a relativistic theory of gravitation \cite{EinsteinGrossmann1913}. Its field equations already displayed much of the mathematical framework that would later appear in GR, but they were covariant only under a restricted class of coordinate transformations.
-
-After having established the momentum-energy equation for material processes (mechanical, electrical, and others) in the presence of a gravitational field, Einstein and Grossmann turned to the more fundamental task: to determine the differential equations governing the field itself, namely, the equations for the metric components $g_{ik}$. In analogy with Newton’s theory, they sought a generalization of the Poisson equation
-\begin{equation}
-\nabla^2 \phi = 4\pi G \rho \ .
-\end{equation}
-They argued that the field equations should be second order, and proposed that the general form of such equations would be 
-\begin{equation}
-\kappa \, \Theta_{\mu\nu} = \Gamma_{(\mu\nu)} \ ,
-\end{equation}
-where $\kappa$ is a coupling constant, $\Theta_{\mu\nu}$ the energy-momentum tensor of matter, and $\Gamma_{\mu\nu}$ a contravariant tensor of second rank constructed from the metric and its derivatives \cite{howeinsteinfoundhisequations}. Although this construction ensured the conservation of energy and momentum, the resulting equations were not generally covariant, but only valid under linear transformations. Einstein himself emphasized that it was not possible, at that stage, to obtain second-order equations that were simultaneously a true generalization of the Laplacian and a tensor under arbitrary coordinate changes.
-
-The Entwurf theory thus represented a crucial but incomplete step. It incorporated the basic dynamical structure of GR covariance. Over the following two years Einstein gradually moved beyond it. In November 1915 he presented to the Prussian Academy a sequence of communications (see Section $\S$\ref{Einstein's journey to general relativity}) in which he successively improved the covariance and physical adequacy of his field equations. 
-
-First, he proposed
-\begin{equation}
-R_{\mu\nu} = -\kappa T_{\mu\nu} \ ,
-\end{equation}
-equations that were valid under unimodular transformations\footnote{A unimodular transformation is a coordinate transformation whose Jacobian determinant equals 1, that is,
-\begin{equation}
-\det \left( \frac{\partial x'^\mu}{\partial x^\nu} \right) = 1 \ .
-\end{equation}
-This means the coordinate change preserves volume, so the volume element $d^4x$ remains unchanged \cite{unimodular_transf}.}, giving them broader covariance than the Entwurf equations, but they
-still fell short of full generality. A week later he introduced the additional condition
-\begin{equation}
-T \equiv g^{\mu\nu} T_{\mu\nu} = 0 \ ,
-\end{equation}
-which allowed him to reinterpret the equations as generally covariant. With this version he was already able to account for the anomalous precession of Mercury’s perihelion, $\Delta \varphi \approx 43'' \ \text{per century}$ (see \cite{precession} for more details), a striking empirical success. Yet the restriction $T=0$ was too severe to be acceptable in general.
-
-The decisive step came on 25 November 1915, when Einstein realized that adding an explicit trace term to the right-hand side of the field equations would remove the need for this artificial constraint. The final generally covariant field equations took the form
-\begin{equation}
-R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R = \kappa T_{\mu\nu} \ ,
-\end{equation}
-where $R_{\mu\nu}$ is the Ricci tensor, $R$ the Ricci scalar, $g_{\mu\nu}$ the metric tensor, and $T_{\mu\nu}$ the energy-momentum tensor of matter and fields. The constant $\kappa = 8\pi G / c^4$ ensures consistency with Newton’s theory in the weak-field limit (see Appendix $\S$\ref{Appendix:Einstein field equations (Newtonian limit)} for the derivation).
-
-It is important to note that while the Ricci tensor and the metric tensor were already known from the work of Gregorio Ricci-Curbastro and Tullio Levi-Civita in the context of differential geometry, the specific combination appearing on the left-hand side, known today as the Einstein tensor $G_{\mu\nu} \equiv R_{\mu\nu} - \tfrac{1}{2} g_{\mu\nu} R$, was formulated by Einstein in 1915 \cite{llibretheoreticalminimum}. This tensor was designed to have zero covariant divergence, $\nabla^\mu G_{\mu\nu} = 0$, ensuring consistency with the local conservation of energy and momentum and making it the natural choice to relate spacetime curvature to the energy-momentum content.
-
-
-
-Einstein's equations constitute a system of ten coupled, second-order nonlinear partial differential equations, which makes them extremely challenging to solve analytically. No general method is known, and the solutions that have been obtained usually rely on assuming a high degree of symmetry or on applying specialized techniques (see Section $\S$\ref{solutionseinsteinequations}). 
-
-Although Einstein's equations formally involve ten components, the condition $\nabla_\mu G^{\mu\nu} = 0$ provides four constraints, leaving only six equations that are genuinely independent. This implies that, out of the ten components of the metric, only six are determined by Einstein's equations and correspond to physical degrees of freedom. The remaining four are non-physical components that express the freedom in the choice of coordinates \cite{LlibreBertJanssen}.
-
-\subsubsection{Formal derivation from the Einstein-Hilbert action}
-
-
-We will now derive EFE starting from the Einstein-Hilbert action. Although this is not the original method used by Einstein, it provides a more modern and elegant approach, as it is based on the principle of least action. This formulation is particularly useful since the principle of least action plays a central role in theoretical physics.
-
-For clarity, the derivation will be presented step by step, as carrying it out all at once can be rather difficult to follow.
-
-We begin by considering the variation of the square root of the negative determinant of the metric tensor ($\S$\ref{Variation_of_the_squareroot}), a quantity that will play a crucial role in our derivation. Next, we will compute the contraction of the Christoffel symbols ($\S$\ref{Contraction_Christoffelsymbol}), followed by the variation of the Ricci scalar ($\S$\ref{Variation_Ricciscalar}). Finally, we will obtain the variation of the Einstein-Hilbert action itself ($\S$\ref{Variation_of_Hilbert_Einstein_action}).
-
-Before proceeding with these steps, we first define the Einstein-Hilbert action.
-
-
-\paragraph{Einstein-Hilbert action}
-\label{Einstein--Hilbert action}
-
-
-From analytical mechanics we know the advantages of the Lagrangian formulation: by varying with 
-respect to the system's degrees of freedom one directly obtains the equations of motion. In this sense, 
-the Lagrangian provides a compact representation of the dynamics of a system or a theory. Moreover, in many cases it is more straightforward to identify the symmetries of a system through its Lagrangian rather than directly from the equations of motion. For instance, the trajectory of a free particle in a curved spacetime can be derived from an action principle, leading to the geodesic equation \eqref{geodesicequation} \cite{LlibreBertJanssen}. 
-
-It is therefore natural to ask whether gravity itself can be described by an action. The answer is provided by the Einstein-Hilbert action, which yields EFE in vacuum and is expressed as (see Appendix $\S$\ref{Appendix Einstein-Hilbert action} for the derivation)
-\begin{equation}
-S_{EH} = \frac{c^4}{16 \pi G} \int_{\mathcal{M}} d^4x \, \sqrt{-g} \, R \ ,
-\end{equation}
-where $g = \det(g_{\mu\nu})$ is the determinant of the metric and $R$ is the Ricci scalar. The minus sign inside the square root appears because the underlying spacetime is Lorentzian: the metric possesses one negative eigenvalue, which makes its determinant 
-$g = \det(g_{\mu\nu})$ negative \cite{llibretongGR}.
-
-In this way, the Einstein-Hilbert action plays for GR the same role that the Lagrangian 
-does in analytical mechanics: it encodes the dynamics of the gravitational field in a compact and elegant form.
-
-
-
-\paragraph{Variation of the square root of the negative determinant of the metric}
-\label{Variation_of_the_squareroot}
-
-We begin by deriving the variation of the determinant of the metric tensor.
-
-
-First, let us consider a mathematical note.  
-Take the following function of two variables and expand it in a first-order Taylor series:
-\begin{equation}
-f(x,y) = \sqrt{xy} \;\;\;\Rightarrow\;\;\;
-f(x,y) \simeq f(x_0,y_0) 
-+ \left.\frac{\partial f}{\partial x}\right|_{(x_0,y_0)} (x-x_0) 
-+ \left.\frac{\partial f}{\partial y}\right|_{(x_0,y_0)} (y-y_0) \ .
-\end{equation}
-The derivatives are given by
-\begin{equation}
-\frac{\partial f}{\partial x} = \frac{y}{2\sqrt{xy}} \ , 
-\qquad 
-\frac{\partial f}{\partial y} = \frac{x}{2\sqrt{xy}} \ .
-\end{equation}
-Therefore, we obtain
-\begin{equation}
-\sqrt{xy} \;\simeq\; \sqrt{x_0 y_0} + \frac{1}{2\sqrt{x_0 y_0}}
-\Big[ y_0 (x-x_0) + x_0 (y-y_0) \Big] \ .
-\end{equation}
-We now define the variation of a function $\delta f$ as the difference between its values at two different points:
-\begin{equation}
-\delta(\sqrt{xy}) = \sqrt{xy} - \sqrt{x_0 y_0}
-= \frac{1}{2\sqrt{x_0 y_0}} \Big[ y_0 \, \delta x + x_0 \, \delta y \Big]
-= \frac{\sqrt{x_0 y_0}}{2} \left( \frac{\delta x}{x_0} + \frac{\delta y}{y_0} \right) \ .
-\end{equation}
-More generally, if we consider the square root of a product of $n$ variables, it can be shown by induction that
-\begin{equation}
-\delta\!\left(\sqrt{x_1 x_2 x_3 \cdots x_n}\right) 
-= \frac{\sqrt{x_1 x_2 \cdots x_n}}{2} 
-\sum_{i=1}^n \frac{\delta x_i}{x_i} \ .
-\end{equation}
-Let us now apply this idea to matrices.  
-Consider a symmetric matrix $A$ with $\det A > 0$. We know that:
-\begin{enumerate}
-    \item $A$ is diagonalizable.
-    \item Consequently, there exists a basis such that
-    \begin{equation}
-    A = \mathrm{diag}(\lambda_1, \lambda_2, \dots, \lambda_n) \ , 
-    \qquad \lambda_i \in \mathbb{R} \ .
-    \end{equation}
-    \item The determinant of $A$ is invariant under a change of basis, that is
-    \begin{equation}
-    \det A = \lambda_1 \lambda_2 \cdots \lambda_n \ .
-    \end{equation}
-\end{enumerate}
-Therefore, the variation reads
-\begin{equation}
-\delta(\sqrt{\det A}) = \frac{\sqrt{\det A}}{2} 
-\sum_{i=1}^n \frac{\delta \lambda_i}{\lambda_i}.
-\end{equation}
-Using the metric tensor, we obtain
-\begin{equation}
-\delta(\sqrt{\det g}) = \frac{\sqrt{\det g}}{2} 
-\left( \frac{1}{g_{11}} \delta g_{11} + \frac{1}{g_{22}} \delta g_{22} \right)
-= \frac{\sqrt{\det g}}{2} \, g^{\alpha\beta} \, \delta g_{\alpha\beta} \ .
-\end{equation}
-A potential concern is whether this expression remains valid for both diagonal and non-diagonal metrics, since in the latter case $\tfrac{1}{g_{ij}} \neq g^{ij}$ for $i \neq j$.  
-The answer is yes: the expression holds in general. The reason is that both $g^{\alpha\beta}$ and $g_{\alpha\beta}$ are tensors, and their variations are also tensors. Thus, the contraction $g^{\alpha\beta}\delta g_{\alpha\beta}$ is a scalar, valid in any basis.
-
-
-Finally, writing $\det g \equiv g$, we obtain
-\begin{equation}
-\delta(\sqrt{g}) = \frac{\sqrt{g}}{2}\, g^{\alpha\beta}\, \delta g_{\alpha\beta} \ , 
-\qquad g>0 \ ,
-\end{equation}
-\begin{equation}
-\delta(\sqrt{-g}) = \frac{\sqrt{-g}}{2}\, g^{\alpha\beta}\, \delta g_{\alpha\beta} \ , 
-\qquad g<0 \ .
-\label{variationofmetric}
-\end{equation}
-
-This result is one of the fundamental steps in deriving EFE \cite{Garcia2019RelativityCourse}.
-
-
-
-\paragraph{Contraction of the Christoffel symbol}
-\label{Contraction_Christoffelsymbol}
-
-We want to prove the following identity:
-\begin{equation}
-\Gamma^\mu_{\mu\nu} = \frac{1}{\sqrt{-g}} \, \partial_\nu \sqrt{-g} \ .
-\label{contractionchristoffelsymbols}
-\end{equation}
-This result will be very useful in subsequent derivations.  
-
-
-Recall the definition of the Christoffel symbols:
-\begin{equation}
-\Gamma^\mu_{\mu\nu} = \frac{1}{2} g^{\mu\rho} 
-\left( \partial_\nu g_{\rho\mu} + \partial_\mu g_{\rho\nu} - \partial_\rho g_{\mu\nu} \right) \ .
-\end{equation}
-Expanding, we obtain
-\begin{equation}
-\Gamma^\mu_{\mu\nu} 
-= \frac{1}{2} \Big( g^{\mu\rho} \, \partial_\nu g_{\rho\mu} 
-+ g^{\mu\rho} \, \partial_\mu g_{\rho\nu} 
-- g^{\mu\rho} \, \partial_\rho g_{\mu\nu} \Big) \ .
-\end{equation}
-Changing dummy indices in the last two terms, we rewrite this expression as
-\begin{equation}
-\Gamma^\mu_{\mu\nu} 
-= \frac{1}{2} \Big( g^{\mu\rho} \, \partial_\nu g_{\rho\mu} 
-+ g^{\mu\rho} \, \partial_\mu g_{\rho\nu} 
-- g^{\rho\mu} \, \partial_\mu g_{\rho\nu} \Big) \ .
-\end{equation}
-Since the metric tensor is symmetric, $g^{\mu\rho} = g^{\rho\mu}$, the last two terms cancel. Thus we obtain
-\begin{equation}
-\Gamma^\mu_{\mu\nu} = \frac{1}{2} g^{\mu\rho} \, \partial_\nu g_{\rho\mu} \ .
-\end{equation}
-Now, recall the variation of $\sqrt{-g}$ obtained previously in \eqref{variationofmetric}.  
-Dividing both sides of that expression by $\delta x^\nu$, we have
-\begin{equation}
-\frac{\delta \sqrt{-g}}{\delta x^\nu} 
-= \frac{1}{2} \sqrt{-g}\, g^{\alpha\beta} \, \frac{\delta g_{\alpha\beta}}{\delta x^\nu} \ .
-\end{equation}
-In the infinitesimal limit, this becomes
-\begin{equation}
-\frac{\partial \sqrt{-g}}{\partial x^\nu} 
-= \frac{1}{2} \sqrt{-g}\, g^{\alpha\beta} \, \frac{\partial g_{\alpha\beta}}{\partial x^\nu} \ .
-\end{equation}
-Therefore, dividing through by $\sqrt{-g}$, we obtain
-\begin{equation}
-\frac{1}{\sqrt{-g}} \, \partial_\nu \sqrt{-g} 
-= \frac{1}{2} g^{\alpha\beta} \, \partial_\nu g_{\alpha\beta} 
-= \Gamma^\mu_{\mu\nu} \ .
-\end{equation}
-This proves the desired identity \cite{cursoJavierGarcia53}.
-
-
-\paragraph{Variation of the Ricci scalar}
-\label{Variation_Ricciscalar}
-
-
-Let us recall the expression for the Ricci tensor:
-\begin{equation}
-R_{\sigma \nu} = \partial_\mu \Gamma^{\mu}_{\nu \sigma} - \partial_\nu \Gamma^{\mu}_{\mu \sigma} 
-+ \Gamma^{\mu}_{\mu \lambda} \Gamma^{\lambda}_{\nu \sigma} 
-- \Gamma^{\mu}_{\nu \lambda} \Gamma^{\lambda}_{\mu \sigma} \ .
-\end{equation}
-We will use the elementary variation properties
-\begin{enumerate}
-    \item $\delta(A \cdot B) = (\delta A) B + A (\delta B) \ ,$
-    \item $\delta(\partial A) = \partial (\delta A) \ .$
-\end{enumerate}
-We compute the variation of $R_{\sigma \nu}$:
-\begin{equation}
-\delta R_{\sigma \nu} = \partial_\mu (\delta \Gamma^{\mu}_{\nu \sigma}) - \partial_\nu (\delta \Gamma^{\mu}_{\mu \sigma})
-+ \Gamma^{\mu}_{\mu \lambda} (\delta \Gamma^{\lambda}_{\nu \sigma})
-+ (\delta \Gamma^{\mu}_{\mu \lambda}) \Gamma^{\lambda}_{\nu \sigma}
-- \Gamma^{\mu}_{\nu \lambda} (\delta \Gamma^{\lambda}_{\mu \sigma})
-- (\delta \Gamma^{\mu}_{\nu \lambda}) \Gamma^{\lambda}_{\mu \sigma} \ .
-\end{equation}
-Although the Christoffel symbols $\Gamma^{\lambda}{}_{\rho \sigma}$ are not tensorial, their variation is tensorial; hence we define:
-\begin{equation}
-T^{\lambda}_{\ \rho \sigma} \equiv \delta \Gamma^{\lambda}_{\rho \sigma}.
-\end{equation}
-With this notation, the previous result becomes
-\begin{equation}
-\delta R_{\sigma \nu}
-= \partial_\mu T^{\mu}{}_{\nu \sigma}
-- \partial_\nu T^{\mu}{}_{\mu \sigma}
-+ \Gamma^{\mu}{}_{\mu \lambda}\, T^{\lambda}{}_{\nu \sigma}
-+ T^{\mu}{}_{\mu \lambda}\, \Gamma^{\lambda}{}_{\nu \sigma}
-- \Gamma^{\mu}{}_{\nu \lambda}\, T^{\lambda}{}_{\mu \sigma}
-- T^{\mu}{}_{\nu \lambda}\, \Gamma^{\lambda}{}_{\mu \sigma} \, .
-\end{equation}
-We now rewrite these terms using covariant derivatives of the tensor $T^{\lambda}{}_{\rho \sigma}$,
-\begin{equation}
-\nabla_\rho T^{\lambda}{}_{\sigma \nu}
-= \partial_\rho T^{\lambda}{}_{\sigma \nu}
-+ \Gamma^{\lambda}{}_{\rho \alpha}\, T^{\alpha}{}_{\sigma \nu}
-- \Gamma^{\alpha}{}_{\rho \sigma}\, T^{\lambda}{}_{\alpha \nu}
-- \Gamma^{\alpha}{}_{\rho \nu}\, T^{\lambda}{}_{\sigma \alpha} \, .
-\end{equation}
-In particular, we have
-\begin{equation}
-\nabla_\mu T^{\mu}{}_{\nu \sigma}
-= \partial_\mu T^{\mu}{}_{\nu \sigma}
-+ \Gamma^{\mu}{}_{\mu \alpha}\, T^{\alpha}{}_{\nu \sigma}
-- \Gamma^{\alpha}{}_{\mu \nu}\, T^{\mu}{}_{\alpha \sigma}
-- \Gamma^{\alpha}{}_{\mu \sigma}\, T^{\mu}{}_{\nu \alpha} \, ,
-\end{equation}
-and
-\begin{equation}
-\nabla_\nu T^{\mu}{}_{\mu \sigma}
-= \partial_\nu T^{\mu}{}_{\mu \sigma}
-+ \Gamma^{\mu}{}_{\nu \alpha}\, T^{\alpha}{}_{\mu \sigma}
-- \Gamma^{\alpha}{}_{\nu \mu}\, T^{\mu}{}_{\alpha \sigma}
-- \Gamma^{\alpha}{}_{\nu \sigma}\, T^{\mu}{}_{\mu \alpha} \, .
-\end{equation}
-Subtracting the last two relations reproduces the variation of the Ricci tensor in a compact form,
-\begin{equation}
-\delta R_{\sigma \nu}
-= \nabla_\mu T^{\mu}{}_{\nu \sigma}
-- \nabla_\nu T^{\mu}{}_{\mu \sigma} \, , \qquad
-\text{with  } T^{\lambda}{}_{\rho \sigma} \equiv \delta \Gamma^{\lambda}{}_{\rho \sigma} \, .
-\end{equation}
-This is the Palatini identity \cite{cursoJavierGarcia54},
-\begin{equation}
-\delta R_{\sigma \nu}
-= \nabla_\mu \bigl(\delta \Gamma^{\mu}{}_{\nu \sigma}\bigr)
- - \nabla_\nu \bigl(\delta \Gamma^{\mu}{}_{\mu \sigma}\bigr) \, .
- \label{Palatini identity}
-\end{equation}
-With this result, we can now compute the variation of the scalar curvature, also referred to as the Ricci scalar.
-
-The scalar curvature is defined as
-\begin{equation}
-R = g^{\alpha \beta} R_{\alpha \beta} \, .
-\end{equation}
-Therefore, its variation is
-\begin{equation}
-\delta R = \delta(g^{\alpha \beta}) R_{\alpha \beta} + g^{\alpha \beta}\, \delta R_{\alpha \beta} \, .
-\end{equation}
-Using the Palatini identity \eqref{Palatini identity}, we write
-\begin{equation}
-\delta R = \delta(g^{\alpha \beta}) R_{\alpha \beta}
-+ g^{\alpha \beta} \left( \nabla_{\lambda} \delta \Gamma^{\lambda}{}_{\beta \alpha}
-- \nabla_{\beta} \delta \Gamma^{\lambda}{}_{\lambda \alpha} \right) \, .
-\end{equation}
-Since the covariant derivative of the metric vanishes,
-\(\nabla_{\mu} g^{\alpha \beta} = 0\),
-we can rewrite the divergence term as
-\begin{equation}
-\nabla_{\lambda} \bigl( g^{\alpha \beta} \, \delta \Gamma^{\lambda}{}_{\beta \alpha} \bigr)
-= \cancel{(\nabla_{\lambda} g^{\alpha \beta}) \, \delta \Gamma^{\lambda}{}_{\beta \alpha}}
-+ g^{\alpha \beta} \nabla_{\lambda} \delta \Gamma^{\lambda}{}_{\beta \alpha} \, ,
-\end{equation}
-where the first contribution vanishes due to metric compatibility.
-
-
-Thus, the expression simplifies to
-\begin{equation}
-\delta R = R_{\alpha \beta} \, \delta g^{\alpha \beta}
-+ \nabla_{\lambda} \bigl( g^{\alpha \beta} \, \delta \Gamma^{\lambda}{}_{\beta \alpha} \bigr)
-- \nabla_{\beta} \bigl( g^{\alpha \beta} \, \delta \Gamma^{\lambda}{}_{\lambda \alpha} \bigr) \, .
-\end{equation}
-By relabeling the dummy index $\lambda$ as $\mu$ in the second term and 
-$\beta$ as $\mu$ in the third term, we obtain
-\begin{equation}
-\delta R = R_{\alpha \beta}\, \delta g^{\alpha \beta}
-+ \nabla_{\mu} \left( g^{\alpha \beta} \, \delta \Gamma^{\mu}{}_{\beta \alpha}
-- g^{\alpha \mu} \, \delta \Gamma^{\lambda}{}_{\lambda \alpha} \right) \, .
-\end{equation}
-Defining the vector
-\begin{equation}
-J^{\mu} \equiv g^{\alpha \beta} \, \delta \Gamma^{\mu}{}_{\beta \alpha}
-- g^{\alpha \mu} \, \delta \Gamma^{\lambda}{}_{\lambda \alpha} \, ,
-\end{equation}
-which transforms as a tensor, we obtain the compact result
-\begin{equation}
-\delta R = R_{\alpha \beta}\, \delta g^{\alpha \beta} + \nabla_{\mu} J^{\mu} \, .
-\label{variationricciscalar}
-\end{equation}
-
-
-\paragraph{Variation of the Hilbert-Einstein action}
-\label{Variation_of_Hilbert_Einstein_action}
-
-
-Now we can compute the variation of the Einstein-Hilbert action:
-\begin{align}
-\delta S_{EH} &= \delta \int d^4x \, \sqrt{-g}\, R 
-= \int d^4x \, \delta \!\left(\sqrt{-g}\, R\right) \\
-&= \int d^4x \Big[\left(\delta\sqrt{-g}\right) R + \sqrt{-g}\, \delta R \Big].
-\end{align}
-
-Now, using the relations \eqref{variationofmetric} and \eqref{variationricciscalar} we get
-\begin{align}
-\delta S 
-&= \int d^4x \Big[ \Big(\tfrac{1}{2}\sqrt{-g}\, g^{\alpha\beta} \delta g_{\alpha\beta}\Big) R 
-+ \sqrt{-g}\, \big( R_{\alpha\beta}\, \delta g^{\alpha\beta} + \nabla_\mu J^\mu \big) \Big],
-\end{align}
-where the last term is a total divergence.
-
-Applying the principle of least action, we write
-\begin{align}
-\delta S &= \int d^4x \, \frac{\sqrt{-g}}{2} R\, g^{\alpha\beta} \delta g_{\alpha\beta} 
-+ \int d^4x \, \sqrt{-g}\, R_{\alpha\beta}\, \delta g^{\alpha\beta}
-+ \int d^4x \, \sqrt{-g}\, \nabla_\mu J^\mu = 0.
-\end{align}
-The divergence term can be expressed as
-\begin{equation}
-\begin{aligned}
-\nabla_\mu J^\mu 
-&= \partial_\mu J^\mu + \Gamma^{\mu}_{\lambda \mu}\, J^\lambda \\
-&= \partial_\mu J^\mu + \frac{1}{\sqrt{-g}} (\partial_\lambda\sqrt{-g}) J^\lambda \\
-&= \frac{1}{\sqrt{-g}} \Big[ \sqrt{-g}\, \partial_\mu J^\mu + (\partial_\lambda \sqrt{-g}) J^\lambda \Big] \\
-&= \frac{1}{\sqrt{-g}} \, \partial_\lambda(\sqrt{-g}\, J^\lambda) \ ,
-\end{aligned}
-\end{equation}
-where we have used the relation \eqref{contractionchristoffelsymbols} and we have relabeled the dummy index $\mu$ as $\lambda$.
-
-Therefore,
-\begin{align}
-\delta S_{EH} &= \int d^4x \, \frac{\sqrt{-g}}{2} R\, g^{\alpha\beta}\, \delta g_{\alpha\beta} 
-+ \int d^4x \, \sqrt{-g}\, R_{\alpha\beta}\, \delta g^{\alpha\beta} 
-+ \int d^4x \, \partial_\lambda(\sqrt{-g}\, J^\lambda) \ .
-\end{align}
-
-
-The last term is a surface contribution. For compact manifolds without boundary, this term vanishes identically and will therefore be set to zero in this thesis.
-In contrast, for spacetimes with a boundary it does not vanish, and in order to make the Einstein-Hilbert action well-defined under metric variations, one must add the Gibbons-Hawking-York boundary term.
-
-This additional piece is constructed from the trace of the extrinsic curvature of the boundary, denoted by $K$, and modifies the action in the following way \cite{BoundaryTerms}:
-\begin{equation}
-S = S_{EH} + S_{GHY} \;\sim\; \int_{\mathcal{M}} d^{4}x\,\sqrt{-g}\,R \;+\; 2 \int_{\mathcal{\partial M}} d^{3}x\,\sqrt{|h|}\,K \ ,
-\end{equation}
-where $h$ stands for the determinant of the induced metric on the boundary. Further discussion can be found in \cite{cursoJavierGarcia57}.
-
-
-
-Now we are interested in factoring out the variation of the metric. 
-However, in the first term the indices appear lowered, while in the second term they appear raised. 
-Therefore, we need to employ a useful trick that allows us to raise the indices in the variation of the metric. 
-
-We start from the identity
-\begin{equation}
-g_{\alpha\beta} g^{\beta\gamma} = \delta_\alpha^\gamma,
-\end{equation}
-its variation yields
-\begin{equation}
-\delta\!\left(g_{\alpha\beta} g^{\beta\gamma}\right) = 0 
-= \left(\delta g_{\alpha\beta}\right) g^{\beta\gamma} 
-+ g_{\alpha\beta}\, \delta g^{\beta\gamma},
-\end{equation}
-which implies
-\begin{equation}
-g^{\beta\gamma}(\delta g_{\alpha\beta})= - g_{\alpha\beta}\delta g^{\beta\gamma} \ .
-\end{equation}
-
-Taking the trace of a tensor $T^\mu{}_\nu$ gives
-\begin{equation}
-\mathrm{Tr}\, T^\mu{}_\nu = T^0{}_0 + T^1{}_1 + T^2{}_2 + T^3{}_3 = T^\mu{}_\mu \ .
-\end{equation}
-Applying this to the metric variation, we obtain
-\begin{equation}
-Tr\Big[ g^{\beta\gamma}(\delta g_{\alpha\beta})= - g_{\alpha\beta}\delta g^{\beta\gamma}\Big]\;\;\;\Rightarrow\;\;\;
-g^{\alpha\beta} \left(\delta g_{\alpha\beta}\right) = - g_{\alpha\beta} \, \delta g^{\alpha\beta},
-\end{equation}
-where we have used the symmetry of the metric tensor $g^{\beta\alpha}=g^{\alpha\beta}$.
-
-Thus, the variation of the Einstein-Hilbert action can be written as
-\begin{equation}
-\delta S 
-= \int d^4x \left[ -\tfrac{1}{2}\sqrt{-g}\, g_{\alpha\beta} R \, \delta g^{\alpha\beta} 
-+ \sqrt{-g}\, R_{\alpha\beta}\, \delta g^{\alpha\beta} \right] .
-\end{equation}
-Therefore, imposing $\delta S = 0$, we obtain
-\begin{equation}
-\delta S 
-= \int d^4x \, \sqrt{-g} 
-\left(R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R \right)\delta g^{\alpha\beta} = 0.
-\end{equation}
-Since the variations $\delta g^{\alpha\beta}$ are arbitrary, this yields the EFE in vacuum:
-\begin{equation}
-G_{\alpha\beta} := R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R = 0.
-\end{equation}
-
-In order to include matter fields in the theory, we add an additional term to the gravitational action. The total action then takes the form
-\begin{equation}
-    S = S_{EH} + S_{GHY} + S_M  = \frac{c^4}{16 \pi G}\int_{\mathcal{M}} d^{4}x\,\sqrt{-g}\,R \;+\; \frac{c^4}{8 \pi G} \int_{\mathcal{\partial M}} d^{3}x\,\sqrt{|h|}\,K + \int_{\mathcal{M}} d^{4}x\,\sqrt{-g}\,\mathcal{L_\text{m}} \ ,
-\end{equation}
-where $\mathcal{L}_{m}$ denotes the matter Lagrangian density.
-
-We now consider the variation of the total action 
-\begin{equation}
-\delta S = \frac{c^4}{16 \pi G} \int d^{4}x \, \sqrt{-g}\, \delta g^{\alpha\beta}
-\left( R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R \right)
-+ \delta \left( \int d^{4}x \, \sqrt{-g}\, \mathcal{L}_{m} \right)  .
-\end{equation}
-The variation of the matter action reads
-\begin{equation}
-\delta S_{m} = \int d^{4}x \, \delta\!\left(\sqrt{-g}\, \mathcal{L}_{m}\right) 
-= \int d^{4}x \left[ (\delta\sqrt{-g})\, \mathcal{L}_{m} + \sqrt{-g}\, \delta \mathcal{L}_{m} \right] \, .
-\end{equation}
-Since the variation of the determinant is
-\begin{equation}
-\delta(\sqrt{-g}) = -\tfrac{1}{2} \sqrt{-g}\, g_{\alpha\beta}\, \delta g^{\alpha\beta} \, ,
-\end{equation}
-and the variation of the matter Lagrangian can be expressed as
-\begin{equation}
-\delta \mathcal{L}_{m} = \frac{\delta \mathcal{L}_{m}}{\delta g^{\alpha\beta}} \, \delta g^{\alpha\beta} \, ,
-\end{equation}
-the full variation of the matter action becomes
-\begin{equation}
-\delta S_{m} = \int d^{4}x \, \tfrac{1}{2}\sqrt{-g} \, \delta g^{\alpha\beta} 
-\left[ - g_{\alpha\beta} \mathcal{L}_{m} \,  
-+ \frac{\delta \mathcal{L}_{m}}{\delta g^{\alpha\beta}} \right] \, .
-\end{equation}
-Gathering all contributions, the total variation of the action reads
-\begin{equation}
-\delta S = \int d^{4}x \, \sqrt{-g}\,\delta g^{\alpha\beta} 
-\left[ \frac{c^4}{16 \pi G} \left( R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R \right) 
-+ \tfrac{1}{2} \Big(-g_{\alpha\beta} \mathcal{L}_{m} 
-+ 2\frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}}\Big) \right] \ .
-\end{equation}
-Applying the variational principle considering $\delta S = 0$ we obtain:
-\begin{equation}
-     R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R  
-= -\frac{8 \pi G}{c^4} \Big(-g_{\alpha\beta} \mathcal{L}_{m} 
-+ 2\frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}}\Big). 
-\end{equation}
-Identifying the energy-momentum tensor as
-\begin{equation}
-T_{\alpha\beta} = g_{\alpha\beta} \, \mathcal{L}_{m} - 2 \frac{\partial \mathcal{L}_{m}}{\partial g^{\alpha\beta}} 
- = \frac{-2}{\sqrt{-g}} 
-\frac{\delta (\sqrt{-g}\,\mathcal{L}_{m})}{\delta g^{\alpha\beta}} \ ,
-\end{equation}
-we finally obtain the EFE in the form
-\begin{equation}
-R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R 
-= \frac{8\pi G}{c^{4}}\, T_{\alpha\beta} \, .
-\end{equation}
+which ensures that energy and momentum are locally conserved for any physically meaningful system. In flat spacetime this reduces to $\partial_\mu T^{\mu\nu} = 0$, encompassing both energy and momentum conservation, while in curved spacetime the covariant form remains valid without modification.
 
 
 \subsection{The cosmological constant}
 
-
-So far we have justified EFE in two distinct ways: first, as the natural covariant extension of Poisson’s equation for the Newtonian potential; and second, as the outcome of varying the simplest possible action constructed from the metric. Before exploring explicit solutions, it is instructive to examine possible modifications of these equations. Among the many conceivable generalizations, a particularly important one is the introduction of a cosmological constant $\Lambda$ \cite{llibrecarroll2004lectures}.
-
-The action is then modified to include this additional contribution,
-\begin{equation}
-S = -\frac{c^{4}}{16\pi G} \int d^{4}x \, \sqrt{-g}\,(R - 2\Lambda) 
-+ \int d^{4}x \, \sqrt{-g}\,\mathcal{L}_{m} \, ,
-\end{equation}
-which leads to the field equations
+Among the possible modifications of the EFE \eqref{einsteinequations}, a particularly important one is the introduction of a cosmological constant $\Lambda$ \cite{llibrecarroll2004lectures}. Including this term modifies the field equations to
 \begin{equation}
 R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R + g_{\alpha\beta}\Lambda 
 = \frac{8 \pi G}{c^{4}}\, T_{\alpha\beta} \, .
-\label{einsteinequations}
+\label{einsteinequationslambda}
 \end{equation}
-Historically, Einstein introduced the cosmological constant in 1917 as a way to obtain a static universe without beginning or end, effectively behaving like a repulsive or ``antigravitational'' pressure. However, soon after, it was realized that the static solutions of the field equations were unstable. In 1929, the American astronomer Edwin Hubble (1889--1953) discovered that the universe is in fact expanding, a result fully consistent with the original, unmodified field equations. This led Einstein to famously refer to the cosmological constant as ``the biggest blunder'' of his life.  
+Historically, Einstein introduced $\Lambda$ in 1917 as a way to obtain a static universe without beginning or end, effectively behaving like a repulsive pressure. However, the static solutions were later found to be unstable, and in 1929 Edwin Hubble (1889--1953) discovered that the universe is in fact expanding, a result fully consistent with the 
+original unmodified equations. This led Einstein to famously refer to the cosmological constant as ``the biggest blunder'' of his life.
 
-Ironically, observations in 1998 with the Hubble Space Telescope revealed that the universe is not only expanding but doing so at an accelerated rate. One possible explanation invokes a pervasive dark energy that fills space and may be effectively described by the cosmological constant. Thus, what Einstein once dismissed as his greatest mistake has regained scientific relevance: dark energy and the cosmological constant now appear essential to account for the accelerated expansion of the universe, even though their true physical nature remains one of the deepest mysteries in modern physics \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
-
-
-
-The modern challenge, however, lies in the so-called cosmological constant problem: the theoretical estimates of $\Lambda$ obtained from quantum field theory suggest a natural scale of order $\Lambda \sim m_{P}^{4} \sim 10^{76}\,\mathrm{GeV}^{4}$, while cosmological observations constrain it to be about $10^{-47}\,\mathrm{GeV}^{4}$. This discrepancy of roughly $10^{123}$ is the largest known mismatch between theory and experiment, making the cosmological constant one of the deepest unresolved puzzles in contemporary physics \cite{LlibreBertJanssen}.
+Ironically, observations in 1998 with the Hubble Space Telescope revealed that the expansion is accelerating. One possible explanation invokes a pervasive dark energy effectively described by $\Lambda$, which has thus regained scientific relevance despite its troubled history \cite{Llibre_Peter_Collier_unacosadificildecomprender}. The 
+modern challenge lies in the so-called cosmological constant problem: quantum field theory predicts $\Lambda \sim m_{P}^{4} \sim 10^{76}\,\mathrm{GeV}^{4}$, while observations constrain it to $\sim 10^{-47}\,\mathrm{GeV}^{4}$, a discrepancy of roughly $10^{123}$ and the largest known mismatch between theory and experiment \cite{LlibreBertJanssen}.
 
 \section{Relevant solutions to Einstein’s equations}
 \label{solutionseinsteinequations}
@@ -1968,7 +1037,7 @@ ds^2 = -\left(1 - \frac{2GM}{r}\right) dt^2
 \end{equation}
 where $M$ denotes the mass of the central object \cite{Llibre_Peter_Collier_unacosadificildecomprender}. 
 
-This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury), as well as to predict the bending of light by gravity (see Section $\S$\ref{Electromagnetic_gravitational_lensing}). Most notably, it predicts the existence of BHs, one of the most striking consequences of GR that we will se in this section.
+This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury), as well as to predict the bending of light by gravity. Most notably, it predicts the existence of BHs, one of the most striking consequences of GR that we will se in this section.
 
 It is important to understand that there are two different Schwarzschild solutions. 
 The first one is the exterior Schwarzschild solution \eqref{exteriorSchwarz}, which applies to the region 
@@ -3875,7 +2944,7 @@ is dominated by the stationary points of $\phi$, and each
 image $j$ contributes one term
 \begin{equation}
     F(f;\boldsymbol{\phi}) = \sum_j \sqrt{\mu_j}\,
-    e^{2\pi i f t_j - i\pi n_j\,\mathrm{sign}(f)},
+    e^{-2\pi i f t_j + i\pi n_j\,\mathrm{sign}(f)},
     \label{eq:GO_amplification}
 \end{equation}
 where $\mu_j$ is the magnification \eqref{eq:magnification} 
@@ -3936,7 +3005,7 @@ the frequency-domain strain of the $j$-th lensed image is
 \begin{equation}
     \tilde{h}^j_L(f;\,\boldsymbol{\theta},\boldsymbol{\phi}_j)
     = \sqrt{\mu_j}\,
-    e^{2\pi i f t_j - i\pi n_j\,\mathrm{sign}(f)}\,
+    e^{-2\pi i f t_j + i\pi n_j\,\mathrm{sign}(f)}\,
     \tilde{h}_U(f;\,\boldsymbol{\theta}),
     \label{eq:lensed_strain}
 \end{equation}
