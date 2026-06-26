@@ -165,113 +165,50 @@ geometry, pioneered by \href{https://es.wikipedia.org/wiki/Bernhard_Riemann}{Ber
 replacing Newton's force with the geometry of spacetime itself.
 
 
-
 \subsection{Manifolds and tangent spaces}
 \label{Differentiable manifolds and coordinate systems}
 
-In order to describe curved spaces mathematically, we use the concept of a manifold, which can be understood as a space that may possess curvature or a nontrivial topology, yet locally resembles Euclidean space. 
-
-In more intuitive terms, an $N$-dimensional manifold $\mathcal{M}^N$ is a space that, in a neighborhood of each point $p \in \mathcal{M}^N$, looks like $\mathbb{R}^N$.  
-At every point $p$ we can define the tangent space $T_p(\mathcal{M}^N)$, which is an $N$-dimensional vector space isomorphic\footnote{Two vector spaces \(\mathcal{A}\) and \(\mathcal{B}\) are considered isomorphic when there exists a bijective linear transformation \(f: \mathcal{A} \to \mathcal{B}\) whose inverse mapping \(f^{-1}: \mathcal{B} \to \mathcal{A}\) is also linear.
- In this case, \(\mathcal{A}\) and \(\mathcal{B}\) have the same algebraic structure and can be considered ``equivalent'' for all purposes of linear algebra.} to $\mathbb{R}^N$.  
-Saying that a manifold is locally $\mathbb{R}^N$ means that, within a sufficiently small region around $p$, the tangent space $T_p(\mathcal{M}^N)$ provides an accurate linear approximation to the manifold.  
-Nevertheless, tangent spaces at different points are distinct, reflecting the fact that the manifold is not globally flat (see Fig. \ref{fig:tangent space}).
+In order to describe curved spaces mathematically, we use the concept of a manifold: a space that may possess curvature or nontrivial topology, yet locally resembles Euclidean space. Formally, an $N$-dimensional manifold $\mathcal{M}^N$ is a space that, in a neighborhood of each point $p$, looks like $\mathbb{R}^N$. At every point $p$ we can define the tangent space $T_p(\mathcal{M}^N)$, an 
+$N$-dimensional vector space that provides a linear approximation to the manifold in a small region around $p$. Tangent spaces at different points are distinct, reflecting the fact that the manifold is not globally flat (see Fig.~\ref{fig:tangent space}).
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{Figures/Tangent_space_manifold.jpg}
-    \caption{The set of all vectors defined at a point \(p\) forms the tangent space \(T_p(\mathcal{M})\) at \(p\). Assembling the tangent spaces for every point of the manifold produces the tangent bundle \(T(\mathcal{M})\).
- Original illustration based on the source: \cite{tangentspaceimage}.}
+    \caption{The set of all vectors defined at a point \(p\) forms the tangent space \(T_p(\mathcal{M})\) at \(p\). Assembling the tangent spaces for every point of the manifold produces the tangent bundle \(T(\mathcal{M})\). Original illustration based on the source: 
+    \cite{tangentspaceimage}.}
     \label{fig:tangent space}
 \end{figure}
 
-This intuitive picture is made precise by the definition of a topological manifold. 
-Formally, an $N$-dimensional topological manifold is a topological space\footnote{A topological space consists of a set \(S\) together with a collection \(\mathcal{O}\) of its subsets, referred to as open sets, satisfying the following properties: (i) both \(S\) and the empty set are elements of \(\mathcal{O}\); (ii) any union, possibly infinite, of members of \(\mathcal{O}\) is also in \(\mathcal{O}\); and (iii) the intersection of finitely many members of \(\mathcal{O}\) belongs to \(\mathcal{O}\).  
-The ordered pair \((S, \mathcal{O})\) is then called a topological space \cite{Coordinatebasis}.}
- $\mathcal{M}$ satisfying:
- 
-\begin{enumerate}
-    \item Hausdorff property: for any two different points in \(\mathcal{M}\), there exist disjoint open sets, each containing one of the points.
-    
-    \item Second-countable: the topology on \(\mathcal{M}\) admits a basis consisting of a countable set.
-    
-    \item Locally Euclidean of dimension \(n\): every point \(p \in \mathcal{M}\) possesses an open neighborhood \(V \subset \mathcal{M}\) that is homeomorphic to an open subset of \(\mathbb{R}^n\).
+Formally, a topological manifold satisfies three conditions: the Hausdorff property (any two distinct points can be separated by disjoint open sets), second-countability (the topology admits a countable basis), and local Euclideanness (every point has a neighborhood homeomorphic to an open subset of $\mathbb{R}^n$). The last condition ensures that, although $\mathcal{M}$ may be globally curved, every point admits a patch that looks like flat $\mathbb{R}^n$.
 
-\end{enumerate}
-
-The last condition ensures that, although $\mathcal{M}$ may be globally curved, every point admits a ``patch'' that looks like a piece of flat $\mathbb{R}^n$. These patches provide the setting for introducing charts, which give local coordinates and allow us to describe the manifold in a precise mathematical language.
-
-Manifolds appear throughout mathematics and physics. Examples include $\mathbb{R}^n$, spheres $S^n$, torus $T^n=S^1 \times \ldots \times S^1$, and Lie groups. In mechanics, the configuration space and phase space are manifolds; in thermodynamics, the state space defined by variables such as $(P,V,T)$ can be represented as a manifold. In GR, spacetime is modeled as a Lorentzian manifold (see $\S$\ref{metric tensor} for more details), which is locally isometric to Minkowski space but can have nontrivial global curvature determined by the distribution of matter and energy.
-
-Thus, manifolds provide a rigorous framework for describing spaces that are locally simple but globally rich, equipped with smoothly overlapping coordinate systems, and with tangent structures that allow the precise definition of vectors, tensors, and other geometric objects essential in physics.
-
+Manifolds appear throughout physics: in mechanics, configuration and phase spaces are manifolds; in GR, spacetime is modeled as a Lorentzian manifold (see $\S$\ref{metric tensor}), locally isometric to Minkowski space but with nontrivial global curvature determined by the distribution of matter and energy.
 
 \subsubsection{Mappings, charts, and atlases}
 
-A mapping between two sets represents the most fundamental concept in this framework. Given two sets \(\mathcal{M}\) and \(\mathcal{N}\), a map \(\phi: \mathcal{M} \to \mathcal{N}\) is a rule that associates to each element of \(\mathcal{M}\) precisely one element of \(\mathcal{N}\). Thus, a map can be viewed as a generalization of the traditional notion of a function.
- (see Fig. \ref{fig:mapping}). 
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.56\linewidth]{Figures/mapping.png}
-    \caption{Illustration of a mapping $\phi: \mathcal{M} \to \mathcal{N}$ between two sets, where each element of $\mathcal{M}$ is assigned precisely one element of $\mathcal{N}$. Source: \cite{llibrecarroll2004lectures}.}
-    \label{fig:mapping}
-\end{figure}
-
-Given two mappings \(\varphi: A \to B\) and \(\psi: B \to C\), their composition \(\psi \circ \varphi: A \to C\) is defined by
-\begin{equation}
-(\psi \circ \varphi)(a) = \psi\bigl(\varphi(a)\bigr) \ ,
-\end{equation}
-where $\varphi$ acts first, followed by $\psi$.
-
-In differential geometry, this concept is refined to describe the local structure of a manifold. A chart (also called a coordinate system) on a set \(\mathcal{M}\) is given by a subset \(U \subset \mathcal{M}\) along with an injective map \(\varphi: U \to \mathbb{R}^n\) such that the image \(\varphi(U) = \widetilde{U}\) forms an open subset of \(\mathbb{R}^n\).
-
-Since any map is onto its image, the restricted map $\varphi: U \to \varphi(U)$ is invertible. In this setting, $U$ is regarded as an open subset of $\mathcal{M}$, and the components of
-\begin{equation}
-\varphi(p) = \bigl(x^1(p), \ldots, x^n(p)\bigr) \ ,
-\end{equation}
-are referred to as the local coordinates on \(U\).
-If $\varphi(p) = 0$, the chart is said to be centered at the point $p$.
-
-Intuitively, a chart can be thought of as a region of the manifold equipped with a coordinate system, much like a small patch of a curved surface represented on a flat map (see Fig. \ref{fig:chart}). 
+A chart on $\mathcal{M}$ is a pair $(U, \varphi)$ consisting of an open subset $U \subset \mathcal{M}$ and an injective map $\varphi: U \to \mathbb{R}^n$, whose components 
+$\varphi(p) = (x^1(p), \ldots, x^n(p))$ define local coordinates on $U$ (see Fig.~\ref{fig:chart}). Just as no single flat map can represent the entire Earth without distortion, a single chart rarely covers an entire manifold. For instance, covering the 2-sphere $S^2$ requires at least two charts.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.55\linewidth]{Figures/Captura de pantalla 2025-08-01 183551.png}
-    \caption{Representation of a chart $(U, \varphi)$ on a manifold $\mathcal{M}$, where the subset $U \subset \mathcal{M}$ is mapped bijectively to an open set $\widetilde{U} \subset \mathbb{R}^n$ via $\varphi$. This illustrates the local euclidean nature of manifolds. Source: \cite{Coordinatebasis}.}
+    \caption{Representation of a chart $(U, \varphi)$ on a manifold $\mathcal{M}$, where the subset $U \subset \mathcal{M}$ is mapped bijectively to an open set $\widetilde{U} \subset \mathbb{R}^n$ via $\varphi$. Source: \cite{Coordinatebasis}.}
     \label{fig:chart}
 \end{figure}
 
-However, just as it is impossible to represent the entire Earth on a single flat map without distortion (the classic ``cartographer's dilemma'' \cite{natgeo_cartographers_dilemma}), a single chart rarely covers the entire manifold. For example, $\mathbb{R}^n$ can be covered with a single chart, but the $2$-sphere $S^2$ cannot: a stereographic projection from the North Pole maps every point of $S^2$ except the North Pole itself to $\mathbb{R}^2$; conversely, projecting from the South Pole covers all but that point. Covering the whole $S^2$ requires at least two charts.
-
-For this reason, we use a collection of charts. An atlas is a family of charts $\{(U_\alpha, \varphi_\alpha)\}$ whose domains cover $\mathcal{M}$ and satisfy two conditions:
-\begin{enumerate}
-    \item The collection of the domains covers the entire manifold:
-    
-    \begin{equation}
-    \bigcup_\alpha U_\alpha = \mathcal{M} \ .
-    \end{equation}
-    \item The charts fit together smoothly: whenever $U_\alpha \cap U_\beta \neq \emptyset$, the transition map
-    \begin{equation}
-    \varphi_\beta \circ \varphi_\alpha^{-1}: \varphi_\alpha(U_\alpha \cap U_\beta) \to \varphi_\beta(U_\alpha \cap U_\beta) \ ,
-    \end{equation}
-    is a $C^\infty$ (smooth) function between open subsets of $\mathbb{R}^n$ (see Fig. \ref{fig:transition maps}).
-\end{enumerate}
-
+An atlas is a collection of charts $\{(U_\alpha, \varphi_\alpha)\}$ whose domains cover $\mathcal{M}$, with the additional requirement that whenever $U_\alpha \cap U_\beta \neq \emptyset$, the transition map
+\begin{equation}
+\varphi_\beta \circ \varphi_\alpha^{-1}: 
+\varphi_\alpha(U_\alpha \cap U_\beta) \to 
+\varphi_\beta(U_\alpha \cap U_\beta)
+\end{equation}
+is $C^\infty$ (see Fig.~\ref{fig:transition maps}). These smooth transition maps ensure that the different local coordinate patches are consistently glued together, uniquely determining the manifold's differentiable structure.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.58\linewidth]{Figures/transition maps.png}
-    \caption{A chart is a patch $U$ of an $N$-dimensional manifold $M^N$ equipped with a mapping $\phi: U \to \mathbb{R}^N$ that defines a coordinate system on that region. When two charts overlap, their coordinate systems are related by a transformation that converts coordinates from one system to the other. Original illustration based on the source: \cite{Coordinatebasis}.}
+    \caption{When two charts overlap, their coordinate systems are related by a smooth transition map. Original illustration based on the source: \cite{Coordinatebasis}.}
     \label{fig:transition maps}
 \end{figure}
-
-
-These smooth transition maps ensure that the different ``local euclidean versions'' of the manifold are consistently and continuously glued together. A maximal atlas is one that contains all charts compatible with a given set, uniquely determining the manifold's differentiable structure.
-
-
-
-
 
 
 \subsection{Mathematical interlude}
@@ -486,7 +423,7 @@ Some key properties of Christoffel symbols are:
 \begin{itemize}
     \item They provide the rule for differentiating tensors in a curved manifold.
     \item They are called connection coefficients because they ``connect'' nearby points on the manifold, defining how vectors vary between them, crucial for defining parallel transport.
-    \item If we know the metric $g_{\mu\nu}$, we can compute them explicitly as (see Appendix $\S$\ref{Proofs and derivations} for the derivation):
+    \item If we know the metric $g_{\mu\nu}$, we can compute them explicitly as (see \cite{llibretheoreticalminimum} for the derivation):
     \begin{equation}
     \Gamma^\rho_{\mu\nu} = \frac{1}{2} g^{\rho\lambda} \left( \partial_\mu g_{\lambda\nu} + \partial_\nu g_{\lambda\mu} - \partial_\lambda g_{\mu\nu} \right) \ .
     \end{equation}
@@ -919,67 +856,36 @@ Einstein's equations are highly nonlinear, which makes them extremely challengin
 of the universe, and the formation of BHs, all consequences of the same geometric framework.
 
 
-\subsection{The energy-momentun tensor}
+\subsection{The energy-momentum tensor}
 \label{The energy-momentun tensor}
 
-We begin by introducing the energy-momentum tensor (also known as the stress-energy tensor), which appears on the right-hand side of EFE. Up to this point, using differential geometry and the equivalence principle, we have interpreted gravity as the curvature of spacetime. However, we have not yet addressed what actually generates that curvature. In Newtonian physics, mass is regarded as the source of the gravitational field.  However, special relativity establishes that the mass of an object is merely one of the possible manifestations of energy, and that it is possible to convert one into the other through the well-known relation \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
+The energy-momentum tensor $T^{\mu\nu}$ appears on the right-hand side of the EFE as the source of spacetime curvature. In Newtonian physics, mass alone generates the gravitational field, but special relativity establishes that mass is just one manifestation of energy through
 \begin{equation}
 E^2 = p^2 c^2 + m^2 c^4 \ .
 \label{energy-momentum}
 \end{equation}
-Therefore, it is reasonable to postulate that the source of the gravitational field in GR must encompass not only mass but also energy and momentum. 
-
-Now, we need to find a practical way to represent this source of curvature. This is precisely where the energy-momentum tensor $T^{\mu\nu}$ comes into play. This tensor encapsulates the macroscopic properties of a given physical system, modeled as a fluid\footnote{In GR, all relevant forms of matter can be modeled as perfect fluids (a perfect fluid is one that can be fully characterized solely by its pressure and density), ranging from stars and electromagnetic fields to the entire universe \cite{llibrecarroll2004lectures}.}, including quantities such as velocity, pressure, density, and other relevant parameters, thereby representing the system’s total energy and momentum content. Moreover, the tensor describes the flux of four-momentum \( p^{\mu} \) across a hypersurface of constant \( x^{\nu} \). Therefore we identify \( T^{\mu\nu} \) as the source term in the field equations. 
-
-Since the energy-momentum tensor is a rank-2 tensor, its components can be represented in the form of a \(4 \times 4\) matrix (see Fig.~\ref{fig:energymomentummatrix}).
+The source of gravity in GR must therefore encompass not only mass but all forms of energy and momentum. The tensor $T^{\mu\nu}$ encapsulates these contributions by describing the flux of four-momentum $p^\mu$ across a hypersurface of constant $x^\nu$, and its components can be represented as a $4\times 4$ matrix (see Fig.~\ref{fig:energymomentummatrix}): $T_{00}$ is the energy density, $T_{0i} = T_{i0}$ the momentum density or energy flux, and $T_{ij}$ the momentum flux, with diagonal components giving the isotropic pressure and off-diagonal ones the shear stress.
 
 \begin{figure}[h!]
     \centering
     \hspace{1.9cm}
     \includegraphics[width=0.7\linewidth]{Figures/energy momentum tensor.png}
-    \caption{Schematic representation of the energy-momentum tensor $T_{\mu\nu}$ as a $4 \times 4$ matrix. The components include the energy density ($T_{00}$), energy flux ($T_{0i}$), momentum density ($T_{i0}$), momentum flux ($T_{ij}$), as well as pressure and shear stress terms. Source: \cite{energymomentumtensor}.}
+    \caption{Schematic representation of the energy-momentum tensor $T_{\mu\nu}$ as a $4 \times 4$ matrix. Source: \cite{energymomentumtensor}.}
     \label{fig:energymomentummatrix}
 \end{figure}
 
-These components can be described as follows:
-
-\begin{itemize}
-    \item $T_{00}$ represents the flux of the time component ($\mu=0$) of the four-momentum across a hypersurface of constant $t$ (i.e., normal vector $x^0$). Physically, this corresponds to the energy density in space-time. 
-    
-    \item $T_{i0} = T_{0i}$ denotes the momentum density (momentum per unit volume) or, equivalently, the energy flux. It can be interpreted as the flow of relativistic mass through a spatial hypersurface with normal vector $x^i$.
-    
-    \item $T_{ik}$ corresponds to the $i$-th component of the momentum flux through a spatial hypersurface whose normal vector is $x^k$. These terms describe the mechanical stress in the system. When $i = k$, $T_{ii}$ gives the normal stress, which for a static fluid is the isotropic pressure. For $i \neq k$, the components $T_{ik}$ represent shear stresses, related to the fluid's viscosity.
-\end{itemize}
-
-The general expression for a perfect fluid in flat spacetime, where 
-$g^{\mu\nu} = \eta^{\mu\nu}$, can be written as (using natural units with $c=1$):
+For a perfect fluid in flat spacetime, modeled as a system fully characterized by its energy density $\rho$ and isotropic pressure $P$, the tensor takes the form \cite{llibrecarroll2004lectures}
 \begin{equation}
-T^{\mu\nu} = (\rho + P) \, U^{\mu} U^{\nu} \pm P \, \eta^{\mu\nu} \ .
+T^{\mu\nu} = (\rho + P) \, U^{\mu} U^{\nu} \pm P \, \eta^{\mu\nu} \ ,
 \end{equation}
-The choice of sign depends on the metric convention: it is positive for $(-,+,+,+)$ and negative for $(+,-,-,-)$.
+where $U^\mu = \gamma(c, \vec{v})$ is the four-velocity of the fluid. In the comoving frame, $U^\mu = (1,0,0,0)$ and the tensor reduces to $T^{\mu\nu} = \mathrm{diag}(\rho, P, P, P)$.
 
-Here, $\rho$ denotes the rest-frame energy density, $P$ the isotropic pressure, $\eta^{\mu\nu}$ the Minkowski metric describing flat spacetime (see \cite{derivationenergymomentuntensor} for a derivation), and $U^\mu$ is the four-velocity of the fluid (satisfying $U^\mu U_\mu = -1$ in the $(-,+,+,+)$ metric). The four-velocity takes the form \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
-\begin{equation}
-U^{\mu} = \left(U^{0}, U^{1}, U^{2}, U^{3}\right) 
-= \frac{dx^{\mu}}{d\tau} 
-= (c\gamma, \gamma \vec{v}) 
-= \gamma (c, \vec{v}) \ .
-\end{equation}
-Thus, $U^{0} = c\gamma$. In the comoving rest frame, $\gamma = 1$, so we obtain 
-$U^{0} = c$ and $U^{0} U^{0} = c^{2}$.
-
-A comoving observer, one who moves together with the fluid and therefore shares its four-velocity $U^\mu$, perceives the fluid as locally isotropic. For such an observer, the four-velocity reduces to $U^{\mu} = (1,0,0,0)$, and the stress-energy tensor simplifies to
-\begin{equation}
-T^{\mu\nu} = \text{diag}(\rho, P, P, P) \ ,
-\end{equation}
-assuming the metric $\eta^{\mu\nu} = \text{diag}(-1,1,1,1)$.
-
-
-A key property of the energy-momentum tensor is that it satisfies the conservation law \cite{Llibre_Peter_Collier_unacosadificildecomprender}
+A key property of $T^{\mu\nu}$ is its conservation law
 \begin{equation}
 \nabla_\mu T^{\mu\nu} = 0 \ ,
 \end{equation}
-which ensures that energy and momentum are locally conserved for any physically meaningful system. In flat spacetime this reduces to $\partial_\mu T^{\mu\nu} = 0$, encompassing both energy and momentum conservation, while in curved spacetime the covariant form remains valid without modification.
+which ensures local conservation of energy and momentum in any physically meaningful system, both in flat and curved spacetime 
+\cite{Llibre_Peter_Collier_unacosadificildecomprender}.
 
 
 \subsection{The cosmological constant}
@@ -1065,125 +971,82 @@ An important characteristic of the Schwarzschild exterior solution is that when 
 This means that, far away from the source, the gravitational field is essentially negligible and spacetime is indistinguishable from flat Minkowski space\footnote{Spacetimes that exhibit this behavior are referred to as asymptotically flat and can be regarded as representing isolated systems \cite{Llibre_Peter_Collier_unacosadificildecomprender}.}.
 
 \subsubsection{The Kretschmann scalar and the Schwarzschild radius}
-One of the most striking features appears in the limit of very small $r$.
-As $r \to 0$, the metric components diverge:
+
+As $r \to 0$, the metric components diverge, signaling a singularity where spacetime curvature becomes infinite and the laws of physics break down \cite{SchwarzschildSolutionlimit}. Metrics derived from 
+EFE can present two types of singularities. Coordinate singularities are artifacts of the chosen coordinate system with no physical content: for instance, $g_{\phi\phi} = 0$ at $\theta = 0, \pi$ in spherical coordinates, which vanishes under a simple rotation. Physical singularities correspond to genuine divergences of spacetime curvature, 
+and Hawking and Penrose showed in 1969 that such singularities necessarily exist inside any closed trapped surface \cite{Penrose1969}.
+
+To distinguish between the two, one computes curvature invariants constructed from contractions of the Riemann tensor, which are independent of the coordinate choice. For the Schwarzschild solution, the Kretschmann scalar
 \begin{equation}
-\lim_{r \to 0} \left(1 - \frac{2GM}{r}\right) \to \infty.
+K \equiv R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} = \frac{48G^2M^{2}}{r^{6}}
 \end{equation}
-This divergence is called a singularity, showing that the solution is no longer physically valid at $r=0$. At this point, believed to lie at the center of a BH, spacetime reaches infinite curvature, matter is compressed to infinite density, and the laws of physics break down. In the context of GR this represents a central problem that demands careful study \cite{SchwarzschildSolutionlimit}.
-
-More generally, metrics derived from EFE often present singularities in certain regions of spacetime, where some components of $g_{\mu\nu}$ or its determinant either vanish or diverge. 
-It is important to distinguish between two different types of singularities. 
-The first type are coordinate singularities, which are merely artifacts of the chosen coordinate system. 
-For example, in spherical coordinates the determinant $|g| = r^{2}\sin^{2}\theta$ vanishes as $r \to 0$, even though in Cartesian coordinates the origin is a perfectly regular point. 
-
-A further example is found at $\theta = 0$ and $\theta = \pi$, where $g_{\phi\phi} = 0$. 
-This apparent degeneracy is again only a coordinate effect: a spatial rotation in $SO(3)$ would simply move the singularity elsewhere without altering the underlying geometry, and a transformation to Cartesian coordinates removes it entirely. 
-Thus, such coordinate singularities carry no physical content and will not concern us further.
-
-By contrast, a physical singularity corresponds to a genuine divergence of spacetime curvature. 
-In the vicinity of such a singularity, the gravitational field becomes arbitrarily strong and tidal forces grow without bound. 
-Hawking and Penrose showed in 1969 \cite{Penrose1969} that within any closed trapped surface, a physical singularity must exist, which implies that the central singularity of a BH is indeed physical\footnote{According to the cosmic censorship conjecture, however, such singularities are always hidden behind an event horizon, preventing them from being observed directly and thus avoiding violations of causality. 
-If a singularity is not covered by a horizon, it is referred to as a naked singularity \cite{Penrose1969}.}. 
-
-
-To determine the nature of a singularity, one typically computes curvature invariants, which are scalar quantities constructed from contractions of the Riemann tensor and do not depend on the choice of coordinates:
-\begin{equation}
-R, \quad R_{\mu\nu}R^{\mu\nu}, \quad R_{\mu\nu\alpha\beta}R^{\mu\nu\alpha\beta}, \quad R_{\mu\nu\alpha\beta}R^{\mu\alpha\nu\beta}.
-\end{equation}
-If these invariants diverge, the singularity is physical; if they remain finite, the singularity is likely to be a coordinate artifact. 
-The definitive way to prove that a singularity is only due to coordinates is to find a transformation that removes it.
-
-In the case of the Schwarzschild solution, particular attention is paid to the radius $r_{s}=2GM$. 
-At first sight, both $g_{tt}$ and $g_{rr}$ behave pathologically there ($g_{tt}$ vanishes while $g_{rr}$ diverges), raising the question of whether $r=r_{s}$ represents a physical or a coordinate singularity. 
-Since the Schwarzschild spacetime is Ricci-flat, both $R$ and $R_{\mu\nu}R^{\mu\nu}$ vanish identically. 
-However, the Kretschmann scalar,
-\begin{equation}
-     K \equiv R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} = \frac{48G^2M^{2}}{r^{6}},   
-\end{equation}
-reveals the true structure: it diverges only at $r=0$, while remaining perfectly finite at $r=2GM$. 
-Thus, $r=0$ corresponds to a genuine physical singularity, whereas $r=2GM$ is merely a coordinate singularity. 
-Nevertheless, unlike the trivial coordinate singularity at $\theta = 0,\pi$, the singularity at $r=2GM$ has important physical implications. 
-The radius $r=2GM$ defines the Schwarzschild radius, marking the event horizon of the BH. 
-Standard Schwarzschild coordinates become ill-defined at this surface: they are adequate for describing the exterior region $r > 2GM$, but fail inside the horizon and are completely unsuitable at $r = 2GM$. 
+diverges only at $r=0$, confirming a physical singularity there, while remaining finite at $r=2GM$. The apparent pathology of the metric at $r=2GM$ is therefore a coordinate singularity. Nevertheless, this radius has profound physical significance: it defines the Schwarzschild radius and marks the event horizon of the BH, a surface beyond which 
+standard Schwarzschild coordinates become inadequate.
 
 \subsubsection{Causal structure and radial null geodesics}
 
-A convenient way to illustrate this breakdown is to examine the causal structure of spacetime through radial null geodesics. Since null trajectories satisfy $ds^2 = 0$, and restricting to purely radial motion by setting $d\theta = d\phi = 0$, the metric reduces to
+Setting $ds^2 = 0$ and $d\theta = d\phi = 0$, the slope of radial null geodesics in the $(t,r)$ plane is
 \begin{equation}
-ds^2 = 0 = -\left(1 - \frac{2GM}{r}\right) dt^2 + \left(1 - \frac{2GM}{r}\right)^{-1} dr^2 ,
+\frac{dt}{dr} = \pm \left(1 - \frac{2GM}{r}\right)^{-1},
 \end{equation}
-which yields
+which recovers the Minkowski value $\pm 1$ at large $r$ but diverges as $r \to 2GM$, causing the light cones to close up 
+(see Fig.~\ref{fig:null geodesics}). Inside the horizon, the cones flip orientation entirely, forcing all causal trajectories toward the singularity at $r=0$. Integrating the null geodesic equation gives
 \begin{equation}
-\frac{dt}{dr} = \pm \left(1 - \frac{2GM}{r}\right)^{-1}.
+t = \pm \left(r + 2GM \ln|r - 2GM| + C_0 \right),
 \end{equation}
-This relation determines the slope of light rays in the $(t,r)$ plane \cite{llibrecarroll2004lectures}. For large $r$, one recovers the familiar behavior of Minkowski space with slopes $\pm 1$. However, as $r \to 2GM$, the slope diverges, and the light cones ``close up'' (see Fig. \ref{light cones tilted}).
+showing that an outgoing light ray requires infinite Schwarzschild coordinate time to reach $r=2GM$. A distant observer therefore sees an infalling body freeze and fade at the horizon, while in proper time the crossing occurs in a finite interval. The issue lies in the coordinates, not the physics.
 
 \begin{figure}[h!]
     \centering
     \begin{subfigure}[t]{0.45\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Figures/Worldlines black hole schwarzschild.jpg}
-        \caption{Tilting of light cones in Schwarzschild coordinates. The arrows illustrate possible worldlines of particles.}
+        \caption{Tilting of light cones in Schwarzschild coordinates.}
         \label{light cones tilted}
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}[t]{0.46\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Figures/2GM.png}
-        \caption{Ingoing and outgoing null geodesics in Schwarzschild coordinates.}
+        \caption{Ingoing and outgoing null geodesics in Schwarzschild 
+        coordinates.}
         \label{light cones schwarz}
     \end{subfigure}
-    \caption{Light cones in the $t-r$ plane of Schwarzschild spacetime. Far from the BH ($r \gg 2GM$), cones open symmetrically at $\pm 45^\circ$, as in flat space. As $r \to 2GM$, the cones progressively close, signaling the presence of the event horizon as a causal boundary. Outside the horizon ($r > 2GM$), the structure resembles Minkowski spacetime. At the horizon ($r=2GM$), the cones degenerate, and inside they invert, pointing inexorably toward the singularity at $r=0$. Original illustrations based on the sources: \cite{LlibreBertJanssen, llibrecarroll2004lectures}.}
+    \caption{Light cones in the $t$-$r$ plane of Schwarzschild spacetime. Far from the BH, cones open symmetrically at $\pm 45^\circ$. As $r \to 2GM$ they progressively close; inside the horizon they invert, pointing inexorably toward $r=0$. Original illustrations based on: \cite{LlibreBertJanssen, 
+    llibrecarroll2004lectures}.}
     \label{fig:null geodesics}
 \end{figure}
 
-
-Inside the horizon, the situation changes qualitatively. The cones flip orientation and point entirely toward decreasing $r$, forcing all causal trajectories, null and timelike, towards the singularity at $r=0$.
-
-The explicit integration of the null geodesics further clarifies this behavior:
+To follow geodesics continuously across the horizon, one introduces the advanced Eddington-Finkelstein coordinates \cite{Eddington--Finkelsteincoordinates},
 \begin{equation}
-t = \pm \left(r + 2GM \ln|r - 2GM| + C_0 \right) ,
+\tilde{t} = t + 2M \log(r - 2M),
 \end{equation}
-where $C_0$ is an integration constant. The logarithmic term is negligible at large radii but becomes dominant near the horizon. As a result, an outgoing light ray requires an infinite Schwarzschild coordinate time $t$ to reach $r=2GM$, explaining why in these coordinates no signal ever appears to cross the event horizon (see Fig. \ref{light cones schwarz}). 
-
-
-This leads to an apparent paradox: in Schwarzschild coordinates, no object or signal seems to reach $r=2GM$ as seen by a distant observer. Light from an infalling astronaut, for example, arrives increasingly delayed, redshifted, and fainter, so that from infinity we only ever see them freeze and fade at the horizon. Yet in their own proper time, the crossing occurs in a perfectly finite interval. The issue lies not in the physics but in the coordinates.  
-
-
-To understand how the interior and exterior regions are connected, and to clarify the causal structure, one needs coordinates that remain regular at $r=2GM$. Standard Schwarzschild coordinates work outside the horizon but break down exactly there, failing to describe geodesics (whether massive or massless) at the surface. The apparent inversion of time and pathological tipping of the light cones signal this inadequacy.  
-
-To follow smoothly the motion of particles or photons across the horizon, one introduces coordinates that treat $r=2GM$ as a coordinate singularity rather than a physical one. A classic choice are the advanced Eddington-Finkelstein coordinates \cite{Eddington--Finkelsteincoordinates}, defined through the transformation
+in which the metric becomes
 \begin{equation}
-    \tilde{t} = t + 2M \log(r - 2M),
+ds^2 = -\left(1 - \frac{2GM}{r}\right) d\tilde{t}^2 + \frac{4GM}{r}\, 
+d\tilde{t}\,dr + \left(1 + \frac{2GM}{r}\right) dr^2
++ r^2 d\Omega^2 \, ,
 \end{equation}
-which eliminates the divergence of Schwarzschild time at the horizon.  
-
-In these coordinates, the metric takes the form
-\begin{equation}
-ds^2 = -\left(1 - \frac{2GM}{r}\right) d\tilde{t}^2 + \frac{4GM}{r}\, d\tilde{t}\,dr + \left(1 + \frac{2GM}{r}\right) dr^2
-+ r^2 d\theta^2 + r^2 \sin^2\theta \, d\phi^2 \, ,
-\label{exteriorSchwarz}
-\end{equation}
-which is manifestly regular at $r=2GM$ and allows geodesics, ingoing or outgoing, to be traced continuously across the horizon (see Fig.~\ref{fig:null geodesics}).  
+manifestly regular at $r=2GM$ (see Fig.~\ref{fig:EFK_geodesics}).
 
 \begin{figure}[h!]
     \centering
     \begin{subfigure}[t]{0.45\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Figures/Tilting light cones.png}
-        \caption{Tilting of light cones in Eddington-Finkelstein coordinates. The arrows illustrate possible worldlines of particles.}
-        \label{}
+        \caption{Light cones in Eddington-Finkelstein coordinates.}
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}[t]{0.46\linewidth}
         \centering
         \includegraphics[width=\linewidth]{Figures/Eddington coordinates.png}
-        \caption{Ingoing and outgoing null geodesics in Eddington-Finkelstein coordinates.}
+        \caption{Null geodesics in Eddington-Finkelstein coordinates.}
         \label{fig:EFK coodinates}
     \end{subfigure}
-    \caption{In Eddington-Finkelstein coordinates, the geometry is clarified. For $r \gg 2GM$, light cones resemble those of flat spacetime, opening symmetrically at $\pm 45^\circ$. Closer to the horizon, the cones tip progressively inward. Ingoing null geodesics always remain at $45^\circ$, while outgoing ones tilt more and more as $r \to 2GM$, signaling the increasing difficulty of escaping. At the horizon, the tilt reaches $90^\circ$: an outgoing photon emitted at $r=2GM$ remains trapped. For $r<2GM$, all cones are tipped inward, so even outward-directed light inevitably falls to the singularity. Original illustrations based on the sources: \cite{LlibreBertJanssen, Llibre_Peter_Collier_unacosadificildecomprender}.}
-    \label{fig:null geodesics}
+    \caption{In Eddington-Finkelstein coordinates the horizon is regular. Ingoing geodesics always remain at $45^\circ$; outgoing ones tilt progressively inward until at $r=2GM$ they are trapped, and for $r < 2GM$ all light falls toward the singularity. Original 
+    illustrations based on: \cite{LlibreBertJanssen, 
+    Llibre_Peter_Collier_unacosadificildecomprender}.}
+    \label{fig:EFK_geodesics}
 \end{figure}
 
 
