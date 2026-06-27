@@ -2925,11 +2925,7 @@ indices $\Delta n = n_2 - n_1$ \cite{PE_lensing_bayes}. The relative magnificati
 
 Strong gravitational lensing offers a natural opportunity 
 to improve the sky localization of GW sources beyond what 
-is achievable from a single image \cite{hubble_constant_lensing}. This section describes 
-the limitations of single-image sky localization, explains 
-how the joint analysis of lensed image pairs overcomes 
-them, and introduces the statistical framework used to 
-quantify the evidence for the lensed hypothesis.
+is achievable from a single image \cite{Hannuksela_skyloc}. This section describes the limitations of single-image sky localization, explains how the joint analysis of lensed image pairs overcomes them, and introduces the statistical framework used to quantify the evidence for the lensed hypothesis.
 
 \subsection{Limitations of single-image sky localization}
 \label{sec:single_image_skyloc}
@@ -2939,21 +2935,19 @@ triangulation: the difference in signal arrival times
 across the detector network constrains the direction of 
 propagation, while the antenna pattern functions and 
 strain amplitudes provide complementary information 
-\cite{}. The achievable localization depends critically 
-on the number and geometry of the detectors. A single 
-detector provides no directional information for 
+\cite{lensing_regimes}. The achievable localization depends critically on the number and geometry of the detectors. A single detector provides no directional information for 
 short-duration transients; two detectors constrain the 
 source to a ring on the celestial sphere, centered on 
 the axis connecting them; a third non-collinear detector 
 reduces this to a bimodal region; and a fourth non-coplanar 
-detector resolves the position to a single sky area \cite{}.
+detector resolves the position to a single sky area \cite{GWTC5}.
 
 The analyses presented in this work use only two detectors, 
 H1 and L1. With this two-detector configuration, a single 
 lensed image produces an annular sky region of typically 
 hundreds of square degrees. Such regions contain millions 
 of potential host galaxies and tens of thousands of 
-galaxies within the 90\% credible volume \cite{}, making 
+galaxies within the 90\% credible volume \cite{hubble_constant_lensing}, making 
 electromagnetic follow-up or lens identification 
 essentially impossible in the absence of an independent 
 counterpart. This two-detector configuration reflects the most realistic scenario for strong lensing searches in the 
@@ -2973,27 +2967,19 @@ When a GW source is strongly lensed, the multiple images
 arrive at the detector network at different times. Because 
 the Earth rotates during the delay between arrivals 
 (typically minutes to months for galaxy-scale lenses, 
-see \S\ref{sec:timedelay}), each image is 
-observed with a different detector orientation. This 
-effectively creates a larger baseline between the 
-detector positions at the time of each image, introducing 
-new triangulation constraints and varying antenna pattern 
-functions that together dramatically improve the sky 
-localization \cite{}. Estimates suggest that the joint 
-analysis of two lensed images can improve the sky area 
-by roughly a factor of 30 compared to a single image 
-\cite{}.
-
-This improvement is exploited through a coherent joint 
-parameter estimation of the two images. Under the lensed 
-hypothesis $\mathcal{H}_L$, both data streams $d_1$ and 
-$d_2$ share the same intrinsic binary parameters 
-$\boldsymbol{\theta}$, as established in 
-\eqref{eq:lensed_strain}. The joint likelihood is 
-therefore a product of the individual likelihoods 
-evaluated at the same $\boldsymbol{\theta}$, with 
-separate lensing parameters $\boldsymbol{\phi}_j = 
-\{\mu_j, t_j, n_j\}$ for each image:
+see \S\ref{sec:timedelay}), each image is observed with 
+a different detector orientation, introducing varying 
+antenna pattern functions and effectively enlarging the 
+triangulation baseline \cite{Hannuksela_skyloc}. Each lensed image therefore contributes independent constraints on the 
+source position through different noise realizations 
+and detector responses, and their combination reduces 
+the overall sky localization uncertainty compared to 
+a single image \cite{hubble_constant_lensing}. This is exploited through a coherent joint parameter estimation of the two images: under the lensed hypothesis $\mathcal{H}_L$, both data streams $d_1$ and $d_2$ share the same intrinsic binary parameters $\boldsymbol{\theta}$, as established in 
+\eqref{eq:lensed_strain}, so the joint likelihood is 
+a product of the individual likelihoods evaluated at 
+the same $\boldsymbol{\theta}$, with separate lensing 
+parameters $\boldsymbol{\phi}_j = \{\mu_j, t_j, n_j\}$ 
+for each image:
 \begin{equation}
     p(d_1, d_2 \mid \mathcal{H}_L) = 
     \int p(d_1 \mid \boldsymbol{\theta}, \boldsymbol{\phi}_1)\,
@@ -3004,8 +2990,7 @@ separate lensing parameters $\boldsymbol{\phi}_j =
     \label{eq:joint_evidence_lensed}
 \end{equation}
 The shared parameters include the masses, spins, and 
-crucially the sky location $(\alpha, \delta)$, enforced 
-through the \texttt{common-parameters} configuration. 
+crucially the sky location $(\alpha, \delta)$. 
 The lensing parameters per image, namely the relative 
 magnification $\mu_\mathrm{rel}$ and the image type 
 $n_j$ sampled from a discrete uniform prior over 
@@ -3038,7 +3023,7 @@ factor}
 
 Beyond sky localization, the joint PE framework naturally 
 provides a statistical test of the lensing hypothesis. 
-The \emph{coherence ratio}
+The coherence ratio
 \begin{equation}
     \mathcal{C}_\mathrm{U}^\mathrm{L} \equiv 
     \frac{\mathcal{Z}_L}{\mathcal{Z}_1 \cdot \mathcal{Z}_2},
