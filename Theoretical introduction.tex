@@ -3017,6 +3017,29 @@ $\boldsymbol{\theta}_2$:
 which is simply the product of the individual evidences 
 from the single-image analyses.
 
+
+The improvement in sky localization is quantified 
+through the 90\% credible area of the posterior 
+distribution on the sky location $(\alpha, \delta)$. 
+This is defined as the minimum sky region 
+$\mathcal{R}_{90}$ satisfying
+\begin{equation}
+    \int_{\mathcal{R}_{90}} p(\alpha, \delta \mid d)\, 
+    d\Omega = 0.90,
+    \label{eq:sky_area}
+\end{equation}
+where $d\Omega = \cos\delta\, d\alpha\, d\delta$ is 
+the solid angle element. The posterior 
+$p(\alpha, \delta \mid d)$ is obtained by marginalizing 
+the full PE posterior over all parameters other than 
+sky location. The joint analysis yields a 
+$\mathcal{R}_{90}$ significantly smaller than that 
+of either single-image analysis, since enforcing the 
+shared sky location $(\alpha, \delta)$ across both 
+images as a common parameter effectively intersects 
+the two individual posterior constraints on the sky.
+
+
 \subsection{Identifying lensed events: the lensing Bayes 
 factor}
 \label{sec:lensing_bayes_factor}
@@ -3052,6 +3075,9 @@ described in the following chapters. The coherence
 ratio provides complementary validation that the joint 
 PE correctly identifies the two images as originating 
 from the same source.
+
+
+
 
 ................
 This overview of gravitational lensing of GW marks the conclusion of the first part of the thesis. Now, we have all the necessary tools to describe the results obtained in this study.
