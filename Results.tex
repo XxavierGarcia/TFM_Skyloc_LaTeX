@@ -1,16 +1,16 @@
- \vspace{4cm}
- At this point, we have all the necessary tools to describe the results
- of this thesis.
- The first one, reported in Chapter 5, is a gravitational wave-like propa
-gation on the top of an acoustic metric. Notably, in the past only static
- solutions of GR were designed in analogue models. Here,
- we present a system where analogue gravitational waves propagate sat
-isfying Einstein’s equations.
- The second result, in Chapter 6, consists in designing a system in which
- an acoustic horizon is excited by a gravitational wave-like perturbation.
- To this purpose, we choose a cylindrical acoustic black hole, where we
- introduce an appropriate extension in the geometry of the previously
- found gravitational wave-like perturbation.
+\vspace{4cm}
+With the theoretical framework for gravitational lensing 
+of GWs now established, including the geometric optics 
+formalism, the signatures of strong lensing on GW signals, 
+and the joint parameter estimation approach that exploits 
+lensed image pairs to improve sky localization, we are 
+in a position to present the original results of this 
+thesis. Chapter~\ref{Simulation_setup} describes the 
+simulation setup and the lensed BBH population generated 
+with LER. Chapter~\ref{Parameter_estimation_pipeline} presents the parameter estimation pipeline, covering the lensed waveform generation with Hanabi, the Bilby joint analysis configuration, and the automation infrastructure deployed on Picasso. Finally, Chapter~\ref{Skyloc} presents 
+the sky localization results, comparing the 90\% credible 
+sky area obtained from single-image and joint analyses 
+across the full population of 500 injections.
 
 
 \newpage
@@ -20,17 +20,12 @@ isfying Einstein’s equations.
 \label{Simulation_setup}
 
 \section{Lensed BBH population with LER}
-% Explicar qué es LER y para qué lo usas
-% Parámetros: npool, event_type BBH, ifos L1 H1
-% PSD: T2500310-v2_O5a_strain_psd (O5 design sensitivity)
-% Waveform: IMRPhenomXPHM, spin precession
-% Criterio de selección: 500 eventos con SNR >= 10 en ambas imágenes
+
+In this seciton we describe the methodology used to do the simulations with the package Ler, we simulate 500 evetns ans the we apply an SNR threshold of 10 to be sure that we have detected a gravitational wave. We also apply a duty factor of 70\% to take ito acout teh fact that the detectors are not online all the time. We use the version of ler '0.4.2' . As for the strain psd we use the O5a_strain which is better than the actual one of O4b but it's not too much better, as we want to be realistic but also to be able to predict the next results of O5. For the waveform we use IMRPhenomXPHM, which modules the leading quadrupole (l=2) radiation as well as other multipols with l>2.
+
 
 \section{Injected parameter distributions}
-% Plots de m1, m2 con crosses de los valores inyectados
-% Distribución de masas, spins, distancias
-% Histogram SNR de L1, H1 y joint para ambas imágenes
-% Plots LER de los parámetros de lensing: time delay, magnification ratio
+
 
 
 \chapter{Parameter estimation pipeline}
