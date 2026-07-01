@@ -17,14 +17,241 @@ across the full population of 500 injections.
 
 
 \chapter{Simulation setup and implementation}
-\label{Simulation_setup}
+\label{ch:simulation}
 
-\section{Lensed BBH population with LER}
+This chapter describes the construction of the lensed 
+BBH population used as input to the PE pipeline. The simulation proceeds in two stages: first, a large Monte Carlo population of strongly lensed BBH events is generated with \textsc{LeR} v0.4.2 
+\cite{phurailatpam2026lerlvkligovirgokagracollaboration}, and then a realistic detectability filter is applied to select the subset of events that would be observed by the H1 and L1 detectors under O5 sensitivity conditions.
 
-In this seciton we describe the methodology used to do the simulations with the package Ler, we simulate 500 evetns ans the we apply an SNR threshold of 10 to be sure that we have detected a gravitational wave. We also apply a duty factor of 70\% to take ito acout teh fact that the detectors are not online all the time. We use the version of ler '0.4.2' . As for the strain psd we use the O5a_strain which is better than the actual one of O4b but it's not too much better, as we want to be realistic but also to be able to predict the next results of O5. For the waveform we use IMRPhenomXPHM, which modules the leading quadrupole (l=2) radiation as well as other multipols with l>2.
+\section{Lensed BBH population with \textsc{LeR}}
+\label{sec:LER_population}
 
+\textsc{LeR} (LVK Event Rate calculator) is a 
+Python framework for the joint simulation and rate 
+computation of unlensed and strongly lensed GW 
+populations \cite{phurailatpam2026lerlvkligovirgokagracollaboration}. It integrates source and lens population sampling, lens equation solving via \textsc{lenstronomy} \cite{lenstronomy}, and detector selection into a single reproducible pipeline. All lensing calculations are performed in the geometric optics regime and under the thin lens approximation, both of which are valid for galaxy-scale lenses in the LIGO frequency band (see \S\ref{sec:lensing_intro}).
+
+The simulation is initialized with the following 
+configuration, specifying the detector network, 
+noise curves, and waveform approximant:
+
+\begin{lstlisting}[style=numpyStyle]
+ler = LeR(
+    npool=6,
+    event_type="BBH",
+    ifos=['L1', 'H1'],
+    psds={'L1': 'T2500310-v2_O5a_strain_psd.txt',
+          'H1': 'T2500310-v2_O5a_strain_psd.txt'},
+    waveform_approximant="IMRPhenomXPHM",
+    spin_zero=False,
+    spin_precession=True,
+)
+\end{lstlisting}
+
+The noise curves correspond to the O5a design sensitivity PSD \cite{O5PSD}. This choice is motivated by the goal of simulating a realistic future observing scenario: the default PSD in \textsc{LeR} approximates O4 sensitivity, and since no strongly lensed events were detected in O4, simulating at O5a sensitivity (the first epoch of the O5 run with a BNS range of 225\,Mpc 
+\cite{O5PSD}) provides a more informative and forward-looking setting for this study. \texttt{IMRPhenomXPHM} \cite{IMRPhenomXPHM} is used for SNR computation, incorporating spin precession and higher-order multipole moments. The source and lens population models adopted by \textsc{LeR} v0.4.2 are summarized in Table~\ref{tab:LER_params}.
+
+\begin{table}[h!]
+\centering
+\caption{Source and lens population parameters 
+used by \textsc{LeR} v0.4.2 to generate the strongly 
+lensed BBH population. All models correspond to the 
+default configuration of \textsc{LeR} v0.4.2 
+\cite{phurailatpam2026lerlvkligovirgokagracollaboration}.}
+\label{tab:LER_params}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{6.5cm}p{8.5cm}}
+\hline\hline
+\multicolumn{1}{c}{Parameter} & \multicolumn{1}{c}{Distribution / value} \\
+\hline
+\multicolumn{2}{l}{\textbf{Cosmology}} \\
+\quad $H_0$, $\Omega_m$, $\Omega_\Lambda$ & 
+$70\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$, 0.3, 0.7 (flat $\Lambda$CDM) 
+\cite{phurailatpam2026lerlvkligovirgokagracollaboration} \\[2pt]
+\hline
+\multicolumn{2}{l}{\textbf{BBH source parameters}} \\
+\quad Component masses $m_1,\,m_2$ & 
+Power Law + Gaussian (LIGO O3) \cite{Abbott2021pop} \\
+\quad Spin magnitudes $a_1,\,a_2$ & 
+Uniform $[0,\,1]$ \\
+\quad Spin tilt angles $\theta_1,\,\theta_2$ & 
+Sine prior on $[0,\,\pi]$ \\
+\quad Azimuthal spin angles $\phi_{12},\,\phi_{JL}$ & 
+Uniform $[0,\,2\pi]$ \\
+\quad Inclination $\theta_{JN}$ & 
+Sine prior on $[0,\,\pi]$ \\
+\quad Polarization $\psi$ & 
+Uniform $[0,\,\pi]$ \\
+\quad Coalescence phase $\phi_c$ & 
+Uniform $[0,\,2\pi]$ \\
+\quad Sky location $(\alpha,\,\delta)$ & 
+Isotropic \\
+\quad Source redshift $z_s$ & 
+Merger rate density \cite{Oguri2018} \\[2pt]
+\hline
+\multicolumn{2}{l}{\textbf{Lens galaxy parameters}} \\
+\quad Optical depth $\tau(z_s)$ & 
+$\left(D_c[\mathrm{Gpc}]/62.2\right)^3$ (SIS analytic) 
+\cite{Haris2018} \\
+\quad Velocity dispersion $\sigma_v$ & 
+$161\cdot\mathrm{GenGamma}(0.869,\,2.67)\ \mathrm{km\,s^{-1}}$
+\cite{Choi_2007} \\
+\quad Lens redshift $z_L$ & 
+Conditioned on $z_s$ (SDSS catalogue) \\
+\quad Density slope $\gamma$ & 
+$\mathcal{N}(2.0,\,0.2)$ 
+\cite{Koopmans_2006,Auger_2010} \\
+\quad Axis ratio $q$ & 
+Rayleigh$(s(\sigma_v))$, $q\in[0.2,\,1]$ 
+\cite{Wierda_2021} \\
+\quad External shear $\gamma_1,\,\gamma_2$ & 
+$\mathcal{N}(0,\,0.05^2)$ \cite{phurailatpam2026lerlvkligovirgokagracollaboration} \\
+\quad Lens model & 
+EPL + external shear \cite{Tessore2015} \\[2pt]
+\hline
+\multicolumn{2}{l}{\textbf{Detectability}} \\
+\quad Network SNR threshold & 
+$\rho_\mathrm{net} \geq 10$ \\
+\quad Minimum detectable images & 
+2 \\
+\hline
+\end{tabular*}
+\end{table}
+
+The population is generated by drawing events in 
+batches of 20\,000 until 500 strongly lensed 
+detectable events are collected, each requiring 
+that at least two images independently satisfy 
+$\rho_\mathrm{net} \geq 10$:
+
+\begin{lstlisting}[style=numpyStyle]
+lensed_params = ler.selecting_n_lensed_detectable_events(
+    size=500,
+    batch_size=20000,
+    snr_threshold=10,
+    num_img=2,
+    resume=False,
+    output_jsonfile="n_lensed_params_bbh.txt",
+)
+\end{lstlisting}
+
+A total of approximately 152\,000 candidate events 
+were drawn to collect the 500 detectable ones, 
+yielding a total lensed event rate of 
+$\mathcal{R}_L \approx 0.75\,\mathrm{yr}^{-1}$ 
+for this detector configuration and sensitivity.
 
 \section{Injected parameter distributions}
+\label{sec:injected_params}
+
+The 500 events produced by \textsc{LeR} represent 
+the strongly lensed population detectable under 
+ideal observing conditions. To obtain a more 
+realistic injection set, a duty cycle filter is 
+applied: for each image of each event, both H1 
+and L1 are independently activated with probability 
+$p_\mathrm{det} = 0.70$, reflecting typical O4/O5 
+single-detector duty cycles \cite{GWTC5}. An image is 
+retained only if both detectors are simultaneously 
+active and $\rho_\mathrm{net} \geq 10$. Events 
+with fewer than two surviving images are discarded; 
+when more than two images survive, only the two 
+with the highest network SNR are kept. After 
+applying this filter once to the fixed 500-event 
+population, 157 events are selected as the final 
+injection set analyzed with Bilby.
+
+PENSAR SI POSAR TAULA QUE VA DIR DAVID SOBRE PROCES DE SELECCIO EVENTS I VEURE CO VA BAIXANT EL NOMBRE
+
+Figures~\ref{fig:snr_hist}--\ref{fig:timedelay_hist} 
+show the distributions of the key parameters for 
+the 157 injected events. The network SNR 
+distribution (Fig.~\ref{fig:snr_hist}) peaks 
+just above the threshold of 10, as expected for 
+a population dominated by threshold-crossing 
+events, with a tail extending to higher values 
+for strongly magnified or favorably oriented 
+systems. The primary source-frame mass distribution 
+(Fig.~\ref{fig:mass_hist}) reflects the underlying 
+LIGO O3 Power Law + Gaussian model, with a 
+concentration at low masses and a secondary 
+feature near $30\,M_\odot$. The magnification 
+distribution (Fig.~\ref{fig:magnification_hist}) 
+shows a sharp peak near zero with extended tails, 
+where negative values correspond to Type II images 
+with mirror-inverted parity (see 
+\S\ref{sec:strong_lensing}). The time delay 
+distribution between the two images 
+(Fig.~\ref{fig:timedelay_hist}) spans from 
+minutes to months, consistent with galaxy-scale 
+lenses in the geometric optics regime 
+(\S\ref{sec:lensing_observables}).
+
+%\begin{figure}[h!]
+    %\centering
+    %\includegraphics[width=0.75\linewidth]
+    %{Figures/optimal_snr_net_hist.png}
+    %\caption{Distribution of network SNR 
+    %$\rho_\mathrm{net}$ for the 157 injected 
+    %lensed BBH events after the duty cycle 
+    %filter. The distribution is truncated at 
+    %$\rho_\mathrm{net} = 10$ by construction 
+    %and peaks just above the threshold, with 
+    %a tail extending to higher values for 
+    %strongly magnified or favorably oriented 
+    %systems.}
+    %\label{fig:snr_hist}
+%\end{figure}
+
+%\begin{figure}[h!]
+    %\centering
+    %\includegraphics[width=0.75\linewidth]
+    %{Figures/mass_1_source_hist.png}
+    %\caption{Distribution of the primary 
+    %source-frame mass $m_1$ for the 157 
+    %injected lensed BBH events. The shape 
+    %reflects the LIGO O3 Power Law + Gaussian 
+    %population model adopted by \texttt{LER} 
+    %v0.4.2, with a dominant low-mass component 
+    %and a secondary feature near $30\,M_\odot$ 
+    %from the Gaussian component.}
+    %\label{fig:mass_hist}
+%\end{figure}
+
+%\begin{figure}[h!]
+    %\centering
+    %\includegraphics[width=0.75\linewidth]
+    %{Figures/magnifications_hist__1_.png}
+    %\caption{Distribution of image magnifications 
+    %$\mu$ for the lensed population prior to the 
+    %duty cycle filter. Negative values correspond 
+    %to Type II images (saddle points of the Fermat 
+    %potential), which have mirror-inverted parity 
+    %and acquire a $\pi/2$ Morse phase shift 
+    %(see \S\ref{sec:strong_lensing}). The 
+    %distribution is strongly peaked near 
+    %$|\mu| \sim 1$ with extended tails at large 
+    %$|\mu|$, consistent with the SIS power-law 
+    %magnification prior adopted by \texttt{LER}.}
+    %\label{fig:magnification_hist}
+%\end{figure}
+
+%\begin{figure}[h!]
+    %\centering
+    %\includegraphics[width=0.75\linewidth]
+    %{Figures/time_delay_hist.png}
+    %\caption{Distribution of time delays 
+    %$\Delta t$ between the two lensed images 
+    %for the 157 injected events, shown on a 
+    %logarithmic scale. The distribution spans 
+    %from minutes to months, consistent with 
+    %galaxy-scale lenses in the geometric optics 
+    %regime. The Earth's rotation during this 
+    %interval is the primary mechanism enabling 
+    %improved sky localization through joint 
+    %analysis (\S\ref{sec:joint_PE_skyloc}).}
+    %\label{fig:timedelay_hist}
+%\end{figure}
 
 
 

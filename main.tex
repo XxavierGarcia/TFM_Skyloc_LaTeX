@@ -78,39 +78,25 @@
 \usepackage{listings}
 
 % Definición de colores personalizados
-\definecolor{codebg}{RGB}{248,248,248}
-\definecolor{keywordpurple}{RGB}{135,75,165}
-\definecolor{numorange}{RGB}{174,96,0}
-\definecolor{equalgreen}{RGB}{0,128,0}
+\definecolor{codebg}{RGB}{252,252,252}
+\definecolor{keywordblue}{RGB}{50,80,200}
+\definecolor{stringgreen}{RGB}{30,140,30}
+\definecolor{commentgray}{RGB}{130,130,130}
 
 \lstdefinestyle{numpyStyle}{
     backgroundcolor=\color{codebg},
     basicstyle=\ttfamily\small,
-    keywordstyle=\color{keywordpurple},
-    commentstyle=\color{gray},
-    stringstyle=\color{red},
+    keywordstyle=\color{keywordblue}\bfseries,
+    commentstyle=\color{commentgray}\itshape,
+    stringstyle=\color{stringgreen},
     showstringspaces=false,
     frame=single,
-    frameround=tttt, % Bordes redondeados (tttt = top, top, bottom, bottom)
     rulecolor=\color{lightgray},
     language=Python,
-    morekeywords={as},
-    alsoletter={.=},
-    literate=
-      *{0}{{\textcolor{numorange}{0}}}{1}
-       {1}{{\textcolor{numorange}{1}}}{1}
-       {2}{{\textcolor{numorange}{2}}}{1}
-       {3}{{\textcolor{numorange}{3}}}{1}
-       {4}{{\textcolor{numorange}{4}}}{1}
-       {5}{{\textcolor{numorange}{5}}}{1}
-       {6}{{\textcolor{numorange}{6}}}{1}
-       {7}{{\textcolor{numorange}{7}}}{1}
-       {8}{{\textcolor{numorange}{8}}}{1}
-       {9}{{\textcolor{numorange}{9}}}{1}
-       {.}{{\textcolor{numorange}{.}}}{1}
-       {=}{{\textcolor{equalgreen}{=}}}{1}
-       {*}{{\textcolor{equalgreen}{*}}}{1},
-    captionpos=b
+    morekeywords={True, False, None},
+    showstringspaces=false,
+    breaklines=true,
+    captionpos=b,
 }
 
 \usepackage{hyperref}
