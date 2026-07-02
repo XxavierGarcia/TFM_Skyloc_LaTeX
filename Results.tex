@@ -195,8 +195,9 @@ Duty cycle $+$ SNR cut ($\geq 2$ images with
 $\rho_\mathrm{net} \geq 10$) & 157 & $31.4$ \\
 \hline
 \end{tabular}
-\caption{Number of events surviving each stage of 
-the selection process. Events drawn by \textsc{LeR} are first required to have at least two images with $\rho_\mathrm{net} \geq 10$ under ideal observing conditions (500 events, percentage relative to the $\sim 152\,000$ candidate draws). A duty cycle filter is then applied, independently activating each detector per image with probability $p_\mathrm{det}=0.70$ (309 events with at least two images surviving, regardless of SNR). The SNR threshold is finally re-applied, since some surviving images may fall below $\rho_\mathrm{net}=10$ once only active detectors are considered, leaving 157 events. The last two percentages are relative to the 500 detectable events.}
+\caption{Number of events surviving each stage of the selection process. Events drawn by \textsc{LeR} are first required to have at least two images with $\rho_\mathrm{net} \geq 10$ under ideal observing conditions, yielding the 500 detectable events used as the baseline for the percentages below. A duty cycle filter is then applied, independently 
+activating each detector per image with probability 
+$p_\mathrm{det}=0.70$ (309 events with at least two images surviving, regardless of SNR). The SNR threshold is finally re-applied, since some surviving images may fall below $\rho_\mathrm{net}=10$ once only active detectors are considered, leaving 157 events. All percentages are relative to the 500 detectable events.}
 \label{tab:selection_funnel}
 \end{table}
 
@@ -229,58 +230,58 @@ distribution between the two images
 (Fig.~\ref{fig:timedelay_hist}) spans from 
 minutes to months, consistent with galaxy-scale 
 lenses in the geometric optics regime 
-(\S\ref{sec:lensing_observables}).
-
-%\begin{figure}[h!]
-    %\centering
-    %\includegraphics[width=0.75\linewidth]
-    %{Figures/optimal_snr_net_hist.png}
-    %\caption{Distribution of network SNR 
-    %$\rho_\mathrm{net}$ for the 157 injected 
-    %lensed BBH events after the duty cycle 
-    %filter. The distribution is truncated at 
-    %$\rho_\mathrm{net} = 10$ by construction 
-    %and peaks just above the threshold, with 
-    %a tail extending to higher values for 
-    %strongly magnified or favorably oriented 
-    %systems.}
-    %\label{fig:snr_hist}
-%\end{figure}
-
-%\begin{figure}[h!]
-    %\centering
-    %\includegraphics[width=0.75\linewidth]
-    %{Figures/mass_1_source_hist.png}
-    %\caption{Distribution of the primary source-frame mass %$m_1$ for the 157 injected lensed BBH events. The shape 
-    %reflects the LIGO O3 Power Law + Gaussian population %model adopted by \texttt{LER} v0.4.2, with a dominant %low-mass component and a secondary feature near $30\,%M_\odot$ from the Gaussian component.}
-    %\label{fig:mass_hist}
-%\end{figure}
+(\S\ref{sec:timedelay}).
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.75\linewidth]
+    {Figures/optimal_snr_network_filtered.png}
+    \caption{Distribution of network SNR 
+    $\rho_\mathrm{net}$ for the 157 injected 
+    lensed BBH events after the duty cycle 
+    filter. The distribution is truncated at 
+    $\rho_\mathrm{net} = 10$ by construction 
+    and peaks just above the threshold, with 
+    a tail extending to higher values for 
+    strongly magnified or favorably oriented 
+    systems.}
+    \label{fig:snr_hist}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]
+    {Figures/mass_1_source_hist_ler_nofiltered.png}
+    \caption{Distribution of the primary source-frame mass $m_1$ for the 157 injected lensed BBH events. The shape 
+    reflects the LIGO O3 Power Law + Gaussian population model adopted by \texttt{LER} v0.4.2, with a dominant low-mass component and a secondary feature near $30\,M_\odot$ from the Gaussian component.}
+    \label{fig:mass_hist}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]
     {Figures/m1s_vs_m2s_ler.png}
     \caption{Source-frame component masses $m_1^{\mathrm{src}}$ and $m_2^{\mathrm{src}}$ for the 500 detectable lensed BBH events selected by \textsc{LeR}, colour-coded by network SNR $\rho_\mathrm{net}$. Diagonal dashed lines mark constant total mass $M$ and dotted lines mark constant mass ratio $q$. The population traces the underlying LIGO O3 Power Law + Gaussian model (\S\ref{sec:LER_population}), with most events clustering near $q=1$ and the highest-SNR events concentrated around $M\sim50$--$70\,M_\odot$.}
     \label{fig:mass_scatter}
 \end{figure}
 
-%\begin{figure}[h!]
-    %\centering
-    %\includegraphics[width=0.75\linewidth]
-    %{Figures/magnifications_hist__1_.png}
-    %\caption{Distribution of image magnifications 
-    %$\mu$ for the lensed population prior to the 
-    %duty cycle filter. Negative values correspond 
-    %to Type II images (saddle points of the Fermat 
-    %potential), which have mirror-inverted parity 
-    %and acquire a $\pi/2$ Morse phase shift 
-    %(see \S\ref{sec:strong_lensing}). The 
-    %distribution is strongly peaked near 
-    %$|\mu| \sim 1$ with extended tails at large 
-    %$|\mu|$, consistent with the SIS power-law 
-    %magnification prior adopted by \texttt{LER}.}
-    %\label{fig:magnification_hist}
-%\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]
+    {Figures/magnifications_hist_ler_nofiltered.png}
+    \caption{Distribution of image magnifications 
+    $\mu$ for the lensed population prior to the 
+    duty cycle filter. Negative values correspond 
+    to Type II images (saddle points of the Fermat 
+    potential), which have mirror-inverted parity 
+    and acquire a $\pi/2$ Morse phase shift 
+    (see \S\ref{sec:strong_lensing}). The 
+    distribution is strongly peaked near 
+    $|\mu| \sim 1$ with extended tails at large 
+    $|\mu|$, consistent with the SIS power-law 
+    magnification prior adopted by \texttt{LER}.}
+    \label{fig:magnification_hist}
+\end{figure}
 
 \begin{figure}[h!]
     \centering
