@@ -55,9 +55,35 @@ notebook on the CIT JupyterHub, using the \texttt{igwn}
 conda environment (Python 3.11.14) distributed via 
 CVMFS, with 48 CPU cores available. The \texttt{event\_type="BBH"} argument selects the BBH source population model described in Table~\ref{tab:LER_params}, as opposed to the BNS or NS-BH options also supported by \textsc{LeR}. The \texttt{ifos} argument specifies the detector network over which the network SNR $\rho_\mathrm{net}$ is computed, here restricted to the two LIGO detectors, H1 and L1.
 
+Here, \texttt{npool} sets the number of parallel worker 
+processes used for the MC sampling and SNR 
+calculations. The simulation was run in a Jupyter 
+notebook on the CIT JupyterHub, using the \texttt{igwn} 
+conda environment (Python 3.11.14) distributed via 
+CVMFS, with 48 CPU cores available. The \texttt{event\_type="BBH"} argument selects the BBH source population model described in Table~\ref{tab:LER_params}, as opposed to the BNS or NS-BH options also supported by \textsc{LeR}. The \texttt{ifos} argument specifies the detector network over which the network SNR $\rho_\mathrm{net}$ is computed, here restricted to the two LIGO detectors, H1 and L1.
+
 The \texttt{psds} argument sets the noise curve 
-assigned to each detector, here the O5a design sensitivity PSD \cite{O5PSD}. This choice is motivated by the goal of simulating a realistic future observing scenario. The default PSD in \textsc{LeR} approximates O4 sensitivity, but no strongly lensed events were detected in O4. Simulating at O5a sensitivity instead, the first epoch of the O5 run with a BNS range of 225\,Mpc \cite{O5PSD}, provides a more informative and forward-looking setting for this study. The 
-\texttt{waveform\_approximant} argument selects 
+assigned to each detector, here the O5a design sensitivity PSD \cite{O5PSD}. This choice is motivated by the goal of simulating a realistic future observing scenario. The default PSD in \textsc{LeR} approximates O4 sensitivity, but no strongly lensed events were detected in O4. Simulating at O5a sensitivity instead, the first epoch of the O5 run with a BNS range of 225\,Mpc \cite{O5PSD}, provides a more informative and forward-looking setting for this study. Figure~\ref{fig:psd_O5a} shows the projected O5a strain 
+sensitivity curve used in this work, compared against 
+the L1 O4 sensitivity achieved in September 2024 and 
+the later O5b and O5c projections.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]
+    {Figures/psd_O5a.png}
+    \caption{Projected strain sensitivity curves for the 
+    O5 observing run (O5a, O5b, and O5c), compared against 
+    the L1 O4 DARM sensitivity achieved in September 2024 
+    (grey). The O5a curve (purple), adopted in this work, 
+    corresponds to a binary neutron star range of 
+    225\,Mpc. Dashed lines show the O5 thermal coating 
+    noise and O5c quantum noise budgets. Source: 
+    LIGO-T2500310-v2 \cite{O5PSD}.}
+    \label{fig:psd_O5a}
+\end{figure}
+
+The \texttt{waveform\_approximant} argument selects 
 \texttt{IMRPhenomXPHM} \cite{IMRPhenomXPHM} for the SNR 
 computation, which incorporates spin precession and 
 higher-order multipole moments. Finally, \texttt{spin\_zero=False} enables non-zero component spins in the source population, and \texttt{spin\_precession=True} allows for spin tilts misaligned with the orbital angular momentum, so that the resulting waveforms include precession effects. Both are necessary for the spin parameters listed in Table~\ref{tab:LER_params} to be sampled rather than fixed to zero.
@@ -133,7 +159,6 @@ detectable events are collected, each requiring
 that at least two images independently satisfy 
 $\rho_\mathrm{net} \geq 10$:
 
-\newpage
 \begin{lstlisting}[style=numpyStyle]
 lensed_params = ler.selecting_n_lensed_detectable_events(
     size=500,
@@ -200,60 +225,69 @@ activating each detector per image with probability
 $p_\mathrm{det}=0.70$ (309 events with at least two images surviving, regardless of SNR). The SNR threshold is finally re-applied, since some surviving images may fall below $\rho_\mathrm{net}=10$ once only active detectors are considered, leaving 157 events. All percentages are relative to the 500 detectable events.}
 \label{tab:selection_funnel}
 \end{table}
-
-Figures~\ref{fig:snr_hist}--\ref{fig:timedelay_hist} 
-show the distributions of the key parameters for 
-the 157 injected events. The network SNR 
-distribution (Fig.~\ref{fig:snr_hist}) peaks 
-just above the threshold of 10, as expected for 
-a population dominated by threshold-crossing 
-events, with a tail extending to higher values 
-for strongly magnified or favorably oriented 
-systems. The primary source-frame mass distribution 
-(Fig.~\ref{fig:mass_hist}) reflects the underlying 
-LIGO O3 Power Law + Gaussian model, with a 
-concentration at low masses and a secondary 
-feature near $30\,M_\odot$. The joint 
+Figures~\ref{fig:param_dists_1} and 
+\ref{fig:param_dists_2} show the distributions of 
+the key parameters for the full detectable 
+population ($N=500$) and the final injection set 
+($N=157$): optimal SNR and primary source-frame 
+mass in Fig.~\ref{fig:param_dists_1}, and true 
+versus effective luminosity distance and image 
+magnification in Fig.~\ref{fig:param_dists_2}. 
+Figure~\ref{fig:mass_scatter} shows the joint 
 $m_1^{\mathrm{src}}$--$m_2^{\mathrm{src}}$ 
-distribution (Fig.~\ref{fig:mass_scatter}) shows 
-that most events lie close to $q\sim1$, and that 
-the highest-SNR events are concentrated around 
-total masses of $50$--$70\,M_\odot$, where the 
-detector network is most sensitive. The 
-magnification distribution 
-(Fig.~\ref{fig:magnification_hist}) 
-shows a sharp peak near zero with extended tails, 
-where negative values correspond to Type II images 
-with mirror-inverted parity (see 
-\S\ref{sec:strong_lensing}). The time delay 
-distribution between the two images 
-(Fig.~\ref{fig:timedelay_hist}) spans from 
-minutes to months, consistent with galaxy-scale 
-lenses in the geometric optics regime 
-(\S\ref{sec:timedelay}).
+distribution for the 500 detectable events, and 
+Figure~\ref{fig:timedelay_hist} shows the time 
+delay distribution between the two lensed images 
+for the same population.
+
+
+Figures~\ref{fig:snr_hist}--\ref{fig:timedelay_hist} show the distributions of the key parameters for the 157 injected events. Figure~\ref{fig:snr_hist} compares the optimal SNR distributions for L1, H1, and the network, for both the full detectable population ($N=500$) and the final injection set 
+($N=157$). The network SNR distribution for the filtered population peaks just above the threshold of 10, as expected for a population dominated by threshold-crossing events, with a tail extending to higher values for strongly magnified or favorably oriented systems; the individual L1 and H1 distributions, in contrast, can extend below $\rho=10$ even after filtering, since the selection criterion applies only to the network SNR. The primary source-frame mass distribution (Fig.~\ref{fig:mass_hist}) reflects the underlying LIGO O3 Power Law + Gaussian model, with a 
+concentration at low masses and a secondary feature near $30\,M_\odot$. The joint $m_1^{\mathrm{src}}$--$m_2^{\mathrm{src}}$ distribution (Fig.~\ref{fig:mass_scatter}) shows that most events lie close to $q\sim1$, and that the highest-SNR events are concentrated around total masses of $50$--$70\,M_\odot$, where the detector network is most sensitive. Figure~\ref{fig:dl_comparison} compares the true luminosity distance $d_L$ against the effective luminosity distance $d_L^{\mathrm{eff}}$, both for the full 500-event population and for the 157 injected events, illustrating how magnification 
+systematically shifts $d_L^{\mathrm{eff}}$ to smaller values than the true distance, since a magnified image appears louder than expected for its actual distance. The magnification distribution (Fig.~\ref{fig:magnification_hist}), shown for both the full detectable population ($N=500$) and the final injection set ($N=157$), has a sharp peak near zero with extended tails, where negative values correspond to Type II images with mirror-inverted parity (see \S\ref{sec:strong_lensing}). The time delay distribution between the two images (Fig.~\ref{fig:timedelay_hist}) spans from minutes to months, consistent with galaxy-scale lenses in the geometric optics regime (\S\ref{sec:timedelay}).
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.75\linewidth]
-    {Figures/optimal_snr_network_filtered.png}
-    \caption{Distribution of network SNR 
-    $\rho_\mathrm{net}$ for the 157 injected 
-    lensed BBH events after the duty cycle 
-    filter. The distribution is truncated at 
-    $\rho_\mathrm{net} = 10$ by construction 
-    and peaks just above the threshold, with 
-    a tail extending to higher values for 
-    strongly magnified or favorably oriented 
-    systems.}
+    {Figures/snr_L1_H1_net_overlay_ler.png}
+    \caption{Distribution of optimal SNR for L1 
+    ($\rho_\mathrm{opt}^{\mathrm{L1}}$, light orange), H1 
+    ($\rho_\mathrm{opt}^{\mathrm{H1}}$, orange), and 
+    the network ($\rho_\mathrm{opt}^{\mathrm{net}}$, brown), for the full detectable population 
+    ($N=500$, dashed) and the final injection set 
+    ($N=157$, solid) after the duty cycle and SNR 
+    filters. The network SNR distribution for the 
+    filtered population is truncated at 
+    $\rho_\mathrm{net} = 10$ by construction, and its 
+    peak shifts to higher SNR relative to the full 
+    population, reflecting the removal of images that 
+    fall below the threshold once only the active 
+    detectors are considered. The individual L1 and 
+    H1 distributions can extend below $\rho = 10$ 
+    even after filtering, since the selection 
+    criterion applies to the network SNR rather than 
+    to each detector separately.}
     \label{fig:snr_hist}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.75\linewidth]
-    {Figures/mass_1_source_hist_ler_nofiltered.png}
-    \caption{Distribution of the primary source-frame mass $m_1$ for the 157 injected lensed BBH events. The shape 
-    reflects the LIGO O3 Power Law + Gaussian population model adopted by \texttt{LER} v0.4.2, with a dominant low-mass component and a secondary feature near $30\,M_\odot$ from the Gaussian component.}
+    {Figures/mass_1_source_hist_overlay_ler.png}
+    \caption{Distribution of the primary 
+    source-frame mass $m_1^{\mathrm{src}}$ for the 
+    full detectable population ($N=500$, dashed) and 
+    the final injection set ($N=157$, solid). The 
+    shape reflects the LIGO O3 Power Law + Gaussian 
+    population model adopted by \texttt{LER} v0.4.2. 
+    The duty cycle and SNR selection preferentially 
+    retains events with $m_1^{\mathrm{src}}$ in the 
+    $25$--$35\,M_\odot$ range, consistent with 
+    higher-mass systems producing intrinsically 
+    louder signals and thus being more robust to 
+    the loss of detector uptime, while the 
+    high-mass tail above $\sim 40\,M_\odot$ is 
+    largely absent from the filtered population.}
     \label{fig:mass_hist}
 \end{figure}
 
@@ -268,18 +302,43 @@ lenses in the geometric optics regime
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.75\linewidth]
-    {Figures/magnifications_hist_ler_nofiltered.png}
+    {Figures/luminosity_distance_comparison_ler.png}
+    \caption{Comparison of the true luminosity 
+    distance $d_L$ and the effective luminosity 
+    distance $d_L^{\mathrm{eff}}$, for the full 
+    detectable population ($N=500$, dashed lines) 
+    and the final injection set ($N=157$, solid 
+    lines). Brown lines show $d_L$ and orange 
+    lines show $d_L^{\mathrm{eff}}$. Because 
+    magnification boosts the observed signal 
+    amplitude, $d_L^{\mathrm{eff}} = 
+    d_L/\sqrt{|\mu|}$ is systematically smaller 
+    than the true distance, shifting the 
+    effective-distance distributions toward 
+    lower values relative to $d_L$.}
+    \label{fig:dl_comparison}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]
+    {Figures/magnifications_hist_overlay_ler.png}
     \caption{Distribution of image magnifications 
-    $\mu$ for the lensed population prior to the 
-    duty cycle filter. Negative values correspond 
-    to Type II images (saddle points of the Fermat 
-    potential), which have mirror-inverted parity 
-    and acquire a $\pi/2$ Morse phase shift 
-    (see \S\ref{sec:strong_lensing}). The 
-    distribution is strongly peaked near 
-    $|\mu| \sim 1$ with extended tails at large 
-    $|\mu|$, consistent with the SIS power-law 
-    magnification prior adopted by \texttt{LER}.}
+    $\mu$ for the full detectable population 
+    ($N=500$, dashed) and the final injection set 
+    ($N=157$, solid), prior to the duty cycle 
+    filter for the former and after it for the 
+    latter. Negative values correspond to Type II 
+    images (saddle points of the Fermat potential), 
+    which have mirror-inverted parity and acquire a 
+    $\pi/2$ Morse phase shift (see 
+    \S\ref{sec:strong_lensing}). The distribution 
+    is strongly peaked near $\mu \sim 0$ with 
+    extended tails; the horizontal axis is clipped 
+    to the $0.5$--$99.5$ percentile range of the 
+    combined data to make the shape of the peak and 
+    tails visible, excluding a small number of 
+    extreme outliers reaching $|\mu| \sim 10^3$.}
     \label{fig:magnification_hist}
 \end{figure}
 
@@ -289,9 +348,9 @@ lenses in the geometric optics regime
     {Figures/time_delays_ler.png}
     \caption{Distribution of time delays 
     $\Delta t$ between the two lensed images 
-    for the 157 injected events, shown on a 
-    logarithmic scale. The distribution spans 
-    from minutes to months, consistent with 
+    for the 500 detectable lensed BBH events, 
+    shown on a logarithmic scale. The distribution 
+    spans from minutes to months, consistent with 
     galaxy-scale lenses in the geometric optics 
     regime. The Earth's rotation during this 
     interval is the primary mechanism enabling 
