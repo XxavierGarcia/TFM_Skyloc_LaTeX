@@ -2,30 +2,36 @@
 \phantomsection
 \addcontentsline{toc}{chapter}{Summary}
 
+Around 1920, a journalist asked the British astrophysicist Arthur Eddington whether it was true that only three people in the world understood general relativity. Eddington paused for a moment and replied: ``I am trying to think who the third person is.'' The anecdote may or may not be historically accurate, but Eddington's claim certainly was not. Within months of Einstein publishing his field equations in 1915, exact solutions were already being found: Schwarzschild's black hole, the de Sitter and anti-de Sitter cosmologies, Friedmann's expanding universe. The theory proved far more accessible than its reputation suggested \cite{LlibreBertJanssen}.
+
+That reputation, however, is not entirely undeserved. General relativity rests on tensor analysis and differential geometry, branches of mathematics that most physics students encounter only when they need them for this very purpose. Yet beneath the formalism lies a surprisingly simple physical idea: spacetime is a dynamical entity, shaped by matter and energy, and what we call gravity is nothing more than the curvature of that entity. As John Wheeler famously put it, ``matter tells spacetime how to curve, and spacetime tells matter how to move'' \cite{Misner1973}.
+
+One hundred and ten years after the publication of the field equations, general relativity has passed every experimental test devised. Among its most striking predictions are gravitational waves (GWs), ripples in the fabric of spacetime produced by the most violent events in the universe. First detected in September 2015 by the LIGO Scientific Collaboration \cite{PrimeradeteccioGW150914}, they opened an entirely new observational window onto the cosmos, one based not on light but on the oscillation of spacetime itself. In the decade since, more than three hundred compact binary mergers have been detected, and the field is entering what can only be described as its golden age.
+
+This thesis sits at the intersection of two of the richest areas in modern gravitational-wave astronomy: strong gravitational lensing and sky localization. When a GW passes near a massive galaxy on its way to Earth, its path is deflected, and it can arrive at the detector as multiple copies of the same signal, separated in time and amplitude. No confirmed lensed GW event has been observed to date, but forecasts for the upcoming O5 observing run predict more than one such event per year. Identifying these lensed image pairs, and analyzing them jointly rather than in isolation, opens the possibility of dramatically improving our knowledge of where on the sky the source lies, a measurement that with only two detectors operating is often poorly constrained.
+
+That is the central question this work sets out to address: can the joint analysis of two lensed images of the same binary black hole (BBH) merger meaningfully improve sky localization, and by how much? To answer it, a population of \num{500} strongly lensed BBH events detectable by the H1 and L1 detectors under projected O5a sensitivity is generated with the \textsc{LeR} framework, and a realistic detector duty cycle is applied to obtain a final injection set of $157$ events, of which $150$ were successfully carried through the full analysis. Lensed waveforms are generated with \textsc{Hanabi} using the \texttt{IMRPhenomXPHM} approximant, and each image pair is analyzed with \textsc{Bilby}, both individually and through a coherent joint fit that shares the intrinsic source parameters between images while allowing their lensing parameters (relative magnification, time delay, and image type) to vary independently. The joint analysis reduces the median $90\%$ credible sky area from $\num{571}\,\mathrm{deg}^2$, obtained from the better of the two single-image analyses, to $\num{99.9}\,\mathrm{deg}^2$, a typical improvement by a factor of $\sim 5$, and brings $3.3\%$ of events below the $10\,\mathrm{deg}^2$ threshold, a regime that no single-image analysis reaches in this two-detector configuration.
+
 The structure of this thesis is organized as follows:
 
 \begin{description}[leftmargin=1cm]
 
   \item[\chapterlink{Introduction_to_General_Relativity}{Chapter 1: Introduction to general relativity.}] Develops the theoretical foundations of GR, from the equivalence principle and the mathematics of curved spacetime to the Einstein field equations and the Schwarzschild solution.
 
-  \item[\chapterlink{Gravitational-wave theory}{Chapter 2: 
-  Gravitational wave theory.}] Derives gravitational waves from the linearized field equations, characterizes their polarization states and effect on matter, and introduces the detection principle and Bayesian parameter estimation framework.
+  \item[\chapterlink{Gravitational-wave theory}{Chapter 2: Gravitational wave theory.}] Derives gravitational waves from the linearized field equations, characterizes their polarization states and effect on matter, and introduces the detection principle and Bayesian parameter estimation framework.
 
   \item[\chapterlink{ch:lensing}{Chapter 3: Gravitational lensing of gravitational waves.}] Develops the strong lensing formalism and characterizes the signatures lensing imprints on gravitational wave signals, motivating the joint analysis of lensed image pairs for sky localization.
 
-  \item[\chapterlink{ch:simulation}{Chapter 4: Simulation setup and implementation.}] \textit{To be completed.}
+  \item[\chapterlink{ch:simulation}{Chapter 4: Simulation setup and implementation.}] Describes the construction of the strongly lensed BBH population with \textsc{LeR}, including the detectability and duty-cycle selection funnel used to obtain the final injection set.
 
-  \item[\chapterlink{Parameter_estimation_pipeline}{Chapter 5: Parameter estimation pipeline.}] \textit{To be completed.}
+  \item[\chapterlink{Parameter_estimation_pipeline}{Chapter 5: Parameter estimation pipeline.}] Covers the lensed waveform generation with \textsc{Hanabi}, the \textsc{Bilby} joint-analysis configuration, and the automation infrastructure deployed on the Picasso cluster.
 
-  \item[\chapterlink{Skyloc}{Chapter 6: Sky localization.}] 
-  \textit{To be completed.}
+  \item[\chapterlink{Skyloc}{Chapter 6: Sky localization.}] Presents the sky map generation and area statistics, comparing the $90\%$ credible sky area obtained from single-image and joint analyses across the injected population.
 
-  \item[\chapterlink{Conclusions}{Chapter 7: Conclusions.}] 
-  \textit{To be completed.}
+  \item[\chapterlink{Conclusions}{Chapter 7: Conclusions.}] Summarizes the main findings of this work and discusses possible directions for future research.
 
   \item[\chapterlink{Parameters_CBC_appendix}{Appendix A: Parameters of compact binary coalescences.}] Complete description of the parameter space of precessing binary black hole systems.
 
-  \item[\chapterlink{Reproducibility tutorial}{Appendix B: 
-  Reproducibility tutorial.}] Steps required to reproduce the results presented in this work.
+  \item[\chapterlink{Reproducibility tutorial}{Appendix B: Reproducibility tutorial.}] Steps required to reproduce the results presented in this work.
 
 \end{description}
