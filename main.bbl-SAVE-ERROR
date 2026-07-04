@@ -103624,42 +103624,6 @@
       \verb 10.1103/PhysRevD.108.103529
       \endverb
     \endentry
-    \entry{morse_index}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=dd15fdd4974f708a11db4e65ea499ff7}{%
-           family={{Blandford}},
-           familyi={B\bibinitperiod},
-           given={Roger},
-           giveni={R\bibinitperiod}}}%
-        {{hash=8259e147a19ce9574fb7695f2445865a}{%
-           family={{Narayan}},
-           familyi={N\bibinitperiod},
-           given={Ramesh},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \strng{fullhash}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \strng{fullhashraw}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \strng{bibnamehash}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \strng{authorbibnamehash}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \strng{authornamehash}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \strng{authorfullhash}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \strng{authorfullhashraw}{3bdbe24ba96513a944ed69a5e4b6e486}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The Astrophysical Journal Letters}
-      \field{month}{11}
-      \field{title}{Fermat's Principle, Caustics, and the Classification of Gravitational Lens Images}
-      \field{volume}{310}
-      \field{year}{1986}
-      \field{pages}{568}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1086/164709
-      \endverb
-    \endentry
     \entry{theligoscientificcollaboration2026gwtc40searchesgravitationalwavelensing}{misc}{}{}
       \name{author}{1769}{}{%
         {{hash=450a0f499f7824c81b66c0a5651fd889}{%
@@ -112553,6 +112517,42 @@
       \field{year}{2026}
       \verb{eprint}
       \verb 2512.16347
+      \endverb
+    \endentry
+    \entry{morse_index}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=dd15fdd4974f708a11db4e65ea499ff7}{%
+           family={{Blandford}},
+           familyi={B\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8259e147a19ce9574fb7695f2445865a}{%
+           family={{Narayan}},
+           familyi={N\bibinitperiod},
+           given={Ramesh},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \strng{fullhash}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \strng{fullhashraw}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \strng{bibnamehash}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \strng{authorbibnamehash}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \strng{authornamehash}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \strng{authorfullhash}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \strng{authorfullhashraw}{3bdbe24ba96513a944ed69a5e4b6e486}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Astrophysical Journal Letters}
+      \field{month}{11}
+      \field{title}{Fermat's Principle, Caustics, and the Classification of Gravitational Lens Images}
+      \field{volume}{310}
+      \field{year}{1986}
+      \field{pages}{568}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1086/164709
       \endverb
     \endentry
     \entry{degenerate_lens_properties}{article}{}{}
