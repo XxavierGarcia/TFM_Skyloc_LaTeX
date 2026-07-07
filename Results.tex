@@ -2,7 +2,7 @@
 With the theoretical framework for gravitational lensing 
 of GWs now established, including the geometric optics 
 formalism, the signatures of strong lensing on GW signals, 
-and the joint PE approach that exploits lensed image pairs to improve sky localization, we are in a position to present the original results of this thesis. Chapter~\ref{ch:simulation} describes the simulation setup and the strongly lensed BBH population generated with \textsc{LeR}. Chapter~\ref{Parameter_estimation_pipeline} presents the PE pipeline. Each image is first analyzed individually with \textsc{bilby}, and the two images of each event are then analyzed jointly with \textsc{hanabi}, which coordinates the coherent analysis of the image pair, sharing the intrinsic binary parameters between images while sampling the lensing parameters, on top of the \textsc{bilby} inference backend. The chapter also describes the automation infrastructure deployed on the Picasso HPC cluster. Finally, Chapter~\ref{Skyloc} presents the sky localization results, comparing the 90\% credible sky area obtained from single-image and joint analyses across the final set of analyzed events.
+and the joint PE approach that exploits lensed image pairs to improve sky localization, we are in a position to present the original results of this thesis. Chapter~\ref{ch:simulation} describes the simulation setup and the strongly lensed BBH population generated with \textsc{LeR}. Chapter~\ref{Parameter_estimation_pipeline} presents the PE pipeline. Each image is first analyzed individually with \textsc{Bilby}, and the two images of each event are then analyzed jointly with \textsc{Hanabi}, which coordinates the coherent analysis of the image pair, sharing the intrinsic binary parameters between images while sampling the lensing parameters, on top of the \textsc{Bilby} inference backend. The chapter also describes the automation infrastructure deployed on the Picasso HPC cluster. Finally, Chapter~\ref{Skyloc} presents the sky localization results, comparing the 90\% credible sky area obtained from single-image and joint analyses across the final set of analyzed events.
 
 
 \newpage
@@ -172,7 +172,7 @@ The 500 events produced by \textsc{LeR} represent the strongly lensed population
 $p_\mathrm{det} = 0.70$, reflecting typical O4/O5 
 single-detector duty cycles \cite{GWTC5}. An image is 
 retained only if both detectors are simultaneously active and $\rho_\mathrm{net} \geq 10$. Events with fewer than two surviving images are discarded; when more than two images survive, only the two with the highest network SNR are kept. After applying this filter once to the fixed 500-event 
-population, 157 events are selected as the final injection set analyzed with \textsc{bilby}.
+population, 157 events are selected as the final injection set analyzed with \textsc{Bilby}.
 
 The 500 events produced by \textsc{LeR} represent the strongly lensed population detectable under ideal observing conditions. To obtain a more realistic injection set, a duty cycle filter is applied: for each image of each event, both H1 and L1 are independently activated with probability 
 $p_\mathrm{det} = 0.70$, reflecting typical O4/O5 
@@ -379,43 +379,60 @@ for the same population.
 \section{Pipeline overview}
 \label{sec:pipeline_overview}
 
-The PE pipeline processes each of the 157 injected events through the same sequence of automated stages, illustrated in Figure~\ref{fig:pipeline_diagram}. Starting from the filtered population \texttt{n\_lensed\_params\_
-bbh\_filtered.txt} produced in \S\ref{sec:injected_params}, a single script, \texttt{Generator\_inis\_lenskyloc.py}, generates for every event the two single-image \texttt{.ini} configurations, the joint \texttt{.ini} configuration, and the companion SLURM scripts needed for the downstream steps described below, populating priors and injection parameters directly from the corresponding \textsc{LeR} output (\S\ref{sec:automation_picasso}).
 
-Each single-image \texttt{.ini} file is analyzed independently with \textsc{bilby\_pipe}, using the lensed waveform source model provided by \textsc{hanabi} (\S\ref{sec:bilby_config}). This yields, for every event, two independent posterior distributions, one per image. Once both single-image jobs have completed, the joint \texttt{.ini} file is submitted to \texttt{hanabi\_joint\_pipe} (\S\ref{sec:hanabi_joint}), which coordinates a coherent analysis of the image pair, sharing the intrinsic source parameters and sky location between images while sampling the lensing parameters, on top of the same \textsc{bilby} inference backend used for the single-image runs.
-
-From this point the pipeline branches into two independent post-processing tracks. In the first, the joint posterior is merged into a lightweight result file and passed, together with the single-image data realizations, to \texttt{hanabi\_postprocess\_result}, which recomputes the per-image and network signal-to-noise ratios consistently across the single and joint analyses; a dedicated script then extracts these recovered SNRs into a per-event summary table (\S\ref{sec:automation_picasso}), later combined across all events for the SNR consistency checks of \S\ref{sec:parameter_recovery}. In the second track, the single-image and joint posteriors are combined with \textsc{PESummary} \cite{TODO:pesummary} into a single metafile, from which sky maps are generated for each image and for the joint analysis using \texttt{ligo-skymap-from-samples}, \texttt{ligo-skymap-stats}, and \texttt{ligo-skymap-constellations}, providing the 90\% credible sky areas compared between single-image and joint analyses in Chapter~\ref{Skyloc}.
-
-The entire pipeline, from \texttt{.ini} generation to job submission and the SNR post-processing track, is automated on the Picasso HPC cluster; the sky-map track is run separately, as described in \S\ref{sec:automation_picasso}.
+This chapter presents the PE pipeline built on the injection set described in Chapter~\ref{ch:simulation}, together with the automation infrastructure used to run it for all 157 events. Figure~\ref{fig:pipeline_diagram} places this pipeline within the full analysis developed in this thesis, from the population generation of Chapter~\ref{ch:simulation} (Stage~1) to the sky localization results of Chapter~\ref{Skyloc} (Stage~4). The rest of this section focuses on Stages~2 and~3: the automated generation of \textsc{Bilby}/\textsc{Hanabi} configurations, and the single-image plus joint PE itself.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{Figures/diagrama_pipeline_reduced_TFM.pdf}
-    \caption{Overview of the parameter estimation pipeline. Each event is analyzed with two independent single-image \textsc{bilby\_pipe} runs and one joint \textsc{hanabi\_joint\_pipe} run, sharing the intrinsic binary parameters and sky location between images while sampling the lensing parameters. Post-processing splits into an SNR-recovery track and a sky-localization track.}
+    \caption{Overview of the full analysis pipeline developed in this thesis. Stage~1 (\S\ref{sec:LER_population}-\S\ref{sec:injected_params}): the lensed BBH population is generated with \textsc{LeR} and reduced from 500 detectable events to the final injection set of 157 through the duty cycle and SNR selection funnel (Table~\ref{tab:selection_funnel}). Stage~2 (\S\ref{sec:automation_picasso}): \texttt{Generator\_inis\_lenskyloc.py} converts each event's injected parameters into single-image and joint \texttt{.ini} configurations and the corresponding SLURM scripts. Stage~3 (\S\ref{sec:bilby_config}-\S\ref{sec:hanabi_joint}): each image is analyzed independently with \textsc{Bilby}, then jointly with \textsc{Hanabi}, sharing the intrinsic source parameters and sky location while keeping each image's luminosity distance independent. Stage~4 (\S\ref{sec:skymap_generation}-\S\ref{sec:skyloc_comparison}): sky maps are generated from the posteriors and the recovered 90\% credible areas are compared between single-image and joint analyses.}
     \label{fig:pipeline_diagram}
 \end{figure}
 
+Starting from the filtered population \texttt{n\_lensed\_params\_bbh\_filtered.txt} produced in \S\ref{sec:injected_params} (Stage~1), a single script, \texttt{Generator\_inis\_lenskyloc.py}, generates for every event the two single-image \texttt{.ini} configurations, the joint \texttt{.ini} configuration, and the \href{https://slurm.schedmd.com/overview.html}{SLURM} scripts needed for the steps described below, populating priors and injection parameters directly from the corresponding \textsc{LeR} output (Stage~2, \S\ref{sec:automation_picasso}).
 
-\section{Single-image analysis with \textsc{bilby}}
+Each single-image \texttt{.ini} file is analyzed independently with \texttt{bilby\_pipe} \cite{bilby_pipe_paper}, using the lensed waveform source model provided by \textsc{Hanabi} (\S\ref{sec:bilby_config}). This yields, for every event, two independent posterior distributions, one per image. Once both single-image jobs have completed, the joint \texttt{.ini} file is submitted with \texttt{hanabi\_joint\_pipe} (\S\ref{sec:hanabi_joint}), which coordinates a coherent analysis of the image pair, sharing the intrinsic source parameters and sky location between images while sampling the lensing parameters, on top of the same \textsc{Bilby} inference backend used for the single-image runs.
+
+From this point the pipeline branches into two independent post-processing tracks. In the first, the joint posterior is merged into a lightweight result file and passed, together with the single-image data realizations, to \texttt{hanabi\_postprocess\_result}, which recomputes the per-image and network SNRs consistently across the single and joint analyses; a dedicated script then extracts these recovered SNRs into a per-event summary table (\S\ref{sec:automation_picasso}), later combined across all events for the SNR consistency checks of \S\ref{sec:parameter_recovery}. In the second track, the single-image and joint posteriors are combined with \textsc{PESummary} \cite{PESummary} into a single metafile, from which sky maps are generated for each image and for the joint analysis using \texttt{ligo-skymap-from-samples}, \texttt{ligo-skymap-stats}, and \texttt{ligo-skymap-constellations}, providing the 90\% credible sky areas compared between single-image and joint analyses in Chapter~\ref{Skyloc}.
+
+The entire pipeline, from \texttt{.ini} generation to job submission and the SNR post-processing track, is automated on the \href{https://www.scbi.uma.es/web/es/supercomputacion/\#documentation}{Picasso HPC cluster} (SLURM scheduler); the sky-map track is run separately, as described in \S\ref{sec:automation_picasso}.
+
+
+\section{Single-image analysis with \textsc{Bilby}}
 \label{sec:bilby_config}
 
-Each of the two images of every event is first analyzed independently with \textsc{bilby\_pipe} \cite{BILBY}, treating it as an isolated signal characterized by its own data segment, noise realization, and set of extrinsic parameters. The \texttt{.ini} configuration is generated automatically for each image from a shared template (\S\ref{sec:automation_picasso}); the key data-conditioning and sampler settings are as follows:
+As introduced in \S\ref{sec:pipeline_overview}, each image is analyzed with \texttt{bilby\_pipe} \cite{bilby_pipe_paper} as an isolated signal, characterized by its own data segment, noise realization, and set of extrinsic parameters. The \texttt{.ini} configuration is generated automatically for each image from a shared template (\S\ref{sec:automation_picasso}). Table~\ref{tab:bilby_settings} summarizes the data-conditioning and sampler settings common to all 157 events.
 
-\begin{lstlisting}[style=numpyStyle]
-detectors=[H1, L1]
-sampling-frequency=2048
-reference-frequency=20
-minimum-frequency={'H1': 20, 'L1': 20, 'waveform': 13.33}
-maximum-frequency={'H1': 896, 'L1': 896}
-psd-dict={"H1": "T2500310-v2_O5a_strain_psd.txt",
-          "L1": "T2500310-v2_O5a_strain_psd.txt"}
-\end{lstlisting}
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+\hline\hline
+\multicolumn{1}{c}{Setting} & \multicolumn{1}{c}{Value} \\
+\hline
+Detector network & H1, L1 \\
+PSD & O5a strain PSD (same as \textsc{LeR}, \S\ref{sec:LER_population}) \\
+Sampling frequency & 2048\,Hz \\
+Reference frequency & $f_{\text{ref}}=20$\,Hz \\
+Minimum and maximum frequency & $f_{\min}=20$\,Hz, 13.33\,Hz (waveform) and $f_{\max}=896$\,Hz\\
+Segment duration & Computed per event (see below) \\
+Waveform approximant & \texttt{IMRPhenomXPNR} \cite{IMRPhenomXPNR} \\
+Sampler and sampling method & \texttt{dynesty} \cite{MCMC_vs_NS} and acceptance-walk\\
+Live points and \texttt{naccept} & 1000 and 60\\
+Parallel runs per image & $\texttt{n-parallel}=3$\\
+CPUs requested per job (SLURM) & 128 \\
+\hline
+\end{tabular}
+\caption{Fixed data-conditioning and sampler settings used in the single-image \texttt{bilby\_pipe} analysis of all 157 events.}
+\label{tab:bilby_settings}
+\end{table}
+The three parallel runs (\texttt{n-parallel}) are independent full \texttt{dynesty} analyses combined into a single posterior to mitigate sampler-to-sampler variance, while \texttt{npool} parallelizes the likelihood evaluation within each individual run and matches the number of CPUs requested per SLURM job.
 
-The same O5a PSD used to generate the population with \textsc{LeR} (\S\ref{sec:LER_population}) is adopted for the analysis, so that the noise assumptions are consistent between simulation and recovery. Unlike the data duration, which is fixed for the whole population in \textsc{LeR}, the segment \texttt{duration} used by \textsc{bilby\_pipe} is computed individually for every image from its injected component masses and spins, using \textsc{LALSimulation} bounds on the merger and ringdown time together with the expected waveform length at $f_\mathrm{low}=20$\,Hz, rounded up to the next power of two. This keeps each analysis as short as the signal allows without truncating the inspiral, rather than using a single conservative duration for the whole population.
+The same O5a PSD used to generate the population with \textsc{LeR} (\S\ref{sec:LER_population}) is adopted for the analysis, so that the noise assumptions are consistent between simulation and recovery. Unlike the data duration, which is fixed for the whole population in \textsc{LeR}, the segment duration used by \texttt{bilby\_pipe} is computed individually for every image from its injected component masses and spins, using \textsc{LALSimulation}~\cite{lalsuite} bounds on the merger and ringdown time together with the expected waveform length at $f_{\min}=20$\,Hz, rounded up to the next power of two. This keeps each analysis as short as the signal allows without truncating the inspiral, rather than using a single conservative duration for the whole population.
 
-The injected and recovered waveforms both use the \texttt{IMRPhenomXPNR} approximant \cite{TODO:IMRPhenomXPNR}, rather than the \texttt{IMRPhenomXPHM} approximant used by \textsc{LeR} to generate the population and compute detection SNRs (\S\ref{sec:LER_population}). This is a deliberate choice rather than an oversight: \texttt{IMRPhenomXPHM} is computationally cheap and sufficiently accurate for the population-level detectability calculation performed by \textsc{LeR}, whereas \texttt{IMRPhenomXPNR} incorporates numerical-relativity-tuned precession effects and is the more accurate, PE-oriented model of the two. Using it for parameter estimation follows standard practice in recent LVK analyses, at the cost of a waveform mismatch between the population-generation and inference stages that should be kept in mind when interpreting parameter recovery (\S\ref{sec:parameter_recovery}).
+The injected and recovered waveforms both use the \texttt{IMRPhenomXPNR} approximant \cite{IMRPhenomXPNR}, rather than the \texttt{IMRPhenomXPHM} approximant used by \textsc{LeR} to generate the population and compute the detection SNRs that define the selection funnel of \S\ref{sec:injected_params}. This choice is deliberate: \texttt{IMRPhenomXPHM} is computationally cheap and sufficiently accurate for the population-level detectability calculation performed by \textsc{LeR}, whereas \texttt{IMRPhenomXPNR} incorporates numerical-relativity-tuned precession effects and is the more accurate, PE-oriented model of the two, following standard practice in recent LVK analyses. For the parameter ranges considered here, the two models are expected to agree closely, so this choice between the population-selection and PE stages is not expected to introduce a significant waveform-systematics effect.
 
-The waveform is generated through \textsc{hanabi}'s lensed source model, \texttt{hanabi.lensing.waveform.strongly\_lensed\_BBH\_waveform} \cite{TODO:hanabi}, which implements the lensed strain expression of \S\ref{sec:strong_lensing}, combining the intrinsic \texttt{IMRPhenomXPNR} waveform with an image-dependent amplitude and Morse phase factor. In the single-image configuration this factor is fixed to the injected image type rather than treated as a free parameter,
+The waveform is generated through \textsc{Hanabi}'s lensed source model, \href{https://github.com/ricokaloklo/hanabi/blob/master/hanabi/lensing/waveform.py}{\texttt{hanabi.lensing.waveform.strongly\_lensed\_BBH\_waveform}}, which implements the lensed strain expression of \S\ref{sec:strong_lensing}, combining the intrinsic \texttt{IMRPhenomXPNR} waveform with an image-dependent amplitude and Morse phase factor. In the single-image configuration this factor is fixed to the injected image type rather than treated as a free parameter,
 
 \begin{lstlisting}[style=numpyStyle]
 prior-dict={..., image_type = 1.0}
@@ -423,18 +440,11 @@ prior-dict={..., image_type = 1.0}
 
 since a single lensed image is fully degenerate with an unlensed signal of appropriately rescaled amplitude and shifted phase: the magnification and Morse phase cannot be separated from the ordinary distance and coalescence-phase parameters using one image alone. Breaking this degeneracy is precisely the role of the joint analysis (\S\ref{sec:hanabi_joint}).
 
-The remaining priors follow standard choices for BBH parameter estimation: a chirp mass prior adapted individually for each event to a $\pm30\%$ range around its injected value (rather than a single wide range for the whole population, which would waste live points on regions of parameter space far from every event's true chirp mass), mass ratio and component-mass constraints, uniform spin magnitudes and precession angles, an isotropic sky location, and a $50$-$20\,000$\,Mpc uniform luminosity distance prior. Sampling is performed with \texttt{dynesty} \cite{MCMC_vs_NS} using the acceptance-walk method,
-
-\begin{lstlisting}[style=numpyStyle]
-n-parallel=3
-sampler-kwargs={'nlive': 1000, 'naccept': 60,
-                 'sample': 'acceptance-walk', 'npool': 128}
-\end{lstlisting}
-
-with three independent \texttt{dynesty} runs combined per image (\texttt{n-parallel=3}) to mitigate sampler-to-sampler variance, and $128$ parallel workers per run.
+The remaining priors follow standard choices for BBH parameter estimation: a chirp mass prior adapted individually for each event to a $\pm30\%$ range around its injected value (rather than a single wide range for the whole population, which would waste live points on regions of parameter space far from every event's true chirp mass), mass ratio and component-mass constraints, uniform spin magnitudes and precession angles, an isotropic sky location, and a $50$-$20\,000$\,Mpc uniform luminosity distance prior.
 
 
-\section{Joint analysis with \textsc{hanabi}}
+
+\section{Joint analysis with \textsc{Hanabi}}
 \label{sec:hanabi_joint}
 
 Once both single-image configurations exist, the joint analysis is performed with \texttt{hanabi\_joint\_pipe} \cite{TODO:hanabi}, which coherently analyzes the two images of an event as two triggers of the same underlying source rather than as independent signals:
@@ -491,7 +501,8 @@ sbatch --dependency=afterok:$jid_s1:$jid_s2 $joint_script
 
 so that the joint analysis for an event is only launched once both of its single-image analyses have completed successfully. The second stage, \texttt{submit\_all\_part2.sh}, runs after the first stage completes and chains, again via \texttt{afterok} dependencies, the merging of the joint posterior into a lightweight result file (\texttt{bilby\_result}, capped at $20\,000$ samples), the \textsc{hanabi} post-processing step (\texttt{hanabi\_postprocess\_result}, which recomputes per-image SNRs from the joint posterior using the noise realizations generated for the single-image analyses), and the final SNR extraction (\texttt{compute\_snr.py}).
 
-Post-processing splits into the two tracks introduced in \S\ref{sec:pipeline_overview}. The SNR-recovery track, final-result merging, \texttt{hanabi\_postprocess\_result}, and SNR extraction, is fully automated on Picasso as part of \texttt{submit\_all\_part2.sh}. The sky-map track, generating \textsc{PESummary} pages and sky maps for every event, is instead run on the CIT cluster using HTCondor, within the \texttt{igwn} \textsc{conda} environment distributed via CVMFS: \texttt{Pesummaries\_automated\_condor\_all.py} and \texttt{Skymap\_condor.py} are each launched as an HTCondor job array of 157 processes, indexed automatically by \texttt{\$(Process)}, generating the summary pages and sky maps for all events in parallel. The parameter estimation itself, both single-image and joint, was always run on Picasso and never on CIT; only this post-processing track uses HTCondor, since the version of \textsc{summarypages} available in the Picasso environment produced errors, while the \texttt{igwn} environment on CIT ran it correctly.
+Post-processing splits into the two tracks introduced in \S\ref{sec:pipeline_overview}. The SNR-recovery track, final-result merging, \texttt{hanabi\_postprocess\_result}, and SNR extraction, is fully automated on Picasso as part of \texttt{submit\_all\_part2.sh}. The sky-map track, generating \textsc{PESummary} pages and sky maps for every event, is instead run on \href{https://computing.docs.ligo.org/guide/computing-centres/cit/}{LIGO's computing cluster at Caltech (CIT)} using \href{https://htcondor.readthedocs.io/en/latest/}{HTCondor}~\cite{HTCondor}, within the \href{https://computing.docs.ligo.org/conda/}{IGWN Conda Distribution}: \texttt{Pesummaries\_automated\_condor\_all.py} and \texttt{Skymap\_condor.py} are each launched as an HTCondor job array of 157 processes, generating the summary pages and sky maps for all events in parallel. The PE itself, both single-image and joint, was always run on Picasso and never on CIT; only this post-processing track uses HTCondor, since the version of \textsc{PESummary} available in the Picasso environment produced errors, while the \texttt{igwn} environment on CIT ran it correctly.
+
 
 \subsection*{Compute losses}
 
@@ -503,6 +514,17 @@ The joint analysis is the most expensive step of the pipeline, requiring up to $
 
 \section{Parameter recovery and validation}
 \label{sec:parameter_recovery}
+
+%\begin{figure}[htbp]
+    %\centering
+    %\includegraphics[width=0.6\linewidth]{Figures/snr_post_minus_inj_vs_injected.png}
+    %\caption{Difference between the posterior-recovered network SNR $\rho_\mathrm{post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S\ref{sec:automation_picasso}) and the injected network SNR $\rho_\mathrm{inj}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}), as a function of $\rho_\mathrm{inj}$, for the $N=150$ successfully analyzed events. The offset is systematically positive (median $5.44$, $\sigma=5.95$).}
+    %\label{fig:snr_recovery_consistency}
+%\end{figure}
+
+Recovered network SNRs are systematically higher than the injected values (Figure~\ref{fig:snr_recovery_consistency}), with almost no events falling below $\rho_\mathrm{post}=\rho_\mathrm{inj}$. Given that the \texttt{IMRPhenomXPHM}/\texttt{IMRPhenomXPNR} waveform difference discussed in \S\ref{sec:bilby_config} is expected to be small for these systems, it is unlikely to account for an offset of this size; the discrepancy more likely stems from differences in the frequency range or network SNR definition between \textsc{LeR} and the \texttt{bilby}/\textsc{hanabi} post-processing pipeline. Identifying the exact origin of this offset is left for future work.
+
+
 % Violines single vs joint superpuestos (varios parametros, 150 eventos)
 % Scatter m1-m2 y ratio q (recuperado vs inyectado)
 % Residuals (inyectado - recuperado)
