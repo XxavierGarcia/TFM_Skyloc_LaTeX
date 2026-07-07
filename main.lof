@@ -1,0 +1,51 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Euclidean, spherical, and hyperbolic geometry compared}}{5}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The tangent space and tangent bundle of a manifold}}{6}{figure.1.2}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces A chart mapping a manifold to $\mathbb {R}^n$}}{7}{figure.1.3}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces A smooth transition map between overlapping charts}}{7}{figure.1.4}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Parallel transport in flat versus curved space}}{16}{figure.1.5}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Parallel transport around an infinitesimal loop}}{19}{figure.1.6}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces The energy-momentum tensor as a 4$\times $4 matrix}}{23}{figure.1.7}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Light cones in Schwarzschild coordinates near the horizon}}{27}{figure.1.8}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Light cones in Eddington-Finkelstein coordinates}}{28}{figure.1.9}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Simplified and detailed diagrams of a black hole}}{29}{figure.1.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Effect of $+$ and $\times $ polarizations on test particles}}{41}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Spatial zones around a compact-binary GW source}}{41}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Past light cone of a GW observation event}}{42}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Classification of GW source types}}{45}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Inspiral, merger, and ringdown phases of a CBC}}{45}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Optical layout of the Advanced LIGO interferometer}}{48}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Detector frame versus wave frame geometry}}{49}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Polarization-averaged antenna pattern of a detector}}{51}{figure.2.8}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Antenna patterns for the $+$ and $\times $ polarizations}}{52}{figure.2.9}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Representative spectral line artefacts in LIGO data}}{53}{figure.2.10}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Spectrograms of representative detector glitch classes}}{54}{figure.2.11}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces O4 strain noise budget of the LLO detector}}{55}{figure.2.12}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces The current LVK GW detector network}}{56}{figure.2.13}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Timeline of LVK observing runs and detector sensitivity}}{56}{figure.2.14}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces MCMC versus nested sampling strategies compared}}{64}{figure.2.15}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces The Metropolis-Hastings random walk in parameter space}}{65}{figure.2.16}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Geometric interpretation of the nested sampling algorithm}}{66}{figure.2.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic overview of strong lensing and microlensing}}{69}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Lens-mass scales for geometric versus wave optics}}{70}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Geometry of gravitational lensing in the thin-lens approximation}}{72}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Wavefront picture of gravitational lensing}}{73}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Amplification factor and lensed waveforms across regimes}}{77}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Fermat potential contours for three source positions}}{78}{figure.3.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Projected O5 strain sensitivity curves}}{84}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Optimal SNR for L1 ($\rho _\mathrm {opt}^{\mathrm {L1}}$, light orange), H1 ($\rho _\mathrm {opt}^{\mathrm {H1}}$, orange), and the network ($\rho _\mathrm {opt}^{\mathrm {net}}$, brown), for the full detectable population ($N=500$, dashed) and the final injection set ($N=157$, solid).}}{87}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Left: primary source-frame mass $m_1^{\mathrm {src}}$. Right: number of lensed images per event, comparing the true image multiplicity ($N=500$, dashed) against the number surviving the duty cycle and SNR filters before the top-2 cut ($N=157$, solid).}}{87}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \textit {Left}: true luminosity distance $d_L$ (brown) versus effective luminosity distance $d_L^{\mathrm {eff}}$ (orange). \textit {Right}: image magnification $\mu $.}}{88}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Source-frame component masses $m_1^{\mathrm {src}}$ and $m_2^{\mathrm {src}}$ for the 500 detectable lensed BBH events selected by \textsc {LeR}, colour-coded by network SNR $\rho _\mathrm {net}$. Diagonal dashed lines mark constant total mass $M$ and dotted lines mark constant mass ratio $q$. The population traces the underlying LIGO O3 Power Law + Gaussian model (\S \ref {sec:LER_population}), with most events clustering near $q=1$ and the highest-SNR events concentrated around $M\sim 50$-$70\,M_\odot $.}}{88}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Distribution of time delays $\Delta t$ between the two lensed images for the 500 detectable lensed BBH events, shown on a logarithmic scale. The distribution spans from minutes to months, consistent with galaxy-scale lenses in the geometric optics regime. The Earth's rotation during this interval is the primary mechanism enabling improved sky localization through joint analysis (\S \ref {sec:joint_PE_skyloc}).}}{89}{figure.4.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the full analysis pipeline developed in this thesis. Stage~1 (\S \ref {sec:LER_population}-\S \ref {sec:injected_params}): the lensed BBH population is generated with \textsc {LeR} and reduced from 500 detectable events to the final injection set of 157 through the duty cycle and SNR selection funnel (Table~\ref {tab:selection_funnel}). Stage~2 (\S \ref {sec:automation_picasso}): \texttt {Generator\_inis\_lenskyloc.py} converts each event's injected parameters into single-image and joint \texttt {.ini} configurations and the corresponding SLURM scripts. Stage~3 (\S \ref {sec:bilby_config}-\S \ref {sec:hanabi_joint}): each image is analyzed independently with \textsc {Bilby}, then jointly with \textsc {Hanabi}, sharing the intrinsic source parameters and sky location while keeping each image's luminosity distance independent. Stage~4 (\S \ref {sec:skymap_generation}-\S \ref {sec:skyloc_comparison}): sky maps are generated from the posteriors and the recovered 90\% credible areas are compared between single-image and joint analyses.}}{90}{figure.5.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

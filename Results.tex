@@ -430,56 +430,43 @@ The three parallel runs (\texttt{n-parallel}) are independent full \texttt{dynes
 
 The same O5a PSD used to generate the population with \textsc{LeR} (\S\ref{sec:LER_population}) is adopted for the analysis, so that the noise assumptions are consistent between simulation and recovery. Unlike the data duration, which is fixed for the whole population in \textsc{LeR}, the segment duration used by \texttt{bilby\_pipe} is computed individually for every image from its injected component masses and spins, using \textsc{LALSimulation}~\cite{lalsuite} bounds on the merger and ringdown time together with the expected waveform length at $f_{\min}=20$\,Hz, rounded up to the next power of two. This keeps each analysis as short as the signal allows without truncating the inspiral, rather than using a single conservative duration for the whole population.
 
-The injected and recovered waveforms both use the \texttt{IMRPhenomXPNR} approximant \cite{IMRPhenomXPNR}, rather than the \texttt{IMRPhenomXPHM} approximant used by \textsc{LeR} to generate the population and compute the detection SNRs that define the selection funnel of \S\ref{sec:injected_params}. This choice is deliberate: \texttt{IMRPhenomXPHM} is computationally cheap and sufficiently accurate for the population-level detectability calculation performed by \textsc{LeR}, whereas \texttt{IMRPhenomXPNR} incorporates numerical-relativity-tuned precession effects and is the more accurate, PE-oriented model of the two, following standard practice in recent LVK analyses. For the parameter ranges considered here, the two models are expected to agree closely, so this choice between the population-selection and PE stages is not expected to introduce a significant waveform-systematics effect.
+The injected and recovered waveforms both use the \texttt{IMRPhenomXPNR} approximant \cite{IMRPhenomXPNR}, rather than the \texttt{IMRPhenomXPHM} approximant used by \textsc{LeR} to generate the population and compute the detection SNRs that define the selection funnel of \S\ref{sec:injected_params}. This choice is deliberate: \texttt{IMRPhenomXPHM} is computationally cheap and sufficiently accurate for the population-level detectability calculation performed by \textsc{LeR}, whereas \texttt{IMRPhenomXPNR} incorporates NR tuned precession effects and is the more accurate, PE-oriented model of the two, following standard practice in recent LVK analyses. For the parameter ranges considered here, the two models are expected to agree closely, so this choice between the population-selection and PE stages is not expected to introduce a significant waveform-systematics effect.
 
-The waveform is generated through \textsc{Hanabi}'s lensed source model, \href{https://github.com/ricokaloklo/hanabi/blob/master/hanabi/lensing/waveform.py}{\texttt{hanabi.lensing.waveform.strongly\_lensed\_BBH\_waveform}}, which implements the lensed strain expression of \S\ref{sec:strong_lensing}, combining the intrinsic \texttt{IMRPhenomXPNR} waveform with an image-dependent amplitude and Morse phase factor. In the single-image configuration this factor is fixed to the injected image type rather than treated as a free parameter,
-
+The waveform is generated through \textsc{Hanabi}'s lensed source model, \href{https://github.com/ricokaloklo/hanabi/blob/master/hanabi/lensing/waveform.py}{\texttt{hanabi.\allowbreak lensing.\allowbreak waveform.\allowbreak strongly\_lensed\_BBH\_waveform}}, which implements the lensed strain expression of \S\ref{sec:strong_lensing}, combining the intrinsic \texttt{IMRPhenomXPNR} waveform with an image-dependent amplitude and Morse phase factor. In the single-image configuration this factor is fixed to \texttt{image\_type=1} (Type I, a minimum of the Fermat potential) rather than treated as a free parameter,
 \begin{lstlisting}[style=numpyStyle]
 prior-dict={..., image_type = 1.0}
 \end{lstlisting}
+since Type I images carry no Morse phase shift ($n=0$, \S\ref{sec:strong_lensing}) and are therefore indistinguishable, in isolation, from an ordinary unlensed signal: the only lensing imprint left in a single image is its apparent amplitude and arrival time, already absorbed into the standard \texttt{luminosity\_distance} and \texttt{geocent\_time} parameters. Each image is thus analyzed as if it were an ordinary CBC signal; identifying the true image type of each image, together with the relative magnification between them, is instead the specific role of the joint analysis (\S\ref{sec:hanabi_joint}), which samples \texttt{image\_type} independently for each image from a discrete prior.
 
-since a single lensed image is fully degenerate with an unlensed signal of appropriately rescaled amplitude and shifted phase: the magnification and Morse phase cannot be separated from the ordinary distance and coalescence-phase parameters using one image alone. Breaking this degeneracy is precisely the role of the joint analysis (\S\ref{sec:hanabi_joint}).
-
-The remaining priors follow standard choices for BBH parameter estimation: a chirp mass prior adapted individually for each event to a $\pm30\%$ range around its injected value (rather than a single wide range for the whole population, which would waste live points on regions of parameter space far from every event's true chirp mass), mass ratio and component-mass constraints, uniform spin magnitudes and precession angles, an isotropic sky location, and a $50$-$20\,000$\,Mpc uniform luminosity distance prior.
+The remaining priors follow standard choices for BBH PE: a chirp mass prior adapted individually for each event to a $\pm30\%$ range around its injected value (rather than a single wide range for the whole population, which would waste live points on regions of parameter space far from every event's true chirp mass), mass ratio and component-mass constraints, uniform spin magnitudes and precession angles, an isotropic sky location, and a $50$-$20\,000$\,Mpc uniform luminosity distance prior.
 
 
 
 \section{Joint analysis with \textsc{Hanabi}}
 \label{sec:hanabi_joint}
 
-Once both single-image configurations exist, the joint analysis is performed with \texttt{hanabi\_joint\_pipe} \cite{TODO:hanabi}, which coherently analyzes the two images of an event as two triggers of the same underlying source rather than as independent signals:
+Once both single-image configurations exist, the joint analysis is performed with \texttt{hanabi\_joint\_\allowbreak pipe}, which coherently analyzes the two images of an event as two triggers of the same underlying source (\texttt{n-triggers=2}) rather than as independent signals, with each trigger pointing to its corresponding single-image \texttt{.ini} file and otherwise inheriting its own data segment, noise realization, and PSD. The parameters shared between the two images are the intrinsic binary parameters (masses and spins), the sky location, the polarization angle, and the coalescence phase, reflecting the fact that both images are gravitationally lensed copies of the same source. 
 
-\begin{lstlisting}[style=numpyStyle]
-n-triggers=2
-trigger-ini-files=[single_event_xxx_image1.ini,
-                    single_event_xxx_image2.ini]
+Formally, \textsc{Hanabi}'s lensing model requires specifying both a relative magnification and an image type for each image. Table~\ref{tab:hanabi_lensing_priors} summarizes these lensing-specific priors: the relative magnification is fixed to $1$ for both images (not sampled), since its physical content is already captured by the two independently fitted luminosity distances discussed above, while the image type is the only genuinely free lensing parameter, sampled independently for each image from a discrete uniform prior over the three Morse-index classes introduced in \S\ref{sec:strong_lensing}.
 
-common-parameters=[chirp_mass, mass_ratio, mass_1, mass_2,
-                    a_1, a_2, tilt_1, tilt_2, phi_12, phi_jl,
-                    cos_theta_jn, ra, dec, psi, phase]
-\end{lstlisting}
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+\hline\hline
+\multicolumn{1}{c}{Lensing parameter} & \multicolumn{1}{c}{Prior} \\
+\hline\\[-8pt]
+Relative magnification $\mu_\mathrm{rel}^{(1)},\,\mu_\mathrm{rel}^{(2)}$ & Fixed to $1$ (not sampled) \\
+Image type $n^{(1)},\,n^{(2)}$ & Discrete uniform over Type I/II/III \\
+\hline
+\end{tabular}
+\caption{Lensing-specific priors of the joint \texttt{hanabi\_joint\_pipe} analysis (\texttt{lensing-prior-dict}). All other priors are shared between images as described in the text.}
+\label{tab:hanabi_lensing_priors}
+\end{table}
 
-Each trigger inherits its own data segment, noise realization, and PSD from its single-image \texttt{.ini} file, but the parameters listed in \texttt{common-parameters}, namely the intrinsic binary parameters, sky location, polarization, and coalescence phase, are constrained to be identical between the two images, reflecting the fact that both are gravitationally lensed copies of the same source. Notably, \texttt{luminosity\_distance} is deliberately left out of this shared list: each image retains its own independent effective distance parameter, so that the relative magnification between images is recovered through the ratio of the two independently fitted distances rather than sampled as a separate parameter. This is why the lensing-specific parameters reduce to the image type alone,
+Sharing the sky location across two images observed at different times, typically separated by minutes to months (Figure~\ref{fig:timedelay_hist}), is the key mechanism behind the improvement in sky localization: the Earth's rotation between the two epochs changes the detectors' antenna pattern for the same fixed $(\alpha,\delta)$, effectively lengthening the interferometric baseline available for triangulation (\S\ref{sec:joint_PE_skyloc}).
 
-\begin{lstlisting}[style=numpyStyle]
-lensing-prior-dict={relative-magnification^(1): 1,
-    image_type^(1) = hanabi.lensing.prior.DiscreteUniform(
-        name='image_type^(1)', minimum=1, N=3),
-    relative_magnification^(2) = 1,
-    image_type^(2) = hanabi.lensing.prior.DiscreteUniform(
-        name='image_type^(2)', minimum=1, N=3)}
-\end{lstlisting}
-
-with the relative magnification fixed to unity (its physical content already captured by the two independent distance posteriors) and each image's Morse-index class sampled independently from the three discrete types introduced in \S\ref{sec:strong_lensing}. Sharing the sky location across two images observed at different times, typically separated by minutes to months (Figure~\ref{fig:timedelay_hist}), is the key mechanism behind the improvement in sky localization: the Earth's rotation between the two epochs changes the detectors' antenna pattern for the same fixed $(\alpha,\delta)$, effectively lengthening the interferometric baseline available for triangulation (\S\ref{sec:joint_PE_skyloc}).
-
-The joint likelihood is evaluated over both images simultaneously, using the same sampler settings as the single-image runs (\texttt{dynesty}, \texttt{nlive=1000}, \texttt{naccept=60}, acceptance-walk, \texttt{n-parallel=3}), but with substantially higher resource requirements, reflecting the added cost of a two-detector, two-image coherent likelihood:
-
-\begin{lstlisting}[style=numpyStyle]
-request-memory=180.0
-scheduler-analysis-time=71:30:00
-\end{lstlisting}
-
-compared to \texttt{request-memory=110.0} and \texttt{scheduler-analysis-time=48:00:00} for each single-image run.
+The joint likelihood is evaluated over both images simultaneously, using the same sampler settings as the single-image runs (Table~\ref{tab:bilby_settings}), but with substantially higher resource requirements, reflecting the added cost of a two-detector, two-image coherent likelihood: $180$\,GB of memory and a $71.5$\,h wall-time limit, compared to $110$\,GB and $48$\,h for each single-image run.
 
 
 \section{Automation and infrastructure on Picasso}
@@ -522,7 +509,7 @@ The joint analysis is the most expensive step of the pipeline, requiring up to $
     %\label{fig:snr_recovery_consistency}
 %\end{figure}
 
-Recovered network SNRs are systematically higher than the injected values (Figure~\ref{fig:snr_recovery_consistency}), with almost no events falling below $\rho_\mathrm{post}=\rho_\mathrm{inj}$. Given that the \texttt{IMRPhenomXPHM}/\texttt{IMRPhenomXPNR} waveform difference discussed in \S\ref{sec:bilby_config} is expected to be small for these systems, it is unlikely to account for an offset of this size; the discrepancy more likely stems from differences in the frequency range or network SNR definition between \textsc{LeR} and the \texttt{bilby}/\textsc{hanabi} post-processing pipeline. Identifying the exact origin of this offset is left for future work.
+Recovered network SNRs are systematically higher than the injected values (Figure~\ref{fig:snr_recovery_consistency}), with almost no events falling below $\rho_\mathrm{post}=\rho_\mathrm{inj}$. Given that the \texttt{IMRPhenomXPHM}/\texttt{IMRPhenomXPNR} waveform difference discussed in \S\ref{sec:bilby_config} is expected to be small for these systems, it is unlikely to account for an offset of this size; the discrepancy more likely stems from differences in the frequency range or network SNR definition between \textsc{LeR} and the \textsc{Bilby}/\textsc{Hanabi} post-processing pipeline. Identifying the exact origin of this offset is left for future work.
 
 
 % Violines single vs joint superpuestos (varios parametros, 150 eventos)
