@@ -445,7 +445,7 @@ The remaining priors follow standard choices for BBH PE: a chirp mass prior adap
 \section{Joint analysis with \textsc{Hanabi}}
 \label{sec:hanabi_joint}
 
-Once both single-image configurations exist, the joint analysis is performed with \texttt{hanabi\_joint\_\allowbreak pipe}, which coherently analyzes the two images of an event as two triggers of the same underlying source (\texttt{n-triggers=2}) rather than as independent signals, with each trigger pointing to its corresponding single-image \texttt{.ini} file and otherwise inheriting its own data segment, noise realization, and PSD. The parameters shared between the two images are the intrinsic binary parameters (masses and spins), the sky location, the polarization angle, and the coalescence phase, reflecting the fact that both images are gravitationally lensed copies of the same source. 
+As introduced in \S\ref{sec:pipeline_overview}, the joint analysis is performed with \texttt{hanabi\_joint\_pipe}, treating the two images of an event as two triggers of the same underlying source (\texttt{n-triggers=2}) rather than as independent signals, with each trigger pointing to its corresponding single-image \texttt{.ini} file and otherwise inheriting its own data segment, noise realization, and PSD. The parameters shared between the two images are the intrinsic binary parameters (masses and spins), the sky location, the polarization angle, and the coalescence phase, reflecting the fact that both images are gravitationally lensed copies of the same source. The luminosity distance, by contrast, is fitted independently for each image.
 
 Formally, \textsc{Hanabi}'s lensing model requires specifying both a relative magnification and an image type for each image. Table~\ref{tab:hanabi_lensing_priors} summarizes these lensing-specific priors: the relative magnification is fixed to $1$ for both images (not sampled), since its physical content is already captured by the two independently fitted luminosity distances discussed above, while the image type is the only genuinely free lensing parameter, sampled independently for each image from a discrete uniform prior over the three Morse-index classes introduced in \S\ref{sec:strong_lensing}.
 
@@ -455,16 +455,17 @@ Formally, \textsc{Hanabi}'s lensing model requires specifying both a relative ma
 \begin{tabular}{ll}
 \hline\hline
 \multicolumn{1}{c}{Lensing parameter} & \multicolumn{1}{c}{Prior} \\
-\hline\\[-8pt]
+\hline
+\addlinespace[4pt]
 Relative magnification $\mu_\mathrm{rel}^{(1)},\,\mu_\mathrm{rel}^{(2)}$ & Fixed to $1$ (not sampled) \\
 Image type $n^{(1)},\,n^{(2)}$ & Discrete uniform over Type I/II/III \\
 \hline
 \end{tabular}
-\caption{Lensing-specific priors of the joint \texttt{hanabi\_joint\_pipe} analysis (\texttt{lensing-prior-dict}). All other priors are shared between images as described in the text.}
+\caption{Lensing-specific priors of the joint analysis performed with \texttt{hanabi\_\allowbreak joint\_\allowbreak pipe} (\texttt{lensing-\allowbreak prior-\allowbreak dict}). All other priors are shared between images as described in the text.}
 \label{tab:hanabi_lensing_priors}
 \end{table}
 
-Sharing the sky location across two images observed at different times, typically separated by minutes to months (Figure~\ref{fig:timedelay_hist}), is the key mechanism behind the improvement in sky localization: the Earth's rotation between the two epochs changes the detectors' antenna pattern for the same fixed $(\alpha,\delta)$, effectively lengthening the interferometric baseline available for triangulation (\S\ref{sec:joint_PE_skyloc}).
+Sharing the sky location across two images observed at different times, typically separated by minutes to months (Figure~\ref{fig:timedelay_hist}), is the key mechanism behind the improvement in sky localization: the Earth's rotation between two arrival times changes the detectors' antenna pattern for the same fixed $(\alpha,\delta)$, effectively acting as a longer effective arm separation for triangulation (\S\ref{sec:joint_PE_skyloc}).
 
 The joint likelihood is evaluated over both images simultaneously, using the same sampler settings as the single-image runs (Table~\ref{tab:bilby_settings}), but with substantially higher resource requirements, reflecting the added cost of a two-detector, two-image coherent likelihood: $180$\,GB of memory and a $71.5$\,h wall-time limit, compared to $110$\,GB and $48$\,h for each single-image run.
 
@@ -472,26 +473,26 @@ The joint likelihood is evaluated over both images simultaneously, using the sam
 \section{Automation and infrastructure on Picasso}
 \label{sec:automation_picasso}
 
-The full pipeline, from the filtered injection set to the final SNR tables, is automated for all 157 events on the Picasso HPC cluster (SLURM scheduler), with jobs executed directly inside a dedicated \texttt{conda}/\texttt{miniforge} environment (\texttt{hanabi\_bilby260}), without containerization.
+Running this pipeline for all 157 events relies on two components: a script that generates every configuration and job file automatically, and a two-stage submission mechanism that enforces the job dependencies of \S\ref{sec:pipeline_overview}. Jobs execute directly inside a dedicated \texttt{conda}/\texttt{miniforge} environment (\texttt{hanabi\_bilby260}) on Picasso.
 
-\subsection*{Configuration and script generation}
+\subsection{Configuration and script generation}
 
-A single script, \texttt{Generator\_inis\_lenskyloc.py}, converts the filtered injection catalogue \texttt{n\_lensed\_params\_bbh\_filtered.txt} into a complete, ready-to-submit run directory for every event. For each event it: (i) computes the true mass ratio, chirp mass, and a per-event data duration from the injected masses and spins (\S\ref{sec:bilby_config}); (ii) adapts the chirp-mass prior to a $\pm30\%$ range around the injected value; (iii) populates the \texttt{injection-dict} of both single-image templates directly from the corresponding \textsc{LeR} parameters, mapping, e.g., \texttt{effective\_luminosity\_distance} to \texttt{luminosity\_distance} and \texttt{effective\_geocent\_time} to \texttt{geocent\_time}; and (iv) writes out the two single-image \texttt{.ini} files, the joint \texttt{.ini} file, and the companion SLURM scripts for the downstream post-processing chain (final-result merging, joint SNR post-processing, sky map generation), substituting the event-specific paths into a set of shared templates. This guarantees that the 157 event directories are internally consistent and reproducible, and that no configuration is edited by hand.
+\texttt{Generator\_inis\_lenskyloc.py} converts the filtered injection catalogue \texttt{n\_lensed\_params\_bbh\_filtered.txt} into a complete, ready-to-submit run directory for every event. Beyond the per-event duration and chirp-mass prior described in \S\ref{sec:bilby_config}, it populates the \texttt{injection-dict} of both single-image templates directly from the corresponding \textsc{LeR} parameters, mapping, e.g., \texttt{effective\_luminosity\_distance} to \texttt{luminosity\_distance} and \texttt{effective\_geocent\_time} to \texttt{geocent\_time}, before writing the configuration and job-submission files described in \S\ref{sec:pipeline_overview} into a self-contained directory per event. This guarantees that all 157 event directories are internally consistent and reproducible, with no configuration edited by hand; Appendix~\ref{implementataion_pipeline} reproduces a representative single-image and joint \texttt{.ini} pair.
 
-\subsection*{Submission and job dependencies}
 
-Job submission is split into two stages, reflecting the pipeline's dependency structure. The first stage, \texttt{submit\_all\_part1.sh}, loops over all event directories and, for each one, submits the two single-image \texttt{bilby\_pipe} jobs and then the joint \texttt{hanabi\_joint\_pipe} job with an explicit SLURM dependency on both single-image job IDs,
+\subsection{Submission and job dependencies}
+
+Job submission is split into two stages, reflecting the pipeline's dependency structure. The first, \texttt{submit\_all\_part1.sh}, loops over all event directories and submits the two single-image \texttt{bilby\_pipe} jobs, followed by the joint \texttt{hanabi\_joint\_pipe} job with an explicit SLURM dependency on both single-image job IDs,
 
 \begin{lstlisting}[style=numpyStyle]
 sbatch --dependency=afterok:$jid_s1:$jid_s2 $joint_script
 \end{lstlisting}
 
-so that the joint analysis for an event is only launched once both of its single-image analyses have completed successfully. The second stage, \texttt{submit\_all\_part2.sh}, runs after the first stage completes and chains, again via \texttt{afterok} dependencies, the merging of the joint posterior into a lightweight result file (\texttt{bilby\_result}, capped at $20\,000$ samples), the \textsc{hanabi} post-processing step (\texttt{hanabi\_postprocess\_result}, which recomputes per-image SNRs from the joint posterior using the noise realizations generated for the single-image analyses), and the final SNR extraction (\texttt{compute\_snr.py}).
+so that the joint analysis for an event is only launched once both single-image analyses have completed successfully. The second stage, \texttt{submit\_all\_part2.sh}, runs after the first stage completes and chains, again via \texttt{afterok} dependencies, the SNR-recovery track described in \S\ref{sec:pipeline_overview}.
 
-Post-processing splits into the two tracks introduced in \S\ref{sec:pipeline_overview}. The SNR-recovery track, final-result merging, \texttt{hanabi\_postprocess\_result}, and SNR extraction, is fully automated on Picasso as part of \texttt{submit\_all\_part2.sh}. The sky-map track, generating \textsc{PESummary} pages and sky maps for every event, is instead run on \href{https://computing.docs.ligo.org/guide/computing-centres/cit/}{LIGO's computing cluster at Caltech (CIT)} using \href{https://htcondor.readthedocs.io/en/latest/}{HTCondor}~\cite{HTCondor}, within the \href{https://computing.docs.ligo.org/conda/}{IGWN Conda Distribution}: \texttt{Pesummaries\_automated\_condor\_all.py} and \texttt{Skymap\_condor.py} are each launched as an HTCondor job array of 157 processes, generating the summary pages and sky maps for all events in parallel. The PE itself, both single-image and joint, was always run on Picasso and never on CIT; only this post-processing track uses HTCondor, since the version of \textsc{PESummary} available in the Picasso environment produced errors, while the \texttt{igwn} environment on CIT ran it correctly.
+The sky-map track, generating \textsc{PESummary} pages and sky maps for every event, is instead run on \href{https://computing.docs.ligo.org/guide/computing-centres/cit/}{LIGO's computing cluster at Caltech (CIT)} using \href{https://htcondor.readthedocs.io/en/latest/}{HTCondor}~\cite{HTCondor}, within the \href{https://computing.docs.ligo.org/conda/}{IGWN Conda Distribution}: \texttt{Pesummaries\_automated\_condor\_all.py} and \texttt{Skymap\_condor.py} are each launched as an HTCondor job array of 157 processes, generating the summary pages and sky maps for all events in parallel. The PE itself, both single-image and joint, was always run on Picasso and never on CIT; only this post-processing track uses HTCondor, since the version of \textsc{PESummary} available in the Picasso environment produced errors, while the \texttt{igwn} environment on CIT ran it correctly.
 
-
-\subsection*{Compute losses}
+\subsection{Compute losses}
 
 The joint analysis is the most expensive step of the pipeline, requiring up to $71.5$\,h of wall time per event (\S\ref{sec:hanabi_joint}). Partway through the production run, the Picasso allocation available for this project was reduced to a $24$\,h wall-time limit, below what the remaining joint jobs required. The last seven joint analyses were interrupted mid-run when the allocation was exhausted; rather than repeatedly resubmit and monitor these jobs against an uncertain future allocation, the analysis was finalized with the $150$ events that had completed successfully. This loss of $7$ out of $157$ events ($157\to150$) is a consequence of the compute allocation available at the time, not a scientific selection criterion, and does not bias the final sample in any systematic way tied to source or lens parameters.
 
