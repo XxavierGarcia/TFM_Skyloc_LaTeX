@@ -309,12 +309,11 @@ This appendix reproduces two representative \texttt{.ini} configuration files ge
 \section{Single-image configuration}
 \label{app:single_ini_example}
 
-\begin{lstlisting}[style=numpyStyle, caption={Single-image \texttt{bilby\_pipe} configuration file for image 1 of event \texttt{inj001}.}, label={lst:single_ini_example}]
+\begin{lstlisting}[style=numpyStyle, caption={Single-image configuration file for image 1 of event \texttt{inj001}.}, label={lst:single_ini_example}]
 
 #################################################
 ## Data generation arguments
 #################################################
-
 trigger-time=1268585121.2749617
 gaussian-noise=True
 zero-noise=False
@@ -322,7 +321,6 @@ zero-noise=False
 ##################################################
 ## Detector arguments
 ##################################################
-
 detectors=[H1, L1]
 duration=4 
 psd-dict={"H1": "/mnt/home/users/uib54_res/resh000464/noise_curves/T2500310-v2_O5a_strain_psd.txt", "L1": "/mnt/home/users/uib54_res/resh000464/noise_curves/T2500310-v2_O5a_strain_psd.txt"} 
@@ -334,7 +332,6 @@ maximum-frequency= {'H1': 896, 'L1': 896}
 ##################################################
 ## Injection arguments
 ##################################################
-
 injection=True
 injection-dict={'mass_1': 68.50715378171094, 'mass_2': 40.35264268122141, 'luminosity_distance': 2889.5612112115464, 'a_1': 0.4527593183131344, 'a_2': 0.5997569914138758, 'tilt_1': 1.4148137284549118, 'tilt_2': 1.685673833551925, 'phi_12': 1.2201031723904865, 'phi_jl': 3.7845775009109737, 'theta_jn': 0.5351550350716038, 'psi': 2.351204394088696, 'phase': 4.596028055035042, 'geocent_time': 1268585121.2749617, 'ra': 6.094792612884527, 'dec': -0.6855988520635732, 'minimum_frequency': 20.0, 'reference_frequency': 20.0, 'image_type': 1.0} 
 injection-waveform-approximant=IMRPhenomXPNR
@@ -344,7 +341,6 @@ injection-waveform-arguments={'reference_frequency': 20, 'minimum_frequency': 20
 ##################################################
 ## Job submission arguments
 ##################################################
-
 label=lenskyloc_inj_001_hanabi_single_img1
 outdir=/mnt/home/users/uib54_res/resh000464/lenskyloc/lenskyloc_runs/inj001/inj001_img1
 request-disk=6.0
@@ -359,19 +355,16 @@ scheduler-analysis-time=48:00:00
 ##################################################
 ## Output arguments
 ##################################################
-
 result-format=json
 
 ##################################################
 ## Prior arguments
 ##################################################
-
 prior-dict={chirp-mass: bilby.gw.prior.UniformInComponentsChirpMass(minimum=31.819, maximum=59.093, name='chirp_mass', boundary=None), mass-ratio: bilby.gw.prior.UniformInComponentsMassRatio(minimum=0.05, maximum=1.0, name='mass_ratio', latex_label='$q$', unit=None, boundary=None), mass-1: Constraint(minimum=5.0, maximum=200.0, name='mass_1', latex_label='$m_1$', unit=None), mass-2: Constraint(minimum=5.0, maximum=200, name='mass_2', latex_label='$m_2$', unit=None), a-1: Uniform(minimum=0, maximum=0.99, name='a_1', latex_label='$a_1$', unit=None, boundary=None), a-2: Uniform(minimum=0, maximum=0.99, name='a_2', latex_label='$a_2$', unit=None, boundary=None), tilt-1: Sine(minimum=0, maximum=3.141592653589793, name='tilt_1'), tilt-2: Sine(minimum=0, maximum=3.141592653589793, name='tilt_2'), phi-12: Uniform(minimum=0, maximum=6.283185307179586, name='phi_12', boundary='periodic'), phi-jl: Uniform(minimum=0, maximum=6.283185307179586, name='phi_jl', boundary='periodic'), luminosity-distance: Uniform(minimum=50, maximum=20000, name='luminosity_distance', latex_label='$d_L$', unit='Mpc', boundary=None), cos-theta-jn: Uniform(minimum=-1, maximum=1, name='cos_theta_jn', latex_label='$\cos\theta_{JN}$', unit=None, boundary=None), psi: Uniform(minimum=0, maximum=3.141592653589793, name='psi', boundary='periodic'), phase: Uniform(minimum=0, maximum=6.283185307179586, name='phase', boundary='periodic'), dec: Cosine(minimum=-1.5707963267948966, maximum=1.5707963267948966, name='dec', latex_label='$\mathrm{DEC}$', unit=None, boundary=None), ra: Uniform(minimum=0, maximum=6.283185307179586, name='ra', latex_label='$\mathrm{RA}$', unit=None, boundary='periodic'),image_type = 1.0}  
 
 ##################################################
 ## Sampler arguments
 ##################################################
-
 n-parallel=3
 sampler-kwargs={'nlive': 1000, 'naccept': 60, 'check_point_plot': True, 'check_point_delta_t': 1800, 'print_method': 'interval-60', 'sample': 'acceptance-walk', 'samples': 'acceptance-walk', 'npool': 128}
 distance_marginalization=False
@@ -381,7 +374,6 @@ phase-marginalization=False
 ###################################################
 ## Waveform arguments (used for the analysis)
 ###################################################
-
 waveform-generator=bilby.gw.waveform_generator.WaveformGenerator
 frequency-domain-source-model=hanabi.lensing.waveform.strongly_lensed_BBH_waveform
 waveform-approximant=IMRPhenomXPNR
@@ -390,14 +382,14 @@ catch-waveform-errors=True
 pn-amplitude-order=1
 \end{lstlisting}
 
+
 \section{Joint configuration}
 \label{app:joint_ini_example}
 
-\begin{lstlisting}[style=numpyStyle, caption={Joint \texttt{hanabi\_joint\_pipe} configuration file for event \texttt{inj001}.}, label={lst:joint_ini_example}]
+\begin{lstlisting}[style=numpyStyle, caption={Joint configuration file for event \texttt{inj001}.}, label={lst:joint_ini_example}]
 ###################################################
 ## Job submission arguments
 ###################################################
-
 label=lenskyloc_inj_001_hanabi_joint
 outdir=/mnt/home/users/uib54_res/resh000464/lenskyloc/lenskyloc_runs/inj001/inj001_joint
 request-disk=6.0
@@ -412,7 +404,6 @@ scheduler-analysis-time=71:30:00
 ###################################################
 ## Output arguments
 ###################################################
-
 result-format=json
 
 ###################################################
@@ -425,14 +416,12 @@ sampler-kwargs={'nlive': 1000, 'naccept': 60, 'check_point_plot': True, 'check_p
 ###################################################
 ## Joint input arguments
 ###################################################
-
 n-triggers=2
 trigger-ini-files=[/mnt/home/users/uib54_res/resh000464/lenskyloc/lenskyloc_runs/inj001/single_event_001_image1.ini, /mnt/home/users/uib54_res/resh000464/lenskyloc/lenskyloc_runs/inj001/single_event_001_image2.ini]
 
 ###################################################
 ## Lensing prior argument
 ###################################################
-
 common-parameters=[chirp_mass, mass_ratio, mass_1, mass_2, a_1, a_2, tilt_1, tilt_2, phi_12, phi_jl, cos_theta_jn, ra, dec, psi, phase]
 lensing-prior-dict={relative-magnification^(1): 1, image_type^(1) = hanabi.lensing.prior.DiscreteUniform(name='image_type^(1)', minimum=1, N=3), relative_magnification^(2) = 1, image_type^(2) = hanabi.lensing.prior.DiscreteUniform(name='image_type^(2)', minimum=1, N=3)}
 
@@ -458,6 +447,22 @@ lensing-prior-dict={relative-magnification^(1): 1, image_type^(1) = hanabi.lensi
     %\label{fig:pipeline_cit_full}
 %\end{figure}
 %\end{landscape}
+
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/diagrama_pipeline_picasso.drawio.pdf}
+    \caption[Detailed implementation of the Picasso branch of the pipeline]{Detailed implementation of the Picasso (SLURM) branch of the pipeline, referenced in \S\ref{sec:automation_picasso}. An interactive version with clickable links to each script is available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/diagrama_pipeline.drawio.pdf} (download to enable links).}
+    \label{fig:pipeline_picasso}
+\end{figure}
+
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/diagrama_pipeline_CIT.drawio.pdf}
+    \caption[Detailed implementation of the CIT branch of the pipeline]{Detailed implementation of the CIT (HTCondor) post-processing branch of the pipeline, referenced in \S\ref{sec:automation_picasso} and \S\ref{sec:skymap_generation}. An interactive version with clickable links to each script is available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/diagrama_pipeline.drawio.pdf} (download to enable links).}
+    \label{fig:pipeline_cit}
+\end{figure}
 
 
 
