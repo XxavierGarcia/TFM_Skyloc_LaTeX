@@ -45,7 +45,7 @@ processes used for the MC sampling and SNR
 calculations. The simulation was run in a Jupyter 
 notebook on the CIT JupyterHub, using the \texttt{igwn} 
 conda environment (Python 3.11.14) distributed via 
-CVMFS, with 48 CPU cores available. The \texttt{event\_type="BBH"} argument selects the BBH source population model described in Table~\ref{tab:LER_params}, as opposed to the BNS or NS-BH options also supported by \textsc{LeR}. The \texttt{ifos} argument specifies the detector network over which the network SNR $\rho_\mathrm{net}$ is computed, here restricted to the two LIGO detectors, H1 and L1.
+CVMFS, with 48 CPU cores available. The \texttt{event\_type="BBH"} argument selects the BBH source population model described in Table~\ref{tab:LER_params}, as opposed to the BNS or NS-BH options also supported by \textsc{LeR}. The \texttt{ifos} argument specifies the detector network over which the network SNR $\rho_\mathrm{net}$ (\S\ref{sec:matched_filtering}) is computed, here restricted to the two LIGO detectors, H1 and L1.
 
 The \texttt{psds} argument sets the noise curve assigned to each detector, here the O5a design sensitivity PSD \cite{O5PSD}. This choice is motivated by the goal of simulating a realistic future observing scenario. The default PSD in \textsc{LeR} approximates O4 sensitivity, but no strongly lensed events were detected in O4. Simulating at O5a sensitivity instead, the first epoch of the O5 run with a BNS range of 225\,Mpc \cite{O5PSD}, provides a more informative and forward-looking setting for this study. Figure~\ref{fig:psd_O5a} shows the projected O5a strain sensitivity curve used in this work, compared against the L1 O4 sensitivity achieved in September 2024 and the later O5b and O5c projections.
 
@@ -66,7 +66,14 @@ The \texttt{psds} argument sets the noise curve assigned to each detector, here 
 The \texttt{waveform\_approximant} argument selects 
 \texttt{IMRPhenomXPHM} \cite{IMRPhenomXPHM} for the SNR 
 computation, which incorporates spin precession and 
-higher-order multipole moments. Finally, \texttt{spin\_zero=False} enables non-zero component spins in the source population, and \texttt{spin\_precession=True} allows for spin tilts misaligned with the orbital angular momentum, so that the resulting waveforms include precession effects. Both are necessary for the spin parameters listed in Table~\ref{tab:LER_params} to be sampled rather than fixed to zero.
+higher-order multipole moments. The population presented here uses the original release of this model, with no additional \texttt{waveform-arguments-dict} options passed to \textsc{LeR}. A more recent variant \cite{Colleoni:2024knd} refines the treatment of precession and the final-spin prescription through additional arguments,
+\begin{lstlisting}[style=numpyStyle]
+waveform-approximant = IMRPhenomXPHM
+waveform-arguments-dict = {"PhenomXHMReleaseVersion": 122022,
+                            "PhenomXPFinalSpinMod": 2,
+                            "PhenomXPrecVersion": 320}
+\end{lstlisting}
+but this improved configuration was not used for the population generation in this work. Finally, \texttt{spin\_zero=False} enables non-zero component spins in the source population, and \texttt{spin\_precession=True} allows for spin tilts misaligned with the orbital angular momentum, so that the resulting waveforms include precession effects. Both are necessary for the spin parameters listed in Table~\ref{tab:LER_params} to be sampled rather than fixed to zero.
 
 \begin{table}[h!]
 \centering
@@ -139,6 +146,7 @@ detectable events are collected, each requiring
 that at least two images independently satisfy 
 $\rho_\mathrm{net} \geq 10$:
 
+\newpage
 \begin{lstlisting}[style=numpyStyle]
 lensed_params = ler.selecting_n_lensed_detectable_events(
     size=500,
@@ -169,15 +177,11 @@ detector network \cite{Wierda_2021}, and is somewhat lower than forecasts for th
 \label{sec:injected_params}
 
 The 500 events produced by \textsc{LeR} represent the strongly lensed population detectable under ideal observing conditions. To obtain a more realistic injection set, a duty cycle filter is applied: for each image of each event, both H1 and L1 are independently activated with probability 
-$p_\mathrm{det} = 0.70$, reflecting typical O4/O5 
+$p_\mathrm{det} = 0.70$, reflecting typical O4 
 single-detector duty cycles \cite{GWTC5}. An image is 
 retained only if both detectors are simultaneously active and $\rho_\mathrm{net} \geq 10$. Events with fewer than two surviving images are discarded; when more than two images survive, only the two with the highest network SNR are kept. After applying this filter once to the fixed 500-event 
 population, 157 events are selected as the final injection set analyzed with \textsc{Bilby}.
-
-The 500 events produced by \textsc{LeR} represent the strongly lensed population detectable under ideal observing conditions. To obtain a more realistic injection set, a duty cycle filter is applied: for each image of each event, both H1 and L1 are independently activated with probability 
-$p_\mathrm{det} = 0.70$, reflecting typical O4/O5 
-single-detector duty cycles \cite{GWTC5}. An image is 
-retained only if both detectors are simultaneously active and $\rho_\mathrm{net} \geq 10$. Events with fewer than two surviving images are discarded; when more than two images survive, only the two with the highest network SNR are kept. 
+ 
 
 After applying this filter once to the fixed 500 event 
 population, 157 events are selected as the final injection set analyzed with \textsc{bilby}. Table~\ref{tab:selection_funnel} summarizes the successive stages of this selection process, from the initial MC draws performed by \textsc{LeR} to this final injection set.
@@ -227,7 +231,7 @@ rather than to each detector separately.
     \centering
     \includegraphics[width=0.71\linewidth]
     {Figures/snr_L1_H1_net_overlay_ler.png}
-    \caption{Optimal SNR for L1 
+    \caption[Optimal SNR for L1, H1, and network]{Optimal SNR for L1 
     ($\rho_\mathrm{opt}^{\mathrm{L1}}$, light orange), 
     H1 ($\rho_\mathrm{opt}^{\mathrm{H1}}$, orange), 
     and the network 
@@ -254,12 +258,7 @@ While the underlying population is dominated by
 four-image (quad) systems ($\sim75\%$), the joint 
 requirement of both detectors active and 
 $\rho_\mathrm{net}\geq10$ typically leaves only 
-two images per event above the threshold, and 
-almost never leaves all four. This reflects the 
-fact that quad systems produce two brightly 
-magnified images and two much fainter ones, the 
-latter rarely reaching the detection threshold 
-even when both detectors are active.
+two images per event above the threshold, and almost never leaves all four. This reflects the combined effect of the two filters: the fainter pair rarely reaches the SNR threshold even with both detectors active, and the duty cycle filter can remove any of the four images, including the brighter pair, whenever a detector happens to be inactive.
 
 \begin{figure}[h!]
     \centering
@@ -276,8 +275,8 @@ even when both detectors are active.
         {Figures/n_images_overlay_ler.png}
     \end{subfigure}%
     }
-    \caption{Left: primary source-frame mass 
-    $m_1^{\mathrm{src}}$. Right: number of lensed 
+    \caption[Primary source-frame mass and number of lensed images]{\textit{Left}: primary source-frame mass 
+    $m_1^{\mathrm{src}}$. \textit{Right}: number of lensed 
     images per event, comparing the true image 
     multiplicity ($N=500$, dashed) against the 
     number surviving the duty cycle and SNR filters 
@@ -323,7 +322,7 @@ reaching $|\mu| \sim 10^3$.
         {Figures/magnifications_hist_overlay_ler.png}
     \end{subfigure}%
     }
-    \caption{\textit{Left}: true luminosity distance $d_L$ 
+    \caption[True versus effective luminosity distance and magnification]{\textit{Left}: true luminosity distance $d_L$ 
     (brown) versus effective luminosity distance 
     $d_L^{\mathrm{eff}}$ (orange). \textit{Right}: image 
     magnification $\mu$.}
@@ -341,11 +340,11 @@ for the same population.
     \centering
     \includegraphics[width=0.74\linewidth]
     {Figures/m1s_vs_m2s_ler.png}
-    \caption{Source-frame component masses 
+    \caption[Joint $m_1^{\mathrm{src}}$-$m_2^{\mathrm{src}}$ distribution]{Source-frame component masses 
     $m_1^{\mathrm{src}}$ and $m_2^{\mathrm{src}}$ for 
     the 500 detectable lensed BBH events selected by 
     \textsc{LeR}, colour-coded by network SNR 
-    $\rho_\mathrm{net}$. Diagonal dashed lines mark 
+    $\rho_\mathrm{net}$. Dashed lines mark 
     constant total mass $M$ and dotted lines mark 
     constant mass ratio $q$. The population traces the 
     underlying LIGO O3 Power Law + Gaussian model 
@@ -359,7 +358,7 @@ for the same population.
     \centering
     \includegraphics[width=0.73\linewidth]
     {Figures/time_delays_ler.png}
-    \caption{Distribution of time delays $\Delta t$ 
+    \caption[Time delay distribution between lensed images]{Distribution of time delays $\Delta t$ 
     between the two lensed images for the 500 
     detectable lensed BBH events, shown on a 
     logarithmic scale. The distribution spans from 
@@ -385,7 +384,7 @@ This chapter presents the PE pipeline built on the injection set described in Ch
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{Figures/diagrama_pipeline_reduced_bo.pdf}
-    \caption{Overview of the full analysis pipeline developed in this thesis. Stage~1 (\S\ref{sec:LER_population}-\S\ref{sec:injected_params}): the lensed BBH population is generated with \textsc{LeR} and reduced from 500 detectable events to the final injection set of 157 through the duty cycle and SNR selection process (Table~\ref{tab:selection_funnel}). Stage~2 (\S\ref{sec:automation_picasso}): \texttt{Generator\_inis\_lenskyloc.py} converts each event's injected parameters into single-image and joint \texttt{.ini} configurations and the corresponding SLURM scripts. Stage~3 (\S\ref{sec:bilby_config}-\S\ref{sec:hanabi_joint}): each image is analyzed independently with \textsc{Bilby}, then jointly with \textsc{Hanabi}, sharing the intrinsic source parameters and sky location while keeping each image's luminosity distance independent. Stage~4 (\S\ref{sec:skymap_generation}-\S\ref{sec:skyloc_comparison}): sky maps are generated from the posteriors and the recovered 90\% credible areas are compared between single-image and joint analyses.}
+    \caption[Overview of the full analysis pipeline]{Overview of the full analysis pipeline developed in this thesis. Stage~1 (\S\ref{sec:LER_population}-\S\ref{sec:injected_params}): the lensed BBH population is generated with \textsc{LeR} and reduced from 500 detectable events to the final injection set of 157 through the duty cycle and SNR selection process (Table~\ref{tab:selection_funnel}). Stage~2 (\S\ref{sec:automation_picasso}): \texttt{Generator\_inis\_lenskyloc.py} converts each event's injected parameters into single-image and joint \texttt{.ini} configurations and the corresponding SLURM scripts. Stage~3 (\S\ref{sec:bilby_config}-\S\ref{sec:hanabi_joint}): each image is analyzed independently with \textsc{Bilby}, then jointly with \textsc{Hanabi}, sharing the intrinsic source parameters and sky location while keeping each image's luminosity distance independent. Stage~4 (\S\ref{sec:skymap_generation}-\S\ref{sec:skyloc_comparison}): sky maps are generated from the posteriors and the recovered 90\% credible areas are compared between single-image and joint analyses.}
     \label{fig:pipeline_diagram}
 \end{figure}
 

@@ -2089,7 +2089,7 @@ The interplay of all these contributions shapes the detector sensitivity curve s
 
 
 \subsection{Current detector network}
-
+\label{noise_amplitude}
 
 A single interferometer provides limited directional information: the antenna pattern functions derived in \S\ref{antenna_patterns_sec} show that, at any given time, a ground-based detector is nearly blind along certain sky directions, an effect that continuosly shifts as the Earth's rotation changes the detector's orientation relative to the sky. A global network of detectors is therefore essential, both to confirm detections through coincident observations and to localise sources on the sky via time delay triangulation. Sky localisation precision improves with the number of detectors, their mutual separation, and their individual sensitivities. The current network consists of four facilities operating in the frequency band $\sim\!10$-$5000$\,Hz (see Fig.~\ref{fig:current_network}):
 
@@ -2230,7 +2230,14 @@ Substituting
     = 4\int_0^\infty \frac{|\tilde{h}(f)|^2}{S_n(f)}\,df,
     \label{eq:optimal_SNR}
 \end{equation}
-which quantifies the intrinsic detectability of a waveform given the detector noise \cite{Optimal_SNR}. In practice, $\rho$ is computed as a time series by sliding the template across the data; a detection candidate is declared when $\rho$ exceeds a predefined threshold, typically $\rho \gtrsim 8$ for a single detector and requiring coincident triggers across the network to suppress noise transients \cite{GWTC5_methods}.
+which quantifies the intrinsic detectability of a waveform given the detector noise \cite{Optimal_SNR}. 
+
+For a network of $N_\mathrm{det}$ detectors, assuming their noise realizations are independent, the individual matched-filter outputs combine in quadrature to give the network SNR,
+\begin{equation}
+    \rho_\mathrm{net} = \left( \sum_{d=1}^{N_\mathrm{det}} \rho_d^2 \right)^{1/2},
+    \label{eq:network_SNR}
+\end{equation}
+where $\rho_d$ is the SNR recovered in detector $d$ \cite{GWTC5_methods}. This is the quantity referred to throughout this thesis as the ``network SNR'', e.g. $\rho_\mathrm{net}$ for the H1+L1 network of \S\ref{sec:LER_population}. In practice, $\rho$ is computed as a time series by sliding the template across the data; a detection candidate is declared when $\rho$ exceeds a predefined threshold, typically $\rho \gtrsim 8$ for a single detector and requiring coincident triggers across the network to suppress noise transients \cite{GWTC5_methods}.
 
 The matched filter is optimal only under the Gaussian noise 
 assumption of \eqref{eq:PSD}. In practice, non-Gaussianities and glitches can produce large values of $\rho$ in the absence of a real signal. To mitigate this, matched-filter searches are implemented through dedicated pipelines such as \textsc{PyCBC} \cite{PYCBC} and \textsc{GstLAL} \cite{GSTLAL}, which supplement the SNR with a $\chi^2$ consistency test (verifying that the signal power across different frequency bands is consistent with the template) and require coincident triggers across multiple detectors to suppress noise transients. The data is further classified by data quality vetoes that exclude periods of poor detector performance. A candidate event is then ranked by a combined detection statistic and assigned a false alarm rate; events passing a significance threshold are passed to the PE stage described in \S\ref{sec:PE}. Finally, since $\rho$ depends directly on the match between the template and the true signal, the effectiveness of the entire pipeline is tied to the accuracy of the waveform models discussed in the following section.
@@ -2570,7 +2577,7 @@ Since stationary points of $\tau$ always appear and disappear in pairs (a minimu
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.79\linewidth]{Figures/light_deflection}
-    \caption[Wavefront picture of gravitational lensing]{Wavefront picture of gravitational lensing. Left: light rays from a distant source are deflected near the centre, where the gravitational field is strongest. Centre: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. Right: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
+    \caption[Wavefront picture of gravitational lensing]{Wavefront picture of gravitational lensing. \textit{Left}: light rays from a distant source are deflected near the centre, where the gravitational field is strongest. Centre: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. \textit{Right}: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
     \label{fig:wavefronts}
 \end{figure}
 
@@ -2928,32 +2935,40 @@ is achievable from a single image \cite{Hannuksela_skyloc}. This section describ
 The sky localization of a GW source relies primarily on 
 triangulation: the difference in signal arrival times 
 across the detector network constrains the direction of 
-propagation, while the antenna pattern functions and 
-strain amplitudes provide complementary information 
+propagation, while the antenna pattern functions (see $\S$\ref{antenna_patterns_sec}) and strain amplitudes (see $\S$\ref{noise_amplitude}) provide complementary information 
 \cite{lensing_regimes}. The achievable localization 
 depends critically on the number and geometry of the 
 detectors: a single detector provides no directional 
 information for short-duration transients; two detectors 
-constrain the source to a ring on the celestial sphere, 
-centered on the axis connecting them; a third 
-non-collinear detector reduces this to a bimodal region; 
-and a fourth non-coplanar detector resolves the position 
-to a single sky area \cite{GWTC5}.
+constrain the source to two arc-shaped regions on the 
+celestial sphere, lying along the ring of constant time 
+delay around the axis connecting them, since the antenna 
+pattern response depends on direction and splits this 
+ring into two disconnected high probability arcs; a third non-collinear detector intersects this ring with a second independent one, reducing the arcs to a small bimodal pair of regions; and a fourth non-coplanar detector resolves the remaining reflection degeneracy to a single sky area \cite{GWTC5}.
+
 
 With only two detectors, a single GW image therefore 
-produces an annular sky region of typically hundreds of 
+produces a sky region of typically hundreds of 
 square degrees, containing millions of potential host 
 galaxies and tens of thousands of galaxies within the 
 90\% credible volume \cite{hubble_constant_lensing}, 
 making electromagnetic follow-up or lens identification 
 essentially impossible in the absence of an independent 
 counterpart. The analyses presented in this work use 
-only H1 and L1, reflecting the most realistic and 
-conservative scenario for strong lensing searches: 
-this is the most common observing configuration given 
-current network uptime and sensitivity, and ensures 
-that the sky localization improvement demonstrated 
-here is achievable under realistic observing conditions.
+only H1 and L1, reflecting the most conservative scenario 
+for strong lensing searches, since it corresponds to the 
+lower bound on the localization improvement achievable 
+once additional detectors are included in the network.
+
+Virgo, currently reaching $50$-$60$\,Mpc in O4, is expected 
+to improve further to $50$-$60$\,Mpc during the intermediate 
+run IR1 and to a projected $90$-$130$\,Mpc by O5, while KAGRA is similarly expected to improve from a few Mpc in O4 to $25$-$90$\,Mpc by O5 \cite{LVK_observing_plan}. Extending 
+the joint analysis presented in this work to include these 
+additional detectors, once their sensitivity and duty cycle 
+make them reliably available, is a natural direction for 
+future improvements in sky localization beyond the H1+L1 
+network considered here.
+
 
 \subsection{Joint parameter estimation of lensed pairs}
 \label{sec:joint_PE_skyloc}
@@ -2973,9 +2988,7 @@ combination reduces the overall sky localization
 uncertainty compared to a single image 
 \cite{hubble_constant_lensing}.
 
-This is exploited through a coherent joint PE of the two images: under the lensed hypothesis $\mathcal{H}_L$ (formally defined in \S\ref{sec:lensing_bayes_factor}), both data streams $d_1$ 
-and $d_2$ share the same intrinsic binary parameters 
-$\boldsymbol{\theta}$, as established in 
+This is exploited through a coherent joint PE of the two images, testing between two competing hypotheses: the lensed hypothesis $\mathcal{H}_L$, under which the two signals are lensed images of the same source, and the unlensed hypothesis $\mathcal{H}_U$, under which they originate from two independent sources. Under $\mathcal{H}_L$, both data streams $d_1$ and $d_2$ share the same intrinsic binary parameters $\boldsymbol{\theta}$, as established in 
 \eqref{eq:lensed_strain}, so the joint likelihood is 
 a product of the individual likelihoods evaluated at 
 the same $\boldsymbol{\theta}$, with separate lensing 
@@ -2998,7 +3011,7 @@ the lensing parameters per image, namely the relative
 magnification $\mu_\mathrm{rel}$ and the image type 
 $n_j$ sampled from a discrete uniform prior over 
 $\{1, 2, 3\}$, remain free independently for each 
-image. Under the unlensed hypothesis $\mathcal{H}_U$, 
+image. Under $\mathcal{H}_U$, 
 the two signals are independent and the joint evidence 
 reduces to the product of the individual evidences,
 \begin{equation}
@@ -3027,15 +3040,7 @@ factor}
 
 The Bayesian hypothesis testing framework introduced in 
 \S\ref{sec:bayes_factor} applies directly to the 
-identification of lensed GW events. Given two detected 
-signals, the competing hypotheses are
-\begin{align}
-    \mathbf{\mathcal{H}_L} &: \text{the two signals are lensed 
-    images of the same source,} \\
-    \mathbf{\mathcal{H}_U} &: \text{the two signals originate 
-    from two independent sources.}
-\end{align}
-The coherence ratio
+identification of lensed GW events, comparing the lensed and unlensed hypotheses $\mathcal{H}_L$ and $\mathcal{H}_U$ introduced in \S\ref{sec:joint_PE_skyloc}. The coherence ratio
 \begin{equation}
     \mathcal{C}_\mathrm{U}^\mathrm{L} \equiv 
     \frac{\mathcal{Z}_L}{\mathcal{Z}_1 \cdot \mathcal{Z}_2},
