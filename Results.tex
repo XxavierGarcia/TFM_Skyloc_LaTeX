@@ -57,7 +57,7 @@ The \texttt{psds} argument sets the noise curve assigned to each detector, here 
     O5 observing run (O5a, O5b, and O5c), compared against 
     the L1 O4 DARM sensitivity achieved in September 2024 
     (grey). The O5a curve (purple), adopted in this work, 
-    corresponds to a binary neutron star range of 
+    corresponds to a BNS range of 
     225\,Mpc. Dashed lines show the O5 thermal coating 
     noise and O5c quantum noise budgets. Source: \cite{O5PSD}.}
     \label{fig:psd_O5a}
@@ -498,19 +498,63 @@ The joint analysis is the most expensive step of the pipeline, requiring up to $
 \section{Parameter recovery and validation}
 \label{sec:parameter_recovery}
 
-%\begin{figure}[htbp]
-    %\centering
-    %\includegraphics[width=0.6\linewidth]{Figures/snr_post_minus_inj_vs_injected.png}
-    %\caption{Difference between the posterior-recovered network SNR $\rho_\mathrm{post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S\ref{sec:automation_picasso}) and the injected network SNR $\rho_\mathrm{inj}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}), as a function of $\rho_\mathrm{inj}$, for the $N=150$ successfully analyzed events. The offset is systematically positive (median $5.44$, $\sigma=5.95$).}
-    %\label{fig:snr_recovery_consistency}
-%\end{figure}
+For each of the 150 successfully analyzed events, the joint posterior is summarized by its median and 90\% credible interval (5th to 95th percentile) for every recovered parameter, and compared against the corresponding injected value from \textsc{LeR}.
+
+Figure~\ref{fig:mass1_mass2_recovery} shows the recovered $(m_1,m_2)$ 90\% credible contours for six representative events spanning the joint network SNR range of the sample ($\rho_\mathrm{net}$ from $13.1$ to $60.8$), overlaid on the contours of the remaining events in grey. The two lowest-SNR examples, \texttt{inj084} and \texttt{inj052}, show visibly elongated, curved contours: the leading-order phase evolution constrains mainly the chirp mass $\mathcal{M}$, so individual masses remain only weakly determined along lines of near-constant $\mathcal{M}$, and this degeneracy widens as the SNR decreases. The higher-SNR examples, in particular \texttt{inj117} ($\rho_\mathrm{net}=60.8$), instead recover both masses tightly.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.85\linewidth]{Figures/mass1_mass2_plot.png}
+    \caption[Recovered primary versus secondary mass for six representative events]{Recovered 90\% credible $(m_1,m_2)$ contours for six events spanning the sample's network SNR range (colored), against the 90\% credible contours of all other events (grey). The shaded regions mark $q<1/5$ and $q>1$, outside the astrophysical mass ratio range considered here.}
+    \label{fig:mass1_mass2_recovery}
+\end{figure}
+
+Figure~\ref{fig:residuals_mass} shows, across all 150 events, the residual between the posterior median and the injected value as a function of the injected value, with error bars spanning the 90\% credible interval, for the chirp mass $\mathcal{M}$ (left) and mass ratio $q$ (right). The chirp mass residuals are centered on zero across the full mass range (median $-0.002\,M_\odot$), consistent with $\mathcal{M}$ being the best determined parameter in the waveform phase. The mass ratio shows substantially more scatter (median $-0.078$, $\sigma=0.114$), growing with $q_\mathrm{inj}$ and with a mild pull toward lower recovered values as $q_\mathrm{inj}\to1$, reflecting the same $\mathcal{M}$-$q$ degeneracy rather than random noise.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/residuals_summary_01.png}
+    \caption[Chirp mass and mass ratio recovery residuals]{\textit{Left}: chirp mass residual $\mathcal{M}_\mathrm{post}-\mathcal{M}_\mathrm{inj}$. \textit{Right}: mass ratio residual $q_\mathrm{post}-q_\mathrm{inj}$. Both as a function of the injected value, for all 150 events.}
+    \label{fig:residuals_mass}
+\end{figure}
+
+Figure~\ref{fig:residuals_spin_eff} shows the same comparison for the aligned effective spin $\chi_\mathrm{eff}$ (left) and the precessing spin parameter $\chi_\mathrm{p}$ (right). $\chi_\mathrm{eff}$ is recovered tightly and without systematic offset (median $0.009$, $\sigma=0.082$), as expected since it enters the phase at the same post-Newtonian order as the mass ratio. $\chi_\mathrm{p}$ is markedly less well constrained (median $0.040$, $\sigma=0.165$), with a systematic downward pull at higher injected values, consistent with precession being weakly imprinted on the signal for most of these systems.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/residuals_summary_02.png}
+    \caption[Effective and precessing spin recovery residuals]{\textit{Left}: effective spin residual $\chi_{\mathrm{eff,post}}-\chi_{\mathrm{eff,inj}}$. \textit{Right}: precessing spin residual $\chi_{\mathrm{p,post}}-\chi_{\mathrm{p,inj}}$. Both as a function of the injected value, for all 150 events.}
+    \label{fig:residuals_spin_eff}
+\end{figure}
+
+Figure~\ref{fig:residuals_spin_mag} shows the residuals for the individual spin magnitudes $a_1$ (left) and $a_2$ (right). Both display a clear downward trend, with recovered values pulled above the injected value at low $a_\mathrm{inj}$ and below it at high $a_\mathrm{inj}$ (medians $0.014$ and $0.028$, $\sigma=0.196$ and $0.229$, respectively). This compression toward intermediate spin values is the expected signature of a weakly measured parameter combined with a bounded prior: with limited information from the data, the posterior partially reverts toward the bulk of the prior rather than to the true injected value.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/residuals_summary_03.png}
+    \caption[Individual spin magnitude recovery residuals]{\textit{Left}: primary spin residual $a_{1,\mathrm{post}}-a_{1,\mathrm{inj}}$. \textit{Right}: secondary spin residual $a_{2,\mathrm{post}}-a_{2,\mathrm{inj}}$. Both as a function of the injected value, for all 150 events.}
+    \label{fig:residuals_spin_mag}
+\end{figure}
+
+Figure~\ref{fig:residuals_distance} shows the relative residual $(D_{L,\mathrm{post}}-D_{L,\mathrm{inj}})/D_{L,\mathrm{inj}}$ for the effective luminosity distance of image 1 (left) and image 2 (right). Both show scatter of order unity in relative terms (median $0.027$, $\sigma=0.279$ for image 1; median $0.018$, $\sigma=0.301$ for image 2) without a strong systematic trend, consistent with luminosity distance being one of the least well determined parameters for a two-detector network due to its degeneracy with the inclination angle.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/residuals_summary_04.png}
+    \caption[Effective luminosity distance recovery residuals]{\textit{Left}: relative residual for image 1, $(D_{L,1,\mathrm{post}}-D_{L,1,\mathrm{inj}})/D_{L,1,\mathrm{inj}}$. \textit{Right}: same for image 2. Both as a function of the injected value, for all 150 events.}
+    \label{fig:residuals_distance}
+\end{figure}
 
 Recovered network SNRs are systematically higher than the injected values (Figure~\ref{fig:snr_recovery_consistency}), with almost no events falling below $\rho_\mathrm{post}=\rho_\mathrm{inj}$. Given that the \texttt{IMRPhenomXPHM}/\texttt{IMRPhenomXPNR} waveform difference discussed in \S\ref{sec:bilby_config} is expected to be small for these systems, it is unlikely to account for an offset of this size; the discrepancy more likely stems from differences in the frequency range or network SNR definition between \textsc{LeR} and the \textsc{Bilby}/\textsc{Hanabi} post-processing pipeline. Identifying the exact origin of this offset is left for future work.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Figures/residuals_summary_05.png}
+    \caption{Difference between the posterior-recovered network SNR $\rho_\mathrm{post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S\ref{sec:automation_picasso}) and the injected network SNR $\rho_\mathrm{inj}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}), as a function of $\rho_\mathrm{inj}$, for the $N=150$ successfully analyzed events. The offset is systematically positive (median $5.44$, $\sigma=5.95$).}
+    \label{fig:snr_recovery_consistency}
+\end{figure}
 
-% Violines single vs joint superpuestos (varios parametros, 150 eventos)
-% Scatter m1-m2 y ratio q (recuperado vs inyectado)
-% Residuals (inyectado - recuperado)
+
 
 
 

@@ -1,0 +1,59 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Euclidean, spherical, and hyperbolic geometry compared}}{5}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The tangent space and tangent bundle of a manifold}}{6}{figure.1.2}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces A chart mapping a manifold to $\mathbb {R}^n$}}{7}{figure.1.3}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces A smooth transition map between overlapping charts}}{7}{figure.1.4}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Parallel transport in flat versus curved space}}{16}{figure.1.5}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Parallel transport around an infinitesimal loop}}{19}{figure.1.6}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces The energy-momentum tensor as a 4$\times $4 matrix}}{23}{figure.1.7}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Light cones in Schwarzschild coordinates near the horizon}}{27}{figure.1.8}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Light cones in Eddington-Finkelstein coordinates}}{28}{figure.1.9}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Simplified and detailed diagrams of a black hole}}{29}{figure.1.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Effect of $+$ and $\times $ polarizations on test particles}}{41}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Spatial zones around a compact-binary GW source}}{41}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Past light cone of a GW observation event}}{42}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Classification of GW source types}}{45}{figure.2.4}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Inspiral, merger, and ringdown phases of a CBC}}{45}{figure.2.5}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Optical layout of the Advanced LIGO interferometer}}{48}{figure.2.6}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Detector frame versus wave frame geometry}}{49}{figure.2.7}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Polarization-averaged antenna pattern of a detector}}{51}{figure.2.8}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Antenna patterns for the $+$ and $\times $ polarizations}}{52}{figure.2.9}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Representative spectral line artefacts in LIGO data}}{53}{figure.2.10}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Spectrograms of representative detector glitch classes}}{54}{figure.2.11}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces O4 strain noise budget of the LLO detector}}{55}{figure.2.12}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces The current LVK GW detector network}}{56}{figure.2.13}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Timeline of LVK observing runs and detector sensitivity}}{56}{figure.2.14}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces MCMC versus nested sampling strategies compared}}{64}{figure.2.15}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces The Metropolis-Hastings random walk in parameter space}}{65}{figure.2.16}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Geometric interpretation of the nested sampling algorithm}}{66}{figure.2.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic overview of strong lensing and microlensing}}{69}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Lens-mass scales for geometric versus wave optics}}{70}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Geometry of gravitational lensing in the thin-lens approximation}}{72}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Wavefront picture of gravitational lensing}}{73}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Amplification factor and lensed waveforms across regimes}}{77}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Fermat potential contours for three source positions}}{78}{figure.3.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Projected O5 strain sensitivity curves}}{84}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Optimal SNR for L1, H1, and network}}{87}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Primary source-frame mass and number of lensed images}}{87}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces True versus effective luminosity distance and magnification}}{88}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Joint $m_1^{\mathrm {src}}$-$m_2^{\mathrm {src}}$ distribution}}{88}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Time delay distribution between lensed images}}{89}{figure.4.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the full analysis pipeline}}{90}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Recovered primary versus secondary mass for six representative events}}{95}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Chirp mass and mass ratio recovery residuals}}{96}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Effective and precessing spin recovery residuals}}{96}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Individual spin magnitude recovery residuals}}{96}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Effective luminosity distance recovery residuals}}{97}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Difference between the posterior-recovered network SNR $\rho _\mathrm {post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S \ref {sec:automation_picasso}) and the injected network SNR $\rho _\mathrm {inj}$ (computed by \textsc {LeR}, \S \ref {sec:LER_population}), as a function of $\rho _\mathrm {inj}$, for the $N=150$ successfully analyzed events. The offset is systematically positive (median $5.44$, $\sigma =5.95$).}}{97}{figure.5.7}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Detailed implementation of the Picasso branch of the pipeline}}{125}{figure.C.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Detailed implementation of the CIT branch of the pipeline}}{126}{figure.C.2}%
