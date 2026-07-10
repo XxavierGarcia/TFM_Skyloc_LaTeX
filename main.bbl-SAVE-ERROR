@@ -91748,8 +91748,8 @@
       \strng{authornamehash}{690c5d7ddedbb4d9ad2ed5d3c76a6649}
       \strng{authorfullhash}{690c5d7ddedbb4d9ad2ed5d3c76a6649}
       \strng{authorfullhashraw}{690c5d7ddedbb4d9ad2ed5d3c76a6649}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1433-8351}
@@ -112671,6 +112671,29 @@
       \verb 2604.16561
       \endverb
     \endentry
+    \entry{LVK_observing_plan}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=5e9d13625858702d2fae21e9fe660eac}{%
+           family={{LIGO Scientific Collaboration and Virgo Collaboration and KAGRA Collaboration}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{fullhash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{fullhashraw}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{bibnamehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authorbibnamehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authornamehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authorfullhash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authorfullhashraw}{5e9d13625858702d2fae21e9fe660eac}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://observing.docs.ligo.org/plan/}}
+      \field{note}{Document control number G2002127-v36}
+      \field{title}{LVK Observing Plans}
+      \field{year}{2026}
+    \endentry
     \entry{phurailatpam2026lerlvkligovirgokagracollaboration}{misc}{}{}
       \name{author}{9}{}{%
         {{hash=60726f977f19e6b88f23eda554eb7d5b}{%
@@ -112910,6 +112933,57 @@
       \endverb
       \verb{url}
       \verb https://dcc.ligo.org/T2500310-v2/public
+      \endverb
+    \endentry
+    \entry{Colleoni:2024knd}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=679630f7b87f8e3c806329c51a703f1f}{%
+           family={Colleoni},
+           familyi={C\bibinitperiod},
+           given={Marta},
+           giveni={M\bibinitperiod}}}%
+        {{hash=676ce305640de9c557a355ea5566853d}{%
+           family={Vidal},
+           familyi={V\bibinitperiod},
+           given={Felip\bibnamedelimb A.\bibnamedelimi Ramis},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=c28b3b7d2bc5c6527b544ce520a7dcbf}{%
+           family={García-Quirós},
+           familyi={G\bibinithyphendelim Q\bibinitperiod},
+           given={Cecilio},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1f0c687bd9498d333c2034ae80e156d0}{%
+           family={Akçay},
+           familyi={A\bibinitperiod},
+           given={Sarp},
+           giveni={S\bibinitperiod}}}%
+        {{hash=50048396f92b11694923da4f3a9bed5b}{%
+           family={Bera},
+           familyi={B\bibinitperiod},
+           given={Sayantani},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4ad9a0e5703077505aef012f88323e8b}
+      \strng{fullhash}{52e868449b293976414bd4009872a541}
+      \strng{fullhashraw}{52e868449b293976414bd4009872a541}
+      \strng{bibnamehash}{4ad9a0e5703077505aef012f88323e8b}
+      \strng{authorbibnamehash}{4ad9a0e5703077505aef012f88323e8b}
+      \strng{authornamehash}{4ad9a0e5703077505aef012f88323e8b}
+      \strng{authorfullhash}{52e868449b293976414bd4009872a541}
+      \strng{authorfullhashraw}{52e868449b293976414bd4009872a541}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{number}{10}
+      \field{title}{{Fast frequency-domain gravitational waveforms for precessing binaries with a new twist}}
+      \field{volume}{111}
+      \field{year}{2025}
+      \field{pages}{104019}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.111.104019
       \endverb
     \endentry
     \entry{Abbott2021pop}{article}{}{}
@@ -121305,8 +121379,8 @@
       \strng{authornamehash}{a0e8b94d13abde1452b546283af683bb}
       \strng{authorfullhash}{d4e4c20a6ccb78ca554e2b73b61664bc}
       \strng{authorfullhashraw}{d4e4c20a6ccb78ca554e2b73b61664bc}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{gr-qc}
@@ -121343,8 +121417,8 @@
       \strng{authornamehash}{b71d0d379b5cd3119110969dffde8a66}
       \strng{authorfullhash}{b71d0d379b5cd3119110969dffde8a66}
       \strng{authorfullhashraw}{b71d0d379b5cd3119110969dffde8a66}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Astrophysical Journal}
@@ -121395,8 +121469,8 @@
       \strng{authornamehash}{bc76beacd9b9bc059955b4a3dba77a02}
       \strng{authorfullhash}{435c7a5141206ba393df1790244f4e0e}
       \strng{authorfullhashraw}{435c7a5141206ba393df1790244f4e0e}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Astrophysical Journal}
@@ -121465,8 +121539,8 @@
       \strng{authornamehash}{cfc19265d1b65e8724198a281e9b0801}
       \strng{authorfullhash}{2d1882f67f5a9648f04506d7e3a21cc8}
       \strng{authorfullhashraw}{2d1882f67f5a9648f04506d7e3a21cc8}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Astrophysical Journal}
@@ -121805,6 +121879,98 @@
       \range{pages}{1}
       \verb{doi}
       \verb https://doi.org/10.1016/j.jocs.2020.101213
+      \endverb
+    \endentry
+    \entry{Poon2025_lens_reconstruction}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=63f013d5a34192ba9b83c8a288e51b41}{%
+           family={Poon},
+           familyi={P\bibinitperiod},
+           given={Jason\bibnamedelimb S.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=296a7fb2d16109ed3c27117a6e062b8a}{%
+           family={Rinaldi},
+           familyi={R\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=91845790e0c6457d9e80068ccce76320}{%
+           family={Janquart},
+           familyi={J\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7a667e93550702a4652d1be380cdbbc8}{%
+           family={Narola},
+           familyi={N\bibinitperiod},
+           given={Harsh},
+           giveni={H\bibinitperiod}}}%
+        {{hash=871778cf9a8f69afaca5aeb0a12645f3}{%
+           family={Hannuksela},
+           familyi={H\bibinitperiod},
+           given={Otto\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6b0494e45eb76790bad3f6816f77d3ef}
+      \strng{fullhash}{9b21b9a9b408b62bff336ee52c046639}
+      \strng{fullhashraw}{9b21b9a9b408b62bff336ee52c046639}
+      \strng{bibnamehash}{6b0494e45eb76790bad3f6816f77d3ef}
+      \strng{authorbibnamehash}{6b0494e45eb76790bad3f6816f77d3ef}
+      \strng{authornamehash}{6b0494e45eb76790bad3f6816f77d3ef}
+      \strng{authorfullhash}{9b21b9a9b408b62bff336ee52c046639}
+      \strng{authorfullhashraw}{9b21b9a9b408b62bff336ee52c046639}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mon. Not. R. Astron. Soc.}
+      \field{title}{Galaxy lens reconstruction based on strongly lensed gravitational waves}
+      \field{volume}{536}
+      \field{year}{2025}
+      \field{pages}{2212\bibrangedash 2233}
+      \range{pages}{22}
+    \endentry
+    \entry{Kim2024_lensing_distance}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=7703d0c788282ccc646d4a2e41c0507c}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Kyungmin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9609c87e27204cf11eaea9a9b1137896}{%
+           family={Seo},
+           familyi={S\bibinitperiod},
+           given={Eungwang},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b3055c05590f776034029973a1f8abb3}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Chunglee},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{b4c000860d7029c49144d6c16cfae814}
+      \strng{fullhash}{b4c000860d7029c49144d6c16cfae814}
+      \strng{fullhashraw}{b4c000860d7029c49144d6c16cfae814}
+      \strng{bibnamehash}{b4c000860d7029c49144d6c16cfae814}
+      \strng{authorbibnamehash}{b4c000860d7029c49144d6c16cfae814}
+      \strng{authornamehash}{b4c000860d7029c49144d6c16cfae814}
+      \strng{authorfullhash}{b4c000860d7029c49144d6c16cfae814}
+      \strng{authorfullhashraw}{b4c000860d7029c49144d6c16cfae814}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{4}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{month}{2}
+      \field{title}{Gravitational lensing aided luminosity distance estimation for compact binary coalescences}
+      \field{volume}{109}
+      \field{year}{2024}
+      \field{pages}{043017}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.109.043017
       \endverb
     \endentry
     \entry{parameters_CBC}{misc}{}{}
