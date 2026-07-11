@@ -10,7 +10,7 @@ event and per parameter as
 \mathrm{IF} \equiv \frac{\min\!\left(\Delta_{90}^{(1)},\,\Delta_{90}^{(2)}\right)}{\Delta_{90}^{\mathrm{joint}}},
 \label{eq:improvement_factor}
 \end{equation}
-where $\Delta_{90}^{(i)}$ denotes the width of the $90\%$ credible interval (5th to 95th percentile) of the posterior for image $i$, and $\Delta_{90}^{\mathrm{joint}}$ the same quantity for the joint posterior, values $\mathrm{IF}>1$ mean the joint analysis is tighter than the better of the two single-image analyses. The largest improvement factors across the sample are $\mathrm{IF}=3.53$ for $D_L^{\mathrm{eff}}$ in \texttt{inj113}, $2.20$ for $\chi_\mathrm{eff}$ in \texttt{inj113}, $1.91$ for $\mathcal{M}$ in \texttt{inj113}, and $1.67$ for $q$ in \texttt{inj152}. Table~\ref{tab:improvement_factors_top20} lists the top 20 events ranked by $D_L^{\mathrm{eff}}$; \texttt{inj113} stands out as the event where the joint analysis extracts the most information across essentially every parameter simultaneously.
+where $\Delta_{90}^{(i)}$ denotes the width of the $90\%$ credible interval (5th to 95th percentile) of the posterior for image $i$, and $\Delta_{90}^{\mathrm{joint}}$ the same quantity for the joint posterior, values $\mathrm{IF}>1$ mean the joint analysis is tighter than the better of the two single-image analyses. The largest improvement factors across the sample are $\mathrm{IF}=3.53$ for $D_L^{\mathrm{eff}}$ in \texttt{inj113}, $2.20$ for $\chi_\mathrm{eff}$ in \texttt{inj113}, $1.91$ for $\mathcal{M}$ in \texttt{inj113}, and $1.67$ for $q$ in \texttt{inj152}. Table~\ref{tab:improvement_factors_top20} lists the top 25 events ranked by $D_L^{\mathrm{eff}}$; \texttt{inj113} stands out as the event where the joint analysis extracts the most information across essentially every parameter simultaneously.
 
 \begin{table}[h!]
 \centering
@@ -40,9 +40,14 @@ Event & $\rho_\mathrm{net}^{\mathrm{inj}}$ & $\mathcal{M}$ & $q$ & $D_L^{\mathrm
 \texttt{inj004} & 54.5 & 1.21 & 1.20 & \hi{1.55} & 1.23 & 1.11 & 1.31 & 1.06 \\
 \texttt{inj026} & 25.0 & 1.16 & 1.11 & \hi{1.55} & 0.92 & 0.99 & 1.00 & 1.02 \\
 \texttt{inj098} & 21.1 & 1.24 & 0.97 & \hi{1.54} & 0.98 & 0.99 & 1.21 & 0.98 \\
+\texttt{inj028} & 16.3 & 1.26 & 1.07 & \hi{1.52} & 1.05 & 0.99 & 1.18 & 1.02 \\
+\texttt{inj083} & 39.1 & 1.36 & 1.28 & \hi{1.52} & 1.05 & 1.14 & 1.44 & 1.11 \\
+\texttt{inj071} & 29.4 & 0.84 & 0.97 & \hi{1.51} & 1.03 & 1.05 & 1.16 & 0.94 \\
+\texttt{inj085} & 26.8 & 0.80 & 0.80 & \hi{1.51} & 1.05 & 0.98 & 1.02 & 1.08 \\
+\texttt{inj035} & 18.9 & 1.22 & 0.99 & \hi{1.51} & 1.06 & 1.03 & 1.18 & 1.07 \\
 \hline
 \end{tabular}}
-\caption[Improvement factors of the top 20 events ranked by effective distance]{Improvement factors $\mathrm{IF}$ (Eq.~\eqref{eq:improvement_factor}) for the top 20 events ranked by $D_L^{\mathrm{eff}}$, with the injected network SNR $\rho_\mathrm{net}^{\mathrm{inj}}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}) shown for context. Values highlighted in orange mark $\mathrm{IF}\geq 1.5$, where the joint analysis narrows the $90\%$ credible interval by at least a factor of $1.5$ relative to the better of the two single-image analyses. Values below $1$ appear only sporadically for $a_1$, $a_2$, and $\chi_\mathrm{p}$, which remain effectively prior-dominated across the sample.}
+\caption[Improvement factors of the top 25 events ranked by effective distance]{Improvement factors $\mathrm{IF}$ (Eq.~\eqref{eq:improvement_factor}) for the top 25 events ranked by $D_L^{\mathrm{eff}}$, with the injected network SNR $\rho_\mathrm{net}^{\mathrm{inj}}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}) shown for context. Values highlighted in orange mark $\mathrm{IF}\geq 1.5$, where the joint analysis narrows the $90\%$ credible interval by at least a factor of $1.5$ relative to the better of the two single-image analyses. Values below $1$ appear only sporadically for $a_1$, $a_2$, and $\chi_\mathrm{p}$, which remain effectively prior-dominated across the sample.}
 \label{tab:improvement_factors_top20}
 \end{table}
 
