@@ -7,7 +7,7 @@
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Parallel transport in flat versus curved space}}{16}{figure.1.5}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Parallel transport around an infinitesimal loop}}{19}{figure.1.6}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces The energy-momentum tensor as a 4$\times $4 matrix}}{23}{figure.1.7}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Light cones in Schwarzschild coordinates near the horizon}}{27}{figure.1.8}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Light cones in Schwarzschild coordinates near the horizon}}{28}{figure.1.8}%
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Light cones in Eddington-Finkelstein coordinates}}{28}{figure.1.9}%
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Simplified and detailed diagrams of a black hole}}{29}{figure.1.10}%
 \addvspace {10\p@ }
@@ -36,29 +36,29 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Amplification factor and lensed waveforms across regimes}}{77}{figure.3.5}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Fermat potential contours for three source positions}}{78}{figure.3.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Projected O5 strain sensitivity curves}}{84}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Optimal SNR for L1, H1, and network}}{87}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Primary source-frame mass and number of lensed images}}{87}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces True versus effective luminosity distance}}{88}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Image magnification distribution}}{88}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Joint $m_1^{\mathrm {src}}$-$m_2^{\mathrm {src}}$ distribution}}{89}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Time delay distribution between lensed images}}{89}{figure.4.7}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Projected O5 strain sensitivity curves}}{85}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Optimal SNR for L1, H1, and network}}{88}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Primary source-frame mass and number of lensed images}}{88}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces True versus effective luminosity distance}}{89}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Image magnification distribution}}{89}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Joint $m_1^{\mathrm {src}}$-$m_2^{\mathrm {src}}$ distribution}}{90}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Time delay distribution between lensed images}}{90}{figure.4.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the full analysis pipeline}}{90}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Recovered primary versus secondary mass for six representative events}}{95}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Chirp mass and mass ratio recovery residuals}}{96}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Effective and precessing spin recovery residuals}}{96}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Individual spin magnitude recovery residuals}}{97}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Effective luminosity distance recovery residuals}}{97}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Naive source-frame chirp mass bias versus injected mass}}{98}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Naive source-frame chirp mass bias versus true magnification}}{98}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Difference between the posterior-recovered network SNR $\rho _\mathrm {post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S \ref {sec:automation_picasso}) and the injected network SNR $\rho _\mathrm {inj}$ (computed by \textsc {LeR}, \S \ref {sec:LER_population}), as a function of $\rho _\mathrm {inj}$, for the $N=150$ successfully analyzed events. The offset is systematically positive (median $5.44$, $\sigma =5.95$).}}{99}{figure.5.9}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Source-frame chirp mass bias after lens-model correction}}{100}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Source-frame chirp mass bias after lens-model correction, versus magnification}}{101}{figure.5.11}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the full analysis pipeline}}{91}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Recovered primary versus secondary mass for six representative events}}{96}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Chirp mass and mass ratio recovery residuals}}{97}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Effective and precessing spin recovery residuals}}{98}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Individual spin magnitude recovery residuals}}{98}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Effective luminosity distance recovery residuals}}{99}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Difference between the posterior-recovered network SNR $\rho _\mathrm {post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S \ref {sec:automation_picasso}) and the injected network SNR $\rho _\mathrm {inj}$ (computed by \textsc {LeR}, \S \ref {sec:LER_population}), as a function of $\rho _\mathrm {inj}$, for all 150 events. The offset is systematically positive ($\tilde {y}=5.44$, $\sigma =5.95$).}}{99}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Naive source-frame chirp mass bias versus injected mass}}{100}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Naive source-frame chirp mass bias versus true magnification}}{100}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Source-frame chirp mass bias after lens-model correction}}{102}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Source-frame chirp mass bias after lens-model correction, versus magnification}}{102}{figure.5.11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Detailed implementation of the Picasso branch of the pipeline}}{129}{figure.C.1}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Detailed implementation of the CIT branch of the pipeline}}{130}{figure.C.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Detailed implementation of the Picasso branch of the pipeline}}{130}{figure.C.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Detailed implementation of the CIT branch of the pipeline}}{131}{figure.C.2}%

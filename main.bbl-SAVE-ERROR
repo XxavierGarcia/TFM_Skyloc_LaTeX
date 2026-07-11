@@ -91,10 +91,10 @@
       \field{title}{Gravitation}
       \field{year}{1973}
     \endentry
-    \entry{PrimeradeteccioGW150914}{article}{}{}
+    \entry{GW150914}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
-      \name{author}{5}{}{%
+      \name{author}{6}{}{%
         {{hash=4620614ad34308ab8c2ee8d4a7df43d7}{%
            family={Abbott},
            familyi={A\bibinitperiod},
@@ -120,32 +120,34 @@
            familyi={A\bibinitperiod},
            given={F.},
            giveni={F\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley}%
+        {{hash=be27b094da8c3e1f0197634ca48e584f}{%
+           family={Ackley},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
       }
       \strng{namehash}{d9799319ee6631a4a5c0d1ce9c963e79}
-      \strng{fullhash}{8922ca843a4e1919ac673ed2ace3a584}
-      \strng{fullhashraw}{8922ca843a4e1919ac673ed2ace3a584}
+      \strng{fullhash}{91d5a2963b2dd7b6a51f87039e915ebd}
+      \strng{fullhashraw}{91d5a2963b2dd7b6a51f87039e915ebd}
       \strng{bibnamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
       \strng{authorbibnamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
       \strng{authornamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
-      \strng{authorfullhash}{8922ca843a4e1919ac673ed2ace3a584}
-      \strng{authorfullhashraw}{8922ca843a4e1919ac673ed2ace3a584}
+      \strng{authorfullhash}{91d5a2963b2dd7b6a51f87039e915ebd}
+      \strng{authorfullhashraw}{91d5a2963b2dd7b6a51f87039e915ebd}
       \field{extraname}{1}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{1521-3889}
-      \field{journaltitle}{Annalen der Physik}
-      \field{month}{10}
-      \field{number}{1–2}
-      \field{title}{The basic physics of the binary black hole merger GW150914}
-      \field{volume}{529}
+      \field{journaltitle}{Physical Review Letters}
+      \field{number}{6}
+      \field{title}{Observation of Gravitational Waves from a Binary Black Hole Merger}
+      \field{volume}{116}
       \field{year}{2016}
+      \field{pages}{061102}
+      \range{pages}{1}
       \verb{doi}
-      \verb 10.1002/andp.201600209
+      \verb 10.1103/PhysRevLett.116.061102
       \endverb
     \endentry
     \entry{MaxPlanckChronology}{misc}{}{}
@@ -1764,65 +1766,6 @@
       \endverb
       \verb{url}
       \verb https://www.royalsoc.org.au/wp-content/uploads/2021/12/154-2-Rickles.pdf
-      \endverb
-    \endentry
-    \entry{GW150914}{article}{}{}
-      \true{moreauthor}
-      \true{morelabelname}
-      \name{author}{6}{}{%
-        {{hash=4620614ad34308ab8c2ee8d4a7df43d7}{%
-           family={Abbott},
-           familyi={A\bibinitperiod},
-           given={B.\bibnamedelimi P.},
-           giveni={B\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=f8be78180236e580afcca88ecf22498d}{%
-           family={Abbott},
-           familyi={A\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=f7ae0f5b920293141b6fbd4a57c1ea8f}{%
-           family={Abbott},
-           familyi={A\bibinitperiod},
-           given={T.\bibnamedelimi D.},
-           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=0c85d1631a6814a6641918d2e74d9a2d}{%
-           family={Abernathy},
-           familyi={A\bibinitperiod},
-           given={M.\bibnamedelimi R.},
-           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=194a7071763e4f685901e59df9e140d8}{%
-           family={Acernese},
-           familyi={A\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-        {{hash=be27b094da8c3e1f0197634ca48e584f}{%
-           family={Ackley},
-           familyi={A\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{d9799319ee6631a4a5c0d1ce9c963e79}
-      \strng{fullhash}{91d5a2963b2dd7b6a51f87039e915ebd}
-      \strng{fullhashraw}{91d5a2963b2dd7b6a51f87039e915ebd}
-      \strng{bibnamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
-      \strng{authorbibnamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
-      \strng{authornamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
-      \strng{authorfullhash}{91d5a2963b2dd7b6a51f87039e915ebd}
-      \strng{authorfullhashraw}{91d5a2963b2dd7b6a51f87039e915ebd}
-      \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Physical Review Letters}
-      \field{number}{6}
-      \field{title}{Observation of Gravitational Waves from a Binary Black Hole Merger}
-      \field{volume}{116}
-      \field{year}{2016}
-      \field{pages}{061102}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1103/PhysRevLett.116.061102
       \endverb
     \endentry
     \entry{maggiore2007gravitational}{book}{}{}
@@ -7878,7 +7821,7 @@
       \strng{authornamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
       \strng{authorfullhash}{03e58266b7ed93c1aea28275e9ac71c8}
       \strng{authorfullhashraw}{03e58266b7ed93c1aea28275e9ac71c8}
-      \field{extraname}{3}
+      \field{extraname}{2}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -13543,7 +13486,7 @@
       \strng{authornamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
       \strng{authorfullhash}{215b13243dfaded73129d9709a8481dc}
       \strng{authorfullhashraw}{215b13243dfaded73129d9709a8481dc}
-      \field{extraname}{4}
+      \field{extraname}{3}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -20348,7 +20291,7 @@
       \strng{authornamehash}{c6dc9070a6d5c9f30dd40b5dfda2acf2}
       \strng{authorfullhash}{475d3422cf7bbba2be389c10155228e5}
       \strng{authorfullhashraw}{475d3422cf7bbba2be389c10155228e5}
-      \field{extraname}{5}
+      \field{extraname}{4}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -28691,7 +28634,7 @@
       \strng{authornamehash}{c6dc9070a6d5c9f30dd40b5dfda2acf2}
       \strng{authorfullhash}{559d1e42ecf4ae60e1e68a360599b35c}
       \strng{authorfullhashraw}{559d1e42ecf4ae60e1e68a360599b35c}
-      \field{extraname}{6}
+      \field{extraname}{5}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -68816,53 +68759,6 @@
       \verb https://books.google.es/books?id=jLRLVaR97AUC
       \endverb
     \endentry
-    \entry{autocorrelation_function}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=b4bbb50f52c5d558ee35baf68d2fbb66}{%
-           family={Bulian},
-           familyi={B\bibinitperiod},
-           given={Gabriele},
-           giveni={G\bibinitperiod}}}%
-        {{hash=f69454863108999f4fc5f374ef729b33}{%
-           family={Zeng},
-           familyi={Z\bibinitperiod},
-           given={Ke},
-           giveni={K\bibinitperiod}}}%
-        {{hash=0ffa2556171d224978779dab427b7578}{%
-           family={Lu},
-           familyi={L\bibinitperiod},
-           given={Jiang},
-           giveni={J\bibinitperiod}}}%
-        {{hash=b862c2353f1e5867de131b00b87be59f}{%
-           family={Gu},
-           familyi={G\bibinitperiod},
-           given={Min},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{f515c2c7f8047ab96ac4ea8c28ddb73d}
-      \strng{fullhash}{a705ae9e573e3ffc57258da53dc2449d}
-      \strng{fullhashraw}{a705ae9e573e3ffc57258da53dc2449d}
-      \strng{bibnamehash}{f515c2c7f8047ab96ac4ea8c28ddb73d}
-      \strng{authorbibnamehash}{f515c2c7f8047ab96ac4ea8c28ddb73d}
-      \strng{authornamehash}{f515c2c7f8047ab96ac4ea8c28ddb73d}
-      \strng{authorfullhash}{a705ae9e573e3ffc57258da53dc2449d}
-      \strng{authorfullhashraw}{a705ae9e573e3ffc57258da53dc2449d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0029-8018}
-      \field{journaltitle}{Ocean Engineering}
-      \field{title}{Analysis of autocorrelation function for different wave generation approaches with consideration for Doppler effects}
-      \field{volume}{349}
-      \field{year}{2026}
-      \field{pages}{124090}
-      \range{pages}{1}
-      \verb{doi}
-      \verb https://doi.org/10.1016/j.oceaneng.2025.124090
-      \endverb
-      \keyw{Autocorrelation,Doppler effects,Self-repetition,Ship dynamics,Second generation intact stability criteria,Waves}
-    \endentry
     \entry{noise_aLIGO}{article}{}{}
       \name{author}{702}{}{%
         {{hash=450a0f499f7824c81b66c0a5651fd889}{%
@@ -86446,7 +86342,7 @@
       \strng{authornamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
       \strng{authorfullhash}{ae8c858b2439eae713a59faf8414b059}
       \strng{authorfullhashraw}{ae8c858b2439eae713a59faf8414b059}
-      \field{extraname}{7}
+      \field{extraname}{6}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -102437,75 +102333,54 @@
       \verb 2508.18080
       \endverb
     \endentry
-    \entry{Hannuksela_2019}{article}{}{}
-      \name{author}{8}{}{%
-        {{hash=cf8b907d14aec209d22d9cd26b49475d}{%
-           family={Hannuksela},
-           familyi={H\bibinitperiod},
-           given={O.\bibnamedelimi A.},
-           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=a831534cd183fbec9bff552b4fc23843}{%
-           family={Haris},
-           familyi={H\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=7a1a691ae7f2c9cc33c6844c7329411d}{%
+    \entry{time_delay}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=96d09b623a6149ff40dd2c7edfb4b87d}{%
            family={Ng},
            familyi={N\bibinitperiod},
-           given={K.\bibnamedelimi K.\bibnamedelimi Y.},
+           given={Ken\bibnamedelimb K.\bibnamedelimi Y.},
            giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=a545bd13ef1e9c1672bfb284155fc1ad}{%
-           family={Kumar},
-           familyi={K\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=6ef5f8f800086ee729b8f16f2b1e6fb4}{%
-           family={Mehta},
-           familyi={M\bibinitperiod},
-           given={A.\bibnamedelimi K.},
-           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-        {{hash=8076b96e948ce937e916de68b8058375}{%
-           family={Keitel},
-           familyi={K\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=720858b6cd6721330ca01c21d10f8f59}{%
+        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kaze\bibnamedelimb W.\bibnamedelimi K.},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=149c91791e6cdf15dfa2f52cd986f059}{%
+           family={Broadhurst},
+           familyi={B\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=e7d6293e51e3cddd2dda0d5d09848c70}{%
            family={Li},
            familyi={L\bibinitperiod},
-           given={T.\bibnamedelimi G.\bibnamedelimi F.},
+           given={Tjonnie\bibnamedelimb G.\bibnamedelimi F.},
            giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
-        {{hash=76b8954768114e9093139f389f2181dd}{%
-           family={Ajith},
-           familyi={A\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {The American Astronomical Society}%
+        {American Physical Society}%
       }
-      \strng{namehash}{3cef5a5ee0f810a5c1b1a1a3bc6c4c4f}
-      \strng{fullhash}{cf8365cde541f6c05620ec636d8db19d}
-      \strng{fullhashraw}{cf8365cde541f6c05620ec636d8db19d}
-      \strng{bibnamehash}{3cef5a5ee0f810a5c1b1a1a3bc6c4c4f}
-      \strng{authorbibnamehash}{3cef5a5ee0f810a5c1b1a1a3bc6c4c4f}
-      \strng{authornamehash}{3cef5a5ee0f810a5c1b1a1a3bc6c4c4f}
-      \strng{authorfullhash}{cf8365cde541f6c05620ec636d8db19d}
-      \strng{authorfullhashraw}{cf8365cde541f6c05620ec636d8db19d}
-      \field{extraname}{1}
+      \strng{namehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
+      \strng{fullhash}{5130420f64641763a7316eda6f70469b}
+      \strng{fullhashraw}{5130420f64641763a7316eda6f70469b}
+      \strng{bibnamehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
+      \strng{authorbibnamehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
+      \strng{authornamehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
+      \strng{authorfullhash}{5130420f64641763a7316eda6f70469b}
+      \strng{authorfullhashraw}{5130420f64641763a7316eda6f70469b}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{The Astrophysical Journal Letters}
-      \field{month}{3}
-      \field{number}{1}
-      \field{title}{Search for Gravitational Lensing Signatures in LIGO-Virgo Binary Black Hole Events}
-      \field{volume}{874}
-      \field{year}{2019}
-      \field{pages}{L2}
+      \field{issue}{2}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{month}{1}
+      \field{title}{Precise LIGO lensing rate predictions for binary black holes}
+      \field{volume}{97}
+      \field{year}{2018}
+      \field{pages}{023012}
       \range{pages}{1}
       \verb{doi}
-      \verb 10.3847/2041-8213/ab0c0f
+      \verb 10.1103/PhysRevD.97.023012
       \endverb
     \endentry
     \entry{Schutz1986}{article}{}{}
@@ -102573,7 +102448,6 @@
       \strng{authornamehash}{b0487e59efb0f585feb3d39337a30fed}
       \strng{authorfullhash}{461738994c44a36b7e1524aea24f252a}
       \strng{authorfullhashraw}{461738994c44a36b7e1524aea24f252a}
-      \field{extraname}{2}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -103078,56 +102952,6 @@
       \verb 10.1088/1361-6382/abae86
       \endverb
     \endentry
-    \entry{time_delay}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=96d09b623a6149ff40dd2c7edfb4b87d}{%
-           family={Ng},
-           familyi={N\bibinitperiod},
-           given={Ken\bibnamedelimb K.\bibnamedelimi Y.},
-           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
-           family={Wong},
-           familyi={W\bibinitperiod},
-           given={Kaze\bibnamedelimb W.\bibnamedelimi K.},
-           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-        {{hash=149c91791e6cdf15dfa2f52cd986f059}{%
-           family={Broadhurst},
-           familyi={B\bibinitperiod},
-           given={Tom},
-           giveni={T\bibinitperiod}}}%
-        {{hash=e7d6293e51e3cddd2dda0d5d09848c70}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Tjonnie\bibnamedelimb G.\bibnamedelimi F.},
-           giveni={T\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {American Physical Society}%
-      }
-      \strng{namehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
-      \strng{fullhash}{5130420f64641763a7316eda6f70469b}
-      \strng{fullhashraw}{5130420f64641763a7316eda6f70469b}
-      \strng{bibnamehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
-      \strng{authorbibnamehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
-      \strng{authornamehash}{db5ee7eb68c7e36e33c7aa369b5bd717}
-      \strng{authorfullhash}{5130420f64641763a7316eda6f70469b}
-      \strng{authorfullhashraw}{5130420f64641763a7316eda6f70469b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issue}{2}
-      \field{journaltitle}{Phys. Rev. D}
-      \field{month}{1}
-      \field{title}{Precise LIGO lensing rate predictions for binary black holes}
-      \field{volume}{97}
-      \field{year}{2018}
-      \field{pages}{023012}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1103/PhysRevD.97.023012
-      \endverb
-    \endentry
     \entry{pointmasslens}{article}{}{}
       \name{author}{2}{}{%
         {{hash=70bfedde88dafac661de335ed4a01076}{%
@@ -103164,59 +102988,6 @@
       \range{pages}{1}
       \verb{doi}
       \verb 10.1086/377430
-      \endverb
-    \endentry
-    \entry{zhang2026timedomaindeeplearningpairwise}{misc}{}{}
-      \name{author}{6}{}{%
-        {{hash=ae021641a8f85fd2607152ab99ed115b}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Fan},
-           giveni={F\bibinitperiod}}}%
-        {{hash=48651088844b993e4bf7390e0bde26fa}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Qikai},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=4a1b59ed1815f0be2911b4a061f2aed0}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Qiyuan},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=be790679dff55cb939371863a8930608}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={Jiaqing},
-           giveni={J\bibinitperiod}}}%
-        {{hash=ed40a89d2d9caff7f1efc16b6126179f}{%
-           family={Yuan},
-           familyi={Y\bibinitperiod},
-           given={Yong},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=6c7a59e67f22a030960b8f8ff5186fb5}{%
-           family={Fan},
-           familyi={F\bibinitperiod},
-           given={Xilong},
-           giveni={X\bibinitperiod}}}%
-      }
-      \strng{namehash}{b34ec7ee85af98aed1e55ed4599fbd0e}
-      \strng{fullhash}{f60c4debe14d1a5dfac979ab05d63cd9}
-      \strng{fullhashraw}{f60c4debe14d1a5dfac979ab05d63cd9}
-      \strng{bibnamehash}{b34ec7ee85af98aed1e55ed4599fbd0e}
-      \strng{authorbibnamehash}{b34ec7ee85af98aed1e55ed4599fbd0e}
-      \strng{authornamehash}{b34ec7ee85af98aed1e55ed4599fbd0e}
-      \strng{authorfullhash}{f60c4debe14d1a5dfac979ab05d63cd9}
-      \strng{authorfullhashraw}{f60c4debe14d1a5dfac979ab05d63cd9}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{astro-ph.HE}
-      \field{eprinttype}{arXiv}
-      \field{title}{Time-Domain Deep Learning for Pairwise Identification of Strongly Lensed Gravitational-Wave Candidates}
-      \field{year}{2026}
-      \verb{eprint}
-      \verb 2605.29510
       \endverb
     \endentry
     \entry{SIS_lensing}{article}{}{}
@@ -121292,7 +121063,7 @@
       \strng{authornamehash}{c6dc9070a6d5c9f30dd40b5dfda2acf2}
       \strng{authorfullhash}{7155b91c1683ce1aa47e3ffc37c9d90b}
       \strng{authorfullhashraw}{7155b91c1683ce1aa47e3ffc37c9d90b}
-      \field{extraname}{8}
+      \field{extraname}{7}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -121879,6 +121650,39 @@
       \range{pages}{1}
       \verb{doi}
       \verb https://doi.org/10.1016/j.jocs.2020.101213
+      \endverb
+    \endentry
+    \entry{gwsnrpythonpackageefficient}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=60726f977f19e6b88f23eda554eb7d5b}{%
+           family={Phurailatpam},
+           familyi={P\bibinitperiod},
+           given={Hemantakumar},
+           giveni={H\bibinitperiod}}}%
+        {{hash=158148bacdf43f22f6a3b6061d1f62af}{%
+           family={Hannuksela},
+           familyi={H\bibinitperiod},
+           given={Otto\bibnamedelima Akseli},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{fullhash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{fullhashraw}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{bibnamehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authorbibnamehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authornamehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authorfullhash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authorfullhashraw}{cabc7deec4ccc3fa0e453998b4a42740}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.IM}
+      \field{eprinttype}{arXiv}
+      \field{title}{gwsnr: A Python package for efficient signal-to-noise ratio calculations of gravitational waves}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2412.09888
       \endverb
     \endentry
     \entry{Poon2025_lens_reconstruction}{article}{}{}

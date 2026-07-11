@@ -18,16 +18,16 @@ The centenary of GR marks not only one of the greatest theoretical advances in p
   \item \textbf{1927--1929:} Georges Lemaître and Edwin Hubble independently establish the expanding universe paradigm \cite{LemaitreHubble}, linking GR to the observable evolution of the cosmos.
   \item \textbf{1960s--1970s:} After decades of theoretical neglect, interest in GR resurges. Joseph Weber pioneers early experimental searches for GWs \cite{JosephWeber}, and the discovery of the Hulse-Taylor pulsar in 1974 offers indirect but compelling evidence that energy is indeed carried away by gravitational radiation.
   \item \textbf{1980s--1990s:} Interferometric efforts gain traction on both sides of the Atlantic, with prototype detectors developed in Europe and the United States; the resulting collaborations produce GEO600 and pave the way for LIGO and Virgo \cite{upgradeofGEO600}.
-  \item \textbf{2015--2017:} The detection of GW150914 by LIGO in September 2015 \cite{PrimeradeteccioGW150914}, publicly announced in February 2016, marks the first direct observation of GWs, fulfilling a century-old prediction and inaugurating the era of GW astronomy.
+  \item \textbf{2015--2017:} The detection of GW150914 by LIGO in September 2015 \cite{GW150914}, publicly announced in February 2016, marks the first direct observation of GWs, fulfilling a century-old prediction and inaugurating the era of GW astronomy.
 \end{itemize}
 
 This historical path underscores GR's pivotal role beyond theoretical elegance. The final formulation emerged through a series of four weekly submissions to the Prussian Academy of Sciences in November 1915 \cite{Einstein1915Nov4, Einstein1915bNov11, Einstein1915cNov18, 
-Einstein1915dNov25}, culminating in the field equations presented on November 25th. Among the key results was the correct prediction of Mercury's perihelion shift of 45'' per century \cite{Einstein1915cNov18}, which had previously eluded Newtonian mechanics.
+Einstein1915dNov25}, culminating in the field equations presented on November 25th. Among the key results was the correct prediction of Mercury's perihelion shift of 43'' per century \cite{Einstein1915cNov18}, which had previously eluded Newtonian mechanics.
 
 
 \subsection{Equivalence principle}
 
-The equivalence principle played a central role in the development of GR. In 1907, Einsteinrealized that a freely falling observer does not locally experience gravity, a insight he later described as ``the happiest thought of my life'' \cite{Happiestthoughtofmylife, QuoteEinstein_Pais}.
+The equivalence principle played a central role in the development of GR. In 1907, Einstein realized that a freely falling observer does not locally experience gravity, an insight he later described as ``the happiest thought of my life'' \cite{Happiestthoughtofmylife, QuoteEinstein_Pais}.
 
 
 \subsubsection{The weak equivalence principle}
@@ -44,9 +44,9 @@ principle. In Newtonian theory, inertial mass appears in Newton's second law,
 \begin{equation}
     \vec{F}=m_i \ \vec{a} \ ,
 \end{equation}
-while gravitational mass governs the gravitational potential between two bodies,
+while gravitational mass governs the gravitational potential energy between two bodies,
 \begin{equation}
-    V=\frac{G_N \ m_{\mathrm{g}} \ M_{\mathrm{g}}}{r} \ .
+    V=-\frac{G_N \ m_{\mathrm{g}} \ M_{\mathrm{g}}}{r} \ .
 \end{equation}
 The motion of an object in free fall is then governed by
 \begin{equation}
@@ -62,7 +62,7 @@ universal and set to 1 by an appropriate choice of units.
 This equivalence has been tested with remarkable precision. In 1888, Eötvös used a torsion
 balance to reach a precision of $|{(m_g - m_i)}/{m_g}| \sim 10^{-9}$ \cite{The_Eötvös_Torsion_Balance},
 later improved by Dicke in 1964 to $< 10^{-11}$ \cite{RobertDicketest}. Currently, the
-MicroSCOPE satellite mission has achieved a precision of $10^{-14}$
+MicroSCOPE satellite mission has achieved a precision of $10^{-15}$
 \cite{CNES_MICROSCOPE_eoportal, MicroSCOPEarxiv}.
 
 \subsubsection{The strong equivalence principle}
@@ -142,7 +142,7 @@ To describe this curved geometry, Euclidean tools are no longer sufficient. Inst
 
 
 
-\subsection{From euclidean to non-euclidean geometry}
+\subsection{From Euclidean to non-Euclidean geometry}
 
 
 The geometry most familiar to us, Euclidean geometry, describes flat space: parallel lines never meet, and the angles of a triangle always sum to 180\textdegree{}. These properties stem from the work of the Greek mathematician \href{https://en.wikipedia.org/wiki/Euclid}{Euclid}, who around 300 BC formulated five postulates from which he derived hundreds of theorems \cite{Elements}. Among these, the fifth, the parallel postulate, stood out for its complexity, prompting centuries of efforts to prove it from 
@@ -333,12 +333,12 @@ dl^2 = dx^2 + dy^2 + dz^2, \quad g_{ij} =
 \end{equation}
 In Minkowski spacetime:
 \begin{equation}
-ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2, \quad \eta_{\mu\nu} =
+ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2, \quad \eta_{\mu\nu} =
 \begin{pmatrix}
-1 & 0 & 0 & 0 \\
-0 & -1 & 0 & 0 \\
-0 & 0 & -1 & 0 \\
-0 & 0 & 0 & -1
+-1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
 \end{pmatrix}.
 \end{equation}
 In spherical coordinates:
@@ -359,6 +359,10 @@ The signature of the metric distinguishes between different geometries: Riemanni
 
 A particularly relevant example in the context of this work is the weak-field perturbed metric, which describes spacetime in the presence of a slowly varying Newtonian gravitational potential. This metric reduces to the Minkowski form in the absence of matter and governs 
 the deflection of GWs as they propagate through a gravitational lens, as developed in $\S$\ref{sec:geometric_optics}.
+
+\subsubsection{Conventions} Throughout this thesis the signature $(-,+,+,+)$ is adopted for the metric, so that $\eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)$ and timelike intervals satisfy $ds^2 < 0$. Newton's gravitational constant $G$ and the speed of light $c$ are kept explicit throughout, rather than setting $c=1$; consequently, factors of $c$ appear explicitly in expressions such as the Einstein field equations, $G_{\mu\nu} = (8\pi G/c^4)\, T_{\mu\nu}$, and are restored consistently in the weak-field and lensing expressions of later chapters.
+
+
 
 
 \subsection{Affine connection and curvature}
@@ -488,10 +492,11 @@ Moreover, it has the important property of transforming properly as a \((1,1)\) 
 \begin{equation}
 \nabla_\alpha V^\gamma = \frac{\partial x^\mu}{\partial y^\alpha}\frac{\partial y^\gamma}{\partial x^\nu}\nabla_\mu V^\nu \ .
 \end{equation}
-Furthermore, in flat space and when working with Cartesian coordinates, the covariant derivative of a vector or a one-form simplifies to the partial derivative:
+Furthermore, in flat space and when working with Cartesian coordinates, the Christoffel symbols vanish identically, so the covariant derivative of a vector or a one-form simplifies to the ordinary partial derivative:
 \begin{equation}
-    \nabla_\alpha \phi = \partial_\alpha \phi \ .
+    \nabla_\alpha V^\gamma = \partial_\alpha V^\gamma \ .
 \end{equation}
+This simplification is specific to flat Cartesian coordinates: for a scalar field $\phi$, by contrast, $\nabla_\alpha \phi = \partial_\alpha \phi$ holds in any coordinate system, since a scalar has no indices for the connection to act on.
 Finally we can see how to construct the covariant derivative of a tensor.
 
 
@@ -577,7 +582,7 @@ The change of the basis can be expressed as
 = \frac{\partial e_\alpha}{\partial x^\beta}\,\frac{dx^\beta}{d\lambda}
 = \Gamma^\gamma_{\alpha\beta}\,\frac{dx^\beta}{d\lambda}\,e_\gamma \ ,
 \end{equation}
-were we have used the definition of the Christoffel symbols \eqref{christoffelsymbols}.
+where we have used the definition of the Christoffel symbols \eqref{christoffelsymbols}.
 
 
 Substituting this result into the previous expression and replacing the index $\alpha$ with $\gamma$ in the first term yields
@@ -876,9 +881,9 @@ The source of gravity in GR must therefore encompass not only mass but all forms
 
 For a perfect fluid in flat spacetime, modeled as a system fully characterized by its energy density $\rho$ and isotropic pressure $P$, the tensor takes the form \cite{llibrecarroll2004lectures}
 \begin{equation}
-T^{\mu\nu} = (\rho + P) \, U^{\mu} U^{\nu} \pm P \, \eta^{\mu\nu} \ ,
+T^{\mu\nu} = (\rho + P) \, \frac{U^{\mu} U^{\nu}}{c^2} + P \, \eta^{\mu\nu} \ ,
 \end{equation}
-where $U^\mu = \gamma(c, \vec{v})$ is the four-velocity of the fluid. In the comoving frame, $U^\mu = (1,0,0,0)$ and the tensor reduces to $T^{\mu\nu} = \mathrm{diag}(\rho, P, P, P)$.
+where $U^\mu = \gamma(c, \vec{v})$ is the four-velocity of the fluid; the relative sign between the two terms is fixed by the signature adopted here, so that the spatial diagonal components reduce to the isotropic pressure $P$ rather than $-P$. In the comoving frame, $U^\mu = (c,0,0,0)$ and the tensor reduces to $T^{\mu\nu} = \mathrm{diag}(\rho, P, P, P)$.
 
 A key property of $T^{\mu\nu}$ is its conservation law
 \begin{equation}
@@ -899,7 +904,7 @@ R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R + g_{\alpha\beta}\Lambda
 Historically, Einstein introduced $\Lambda$ in 1917 as a way to obtain a static universe without beginning or end, effectively behaving like a repulsive pressure. However, the static solutions were later found to be unstable, and in 1929 Edwin Hubble (1889--1953) discovered that the universe is in fact expanding, a result fully consistent with the 
 original unmodified equations. This led Einstein to famously refer to the cosmological constant as ``the biggest blunder'' of his life.
 
-Ironically, observations in 1998 with the Hubble Space Telescope revealed that the expansion is accelerating. One possible explanation invokes a pervasive dark energy effectively described by $\Lambda$, which has thus regained scientific relevance despite its troubled history \cite{Llibre_Peter_Collier_unacosadificildecomprender}. The 
+Ironically, observations of distant Type Ia supernovae in 1998, carried out by the Supernova Cosmology Project and the High-Z Supernova Search Team, revealed that the expansion is accelerating. One possible explanation invokes a pervasive dark energy effectively described by $\Lambda$, which has thus regained scientific relevance despite its troubled history \cite{Llibre_Peter_Collier_unacosadificildecomprender}. The 
 modern challenge lies in the so-called cosmological constant problem: quantum field theory predicts $\Lambda \sim m_{P}^{4} \sim 10^{76}\,\mathrm{GeV}^{4}$, while observations constrain it to $\sim 10^{-47}\,\mathrm{GeV}^{4}$, a discrepancy of roughly $10^{123}$ and the largest known mismatch between theory and experiment \cite{LlibreBertJanssen}.
 
 \section{Relevant solutions to Einstein’s equations}
@@ -936,18 +941,18 @@ In vacuum, EFE reduce to $R_{\mu\nu} = 0$. At first sight, one might be tempted 
 \end{equation}
 The first non-trivial exact solution of the vacuum equations was found by Karl Schwarzschild in 1916. The Schwarzschild metric describes the spacetime exterior to a static, spherically symmetric, non-rotating mass distribution. In Schwarzschild coordinates $(t, r, \theta, \phi)$, the line element takes the form
 \begin{equation}
-ds^2 = -\left(1 - \frac{2GM}{r}\right) dt^2 
-+ \left(1 - \frac{2GM}{r}\right)^{-1} dr^2 
+ds^2 = -\left(1 - \frac{2GM}{c^2 r}\right) c^2 dt^2
++ \left(1 - \frac{2GM}{c^2 r}\right)^{-1} dr^2
 + r^2 d\theta^2 + r^2 \sin^2\theta \, d\phi^2 \, ,
 \label{exteriorSchwarz}
 \end{equation}
-where $M$ denotes the mass of the central object \cite{Llibre_Peter_Collier_unacosadificildecomprender}. 
+where $M$ denotes the mass of the central object \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
 
-This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury), as well as to predict the bending of light by gravity. Most notably, it predicts the existence of BHs, one of the most striking consequences of GR that we will se in this section.
+This solution has profound physical implications. It provides the theoretical framework to compute relativistic corrections to planetary orbits (e.g., the perihelion precession of Mercury), as well as to predict the bending of light by gravity. Most notably, it predicts the existence of BHs, one of the most striking consequences of GR that we will see in this section.
 
 It is important to understand that there are two different Schwarzschild solutions. 
 The first one is the exterior Schwarzschild solution \eqref{exteriorSchwarz}, which applies to the region 
-outside a spherical body of mass $M$ and radius $R_0 > 2GM$. Since this exterior region is 
+outside a spherical body of mass $M$ and radius $R_0 > 2GM/c^2$. Since this exterior region is
 empty space, the solution is a vacuum one and describes the gravitational field produced 
 by the object. According to Birkhoff's uniqueness theorem, the exterior Schwarzschild metric constitutes 
 the sole spherically symmetric solution to the vacuum Einstein equations. 
@@ -955,18 +960,18 @@ This result implies, in particular, that no spherically symmetric vacuum solutio
 moreover, whenever such a solution is static, it necessarily corresponds to the Schwarzschild geometry \cite{LlibreBertJanssen}.
 
 
-The second is the interior Schwarzschild solution\footnote{The solution is given by 
-$ds^{2} = -\frac{1}{4} \left[ 3 \sqrt{1 - \frac{2GM}{r}} 
-- \sqrt{1 - \frac{2GM r^{2}}{R_{0}^{3}}} \right]^{2} dt^{2} 
-+ \left( 1 - \frac{2GMr^{2}}{R_{0}^{3}} \right)^{-1} dr^{2} 
-+ r^{2} d\Omega^{2}$, where $R_{0}$ denotes the radius of the object \cite{interior_Schwarzschild_solution}.}, also formulated by Karl 
-Schwarzschild in 1916, which applies inside the object ($r < R_0$) and models its matter 
-as a perfect fluid. These two solutions are fundamentally different, but when the radius 
-of the object satisfies $R_0 > 2GM$, they match smoothly at the boundary $r = R_0$. 
+The second is the interior Schwarzschild solution\footnote{The solution is given by
+$ds^{2} = -\frac{1}{4} \left[ 3 \sqrt{1 - \frac{2GM}{c^2 r}}
+- \sqrt{1 - \frac{2GM r^{2}}{c^2 R_{0}^{3}}} \right]^{2} c^2 dt^{2}
++ \left( 1 - \frac{2GMr^{2}}{c^2 R_{0}^{3}} \right)^{-1} dr^{2}
++ r^{2} d\Omega^{2}$, where $R_{0}$ denotes the radius of the object \cite{interior_Schwarzschild_solution}.}, also formulated by Karl
+Schwarzschild in 1916, which applies inside the object ($r < R_0$) and models its matter
+as a perfect fluid. These two solutions are fundamentally different, but when the radius
+of the object satisfies $R_0 > 2GM/c^2$, they match smoothly at the boundary $r = R_0$.
 
 An important characteristic of the Schwarzschild exterior solution is that when the radial coordinate $r$ becomes very large, the metric tends to the Minkowski form expressed in spherical coordinates, ensuring consistency with the classical limit:
 \begin{equation}
-    \lim_{r \to \infty} \left( 1 - \frac{2GM}{r} \right) = 1 \ .
+    \lim_{r \to \infty} \left( 1 - \frac{2GM}{c^2 r} \right) = 1 \ .
 \end{equation}
 This means that, far away from the source, the gravitational field is essentially negligible and spacetime is indistinguishable from flat Minkowski space\footnote{Spacetimes that exhibit this behavior are referred to as asymptotically flat and can be regarded as representing isolated systems \cite{Llibre_Peter_Collier_unacosadificildecomprender}.}.
 
@@ -974,27 +979,27 @@ This means that, far away from the source, the gravitational field is essentiall
 
 As $r \to 0$, the metric components diverge, signaling a singularity where spacetime curvature becomes infinite and the laws of physics break down \cite{SchwarzschildSolutionlimit}. Metrics derived from 
 EFE can present two types of singularities. Coordinate singularities are artifacts of the chosen coordinate system with no physical content: for instance, $g_{\phi\phi} = 0$ at $\theta = 0, \pi$ in spherical coordinates, which vanishes under a simple rotation. Physical singularities correspond to genuine divergences of spacetime curvature, 
-and Hawking and Penrose showed in 1969 that such singularities necessarily exist inside any closed trapped surface \cite{Penrose1969}.
+and Penrose showed in 1965 that such singularities necessarily exist inside any closed trapped surface \cite{Penrose1969}.
 
 To distinguish between the two, one computes curvature invariants constructed from contractions of the Riemann tensor, which are independent of the coordinate choice. For the Schwarzschild solution, the Kretschmann scalar
 \begin{equation}
-K \equiv R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} = \frac{48G^2M^{2}}{r^{6}},
+K \equiv R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} = \frac{48G^2M^{2}}{c^4 r^{6}},
 \end{equation}
-diverges only at $r=0$, confirming a physical singularity there, while remaining finite at $r=2GM$. The apparent pathology of the metric at $r=2GM$ is therefore a coordinate singularity. Nevertheless, this radius has profound physical significance: it defines the Schwarzschild radius and marks the event horizon of the BH, a surface beyond which 
+diverges only at $r=0$, confirming a physical singularity there, while remaining finite at $r=2GM/c^2$. The apparent pathology of the metric at $r=2GM/c^2$ is therefore a coordinate singularity. Nevertheless, this radius has profound physical significance: it defines the Schwarzschild radius and marks the event horizon of the BH, a surface beyond which
 standard Schwarzschild coordinates become inadequate.
 
 \subsubsection{Causal structure and radial null geodesics}
 
 Setting $ds^2 = 0$ and $d\theta = d\phi = 0$, the slope of radial null geodesics in the $(t,r)$ plane is
 \begin{equation}
-\frac{dt}{dr} = \pm \left(1 - \frac{2GM}{r}\right)^{-1},
+\frac{dt}{dr} = \pm \frac{1}{c}\left(1 - \frac{2GM}{c^2 r}\right)^{-1},
 \end{equation}
-which recovers the Minkowski value $\pm 1$ at large $r$ but diverges as $r \to 2GM$, causing the light cones to close up 
+which recovers the Minkowski value $\pm 1/c$ at large $r$ but diverges as $r \to 2GM/c^2$, causing the light cones to close up
 (see Fig.~\ref{fig:null geodesics}). Inside the horizon, the cones flip orientation entirely, forcing all causal trajectories toward the singularity at $r=0$. Integrating the null geodesic equation gives
 \begin{equation}
-t = \pm \left(r + 2GM \ln|r - 2GM| + C_0 \right),
+ct = \pm \left(r + \frac{2GM}{c^2} \ln\left|r - \frac{2GM}{c^2}\right| + C_0 \right),
 \end{equation}
-showing that an outgoing light ray requires infinite Schwarzschild coordinate time to reach $r=2GM$. A distant observer therefore sees an infalling body freeze and fade at the horizon, while in proper time the crossing occurs in a finite interval. The issue lies in the coordinates, not the physics.
+showing that an outgoing light ray requires infinite Schwarzschild coordinate time to reach $r=2GM/c^2$. A distant observer therefore sees an infalling body freeze and fade at the horizon, while in proper time the crossing occurs in a finite interval. The issue lies in the coordinates, not the physics.
 
 \begin{figure}[h!]
     \centering
@@ -1012,22 +1017,22 @@ showing that an outgoing light ray requires infinite Schwarzschild coordinate ti
         coordinates.}
         \label{light cones schwarz}
     \end{subfigure}
-    \caption[Light cones in Schwarzschild coordinates near the horizon]{Light cones in the $t$-$r$ plane of Schwarzschild spacetime. Far from the BH, cones open symmetrically at $\pm 45^\circ$. As $r \to 2GM$ they progressively close; inside the horizon they invert, pointing inexorably toward $r=0$. Original illustrations based on: \cite{LlibreBertJanssen, 
+    \caption[Light cones in Schwarzschild coordinates near the horizon]{Light cones in the $t$-$r$ plane of Schwarzschild spacetime. Far from the BH, cones open symmetrically at $\pm 45^\circ$. As $r \to 2GM/c^2$ they progressively close; inside the horizon they invert, pointing inexorably toward $r=0$. Original illustrations based on: \cite{LlibreBertJanssen, 
     llibrecarroll2004lectures}.}
     \label{fig:null geodesics}
 \end{figure}
 
 To follow geodesics continuously across the horizon, one introduces the advanced Eddington-Finkelstein coordinates \cite{Eddington--Finkelsteincoordinates},
 \begin{equation}
-\tilde{t} = t + 2M \log(r - 2M),
+c\tilde{t} = ct + \frac{2GM}{c^2} \log\left(r - \frac{2GM}{c^2}\right),
 \end{equation}
 in which the metric becomes
 \begin{equation}
-ds^2 = -\left(1 - \frac{2GM}{r}\right) d\tilde{t}^2 + \frac{4GM}{r}\, 
-d\tilde{t}\,dr + \left(1 + \frac{2GM}{r}\right) dr^2
+ds^2 = -\left(1 - \frac{2GM}{c^2 r}\right) c^2 d\tilde{t}^2 + \frac{4GM}{c}\,
+d\tilde{t}\,dr + \left(1 + \frac{2GM}{c^2 r}\right) dr^2
 + r^2 d\Omega^2 \, ,
 \end{equation}
-manifestly regular at $r=2GM$ (see Fig.~\ref{fig:EFK_geodesics}).
+manifestly regular at $r=2GM/c^2$ (see Fig.~\ref{fig:EFK_geodesics}).
 
 \begin{figure}[h!]
     \centering
@@ -1043,7 +1048,7 @@ manifestly regular at $r=2GM$ (see Fig.~\ref{fig:EFK_geodesics}).
         \caption{Null geodesics in Eddington-Finkelstein coordinates.}
         \label{fig:EFK coodinates}
     \end{subfigure}
-    \caption[Light cones in Eddington-Finkelstein coordinates]{In Eddington-Finkelstein coordinates the horizon is regular. Ingoing geodesics always remain at $45^\circ$; outgoing ones tilt progressively inward until at $r=2GM$ they are trapped, and for $r < 2GM$ all light falls toward the singularity. Original 
+    \caption[Light cones in Eddington-Finkelstein coordinates]{In Eddington-Finkelstein coordinates the horizon is regular. Ingoing geodesics always remain at $45^\circ$; outgoing ones tilt progressively inward until at $r=2GM/c^2$ they are trapped, and for $r < 2GM$ all light falls toward the singularity. Original 
     illustrations based on: \cite{LlibreBertJanssen, 
     Llibre_Peter_Collier_unacosadificildecomprender}.}
     \label{fig:EFK_geodesics}
@@ -1112,7 +1117,7 @@ In summary, this chapter has laid the mathematical and physical foundations of G
 \chapter{Gravitational wave theory}
 \label{Gravitational-wave theory}
 
-We have now reached the central topic of this thesis and one of the most remarkable predictions of Einstein's GR: GWs. In this chapter, we introduce their theoretical foundations, beginning with their natural emergence from the linearized EFE ($\S$\ref{Gravitational_waves_linearized_gravity}), and characterize their polarization states and physical action on test masses via the geodesic deviation equation. We then survey the main astrophysical source classes ($\S$\ref{Astrophysical_sources_GW}) and discuss the detection principle underlying current interferometric observatories, covering antenna pattern functions, noise sources, and the global detector network ($\S$\ref{}). The chapter closes with an overview of the Bayesian parameter estimation (PE) framework used to extract source properties from GW signals ($\S$\ref{}), establishing the statistical foundation for the data analysis presented in subsequent chapters.
+We have now reached the central topic of this thesis and one of the most remarkable predictions of Einstein's GR: GWs. In this chapter, we introduce their theoretical foundations, beginning with their natural emergence from the linearized EFE ($\S$\ref{Gravitational_waves_linearized_gravity}), and characterize their polarization states and physical action on test masses via the geodesic deviation equation. We then survey the main astrophysical source classes ($\S$\ref{Astrophysical_sources_GW}) and discuss the detection principle underlying current interferometric observatories, covering antenna pattern functions, noise sources, and the global detector network ($\S$\ref{sec:detectors}). The chapter closes with an overview of the Bayesian parameter estimation (PE) framework used to extract source properties from GW signals ($\S$\ref{sec:data_analysis}), establishing the statistical foundation for the data analysis presented in subsequent chapters.
 
 \section{Gravitational waves in linearized gravity}
 \label{Gravitational_waves_linearized_gravity}
@@ -1124,7 +1129,7 @@ GWs can be understood as ripples in the curvature of spacetime that carry energy
 
 The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss, provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct GW astronomy \cite{GW150914}.
 
-Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO Scientific Collaboration (LSC) achieved the first direct detection of GWs, GW150914 \cite{PrimeradeteccioGW150914}, a signal originating from a binary black hole merger (BBH). This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
+Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO Scientific Collaboration (LSC) achieved the first direct detection of GWs, GW150914 \cite{GW150914}, a signal originating from a binary black hole merger (BBH). This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
 
 
  
@@ -1134,7 +1139,7 @@ Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO 
 GR describes gravity as the manifestation of spacetime curvature.
 The dynamics of the gravitational field are governed by EFE \cite{maggiore2007gravitational},
 \begin{equation}
-G_{\mu\nu} \equiv R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = 8\pi G \, T_{\mu\nu},
+G_{\mu\nu} \equiv R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = \frac{8\pi G}{c^4} \, T_{\mu\nu},
 \label{eq:einsteinfieldeqs}
 \end{equation}
 where $R_{\mu\nu}$ is the Ricci tensor, $R$ the Ricci scalar, and $T_{\mu\nu}$ the
@@ -1196,7 +1201,7 @@ description of gravity developed in the following sections.
 
 As a first step toward the understanding of GWs, we wish to study the expansion of the Einstein equations around the flat space metric in the so called weak field limit. Mathematically, we can write this as
 \begin{equation}
-g_{\mu\nu} \approx n_{\mu\nu} + h_{\mu\nu}, \qquad |h_{\mu\nu}| \ll 1,
+g_{\mu\nu} \approx \eta_{\mu\nu} + h_{\mu\nu}, \qquad |h_{\mu\nu}| \ll 1,
 \end{equation}
 where $\eta_{\mu\nu}$ is the flat space Minkowski metric $\eta_{\mu\nu}= (-, +, +, +)$ and $h_{\mu\nu}$ represents a small perturbation \cite{maggiore2007gravitational}.
 
@@ -1272,7 +1277,7 @@ where we have interchanged the dummy indices $(\lambda \leftrightarrow \rho)$ an
 \begin{equation}
 \frac{1}{2} \left(\partial_\mu \partial^{\lambda} h_{\lambda \sigma} + \partial^{\rho} \partial_{\sigma} h_{\mu \rho}
 - \Box h_{\mu \sigma} 
-- \partial_{\mu} \partial_{\sigma} h \right) - \frac{1}{2} \eta_{\mu \sigma} \left( \partial^{\nu} \partial^{\rho} h_{\nu\rho} - \Box h \right) = 8\pi G T_{\mu \sigma}.
+- \partial_{\mu} \partial_{\sigma} h \right) - \frac{1}{2} \eta_{\mu \sigma} \left( \partial^{\nu} \partial^{\rho} h_{\nu\rho} - \Box h \right) = \frac{8\pi G}{c^4} T_{\mu \sigma}.
 \end{equation}
 Since a weak gravitational field corresponds to small spacetime curvature, we can safely assume the absence of matter sources, setting $T_{\mu \sigma} = 0$ we obtain
 \begin{equation}
@@ -1566,7 +1571,7 @@ At some reference time $t=0$, a plane GW propagating along the $z$-direction pas
 
 The relative motion of neighbouring particles is governed by the geodesic deviation equation \eqref{geodesicdeviation}. In the linearised regime of gravity, the Riemann tensor is already first order in the metric perturbation $h_{\mu\nu}$. Consequently, it is sufficient to evaluate the equation using the unperturbed four-velocity $U^\mu = (1,0,0,0)$, and to identify the coordinate time $t$ with the proper time along the geodesics, up to corrections of order $\mathcal{O}(h^2)$.
 
-Using the alredy computed expression for the linearised Riemann tensor in the TT gauge, 
+Using the already computed expression for the linearised Riemann tensor in the TT gauge, 
 \begin{equation}
 \begin{aligned}
 R^{\rho}{}_{\mu \nu \sigma}
@@ -1891,6 +1896,7 @@ Although no definitive detection has yet been achieved by ground based detectors
 
 
 \section{Detectors}
+\label{sec:detectors}
 
 
 The first experimental attempts to detect GWs began in the 1960s with resonant-mass detectors, which aimed to measure the mechanical response of massive bars to passing waves \cite{ressonant_mass_detectors}. However, their limited sensitivity and narrow frequency range prevented successful detections. This motivated the development of interferometric detectors, capable of measuring extremely small changes in distance between test masses. After decades of technological progress, this approach led to the first direct detection of GWs in 2015 \cite{GW150914}.
@@ -2020,7 +2026,7 @@ Fig.~\ref{fig:antennapatternsFxFplus} for several values of $\psi$; each success
 \label{sec:noise}
 
 A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three orders of magnitude smaller than the diameter of a proton. Achieving sensitivity at this level requires identifying and suppressing a broad set of noise sources that would otherwise overwhelm the signal. These are conveniently characterised by the one-sided power spectral density (PSD) $S_n(f)$ \cite{PSD_book}, defined as the Fourier transform of the autocorrelation function\footnote{
-The autocorrelation function measures how strongly a signal is correlated with a delayed version of itself as a function of the time lag $\tau$. In the context of detector noise, it quantifies the degree to which noise fluctuations at different times remain statistically related \cite{autocorrelation_function}.
+The autocorrelation function measures how strongly a signal is correlated with a delayed version of itself as a function of the time lag $\tau$. In the context of detector noise, it quantifies the degree to which noise fluctuations at different times remain statistically related \cite{PSD_book}.
 } of the detector output: 
 \begin{equation}
     S_n(f) = \int C(\tau)\, e^{-i 2\pi f \tau} \, d\tau ,
@@ -2091,7 +2097,7 @@ The interplay of all these contributions shapes the detector sensitivity curve s
 \subsection{Current detector network}
 \label{noise_amplitude}
 
-A single interferometer provides limited directional information: the antenna pattern functions derived in \S\ref{antenna_patterns_sec} show that, at any given time, a ground-based detector is nearly blind along certain sky directions, an effect that continuosly shifts as the Earth's rotation changes the detector's orientation relative to the sky. A global network of detectors is therefore essential, both to confirm detections through coincident observations and to localise sources on the sky via time delay triangulation. Sky localisation precision improves with the number of detectors, their mutual separation, and their individual sensitivities. The current network consists of four facilities operating in the frequency band $\sim\!10$-$5000$\,Hz (see Fig.~\ref{fig:current_network}):
+A single interferometer provides limited directional information: the antenna pattern functions derived in \S\ref{antenna_patterns_sec} show that, at any given time, a ground-based detector is nearly blind along certain sky directions, an effect that continuously shifts as the Earth's rotation changes the detector's orientation relative to the sky. A global network of detectors is therefore essential, both to confirm detections through coincident observations and to localise sources on the sky via time delay triangulation. Sky localisation precision improves with the number of detectors, their mutual separation, and their individual sensitivities. The current network consists of four facilities operating in the frequency band $\sim\!10$-$5000$\,Hz (see Fig.~\ref{fig:current_network}):
 
 
 \begin{itemize}
@@ -2494,7 +2500,7 @@ intergalactic medium and through the lens galaxy itself without absorption or di
 
 \subsection{Relevance for gravitational wave astronomy}
 
-No confirmed detection of gravitational lensing of GWs has been reported despite dedicated searches in GWTC-1 through GWTC-4 \cite{GWTC4_introduction}. As detector sensitivities improve, detection is expected to become feasible within the next observing runs, with predictions suggesting more than one strongly lensed event per year at design sensitivity \cite{Hannuksela_2019}.
+No confirmed detection of gravitational lensing of GWs has been reported despite dedicated searches in GWTC-1 through GWTC-4 \cite{GWTC4_introduction}. As detector sensitivities improve, detection is expected to become feasible within the next observing runs, with predictions suggesting more than one strongly lensed event per year at design sensitivity \cite{time_delay}.
 
 Such detections would open a rich set of applications: measuring the Hubble constant via lensing time delays combined with GW standard sirens \cite{Schutz1986, hubble_constant_lensing}, probing dark matter distributions in lens galaxies \cite{jana2024probingnaturedarkmatter}, and testing GR by comparing the propagation speed of GWs and light through the same lensing potential \cite{test_GR_lensing}. Lensing also biases the apparent properties of detected sources (a magnified image appears closer and more massive than it truly is) making the identification of lensed events important for controlling systematics in population studies \cite{population_lensing}.
 
@@ -2557,8 +2563,8 @@ where the reduced deflection angle is defined as
 \end{equation}
 The lens equation maps each image position $\boldsymbol{\theta}$ to a unique source position $\boldsymbol{\beta}$, but the inverse mapping can be multi-valued: a single source can produce multiple images. Equivalently, by Fermat's principle, images form at the stationary points of the Fermat potential (or scaled time delay surface)
 \begin{equation}
-    \tau(\boldsymbol{\theta}, \boldsymbol{\beta}) = 
-    \frac{1}{2}|\boldsymbol{\theta} - \boldsymbol{\beta}|^2 
+    \phi(\boldsymbol{\theta}, \boldsymbol{\beta}) =
+    \frac{1}{2}|\boldsymbol{\theta} - \boldsymbol{\beta}|^2
     - \psi(\boldsymbol{\theta}),
     \label{eq:fermat_potential}
 \end{equation}
@@ -2570,9 +2576,9 @@ where $\psi(\boldsymbol{\theta})$ is the projected gravitational potential of th
 \end{equation}
 The deflection angle is then $\boldsymbol{\alpha} = 
 \nabla_{\boldsymbol{\theta}}\psi$, and the lens equation 
-\eqref{eq:lens_equation} is recovered from $\nabla_{\boldsymbol{\theta}}\tau = 0$.
+\eqref{eq:lens_equation} is recovered from $\nabla_{\boldsymbol{\theta}}\phi = 0$.
 
-Since stationary points of $\tau$ always appear and disappear in pairs (a minimum together with a saddle point, or a maximum together with a saddle point) as the source position varies, the total number of images is always odd \cite{odd_theorem}: there is always at least one image corresponding to the global minimum of $\tau$, and any additional images appear in pairs of two. The wavefront interpretation of this result is illustrated in Fig.~\ref{fig:wavefronts}.
+Since stationary points of $\phi$ always appear and disappear in pairs (a minimum together with a saddle point, or a maximum together with a saddle point) as the source position varies, the total number of images is always odd \cite{odd_theorem}: there is always at least one image corresponding to the global minimum of $\phi$, and any additional images appear in pairs of two. The wavefront interpretation of this result is illustrated in Fig.~\ref{fig:wavefronts}.
 
 \begin{figure}[h!]
     \centering
@@ -2631,15 +2637,15 @@ distorts the solid angle subtended by a source, it produces a net magnification.
     \label{eq:magnification}
 \end{equation}
 The sign of $\mu$ encodes the parity of the image: images at 
-minima and maxima of $\tau$ have positive magnification, while images at saddle points have negative magnification (i.e.\ they are mirror-inverted). Explicit expressions for the magnifications of each image type are given in \S\ref{sec:lens_models} for the specific lens models considered in this work.
+minima and maxima of $\phi$ have positive magnification, while images at saddle points have negative magnification (i.e.\ they are mirror-inverted). Explicit expressions for the magnifications of each image type are given in \S\ref{sec:lens_models} for the specific lens models considered in this work.
 
 The arrival time of each image is delayed with respect to an 
 unlensed ray by two contributions. The geometric delay arises from the longer path length of the deflected ray, while the Shapiro delay \cite{Shapiro1964, shapiro_delay} results from the slowing of the signal in the gravitational potential of the lens. Together, they yield the time delay between two images $i$ and $j$
 \begin{equation}
     \Delta t_{ij} = \frac{(1+z_L)}{c}
     \frac{D_L D_S}{D_{LS}}\,
-    \left[\tau(\boldsymbol{\theta}_i,\boldsymbol{\beta}) - 
-    \tau(\boldsymbol{\theta}_j,\boldsymbol{\beta})\right],
+    \left[\phi(\boldsymbol{\theta}_i,\boldsymbol{\beta}) -
+    \phi(\boldsymbol{\theta}_j,\boldsymbol{\beta})\right],
     \label{eq:time_delay}
 \end{equation}
 where the $(1+z_L)$ factor accounts for the cosmological 
@@ -2669,7 +2675,7 @@ where $u$ is the normalized source-lens separation \cite{essentialsstronggravita
     \ln\frac{\sqrt{u^2+4}+u}{\sqrt{u^2+4}-u}
     \right],
 \end{equation}
-where $M_{Lz} = M_L(1+z_L)$ is the redshifted lens mass \cite{zhang2026timedomaindeeplearningpairwise}.  
+where $M_{Lz} = M_L(1+z_L)$ is the redshifted lens mass \cite{pointmasslens}.  
 
 \subsubsection{Singular isothermal sphere}
 
@@ -2765,19 +2771,19 @@ where $x$ and $y$ are dimensionless coordinates in the lens
 and source planes, $\phi(x,y)$ is the Fermat potential 
 \eqref{eq:fermat_potential}, and
 \begin{equation}
-    w \equiv 8\pi G M_{Lz} f = 4\pi R_S f = \frac{2R_S}{\lambda},
+    w \equiv \frac{8\pi G M_{Lz} f}{c^3} = \frac{4\pi R_S f}{c} = \frac{2R_S}{\bar\lambda},
 \end{equation}
-is a dimensionless frequency proportional to the product 
-of the lens mass and the GW frequency, with $M_{Lz} = 
-M_L(1+z_L)$ the redshifted effective lens mass, 
-$R_S = 2GM_{Lz}/c^2$ the corresponding Schwarzschild 
-radius, and $\lambda = c/f$ the GW wavelength. The value 
-of $w$ controls the lensing regime: for $w \ll 1$ 
-(equivalently $\lambda \gg R_S$) lensing effects are 
-negligible (perturbative regime); for $w \sim 1$ 
-diffraction and interference are important (wave optics 
-regime); and for $w \gg 1$ (equivalently $\lambda \ll R_S$) 
-the geometric optics limit applies. For a fixed GW frequency $f$, the transition between regimes is set by the lens mass, as illustrated 
+is a dimensionless frequency proportional to the product
+of the lens mass and the GW frequency, with $M_{Lz} =
+M_L(1+z_L)$ the redshifted effective lens mass,
+$R_S = 2GM_{Lz}/c^2$ the corresponding Schwarzschild
+radius, and $\bar\lambda \equiv \lambda/(2\pi) = c/(2\pi f)$ the reduced GW wavelength. The value
+of $w$ controls the lensing regime: for $w \ll 1$
+(equivalently $\bar\lambda \gg R_S$) lensing effects are
+negligible (perturbative regime); for $w \sim 1$
+diffraction and interference are important (wave optics
+regime); and for $w \gg 1$ (equivalently $\bar\lambda \ll R_S$)
+the geometric optics limit applies. For a fixed GW frequency $f$, the transition between regimes is set by the lens mass, as illustrated
 in Fig.~\ref{fig:amplification_regimes}.
 \begin{figure}[h!]
     \centering
@@ -2785,7 +2791,7 @@ in Fig.~\ref{fig:amplification_regimes}.
     {Figures/GWL_regimes.pdf}
     \caption[Amplification factor and lensed waveforms across regimes]{\textit{Left:} modulus of the dimensionless 
     amplification factor $|F(w)|$ as a function of 
-    dimensionless frequency $w = 8\pi GM_{Lz}f$ for a 
+    dimensionless frequency $w = 8\pi GM_{Lz}f/c^3$ for a
     SIS lens with impact parameter $y = 0.7$. Three 
     regimes are distinguished: perturbative (low $w$, 
     negligible lensing), wave optics (intermediate $w$, 
@@ -2808,7 +2814,7 @@ is dominated by the stationary points of $\phi$, and each
 image $j$ contributes one term, which we write following the 
 convention of \cite{theligoscientificcollaboration2026gwtc40searchesgravitationalwavelensing}:
 \begin{equation}
-    F(f;\boldsymbol{\phi}) = \sum_j \sqrt{\mu_j}\,
+    F(f;\boldsymbol{\phi}) = \sum_j |\mu_j|^{1/2}\,
     e^{-2\pi i f t_j + i\pi n_j\,\mathrm{sign}(f)},
     \label{eq:GO_amplification}
 \end{equation}
@@ -2842,13 +2848,13 @@ source positions with the same lens potential.
     \centering
     \includegraphics[width=0.88\linewidth]
     {Figures/arrival_times.png}
-    \caption[Fermat potential contours for three source positions]{Contour maps of the Fermat potential $\tau(\boldsymbol{\theta})$ for three different source positions with the same lens potential, shown qualitatively in the image plane $\boldsymbol{\theta}$. Type I images (minima) are marked in blue, Type II (saddle points) in red, and Type III (maxima) in green. The thick black contours pass through the saddle points. The figure is intended to illustrate the topological structure of the arrival-time surface rather than a specific lens model or parameter space. Source: \cite{essentialsstronggravitationallensing}.}
+    \caption[Fermat potential contours for three source positions]{Contour maps of the Fermat potential $\phi(\boldsymbol{\theta})$ for three different source positions with the same lens potential, shown qualitatively in the image plane $\boldsymbol{\theta}$. Type I images (minima) are marked in blue, Type II (saddle points) in red, and Type III (maxima) in green. The thick black contours pass through the saddle points. The figure is intended to illustrate the topological structure of the arrival-time surface rather than a specific lens model or parameter space. Source: \cite{essentialsstronggravitationallensing}.}
     \label{fig:arrival_time_surface}
 \end{figure}
 
 Galaxy-scale lenses typically produce two bright images of Type I and II. A faint central image of Type III can in principle exist, but is usually demagnified below detectability by the central mass concentration of the lens.
 
-The factor $e^{-i\pi n_j}$ in \eqref{eq:GO_amplification} 
+The factor $e^{i\pi n_j\,\mathrm{sign}(f)}$ in \eqref{eq:GO_amplification}
 is the Morse phase. A Type I image ($n=0$) leaves 
 the waveform morphology unchanged. A Type III image ($n=1$) 
 introduces an overall sign flip. A Type II image ($n=1/2$) 
@@ -2869,7 +2875,7 @@ Combining the geometric optics amplification factor
 the frequency-domain strain of the $j$-th lensed image is
 \begin{equation}
     \tilde{h}^j_L(f;\,\boldsymbol{\theta},\boldsymbol{\phi}_j)
-    = \sqrt{\mu_j}\,
+    = |\mu_j|^{1/2}\,
     e^{-2\pi i f t_j + i\pi n_j\,\mathrm{sign}(f)}\,
     \tilde{h}_U(f;\,\boldsymbol{\theta}),
     \label{eq:lensed_strain}
@@ -2881,11 +2887,11 @@ with the general form \eqref{eq:amplification_factor} \cite{theligoscientificcol
 Because \eqref{eq:lensed_strain} enters the detector 
 identically to an unlensed signal, a PE pipeline that does 
 not account for lensing will infer biased source parameters. 
-The factor $\sqrt{\mu_j}$ is degenerate with the luminosity 
-distance, since $h \propto D_L^{-1}$, yielding an apparent 
+The factor $|\mu_j|^{1/2}$ is degenerate with the luminosity
+distance, since $h \propto D_L^{-1}$, yielding an effective 
 distance
 \begin{equation}
-    D_L^{\mathrm{obs},j} = \frac{D_L}{\sqrt{\mu_j}},
+    D_L^{\mathrm{eff},j} = \frac{D_L}{\sqrt{|\mu_j|}},
     \label{eq:apparent_DL}
 \end{equation}
 so a magnified image appears closer than the true source. 
@@ -2895,9 +2901,9 @@ $\mathcal{M}_c^{\mathrm{obs}} =
 (1+\tilde{z})\mathcal{M}_c^{\mathrm{src}}$ corresponds to 
 an incorrect redshift $\tilde{z}$, and lensed events at 
 high redshift may be misidentified as nearby events with 
-anomalously massive BHs \cite{degenerate_lens_properties}. Similarly, the apparent coalescence time is
+anomalously massive BHs \cite{degenerate_lens_properties}. Similarly, the effective coalescence time is
 \begin{equation}
-    t_c^{\mathrm{obs},j} = t_c + t_j,
+    t_c^{\mathrm{eff},j} = t_c + t_j,
     \label{eq:apparent_tc}
 \end{equation}
 so the two images of the same event appear to arrive at 
@@ -2918,7 +2924,7 @@ relative magnification
 \end{equation}
 the time delay between images $\Delta t = t_2 - t_1$ 
 \eqref{eq:time_delay}, and the difference in Morse 
-indices $\Delta n = n_2 - n_1$ \cite{PE_lensing_bayes}. The relative magnification can span several orders of magnitude depending on the source-lens alignment, while $\Delta n$ is only detectable when the signal carries precession or higher-mode content. Together, $\{\mu_{\mathrm{rel}}, \Delta t, \Delta n\}$ constitute the complete set of lensing parameters sampled by \textsc{Bilby} in the joint PE analysis carried out in this work.
+indices $\Delta n = n_2 - n_1$ \cite{PE_lensing_bayes}. The relative magnification can span several orders of magnitude depending on the source-lens alignment, while $\Delta n$ is only detectable when the signal carries precession or higher-mode content. Together, $\{\mu_{\mathrm{rel}}, \Delta t, \Delta n\}$ constitute the primary lensing observables exploited in a joint analysis of lensed image pairs. In the specific joint PE analysis carried out in this work (\S\ref{sec:hanabi_joint}), only the image type $n_j$ is treated as a genuinely free lensing parameter for each image; the relative magnification is not sampled directly, since its physical content is already captured by the two independently fitted luminosity distances of the images.
 
 
 
@@ -2960,9 +2966,9 @@ for strong lensing searches, since it corresponds to the
 lower bound on the localization improvement achievable 
 once additional detectors are included in the network.
 
-Virgo, currently reaching $50$-$60$\,Mpc in O4, is expected 
-to improve further to $50$-$60$\,Mpc during the intermediate 
-run IR1 and to a projected $90$-$130$\,Mpc by O5, while KAGRA is similarly expected to improve from a few Mpc in O4 to $25$-$90$\,Mpc by O5 \cite{LVK_observing_plan}. Extending 
+Virgo, currently reaching $50$-$60$\,Mpc in O4, is not
+expected to improve further during the intermediate
+run IR1, remaining at $50$-$60$\,Mpc, before reaching a projected $90$-$130$\,Mpc by O5, while KAGRA is expected to improve from a few Mpc in O4 to $25$-$90$\,Mpc by O5 \cite{LVK_observing_plan}. Extending
 the joint analysis presented in this work to include these 
 additional detectors, once their sensitivity and duty cycle 
 make them reliably available, is a natural direction for 
@@ -3005,13 +3011,16 @@ for each image:
 \end{equation}
 In this work, this joint analysis is carried out with \textsc{Hanabi} \cite{PE_lensing_bayes}, a Python package that extends \textsc{Bilby} to the coherent joint PE of strongly lensed image pairs, implementing the shared-parameter likelihood of Eq.~\eqref{eq:joint_evidence_lensed} together with the lensing prior described above.
 
-The shared parameters include the masses, spins, and 
-crucially the sky location $(\alpha, \delta)$, while 
-the lensing parameters per image, namely the relative 
-magnification $\mu_\mathrm{rel}$ and the image type 
-$n_j$ sampled from a discrete uniform prior over 
-$\{1, 2, 3\}$, remain free independently for each 
-image. Under $\mathcal{H}_U$, 
+The shared parameters include the masses, spins, and
+crucially the sky location $(\alpha, \delta)$, while
+the lensing parameters per image are the image type
+$n_j$, sampled independently for each image from a
+discrete uniform prior over $\{1, 2, 3\}$, and the
+relative magnification $\mu_\mathrm{rel}$, which in
+the implementation used in this work is not sampled
+independently but is instead already captured by the
+two independently fitted luminosity distances
+(\S\ref{sec:hanabi_joint}). Under $\mathcal{H}_U$,
 the two signals are independent and the joint evidence 
 reduces to the product of the individual evidences,
 \begin{equation}
