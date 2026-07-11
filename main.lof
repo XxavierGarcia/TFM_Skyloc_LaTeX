@@ -45,20 +45,23 @@
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Time delay distribution between lensed images}}{90}{figure.4.7}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the full analysis pipeline}}{91}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Recovered primary versus secondary mass for six representative events}}{96}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Chirp mass and mass ratio recovery residuals}}{97}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Effective and precessing spin recovery residuals}}{98}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Individual spin magnitude recovery residuals}}{98}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Effective luminosity distance recovery residuals}}{99}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Difference between the posterior-recovered network SNR $\rho _\mathrm {post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S \ref {sec:automation_picasso}) and the injected network SNR $\rho _\mathrm {inj}$ (computed by \textsc {LeR}, \S \ref {sec:LER_population}), as a function of $\rho _\mathrm {inj}$, for all 150 events. The offset is systematically positive ($\tilde {y}=5.44$, $\sigma =5.95$).}}{99}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Naive source-frame chirp mass bias versus injected mass}}{100}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Naive source-frame chirp mass bias versus true magnification}}{100}{figure.5.9}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Source-frame chirp mass bias after lens-model correction}}{102}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Source-frame chirp mass bias after lens-model correction, versus magnification}}{102}{figure.5.11}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Recovered primary versus secondary mass for six representative events}}{97}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Joint versus single-image posteriors for three example events}}{97}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Chirp mass and mass ratio recovery residuals}}{98}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Effective and precessing spin recovery residuals}}{98}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Individual spin magnitude recovery residuals}}{99}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Effective luminosity distance recovery residuals}}{99}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Difference between the posterior-recovered network SNR $\rho _\mathrm {post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S \ref {sec:automation_picasso}) and the injected network SNR $\rho _\mathrm {inj}$ (computed by \textsc {LeR}, \S \ref {sec:LER_population}), as a function of $\rho _\mathrm {inj}$, for all 150 events. The offset is systematically positive ($\tilde {y}=5.44$, $\sigma =5.95$).}}{100}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Naive source-frame chirp mass bias versus injected mass}}{101}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Naive source-frame chirp mass bias versus true magnification}}{101}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Source-frame chirp mass bias after lens-model correction}}{103}{figure.5.11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Detailed implementation of the Picasso branch of the pipeline}}{130}{figure.C.1}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Detailed implementation of the CIT branch of the pipeline}}{131}{figure.C.2}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Detailed implementation of the Picasso branch of the pipeline}}{132}{figure.C.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Detailed implementation of the CIT branch of the pipeline}}{133}{figure.C.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Posteriors for all events: chirp mass, mass ratio, effective distance}}{135}{figure.D.1}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Posteriors for all events: spin parameters}}{140}{figure.D.2}%

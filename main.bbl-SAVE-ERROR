@@ -121652,39 +121652,6 @@
       \verb https://doi.org/10.1016/j.jocs.2020.101213
       \endverb
     \endentry
-    \entry{gwsnrpythonpackageefficient}{misc}{}{}
-      \name{author}{2}{}{%
-        {{hash=60726f977f19e6b88f23eda554eb7d5b}{%
-           family={Phurailatpam},
-           familyi={P\bibinitperiod},
-           given={Hemantakumar},
-           giveni={H\bibinitperiod}}}%
-        {{hash=158148bacdf43f22f6a3b6061d1f62af}{%
-           family={Hannuksela},
-           familyi={H\bibinitperiod},
-           given={Otto\bibnamedelima Akseli},
-           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \strng{namehash}{cabc7deec4ccc3fa0e453998b4a42740}
-      \strng{fullhash}{cabc7deec4ccc3fa0e453998b4a42740}
-      \strng{fullhashraw}{cabc7deec4ccc3fa0e453998b4a42740}
-      \strng{bibnamehash}{cabc7deec4ccc3fa0e453998b4a42740}
-      \strng{authorbibnamehash}{cabc7deec4ccc3fa0e453998b4a42740}
-      \strng{authornamehash}{cabc7deec4ccc3fa0e453998b4a42740}
-      \strng{authorfullhash}{cabc7deec4ccc3fa0e453998b4a42740}
-      \strng{authorfullhashraw}{cabc7deec4ccc3fa0e453998b4a42740}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{astro-ph.IM}
-      \field{eprinttype}{arXiv}
-      \field{title}{gwsnr: A Python package for efficient signal-to-noise ratio calculations of gravitational waves}
-      \field{year}{2026}
-      \verb{eprint}
-      \verb 2412.09888
-      \endverb
-    \endentry
     \entry{Poon2025_lens_reconstruction}{article}{}{}
       \name{author}{5}{}{%
         {{hash=63f013d5a34192ba9b83c8a288e51b41}{%
@@ -121731,6 +121698,39 @@
       \field{year}{2025}
       \field{pages}{2212\bibrangedash 2233}
       \range{pages}{22}
+    \endentry
+    \entry{gwsnrpythonpackageefficient}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=60726f977f19e6b88f23eda554eb7d5b}{%
+           family={Phurailatpam},
+           familyi={P\bibinitperiod},
+           given={Hemantakumar},
+           giveni={H\bibinitperiod}}}%
+        {{hash=158148bacdf43f22f6a3b6061d1f62af}{%
+           family={Hannuksela},
+           familyi={H\bibinitperiod},
+           given={Otto\bibnamedelima Akseli},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{fullhash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{fullhashraw}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{bibnamehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authorbibnamehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authornamehash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authorfullhash}{cabc7deec4ccc3fa0e453998b4a42740}
+      \strng{authorfullhashraw}{cabc7deec4ccc3fa0e453998b4a42740}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.IM}
+      \field{eprinttype}{arXiv}
+      \field{title}{gwsnr: A Python package for efficient signal-to-noise ratio calculations of gravitational waves}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2412.09888
+      \endverb
     \endentry
     \entry{Kim2024_lensing_distance}{article}{}{}
       \name{author}{3}{}{%

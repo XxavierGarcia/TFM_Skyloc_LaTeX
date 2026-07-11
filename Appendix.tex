@@ -47,7 +47,7 @@ This appendix provides a reference summary of the parameters used to describe a 
 \hline
 \addlinespace[5pt]
 
-\, Primary/secondary mass & $m_1,\,m_2^\star$ &
+\, Primary/secondary mass & $m_1^\star,\,m_2^\star$ &
 Mass of the more (less) massive component, $m_1\geq m_2$ $[M_\odot]$ \\
 
 \, Chirp mass & $\mathcal{M}$ &
@@ -77,7 +77,7 @@ $E_\mathrm{rad}=(M-M_f)c^2$ [energy] \\
 \, Primary/secondary spin vectors & $\mathbf{S}_1,\,\mathbf{S}_2$ &
 Spin angular momentum of the primary/secondary [ang. mom.] \\
 
-\, Dimensionless spin magnitudes & $\chi_1,\,\chi_2^\star$ &
+\, Dimensionless spin magnitudes & $\chi_1^\star,\,\chi_2^\star$ &
 $\chi_{1,2}=c|\mathbf{S}_{1,2}|/(Gm_{1,2}^2)\leq 1$ [dimensionless] \\
 
 \, Remnant spin magnitude & $\chi_f$ &
@@ -90,7 +90,7 @@ Instantaneous orbital angular momentum about the center of mass [ang. mom.] \\
 \, Total ang. momentum & $\mathbf{J}$ &
 $\mathbf{J}=\mathbf{L}+\mathbf{S}_1+\mathbf{S}_2$ [ang. mom.] \\
 
-\, Primary/secondary tilt angles & $\theta_1,\,\theta_2^\star$ &
+\, Primary/secondary tilt angles & $\theta_1^\star,\,\theta_2^\star$ &
 Angle between $\mathbf{S}_{1,2}$ and $\mathbf{L}$ [angle] \\
 
 \, Spin azimuthal difference & $\phi_{12}^\star$ &
@@ -161,49 +161,57 @@ The motivation for including this section comes from the desire to make life eas
 
 This appendix provides a detailed, step-by-step overview of the workflow followed to run my experiments on a Linux-based high-performance computing (HPC) system. The goal is to ensure full reproducibility and transparency. The system used was Picasso, which uses a Linux environment and the SLURM workload manager.
 
-\section*{Accessing the Supercomputer}
-Access to the HPC cluster was provided via secure shell (SSH). The connection was established using:
+\section*{Accessing the supercomputer}
+Access to the Picasso cluster (SCBI, Universidad de M\'alaga) was provided via secure shell (SSH):
 
 \begin{verbatim}
-ssh username@cluster.domain.edu
+ssh username@picasso.scbi.uma.es
 \end{verbatim}
 
-For convenience, an SSH configuration file was set up:
+For convenience, an SSH configuration file was set up so that the cluster can be reached with a short alias (\texttt{ssh picasso}):
 
 \begin{verbatim}
 # ~/.ssh/config
-Host mycluster
-    HostName cluster.domain.edu
-    User myusername
+Host picasso
+    HostName picasso.scbi.uma.es
+    User username
     IdentityFile ~/.ssh/id_rsa
 \end{verbatim}
 
-\subsection*{3. File and Directory Organization}
-The working directory was structured as follows:
+The CIT (Caltech) cluster used for the post-processing track (\S\ref{sec:automation_picasso}) is reached analogously through the IGWN LDAS head nodes, after obtaining LIGO.ORG credentials.
+
+\section*{File and directory organization}
+The working directory on Picasso was structured as follows (see Figure~\ref{fig:pipeline_picasso} for the full diagram):
 
 \begin{verbatim}
-/home/username/
- project/
-  data/
-   scripts/
-    results/
-   logs/
+resh000464/
+ noise_curves/            # O5a PSD (T2500310-v2)
+ lenskyloc/
+  ini_templates/          # single-image and joint .ini templates
+  Generator_inis_lenskyloc.py
+  n_lensed_params_bbh_filtered.txt
+  lenskyloc_runs/
+   inj001/
+    inj001_img1/          # bilby_pipe run, image 1
+    inj001_img2/          # bilby_pipe run, image 2
+    inj001_joint/         # hanabi_joint_pipe run
+   inj002/
+    ...
 \end{verbatim}
 
-This structure helped maintain organization and simplified automation.
+Each per-run directory is created and populated automatically by \texttt{bilby\_pipe} or \texttt{hanabi\_joint\_pipe} (subdirectories \texttt{data/}, \texttt{submit/}, \texttt{result/}, \texttt{log\_data\_analysis/}, etc.).
 
-\subsection*{4. Working Environment}
-The HPC system used a module system to load required software. The Python environment was prepared as follows:
+\section*{Working environment}
+Jobs run directly inside a dedicated \texttt{conda}/\texttt{miniforge} environment, with no containers involved. After installing \texttt{miniforge} in the user's home directory, the analysis environment was created and activated as:
 
 \begin{verbatim}
-module load python/3.10
-python -m venv env
-source env/bin/activate
+conda create -n hanabi_bilby260 python=3.10
+conda activate hanabi_bilby260
 \end{verbatim}
 
-Additional Python packages were installed using \texttt{pip} or \texttt{requirements.txt}.
+with \texttt{bilby}, \texttt{bilby\_pipe}, \texttt{hanabi}, and their dependencies (\texttt{LALSuite}, \texttt{dynesty}, etc.) installed inside it via \texttt{pip}. The activation line is included in every generated SLURM script, so that each job runs in the same environment. On CIT, no environment needs to be built: the \texttt{igwn} conda environment distributed via CVMFS is activated directly.
 
-\subsection*{5. Key Commands and Utilities}
+\section*{Key commands and utilities}
 Here is a summary of the most commonly used commands:
 
 \begin{center}
@@ -233,69 +241,63 @@ Here is a summary of the most commonly used commands:
 \end{tabular}
 \end{center}
 
-\subsection*{6. Job Submission and SLURM Scripts}
-Jobs were submitted to the scheduler using SLURM. Below is a sample job script:
+\section*{Job submission and SLURM scripts}
+The SLURM scripts are not written by hand: \texttt{bilby\_pipe} and \texttt{hanabi\_joint\_pipe} generate them automatically from the scheduler options of each \texttt{.ini} file (\S\ref{implementataion_pipeline}). The resulting headers follow this pattern (values for a single-image job; the joint jobs request 180\,GB and a 71:30:00 wall time instead):
 
 \begin{verbatim}
 #!/bin/bash
-#SBATCH --job-name=my_job
-#SBATCH --output=logs/output_%j.txt
-#SBATCH --error=logs/error_%j.txt
-#SBATCH --time=01:00:00
-#SBATCH --mem=4G
-#SBATCH --cpus-per-task=2
+#SBATCH --job-name=lenskyloc_inj_001_hanabi_single_img1
+#SBATCH --cpus-per-task=128
+#SBATCH --mem=110G
+#SBATCH --time=48:00:00
+#SBATCH --constraint=cal
 
-module load python/3.10
-source env/bin/activate
-python scripts/my_script.py
+export MPLCONFIGDIR=$LOCALSCRATCH/$USER
+conda activate hanabi_bilby260
 \end{verbatim}
 
-To submit this job:
-\begin{verbatim}
-sbatch job.sh
-\end{verbatim}
-
-To check job status:
-\begin{verbatim}
-squeue -u myusername
-\end{verbatim}
-
-\subsection*{7. Running the Experiments}
-Experiments were launched using prepared scripts with configurable arguments. For example:
+Submission is handled by \texttt{submit\_all\_part1.sh}, which for each event submits the two single-image jobs and then the joint job with an explicit dependency on both, so that the joint analysis only starts once both single-image runs have finished successfully:
 
 \begin{verbatim}
-python train_model.py --dataset data/input.csv --epochs 50 --lr 0.001
+JOB1=$(sbatch img1.sh | awk '{print $4}')
+JOB2=$(sbatch img2.sh | awk '{print $4}')
+sbatch --dependency=afterok:$JOB1:$JOB2 joint.sh
 \end{verbatim}
 
-Each run was logged using `tee` and redirected output:
+Job status was monitored with \texttt{squeue -u username}, and progress within a run by inspecting the sampler logs, e.g.
 
 \begin{verbatim}
-python script.py > logs/run1.out 2>&1
+tail -f lenskyloc_runs/inj001/inj001_img1/log_data_analysis/*.err
 \end{verbatim}
 
-\subsection*{8. Troubleshooting and Common Issues}
+\section*{Post-processing tracks}
+Once the joint analyses complete, \texttt{submit\_all\_part2.sh} launches the SNR-recovery track on Picasso: \texttt{hanabi\_postprocess\_result} recomputes the single-image and network SNRs for every event, and the helper scripts \texttt{compute\_snr.py} and \texttt{snr\_combined\_table.py} collect them into the summary table used in \S\ref{sec:parameter_recovery}.
+
+The sky-map track runs on CIT instead: \texttt{Pesummaries\_automated\_condor\_all.py} and \texttt{Skymap\_condor.py} are each launched as an HTCondor job array of 157 processes (\texttt{condor\_submit}, monitored with \texttt{condor\_q}), generating the \texttt{PESummary} metafiles and the \texttt{ligo.skymap} products for all events in parallel (\S\ref{sec:automation_picasso}).
+
+\section*{Troubleshooting and common issues}
 Typical problems encountered included:
 
 \begin{itemize}
-  \item \textbf{Module conflicts:} Solved by purging modules with \texttt{module purge}.
-  \item \textbf{Permission errors:} Solved by adjusting file permissions via \texttt{chmod}.
-  \item \textbf{Job hangs:} Resolved by checking SLURM node load and memory limits.
+  \item \textbf{Wall-time kills:} jobs interrupted at the wall-time limit can be resubmitted and resume from the \texttt{Dynesty} checkpoint files, written every 30 minutes (\texttt{check\_point\_delta\_t=1800}). This is also what limited the last seven joint jobs when the allocation cap dropped to 24\,h (\S\ref{sec:incomplete_events}).
+  \item \textbf{Matplotlib cache errors on compute nodes:} solved by pointing \texttt{MPLCONFIGDIR} to the node-local scratch space (see the header above), since the home filesystem is not writable from all nodes.
+  \item \textbf{Broken \texttt{PESummary} installation on Picasso:} the version available in the Picasso environment produced errors, so the summary-page and sky-map generation was moved to CIT, where the \texttt{igwn} environment runs it correctly (\S\ref{sec:automation_picasso}).
 \end{itemize}
 
-\subsection*{9. Optimization and Performance Tuning (Optional)}
-Where relevant, job parameters were optimized to use resources efficiently. For example:
+\section*{Optimization and performance tuning}
+The main resource choices were matched to the cluster hardware:
 
 \begin{itemize}
-  \item Multi-threading enabled via \texttt{--cpus-per-task}.
-  \item Memory profiling using \texttt{/usr/bin/time -v}.
-  \item Parallel jobs launched via SLURM job arrays.
+  \item \texttt{npool=128} in the sampler settings matches \texttt{--cpus-per-task=128}, so each likelihood evaluation pool uses the full node allocation.
+  \item \texttt{n-parallel=3} runs three independent \texttt{Dynesty} analyses per image, merged into a single posterior to mitigate sampler variance.
+  \item The data segment duration and the chirp-mass prior range are computed per event (\S\ref{sec:bilby_config}), keeping each run as short as its signal allows instead of adopting a single conservative configuration for the whole population.
 \end{itemize}
 
-\subsection*{10. Additional Resources}
+\section*{Additional resources}
 \begin{itemize}
   \item SLURM documentation: \url{https://slurm.schedmd.com/documentation.html}
-  \item SSH key setup: \url{https://www.ssh.com/academy/ssh/keygen}
-  \item GitHub repository: \url{https://github.com/XxavierGarcia/TFM_reproducibility_material}
+  \item Picasso user guide (SCBI): \url{https://www.scbi.uma.es/site/}
+  \item GitHub repository with the complete pipeline code: \url{https://github.com/XxavierGarcia/TFM_reproducibility_material}
 \end{itemize}
 
 
