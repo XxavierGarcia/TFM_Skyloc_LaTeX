@@ -20,7 +20,6 @@
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning}
 \usepackage{xcolor}
 \usepackage{booktabs} % Para líneas más elegantes en tablas
-\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}  
 \usepackage[Lenny]{fncychap}
 \usepackage{dirtytalk}%per les cometes
 
@@ -33,7 +32,6 @@
   {}{}
 \makeatother
  
-\usepackage{booktabs}
 \usepackage{longtable}
 \usepackage[titles]{tocloft} % Paquete para modificar el índice
 
@@ -91,7 +89,6 @@
     keywordstyle=\color{keywordblue}\bfseries,
     commentstyle=\color{commentgray}\itshape,
     stringstyle=\color{stringgreen},
-    showstringspaces=false,
     frame=single,
     rulecolor=\color{lightgray},
     language=Python,
@@ -128,10 +125,7 @@
 \addbibresource{ref.bib} %posar el nom del document on hi ha les referencies 
 
 \fancyhead{}
-%\addto\captionsspanish{\renewcommand{\contentsname}{\Large{\sffamily\textbf{Índice}}}} %original
-\addto\captionsspanish{\renewcommand{\contentsname}{\Large{\fontfamily{cmr}\selectfont\Huge{Índice}}}}%s'ha de posar \addto\captionsspanish perquè sinó el paquet babel sobreescriu "indice general"
 
-\usepackage{etoolbox} %tot això següent perqu`líndex no estigui numerat
 \pretocmd{\tableofcontents}{%
   \clearpage
   \pagestyle{empty}%
@@ -159,7 +153,6 @@
 \setcounter{secnumdepth}{4}  % perque es vegi fins a 1.1.1.1 al cos del document
 \setcounter{tocdepth}{4}  % perque es vegi fins a 1.1.1.1 a l'index
 
-\usepackage{tocloft}
 \setlength{\cftbeforefigskip}{9pt} % espai entre figures a la list of figures
 
 % Colores personalizados
@@ -257,6 +250,10 @@
 \pagenumbering{Roman}
 \fontfamily{cmr}\selectfont
 
+\input{Acknowledgments.tex}
+
+\newpage
+
 \input{Summary.tex}
 
 
@@ -285,24 +282,46 @@
 \begin{center}
 \begin{tabular}{R{5cm} L{10cm}}
 
+BBH & \textbf{B}inary \textbf{B}lack \textbf{H}ole \\
 BH & \textbf{B}lack \textbf{H}ole \\
+BNS & \textbf{B}inary \textbf{N}eutron \textbf{S}tar \\
 CBC & \textbf{C}ompact \textbf{B}inary \textbf{C}oalescence \\
+CE & \textbf{C}osmic \textbf{E}xplorer \\
 CW & \textbf{C}ontinuous gravitational \textbf{W}ave \\
 EFE & \textbf{E}instein \textbf{F}ield \textbf{E}quations \\
 EMRI & \textbf{E}xtreme \textbf{M}ass \textbf{R}atio \textbf{I}nspiral \\
+EOB & \textbf{E}ffective \textbf{O}ne \textbf{B}ody \\
+EPL & \textbf{E}lliptical \textbf{P}ower \textbf{L}aw \\
+ET & \textbf{E}instein \textbf{T}elescope \\
+FRW & \textbf{F}riedmann-\textbf{R}obertson-\textbf{W}alker \\
 GR & \textbf{G}eneral \textbf{R}elativity \\
 GW & \textbf{G}ravitational \textbf{W}ave \\
 HPC & \textbf{H}igh \textbf{P}erformance \textbf{C}omputing \\
 IGWN & \textbf{I}nternational \textbf{G}ravitational-\textbf{W}ave Observatory \textbf{N}etwork \\
 IMBH & \textbf{I}ntermediate \textbf{M}ass \textbf{B}lack \textbf{H}ole \\
+IMR & \textbf{I}nspiral-\textbf{M}erger-\textbf{R}ingdown \\
 LISA & \textbf{L}aser \textbf{I}nterferometer \textbf{S}pace \textbf{A}ntenna \\
+LVK & \textbf{L}IGO-\textbf{V}irgo-\textbf{K}AGRA \\
+MC & \textbf{M}onte \textbf{C}arlo \\
+MCMC & \textbf{M}arkov \textbf{C}hain \textbf{M}onte \textbf{C}arlo \\
+NFW & \textbf{N}avarro-\textbf{F}renk-\textbf{W}hite \\
+NR & \textbf{N}umerical \textbf{R}elativity \\
 NS & \textbf{N}eutron \textbf{S}tar \\
+NSBH & \textbf{N}eutron \textbf{S}tar-\textbf{B}lack \textbf{H}ole (binary) \\
 O1, O2, O3, O4, O5 & \textbf{O}bservation run 1, 2, 3, 4, 5 of the LVK network \\
 PE & \textbf{P}arameter \textbf{E}stimation \\
+PN & \textbf{P}ost-\textbf{N}ewtonian \\
+PSD & \textbf{P}ower \textbf{S}pectral \textbf{D}ensity \\
+QNM & \textbf{Q}uasi-\textbf{N}ormal \textbf{M}ode \\
 SBH & \textbf{S}tellar-mass \textbf{B}lack \textbf{H}ole \\
 SGWB & \textbf{S}tochastic \textbf{G}ravitational \textbf{W}ave \textbf{B}ackground \\
+SIE & \textbf{S}ingular \textbf{I}sothermal \textbf{E}llipsoid \\
+SIS & \textbf{S}ingular \textbf{I}sothermal \textbf{S}phere \\
 SMBH & \textbf{S}uper\textbf{m}assive \textbf{B}lack \textbf{H}ole \\
 SNR & \textbf{S}ignal-to-\textbf{N}oise \textbf{R}atio \\
+TDI & \textbf{T}ime \textbf{D}elay \textbf{I}nterferometry \\
+TT & \textbf{T}ransverse-\textbf{T}raceless \\
+WD & \textbf{W}hite \textbf{D}warf \\
 
 
 

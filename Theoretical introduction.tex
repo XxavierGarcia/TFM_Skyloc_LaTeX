@@ -60,7 +60,7 @@ is independent of mass only if $m_g/m_i = \text{constant}$, which experiments co
 universal and set to 1 by an appropriate choice of units.
 
 This equivalence has been tested with remarkable precision. In 1889, Eötvös used a torsion balance to reach a precision of $|{(m_g - m_i)}/{m_g}| \sim 5\times10^{-8}$, later refined with Pekár and Fekete to $\sim10^{-9}$, published in 1922 \cite{The_Eötvös_Torsion_Balance}, and later improved by Dicke in 1964 to $< 10^{-11}$ \cite{RobertDicketest}. Currently, the MICROSCOPE satellite mission has achieved a precision of $10^{-15}$
-\cite{CNES_MICROSCOPE_eoportal, MicroSCOPE2022final}.
+\cite{MicroSCOPE2022final}.
 
 \subsubsection{The strong equivalence principle}
 
@@ -131,9 +131,9 @@ The local validity of the equivalence principle has a precise mathematical count
 \section{The description of curved spacetime}
 
 
-After his work on special relativity and learning about the mathematical structure introduced by Minkowski \cite{Minkowski}, Einstein realized that space-time itself possesses a geometry. Instead of thinking of space and time as separate and absolute entities, special relativity showed that they are part of a unified, four-dimensional space-time fabric. 
+After his work on special relativity and learning about the mathematical structure introduced by Minkowski \cite{Minkowski}, Einstein realized that spacetime itself possesses a geometry. Instead of thinking of space and time as separate and absolute entities, special relativity showed that they are part of a unified, four-dimensional spacetime fabric. 
 
-Before introducing gravity, it is crucial to recall this idea: space-time itself has a geometry. In special relativity, this geometry is flat (Minkowskian); however, the presence of mass and energy changes this picture.
+Before introducing gravity, it is crucial to recall this idea: spacetime itself has a geometry. In special relativity, this geometry is flat (Minkowskian); however, the presence of mass and energy changes this picture.
 
 To describe this curved geometry, Euclidean tools are no longer sufficient. Instead, we require a more general mathematical framework: Riemannian geometry, capable of capturing the curvature induced by mass and energy. In this section, we will extend that concept further.
 
@@ -142,7 +142,7 @@ To describe this curved geometry, Euclidean tools are no longer sufficient. Inst
 \subsection{From Euclidean to non-Euclidean geometry}
 
 
-The geometry most familiar to us, Euclidean geometry, describes flat space: parallel lines never meet, and the angles of a triangle always sum to 180\textdegree{}. These properties stem from the work of the Greek mathematician \href{https://en.wikipedia.org/wiki/Euclid}{Euclid}, who around 300 BC formulated five postulates from which he derived hundreds of theorems \cite{Elements}. Among these, the fifth, the parallel postulate, stood out for its complexity, prompting centuries of efforts to prove it from 
+The geometry most familiar to us, Euclidean geometry, describes flat space: parallel lines never meet, and the angles of a triangle always sum to 180\textdegree{}. These properties stem from the work of the Greek mathematician Euclid, who around 300 BC formulated five postulates from which he derived hundreds of theorems \cite{Elements}. Among these, the fifth, the parallel postulate, stood out for its complexity, prompting centuries of efforts to prove it from 
 the others \cite{LLibreNon-Euclideangeometry}.
 
 Eventually, mathematicians like Nikolai I. Lobachevsky \cite{Llibrelobachevsky} and János Bolyai \cite{LLibrebolyai} explored what would happen if the parallel postulate were replaced, discovering entirely new self-consistent 
@@ -158,7 +158,7 @@ angles sum to less than 180\textdegree{}.
 \end{figure}
 
 These ideas became essential when Einstein formulated GR. In his theory, spacetime is curved by the presence of mass and energy, and the shortest paths, geodesics (see $\S$\ref{Geodesics and curvature}), follow the curvature of spacetime rather than straight Euclidean lines. This curved 
-geometry, pioneered by \href{https://es.wikipedia.org/wiki/Bernhard_Riemann}{Bernhard Riemann}, provides the mathematical language to describe gravitational phenomena, 
+geometry, pioneered by Bernhard Riemann, provides the mathematical language to describe gravitational phenomena, 
 replacing Newton's force with the geometry of spacetime itself.
 
 
@@ -208,47 +208,8 @@ is $C^\infty$ (see Fig.~\ref{fig:transition maps}). These smooth transition maps
 \end{figure}
 
 
-\subsection{Mathematical interlude}
 
-\subsubsection{Einstein summation convention and dummy indices}
-
-As we delve deeper into the mathematics of vectors and tensors, we'll notice that certain patterns appear repeatedly in equations. One such recurring structure involves expressions where an index appears more than once within the same term. For example, consider the following:
-\begin{equation}
-    \sum_\mu V^\mu U_\mu \ .
-\end{equation}
-In this expression, the index $\mu$ appears both as a superscript and a subscript. It is summed over, meaning it serves as a dummy index, a placeholder variable that takes on all possible values of that index. The specific letter used doesn't matter; for instance:
-\begin{equation}
-    \sum_\nu V^\nu U_\nu \ ,
-\end{equation}
-represents exactly the same expression. The key characteristics of this type of sum are: 
-\begin{itemize}
-    \item The index appears exactly two times in a single term.
-    \item It appears once as a superscript (contravariant) index and once as a subscript (covariant) index.
-    \item It implies summation over all possible values of the repeated index.
-\end{itemize}
-
-Einstein’s clever idea, known as the Einstein summation convention, was to omit the summation symbol altogether when this pattern appears. According to this convention, whenever an index is repeated once upstairs and once downstairs in a term, a summation over that index is assumed. So instead of writing:
-\begin{equation}
-    \sum_\mu V^\mu U_\mu \ ,
-\end{equation}
-we can simply write:
-\begin{equation}
-    V^\mu U_\mu \ ,
-\end{equation}
-and the summation is understood.
-
-This notational shortcut was first introduced by Einstein in his 1916 paper The Foundation of the General Theory of Relativity \cite{einstein1916foundation}. At the beginning of the paper, he still wrote out summation signs explicitly. For instance:
-\begin{equation}
-    dX_\nu = \sum_\sigma a_{\nu \sigma} \, dx_\sigma \ .
-\end{equation}
-However, shortly after equation 7, he casually notes that whenever an index appears twice, summation is to be assumed, and from then on, he stops writing summation symbols.
-
-
-The Einstein summation convention offers a powerful and elegant notational tool, widely used in physics and mathematics to simplify the representation of tensor equations \cite{LlibreBertJanssen, llibretheoreticalminimum}.
-
-
-\subsubsection{Tensors}
-
+\subsection{Tensors}
 
 
 Tensors are the natural language of GR: they are geometric objects whose components transform consistently under coordinate changes, ensuring that physical laws remain valid in any reference frame \cite{llibretensorcalculus}. They generalize the familiar notions of scalars (invariant under coordinate changes), contravariant vectors 
@@ -357,14 +318,16 @@ The signature of the metric distinguishes between different geometries: Riemanni
 A particularly relevant example in the context of this work is the weak-field perturbed metric, which describes spacetime in the presence of a slowly varying Newtonian gravitational potential. This metric reduces to the Minkowski form in the absence of matter and governs 
 the deflection of GWs as they propagate through a gravitational lens, as developed in $\S$\ref{sec:geometric_optics}.
 
-\subsubsection{Conventions} Throughout this thesis the signature $(-,+,+,+)$ is adopted for the metric, so that $\eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)$ and timelike intervals satisfy $ds^2 < 0$. Newton's gravitational constant $G$ and the speed of light $c$ are kept explicit throughout, rather than setting $c=1$; consequently, factors of $c$ appear explicitly in expressions such as the Einstein field equations, $G_{\mu\nu} = (8\pi G/c^4)\, T_{\mu\nu}$, and are restored consistently in the weak-field and lensing expressions of later chapters.
+\subsubsection{Conventions} 
+
+Throughout this thesis the signature $(-,+,+,+)$ is adopted for the metric, so that $\eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)$ and timelike intervals satisfy $ds^2 < 0$. Newton's gravitational constant $G$ and the speed of light $c$ are kept explicit throughout, rather than setting $c=1$; consequently, factors of $c$ appear explicitly in expressions such as the Einstein field equations, $G_{\mu\nu} = (8\pi G/c^4)\, T_{\mu\nu}$, and are restored consistently in the weak-field and lensing expressions of later chapters.
 
 
 
 
 \subsection{Affine connection and curvature}
 
-We’ve now laid the groundwork for a deeper look into the mathematics of curved space. Ultimately, our goal is to understand:
+We have now laid the groundwork for a deeper look into the mathematics of curved space. Ultimately, our goal is to understand:
 
 \begin{itemize}
     \item Geodesics (see $\S$\ref{Geodesics and curvature}), the “straightest possible” paths between any two points on a Riemannian manifold, and thus the natural trajectories of free particles moving through curved spacetime.  
@@ -388,11 +351,11 @@ can be differentiated component by component:
 \frac{\partial \vec{V}}{\partial y} = -\, \vec{e}_x + \vec{e}_z \ , \quad \quad
 \frac{\partial \vec{V}}{\partial z} = 3\, \vec{e}_y - \vec{e}_z \ .
 \end{equation}
-The basis vectors $\vec{e}_x, \vec{e}_y, \vec{e}_z$ are constant in space, so we don’t need to worry about them changing from point to point. We just apply the partial derivative to each component function.
+The basis vectors $\vec{e}_x, \vec{e}_y, \vec{e}_z$ are constant in space, so we do not need to worry about them changing from point to point. We just apply the partial derivative to each component function.
 
 However, this approach fails in curved spaces or curvilinear coordinates, where the basis vectors themselves vary from point to point. In such cases, when differentiating a tensor, we must also account for the rate of change of the basis vectors. This is where the connection coefficients, or Christoffel symbols, come into play.
 
-Let us consider a vector expressed as $\vec{V} = V^\alpha \vec{e}_\alpha$, where $\vec{e}_\alpha$ are the coordinate basis vectors. Now let’s take the derivative of this with respect to some coordinate using the product rule \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
+Let us consider a vector expressed as $\vec{V} = V^\alpha \vec{e}_\alpha$, where $\vec{e}_\alpha$ are the coordinate basis vectors. Now let us take the derivative of this with respect to some coordinate using the product rule \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
 \begin{equation}
     \frac{\partial \vec{V}}{\partial x^\beta} 
 = \frac{\partial}{\partial x^\beta} \left( V^\alpha \vec{e}_\alpha \right) 
@@ -437,7 +400,7 @@ Some key properties of Christoffel symbols are:
     \item In an $n$-dimensional Riemannian manifold, there are theoretically $n^3$ such coefficients, though this number is reduced by the symmetry condition.
 \end{itemize}
 
-The term ``Christoffel symbols'' honors the mathematician Elwin Christoffel (1829--1900), who first introduced them in the context of differential geometry. Although sometimes informally dubbed ``Christ-awful symbols'' due to their apparent complexity, this perception tends to fade with familiarity \cite{llibretheoreticalminimum}. What initially seems intricate is, in fact, a systematic way of incorporating the effects of curvature into the formulation of differential operators . 
+The term ``Christoffel symbols'' honors the mathematician Elwin Christoffel (1829--1900), who first introduced them in the context of differential geometry. Although sometimes informally dubbed ``Christ-awful symbols'' due to their apparent complexity, this perception tends to fade with familiarity \cite{llibretheoreticalminimum}. What initially seems intricate is, in fact, a systematic way of incorporating the effects of curvature into the formulation of differential operators. 
 
 These connection coefficients are essential for extending the familiar notion of differentiation to the curved spacetimes of GR, setting the stage for the definition of the covariant derivative, which we address next.
 
@@ -662,7 +625,7 @@ To fully characterize a geodesic, one must impose a normalization condition on t
 g_{\mu\nu}\dot{x}^\mu \dot{x}^\nu =
 \begin{cases}-\,c^2 & \text{timelike geodesics (massive particles),} \\[2mm]
 \, \, \, \, \, \, 0 & \text{null geodesics (light rays or massless particles),} \\[1mm]
-+\,c^2 & \text{spacelike curves (non-physical).}
++\,c^2 & \text{spacelike curves (not particle worldlines).}
 \end{cases}
 \end{equation}
 This condition follows directly from the spacetime interval 
@@ -674,7 +637,7 @@ suffices to determine the geodesic trajectory without solving the full geodesic 
 \label{Riemann curvature tensor}
 
 
-In \S\ref{parallel transport} we established that parallel transport around a closed loop in a curved manifold generically returns a vector in a different orientation from its initial one (see Fig.~\ref{fig:paraleltransportflat}). This path-dependence is not an artifact of the coordinate system but reflects the intrinsic geometry of the manifold. The Riemann curvature tensor provides a precise, coordinate-independent quantification of this effect.
+In \S\ref{parallel transport} we established that parallel transport around a closed loop in a curved manifold generically returns a vector in a different orientation from its initial one (see Fig.~\ref{fig:paraleltransportflat}). This path-dependence is not an artefact of the coordinate system but reflects the intrinsic geometry of the manifold. The Riemann curvature tensor provides a precise, coordinate-independent quantification of this effect.
 
 To make this concrete, consider the parallel transport condition derived in \S\ref{parallel transport},
 \begin{equation}
@@ -701,34 +664,7 @@ The commutator of two covariant derivatives acting on a vector field $V^\rho$ is
 \begin{equation}
 [\nabla_\mu, \nabla_\nu] V^\rho \equiv \nabla_\mu \nabla_\nu V^\rho - \nabla_\nu \nabla_\mu V^\rho.
 \end{equation}
-Expanding each term in terms of the Christoffel symbols $\Gamma^\rho_{\mu\nu}$, we obtain
-\begin{equation}
-\nabla_\mu \nabla_\nu V^\rho 
-= \partial_\mu (\nabla_\nu V^\rho) 
-+ \Gamma^\rho_{\mu\sigma} \nabla_\nu V^\sigma 
-- \Gamma^\sigma_{\mu\nu} \nabla_\sigma V^\rho.
-\end{equation}
-Substituting $\nabla_\nu V^\rho = \partial_\nu V^\rho + \Gamma^\rho_{\nu\lambda} V^\lambda$ into the above, we get
-\begin{equation}
-\nabla_\mu \nabla_\nu V^\rho 
-= \partial_\mu \left( \partial_\nu V^\rho + \Gamma^\rho_{\nu\lambda} V^\lambda \right)
-+ \Gamma^\rho_{\mu\sigma} \left( \partial_\nu V^\sigma + \Gamma^\sigma_{\nu\lambda} V^\lambda \right)
-- \Gamma^\sigma_{\mu\nu} \left( \partial_\sigma V^\rho + \Gamma^\rho_{\sigma\lambda} V^\lambda \right).
-\end{equation}
-Expanding the derivatives and rearranging terms, this becomes
-\begin{equation}
-\begin{aligned}
-\nabla_\mu \nabla_\nu V^\rho 
-&= \partial_\mu \partial_\nu V^\rho 
-+ (\partial_\mu \Gamma^\rho_{\nu\lambda}) V^\lambda 
-+ \Gamma^\rho_{\nu\lambda} \partial_\mu V^\lambda\\
-& + \Gamma^\rho_{\mu\sigma} \partial_\nu V^\sigma + \Gamma^\rho_{\mu\sigma} \Gamma^\sigma_{\nu\lambda} V^\lambda - \Gamma^\sigma_{\mu\nu} \partial_\sigma V^\rho 
-- \Gamma^\sigma_{\mu\nu} \Gamma^\rho_{\sigma\lambda} V^\lambda.
-\end{aligned}
-\end{equation}
-In order to compute the second term of the commutator, we do the same operation, interchanging the indices $(\mu \leftrightarrow \nu)$. 
-
-Finally, we obtain:
+Expanding each covariant derivative in terms of the Christoffel symbols $\Gamma^\rho_{\mu\nu}$ and antisymmetrising in $(\mu \leftrightarrow \nu)$, the partial derivatives $\partial_\mu \partial_\nu V^\rho$ and the symmetric terms in $\mu\nu$ cancel, leaving
 \begin{equation}
 [\nabla_\mu, \nabla_\nu] V^\rho 
 = \left( \partial_\mu \Gamma^\rho_{\nu\sigma} - \partial_\nu \Gamma^\rho_{\mu\sigma} 
@@ -736,14 +672,14 @@ Finally, we obtain:
 - \Gamma^\rho_{\nu\lambda} \Gamma^\lambda_{\mu\sigma} \right) V^\sigma
 - 2\,\Gamma^\lambda_{[\mu\nu]} \, \nabla_\lambda V^\rho.
 \end{equation}
-The first group of terms corresponds to the components of the Riemann curvature tensor,
+The first group of terms defines the Riemann curvature tensor,
 \begin{equation}
 R^\rho_{\ \sigma\mu\nu} = \partial_\mu \Gamma^\rho_{\nu\sigma} - \partial_\nu \Gamma^\rho_{\mu\sigma} 
 + \Gamma^\rho_{\mu\lambda} \Gamma^\lambda_{\nu\sigma} 
 - \Gamma^\rho_{\nu\lambda} \Gamma^\lambda_{\mu\sigma} \ ,
 \label{riemanntensoreq}
 \end{equation}
-while the second term involves the antisymmetric part of the connection,
+while the second involves the antisymmetric part of the connection,
 \begin{equation}
 T^\lambda_{\ \mu\nu} = \Gamma^\lambda_{\mu\nu} - \Gamma^\lambda_{\nu\mu} \ ,
 \end{equation}
@@ -807,13 +743,13 @@ The complete, uncontracted Riemann curvature tensor does not explicitly appear i
 
 \paragraph{Ricci tensor}
 
-By contracting the second index of the Riemann tensor with its fourth index, one obtains the Ricci tensor:
+By contracting the first (upper) index of the Riemann tensor with its third index, one obtains the Ricci tensor:
 \begin{equation}
 R_{\mu\nu} = R_{\ \mu\rho\nu}^{\rho} = g^{\rho\lambda} R_{\mu\rho\nu\lambda} \ .
 \end{equation}
 Therefore, it is expressed in terms of the connection as follows:
 \begin{equation}
-R_{\mu\nu} = \partial_{\mu} \Gamma^{\lambda}_{\nu\lambda} - \partial_{\nu} \Gamma^{\lambda}_{\mu\lambda} + \Gamma^{\rho}_{\mu\lambda} \Gamma^{\lambda}_{\nu\rho} - \Gamma^{\rho}_{\nu\lambda} \Gamma^{\lambda}_{\mu\rho} \ .
+R_{\mu\nu} = \partial_{\rho} \Gamma^{\rho}_{\mu\nu} - \partial_{\nu} \Gamma^{\rho}_{\rho\mu} + \Gamma^{\rho}_{\rho\lambda} \Gamma^{\lambda}_{\mu\nu} - \Gamma^{\rho}_{\nu\lambda} \Gamma^{\lambda}_{\rho\mu} \ .
 \end{equation}
 
 
@@ -898,7 +834,7 @@ R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R + g_{\alpha\beta}\Lambda
 \label{einsteinequationslambda}
 \end{equation}
 Historically, Einstein introduced $\Lambda$ in 1917 as a way to obtain a static universe without beginning or end, effectively behaving like a repulsive pressure. However, the static solutions were later found to be unstable, and in 1929 Edwin Hubble (1889--1953) discovered that the universe is in fact expanding, a result fully consistent with the 
-original unmodified equations. Einstein reportedly referred to the cosmological constant as ``the biggest blunder'' of his life, as described by \href{https://es.wikipedia.org/wiki/Gueorgui_G%C3%A1mov}{George Gamow}, though the remark is not documented in Einstein's own writing.
+original unmodified equations. Einstein reportedly referred to the cosmological constant as ``the biggest blunder'' of his life, as described by George Gamow, though the remark is not documented in Einstein's own writing.
 
 Ironically, observations of distant Type Ia supernovae in 1998, carried out by the Supernova Cosmology Project and the High-Z Supernova Search Team, revealed that the expansion is accelerating. One possible explanation invokes a pervasive dark energy effectively described by $\Lambda$, which has thus regained scientific relevance despite its troubled history \cite{Llibre_Peter_Collier_unacosadificildecomprender}. The 
 modern challenge lies in the so-called cosmological constant problem: quantum field theory predicts $\Lambda \sim m_{P}^{4} \sim 10^{76}\,\mathrm{GeV}^{4}$, while observations constrain it to $\sim 10^{-47}\,\mathrm{GeV}^{4}$, a discrepancy of roughly $10^{123}$ and the largest known mismatch between theory and experiment \cite{LlibreBertJanssen}.
@@ -919,7 +855,7 @@ Each solution corresponds to a possible spacetime geometry associated with a par
 \begin{itemize}
     \item \textbf{Exact analytical solutions}: such as the Schwarzschild, Kerr, or Friedmann-Lemaître-Robertson-Walker metrics. 
     \item \textbf{Approximate solutions}: derived through perturbative methods, for instance weak-field expansions describing GW.  
-    \item \textbf{Numerical solutions}: obtained via large-scale simulations, such as those modeling the merger of two BHs.  
+    \item \textbf{Numerical solutions}: obtained via large-scale simulations, such as those modelling the merger of two BHs.  
 \end{itemize}
 
 The vast variety of solutions illustrates the richness of GR: each one represents a distinct possible universe governed by Einstein’s equations.
@@ -972,8 +908,8 @@ This means that, far away from the source, the gravitational field is essentiall
 \subsubsection{The Kretschmann scalar and the Schwarzschild radius}
 
 As $r \to 0$, the metric components diverge, signaling a singularity where spacetime curvature becomes infinite and the laws of physics break down \cite{SchwarzschildSolutionlimit}. Metrics derived from 
-EFE can present two types of singularities. Coordinate singularities are artifacts of the chosen coordinate system with no physical content: for instance, $g_{\phi\phi} = 0$ at $\theta = 0, \pi$ in spherical coordinates, which vanishes under a simple rotation. Physical singularities correspond to genuine divergences of spacetime curvature, 
-and Penrose showed in 1965 that such singularities necessarily exist inside any closed trapped surface \cite{Penrose1969}.
+EFE can present two types of singularities. Coordinate singularities are artefacts of the chosen coordinate system with no physical content: for instance, $g_{\phi\phi} = 0$ at $\theta = 0, \pi$ in spherical coordinates, which vanishes under a simple rotation. Physical singularities correspond to genuine divergences of spacetime curvature, 
+and Penrose showed in 1965 that such singularities necessarily exist inside any closed trapped surface \cite{Penrose1965}.
 
 To distinguish between the two, one computes curvature invariants constructed from contractions of the Riemann tensor, which are independent of the coordinate choice. For the Schwarzschild solution, the Kretschmann scalar
 \begin{equation}
@@ -991,7 +927,7 @@ Setting $ds^2 = 0$ and $d\theta = d\phi = 0$, the slope of radial null geodesics
 which recovers the Minkowski value $\pm 1/c$ at large $r$ but diverges as $r \to 2GM/c^2$, causing the light cones to close up
 (see Fig.~\ref{fig:null geodesics}). Inside the horizon, the cones flip orientation entirely, forcing all causal trajectories toward the singularity at $r=0$. Integrating the null geodesic equation gives
 \begin{equation}
-ct = \pm \left(r + \frac{2GM}{c^2} \ln\left|r - \frac{2GM}{c^2}\right| + C_0 \right),
+ct = \pm \left(r + \frac{2GM}{c^2} \ln\left|\frac{c^2 r}{2GM} - 1\right| + C_0 \right),
 \end{equation}
 showing that an outgoing light ray requires infinite Schwarzschild coordinate time to reach $r=2GM/c^2$. A distant observer therefore sees an infalling body freeze and fade at the horizon, while in proper time the crossing occurs in a finite interval. The issue lies in the coordinates, not the physics.
 
@@ -1018,7 +954,7 @@ showing that an outgoing light ray requires infinite Schwarzschild coordinate ti
 
 To follow geodesics continuously across the horizon, one introduces the advanced Eddington-Finkelstein coordinates \cite{Eddington--Finkelsteincoordinates},
 \begin{equation}
-c\tilde{t} = ct + \frac{2GM}{c^2} \log\left|r - \frac{2GM}{c^2}\right|,
+c\tilde{t} = ct + \frac{2GM}{c^2} \log\left|\frac{c^2 r}{2GM} - 1\right|,
 \end{equation}
 in which the metric becomes
 \begin{equation}
@@ -1070,7 +1006,6 @@ BHs are regions of spacetime where gravity is so intense that nothing, not even 
         \label{fig:diagram_BH_complex}
     \end{subfigure}
     \caption[Simplified and detailed diagrams of a black hole]{(a) Simplified depiction of a BH. The event horizon (red line) marks the boundary beyond which nothing can escape. Inside, all paths lead to the singularity (blue dot). (b) More detailed diagram showing the causal structure of a Schwarzschild BH. The light cones tip inward as one approaches the horizon, and inside they point entirely toward the singularity, indicating that all causal trajectories inevitably end there. Source: \cite{nobel2020blackholes}. }
-    \label{}
 \end{figure}
 Although the term BH was popularized by John Wheeler in 1967, the idea traces back to the 18th century, when John Michell and Pierre-Simon Laplace speculated that a star of sufficient density could trap its own light. Their reasoning was based on Newtonian gravity and the notion of escape velocity. While not fully correct, their intuition coincidentally pointed to the same critical radius later derived by Schwarzschild in GR \cite{Llibre_Peter_Collier_unacosadificildecomprender}.  
 
@@ -1117,11 +1052,11 @@ We have now reached the central topic of this thesis and one of the most remarka
 \label{Gravitational_waves_linearized_gravity}
 
 
-In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}. He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether GWs were genuine physical phenomena remained under debate .} \cite{GW150914}. 
+In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}.\footnote{Einstein's original 1916 derivation of the quadrupole formula contained a numerical error in its coefficient. A 1918 follow-up paper corrected most of the 1916 mistakes, but a remaining factor-of-two error in the coefficient was only identified and fixed by Eddington in 1922 \cite{Weinstein2016_Einstein_GW_history}.} He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether GWs were genuine physical phenomena remained under debate.} \cite{GW150914}. 
 
 GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving BHs (BH-BH), NSs (NS-NS), or mixed BH-NS mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of GR, obtained by expanding the EFE around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
 
-The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss, provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct GW astronomy \cite{GW150914}.
+The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct GW astronomy \cite{GW150914}.
 
 Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO detectors achieved the first direct detection of GWs, GW150914, announced jointly by the LIGO Scientific Collaboration and the Virgo Collaboration \cite{GW150914}, a signal originating from a binary black hole merger (BBH). This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
 
@@ -1273,9 +1208,9 @@ where we have interchanged the dummy indices $(\lambda \leftrightarrow \rho)$ an
 - \Box h_{\mu \sigma} 
 - \partial_{\mu} \partial_{\sigma} h \right) - \frac{1}{2} \eta_{\mu \sigma} \left( \partial^{\nu} \partial^{\rho} h_{\nu\rho} - \Box h \right) = \frac{8\pi G}{c^4} T_{\mu \sigma}.
 \end{equation}
-Since a weak gravitational field corresponds to small spacetime curvature, we can safely assume the absence of matter sources, setting $T_{\mu \sigma} = 0$ we obtain
+We first study the propagation of the resulting perturbation, appropriate far from the source where $T_{\mu \sigma} = 0$; the generation of GWs by a matter source is treated separately in \S\ref{sec:GW_generation}. Setting $T_{\mu \sigma} = 0$ and multiplying through by $2$, we obtain
 \begin{equation}
-G_{\mu \sigma} \equiv \partial_\mu \partial^{\lambda} h_{\lambda \sigma} + \partial^{\rho} \partial_{\sigma} h_{\mu \rho}
+2G_{\mu \sigma} \equiv \partial_\mu \partial^{\lambda} h_{\lambda \sigma} + \partial^{\rho} \partial_{\sigma} h_{\mu \rho}
 - \Box h_{\mu \sigma} 
 - \partial_{\mu} \partial_{\sigma} h  - \eta_{\mu \sigma} \left(\partial^{\nu} \partial^{\rho} h_{\nu\rho} - \Box h \right) = 0.
 \end{equation}
@@ -1288,10 +1223,10 @@ Observe that the trace of the perturbation satisfies $\bar{h} \equiv \eta^{\mu\n
 \begin{equation}
     h_{\mu\nu} = \bar{h}_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu}\bar{h}. 
 \end{equation}
-Using this relation, we can now express the Einstein tensor entirely in terms of the trace reversed perturbation:
+Using this relation, we can now express $2G_{\mu\sigma}$ entirely in terms of the trace reversed perturbation:
 \begin{equation}
 \begin{aligned}
-G_{\mu\sigma}
+2G_{\mu\sigma}
 &\equiv
 \partial_\mu \partial^{\lambda} 
 \!\left( \bar{h}_{\lambda\sigma} - \tfrac{1}{2}\eta_{\lambda\sigma}\bar{h} \right)
@@ -1315,7 +1250,7 @@ G_{\mu\sigma}
 \end{equation}
 Finally, by collecting and simplifying all terms, we obtain the compact linearized form of the EFE in vacuum, written in terms of the trace reversed perturbation $\bar{h}_{\mu\nu}$:
 \begin{equation}
-G_{\mu\sigma} \equiv
+2G_{\mu\sigma} \equiv
 \partial_\mu\partial^{\lambda}\bar{h}_{\lambda\sigma}
 + \partial^{\rho}\partial_{\sigma}\bar{h}_{\mu\rho}
 - \Box \bar{h}_{\mu\sigma}
@@ -1358,9 +1293,9 @@ Taking the divergence of this expression leads to
     - \Box \xi_{\mu}.
 \label{gaugefreedom}
 \end{equation}  
-We can now exploit the coordinate freedom by choosing the vector $\xi^{\mu}$ to satisfy
+We can now exploit the coordinate freedom by choosing the vector $\xi_{\mu}$ to satisfy
 \begin{equation}
-    \Box \xi^{\mu} = \partial^{\nu}\bar{h}_{\mu\nu}.
+    \Box \xi_{\mu} = \partial^{\nu}\bar{h}_{\mu\nu}.
 \end{equation}
 With this choice, the transformed perturbation fulfills
 \begin{equation}
@@ -1572,12 +1507,12 @@ R^{\rho}{}_{\mu \nu \sigma}
 \end{equation}
 one finds that the only non vanishing components relevant for the geodesic deviation equation are
 \begin{equation}
-R^i{}_{0 0 j} =\frac{1}{2}\eta^{\rho\lambda}
-\left( 
-\partial_0 \partial_0 h_{\lambda \sigma}
-- \partial_0 \partial_\lambda h_{0 \sigma}
-- \partial_0 \partial_\sigma h_{\lambda 0}
-+ \partial_\lambda \partial_\sigma h_{0 0}
+R^i{}_{0 0 j} =\frac{1}{2}\eta^{i\lambda}
+\left(
+\partial_0 \partial_0 h_{\lambda j}
+- \partial_0 \partial_\lambda h_{0 j}
+- \partial_0 \partial_j h_{\lambda 0}
++ \partial_\lambda \partial_j h_{0 0}
 \right) + \mathcal{O}(h^2)= \frac{1}{2c^2}\,\partial_t^2 h_{ij}+ \mathcal{O}(h^2),
 \end{equation}
 where $i,j = 1,2,3$ label spatial coordinates and $\partial_0 = c^{-1}\partial_t$. Contracting with $U^0 U^0 = c^2$, the equation of motion for the spatial components of the separation vector then reduces to
@@ -1688,10 +1623,11 @@ principal axes rotated by $45^\circ$ with respect to the $x$ and $y$ directions 
 
 
 \subsection{Generation of gravitational waves}
+\label{sec:GW_generation}
 
-In the previous sections we described GWs as propagating perturbations of the space-time metric and analyzed their effect on matter. We now turn to the inverse question: how dynamical matter sources generate gravitational radiation.
+In the previous sections we described GWs as propagating perturbations of the spacetime metric and analyzed their effect on matter. We now turn to the inverse question: how dynamical matter sources generate gravitational radiation.
 
-A conceptual subtlety immediately appears. GW emission can take place in strongly non-linear regimes, such as the late stages of CBCs, where the full Einstein equations are required to describe the dynamics near the source. However, the radiation detected far from the source is typically very weak, so that the metric can be written as a small perturbation of flat space-time. This justifies studying GW generation in the local wave zone within the framework of linearized gravity (see Fig. \ref{fig:zones}).
+A conceptual subtlety immediately appears. GW emission can take place in strongly non-linear regimes, such as the late stages of CBCs, where the full Einstein equations are required to describe the dynamics near the source. However, the radiation detected far from the source is typically very weak, so that the metric can be written as a small perturbation of flat spacetime. This justifies studying GW generation in the local wave zone within the framework of linearized gravity (see Fig. \ref{fig:zones}).
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.66\linewidth]{Figures/near zone.png}
@@ -1736,13 +1672,13 @@ We are interested in the radiation observed far from the source, in the wave zon
 $r = |\mathbf{x}|$ is much larger than both the source size $R$ and the gravitational wavelength $\lambda$. 
 In this regime one expands
 \begin{equation}
-\mathbf{x}-\mathbf{x}'| \simeq r - \mathbf{n}\cdot\mathbf{x}',
+|\mathbf{x}-\mathbf{x}'| \simeq r - \mathbf{n}\cdot\mathbf{x}',
 \qquad
 \mathbf{n} = \frac{\mathbf{x}}{r},
 \end{equation}
 and keeps only the leading terms in $1/r$ and in $v/c$.
 
-Conservation laws severely restrict the possible radiative multipoles. By \href{https://en.wikipedia.org/wiki/Birkhoff%27s_theorem_(relativity)}{Birkhoff’s theorem}, any spherically symmetric mass distribution produces a static exterior solution, so a time-varying monopole term cannot radiate. Furthermore, the first time derivative of the mass dipole moment is proportional to the total linear momentum of the system, which is conserved for an isolated source. As a result, both monopole and dipole radiation are absent in GR.
+Conservation laws severely restrict the possible radiative multipoles. By Birkhoff's theorem, any spherically symmetric mass distribution produces a static exterior solution, so a time-varying monopole term cannot radiate. Furthermore, the first time derivative of the mass dipole moment is proportional to the total linear momentum of the system, which is conserved for an isolated source. As a result, both monopole and dipole radiation are absent in GR.
 
 The leading contribution to gravitational radiation therefore arises at quadrupole order. Keeping the lowest non-vanishing term in the multipole expansion and restricting to non-relativistic sources, one finds that the dominant spatial components of the metric perturbation are
 \begin{equation}
@@ -1934,7 +1870,7 @@ The detector frame $(\bar{x},\bar{y},\bar{z})$ has its $\bar{z}$-axis pointing t
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.57\linewidth]{Figures/antennapatterncoordinates.png}
-    \caption[Detector frame versus wave frame geometry]{Geometric relationship between the detector frame $(\bar{x},\bar{y},\bar{z})$ and the wave frame $(x',y',z')$. The interferometer arms lie in the $(\bar{x},\bar{y})$ plane, with $\bar{z}$ pointing toward the local zenith. The angles $\bar{\theta}_N$ and $\bar{\phi}_N$ give the polar and azimuthal coordinates of the incoming wave direction in the detector frame, and $\psi$ denotes the rotation of the polarization axes about the propagation direction. Own production based on the source: \cite{ABADIE2010223}.}
+    \caption[Detector frame versus wave frame geometry]{Geometric relationship between the detector frame $(\bar{x},\bar{y},\bar{z})$ and the wave frame $(x',y',z')$. The interferometer arms lie in the $(\bar{x},\bar{y})$ plane, with $\bar{z}$ pointing toward the local zenith. The angles $\bar{\theta}_N$ and $\bar{\phi}_N$ give the polar and azimuthal coordinates of the incoming wave direction in the detector frame, and $\psi$ denotes the rotation of the polarization axes about the propagation direction. Original illustration based on the source: \cite{ABADIE2010223}.}
     \label{fig:antennapatternscoord}
 \end{figure}
 
@@ -2031,7 +1967,7 @@ Fundamental noise arises directly from the measurement principle and cannot be r
     \item \textbf{Shot noise.} The Poissonian arrival statistics of photons at the output photodetector produce a phase uncertainty scaling as $1/\sqrt{N_\gamma}$, where $N_\gamma$ is the number of detected photons per unit time. This contribution decreases with increasing circulating power and dominates the sensitivity above $\sim\!500$\,Hz. It can be partially mitigated by injecting squeezed vacuum at the output port, a technique already incorporated 
     in the Advanced LIGO and Advanced Virgo detectors.
 
-    \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of the intracavity field exert a stochastic force on the mirror surfaces, inducing position noise that grows with laser power and becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. Squeezed-light injection redistributes the quantum uncertainty between the two quadratures, allowing simultaneous reduction of both contributions below the standard quantum limit.
+    \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of the intracavity field exert a stochastic force on the mirror surfaces, inducing position noise that grows with laser power and becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. At a fixed squeezing angle, squeezed-light injection only redistributes the quantum uncertainty between the two quadratures, improving one contribution at the expense of the other. Simultaneous reduction of both below the standard quantum limit requires frequency-dependent squeezing, in which the squeezed vacuum is reflected off a detuned filter cavity before injection so that the squeezing angle rotates with frequency; this technique was implemented in Advanced LIGO for the O4 observing run \cite{frequency_dependent_squeezing}.
 
     \item \textbf{Thermal noise.} Any component at finite temperature undergoes stochastic mechanical motion. Via the fluctuation-dissipation theorem\footnote{The fluctuation-dissipation theorem states that any dissipative mechanism in a system in thermal equilibrium is necessarily accompanied by a fluctuating force of the same origin. In interferometric detectors, mechanical losses in the test masses, coatings, and suspension fibers therefore set a fundamental limit on their positional stability \cite{Kubo1966}.}, the amplitude of these fluctuations is proportional to the mechanical loss angle of the material. It affects the test masses, their dielectric mirror coatings, and the suspension fibers, and dominates the sensitivity in the intermediate band of roughly $40$-$200$\,Hz. Low-loss fused-silica substrates and fibers are employed to minimize this contribution; cryogenic operation, as adopted by KAGRA, provides an alternative route to its suppression.
 
@@ -2083,16 +2019,16 @@ The interplay of all these contributions shapes the detector sensitivity curve s
 \subsection{Current detector network}
 \label{noise_amplitude}
 
-A single interferometer provides limited directional information: the antenna pattern functions derived in \S\ref{antenna_patterns_sec} show that, at any given time, a ground-based detector is nearly blind along certain sky directions, an effect that continuously shifts as the Earth's rotation changes the detector's orientation relative to the sky. A global network of detectors is therefore essential, both to confirm detections through coincident observations and to localise sources on the sky via time delay triangulation. Sky localisation precision improves with the number of detectors, their mutual separation, and their individual sensitivities. The current network consists of four facilities operating in the frequency band $\sim\!10$-$5000$\,Hz (see Fig.~\ref{fig:current_network}):
+A single interferometer provides limited directional information: the antenna pattern functions derived in \S\ref{antenna_patterns_sec} show that, at any given time, a ground-based detector is nearly blind along certain sky directions, an effect that continuously shifts as the Earth's rotation changes the detector's orientation relative to the sky. A global network of detectors is therefore essential, both to confirm detections through coincident observations and to localize sources on the sky via time delay triangulation. Sky localization precision improves with the number of detectors, their mutual separation, and their individual sensitivities. The current network consists of four facilities operating in the frequency band $\sim\!10$-$5000$\,Hz (see Fig.~\ref{fig:current_network}):
 
 
 \begin{itemize}
 
     \item \textbf{Advanced LIGO} \cite{Advanced_ligo} 
     comprises two 4-km detectors: LIGO Hanford (H1) in Washington State and LIGO Livingston (L1) in Louisiana, separated by $\sim\!3000$\,km. Operated by the LIGO Scientific Collaboration (LSC), they have been the primary instruments for GW detections 
-    since the first observation of a BBH merger in September 2015 \cite{GW150914}. A third Advanced LIGO detector, LIGO-India, is currently under construction and expected to join the network in 2030.
+    since the first observation of a BBH merger in September 2015 \cite{GW150914}.
 
-    \item \textbf{Advanced Virgo (V1)} \cite{Advanced_VIRGO} is a 3-km interferometer located in Cascina, Italy, operated by the Virgo Collaboration. It joined the network in the final month of O2, contributing to the first three-detector observation of a BBH merger (GW170814 \cite{GW170814}) and to the precise sky localisation of the BNS merger GW170817 \cite{GW170817}. Although its sensitivity is somewhat below that of the LIGO instruments, its geographic separation from the US sites significantly improves source localisation.
+    \item \textbf{Advanced Virgo (V1)} \cite{Advanced_VIRGO} is a 3-km interferometer located in Cascina, Italy, operated by the Virgo Collaboration. It joined the network in the final month of O2, contributing to the first three-detector observation of a BBH merger (GW170814 \cite{GW170814}) and to the precise sky localization of the BNS merger GW170817 \cite{GW170817}. Although its sensitivity is somewhat below that of the LIGO instruments, its geographic separation from the US sites significantly improves source localization.
 
     \item \textbf{KAGRA (K1)} \cite{KAGRA} is a 3-km cryogenic underground detector situated 200\,m beneath the Kamioka mountain in Gifu Prefecture, Japan. Its subterranean location provides natural seismic and atmospheric shielding, and its test masses are cooled to cryogenic temperatures ($\sim\!20$\,K) to suppress thermal noise, making it the first second-generation detector to adopt this approach. KAGRA participated in a short joint observing run with GEO600 at the end of O3, and has been part of the network since O4.
 
@@ -2133,7 +2069,7 @@ The current LVK network has demonstrated the transformative potential of GW astr
 \begin{itemize}
     \item \textbf{Einstein Telescope} (ET) \cite{Einsteintelescope} is the European third-generation concept. Its final geometry has not yet been decided and remains linked to the ongoing site-selection process, expected to conclude in 2027. The originally proposed reference design is an equilateral triangle with 10-km arms hosted underground at a single site to suppress seismic and Newtonian noise, where each side hosts a xylophone configuration: two nested interferometers, one optimised for high frequencies at room temperature and one for low frequencies operating cryogenically, jointly covering the band $\sim\!2$-$10^4$\,Hz, providing full sky coverage and simultaneous measurement of both GW polarizations from a single facility. The alternative design, denoted 2L, instead places two separate 15-km L-shaped detectors at widely separated European sites; a detailed comparison of the scientific performance of both geometries is presented in \cite{einstein_telescope_designs}.
     \item \textbf{Cosmic Explorer} (CE) \cite{evans2021horizonstudycosmicexplorer} is the US counterpart, conceived as an L-shaped interferometer with 40-km arms (roughly ten times the length of Advanced LIGO) retaining the proven Michelson topology while achieving a strain sensitivity improvement of approximately one order of magnitude. Together, ET and CE would form a third-generation network capable of detecting CBC mergers throughout the majority of the observable Universe.
-    \item \textbf{LIGO India} \cite{LIGO_INDIA} is a planned Advanced LIGO-class detector to be built in Maharashtra, India. Although it will not exceed the sensitivity of the current LIGO instruments, its geographic location will substantially improve sky localisation and detection confidence for the global network.
+    \item \textbf{LIGO India} \cite{LIGO_INDIA} is a planned Advanced LIGO-class detector to be built in Maharashtra, India. Although it will not exceed the sensitivity of the current LIGO instruments, its geographic location will substantially improve sky localization and detection confidence for the global network.
 \end{itemize}
 
 
@@ -2258,8 +2194,8 @@ $\mathbf{S}_1, \mathbf{S}_2$ of each object. The spins are
 conveniently decomposed into their dimensionless magnitudes 
 $\chi_{1,2} = c|\mathbf{S}_{1,2}|/(Gm_{1,2}^2) \leq 1$, the tilt angles $\theta_{1,2}$ between each spin and the orbital angular momentum $\mathbf{L}$, and the azimuthal angle $\phi_{12}$ between the two spin components in the orbital plane. For BNS or NSBH systems, the tidal deformabilities $\Lambda_{1,2}$ are additional intrinsic parameters encoding the NS equation of state. In practice, several derived combinations of the intrinsic parameters appear naturally in the waveform and are therefore better constrained by the data: the chirp mass $\mathcal{M} = (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$, which governs the leading-order frequency evolution; the effective inspiral spin $\chi_\mathrm{eff} = (m_1\chi_{1z} + m_2\chi_{2z})/(m_1+m_2)$ \cite{effective_inspiral_spin}, which captures the spin-orbit coupling along $\mathbf{L}$; and the effective precession spin $\chi_p$ \cite{effective_precession_spin}, which parametrizes the in-plane spin components responsible for orbital precession.
 
-The extrinsic parameters describe the location and orientation of the binary relative to the detector network: the sky position $(\alpha, \delta)$ (right ascension and declination), the luminosity distance $D_L$, the inclination angle $\theta_{JN}$ between the total angular momentum $\mathbf{J}$ and the line of sight, the polarization angle $\psi$, the coalescence phase $\phi_c$, and the 
-geocentric coalescence time $t_c$. The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{likelihood_formula}. A complete description of all parameters, including their definitions and dimensions, is provided in Appendix~$\S$\ref{Parameters_CBC_appendix}.
+The extrinsic parameters describe the location and orientation of the binary relative to the detector network: the sky position $(\alpha, \delta)$ (right ascension and declination), the luminosity distance $D_L$, the inclination angle $\theta_{JN}$ between the total angular momentum $\mathbf{J}$ and the line of sight, the polarization angle $\psi$, the coalescence phase $\phi_c$, and the
+geocentric coalescence time $t_c$.\footnote{Throughout this work $D_L$ denotes the luminosity distance to the source, except in \S\ref{sec:geometric_optics} where the same symbol is used for the angular diameter distance to the lens, following standard lensing conventions; it should be clear from context which one is meant.} The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{likelihood_formula}. A complete description of all parameters, including their definitions and dimensions, is provided in Appendix~$\S$\ref{Parameters_CBC_appendix}.
 
 Not all parameters are equally well constrained by a given 
 observation. The chirp mass is typically the best-measured intrinsic quantity, as it directly controls the rate of frequency evolution visible in the detector band. Individual masses and mass ratio $q = m_2/m_1$ are less well constrained, and spin parameters are generally poorly measured unless the signal has high SNR or a long 
@@ -2529,7 +2465,7 @@ positions $\boldsymbol{\theta}$ (image) and $\boldsymbol{\beta}$ (source), the a
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.53\linewidth]{Figures/Lensing_geometry.pdf}
+    \includegraphics[width=0.51\linewidth]{Figures/Lensing_geometry.pdf}
     \caption[Geometry of gravitational lensing in the thin-lens approximation]{Geometry of gravitational lensing in the thin lens approximation. The observer (O), lens (L), and source (S) define the angular diameter distances $D_L$, $D_S$, and $D_{LS}$. The true source position $\boldsymbol{\beta}$ and the apparent image position $\boldsymbol{\theta}$ are related by the lens equation 
     through the reduced deflection angle $\boldsymbol{\alpha}$. Adapted from the source: \cite{Sachs2008LensingAngles}.}
     \label{fig:lensing_geometry}
@@ -2556,14 +2492,14 @@ The lens equation maps each image position $\boldsymbol{\theta}$ to a unique sou
 where $\psi(\boldsymbol{\theta})$ is the projected gravitational potential of the lens, obtained from the Newtonian potential $U(\boldsymbol{\xi},Z)$ by integration along the line of sight,
 \begin{equation}
     \psi(\boldsymbol{\theta}) =
-    \frac{2D_{LS}}{D_S D_L}
+    \frac{2D_{LS}}{c^2 D_S D_L}
     \int U(\boldsymbol{\xi}, Z)\,dZ.
 \end{equation}
 The deflection angle is then $\boldsymbol{\alpha} = 
 \nabla_{\boldsymbol{\theta}}\psi$, and the lens equation 
 \eqref{eq:lens_equation} is recovered from $\nabla_{\boldsymbol{\theta}}\phi = 0$.
 
-Since stationary points of $\phi$ always appear and disappear in pairs (a minimum together with a saddle point, or a maximum together with a saddle point) as the source position varies, the total number of images is always odd \cite{odd_theorem}: there is always at least one image corresponding to the global minimum of $\phi$, and any additional images appear in pairs of two. The wavefront interpretation of this result is illustrated in Fig.~\ref{fig:wavefronts}.
+Since stationary points of $\phi$ always appear and disappear in pairs (a minimum together with a saddle point, or a maximum together with a saddle point) as the source position varies, the total number of images is always odd \cite{odd_theorem}: there is always at least one image corresponding to the global minimum of $\phi$, and any additional images appear in pairs of two.\footnote{This holds for a smooth and finite lensing potential. The point-mass and singular isothermal sphere models introduced in \S\ref{sec:lens_models} have a divergent surface density at the origin, which removes the additional odd, typically strongly demagnified, image predicted by the theorem; both therefore produce an even number of images without contradicting it.} The wavefront interpretation of this result is illustrated in Fig.~\ref{fig:wavefronts}.
 
 \begin{figure}[h!]
     \centering
@@ -2672,7 +2608,7 @@ $\sigma_v$. The three-dimensional density profile is
 \begin{equation}
     \rho(r) = \frac{\sigma_v^2}{2\pi G r^2},
 \end{equation}
-which yields a flat rotation curve $v_c = \sqrt{2}\,\sigma_v$, consistent with observations of early-type galaxies \cite{lensing_regimes}. Projecting onto the lens plane gives the surface mass density
+which yields a flat rotation curve $v_c = \sqrt{2}\,\sigma_v$, consistent with the observed flatness of galaxy rotation curves and with the kinematics of early-type galaxies \cite{lensing_regimes}. Projecting onto the lens plane gives the surface mass density
 \begin{equation}
     \Sigma(\xi) = \frac{\sigma_v^2}{2G\xi},
 \end{equation}
@@ -2848,8 +2784,7 @@ transform of the time-domain signal. For non-precessing
 binaries with only the dominant quadrupole mode, this phase 
 shift is degenerate with the coalescence phase and cannot 
 be detected. For signals with spin precession or 
-higher-order multipole moments, such as those generated 
-with IMRPhenomXPHM in this work, the Morse phase produces 
+higher-order multipole moments, such as those considered in this work, the Morse phase produces 
 measurable imprints on the waveform \cite{Lensing_phase_effects}.
 
 \subsection{Lensed gravitational wave strain and apparent 
@@ -2926,7 +2861,7 @@ is achievable from a single image \cite{Hannuksela_skyloc}. This section describ
 The sky localization of a GW source relies primarily on 
 triangulation: the difference in signal arrival times 
 across the detector network constrains the direction of 
-propagation, while the antenna pattern functions (see $\S$\ref{antenna_patterns_sec}) and strain amplitudes (see $\S$\ref{noise_amplitude}) provide complementary information 
+propagation, while the antenna pattern functions (see $\S$\ref{antenna_patterns_sec}) and strain amplitudes (see $\S$\ref{sec:noise}) provide complementary information 
 \cite{lensing_regimes}. The achievable localization 
 depends critically on the number and geometry of the 
 detectors: a single detector provides no directional 
@@ -3052,13 +2987,10 @@ computed as
     \ln \mathcal{B}_{SN}^{(2)}\right).
     \label{eq:coherence_ratio_practical}
 \end{equation}
-A more complete statistic is the full lensing Bayes 
-factor $\mathcal{B}_\mathrm{U}^\mathrm{L}$, which 
-additionally incorporates selection effects and 
-astrophysical population priors \cite{PE_lensing_bayes}. The primary focus of this work is the improvement in sky 
-localization achieved by the joint analysis; the 
-coherence ratio provides complementary validation 
-that the joint PE correctly identifies the two images 
-as originating from the same source.
+A more complete statistic is the full lensing Bayes
+factor $\mathcal{B}_\mathrm{U}^\mathrm{L}$, which
+additionally incorporates selection effects and
+astrophysical population priors \cite{PE_lensing_bayes}. The primary focus of this work is the improvement in sky
+localization achieved by the joint analysis.
 
 
