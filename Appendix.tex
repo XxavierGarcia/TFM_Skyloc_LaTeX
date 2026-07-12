@@ -4,7 +4,7 @@
 \chapter{Parameters of Compact Binary Coalescences}
 \label{Parameters_CBC_appendix}
 
-This appendix provides a reference summary of the parameters used to describe a CBC system with quasi-circular orbits, following the conventions of \cite{parameters_CBC, GWTC4_introduction}. The parameters are grouped into mass, spin, tidal, and extrinsic categories; those employed in the injections and PE analyses of this work are indicated with $\star$.
+This appendix provides a reference summary of the parameters used to describe a CBC system with quasi-circular orbits, following the conventions of \cite{likelihood_formula, GWTC4_introduction}. The parameters are grouped into mass, spin, tidal, and extrinsic categories; those employed in the injections and PE analyses of this work are indicated with $\star$.
 
 \renewcommand{\arraystretch}{1.3}
 
@@ -13,7 +13,7 @@ This appendix provides a reference summary of the parameters used to describe a 
 \setlength{\LTright}{0pt plus 1fill}
 \begin{longtable}{lcp{9cm}}
 
-\caption{Parameters describing a CBC system with quasi-circular orbits \cite{parameters_CBC, GWTC4_introduction}. Parameters used in this work are indicated with $\star$.}
+\caption{Parameters describing a CBC system with quasi-circular orbits \cite{likelihood_formula, GWTC4_introduction}. Parameters used in this work are indicated with $\star$.}
 \label{tab:CBC_parameters} \\
 
 \hline\hline
@@ -100,7 +100,7 @@ Angle between $\mathbf{L}\times(\mathbf{S}_1\times\mathbf{L})$ and $\mathbf{L}\t
 $(m_1\chi_{1z}+m_2\chi_{2z})/M$ [dimensionless] \\
 
 \, Effective precession spin & $\chi_p$ &
-Avg.\ over precession cycles (see Eq.~(16) of \cite{GWTC5}) [dimensionless] \\
+Avg.\ over precession cycles \cite{effective_precession_spin} [dimensionless] \\
 
 %------------------------------------------------
 \multicolumn{3}{l}{\textit{\textbf{Tidal parameters}}} \\
@@ -456,14 +456,14 @@ lensing-prior-dict={relative-magnification^(1): 1, image_type^(1) = hanabi.lensi
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{Figures/diagrama_pipeline_picasso.drawio.pdf}
-    \caption[Detailed implementation of the Picasso branch of the pipeline]{Detailed implementation of the Picasso (SLURM) branch of the pipeline, referenced in \S\ref{sec:automation_picasso}. An interactive version with clickable links to each script is available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/diagrama_pipeline.drawio.pdf} (download to enable links).}
+    \caption[Detailed implementation of the Picasso branch of the pipeline]{Detailed implementation of the Picasso (SLURM) branch of the pipeline, referenced in \S\ref{sec:automation_picasso}. Best viewed digitally, zoomed in. An interactive version with clickable links to each script is available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/diagrama_pipeline.drawio.pdf} (download to enable links).}
     \label{fig:pipeline_picasso}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{Figures/diagrama_pipeline_CIT.drawio.pdf}
-    \caption[Detailed implementation of the CIT branch of the pipeline]{Detailed implementation of the CIT (HTCondor) post-processing branch of the pipeline, referenced in \S\ref{sec:automation_picasso} and \S\ref{sec:skymap_generation}. An interactive version with clickable links to each script is available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/diagrama_pipeline.drawio.pdf} (download to enable links).}
+    \caption[Detailed implementation of the CIT branch of the pipeline]{Detailed implementation of the CIT (HTCondor) post-processing branch of the pipeline, referenced in \S\ref{sec:automation_picasso} and \S\ref{sec:skymap_generation}. Best viewed digitally, zoomed in. An interactive version with clickable links to each script is available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/diagrama_pipeline.drawio.pdf} (download to enable links).}
     \label{fig:pipeline_cit}
 \end{figure}
 

@@ -35,8 +35,7 @@ The equivalence principle played a central role in the development of GR. In 190
 The roots of GR reach back to the 17\textsuperscript{th} century, when Galileo Galilei and
 Simon Stevin (1548--1620) began to recognize that the velocity reached by freely falling objects
 is independent of their mass \cite{LlibreBertJanssen}, a realization that contradicted the
-Aristotelian view of physics. Galileo derived his conclusions on free fall by rolling spheres
-down inclined planes, results presented in his 1590 manuscript De Motu \cite{DeMotuGalilei}.
+Aristotelian view of physics. Galileo first argued against this view in his early manuscript De Motu (ca. 1590) \cite{DeMotuGalilei}, and later established the result experimentally by rolling spheres down inclined planes during his time in Padua, published in his 1638 Discorsi \cite{GalileoDiscorsi1638}.
 
 The universality of free fall reflects a striking feature of Newtonian mechanics: the equivalence
 between inertial mass $m_i$ and gravitational mass $m_g$, also called the weak equivalence
@@ -46,8 +45,9 @@ principle. In Newtonian theory, inertial mass appears in Newton's second law,
 \end{equation}
 while gravitational mass governs the gravitational potential energy between two bodies,
 \begin{equation}
-    V=-\frac{G_N \ m_{\mathrm{g}} \ M_{\mathrm{g}}}{r} \ .
+    V=-\frac{G \ m_{\mathrm{g}} \ M_{\mathrm{g}}}{r} \ ,
 \end{equation}
+where $M_g$ is the gravitational mass of the second body and $r>0$ is the separation between them.
 The motion of an object in free fall is then governed by
 \begin{equation}
     -m_{\mathrm{g}} g=m_{\mathrm{i}} \ddot{z} \ ,
@@ -59,11 +59,8 @@ whose solution,
 is independent of mass only if $m_g/m_i = \text{constant}$, which experiments confirm to be
 universal and set to 1 by an appropriate choice of units.
 
-This equivalence has been tested with remarkable precision. In 1888, Eötvös used a torsion
-balance to reach a precision of $|{(m_g - m_i)}/{m_g}| \sim 10^{-9}$ \cite{The_Eötvös_Torsion_Balance},
-later improved by Dicke in 1964 to $< 10^{-11}$ \cite{RobertDicketest}. Currently, the
-MicroSCOPE satellite mission has achieved a precision of $10^{-15}$
-\cite{CNES_MICROSCOPE_eoportal, MicroSCOPEarxiv}.
+This equivalence has been tested with remarkable precision. In 1889, Eötvös used a torsion balance to reach a precision of $|{(m_g - m_i)}/{m_g}| \sim 5\times10^{-8}$, later refined with Pekár and Fekete to $\sim10^{-9}$, published in 1922 \cite{The_Eötvös_Torsion_Balance}, and later improved by Dicke in 1964 to $< 10^{-11}$ \cite{RobertDicketest}. Currently, the MICROSCOPE satellite mission has achieved a precision of $10^{-15}$
+\cite{CNES_MICROSCOPE_eoportal, MicroSCOPE2022final}.
 
 \subsubsection{The strong equivalence principle}
 
@@ -411,14 +408,16 @@ The first term reflects the change in the vector components, while the second te
 Here, the Christoffel symbols $\Gamma^\gamma_{\alpha\beta}$ quantify how the basis vector $\vec{e}_\alpha$ changes in the direction of coordinate $x^\beta$, projected onto the basis $\vec{e}_\gamma$. The lower indices $\alpha$ and $\beta$ refer to the direction and variable of differentiation, while the upper index $\gamma$ indicates the output basis direction.
 
 
-We can isolate the Christoffel symbol by multiplying both sides by the dual basis vector $\vec{\hspace{0.15em}e}^\gamma$:
+We can isolate the Christoffel symbol by multiplying both sides by the dual basis vector $\vec{\hspace{0.15em}e}^\gamma$. Relabelling the dummy index in \eqref{christoffelsymbols} as $\lambda$ to avoid a clash with $\gamma$, $\partial_\beta \vec{e}_\alpha = \Gamma^\lambda_{\alpha\beta} \vec{e}_\lambda$, so that
 \begin{equation}
-\vec{\hspace{0.15em}e}^\gamma \cdot \partial_\beta \vec{e}_\alpha 
-= \Gamma^\gamma_{\alpha \beta} \vec{\hspace{0.15em}e}^\gamma \cdot \vec{e}_\gamma 
-\quad \Rightarrow \quad 
+\vec{\hspace{0.15em}e}^\gamma \cdot \partial_\beta \vec{e}_\alpha
+= \Gamma^\lambda_{\alpha \beta}\, \vec{\hspace{0.15em}e}^\gamma \cdot \vec{e}_\lambda
+= \Gamma^\lambda_{\alpha\beta}\,\delta^\gamma_\lambda
+= \Gamma^\gamma_{\alpha \beta}
+\quad \Rightarrow \quad
 \Gamma^\gamma_{\alpha \beta} = \vec{\hspace{0.15em}e}^\gamma \cdot \partial_\beta \vec{e}_\alpha \ .
 \end{equation}
-Here, we used the property $\vec{\hspace{0.15em}e}^\beta \cdot \vec{e}_\alpha = \delta^\beta_\alpha$, which defines the dual basis and implies that $\vec{\hspace{0.15em}e}^\gamma \cdot \vec{e}_\gamma = 1$.
+Here, we used the property $\vec{\hspace{0.15em}e}^\gamma \cdot \vec{e}_\lambda = \delta^\gamma_\lambda$, which defines the dual basis.
 
 
 These coefficients do not form a tensor themselves, but they are essential for constructing tensorial derivatives.
@@ -568,9 +567,9 @@ In flat space, transporting a vector around a closed loop brings it back unchang
 \end{figure}
 
 
-The condition for the parallel transport of the vector $\vec{V}$ along a parametrized curve is that its covariant derivative with respect to the curve's parameter must be zero, namely,
+The condition for the parallel transport of the vector $\vec{V}$ along a parametrized curve is that its covariant derivative along the curve, $D\vec{V}/d\lambda \equiv (dx^\mu/d\lambda)\,\nabla_\mu \vec{V}$, must be zero, namely,
 \begin{equation}
-    \frac{d\vec{V}}{d\lambda} = 0 \ .
+    \frac{D\vec{V}}{d\lambda} = 0 \ .
 \end{equation}
 To obtain the derivative, we use equation \eqref{vectorderivative} and replace the parameter $x^{\beta}$ with $\lambda$, obtaining:
 \begin{equation}
@@ -590,14 +589,11 @@ Substituting this result into the previous expression and replacing the index $\
 \frac{d\vec{V}}{d\lambda}
 = \left(\frac{dV^\gamma}{d\lambda} + V^\alpha\,\Gamma^\gamma_{\alpha\beta}\,\frac{dx^\beta}{d\lambda}\right) e_\gamma \ .
 \end{equation}
-We define the absolute derivative\footnote{An absolute derivative refers to the covariant derivative taken along a curve, in this case the curve parametrized by $\lambda$.
-} along the curve as
+In component form, the absolute derivative\footnote{An absolute derivative refers to the covariant derivative taken along a curve, in this case the curve parametrized by $\lambda$.
+} introduced above reads
 \begin{equation}
-\frac{D V^\gamma}{d\lambda} \equiv \frac{dV^\gamma}{d\lambda} + \Gamma^\gamma_{\alpha\beta}\,V^\alpha\,\frac{dx^\beta}{d\lambda} \ ,
-\end{equation}
-or equivalently,
-\begin{equation}
-\frac{D}{d\lambda} \vec{V} = \frac{dx^\mu}{d\lambda}\,\nabla_\mu \vec{V}.
+\frac{D V^\gamma}{d\lambda} = \frac{dV^\gamma}{d\lambda} + \Gamma^\gamma_{\alpha\beta}\,V^\alpha\,\frac{dx^\beta}{d\lambda} \ .
+\label{absolutederivative}
 \end{equation}
 Parallel transport of $\vec{V}$ along the curve is then defined by the condition
 \begin{equation}
@@ -902,7 +898,7 @@ R_{\alpha\beta} - \tfrac{1}{2} g_{\alpha\beta} R + g_{\alpha\beta}\Lambda
 \label{einsteinequationslambda}
 \end{equation}
 Historically, Einstein introduced $\Lambda$ in 1917 as a way to obtain a static universe without beginning or end, effectively behaving like a repulsive pressure. However, the static solutions were later found to be unstable, and in 1929 Edwin Hubble (1889--1953) discovered that the universe is in fact expanding, a result fully consistent with the 
-original unmodified equations. This led Einstein to famously refer to the cosmological constant as ``the biggest blunder'' of his life.
+original unmodified equations. Einstein reportedly referred to the cosmological constant as ``the biggest blunder'' of his life, as described by \href{https://es.wikipedia.org/wiki/Gueorgui_G%C3%A1mov}{George Gamow}, though the remark is not documented in Einstein's own writing.
 
 Ironically, observations of distant Type Ia supernovae in 1998, carried out by the Supernova Cosmology Project and the High-Z Supernova Search Team, revealed that the expansion is accelerating. One possible explanation invokes a pervasive dark energy effectively described by $\Lambda$, which has thus regained scientific relevance despite its troubled history \cite{Llibre_Peter_Collier_unacosadificildecomprender}. The 
 modern challenge lies in the so-called cosmological constant problem: quantum field theory predicts $\Lambda \sim m_{P}^{4} \sim 10^{76}\,\mathrm{GeV}^{4}$, while observations constrain it to $\sim 10^{-47}\,\mathrm{GeV}^{4}$, a discrepancy of roughly $10^{123}$ and the largest known mismatch between theory and experiment \cite{LlibreBertJanssen}.
@@ -913,9 +909,10 @@ modern challenge lies in the so-called cosmological constant problem: quantum fi
 EFE are extremely challenging to solve because of their intrinsic nonlinearity. Unlike linear systems, the superposition of two independent solutions does not in general produce a new one. The physical origin of this nonlinearity is simple: spacetime curvature is generated by the presence of matter and energy, yet the curvature itself carries energy and momentum, thereby acting as an additional source of curvature. In other words, gravity is not only coupled to matter and energy but also to itself, which makes the field equations nonlinear by nature.
 
 Concretely, to “find a solution” means to determine a metric tensor $g_{\mu\nu}$ (and, when relevant, a compatible matter configuration) that satisfies
-\[
+\begin{equation}
 R_{\mu\nu}-\tfrac{1}{2}g_{\mu\nu}R+\Lambda g_{\mu\nu}=\frac{8\pi G}{c^{4}}\,T_{\mu\nu},
-\]
+\label{einsteinequationslambda_general}
+\end{equation}
 subject to appropriate boundary or initial conditions.
 
 Each solution corresponds to a possible spacetime geometry associated with a particular distribution of matter and energy. Broadly speaking, they can be grouped into three categories: 
@@ -937,7 +934,7 @@ Einstein himself initially believed that his equations were so complicated that 
 
 In vacuum, EFE reduce to $R_{\mu\nu} = 0$. At first sight, one might be tempted to consider the trivial choice $g_{\mu\nu}=0$. However, this is not allowed: the metric must be a non-degenerate tensor field with a well-defined inverse, a requirement already assumed in the derivation of the field equations from the variational principle\footnote{Ultimately, this constraint likely suggests that the gravitational field is not fundamental and should be replaced by another description in scenarios where $\det g_{\mu\nu}$ becomes small \cite{llibretongGR}.}. This condition, $\det g_{\mu\nu} \neq 0$, immediately implies that the simplest Ricci-flat\footnote{Metrics that satisfy the vacuum equations are referred to as Ricci-flat. Although Ricci-flat solutions are generally not flat, they still represent valid vacuum solutions (assuming no cosmological constant is present) \cite{LlibreBertJanssen}.} solution is not the trivial one but rather Minkowski spacetime, which corresponds to flat geometry in the absence of matter or energy:
 \begin{equation}
-    ds^2 = -dt^2 + dx^2 + dy^2 + dz^2 \ .
+    ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2 \ .
 \end{equation}
 The first non-trivial exact solution of the vacuum equations was found by Karl Schwarzschild in 1916. The Schwarzschild metric describes the spacetime exterior to a static, spherically symmetric, non-rotating mass distribution. In Schwarzschild coordinates $(t, r, \theta, \phi)$, the line element takes the form
 \begin{equation}
@@ -954,10 +951,7 @@ It is important to understand that there are two different Schwarzschild solutio
 The first one is the exterior Schwarzschild solution \eqref{exteriorSchwarz}, which applies to the region 
 outside a spherical body of mass $M$ and radius $R_0 > 2GM/c^2$. Since this exterior region is
 empty space, the solution is a vacuum one and describes the gravitational field produced 
-by the object. According to Birkhoff's uniqueness theorem, the exterior Schwarzschild metric constitutes 
-the sole spherically symmetric solution to the vacuum Einstein equations. 
-This result implies, in particular, that no spherically symmetric vacuum solutions exist that are non-static; 
-moreover, whenever such a solution is static, it necessarily corresponds to the Schwarzschild geometry \cite{LlibreBertJanssen}.
+by the object. According to Birkhoff's theorem, every spherically symmetric vacuum solution of the EFE is locally isometric to the Schwarzschild metric, and is therefore necessarily static in the exterior region, even if the source itself is not \cite{LlibreBertJanssen}.
 
 
 The second is the interior Schwarzschild solution\footnote{The solution is given by
@@ -1024,7 +1018,7 @@ showing that an outgoing light ray requires infinite Schwarzschild coordinate ti
 
 To follow geodesics continuously across the horizon, one introduces the advanced Eddington-Finkelstein coordinates \cite{Eddington--Finkelsteincoordinates},
 \begin{equation}
-c\tilde{t} = ct + \frac{2GM}{c^2} \log\left(r - \frac{2GM}{c^2}\right),
+c\tilde{t} = ct + \frac{2GM}{c^2} \log\left|r - \frac{2GM}{c^2}\right|,
 \end{equation}
 in which the metric becomes
 \begin{equation}
@@ -1107,7 +1101,7 @@ BHs can also be classified by mass:
     \item \textbf{Supermassive black holes (SMBHs):} Located at the centers of galaxies, they range from millions to billions of solar masses. Their origin is still uncertain, but they grow by accretion and mergers. The Milky Way’s central BH, Sagittarius A*, has a mass of about $4 \times 10^6 M_\odot$.
 \end{itemize}
 
-In addition to these categories, theorists also propose the existence of primordial black holes (PBHs). These could have formed within the first second after the Big Bang, when extreme densities allowed matter to collapse directly into BHs. Their possible masses are thought to range from as little as $10^{-5}$ grams up to about $10^5 M_\odot$. Quantum effects predict that lighter PBHs would have evaporated over time, but more massive ones could still remain scattered across the universe \cite{nasa_blackholes_types}.
+In addition to these categories, theorists also propose the existence of primordial black holes (PBHs). These could have formed within the first second after the Big Bang, when extreme densities allowed matter to collapse directly into BHs. Their possible masses are thought to range from as little as $10^{-5}$ grams up to about $10^5 M_\odot$. Quantum effects predict that lighter PBHs would have evaporated over time, but more massive ones could still remain scattered across the universe \cite{Carr2021_PBH_constraints}.
 
 \vspace{0.5cm}
 
@@ -1129,7 +1123,7 @@ GWs can be understood as ripples in the curvature of spacetime that carry energy
 
 The first indirect evidence for GWs came from the discovery of the binary pulsar system PSR B1913+16 by Hulse and Taylor in 1974 \cite{Binarypulsar}. Subsequent measurements of its orbital energy loss, provided compelling proof of their existence. This milestone, together with advances in astrophysics, established the foundation for direct GW astronomy \cite{GW150914}.
 
-Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO Scientific Collaboration (LSC) achieved the first direct detection of GWs, GW150914 \cite{GW150914}, a signal originating from a binary black hole merger (BBH). This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
+Nearly a century after Einstein’s prediction, on September 14, 2015, the LIGO detectors achieved the first direct detection of GWs, GW150914, announced jointly by the LIGO Scientific Collaboration and the Virgo Collaboration \cite{GW150914}, a signal originating from a binary black hole merger (BBH). This event not only confirmed Einstein’s theoretical insight but also inaugurated a new era of observational astrophysics, allowing us to probe relativistic systems in the dynamic, strong-field regime of gravity.
 
 
  
@@ -1461,7 +1455,7 @@ where $h_{\mu\nu}^{\text{TT}}$ represents the metric perturbation in the TT gaug
 Considering a wave propagating in the $z$-direction, we can choose the wave four-vector as $k^\mu = (\omega/c, 0, 0, \omega/c)$. The Lorenz gauge \eqref{Lorenz_gauge_condition} implies $A_{\mu 0} + A_{\mu 3} = 0$\footnote{If the gauge condition requires $h_{\mu 0}=0$ for all spacetime points and the metric perturbation is written as 
 $h_{\mu\nu}=A_{\mu\nu}e^{i k_\rho x^\rho}$, the exponential factor never vanishes. 
 Therefore, the only way for $h_{\mu 0}$ to be identically zero is that the corresponding amplitude components vanish $A_{\mu 0}=0$ (and, by symmetry, $A_{0\mu}=0$) \cite{llibretongGR}.} and the additional TT gauge conditions lead to $A_{\mu 0} = 0$.  
-Thus, the only non-zero components of the amplitude tensor are $A_{11}$, $A_{22}$, and $A_{12} = A_{21}$. The traceless condition $A^{i}{}_{i} = 0$ further implies that $A_{11} + A_{22} = 0$, allowing us to express the TT perturbation as
+Thus, the only non-zero components of the amplitude tensor are $A_{11}$, $A_{22}$, and $A_{12} = A_{21}$. The traceless condition $A^{i}{}_{i} = 0$ further implies that $A_{11} + A_{22} = 0$. Defining $h^{TT}_{+}(t,z) \equiv A_{+}\,e^{-i\omega(t-z/c)}$ and $h^{TT}_{\times}(t,z) \equiv A_{\times}\,e^{-i\omega(t-z/c)}$, the TT perturbation can be written as
 \begin{equation}
 h^{TT}_{\mu\nu}\, (t,z) =
 \begin{pmatrix}
@@ -1469,15 +1463,7 @@ h^{TT}_{\mu\nu}\, (t,z) =
 0 & h^{TT}_{+} & h^{TT}_{\times} & 0 \\
 0 & h^{TT}_{\times} & -h^{TT}_{+} & 0 \\
 0 & 0 & 0 & 0
-\end{pmatrix}_{\mu\nu}
-=
-\begin{pmatrix}
-0 & 0 & 0 & 0 \\
-0 & A_{+} & A_{\times} & 0 \\
-0 & A_{\times} & -A_{+} & 0 \\
-0 & 0 & 0 & 0
-\end{pmatrix}_{\mu\nu}
-e^{-i\omega (t - z / c)} ,
+\end{pmatrix}_{\mu\nu} ,
 \end{equation}
 where $h^{TT}_{+}$ and $h^{TT}_{\times}$ represent the two independent and orthogonal polarization states of the GW, commonly referred to as the plus and cross modes \cite{llibretongGR}. Returning from the complex to the real domain, the strain can finally be expressed as
 \begin{equation}
@@ -1510,7 +1496,7 @@ a^\mu
 = R^\mu{}_{\nu\rho\sigma} \, U^\nu U^\rho S^\sigma ,
 \label{geodesicdeviation}
 \end{equation}
-where $S^\mu$ denotes the separation between two neighboring geodesics, $U^\mu = dx^\mu / d\tau$ is the tangent vector to the reference geodesic,  $a^\mu$ represents the relative acceleration between the two test particles and $R^\mu{}_{\nu\rho\sigma}$ is the Riemann curvature tensor,
+where $S^\mu$ denotes the separation between two neighboring geodesics, $U^\mu = dx^\mu / d\tau$ is the tangent vector to the reference geodesic, $a^\mu$ represents the relative acceleration between the two test particles, and $R^\mu{}_{\nu\rho\sigma}$ is the Riemann curvature tensor.
 
 
 Before analyzing the effect of a GW on an extended system of
@@ -1787,7 +1773,7 @@ It is convenient to introduce the traceless mass quadrupole moment,
 =
 \int \rho(t,\mathbf{x})
 \left(
-x_i x_j - \frac{1}{3} r^2 \delta_{ij}
+x_i x_j - \frac{1}{3} |\mathbf{x}|^2 \delta_{ij}
 \right)
 d^3x,
 \end{equation}
@@ -1867,7 +1853,7 @@ CBCs are systems formed by two compact objects such as BHs, NSs, or a combinatio
 
 These systems are classified as BBHs, binary neutron stars (BNS), or NS and BH binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the signal within the detector's sensitive frequency band (\S\ref{sec:noise}) depends on the total mass of the system: the rate at which the orbital frequency sweeps through this band scales with the chirp mass, so more massive systems evolve rapidly and merge at lower frequencies, leaving only fractions of a second of observable signal for BBH mergers, whereas the lower-mass BNS systems sweep slowly through the band and can remain visible for tens of seconds to minutes before merging \cite{maggiore2007gravitational}.
 
-To date, all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first BNS detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs. The most recent release, GWTC-5.0, extends the catalog through the end of O4b and adds 104 further observations, bringing the cumulative total to over 300 confirmed events \cite{GWTC5}, with binary BH mergers continuing to dominate the observed population.
+To date, all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first BNS detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs. The most recent release, GWTC-5.0, extends the catalog through the end of O4b and adds 104 further observations, bringing the cumulative total to over 300 significant candidates ($p_\mathrm{astro}\geq0.5$) \cite{GWTC5}, with binary BH mergers continuing to dominate the observed population.
 
 The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data \cite{GWTC5_methods}. Future space based detectors such as the Laser Interferometer Space Antenna (LISA) (see $\S$\ref{spacebased_detectors}) will extend observations to other sources, including white dwarf binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
 
@@ -2029,20 +2015,20 @@ A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\d
 The autocorrelation function measures how strongly a signal is correlated with a delayed version of itself as a function of the time lag $\tau$. In the context of detector noise, it quantifies the degree to which noise fluctuations at different times remain statistically related \cite{PSD_book}.
 } of the detector output: 
 \begin{equation}
-    S_n(f) = \int C(\tau)\, e^{-i 2\pi f \tau} \, d\tau ,
+    S_n(f) = 2\int_{-\infty}^{\infty} C(\tau)\, e^{-i 2\pi f \tau} \, d\tau , \qquad f\geq 0,
 \label{PSD_eq}
 \end{equation}
-where $C(\tau) = \langle n(t) n(t+\tau) \rangle$ is the autocorrelation function of the noise process $n(t)$, and $\langle \cdot \rangle$ denotes an ensemble average.
+where $C(\tau) = \langle n(t) n(t+\tau) \rangle$ is the autocorrelation function of the noise process $n(t)$, and $\langle \cdot \rangle$ denotes an ensemble average. The factor of $2$ converts the two-sided power spectrum given by the Wiener-Khinchin theorem into the one-sided convention used throughout this thesis, for which all the noise power at a given frequency is folded into $f\geq0$.
 Its square root $\sqrt{S_n(f)}$, expressed in units of Hz$^{-1/2}$, defines the sensitivity curve of the instrument and sets the threshold below which signals are inaccessible.
 
 
 
 Noise sources are broadly divided into two categories. 
-Fundamental noise arises directly from the measurement principle and cannot be removed without redesigning the detector. Technical noise is not intrinsic to the design but still limits performance. The main contributions are the following \cite{noise_aLIGO,noise_budget_O4}:
+Fundamental noise arises directly from the measurement principle and cannot be removed without redesigning the detector. Technical noise is not intrinsic to the design but still limits performance. The main contributions are the following \cite{Advanced_ligo,noise_budget_O4}:
 
 \begin{itemize}
 
-    \item \textbf{Shot noise.} The Poissonian arrival statistics of photons at the output photodetector produce a phase uncertainty scaling as $1/\sqrt{N_\gamma}$, where $N_\gamma$ is the number of detected photons per unit time. This contribution decreases with increasing circulating power and dominates the sensitivity above $\sim\!200$\,Hz. It can be partially mitigated by injecting squeezed vacuum at the output port, a technique already incorporated 
+    \item \textbf{Shot noise.} The Poissonian arrival statistics of photons at the output photodetector produce a phase uncertainty scaling as $1/\sqrt{N_\gamma}$, where $N_\gamma$ is the number of detected photons per unit time. This contribution decreases with increasing circulating power and dominates the sensitivity above $\sim\!500$\,Hz. It can be partially mitigated by injecting squeezed vacuum at the output port, a technique already incorporated 
     in the Advanced LIGO and Advanced Virgo detectors.
 
     \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of the intracavity field exert a stochastic force on the mirror surfaces, inducing position noise that grows with laser power and becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. Squeezed-light injection redistributes the quantum uncertainty between the two quadratures, allowing simultaneous reduction of both contributions below the standard quantum limit.
@@ -2256,7 +2242,7 @@ The matched filter derived in \S\ref{sec:matched_filtering} requires a template 
 
 For a CBC, the GW signal evolves through the three phases described in \S\ref{Astrophysical_sources_GW} (inspiral, merger, and ringdown) and no single analytic method covers all three. During the inspiral, Post-Newtonian (PN) theory provides accurate closed-form waveforms by expanding the EFE in powers of $v^2/c^2$ \cite{Post-Newtonian}, but breaks down near merger where velocities approach $c$. The merger phase requires full numerical relativity (NR) simulations of the EFE \cite{Numerical_relativity}, which are highly accurate but computationally prohibitive and serve primarily to calibrate analytic models. The ringdown is described analytically by the quasi-normal modes (QNMs) of the remnant compact object \cite{quasi_normal_modes}.
 
-To cover the full frequency evolution, these approaches are combined into inspiral-merger-ringdown (\textsc{IMR}) waveform families. Effective One Body (\textsc{EOB}) models reformulate the two-body problem as an effective single-body problem, resumming the PN series and matching to NR near merger; current implementations include \texttt{SEOBNRv5HM} and \texttt{SEOBNRv5PHM} \cite{SEOBNRv5HM, SEOBNRv5PHM}, which incorporate higher multipole modes and spin precession. Phenomenological models (\textsc{IMRPhenom}) fit closed-form frequency-domain expressions to hybrid PN-NR waveforms across the three phases; a widely used example, \texttt{IMRPhenomXPHM} \cite{IMRPhenomXPHM}, is calibrated to $\sim\!400$ NR simulations spanning mass ratios up to $q=1000$ and dimensionless spins $|\chi_i|\lesssim 1$. NR surrogate models (\textsc{NRSur}) interpolate directly over NR simulations without an underlying analytic ansatz, achieving the highest fidelity at the cost of a restricted parameter space; \texttt{NRHybSur3dq8} \cite{NRHybSur3dq8} combines a PN-EOB inspiral with NR near merger, but is limited to non-precessing BBHs with $q\leq 8$. All three families have been progressively extended to include precessing spins, higher multipole modes, and tidal effects for NS components. Fast frequency-domain approximants such as \texttt{TaylorF2} or \texttt{IMRPhenomD} are favoured for matched-filter searches, while more sophisticated models are employed in PE, where waveform accuracy directly impacts posterior reliability.
+To cover the full frequency evolution, these approaches are combined into inspiral-merger-ringdown (\textsc{IMR}) waveform families. Effective One Body (\textsc{EOB}) models reformulate the two-body problem as an effective single-body problem, resumming the PN series and matching to NR near merger; current implementations include \texttt{SEOBNRv5HM} and \texttt{SEOBNRv5PHM} \cite{SEOBNRv5HM, SEOBNRv5PHM}, which incorporate higher multipole modes and spin precession. Phenomenological models (\textsc{IMRPhenom}) fit closed-form frequency-domain expressions to hybrid PN-NR waveforms across the three phases; a widely used example, \texttt{IMRPhenomXPHM} \cite{IMRPhenomXPHM}, is calibrated to NR simulations at comparable mass ratios up to $m_1/m_2\approx18$ and dimensionless spins $|\chi_i|\lesssim 1$, with coverage extended to extreme mass ratios up to $m_1/m_2\sim1000$ through BH perturbation theory waveforms rather than additional NR calibration. NR surrogate models (\textsc{NRSur}) interpolate directly over NR simulations without an underlying analytic ansatz, achieving the highest fidelity at the cost of a restricted parameter space; \texttt{NRHybSur3dq8} \cite{NRHybSur3dq8} combines a PN-EOB inspiral with NR near merger, but is limited to non-precessing BBHs with $q\leq 8$. All three families have been progressively extended to include precessing spins, higher multipole modes, and tidal effects for NS components. Fast frequency-domain approximants such as \texttt{TaylorF2} or \texttt{IMRPhenomD} are favoured for matched-filter searches, while more sophisticated models are employed in PE, where waveform accuracy directly impacts posterior reliability.
 
 \subsection{Bayesian parameter estimation}
 \label{sec:PE}
@@ -2318,8 +2304,7 @@ Gaussian in the residual between the data and the waveform template,
     d - h(\boldsymbol{\theta})\bigr)\right),
     \label{eq:likelihood}
 \end{equation}
-where $(\cdot|\cdot)$ is the noise-weighted inner product defined in \eqref{eq:inner_product} and $h(\boldsymbol{\theta})$ is the waveform template evaluated at parameters $\boldsymbol{\theta}$. Taking the logarithm, one recovers \eqref{eq:likelihood} in the 
-log form used in practice. This expression makes explicit the connection between PE and matched filtering: maximizing 
+where $(\cdot|\cdot)$ is the noise-weighted inner product defined in \eqref{eq:inner_product} and $h(\boldsymbol{\theta})$ is the waveform template evaluated at parameters $\boldsymbol{\theta}$. Taking the logarithm of \eqref{eq:likelihood} gives the log-likelihood form used in practice. This expression makes explicit the connection between PE and matched filtering: maximizing 
 $\ln\mathcal{L}$ over $\boldsymbol{\theta}$ is equivalent to finding the template that best matches the data in the noise-weighted sense of \S\ref{sec:matched_filtering}, with the prior regularizing the solution across the full parameter space.
 
 Because the posterior \eqref{eq:bayes} is a 15-dimensional 
@@ -2394,7 +2379,7 @@ MCMC methods construct a random walk through parameter space whose stationary di
     \right).
     \label{eq:MH}
 \end{equation}
-If $A \geq 1$ the proposal is always accepted; otherwise it is accepted with probability $A$. When the proposal distribution $q$ is symmetric, i.e.\ $q(\boldsymbol{\theta}'|\boldsymbol{\theta}_t) = q(\boldsymbol{\theta}_t|\boldsymbol{\theta}')$, the ratio of proposals cancels and $A$ reduces to the simple likelihood ratio $p(\boldsymbol{\theta}'|d)/p(\boldsymbol{\theta}_t|d)$. This acceptance rule ensures detailed balance and guarantees that the chain converges to the correct stationary distribution. By recording the position of the chain at each accepted step, one accumulates draws from the posterior.
+If the ratio inside the minimum exceeds unity the proposal is always accepted; otherwise it is accepted with probability $A$. When the proposal distribution $q$ is symmetric, i.e.\ $q(\boldsymbol{\theta}'|\boldsymbol{\theta}_t) = q(\boldsymbol{\theta}_t|\boldsymbol{\theta}')$, the ratio of proposals cancels and $A$ reduces to the simple posterior ratio $p(\boldsymbol{\theta}'|d)/p(\boldsymbol{\theta}_t|d)$. This acceptance rule ensures detailed balance and guarantees that the chain converges to the correct stationary distribution. By recording the position of the chain at each accepted step, one accumulates draws from the posterior.
 
 \begin{figure}[h!]
     \centering
@@ -2479,7 +2464,7 @@ and other compact objects). Depending on the geometry and lens mass, three regim
 
 The deflection of GWs by a gravitational field follows the same geometric principles as for light, but several properties of GWs lead to qualitatively different lensing phenomenology.
 
-The most fundamental difference is the wavelength regime. GWs detectable by ground-based interferometers have wavelengths ranging from roughly 10\,km to 1\,Mm, many orders of magnitude larger than EM wavelengths. The key parameter governing the lensing regime is the ratio $\lambda_\mathrm{GW}/r_E$, where $r_E = D_L\theta_E$ is the physical Einstein radius of the lens (see $\S$\ref{Einstein_radius}). When $\lambda_\mathrm{GW} \ll r_E$, each image travels along a distinct geometric path and the standard geometric optics formalism applies. When $\lambda_\mathrm{GW} \gtrsim r_E$, diffraction becomes important and wave optics must be used, producing frequency-dependent modulations of the waveform amplitude and phase with no EM analog \cite{Wave_optics_GW}. For galaxy-scale lenses ($r_E \sim \mathcal{O}(\mathrm{kpc})$), 
+The most fundamental difference is the wavelength regime. GWs detectable by ground-based interferometers, spanning the $\sim\!10$-$5000$\,Hz band (\S\ref{sec:noise}), have wavelengths ranging from roughly $60$\,km to $30\,000$\,km, many orders of magnitude larger than EM wavelengths. The key parameter governing the lensing regime is the ratio $\lambda_\mathrm{GW}/r_E$, where $r_E = D_L\theta_E$ is the physical Einstein radius of the lens (see $\S$\ref{Einstein_radius}). When $\lambda_\mathrm{GW} \ll r_E$, each image travels along a distinct geometric path and the standard geometric optics formalism applies. When $\lambda_\mathrm{GW} \gtrsim r_E$, diffraction becomes important and wave optics must be used, producing frequency-dependent modulations of the waveform amplitude and phase with no EM analog \cite{pointmasslens}. For galaxy-scale lenses ($r_E \sim \mathcal{O}(\mathrm{kpc})$), 
 ground-based GW detectors always operate in the geometric 
 optics regime. Wave optics effects become relevant for lower 
 mass lenses such as stars or IMBHs, 
@@ -2691,7 +2676,7 @@ which yields a flat rotation curve $v_c = \sqrt{2}\,\sigma_v$, consistent with o
 \begin{equation}
     \Sigma(\xi) = \frac{\sigma_v^2}{2G\xi},
 \end{equation}
-which depends only on the radial distance $\xi = |\boldsymbol{\xi}|$, confirming that the SIS is an axisymmetric lens \cite{SIS_lensing}. Expressing this in terms of the convergence gives
+which depends only on the radial distance $\xi = |\boldsymbol{\xi}|$, confirming that the SIS is an axisymmetric lens \cite{amplificationfactor_figure}. Expressing this in terms of the convergence gives
 \begin{equation}
     \kappa(\theta) = \frac{\theta_E}{2\theta}, 
     \qquad 
@@ -2710,7 +2695,7 @@ The SIS is the simplest axisymmetric model for strong lensing by individual gala
 
 Observations of early-type galaxies show that their density 
 slopes are close to isothermal but not exactly so, with a 
-distribution of slopes $\gamma \sim \mathcal{N}(2.0, 0.2)$ 
+distribution of slopes $\gamma \sim \mathcal{N}(2.0, 0.2^2)$ 
 \cite{EPL_lensing}. A more flexible family is the elliptical power law (EPL), which generalizes the SIE by allowing the density slope to vary freely. The three-dimensional density profile is
 \begin{equation}
     \rho(r) \propto r^{-\gamma},
@@ -2950,7 +2935,7 @@ constrain the source to two arc-shaped regions on the
 celestial sphere, lying along the ring of constant time 
 delay around the axis connecting them, since the antenna 
 pattern response depends on direction and splits this 
-ring into two disconnected high probability arcs; a third non-collinear detector intersects this ring with a second independent one, reducing the arcs to a small bimodal pair of regions; and a fourth non-coplanar detector resolves the remaining reflection degeneracy to a single sky area \cite{GWTC5}.
+ring into two disconnected high probability arcs; a third non-collinear detector intersects this ring with a second independent one, reducing the arcs to a small bimodal pair of regions; and a fourth non-coplanar detector resolves the remaining reflection degeneracy to a single sky area \cite{triangulation_GW}.
 
 
 With only two detectors, a single GW image therefore 
