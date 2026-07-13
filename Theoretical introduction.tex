@@ -1680,12 +1680,12 @@ A system that radiates GWs necessarily undergoes an energy loss. It is therefore
 
 The formula for the energy flux of GWs can be derived by considering the effective stress-energy tensor of the gravitational field in the wave zone. In the TT gauge, the energy flux per unit area is given by
 \begin{equation}
-\frac{dE}{dA dt} = \frac{c^3}{16\pi G} \langle \dot{h}_{ij}^{\rm TT} \dot{h}_{ij}^{\rm TT} \rangle,
+\frac{dE}{dA dt} = \frac{c^3}{32\pi G} \langle \dot{h}_{ij}^{\rm TT} \dot{h}_{ij}^{\rm TT} \rangle,
 \end{equation}
 where the angle brackets denote an average over several wavelengths or periods of the wave. This expression shows that the energy flux is proportional to the square of the time derivative of the metric perturbation, reflecting the fact that GWs carry energy away from their sources.
 Integrating the energy flux over a sphere of radius $r$ centered on the source, one obtains the total power radiated in GWs,
 \begin{equation}
-P = \frac{c^3 r^2}{16\pi G} \int \langle \dot{h}_{ij}^{\rm TT} \dot{h}_{ij}^{\rm TT} \rangle d\Omega,
+P = \frac{c^3 r^2}{32\pi G} \int \langle \dot{h}_{ij}^{\rm TT} \dot{h}_{ij}^{\rm TT} \rangle d\Omega,
 \end{equation}where the integral is taken over the solid angle $\Omega$. Substituting the quadrupole formula for $h_{ij}^{\rm TT}$, one finds the well-known expression for the power radiated by a source with mass quadrupole moment $\mathcal{I}_{ij}$,
 \begin{equation}
 P = \frac{G}{5c^5} \langle \dddot{\mathcal{I}}_{ij} \dddot{\mathcal{I}}_{ij} \rangle,
@@ -2368,7 +2368,7 @@ In addition, multiple images of the same source provide repeated observations th
 
 \subsection{Deflection of light by a gravitational field}
 
-The deflection of light by a gravitational field can be derived by studying null geodesics in a perturbed spacetime. Our Universe is well described by a spatially flat Friedmann-Robertson-Walker (FRW) metric, but for the scales relevant to lensing we can work locally with Minkowski spacetime as a starting point and incorporate cosmological corrections later through angular diameter distances.
+The deflection of light by a gravitational field can be derived by studying null geodesics in a perturbed spacetime. Our Universe is well described by a spatially flat Friedmann-Lemaître-Robertson-Walker (FLRW) metric, but for the scales relevant to lensing we can work locally with Minkowski spacetime as a starting point and incorporate cosmological corrections later through angular diameter distances.
 
 The presence of a massive lens introduces inhomogeneities in the spacetime metric. Treating the lens in the weak-field limit (slow-moving, $v \ll c$, and small curvature), the energy-momentum tensor is dominated by the energy density component $T^{00} = \rho$, with all other components negligible. Linearizing the EFE to first order in the metric perturbation $\gamma_{\mu\nu}$, and neglecting time derivatives since the lens evolves slowly, the spatial 
 components satisfy a Poisson equation whose solution yields the perturbed metric \cite{lensing_metric}
@@ -2820,8 +2820,8 @@ lower bound on the localization improvement achievable
 once additional detectors are included in the network.
 
 Virgo, currently reaching $50$-$60$\,Mpc in O4, is not
-expected to improve further during the intermediate
-run IR1, remaining at $50$-$60$\,Mpc, before reaching a projected $90$-$130$\,Mpc by O5, while KAGRA is expected to improve from a few Mpc in O4 to $25$-$90$\,Mpc by O5 \cite{LVK_observing_plan}. Extending
+expected to improve further during IR1 (the intermediate
+observing run between O4 and O5), remaining at $50$-$60$\,Mpc, before reaching a projected $90$-$130$\,Mpc by O5, while KAGRA is expected to improve from a few Mpc in O4 to $25$-$90$\,Mpc by O5 \cite{LVK_observing_plan}. Extending
 the joint analysis presented in this work to include these 
 additional detectors, once their sensitivity and duty cycle 
 make them reliably available, is a natural direction for 

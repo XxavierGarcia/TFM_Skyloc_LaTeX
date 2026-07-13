@@ -176,11 +176,9 @@ detector network \cite{Wierda_2021}, and is somewhat lower than forecasts for th
 \section{Injected parameter distributions}
 \label{sec:injected_params}
 
-The 500 events produced by \textsc{LeR} represent the strongly lensed population detectable under ideal observing conditions. To obtain a more realistic injection set, a duty cycle filter is applied: for each image of each event, both H1 and L1 are independently activated with probability 
-$p_\mathrm{det} = 0.70$, reflecting typical O4 
-single-detector duty cycles \cite{GWTC5}. An image is 
-retained only if both detectors are simultaneously active and $\rho_\mathrm{net} \geq 10$. Events with fewer than two surviving images are discarded; when more than two images survive, only the two with the highest network SNR are kept. After applying this filter once to the fixed 500-event 
-population, 157 events are selected as the final injection set analyzed with \textsc{Bilby}. Table~\ref{tab:selection_funnel} summarizes the successive stages of this selection process, from the initial MC draws performed by \textsc{LeR} to this final injection set.
+The 500 events produced by \textsc{LeR} represent the strongly lensed population detectable under ideal observing conditions. To obtain a more realistic injection set, a duty cycle filter is applied: for each image of each event, both H1 and L1 are independently activated with probability $p_\mathrm{det} = 0.70$, reflecting typical O4 single-detector duty cycles \cite{GWTC5}.
+
+An image is retained only if both detectors are simultaneously active and $\rho_\mathrm{net} \geq 10$. Events with fewer than two surviving images are discarded; when more than two images survive, only the two with the highest network SNR are kept. After applying this filter once to the fixed 500-event population, 157 events are selected as the final injection set analyzed with \textsc{Bilby}. Table~\ref{tab:selection_funnel} summarizes the successive stages of this selection process, from the initial MC draws performed by \textsc{LeR} to this final injection set.
 
 
 
@@ -400,7 +398,7 @@ The entire pipeline, from \texttt{.ini} generation to job submission and the SNR
 \section{Single-image analysis with \textsc{Bilby}}
 \label{sec:bilby_config}
 
-As introduced in \S\ref{sec:pipeline_overview}, each image is analyzed with \texttt{bilby\_pipe} \cite{bilby_pipe_paper} as an isolated signal, characterized by its own data segment, noise realization, and set of extrinsic parameters. The \texttt{.ini} configuration is generated automatically for each image from a shared template (\S\ref{sec:automation_picasso}). Table~\ref{tab:bilby_settings} summarizes the detector and sampler settings common to all 157 events.
+As introduced in \S\ref{sec:pipeline_overview}, each image is analyzed with \texttt{bilby\_pipe} \cite{bilby_pipe_paper} as an isolated signal, characterized by its own data segment, noise realization, and set of extrinsic parameters. The \texttt{.ini} configuration is generated automatically for each image from a shared template (\S\ref{sec:automation_picasso}). Table~\ref{tab:bilby_settings} summarizes the detector and sampler settings common to all 157 events. The waveform generation frequency listed there, $13.33$\,Hz, is lower than the $f_{\min}=20$\,Hz of the analysis band: this is because the waveform generation frequency refers to the dominant $(\ell,m)=(2,2)$ mode, while a subdominant mode's instantaneous frequency scales as $f_{\ell m}=(m/2)f_{22}$, so starting the $(2,2)$ mode at $f_{22}=20/1.5=13.33$\,Hz ensures the $(3,3)$ mode, the most significant subdominant harmonic in this band, already has full content by $f_{\min}=20$\,Hz~\cite{higher_order_modes_waveform}.
 
 \begin{table}[h!]
 \centering
@@ -413,7 +411,7 @@ Detector network & H1, L1 \\
 PSD & O5a strain PSD (same as \textsc{LeR}, \S\ref{sec:LER_population}) \\
 Sampling frequency & 2048\,Hz \\
 Reference frequency & $f_{\text{ref}}=20$\,Hz \\
-Minimum and maximum frequency & $f_{\min}=20$\,Hz, 13.33\,Hz (waveform)\footnote{The waveform generation frequency is referred to the dominant $(\ell,m)=(2,2)$ mode, while a subdominant mode's instantaneous frequency scales as $f_{\ell m}=(m/2)f_{22}$. Starting the $(2,2)$ mode at $f_{22}=20/1.5=13.33$\,Hz ensures the $(3,3)$ mode, the most significant subdominant harmonic in this band, already has full content by $f_{\min}=20$\,Hz~\cite{higher_order_modes_waveform}.} and $f_{\max}=896$\,Hz\\
+Minimum and maximum frequency & $f_{\min}=20$\,Hz, 13.33\,Hz (waveform) and $f_{\max}=896$\,Hz\\
 Segment duration & Computed per event (see below) \\
 Waveform approximant & \texttt{IMRPhenomXPNR} \cite{IMRPhenomXPNR} \\
 Sampler and sampling method & \textsc{Dynesty} \cite{MCMC_vs_NS} and acceptance-walk\\
@@ -433,7 +431,13 @@ The injected and recovered waveforms both use the \texttt{IMRPhenomXPNR} approxi
 
 The waveform is generated through \textsc{Hanabi}'s lensed source model, \href{https://github.com/ricokaloklo/hanabi/blob/master/hanabi/lensing/waveform.py}{\texttt{hanabi.\allowbreak lensing.\allowbreak waveform.\allowbreak strongly\_lensed\_BBH\_waveform}}, which implements the lensed strain expression of \S\ref{sec:strong_lensing}, combining the intrinsic \texttt{IMRPhenomXPNR} waveform with an image-dependent amplitude and Morse phase factor. In the single-image configuration this factor is fixed to \texttt{image\_type=1} (Type I, a minimum of the Fermat potential) rather than treated as a free parameter. Type I images carry no Morse phase shift ($n=0$, \S\ref{sec:strong_lensing}), so their waveform is identical in phase to an ordinary unlensed signal; the only lensing imprint, an amplitude rescaling and a shifted arrival time, is already absorbed into the standard \texttt{luminosity\_distance} and \texttt{geocent\_time} parameters. The single-image prior fixes \texttt{image\_type} to this value regardless of the true injected type, so each image is analyzed as an ordinary CBC signal; identifying the true image type of each image, together with the relative magnification between them, is instead the specific role of the joint analysis (\S\ref{sec:hanabi_joint}), which samples \texttt{image\_type} independently for each image from a discrete prior.
 
-The remaining priors follow standard choices for BBH PE: a chirp mass prior adapted individually for each event to a $\pm30\%$ range around its injected value (rather than a single wide range for the whole population, which would waste live points on regions of parameter space far from every event's true chirp mass), mass ratio and component-mass constraints, uniform spin magnitudes and precession angles, an isotropic sky location, and a $50$-$20\,000$\,Mpc uniform luminosity distance prior; the full \texttt{prior-dict} is reproduced in Appendix~$\S$\ref{implementataion_pipeline}. The spin magnitude priors are bounded to $a_{1,2}\in[0,0.99]$, whereas \textsc{LeR} draws the injected spins from $\mathrm{Uniform}[0,1]$ (Table~\ref{tab:LER_params}); an injected value above $0.99$ would therefore fall outside the recovery prior. Across all 157 injected events, the maximum injected spin magnitude is $0.78$ ($a_1$) and $0.80$ ($a_2$), so no event is affected by this truncation in practice. This prior can be centred on the injected value only because the true value is already known here; doing so also keeps each run computationally cheap by concentrating live points where the posterior actually has support. For a real candidate, where the true value is not known, a wide prior would be required instead. A dedicated check across all 300 single-image chirp mass posteriors finds that only 4 (1.3\%) show noticeably more density right next to one prior edge than near the centre of the range, and in every case the affected posterior belongs to the lower-SNR image of its pair, with single-image SNR of $7.2$ (\texttt{inj030}), $10.7$ (\texttt{inj104}), $15.8$ (\texttt{inj085}), and $10.3$ (\texttt{inj151}), among the lowest in the sample; for the remaining 296 posteriors the credible interval is unaffected by the prior boundary.
+The remaining priors follow standard choices for BBH PE: a chirp mass prior adapted individually for each event to a $\pm30\%$ range around its injected value (rather than a single wide range for the whole population, which would waste live points on regions of parameter space far from every event's true chirp mass), mass ratio and component-mass constraints, uniform spin magnitudes and precession angles, an isotropic sky location, and a $50$-$20\,000$\,Mpc uniform luminosity distance prior; the full \texttt{prior-dict} is reproduced in Appendix~$\S$\ref{implementataion_pipeline}.
+
+The spin magnitude priors are bounded to $a_{1,2}\in[0,0.99]$, whereas \textsc{LeR} draws the injected spins from $\mathrm{Uniform}[0,1]$ (Table~\ref{tab:LER_params}); an injected value above $0.99$ would therefore fall outside the recovery prior. Across all 157 injected events, the maximum injected spin magnitude is $0.78$ ($a_1$) and $0.80$ ($a_2$), so no event is affected by this truncation in practice.
+
+This chirp mass prior can be centred on the injected value only because the true value is already known here; doing so also keeps each run computationally cheap by concentrating live points where the posterior actually has support, a non-negligible consideration given the total computational cost of the campaign (\S\ref{sec:automation_picasso}). For a real candidate, where the true value is not known, a wide prior would be required instead.
+
+A dedicated check across all 300 single-image chirp mass posteriors finds that only 4 (1.3\%) show noticeably more density right next to one prior edge than near the centre of the range, and in every case the affected posterior belongs to the lower-SNR image of its pair, with single-image SNR of $7.2$ (\texttt{inj030}), $10.7$ (\texttt{inj104}), $15.8$ (\texttt{inj085}), and $10.3$ (\texttt{inj151}), among the lowest in the sample; for the remaining 296 posteriors the credible interval is unaffected by the prior boundary.
 
 
 
@@ -469,6 +473,8 @@ The joint likelihood is evaluated over both images simultaneously, using the sam
 \label{sec:automation_picasso}
 
 Running this pipeline for all 157 events relies on two components: a script that generates every configuration and job file automatically, and a two-stage submission mechanism that enforces the job dependencies of \S\ref{sec:pipeline_overview}. Jobs execute directly inside a dedicated \texttt{conda}/\texttt{miniforge} environment (\href{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/environment_full.yml}{\texttt{hanabi\_bilby260}}) on Picasso, whose exact specification is provided for reproducibility.
+
+Summed over the sampling time reported in the logs of every parallel \textsc{Dynesty} run (\texttt{n-parallel=3} per image or per joint analysis, each requesting 128 CPUs), the full PE campaign consumed approximately $830{,}000$ CPU-hours ($\sim\!6{,}500$ node-hours, or $\sim\!270$ node-days on 128-core nodes), split roughly evenly between the 942 single-image parallel runs and the 431 completed joint parallel runs. This scale of computational cost motivates several of the efficiency choices described below and in \S\ref{sec:bilby_config}, such as the per-event chirp-mass prior and the segment duration computed individually from each event's parameters, rather than adopting a single conservative configuration for the whole population.
 
 \subsection{Configuration and script generation}
 
@@ -557,12 +563,15 @@ Figure~\ref{fig:snr_recovery_consistency} closes this residual comparison with a
     \label{fig:snr_recovery_consistency}
 \end{figure}
 
-One event, \texttt{inj113}, departs from this trend by more than $6\sigma$ ($\rho_\mathrm{post}-\rho_\mathrm{inj}=+18.3$). The dominant factor is an extreme magnification: $|\mu_1|\approx491$ and $|\mu_2|\approx604$, the
-third-highest magnification among the 150 analyzed events (median $\max|\mu|\approx24$) and within the small population of outliers reaching $|\mu|\sim10^3$ noted in Fig.~\ref{fig:magnification_hist}. The event's total mass, $M_{\mathrm{det}}\approx136\,M_\odot$, is also above the sample median
-($104\,M_\odot$, $72$nd percentile), though not itself extreme. The combination pushes the event toward a regime of very high effective SNR together with a merger-dominated waveform, where \texttt{gwsnr}'s interpolation-based
-estimator, calibrated primarily on the inspiral portion of the signal, is expected to be least reliable relative to the exact frequency-domain calculation used in the recovery; the extreme magnification is the more likely primary driver of the discrepancy.
+One event, \texttt{inj113}, departs from this trend by more than $6\sigma$ ($\rho_\mathrm{post}-\rho_\mathrm{inj}=+18.3$). The dominant factor is an extreme magnification: $|\mu_1|\approx491$ and $|\mu_2|\approx604$, the third-highest magnification among the 150 analyzed events (median $\max|\mu|\approx24$) and within the small population of outliers reaching $|\mu|\sim10^3$ noted in Fig.~\ref{fig:magnification_hist}. The event's total mass, $M_{\mathrm{det}}\approx136\,M_\odot$, is also above the sample median ($104\,M_\odot$, $72$nd percentile), though not itself extreme.
 
-Recall from Fig.~\ref{fig:mass1_mass2_recovery} that the true source distance and the magnification of each image cannot be separated from the two apparent distances alone, which is why masses were reported in the detector frame throughout the residual checks above. The size of this bias can now be quantified directly: for each image, a naive source-frame chirp mass is computed by treating its effective luminosity distance as if it were the true source distance: converting it to a redshift under the same cosmology adopted by \textsc{LeR} ($H_0=70\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$, $\Omega_m=0.3$, flat $\Lambda$CDM, Table~\ref{tab:LER_params}), and dividing the (detector-frame) recovered component masses by $(1+z_{\mathrm{naive}})$. Figure~\ref{fig:source_mass_bias_vs_injected} shows the resulting bias, $\mathcal{M}^{\mathrm{source}}_{\mathrm{naive}}-\mathcal{M}^{\mathrm{source}}_{\mathrm{inj}}$, against the injected source-frame chirp mass, for image 1 (left) and image 2 (right). The bias is systematically positive and an order of magnitude larger than the chirp mass measurement noise seen in Fig.~\ref{fig:residuals_mass} ($\sigma\approx2\,M_\odot$ there, versus a median of $11.6\,M_\odot$ and $11.4\,M_\odot$ here for images 1 and 2), so this is not simply propagated distance measurement noise.
+The combination pushes the event toward a regime of very high effective SNR together with a merger-dominated waveform, where \texttt{gwsnr}'s interpolation-based estimator, calibrated primarily on the inspiral portion of the signal, is expected to be least reliable relative to the exact frequency-domain calculation used in the recovery; the extreme magnification is the more likely primary driver of the discrepancy.
+
+Recall from Fig.~\ref{fig:mass1_mass2_recovery} that the true source distance and the magnification of each image cannot be separated from the two apparent distances alone, which is why masses were reported in the detector frame throughout the residual checks above.
+
+The size of this bias can now be quantified directly: for each image, a naive source-frame chirp mass is computed by treating its effective luminosity distance as if it were the true source distance: converting it to a redshift under the same cosmology adopted by \textsc{LeR} ($H_0=70\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$, $\Omega_m=0.3$, flat $\Lambda$CDM, Table~\ref{tab:LER_params}), and dividing the (detector-frame) recovered component masses by $(1+z_{\mathrm{naive}})$.
+
+Figure~\ref{fig:source_mass_bias_vs_injected} shows the resulting bias, $\mathcal{M}^{\mathrm{source}}_{\mathrm{naive}}-\mathcal{M}^{\mathrm{source}}_{\mathrm{inj}}$, against the injected source-frame chirp mass, for image 1 (left) and image 2 (right). The bias is systematically positive and an order of magnitude larger than the chirp mass measurement noise seen in Fig.~\ref{fig:residuals_mass} ($\sigma\approx2\,M_\odot$ there, versus a median of $11.6\,M_\odot$ and $11.4\,M_\odot$ here for images 1 and 2), so this is not simply propagated distance measurement noise.
 
 \begin{figure}[h!]
     \centering
@@ -697,6 +706,24 @@ Figure~\ref{fig:cdf_area} shows the cumulative and probability density distribut
   \label{fig:pdf_area}
 \end{figure}
 
+In addition to the 90\% credible area, the tighter 50\% credible area $A_{50}$ provides a complementary summary of the core localization precision, less sensitive to the extended low-probability tails of the posterior visible in Fig.~\ref{fig:skymap_example}. Table~\ref{tab:area50_90_summary} compares both statistics for the best single-image and joint analyses. The median $A_{50}$ drops from $145.4\,\mathrm{deg}^2$ (best single image) to $27.2\,\mathrm{deg}^2$ (joint), a median improvement factor $\mathrm{IF}_{A_{50}}=4.7$, consistent with, though slightly smaller than, the $\mathrm{IF}_{A_{90}}=5.1$ found above. Only one event has $\mathrm{IF}_{A_{50}}$ marginally below unity ($0.97$), the sole case among either metric where the joint analysis does not improve the localization; even there, the joint $A_{50}$ is left essentially unchanged rather than substantially worse.
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lcccc}
+\hline\hline
+ & \multicolumn{2}{c}{$A_{50}$ [$\mathrm{deg}^2$]} & \multicolumn{2}{c}{$A_{90}$ [$\mathrm{deg}^2$]} \\
+ & Best single & Joint & Best single & Joint \\
+\hline
+Median & $145.4$ & $27.2$ & $571.0$ & $99.9$ \\
+Mean   & $172.4$ & $48.2$ & $699.3$ & $185.7$ \\
+\hline
+\end{tabular}
+\caption[Summary statistics of the 50\% and 90\% credible sky areas]{Median and mean 50\% and 90\% credible sky areas for the best single-image and joint analyses across the 150 events. The corresponding median improvement factors are $\mathrm{IF}_{A_{50}}=4.7$ and $\mathrm{IF}_{A_{90}}=5.1$.}
+\label{tab:area50_90_summary}
+\end{table}
+
 Figure~\ref{fig:area_vs_snr} shows the 90\% credible area as a function of network SNR for each image, comparing the single-image and joint results. For single-image analyses, $A_{90}$ shows a broad scatter at all SNR values, reflecting the dominant role of sky position and antenna pattern orientation relative to SNR in determining the localization precision of a two-detector network. The joint analysis consistently reduces $A_{90}$, with the improvement being most pronounced for events whose single-image areas are largest.
 
 \begin{figure}[h!]
@@ -709,7 +736,7 @@ Figure~\ref{fig:area_vs_snr} shows the 90\% credible area as a function of netwo
   \subsection{Constellation localization}
   \label{sec:constellation}
 
-The \texttt{ligo-skymap-constellations} tool \cite{SingerPrice2016} identifies the IAU constellation that contains the largest fraction of the posterior probability from each sky map. This metric provides a practical summary of how well the source can be localized to a recognizable region of the sky, which is relevant for EM follow-up coordination: a compact posterior confined mostly within a single constellation allows targeted searches, while a diffuse posterior spread across multiple constellations requires wide-field coverage.
+The \texttt{ligo-skymap-constellations} tool \cite{SingerPrice2016} identifies the IAU constellation that contains the largest fraction of the posterior probability from each sky map. This metric provides a practical summary of how well the source can be localized to a recognizable region of the sky, which is relevant for EM follow-up coordination: a compact posterior confined mostly within a single constellation allows targeted searches, while a diffuse posterior spread across multiple constellations requires wide-field coverage. A caveat of this metric is that the 88 IAU constellations span a wide range of angular sizes, from $\sim\!70$ to $\sim\!1300\,\mathrm{deg}^2$, so the constellation fraction conflates how well localized a source is with where on the sky it happens to fall; the comparison with real GWTC-5 events below, which is subject to the same effect, provides a control for this dependence.
 
 Figure~\ref{fig:constellation_vs_snr} shows the probability fraction contained in the dominant constellation as a function of network SNR. For single-image analyses, the median fraction in the top constellation is $\sim\!41\%$ (best of the two images), with only $50/150$ events exceeding $50\%$. The joint analysis raises the median to $68.6\%$, with $115/150$ events ($76.7\%$) above $50\%$ and $47/150$ ($31.3\%$) above $90\%$. The clustering of joint results toward high constellation fractions, visible in the upper part of the scatter plot, reflects the same mechanism as the sky area reduction: the joint posterior concentrates into a compact region that fits within a single constellation boundary.
 
