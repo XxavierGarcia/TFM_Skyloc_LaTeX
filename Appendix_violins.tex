@@ -7,10 +7,10 @@ This appendix collects the recovered posteriors for all 150 analyzed events, com
 A closer look at these figures reveals three main patterns. First, the joint analysis produces the largest narrowing on the mass ratio $q$ and the effective spin $\chi_\mathrm{eff}$. Defining the improvement factor per
 event and per parameter as
 \begin{equation}
-\mathrm{IF} \equiv \frac{\min\!\left(\Delta_{90}^{(1)},\,\Delta_{90}^{(2)}\right)}{\Delta_{90}^{\mathrm{joint}}},
+\mathrm{IF}_\theta \equiv \frac{\min\!\left(\Delta_{90}^{(1)},\,\Delta_{90}^{(2)}\right)}{\Delta_{90}^{\mathrm{joint}}},
 \label{eq:improvement_factor}
 \end{equation}
-where $\Delta_{90}^{(i)}$ denotes the width of the $90\%$ credible interval (5th to 95th percentile) of the posterior for image $i$, and $\Delta_{90}^{\mathrm{joint}}$ the same quantity for the joint posterior, values $\mathrm{IF}>1$ mean the joint analysis is tighter than the better of the two single-image analyses. The largest improvement factors across the sample are $\mathrm{IF}=3.53$ for $D_L^{\mathrm{eff}}$ in \texttt{inj113}, $2.20$ for $\chi_\mathrm{eff}$ in \texttt{inj113}, $1.91$ for $\mathcal{M}$ in \texttt{inj113}, and $1.67$ for $q$ in \texttt{inj152}. Table~\ref{tab:improvement_factors_top20} lists the top 25 events ranked by $D_L^{\mathrm{eff}}$; \texttt{inj113} stands out as the event where the joint analysis extracts the most information across essentially every parameter simultaneously.
+where $\Delta_{90}^{(i)}$ denotes the width of the $90\%$ credible interval (5th to 95th percentile) of the posterior for image $i$, and $\Delta_{90}^{\mathrm{joint}}$ the same quantity for the joint posterior, values $\mathrm{IF}_\theta>1$ mean the joint analysis is tighter than the better of the two single-image analyses. The largest improvement factors across the sample are $\mathrm{IF}_\theta=3.53$ for $D_L^{\mathrm{eff}}$ in \texttt{inj113}, $2.20$ for $\chi_\mathrm{eff}$ in \texttt{inj113}, $1.91$ for $\mathcal{M}$ in \texttt{inj113}, and $1.67$ for $q$ in \texttt{inj152}. Table~\ref{tab:improvement_factors_top20} lists the top 25 events ranked by $D_L^{\mathrm{eff}}$; \texttt{inj113} stands out as the event where the joint analysis extracts the most information across essentially every parameter simultaneously.
 
 \begin{table}[h!]
 \centering
@@ -47,7 +47,7 @@ Event & $\rho_\mathrm{net}^{\mathrm{inj}}$ & $\mathcal{M}$ & $q$ & $D_L^{\mathrm
 \texttt{inj035} & 21.5 & 1.22 & 0.99 & \hi{1.51} & 1.06 & 1.03 & 1.18 & 1.07 \\
 \hline
 \end{tabular}}
-\caption[Improvement factors of the top 25 events ranked by effective distance]{Improvement factors $\mathrm{IF}$ (Eq.~\eqref{eq:improvement_factor}) for the top 25 events ranked by $D_L^{\mathrm{eff}}$, with the injected network SNR $\rho_\mathrm{net}^{\mathrm{inj}}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}) shown for context. Values highlighted in orange mark $\mathrm{IF}\geq 1.5$, where the joint analysis narrows the $90\%$ credible interval by at least a factor of $1.5$ relative to the better of the two single-image analyses. Values below $1$ appear only sporadically for $a_1$, $a_2$, and $\chi_\mathrm{p}$, which remain effectively prior-dominated across the sample.}
+\caption[Improvement factors of the top 25 events ranked by effective distance]{Improvement factors $\mathrm{IF}_\theta$ (Eq.~\eqref{eq:improvement_factor}) for the top 25 events ranked by $D_L^{\mathrm{eff}}$, with the injected network SNR $\rho_\mathrm{net}^{\mathrm{inj}}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}) shown for context. Values highlighted in orange mark $\mathrm{IF}_\theta\geq 1.5$, where the joint analysis narrows the $90\%$ credible interval by at least a factor of $1.5$ relative to the better of the two single-image analyses. Values below $1$ appear only sporadically for $a_1$, $a_2$, and $\chi_\mathrm{p}$, which remain effectively prior-dominated across the sample.}
 \label{tab:improvement_factors_top20}
 \end{table}
 

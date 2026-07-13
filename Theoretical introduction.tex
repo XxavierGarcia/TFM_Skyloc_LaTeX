@@ -408,79 +408,25 @@ These connection coefficients are essential for extending the familiar notion of
 
 \subsubsection{Covariant derivative}
 
-
-Having introduced the Christoffel symbols \eqref{christoffelsymbols} and established how to differentiate vectors in curved spacetime using equation \eqref{vectorderivative}, we are now ready to define the covariant derivative, which provides a consistent framework for differentiating tensors.
-
-
-Substituting equation \eqref{christoffelsymbols} into equation \eqref{vectorderivative}, we obtain:
-\begin{equation}
-    \frac{\partial \vec{V}}{\partial x^\beta} 
-=  \frac{\partial V^\alpha}{\partial x^\beta} \vec{e}_\alpha 
-+ V^\alpha \Gamma^\gamma_{\alpha\beta} \vec{e}_\gamma \ .
-\end{equation}
-We relabel the dummy indices \(\alpha\) and \(\gamma\) in the right-hand side term, as they are summation indices and can be freely exchanged to simplify the expression:
-\begin{equation}
-    \frac{\partial \vec{V}}{\partial x^\beta} 
-=  \frac{\partial V^\alpha}{\partial x^\beta} \vec{e}_\alpha 
-+ V^\gamma \Gamma^\alpha_{\gamma\beta} \vec{e}_\alpha \ .
-\end{equation}
-We now factor out the common basis vector \(\vec{e}_\alpha\):
-\begin{equation}
-    \frac{\partial \vec{V}}{\partial x^\beta} 
-=  \left(\frac{\partial V^\alpha}{\partial x^\beta}
-+ V^\gamma \Gamma^\alpha_{\gamma\beta}\right) \vec{e}_\alpha \ .
-\end{equation}
-We can express the components of $\dfrac{\partial \vec{V}}{\partial x^\beta}$ as:
-\begin{equation}
-\frac{\partial V^\alpha}{\partial x^\beta} + V^\gamma \Gamma^\alpha_{\gamma \beta} \ .
-\label{covariantderivative}
-\end{equation}
-This formula represents the covariant derivative of the contravariant vector $\vec{V}$. It describes how the component $V^\alpha$ changes in the direction $\beta$ of the coordinate system $x_\beta$. It is common to use the notation $\nabla_\beta V^\alpha$ to denote the covariant derivative, so equation \eqref{covariantderivative} can also be written as:
+Having introduced the Christoffel symbols \eqref{christoffelsymbols} and established how to differentiate vectors in curved spacetime using equation \eqref{vectorderivative}, we define the covariant derivative of a contravariant vector $V^\alpha$:
 \begin{equation}
 \nabla_\beta V^\alpha = \frac{\partial V^\alpha}{\partial x^\beta} + V^\gamma \Gamma^\alpha_{\gamma \beta} \ .
+\label{covariantderivative}
 \end{equation}
-Similarly, the covariant derivative of a one-form or covector is expressed as:
+Similarly, the covariant derivative of a one-form is:
 \begin{equation}
 \nabla_\beta V_\alpha = \frac{\partial V_\alpha}{\partial x^\beta} - V_\gamma \Gamma^\gamma_{\alpha \beta} \ .
 \end{equation}
-The covariant derivative maintains the properties of linearity and satisfies the product rule, similar to the partial derivative:
+The covariant derivative is linear and satisfies the Leibniz rule:
 \begin{equation}
 \begin{aligned}
 & \nabla_\mu (\alpha V^\nu + \beta W^\nu) = \alpha \nabla_\mu V^\nu + \beta \nabla_\mu W^\nu, \\
 &\nabla_\mu (V^\nu W^\rho) = (\nabla_\mu V^\nu) W^\rho + V^\nu (\nabla_\mu W^\rho) \ .
 \end{aligned}
 \end{equation}
-Moreover, it has the important property of transforming properly as a \((1,1)\) tensor:
-\begin{equation}
-\nabla_\alpha V^\gamma = \frac{\partial x^\mu}{\partial y^\alpha}\frac{\partial y^\gamma}{\partial x^\nu}\nabla_\mu V^\nu \ .
-\end{equation}
-Furthermore, in flat space and when working with Cartesian coordinates, the Christoffel symbols vanish identically, so the covariant derivative of a vector or a one-form simplifies to the ordinary partial derivative:
-\begin{equation}
-    \nabla_\alpha V^\gamma = \partial_\alpha V^\gamma \ .
-\end{equation}
-This simplification is specific to flat Cartesian coordinates: for a scalar field $\phi$, by contrast, $\nabla_\alpha \phi = \partial_\alpha \phi$ holds in any coordinate system, since a scalar has no indices for the connection to act on.
-Finally we can see how to construct the covariant derivative of a tensor.
+In flat spacetime with Cartesian coordinates, the Christoffel symbols vanish and the covariant derivative reduces to the partial derivative. For a scalar field $\phi$, the identity $\nabla_\alpha \phi = \partial_\alpha \phi$ holds in any coordinate system, since a scalar carries no indices for the connection to act on.
 
-
-We derive the covariant derivative of a tensor of type $(1,1)$, that is, a tensor with one upper (contravariant) index and one lower (covariant) index. Our goal is to construct a derivative operator that preserves the tensorial nature of the object under coordinate transformations.
-
-Let $T^\nu{}_\mu$ be a $(1,1)$ tensor. The covariant derivative $\nabla_\rho T^\nu{}_\mu$ is given by:
-\begin{equation}
-\nabla_\rho T^\nu{}_\mu = \partial_\rho T^\nu{}_\mu 
-- \Gamma^\lambda_{\rho\mu} T^\nu{}_\lambda 
-+ \Gamma^\nu_{\rho\lambda} T^\lambda{}_\mu \ .
-\end{equation}
-This formula can be understood as follows:
-
-\begin{itemize}
-    \item The first term $\partial_\rho T^\nu{}_\mu$ is the ordinary partial derivative.
-    \item The second term $- \Gamma^\lambda_{\rho\mu} T^\nu{}_\lambda$ corrects for the transformation of the covariant index $\mu$.
-    \item The third term $+ \Gamma^\nu_{\rho\lambda} T^\lambda{}_\mu$ corrects for the transformation of the contravariant index $\nu$.
-\end{itemize}
-
-The general rule is: for each lower index, subtract a term involving a Christoffel symbol; for each upper index, add a term involving a Christoffel symbol. This ensures that the resulting expression transforms properly as a tensor.
-
-In general, the covariant derivative of a tensor of type $(m, n)$ is given by \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
+For a general tensor of type $(m, n)$, the covariant derivative is \cite{Llibre_Peter_Collier_unacosadificildecomprender}:
 \begin{equation}
 \begin{aligned}
 \nabla_\rho T^{\mu_1 \dots \mu_m}_{\ \ \ \ \ \nu_1 \dots \nu_n} &= \partial_\rho T^{\mu_1 \dots \mu_m}_{\ \ \ \ \ \nu_1 \dots \nu_n}\\
@@ -491,15 +437,13 @@ In general, the covariant derivative of a tensor of type $(m, n)$ is given by \c
 - \Gamma^{\lambda}_{\rho \nu_n} T^{\mu_1 \dots \mu_m}_{\ \ \ \ \ \nu_1 \dots \nu_{n-1} \lambda} \ .
 \end{aligned}
 \end{equation}
-To ensure the internal consistency of GR, it is postulated that the covariant derivative of the metric tensor vanishes:
+The rule is: add a Christoffel term for each upper index and subtract one for each lower index.
+
+Finally, it is postulated that the covariant derivative of the metric tensor vanishes:
 \begin{equation}
 \nabla_\beta g_{\mu \nu} = \nabla_\beta g^{\mu \nu} = 0 \ .
 \end{equation}
-A covariant derivative satisfying this condition is referred to as metric compatible. This requirement ensures that the scalar product between vectors remains constant during parallel transport (see $\S$\ref{parallel transport}) across a curved spacetime manifold. While this condition holds trivially in flat spacetime (as in special relativity), it becomes a non-trivial and essential constraint in the presence of curvature.
-
-Because the equation above is tensorial, it holds in all coordinate systems. More precisely, metric compatibility ensures that the inner product structure imposed by the metric remains invariant along curves. This allows meaningful operations such as raising and lowering indices and defining lengths and angles between vectors in curved geometry.
-
-Although one can mathematically define connections for which $\nabla_\beta g_{\mu \nu} \neq 0$, such connections are not compatible with the metric and are generally not useful in the context of GR \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
+A connection satisfying this condition is called metric compatible. This ensures that inner products between vectors are preserved under parallel transport ($\S$\ref{parallel transport}), allowing consistent raising and lowering of indices and well-defined notions of length and angle in curved geometry \cite{Llibre_Peter_Collier_unacosadificildecomprender}.
 
 
 \subsubsection{Parallel transport }
@@ -688,7 +632,7 @@ known as the torsion tensor. Since we have already introduced the concept of tor
 When torsion vanishes, only the curvature term remains, providing a direct measure of the manifold's geometric curvature. In this case, the commutator can be expressed compactly as
 \begin{equation}
 [\nabla_\mu, \nabla_\nu] V^\rho 
-= R^\rho_{\ \sigma\mu\nu} V^\sigma - \cancel{T^\lambda_{\ \mu\nu} \nabla_\lambda V^\rho}.
+= R^\rho_{\ \sigma\mu\nu} V^\sigma.
 \end{equation}
 Thus, the Riemann curvature tensor provides a local, coordinate-independent measure of how much the geometry of a manifold deviates from flatness, encapsulating all such effects within a precise mathematical framework.
 
@@ -837,7 +781,7 @@ Historically, Einstein introduced $\Lambda$ in 1917 as a way to obtain a static 
 original unmodified equations. Einstein reportedly referred to the cosmological constant as ``the biggest blunder'' of his life, as described by George Gamow, though the remark is not documented in Einstein's own writing.
 
 Ironically, observations of distant Type Ia supernovae in 1998, carried out by the Supernova Cosmology Project and the High-Z Supernova Search Team, revealed that the expansion is accelerating. One possible explanation invokes a pervasive dark energy effectively described by $\Lambda$, which has thus regained scientific relevance despite its troubled history \cite{Llibre_Peter_Collier_unacosadificildecomprender}. The 
-modern challenge lies in the so-called cosmological constant problem: quantum field theory predicts $\Lambda \sim m_{P}^{4} \sim 10^{76}\,\mathrm{GeV}^{4}$, while observations constrain it to $\sim 10^{-47}\,\mathrm{GeV}^{4}$, a discrepancy of roughly $10^{123}$ and the largest known mismatch between theory and experiment \cite{LlibreBertJanssen}.
+modern challenge lies in the so-called cosmological constant problem: quantum field theory predicts $\Lambda \sim m_{P}^{4} \sim 10^{76}\,\mathrm{GeV}^{4}$, while observations constrain it to $\sim 10^{-47}\,\mathrm{GeV}^{4}$, a discrepancy of roughly $10^{123}$ and the largest known mismatch between theory and experiment \cite{LlibreBertJanssen}. 
 
 \section{Relevant solutions to Einstein’s equations}
 \label{solutionseinsteinequations}
@@ -987,9 +931,8 @@ manifestly regular at $r=2GM/c^2$ (see Fig.~\ref{fig:EFK_geodesics}).
 
 \subsubsection{Black holes in general relativity}
 
-A discussion of GR would be incomplete without addressing BHs. In this section, we have already seen that they naturally emerge from the Schwarzschild solution. We will not delve deeply into their technical details, but we will introduce the essential concepts required to understand, in later sections, the phenomenon of GW. 
+BHs are regions of spacetime where gravity is so intense that nothing can escape. They form when matter becomes sufficiently compressed, creating a boundary called the event horizon: a one-way surface beyond which all trajectories lead toward a central singularity where curvature diverges (see Fig.~\ref{fig:diagram_BH}).
 
-BHs are regions of spacetime where gravity is so intense that nothing, not even light, can escape. According to GR, they form when matter becomes sufficiently compressed, curving spacetime to the point that a boundary, called the event horizon, appears (see Fig. \ref{fig:diagram_BH}). This surface acts as a one-way limit: once matter or radiation crosses it, escape is no longer possible. Inside, all trajectories inevitably lead toward a central singularity, where curvature becomes infinite (see Fig. \ref{fig:diagram_BH_complex}).  
 \begin{figure}[h!]
     \centering
     \begin{subfigure}[t]{0.3\linewidth}
@@ -1005,38 +948,28 @@ BHs are regions of spacetime where gravity is so intense that nothing, not even 
         \caption{}
         \label{fig:diagram_BH_complex}
     \end{subfigure}
-    \caption[Simplified and detailed diagrams of a black hole]{(a) Simplified depiction of a BH. The event horizon (red line) marks the boundary beyond which nothing can escape. Inside, all paths lead to the singularity (blue dot). (b) More detailed diagram showing the causal structure of a Schwarzschild BH. The light cones tip inward as one approaches the horizon, and inside they point entirely toward the singularity, indicating that all causal trajectories inevitably end there. Source: \cite{nobel2020blackholes}. }
+    \caption[Simplified and detailed diagrams of a black hole]{(a) Simplified depiction of a BH. The event horizon (red line) marks the boundary beyond which nothing can escape. (b) Causal structure of a Schwarzschild BH: light cones tip inward near the horizon and point entirely toward the singularity inside it. Source: \cite{nobel2020blackholes}.}
 \end{figure}
-Although the term BH was popularized by John Wheeler in 1967, the idea traces back to the 18th century, when John Michell and Pierre-Simon Laplace speculated that a star of sufficient density could trap its own light. Their reasoning was based on Newtonian gravity and the notion of escape velocity. While not fully correct, their intuition coincidentally pointed to the same critical radius later derived by Schwarzschild in GR \cite{Llibre_Peter_Collier_unacosadificildecomprender}.  
 
-In nature, BHs most commonly arise from the evolution of massive stars. For stars like the Sun, nuclear fusion generates enough thermal pressure to counterbalance gravity, maintaining equilibrium for billions of years. Once the fuel is exhausted, smaller stars contract into white dwarfs, supported by electron degeneracy pressure. Chandrasekhar showed in 1931 that such stars cannot exceed about 1.4 $M_\odot$; beyond that threshold, gravity overwhelms electron pressure \cite{Llibre_Peter_Collier_unacosadificildecomprender}.  
+According to the no-hair theorem, an isolated BH in GR is fully characterized by three quantities: mass $M$, electric charge $Q$, and angular momentum $J$ \cite{Llibre_Peter_Collier_unacosadificildecomprender}. Since astrophysical BHs are expected to be nearly neutral, the relevant solutions are the Schwarzschild metric \eqref{exteriorSchwarz} for non-rotating BHs and the Kerr metric for rotating ones. The Kerr solution describes a stationary, axisymmetric spacetime with line element (in Boyer-Lindquist coordinates):
+\begin{equation}
+\begin{aligned}
+ds^2 = &-\left(1 - \frac{2GMr}{\Sigma c^2}\right)c^2 dt^2 
+- \frac{4GMar\sin^2\theta}{\Sigma c^2}\, c\, dt\, d\phi \\
+&+ \frac{\Sigma}{\Delta} dr^2 + \Sigma\, d\theta^2 
++ \left(r^2 + a^2 + \frac{2GMa^2 r\sin^2\theta}{\Sigma c^2}\right)\sin^2\theta\, d\phi^2 \ ,
+\end{aligned}
+\label{kerrmetric}
+\end{equation}
+where $a = J/(Mc)$ is the spin parameter, $\Sigma = r^2 + a^2\cos^2\theta$, and $\Delta = r^2 - 2GMr/c^2 + a^2$ \cite{Llibre_Peter_Collier_unacosadificildecomprender}. In the limit $a \to 0$, this reduces to the Schwarzschild solution. Most astrophysical BHs are expected to rotate, inheriting angular momentum from their progenitor stars or accretion processes.
 
-More massive stars collapse further, producing NSs, stabilized for a time by neutron degeneracy pressure. However, Oppenheimer and collaborators demonstrated that above roughly two to three solar masses, not even this force is sufficient. The star then undergoes unstoppable collapse, crossing its Schwarzschild radius and forming a BH.  
-
-Astrophysical evidence confirms that stellar collapse is not the only mechanism. Observations show the existence of supermassive BHs, with millions to billions of solar masses, at the centers of galaxies, likely formed through accretion and mergers over cosmic time \cite{LlibreBertJanssen}.  
-
-
-According to the so-called no-hair theorem, BHs are surprisingly simple objects. From the perspective of an outside observer, they can be fully described by only three physical quantities: mass $M$, electric charge $Q$, and angular momentum $J$. This gives rise to four main idealized solutions in GR:  
-
+BHs are classified by mass into three observationally relevant categories:
 \begin{itemize}
-    \item Schwarzschild BHs, defined only by mass.  
-    \item Reissner-Nordström BHs, with mass and electric charge.  
-    \item Kerr BHs, with mass and rotation.  
-    \item Kerr-Newman BHs, with mass, charge, and rotation.  
+    \item \textbf{Stellar-mass BHs:} from a few to $\sim 100\, M_\odot$, formed by collapse of massive stars.
+    \item \textbf{Intermediate-mass BHs (IMBHs):} $10^2$--$10^5\, M_\odot$. The strongest evidence comes from GW events such as GW190521 ($142^{+28}_{-16}\, M_\odot$ remnant) \cite{GW190521} and GW231123 ($225^{+26}_{-43}\, M_\odot$ remnant) \cite{gw231123}.
+    \item \textbf{Supermassive BHs (SMBHs):} $10^6$--$10^{10}\, M_\odot$, found at the centers of galaxies (e.g. Sagittarius~A*, ${\sim}\,4 \times 10^6\, M_\odot$).
 \end{itemize}
-
-In practice, astrophysical BHs are expected to be nearly neutral, as any net charge would quickly be neutralized by surrounding plasma. Therefore, the most relevant solutions are Schwarzschild (non-rotating) and Kerr (rotating) BHs. The latter are believed to describe most real BHs, as they likely inherit angular momentum from their progenitor stars or accretion disks.
-
-BHs can also be classified by mass:
-
-\begin{itemize}
-    \item \textbf{Stellar-mass black holes (SBHs):} Formed from the collapse of massive stars (typically with $M \gtrsim 20 M_\odot$), they span from a few to hundreds of solar masses. They are often found in binary systems, where they can accrete matter from a companion star and emit X-rays.
-
-    \item \textbf{Intermediate-mass black holes (IMBHs):} These BHs are expected to lie in the mass range $10^2$--$10^5 M_\odot$. While no unambiguous detections exist, several candidates have been suggested from low-luminosity active galactic nuclei, X-ray sources and accretion disk spectra. The strongest evidence comes from GW events: GW190521, the merger of $85^{+21}_{-14} M_\odot$ and $66^{+17}_{-18} M_\odot$ BHs that produced a $142^{+28}_{-16} M_\odot$ remnant \cite{GW190521}, and the more recent GW231123, where BHs of $137^{+22}_{-17} M_\odot$ and $103^{+20}_{-52} M_\odot$ merged into a $225^{+26}_{-43}M_\odot$ remnant \cite{gw231123}.
-    \item \textbf{Supermassive black holes (SMBHs):} Located at the centers of galaxies, they range from millions to billions of solar masses. Their origin is still uncertain, but they grow by accretion and mergers. The Milky Way’s central BH, Sagittarius A*, has a mass of about $4 \times 10^6 M_\odot$.
-\end{itemize}
-
-In addition to these categories, theorists also propose the existence of primordial black holes (PBHs). These could have formed within the first second after the Big Bang, when extreme densities allowed matter to collapse directly into BHs. Their possible masses are thought to range from as little as $10^{-5}$ grams up to about $10^5 M_\odot$. Quantum effects predict that lighter PBHs would have evaporated over time, but more massive ones could still remain scattered across the universe \cite{Carr2021_PBH_constraints}.
+Additionally, primordial BHs may have formed from density fluctuations in the early universe, spanning a wide mass range from ${\sim}\,10^{-5}$~g to ${\sim}\,10^5\, M_\odot$ \cite{Carr2021_PBH_constraints}.
 
 \vspace{0.5cm}
 
@@ -2933,9 +2866,13 @@ In this work, this joint analysis is carried out with \textsc{Hanabi} \cite{PE_l
 
 The shared parameters include the masses, spins, and
 crucially the sky location $(\alpha, \delta)$, while
-the lensing parameters per image are the image type
-$n_j$, sampled independently for each image from a
-discrete uniform prior over $\{1, 2, 3\}$, and the
+the lensing parameters per image are the image-type
+label $\mathrm{IT}_j$, sampled independently for each
+image from a discrete uniform prior over $\{1, 2, 3\}$
+(the integer labelling convention used by
+\textsc{Hanabi} for Type I, II, and III respectively,
+distinct from the Morse index $n_j \in \{0, 1/2, 1\}$
+of Eq.~\eqref{eq:morse_index}), and the
 relative magnification $\mu_\mathrm{rel}$, which in
 the implementation used in this work is not sampled
 independently but is instead already captured by the
@@ -2990,7 +2927,14 @@ computed as
 A more complete statistic is the full lensing Bayes
 factor $\mathcal{B}_\mathrm{U}^\mathrm{L}$, which
 additionally incorporates selection effects and
-astrophysical population priors \cite{PE_lensing_bayes}. The primary focus of this work is the improvement in sky
-localization achieved by the joint analysis.
+astrophysical population priors \cite{PE_lensing_bayes}. Computing $\mathcal{B}_\mathrm{U}^\mathrm{L}$ for the injected
+population is beyond the scope of this work, whose
+primary focus is the improvement in sky localization
+achieved by the joint analysis; the simpler coherence
+ratio $\mathcal{C}_\mathrm{U}^\mathrm{L}$, which requires
+no additional ingredients beyond the Bayes factors
+already computed for each run, is instead evaluated for
+the full sample as a validation check in
+\S\ref{sec:coherence_ratio_results}.
 
 
