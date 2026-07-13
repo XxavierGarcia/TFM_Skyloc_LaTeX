@@ -15,7 +15,7 @@ The centenary of GR marks not only one of the greatest theoretical advances in p
   
   \item \textbf{1916:} Within months, Karl Schwarzschild finds the first exact solution to Einstein's equations \cite{paperschwarzschild1916_pointmass}, revealing the theoretical existence of BHs, a concept reinforced in 1917 when Einstein applies his theory to cosmology.
   \item \textbf{1919:} Arthur Eddington’s eclipse expedition confirms the bending of starlight by the Sun’s gravity \cite{Eddingtonsexpedition}, providing one of the first key empirical validations of the theory. 
-  \item \textbf{1927--1929:} Georges Lemaître and Edwin Hubble independently establish the expanding universe paradigm \cite{LemaitreHubble}, linking GR to the observable evolution of the cosmos.
+  \item \textbf{1927--1929:} Georges Lemaître \cite{LemaitreHubble} and Edwin Hubble \cite{Hubble1929} independently establish the expanding universe paradigm, linking GR to the observable evolution of the cosmos.
   \item \textbf{1960s--1970s:} After decades of theoretical neglect, interest in GR resurges. Joseph Weber pioneers early experimental searches for GWs \cite{JosephWeber}, and the discovery of the Hulse-Taylor pulsar in 1974 offers indirect but compelling evidence that energy is indeed carried away by gravitational radiation.
   \item \textbf{1980s--1990s:} Interferometric efforts gain traction on both sides of the Atlantic, with prototype detectors developed in Europe and the United States; the resulting collaborations produce GEO600 and pave the way for LIGO and Virgo \cite{upgradeofGEO600}.
   \item \textbf{2015--2017:} The detection of GW150914 by LIGO in September 2015 \cite{GW150914}, publicly announced in February 2016, marks the first direct observation of GWs, fulfilling a century-old prediction and inaugurating the era of GW astronomy.
@@ -59,7 +59,7 @@ whose solution,
 is independent of mass only if $m_g/m_i = \text{constant}$, which experiments confirm to be
 universal and set to 1 by an appropriate choice of units.
 
-This equivalence has been tested with remarkable precision. In 1889, Eötvös used a torsion balance to reach a precision of $|{(m_g - m_i)}/{m_g}| \sim 5\times10^{-8}$, later refined with Pekár and Fekete to $\sim10^{-9}$, published in 1922 \cite{The_Eötvös_Torsion_Balance}, and later improved by Dicke in 1964 to $< 10^{-11}$ \cite{RobertDicketest}. Currently, the MICROSCOPE satellite mission has achieved a precision of $10^{-15}$
+This equivalence has been tested with remarkable precision. In 1889, Eötvös used a torsion balance to reach a precision of $|{(m_g - m_i)}/{m_g}| \sim 5\times10^{-8}$, later refined with Pekár and Fekete to $\sim10^{-9}$, published in 1922 \cite{EotvosPekarFekete1922}, and later improved by Dicke in 1964 to $< 10^{-11}$ \cite{RollKrotkovDicke1964}. Currently, the MICROSCOPE satellite mission has achieved a precision of $10^{-15}$
 \cite{MicroSCOPE2022final}.
 
 \subsubsection{The strong equivalence principle}
@@ -1065,7 +1065,7 @@ As a first step toward the understanding of GWs, we wish to study the expansion 
 \begin{equation}
 g_{\mu\nu} \approx \eta_{\mu\nu} + h_{\mu\nu}, \qquad |h_{\mu\nu}| \ll 1,
 \end{equation}
-where $\eta_{\mu\nu}$ is the flat space Minkowski metric $\eta_{\mu\nu}= (-, +, +, +)$ and $h_{\mu\nu}$ represents a small perturbation \cite{maggiore2007gravitational}.
+where $\eta_{\mu\nu}$ is the flat space Minkowski metric $\eta_{\mu\nu}= \mathrm{diag}(-1, +1, +1, +1)$ and $h_{\mu\nu}$ represents a small perturbation \cite{maggiore2007gravitational}.
 
 The assumption that $h_{\mu\nu}$ is small allows us to neglect all terms beyond first order in this quantity. The resulting approximation is known as the linearized theory of gravity, and it leads to
 \begin{equation}
@@ -1260,8 +1260,8 @@ Substituting this ansatz into the wave equation \eqref{linearized_wave_equation}
 \begin{equation}
     k^\sigma k_\sigma = 0.
 \end{equation}
-This implies that, for non-trivial solutions $\bar{h}_{\mu\nu} \neq 0$, the wave four-vector must be null. That is, the perturbations propagate at the speed of light\footnote{A null wave four-vector satisfies $k^\mu k_\mu = 0$, which in Minkowski spacetime reads $\omega^2 - |\mathbf{k}|^2 = 0$. 
-This relation implies $\omega = |\mathbf{k}|$, so the phase velocity of the perturbation is $v = \omega / |\mathbf{k}| = c$. 
+This implies that, for non-trivial solutions $\bar{h}_{\mu\nu} \neq 0$, the wave four-vector must be null. That is, the perturbations propagate at the speed of light\footnote{A null wave four-vector satisfies $k^\mu k_\mu = 0$, which in Minkowski spacetime with $k^\mu = (\omega/c,\,\mathbf{k})$ reads $\omega^2/c^2 - |\mathbf{k}|^2 = 0$.
+This relation implies $\omega = c\,|\mathbf{k}|$, so the phase velocity of the perturbation is $v = \omega / |\mathbf{k}| = c$. 
 Therefore, GWs correspond to massless excitations of the gravitational field that propagate at the speed of light in vacuum \cite{llibretongGR}.} (GWs in vacuum) \cite{llibrecarroll2004lectures}.
 
 
@@ -1315,7 +1315,7 @@ Therefore, the plane wave solution can be expressed as
 \begin{equation}
     h_{\mu\nu}^{\text{TT}} = A_{\mu\nu} e^{i k_\alpha x^\alpha},
 \end{equation}
-where $h_{\mu\nu}^{\text{TT}}$ represents the metric perturbation in the TT gauge.
+where $h_{\mu\nu}^{\text{TT}}$ represents the metric perturbation in the TT gauge. Following the convention of Eq.~\eqref{waveequation}, here and in the remainder of this section the physical perturbation is understood as the real part of the complex expression, which is left implicit to lighten the notation.
 
 
 \subsection{Polarization states}
@@ -1517,7 +1517,7 @@ S^y(t) &=
 S^z(t) &= S^z(0),
 \end{aligned}
 \end{equation}
-where as mentioned in \eqref{polarizationmodes}, we should take the real part of the exponential. This polarization produces an oscillatory stretching and squeezing of the particle distribution along the transverse axes (see Fig.  \ref{fig:geodesic_comparison}).
+which produces an oscillatory stretching and squeezing of the particle distribution along the transverse axes (see Fig.  \ref{fig:geodesic_comparison}).
 
 
 If the plus polarization vanishes, $A_{+}=0$, the metric perturbation becomes
@@ -2209,9 +2209,9 @@ hypothesis that the data contain a GW signal and $\mathcal{M}_2$ is the noise-on
     \mathcal{L}(d|\boldsymbol{\theta})\,
     p(\boldsymbol{\theta})\,d\boldsymbol{\theta}, 
     \qquad
-    \mathcal{Z}_N = \mathcal{L}(d|\boldsymbol{\theta}=0),
+    \mathcal{Z}_N = \mathcal{L}(d|h=0),
 \end{equation}
-and $\mathcal{B}_{SN} = \mathcal{Z}_S/\mathcal{Z}_N$ quantifies how much more probable the data are under the signal hypothesis than under pure noise.
+where $h=0$ denotes the absence of any waveform in the data, and $\mathcal{B}_{SN} = \mathcal{Z}_S/\mathcal{Z}_N$ quantifies how much more probable the data are under the signal hypothesis than under pure noise.
 
 Beyond detection, Bayes factors are used throughout GW data 
 analysis to address a variety of model selection questions: whether a signal requires spin precession or tidal deformability, which waveform approximant better describes the data, or whether the observations are consistent with GR or favour an alternative theory of gravity \cite{likelihood_formula}. In each case the Bayes factor 
@@ -2777,7 +2777,7 @@ relative magnification
 \end{equation}
 the time delay between images $\Delta t = t_2 - t_1$ 
 \eqref{eq:time_delay}, and the difference in Morse 
-indices $\Delta n = n_2 - n_1$ \cite{PE_lensing_bayes}. The relative magnification can span several orders of magnitude depending on the source-lens alignment, while $\Delta n$ is only detectable when the signal carries precession or higher-mode content. Together, $\{\mu_{\mathrm{rel}}, \Delta t, \Delta n\}$ constitute the primary lensing observables exploited in a joint analysis of lensed image pairs. In the specific joint PE analysis carried out in this work (\S\ref{sec:hanabi_joint}), only the image type $n_j$ is treated as a genuinely free lensing parameter for each image; the relative magnification is not sampled directly, since its physical content is already captured by the two independently fitted luminosity distances of the images.
+indices $\Delta n = n_2 - n_1$ \cite{PE_lensing_bayes}. The relative magnification can span several orders of magnitude depending on the source-lens alignment, while $\Delta n$ is only detectable when the signal carries precession or higher-mode content. Together, $\{\mu_{\mathrm{rel}}, \Delta t, \Delta n\}$ constitute the primary lensing observables exploited in a joint analysis of lensed image pairs; how these are parameterized in the specific joint PE analysis carried out in this work is described in \S\ref{sec:joint_PE_skyloc}.
 
 
 

@@ -306,7 +306,7 @@ The main resource choices were matched to the cluster hardware:
 \chapter{Detailed implementation of the pipeline}
 \label{implementataion_pipeline}
 
-This appendix reproduces two representative \texttt{.ini} configuration files generated automatically by \texttt{Generator\_inis\_lenskyloc.py} (\S\ref{sec:automation_picasso}) for event \texttt{inj001}: the single-image configuration for image 1 (\S\ref{sec:bilby_config}), and the joint configuration combining both images (\S\ref{sec:hanabi_joint}). The complete pipeline code, including both the Picasso (SLURM) and CIT (HTCondor) branches described in \S\ref{sec:automation_picasso}, is publicly available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material}.
+This appendix reproduces two representative \texttt{.ini} configuration files generated automatically by \texttt{Generator\_inis\_lenskyloc.py} (\S\ref{sec:automation_picasso}) for event \texttt{inj001}: the single-image configuration for image 1 (\S\ref{sec:bilby_config}), and the joint configuration combining both images (\S\ref{sec:hanabi_joint}). The complete pipeline code, including both the Picasso (SLURM) and CIT (HTCondor) branches described in \S\ref{sec:automation_picasso}, is publicly available at the GitHub repository listed in Appendix~$\S$\ref{Reproducibility tutorial}.
 
 \section{Single-image configuration}
 \label{app:single_ini_example}
@@ -399,6 +399,10 @@ enforce-signal-duration=False
 catch-waveform-errors=True
 pn-amplitude-order=1
 \end{lstlisting}
+
+The injection uses \texttt{pn\_amplitude\_order=0} while the analysis uses \texttt{pn-amplitude-order=1}. This argument, inherited from the post-Newtonian waveform families supported by \textsc{LALSimulation}, is not used by the phenomenological \texttt{IMRPhenomXPNR} model to construct its amplitude: generating the same waveform with \texttt{pn\_amplitude\_order} set to $0$ and to $1$. This configuration mismatch is therefore a leftover setting from the template with no real effect on the results of this thesis.
+
+Similarly, the injection uses \texttt{minimum\_frequency=20} while the analysis generates the waveform from \texttt{minimum\_frequency=13.33}, starting the dominant $(2,2)$ mode earlier so that the $(3,3)$ mode has fully accumulated content by the true low-frequency cutoff of $20$\,Hz (Table~\ref{tab:bilby_settings}). Since \texttt{IMRPhenomXPHM}/\texttt{IMRPhenomXPNR} evaluate each frequency independently rather than through a sequential time-domain integration, generating the waveform from a lower starting frequency does not alter its content at frequencies above that starting point: comparing the two choices directly, the generated strain in the $20$-$40$\,Hz band, where the analysis actually operates, is identical to machine precision (maximum relative difference $4\times10^{-14}$, overlap $=1.000000$). This confirms that the injection/analysis mismatch in \texttt{minimum\_frequency} has no effect on the results of this thesis.
 
 
 \section{Joint configuration}
