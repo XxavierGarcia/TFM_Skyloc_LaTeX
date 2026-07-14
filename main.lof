@@ -42,20 +42,21 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces True versus effective luminosity distance}}{86}{figure.4.4}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Image magnification distribution}}{87}{figure.4.5}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Joint $m_1^{\mathrm {src}}$-$m_2^{\mathrm {src}}$ distribution}}{87}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Time delay distribution between lensed images}}{89}{figure.4.7}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Time delay distribution between lensed images}}{88}{figure.4.7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the full analysis pipeline}}{90}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Recovered primary versus secondary mass for six representative events}}{97}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Joint versus single-image posteriors for three example events}}{98}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Chirp mass and mass ratio recovery residuals}}{99}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Naive source-frame chirp mass bias versus injected mass}}{100}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Naive source-frame chirp mass bias versus true magnification}}{100}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Effective and precessing spin recovery residuals}}{101}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Individual spin magnitude recovery residuals}}{101}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Effective luminosity distance recovery residuals}}{102}{figure.5.9}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Recovered posterior versus injected network SNR, for all 150 events.}}{103}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Source-frame chirp mass bias after lens-model correction}}{104}{figure.5.11}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Distribution of the coherence ratio $\ln \mathcal {C}_\mathrm {U}^\mathrm {L}$ across the 150 successfully analyzed pairs. All events lie above $\ln \mathcal {C}_\mathrm {U}^\mathrm {L}=0$, the threshold above which the lensed hypothesis $\mathcal {H}_L$ is favoured over the unlensed hypothesis $\mathcal {H}_U$.}}{105}{figure.5.12}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview of the full analysis pipeline}}{89}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Recovered primary versus secondary mass for six representative events}}{96}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Joint versus single-image posteriors for three example events}}{97}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Chirp mass and mass ratio recovery residuals}}{98}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Naive source-frame chirp mass bias versus injected mass}}{98}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Naive source-frame chirp mass bias versus true magnification}}{99}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Effective and precessing spin recovery residuals}}{99}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Individual spin magnitude recovery residuals}}{100}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Effective luminosity distance recovery residuals}}{100}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Recovered posterior versus injected network SNR, for all 150 events.}}{101}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Recovered versus injected network SNR with the exact estimator}}{102}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Source-frame chirp mass bias after lens-model correction}}{104}{figure.5.12}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Distribution of the coherence ratio $\ln \mathcal {C}_\mathrm {U}^\mathrm {L}$ across the 150 successfully analyzed pairs. All events lie above $\ln \mathcal {C}_\mathrm {U}^\mathrm {L}=0$, the threshold above which the lensed hypothesis $\mathcal {H}_L$ is favoured over the unlensed hypothesis $\mathcal {H}_U$.}}{105}{figure.5.13}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Sky localization for injection~002 ($\Delta t \approx 5.6$\,h). \textit {Top left}: image~1 ($A_{90}\approx 970\,\mathrm {deg}^2$). \textit {Top right}: image~2 ($A_{90}\approx 416\,\mathrm {deg}^2$). \textit {Bottom}: joint analysis ($A_{90}\approx 27\,\mathrm {deg}^2$).}}{107}{figure.6.1}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces CDF (left) and probability density (right) of the 90\% credible sky area for the best single-image analysis and the joint analysis across the 150 events. The vertical dashed line marks $10\,\mathrm {deg}^2$.}}{108}{figure.6.2}%
