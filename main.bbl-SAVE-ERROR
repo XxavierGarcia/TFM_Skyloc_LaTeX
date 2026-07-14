@@ -19,6 +19,67 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
+    \entry{GWOSC_O4_part2}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=5e9d13625858702d2fae21e9fe660eac}{%
+           family={{LIGO Scientific Collaboration and Virgo Collaboration and KAGRA Collaboration}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{fullhash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{fullhashraw}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{bibnamehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authorbibnamehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authornamehash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authorfullhash}{5e9d13625858702d2fae21e9fe660eac}
+      \strng{authorfullhashraw}{5e9d13625858702d2fae21e9fe660eac}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{gr-qc}
+      \field{eprinttype}{arXiv}
+      \field{note}{Data obtained from the Gravitational Wave Open Science Center (\url{https://gwosc.org})}
+      \field{title}{Open Data from the Second Part of the Fourth Observing Run of Advanced LIGO, Advanced Virgo, and KAGRA}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2605.27090
+      \endverb
+    \endentry
+    \entry{Hannuksela_skyloc}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=e8dbcd1b9e93aa66c126c44e2c2fea95}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Alvin\bibnamedelimb K.\bibnamedelimi Y.},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=871778cf9a8f69afaca5aeb0a12645f3}{%
+           family={Hannuksela},
+           familyi={H\bibinitperiod},
+           given={Otto\bibnamedelima A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \strng{fullhash}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \strng{fullhashraw}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \strng{bibnamehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \strng{authorbibnamehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \strng{authornamehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \strng{authorfullhash}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \strng{authorfullhashraw}{feb4ca87dac2515cd26b5fadc65bfa9f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.IM}
+      \field{eprinttype}{arXiv}
+      \field{title}{A First Investigation of Repeated-Signal Localization of Strongly Lensed Gravitational Waves for Multimessenger Astronomy}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2604.16561
+      \endverb
+    \endentry
     \entry{LlibreBertJanssen}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=51f56478e480de5c9a94c2bf5ed97adc}{%
@@ -42,8 +103,8 @@
       \strng{authornamehash}{51f56478e480de5c9a94c2bf5ed97adc}
       \strng{authorfullhash}{51f56478e480de5c9a94c2bf5ed97adc}
       \strng{authorfullhashraw}{51f56478e480de5c9a94c2bf5ed97adc}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Lecture notes, University of Granada, 4th year Physics course}
@@ -74,8 +135,8 @@
       \strng{authornamehash}{3a9244ede0245c8e8503b15d7f1f5df9}
       \strng{authorfullhash}{3a9244ede0245c8e8503b15d7f1f5df9}
       \strng{authorfullhashraw}{3a9244ede0245c8e8503b15d7f1f5df9}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780393079487}
@@ -132,8 +193,8 @@
       \strng{authorfullhash}{91d5a2963b2dd7b6a51f87039e915ebd}
       \strng{authorfullhashraw}{91d5a2963b2dd7b6a51f87039e915ebd}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Phys. Rev. Lett.}
@@ -161,8 +222,8 @@
       \strng{authornamehash}{16bcfee047f408de6bb5be329955b6a0}
       \strng{authorfullhash}{16bcfee047f408de6bb5be329955b6a0}
       \strng{authorfullhashraw}{16bcfee047f408de6bb5be329955b6a0}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-07-17}
@@ -192,8 +253,8 @@
       \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \strng{authorfullhashraw}{3ebf53e52a3ce84f0ffb8553200a6a63}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annalen der Physik}
@@ -227,8 +288,8 @@
       \strng{authornamehash}{5c27dd36414b88b00f26489bd05f68a6}
       \strng{authorfullhash}{5c27dd36414b88b00f26489bd05f68a6}
       \strng{authorfullhashraw}{5c27dd36414b88b00f26489bd05f68a6}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Translated in 2008 by Larissa Borissova and Dmitri Rabounski}
@@ -260,8 +321,8 @@
       \strng{authornamehash}{3cd4425f02e2513a99ed5e87734ac196}
       \strng{authorfullhash}{3cd4425f02e2513a99ed5e87734ac196}
       \strng{authorfullhashraw}{3cd4425f02e2513a99ed5e87734ac196}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Observatory}
@@ -293,8 +354,8 @@
       \strng{authornamehash}{b2bec2d8da64eaa0dca644b2c6497b0a}
       \strng{authorfullhash}{b2bec2d8da64eaa0dca644b2c6497b0a}
       \strng{authorfullhashraw}{b2bec2d8da64eaa0dca644b2c6497b0a}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Unfortunately, several prominent people writing in the popular press continue to promote Hubble’s discovery of the expansion of the universe. See, for example, Brian Greene’s Op-Ed piece in the New York Times on 15 January 2011.There is a great irony in these falsehoods still being promoted today. Hubble himself never came out in favor of an expanding universe; on the contrary, he doubted it to the end of his days. It was Lemaître who was the first to combine theoretical and observational arguments to show that we live in an expanding universe.}
@@ -327,8 +388,8 @@
       \strng{authornamehash}{095a52969f0b95a9824841c15cc59106}
       \strng{authorfullhash}{095a52969f0b95a9824841c15cc59106}
       \strng{authorfullhashraw}{095a52969f0b95a9824841c15cc59106}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the National Academy of Sciences}
@@ -494,10 +555,10 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Sitzungsberichte der Königlich Preu{ß}ischen Akademie der Wissenschaften zu Berlin}
       \field{note}{Plenary session of November 18, 1915}
-      \field{title}{Die Feldgleichungen der Gravitation}
+      \field{title}{Erklärung der Perihelbewegung des Merkur aus der allgemeinen Relativitätstheorie}
       \field{year}{1915}
-      \field{pages}{844\bibrangedash 847}
-      \range{pages}{4}
+      \field{pages}{831\bibrangedash 839}
+      \range{pages}{9}
       \verb{urlraw}
       \verb https://einsteinpapers.press.princeton.edu/vol6-trans/124
       \endverb
@@ -654,8 +715,8 @@
       \strng{authornamehash}{b865020e126301658c7a543b502cad6a}
       \strng{authorfullhash}{b865020e126301658c7a543b502cad6a}
       \strng{authorfullhashraw}{b865020e126301658c7a543b502cad6a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Discorsi e dimostrazioni matematiche intorno a due nuove scienze attenenti alla mecanica ed i movimenti locali}
@@ -693,8 +754,8 @@
       \strng{authornamehash}{0a828115a578ff19dc1fba3dcc73e66d}
       \strng{authorfullhash}{0a828115a578ff19dc1fba3dcc73e66d}
       \strng{authorfullhashraw}{0a828115a578ff19dc1fba3dcc73e66d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annalen der Physik}
@@ -972,8 +1033,8 @@
       \strng{authornamehash}{8199d0ab11818e68c13eda43bffe85fb}
       \strng{authorfullhash}{8199d0ab11818e68c13eda43bffe85fb}
       \strng{authorfullhashraw}{8199d0ab11818e68c13eda43bffe85fb}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{News, Coordinated Science Laboratory, University of Illinois}
@@ -1137,8 +1198,8 @@
       \strng{authornamehash}{2e1eb70757e8ef323bef36afd1bd0053}
       \strng{authorfullhash}{2e1eb70757e8ef323bef36afd1bd0053}
       \strng{authorfullhashraw}{2e1eb70757e8ef323bef36afd1bd0053}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{An Overview of Gravitational Waves}
@@ -1171,8 +1232,8 @@
       \strng{authornamehash}{e1841c0c41b5a5ffe8310253191fe07f}
       \strng{authorfullhash}{e1841c0c41b5a5ffe8310253191fe07f}
       \strng{authorfullhashraw}{e1841c0c41b5a5ffe8310253191fe07f}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{\url{http://www.damtp.cam.ac.uk/user/tong/gr.html}}
@@ -1533,8 +1594,8 @@
       \strng{authornamehash}{f51dfd339a12125d0f82a2d93e66d9b7}
       \strng{authorfullhash}{f51dfd339a12125d0f82a2d93e66d9b7}
       \strng{authorfullhashraw}{f51dfd339a12125d0f82a2d93e66d9b7}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Phys. Rev. Lett.}
@@ -1640,8 +1701,8 @@
       \strng{authorfullhash}{c6dc9070a6d5c9f30dd40b5dfda2acf2}
       \strng{authorfullhashraw}{c6dc9070a6d5c9f30dd40b5dfda2acf2}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1079-7114}
@@ -1676,8 +1737,8 @@
       \strng{authorfullhash}{c6dc9070a6d5c9f30dd40b5dfda2acf2}
       \strng{authorfullhashraw}{c6dc9070a6d5c9f30dd40b5dfda2acf2}
       \field{extraname}{3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{astro-ph.HE}
@@ -88097,8 +88158,8 @@
       \strng{authornamehash}{6245ea10e64c688e3861b38655d49de6}
       \strng{authorfullhash}{3651467dff246499410d5079d0c101d6}
       \strng{authorfullhashraw}{3651467dff246499410d5079d0c101d6}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issue}{12}
@@ -88130,8 +88191,8 @@
       \strng{authorfullhash}{384523aa5490d99189cb76bdbc9bc6db}
       \strng{authorfullhashraw}{384523aa5490d99189cb76bdbc9bc6db}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0375-9687}
@@ -108869,39 +108930,6 @@
       \verb 10.1103/PhysRevD.107.123015
       \endverb
     \endentry
-    \entry{Hannuksela_skyloc}{misc}{}{}
-      \name{author}{2}{}{%
-        {{hash=e8dbcd1b9e93aa66c126c44e2c2fea95}{%
-           family={Li},
-           familyi={L\bibinitperiod},
-           given={Alvin\bibnamedelimb K.\bibnamedelimi Y.},
-           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
-        {{hash=871778cf9a8f69afaca5aeb0a12645f3}{%
-           family={Hannuksela},
-           familyi={H\bibinitperiod},
-           given={Otto\bibnamedelima A.},
-           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \strng{namehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \strng{fullhash}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \strng{fullhashraw}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \strng{bibnamehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \strng{authorbibnamehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \strng{authornamehash}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \strng{authorfullhash}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \strng{authorfullhashraw}{feb4ca87dac2515cd26b5fadc65bfa9f}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{astro-ph.IM}
-      \field{eprinttype}{arXiv}
-      \field{title}{A First Investigation of Repeated-Signal Localization of Strongly Lensed Gravitational Waves for Multimessenger Astronomy}
-      \field{year}{2026}
-      \verb{eprint}
-      \verb 2604.16561
-      \endverb
-    \endentry
     \entry{LVK_observing_plan}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=5e9d13625858702d2fae21e9fe660eac}{%
@@ -108916,6 +108944,7 @@
       \strng{authornamehash}{5e9d13625858702d2fae21e9fe660eac}
       \strng{authorfullhash}{5e9d13625858702d2fae21e9fe660eac}
       \strng{authorfullhashraw}{5e9d13625858702d2fae21e9fe660eac}
+      \field{extraname}{2}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -117524,8 +117553,8 @@
       \strng{authorfullhash}{7155b91c1683ce1aa47e3ffc37c9d90b}
       \strng{authorfullhashraw}{7155b91c1683ce1aa47e3ffc37c9d90b}
       \field{extraname}{9}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issue}{1}
@@ -117981,6 +118010,28 @@
       \verb 10.1103/PhysRevD.93.024013
       \endverb
     \endentry
+    \entry{ligo_skymap_software}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=11afee29ecd0c945b68ec2b84cfa9f83}{%
+           family={{LIGO Scientific Collaboration and Virgo Collaboration}},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \strng{fullhash}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \strng{fullhashraw}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \strng{bibnamehash}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \strng{authorbibnamehash}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \strng{authornamehash}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \strng{authorfullhash}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \strng{authorfullhashraw}{11afee29ecd0c945b68ec2b84cfa9f83}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://lscsoft.docs.ligo.org/ligo.skymap/}}
+      \field{note}{Accessed: 2026-07-14}
+      \field{title}{\texttt{ligo.skymap} Documentation}
+    \endentry
     \entry{higher_order_modes_waveform}{misc}{}{}
       \name{author}{7}{}{%
         {{hash=d3c4deed981729d2fc91078e6bc95b99}{%
@@ -118289,6 +118340,46 @@
       \field{year}{2026}
       \verb{eprint}
       \verb 2412.09888
+      \endverb
+    \endentry
+    \entry{Cremonese2021_wave_optics_degeneracy}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=1768bb1fb36a7ddb663e4b7a9f7a7311}{%
+           family={Cremonese},
+           familyi={C\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=04c20bdabcf2ac29d9d656500fac0ec5}{%
+           family={Ezquiaga},
+           familyi={E\bibinitperiod},
+           given={Jose\bibnamedelima María},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ec0f225e447230ea775447eb916d37f6}{%
+           family={Salzano},
+           familyi={S\bibinitperiod},
+           given={Vincenzo},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \strng{fullhash}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \strng{fullhashraw}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \strng{bibnamehash}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \strng{authorbibnamehash}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \strng{authornamehash}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \strng{authorfullhash}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \strng{authorfullhashraw}{40cd3efa0d7fd1a38cfb43e9fc9a13be}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{title}{Breaking the mass-sheet degeneracy with gravitational wave interference in lensed events}
+      \field{volume}{104}
+      \field{year}{2021}
+      \field{pages}{023503}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.104.023503
       \endverb
     \endentry
     \entry{Kim2024_lensing_distance}{article}{}{}
