@@ -371,7 +371,7 @@ The first term reflects the change in the vector components, while the second te
 Here, the Christoffel symbols $\Gamma^\gamma_{\alpha\beta}$ quantify how the basis vector $\vec{e}_\alpha$ changes in the direction of coordinate $x^\beta$, projected onto the basis $\vec{e}_\gamma$. The lower indices $\alpha$ and $\beta$ refer to the direction and variable of differentiation, while the upper index $\gamma$ indicates the output basis direction.
 
 
-We can isolate the Christoffel symbol by multiplying both sides by the dual basis vector $\vec{\hspace{0.15em}e}^\gamma$. Relabelling the dummy index in \eqref{christoffelsymbols} as $\lambda$ to avoid a clash with $\gamma$, $\partial_\beta \vec{e}_\alpha = \Gamma^\lambda_{\alpha\beta} \vec{e}_\lambda$, so that
+We can isolate the Christoffel symbol by multiplying both sides by the dual basis vector $\vec{\hspace{0.15em}e}^\gamma$. Relabeling the dummy index in \eqref{christoffelsymbols} as $\lambda$ to avoid a clash with $\gamma$, $\partial_\beta \vec{e}_\alpha = \Gamma^\lambda_{\alpha\beta} \vec{e}_\lambda$, so that
 \begin{equation}
 \vec{\hspace{0.15em}e}^\gamma \cdot \partial_\beta \vec{e}_\alpha
 = \Gamma^\lambda_{\alpha \beta}\, \vec{\hspace{0.15em}e}^\gamma \cdot \vec{e}_\lambda
@@ -973,7 +973,7 @@ Additionally, primordial BHs may have formed from density fluctuations in the ea
 
 \vspace{0.5cm}
 
-In summary, this chapter has laid the mathematical and physical foundations of GR, progressing from the geometry of curved spacetime and the tools of differential geometry (parallel transport, geodesics, and the Riemann tensor) to the EFE and their most astrophysically relevant solutions: BHs. These concepts constitute the theoretical backbone upon which the remainder of this thesis is built. In the next chapter we turn to the central subject of this work: GWs, which emerge naturally as propagating solutions of the linearized Einstein equations and represent one of the most profound predictions of GR.
+In summary, this chapter has laid the mathematical and physical foundations of GR, progressing from the geometry of curved spacetime and the tools of differential geometry (parallel transport, geodesics, and the Riemann tensor) to the EFE and their most astrophysically relevant solutions: BHs. These concepts constitute the theoretical foundation upon which the remainder of this thesis is built. In the next chapter we turn to the central subject of this work: GWs, which emerge naturally as propagating solutions of the linearized Einstein equations and represent one of the most profound predictions of GR.
 
 
 \chapter{Gravitational wave theory}
@@ -985,7 +985,7 @@ We have now reached the central topic of this thesis and one of the most remarka
 \label{Gravitational_waves_linearized_gravity}
 
 
-In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}.\footnote{Einstein's original 1916 derivation of the quadrupole formula contained a numerical error in its coefficient. A 1918 follow-up paper corrected most of the 1916 mistakes, but a remaining factor-of-two error in the coefficient was only identified and fixed by Eddington in 1922 \cite{Weinstein2016_Einstein_GW_history}.} He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether GWs were genuine physical phenomena remained under debate.} \cite{GW150914}. 
+In 1916, shortly after formulating the final version of his general theory of relativity, Einstein predicted the existence of GWs \cite{Einstein1916GWpaper}.\footnote{Einstein's original 1916 derivation of the quadrupole formula contained a numerical error in its coefficient. A 1918 follow-up paper corrected most of the 1916 mistakes, but a remaining factor of two error in the coefficient was only identified and fixed by Eddington in 1922 \cite{Weinstein2016_Einstein_GW_history}.} He showed that, within the weak-field or linearized approximation of his equations, spacetime admits wave-like solutions: transverse oscillations of the metric that propagate at the speed of light. These waves are produced by time-dependent variations of the mass quadrupole moment of the source. Einstein also realized that their amplitudes would be extremely small, which led many to doubt their physical reality for decades\footnote{Indeed, until the Chapel Hill conference in 1957 \cite{Chapel_Hill_Conference}, the question of whether GWs were genuine physical phenomena remained under debate.} \cite{GW150914}. 
 
 GWs can be understood as ripples in the curvature of spacetime that carry energy and information about their astrophysical sources. They are generated by asymmetric acceleration of mass or energy, typically in compact binary systems involving BHs (BH-BH), NSs (NS-NS), or mixed BH-NS mergers. The most direct and elegant derivation of their existence arises from the linearized formulation of GR, obtained by expanding the EFE around the flat Minkowski metric $\eta_{\mu\nu}$ \cite{maggiore2007gravitational}.
 
@@ -1352,11 +1352,10 @@ where $A_{+}$ and $A_{\times}$ denote the amplitudes of the two polarization mod
 \subsection{Effect of a gravitational wave on test masses}
 \label{geodesic_eq_sec}
 
-In order to describe the physical influence of a GW on a given
-system, we analyze the motion of test particles in its presence. A
-coordinate independent characterization of this effect is provided by the
-relative motion of nearby particles. This behavior is governed by the geodesic
-deviation equation \cite{llibrecarroll2004lectures}, which captures how a GW modifies the
+The physical influence of a GW on a system of test particles is
+captured, coordinate independently, by the relative motion of nearby
+particles. This behavior is governed by the geodesic
+deviation equation \cite{llibrecarroll2004lectures}, which describes how a GW modifies the
 separation between neighboring geodesics
 \begin{equation}
 a^\mu
@@ -1367,8 +1366,8 @@ a^\mu
 where $S^\mu$ denotes the separation between two neighboring geodesics, $U^\mu = dx^\mu / d\tau$ is the tangent vector to the reference geodesic, $a^\mu$ represents the relative acceleration between the two test particles, and $R^\mu{}_{\nu\rho\sigma}$ is the Riemann curvature tensor.
 
 
-Before analyzing the effect of a GW on an extended system of
-test masses, it is instructive to examine its influence on a single particle.
+It is instructive to first examine the effect of a GW on a single particle
+before turning to an extended system of test masses.
 We consider a particle initially at rest in flat spacetime, prior to the
 arrival of the wave. An inertial reference frame is attached to this particle,
 with the $z$-axis chosen along the direction of propagation of an incoming
@@ -1415,17 +1414,17 @@ arise only when considering the relative motion between multiple nearby test
 masses \cite{llibreFerrariValeriaGR}.
 
 
-Having established that the motion of a single freely falling particle does not provide a direct observable signature of a GW, we now turn to the physically relevant case of a system of test particles. Observable effects arise from the relative motion between nearby particles, which is invariant under coordinate transformations.
+We now turn to the physically relevant case of a system of test particles, whose relative motion is invariant under coordinate transformations.
 
-We consider a congruence of neighbouring timelike geodesics describing freely falling test particles. In the absence of gravitational radiation, these particles are initially at rest with respect to a common inertial frame, so that their four-velocity is
+We consider a congruence of neighboring timelike geodesics describing freely falling test particles. In the absence of gravitational radiation, these particles are initially at rest with respect to a common inertial frame, so that their four-velocity is
 \begin{equation}
 U^\mu = (c,0,0,0)+ \mathcal{O}(h).
 \end{equation}
 At some reference time $t=0$, a plane GW propagating along the $z$-direction passes through the system. We work throughout in the TT gauge, where the only non vanishing components of the metric perturbation lie in the plane orthogonal to the direction of propagation.
 
-The relative motion of neighbouring particles is governed by the geodesic deviation equation \eqref{geodesicdeviation}. In the linearised regime of gravity, the Riemann tensor is already first order in the metric perturbation $h_{\mu\nu}$. Consequently, it is sufficient to evaluate the equation using the unperturbed four-velocity $U^\mu = (c,0,0,0)$, and to identify the coordinate time $t$ with the proper time along the geodesics, up to corrections of order $\mathcal{O}(h^2)$.
+The relative motion of neighboring particles is governed by the geodesic deviation equation \eqref{geodesicdeviation}. In the linearized regime of gravity, the Riemann tensor is already first order in the metric perturbation $h_{\mu\nu}$. Consequently, it is sufficient to evaluate the equation using the unperturbed four-velocity $U^\mu = (c,0,0,0)$, and to identify the coordinate time $t$ with the proper time along the geodesics, up to corrections of order $\mathcal{O}(h^2)$.
 
-Using the already computed expression for the linearised Riemann tensor in the TT gauge, 
+Using the already computed expression for the linearized Riemann tensor in the TT gauge, 
 \begin{equation}
 \begin{aligned}
 R^{\rho}{}_{\mu \nu \sigma}
@@ -1489,11 +1488,10 @@ which are coupled equations for the transverse components of the separation vect
 
 Since the geodesic deviation equation is linear in the metric perturbation
 $h^{TT}_{\mu\nu}$, the response of the system to a GW is also
-linear. As a consequence, the effects produced by a general superposition of the
-two independent polarizations can be obtained as the sum of the responses to
-each polarization separately. It is therefore sufficient to analyze the cases
-of purely $+$ and purely $\times$ polarized waves independently, without loss
-of generality \cite{llibretongGR}.
+linear, so the effects of a general superposition of the two
+polarizations are simply the sum of their individual responses. It is
+therefore sufficient to analyze purely $+$ and purely $\times$ polarized
+waves separately, without loss of generality \cite{llibretongGR}.
 
 
 If the cross polarization vanishes, $A_{\times}=0$, the metric perturbation
@@ -1517,7 +1515,7 @@ S^y(t) &=
 S^z(t) &= S^z(0),
 \end{aligned}
 \end{equation}
-which produces an oscillatory stretching and squeezing of the particle distribution along the transverse axes (see Fig.  \ref{fig:geodesic_comparison}).
+which stretches and squeezes the particle distribution along the transverse axes (see Fig.~\ref{fig:geodesic_comparison}).
 
 
 If the plus polarization vanishes, $A_{+}=0$, the metric perturbation becomes
@@ -1549,7 +1547,7 @@ principal axes rotated by $45^\circ$ with respect to the $x$ and $y$ directions 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.71\linewidth]{Figures/Captura de pantalla 2025-12-30 180922.png}
+    \includegraphics[width=0.69\linewidth]{Figures/Captura de pantalla 2025-12-30 180922.png}
     \caption[Effect of $+$ and $\times$ polarizations on test particles]{A monochromatic GW with angular frequency $\omega = 2\pi/T$ propagates in the $\hat{z}$ direction. The lower panel illustrates the deformation produced by the $+$ and $\times$ polarization modes on a ring of freely falling test particles in a local inertial frame. Source: \cite{Theory_of_Gravitational_Waves_arxiv}.}
     \label{fig:geodesic_comparison}
 \end{figure}
@@ -1702,15 +1700,15 @@ GW astronomy identifies four broad categories of astrophysical signals, each cha
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.69\linewidth]{Figures/GW_types.png}
-    \caption[Classification of GW source types]{Classification of GW sources according to their temporal character (transient vs.\ persistent) and the availability of accurate waveform models (modelled vs.\ unmodelled), encompassing CBCs, burst events, CWs, and the stochastic background. Credit: Shanika Galaudage (@astronerdika).}
+    \caption[Classification of GW source types]{Classification of GW sources according to their temporal character (transient vs.\ persistent) and the availability of accurate waveform models (modeled vs.\ unmodeled), encompassing CBCs, burst events, CWs, and the stochastic background. Credit: Shanika Galaudage (@astronerdika).}
     \label{fig:sources}
 \end{figure}
 
+\newpage
 
 \subsection{Compact binary coalescences}  
 
 CBCs are systems formed by two compact objects such as BHs, NSs, or a combination of both, which inspiral and merge due to the emission of GWs (see Fig.~\ref{fig:inspiral_merger_ringdown}). 
-\newpage
 
 \begin{figure}[h!]
     \centering
@@ -1722,13 +1720,13 @@ CBCs are systems formed by two compact objects such as BHs, NSs, or a combinatio
 
 These systems are classified as BBHs, binary neutron stars (BNS), or NS and BH binaries (NSBH). The emitted signal is driven by the time varying quadrupole moment and exhibits a characteristic chirp pattern, with increasing frequency and amplitude as the orbit shrinks. The duration of the signal within the detector's sensitive frequency band (\S\ref{sec:noise}) depends on the total mass of the system: the rate at which the orbital frequency sweeps through this band scales with the chirp mass, so more massive systems evolve rapidly and merge at lower frequencies, leaving only fractions of a second of observable signal for BBH mergers, whereas the lower-mass BNS systems sweep slowly through the band and can remain visible for tens of seconds to minutes before merging \cite{maggiore2007gravitational}.
 
-To date, all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first BNS detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs. The most recent release, GWTC-5.0, extends the catalog through the end of O4b and adds 104 further observations, bringing the cumulative total to over 300 significant candidates ($p_\mathrm{astro}\geq0.5$) \cite{GWTC5}, with binary BH mergers continuing to dominate the observed population.
+To date, all GW detections made by ground based interferometers, including the LIGO Scientific Collaboration and the Virgo Collaboration, are consistent with CBC sources. During O1 and O2 \cite{O1_O2_catalog}, 11 events were identified, including the first BNS detection, GW170817 \cite{GW170817}. The number of detections increased significantly during O3 \cite{O3_catalog, O3_catalogue_part2} to around 90 events. During O4a \cite{O4a_catalog}, 128 new CBC candidates were identified, bringing the total to 218 when combined with previous catalogs. The most recent release, GWTC-5.0, extends the catalog through the end of O4b and adds 104 further observations, bringing the cumulative total to over 300 significant candidates ($p_\mathrm{astro}\geq0.5$) \cite{GWTC5}, with BBH mergers continuing to dominate the observed population.
 
 The success in detecting CBCs is largely due to accurate waveform modelling, which enables matched filtering techniques to identify signals in noisy data \cite{GWTC5_methods}. Future space based detectors such as the Laser Interferometer Space Antenna (LISA) (see $\S$\ref{spacebased_detectors}) will extend observations to other sources, including white dwarf binaries and extreme mass ratio inspirals (EMRIs), providing further insight into compact object populations and their formation \cite{EMRIs-WD}.
 
 
 \subsection{Burst events}  
-GW bursts are short duration signals produced by highly energetic and often poorly modelled astrophysical events. Typical sources include core collapse supernovae \cite{core_collapse_supernovae}, gravitational collapses, highly eccentric compact binary mergers, and more speculative scenarios such as cosmic strings \cite{burst_events}. In addition, burst like emission can be associated with transient phenomena such as gamma ray bursts linked to NS or NS-BH mergers.
+GW bursts are short duration signals produced by highly energetic and often poorly modeled astrophysical events. Typical sources include core collapse supernovae \cite{core_collapse_supernovae}, gravitational collapses, highly eccentric compact binary mergers, and more speculative scenarios such as cosmic strings \cite{burst_events}. In addition, burst like emission can be associated with transient phenomena such as gamma ray bursts linked to NS or NS-BH mergers.
 
 These signals typically last from a fraction of a second to a few tens of seconds and are characterized by their unpredictable morphology. Unlike CBCs or CWs, burst signals do not have accurate waveform models, which makes their detection more challenging. Instead of matched filtering techniques, searches rely on identifying excess power or coherent transients across multiple detectors \cite{waveburst}.
 
@@ -1864,23 +1862,23 @@ Fig.~\ref{fig:antennapatternsFxFplus} for several values of $\psi$; each success
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.47\linewidth]{Figures/antenna_patterns_averaged.png}
+    \includegraphics[width=0.48\linewidth]{Figures/antenna_patterns_averaged.png}
     \caption[Polarization-averaged antenna pattern of a detector]{Polarization-averaged antenna pattern $|F|$ of a ground-based interferometer with orthogonal arms ($\zeta=\pi/2$), as a function of sky angles $(\bar{\theta}_N,\bar{\phi}_N)$. Original result.}
     \label{fig:antennapatternsavg}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.96\linewidth]{Figures/antenna_patterns_Fx_F+.png}
+    \includegraphics[width=0.955\linewidth]{Figures/antenna_patterns_Fx_F+.png}
     \caption[Antenna patterns for the $+$ and $\times$ polarizations]{Antenna patterns for the plus ($F_+$, top) and cross ($F_\times$, bottom) polarizations for $\zeta=\pi/2$ and representative values of $\psi$. Original result.}
     \label{fig:antennapatternsFxFplus}
 \end{figure}
 
-
+\newpage
 \subsection{Noise and sensitivity}
 \label{sec:noise}
 
-A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three orders of magnitude smaller than the diameter of a proton. Achieving sensitivity at this level requires identifying and suppressing a broad set of noise sources that would otherwise overwhelm the signal. These are conveniently characterised by the one-sided power spectral density (PSD) $S_n(f)$ \cite{PSD_book}, defined as the Fourier transform of the autocorrelation function\footnote{
+A GW with strain $h \sim 10^{-21}$ produces a differential arm-length change $\delta L = hL/2 \sim 10^{-18}$\,m for $L = 4$\,km, three orders of magnitude smaller than the diameter of a proton. Achieving sensitivity at this level requires identifying and suppressing a broad set of noise sources that would otherwise overwhelm the signal. These are conveniently characterized by the one-sided power spectral density (PSD) $S_n(f)$ \cite{PSD_book}, defined as the Fourier transform of the autocorrelation function\footnote{
 The autocorrelation function measures how strongly a signal is correlated with a delayed version of itself as a function of the time lag $\tau$. In the context of detector noise, it quantifies the degree to which noise fluctuations at different times remain statistically related \cite{PSD_book}.
 } of the detector output: 
 \begin{equation}
@@ -1900,9 +1898,9 @@ Fundamental noise arises directly from the measurement principle and cannot be r
     \item \textbf{Shot noise.} The Poissonian arrival statistics of photons at the output photodetector produce a phase uncertainty scaling as $1/\sqrt{N_\gamma}$, where $N_\gamma$ is the number of detected photons per unit time. This contribution decreases with increasing circulating power and dominates the sensitivity above $\sim\!500$\,Hz. It can be partially mitigated by injecting squeezed vacuum at the output port, a technique already incorporated 
     in the Advanced LIGO and Advanced Virgo detectors.
 
-    \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of the intracavity field exert a stochastic force on the mirror surfaces, inducing position noise that grows with laser power and becomes significant at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. At a fixed squeezing angle, squeezed-light injection only redistributes the quantum uncertainty between the two quadratures, improving one contribution at the expense of the other. Simultaneous reduction of both below the standard quantum limit requires frequency-dependent squeezing, in which the squeezed vacuum is reflected off a detuned filter cavity before injection so that the squeezing angle rotates with frequency; this technique was implemented in Advanced LIGO for the O4 observing run \cite{frequency_dependent_squeezing}.
+    \item \textbf{Radiation-pressure noise.} Amplitude fluctuations of the intracavity field exert a stochastic force on the mirrors, inducing position noise that grows with laser power and dominates at low frequencies. Shot noise and radiation-pressure noise are related by the Heisenberg uncertainty principle and together define the standard quantum limit for a free test mass. At a fixed squeezing angle, squeezed-light injection only redistributes the quantum uncertainty between quadratures, improving one at the expense of the other. Reducing both below the standard quantum limit requires frequency-dependent squeezing, where the squeezed vacuum is reflected off a detuned filter cavity so the squeezing angle rotates with frequency; this was implemented in Advanced LIGO for O4 \cite{frequency_dependent_squeezing}.
 
-    \item \textbf{Thermal noise.} Any component at finite temperature undergoes stochastic mechanical motion. Via the fluctuation-dissipation theorem\footnote{The fluctuation-dissipation theorem states that any dissipative mechanism in a system in thermal equilibrium is necessarily accompanied by a fluctuating force of the same origin. In interferometric detectors, mechanical losses in the test masses, coatings, and suspension fibers therefore set a fundamental limit on their positional stability \cite{Kubo1966}.}, the amplitude of these fluctuations is proportional to the mechanical loss angle of the material. It affects the test masses, their dielectric mirror coatings, and the suspension fibers, and dominates the sensitivity in the intermediate band of roughly $40$-$200$\,Hz. Low-loss fused-silica substrates and fibers are employed to minimize this contribution; cryogenic operation, as adopted by KAGRA, provides an alternative route to its suppression.
+    \item \textbf{Thermal noise.} Any component at finite temperature undergoes stochastic mechanical motion. Via the fluctuation-dissipation theorem\footnote{The fluctuation-dissipation theorem states that any dissipative mechanism in a system in thermal equilibrium is necessarily accompanied by a fluctuating force of the same origin. In interferometric detectors, mechanical losses in the test masses, coatings, and suspension fibers therefore set a fundamental limit on their positional stability \cite{Kubo1966}.}, the fluctuation amplitude is proportional to the material's mechanical loss angle. It affects the test masses, their coatings, and the suspension fibers, dominating the sensitivity around $40$-$200$\,Hz. Low-loss fused-silica substrates and fibers minimize this contribution; cryogenic operation, as adopted by KAGRA, offers an alternative.
 
     \item \textbf{Seismic noise.} Ground motion couples mechanically to the test masses through the suspension chain. The quadruple-pendulum isolation system attenuates seismic vibrations by more than ten orders of magnitude above $\sim\!10$\,Hz, but residual motion from microseisms, wind, and anthropogenic activity still limits the sensitivity below $\sim\!40$\,Hz.
 
@@ -1922,8 +1920,8 @@ The noise process is approximately Gaussian but not stationary. Two classes of a
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.84\linewidth]{Figures/narrow_lines.png}
-    \caption[Representative spectral line artefacts in LIGO data]{High-resolution amplitude spectral density ($\Delta f = 1/1800$\,Hz) of LIGO Hanford strain data illustrating three representative line artefacts. \textit{Left:} a broad spectral feature associated with mirror suspension roll-mode resonances. \textit{Centre:} an isolated narrow line of unknown origin. \textit{Right:} two frequency combs with distinct spacings, marked by upright and inverted triangles, alongside broader noise structures. Source: \cite{glitches_lines_noises}.}
+    \includegraphics[width=0.85\linewidth]{Figures/narrow_lines.png}
+    \caption[Representative spectral line artefacts in LIGO data]{High-resolution amplitude spectral density ($\Delta f = 1/1800$\,Hz) of LIGO Hanford strain data illustrating three representative line artefacts. \textit{Left:} a broad spectral feature associated with mirror suspension roll-mode resonances. \textit{Center:} an isolated narrow line of unknown origin. \textit{Right:} two frequency combs with distinct spacings, marked by upright and inverted triangles, alongside broader noise structures. Source: \cite{glitches_lines_noises}.}
     \label{fig:lines_noise}
 \end{figure}
 
@@ -1932,7 +1930,7 @@ Glitches are short-duration transient bursts of excess power whose morphology ca
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\linewidth]{Figures/glitches.png}
+    \includegraphics[width=0.73\linewidth]{Figures/glitches.png}
     \caption[Spectrograms of representative detector glitch classes]{Time-frequency spectrograms of representative glitch classes recorded at LHO and LLO. Slow and Fast Scattering artefacts are attributed to light scattered by optics under increased ground motion, while the origin of Extremely Loud, Tomte, Low Frequency Burst, and Low Frequency Lines glitches remains unidentified. Source: \cite{glitches_lines_noises}.}
     \label{fig:glitches_noise}
 \end{figure}
@@ -1942,8 +1940,8 @@ The interplay of all these contributions shapes the detector sensitivity curve s
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.79\linewidth]{Figures/noise_budget_O4_LLO.png}
-    \caption[O4 strain noise budget of the LLO detector]{Strain noise amplitude spectral density of the LLO detector during O4, together with the O3 LLO and O4 LHO curves for comparison. Dashed lines indicate noise contributions estimated from analytical models or independent component measurements; dotted lines correspond to noise projected from auxiliary witness channels. The black curve gives the quadrature sum of all known noise sources. Three regimes are apparent: control noise dominates below $\sim\!50$\,Hz, a combination of quantum and thermal noise governs the intermediate band, and shot noise sets the high-frequency floor above $\sim\!500$\,Hz. Narrow spectral lines from power-line harmonics, violin modes, and calibration injections are visible throughout the spectrum. Source: \cite{noise_budget_O4}.}
+    \includegraphics[width=0.77\linewidth]{Figures/noise_budget_O4_LLO.png}
+    \caption[O4 strain noise budget of the LLO detector]{Strain noise amplitude spectral density of the LLO detector during O4, with the O3 LLO and O4 LHO curves for comparison. Dashed lines are noise contributions from analytical models or independent component measurements; dotted lines are noise projected from auxiliary witness channels. The black curve is the quadrature sum of all known sources. Three regimes stand out: control noise below $\sim\!50$\,Hz, quantum and thermal noise in the intermediate band, and shot noise above $\sim\!500$\,Hz. Narrow lines from power-line harmonics, violin modes, and calibration injections appear throughout. Source: \cite{noise_budget_O4}.}
     \label{fig:noise_budget}
 \end{figure}
 
@@ -2071,7 +2069,7 @@ and seeks the $K(t)$ that maximizes the ratio of the expected value of $\hat{s}$
     \tilde{K}(f) \propto \frac{\tilde{h}_m(f)}{S_n(f)},
     \label{eq:optimal_filter}
 \end{equation}
-which down-weights frequency bands where the detector is noisier. This is the key intuition behind matched filtering: the optimal filter is shaped by the signal itself, so that correlating the data against $K(t)$ effectively searches for a signal whose morphology matches the template $h_m(t;\boldsymbol{\theta})$. The additional weighting by $1/S_n(f)$ refines this correlation for realistic, coloured detector noise, suppressing frequency bands where the detector is noisier and amplifying those where it is most sensitive.
+which down-weights frequency bands where the detector is noisier. This is the key intuition behind matched filtering: the optimal filter is shaped by the signal itself, so that correlating the data against $K(t)$ effectively searches for a signal whose morphology matches the template $h_m(t;\boldsymbol{\theta})$. The additional weighting by $1/S_n(f)$ refines this correlation for realistic, colored detector noise, suppressing frequency bands where the detector is noisier and amplifying those where it is most sensitive.
 
 With this optimal filter, the SNR is
 \begin{equation}
@@ -2111,7 +2109,7 @@ The matched filter derived in \S\ref{sec:matched_filtering} requires a template 
 
 For a CBC, the GW signal evolves through the three phases described in \S\ref{Astrophysical_sources_GW} (inspiral, merger, and ringdown) and no single analytic method covers all three. During the inspiral, Post-Newtonian (PN) theory provides accurate closed-form waveforms by expanding the EFE in powers of $v^2/c^2$ \cite{Post-Newtonian}, but breaks down near merger where velocities approach $c$. The merger phase requires full numerical relativity (NR) simulations of the EFE \cite{Numerical_relativity}, which are highly accurate but computationally prohibitive and serve primarily to calibrate analytic models. The ringdown is described analytically by the quasi-normal modes (QNMs) of the remnant compact object \cite{quasi_normal_modes}.
 
-To cover the full frequency evolution, these approaches are combined into inspiral-merger-ringdown (\textsc{IMR}) waveform families. Effective One Body (\textsc{EOB}) models reformulate the two-body problem as an effective single-body problem, resumming the PN series and matching to NR near merger; current implementations include \texttt{SEOBNRv5HM} and \texttt{SEOBNRv5PHM} \cite{SEOBNRv5HM, SEOBNRv5PHM}, which incorporate higher multipole modes and spin precession. Phenomenological models (\textsc{IMRPhenom}) fit closed-form frequency-domain expressions to hybrid PN-NR waveforms across the three phases; a widely used example, \texttt{IMRPhenomXPHM} \cite{IMRPhenomXPHM}, is calibrated to NR simulations at comparable mass ratios up to $m_1/m_2\approx18$ and dimensionless spins $|\chi_i|\lesssim 1$, with coverage extended to extreme mass ratios up to $m_1/m_2\sim1000$ through BH perturbation theory waveforms rather than additional NR calibration. NR surrogate models (\textsc{NRSur}) interpolate directly over NR simulations without an underlying analytic ansatz, achieving the highest fidelity at the cost of a restricted parameter space; \texttt{NRHybSur3dq8} \cite{NRHybSur3dq8} combines a PN-EOB inspiral with NR near merger, but is limited to non-precessing BBHs with $q\leq 8$. All three families have been progressively extended to include precessing spins, higher multipole modes, and tidal effects for NS components. Fast frequency-domain approximants such as \texttt{TaylorF2} or \texttt{IMRPhenomD} are favoured for matched-filter searches, while more sophisticated models are employed in PE, where waveform accuracy directly impacts posterior reliability.
+To cover the full frequency evolution, these approaches are combined into inspiral-merger-ringdown (\textsc{IMR}) waveform families. Effective One Body (\textsc{EOB}) models reformulate the two-body problem as an effective single-body problem, resumming the PN series and matching to NR near merger; current implementations include \texttt{SEOBNRv5HM} and \texttt{SEOBNRv5PHM} \cite{SEOBNRv5HM, SEOBNRv5PHM}, which incorporate higher multipole modes and spin precession. Phenomenological models (\textsc{IMRPhenom}) fit closed-form frequency-domain expressions to hybrid PN-NR waveforms across the three phases; a widely used example, \texttt{IMRPhenomXPHM} \cite{IMRPhenomXPHM}, is calibrated to NR simulations at comparable mass ratios up to $m_1/m_2\approx18$ and dimensionless spins $|\chi_i|\lesssim 1$, with coverage extended to extreme mass ratios up to $m_1/m_2\sim1000$ through BH perturbation theory waveforms rather than additional NR calibration. NR surrogate models (\textsc{NRSur}) interpolate directly over NR simulations without an underlying analytic ansatz, achieving the highest fidelity at the cost of a restricted parameter space; \texttt{NRHybSur3dq8} \cite{NRHybSur3dq8} combines a PN-EOB inspiral with NR near merger, but is limited to non-precessing BBHs with $q\leq 8$. All three families have been progressively extended to include precessing spins, higher multipole modes, and tidal effects for NS components. Fast frequency-domain approximants such as \texttt{TaylorF2} or \texttt{IMRPhenomD} are favored for matched-filter searches, while more sophisticated models are employed in PE, where waveform accuracy directly impacts posterior reliability.
 
 \subsection{Bayesian parameter estimation}
 \label{sec:PE}
@@ -2127,8 +2125,8 @@ $\mathbf{S}_1, \mathbf{S}_2$ of each object. The spins are
 conveniently decomposed into their dimensionless magnitudes 
 $\chi_{1,2} = c|\mathbf{S}_{1,2}|/(Gm_{1,2}^2) \leq 1$, the tilt angles $\theta_{1,2}$ between each spin and the orbital angular momentum $\mathbf{L}$, and the azimuthal angle $\phi_{12}$ between the two spin components in the orbital plane. For BNS or NSBH systems, the tidal deformabilities $\Lambda_{1,2}$ are additional intrinsic parameters encoding the NS equation of state. In practice, several derived combinations of the intrinsic parameters appear naturally in the waveform and are therefore better constrained by the data: the chirp mass $\mathcal{M} = (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$, which governs the leading-order frequency evolution; the effective inspiral spin $\chi_\mathrm{eff} = (m_1\chi_{1z} + m_2\chi_{2z})/(m_1+m_2)$ \cite{effective_inspiral_spin}, which captures the spin-orbit coupling along $\mathbf{L}$; and the effective precession spin $\chi_p$ \cite{effective_precession_spin}, which parametrizes the in-plane spin components responsible for orbital precession.
 
-The extrinsic parameters describe the location and orientation of the binary relative to the detector network: the sky position $(\alpha, \delta)$ (right ascension and declination), the luminosity distance $D_L$, the inclination angle $\theta_{JN}$ between the total angular momentum $\mathbf{J}$ and the line of sight, the polarization angle $\psi$, the coalescence phase $\phi_c$, and the
-geocentric coalescence time $t_c$.\footnote{Throughout this work $D_L$ denotes the luminosity distance to the source, except in \S\ref{sec:geometric_optics} where the same symbol is used for the angular diameter distance to the lens, following standard lensing conventions; it should be clear from context which one is meant.} The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{likelihood_formula}. A complete description of all parameters, including their definitions and dimensions, is provided in Appendix~$\S$\ref{Parameters_CBC_appendix}.
+The extrinsic parameters describe the location and orientation of the binary relative to the detector network: the sky position $(\alpha, \delta)$ (right ascension and declination), the luminosity distance $D_L$\footnote{Throughout this work $D_L$ denotes the luminosity distance to the source, except in \S\ref{sec:geometric_optics} where the same symbol is used for the angular diameter distance to the lens, following standard lensing conventions; it should be clear from context which one is meant.}, the inclination angle $\theta_{JN}$ between the total angular momentum $\mathbf{J}$ and the line of sight, the polarization angle $\psi$, the coalescence phase $\phi_c$, and the
+geocentric coalescence time $t_c$. The angle $\phi_{JL}$ between $\mathbf{J}$ and $\mathbf{L}$ projected onto the plane perpendicular to the line of sight is also required when spins are precessing \cite{likelihood_formula}. A complete description of all parameters, including their definitions and dimensions, is provided in Appendix~$\S$\ref{Parameters_CBC_appendix}.
 
 Not all parameters are equally well constrained by a given 
 observation. The chirp mass is typically the best-measured intrinsic quantity, as it directly controls the rate of frequency evolution visible in the detector band. Individual masses and mass ratio $q = m_2/m_1$ are less well constrained, and spin parameters are generally poorly measured unless the signal has high SNR or a long 
@@ -2199,7 +2197,7 @@ where the second factor is the prior odds, encoding our relative belief in the t
     \frac{\mathcal{Z}(\mathcal{M}_1)}{\mathcal{Z}(\mathcal{M}_2)},
     \label{eq:bayes_factor}
 \end{equation}
-which measures the factor by which the data update our relative belief between the two models. A value $\mathcal{B}_{12} \gg 1$ favours $\mathcal{M}_1$, while $\mathcal{B}_{12} \ll 1$ favours $\mathcal{M}_2$; by convention, $|\ln\mathcal{B}_{12}| \geq 8$ is often taken as the threshold for strong evidence in favour of one hypothesis over the other \cite{Jeffreys, bayesfactor_8}.
+which measures the factor by which the data update our relative belief between the two models. A value $\mathcal{B}_{12} \gg 1$ favors $\mathcal{M}_1$, while $\mathcal{B}_{12} \ll 1$ favors $\mathcal{M}_2$; by convention, $|\ln\mathcal{B}_{12}| \geq 8$ is often taken as the threshold for strong evidence in favor of one hypothesis over the other \cite{Jeffreys, bayesfactor_8}.
 
 The most fundamental application in GW astronomy is the 
 signal-vs-noise Bayes factor, where $\mathcal{M}_1$ is the 
@@ -2214,7 +2212,7 @@ hypothesis that the data contain a GW signal and $\mathcal{M}_2$ is the noise-on
 where $h=0$ denotes the absence of any waveform in the data, and $\mathcal{B}_{SN} = \mathcal{Z}_S/\mathcal{Z}_N$ quantifies how much more probable the data are under the signal hypothesis than under pure noise.
 
 Beyond detection, Bayes factors are used throughout GW data 
-analysis to address a variety of model selection questions: whether a signal requires spin precession or tidal deformability, which waveform approximant better describes the data, or whether the observations are consistent with GR or favour an alternative theory of gravity \cite{likelihood_formula}. In each case the Bayes factor 
+analysis to address a variety of model selection questions: whether a signal requires spin precession or tidal deformability, which waveform approximant better describes the data, or whether the observations are consistent with GR or favor an alternative theory of gravity \cite{likelihood_formula}. In each case the Bayes factor 
 naturally penalizes more complex models through an Occam factor: a model with a large prior volume that is only marginally better supported by the data will yield a lower evidence than a simpler model with a tighter parameter space, reflecting the Bayesian preference for parsimony.
 
 It is important to note that computing $\mathcal{Z}$ requires integrating the likelihood over the entire prior volume, which is precisely what nested sampling is designed to do efficiently, as discussed in \S\ref{nested_sampling}.
@@ -2252,7 +2250,7 @@ If the ratio inside the minimum exceeds unity the proposal is always accepted; o
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.605\linewidth]{Figures/MCMC_image}
+    \includegraphics[width=0.6\linewidth]{Figures/MCMC_image}
     \caption[The Metropolis-Hastings random walk in parameter space]{Illustration of the Metropolis-Hastings random walk in parameter space. Starting from initial samples drawn from the prior $\pi(\boldsymbol{\theta})$, walkers explore the parameter space following the acceptance criterion \eqref{eq:MH}, progressively converging toward the high-probability region of the posterior $p(\boldsymbol{\theta}|y)$. Source: \cite{bayesfactor_8}.}
     \label{fig:MCMC_walk}
 \end{figure}
@@ -2292,7 +2290,7 @@ sampled exactly, and \textsc{Dynesty} \cite{MCMC_vs_NS}, which uses dynamic live
 \vspace{0.5cm}
 
 
-In summary, this chapter has established the theoretical and experimental foundations of GW astronomy. Beginning from the linearized EFE, we derived the existence of GWs as propagating spacetime perturbations, characterized their two polarization states, and quantified their effect on test masses through the geodesic deviation equation. We then surveyed the main astrophysical source classes and described the detection principle underlying current interferometric observatories, from the antenna pattern functions and noise budget to the global detector network. The chapter closed with the Bayesian PE framework (matched filtering, waveform models, and stochastic sampling) that allows us to extract source properties from detected signals. These tools constitute the methodological backbone of the analysis presented in the following chapters.
+In summary, this chapter has established the theoretical and experimental foundations of GW astronomy. Beginning from the linearized EFE, we derived the existence of GWs as propagating spacetime perturbations, characterized their two polarization states, and quantified their effect on test masses through the geodesic deviation equation. We then surveyed the main astrophysical source classes and described the detection principle underlying current interferometric observatories, from the antenna pattern functions and noise budget to the global detector network. The chapter closed with the Bayesian PE framework (matched filtering, waveform models, and stochastic sampling) that allows us to extract source properties from detected signals. These tools constitute the methodological foundation of the analysis presented in the following chapters.
 
 \newpage
 \chapter{Gravitational lensing of gravitational waves}
@@ -2437,7 +2435,7 @@ Since stationary points of $\phi$ always appear and disappear in pairs (a minimu
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.79\linewidth]{Figures/light_deflection}
-    \caption[Wavefront picture of gravitational lensing]{Wavefront picture of gravitational lensing. \textit{Left}: light rays from a distant source are deflected near the centre, where the gravitational field is strongest. Centre: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. \textit{Right}: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
+    \caption[Wavefront picture of gravitational lensing]{Wavefront picture of gravitational lensing. \textit{Left}: light rays from a distant source are deflected near the center, where the gravitational field is strongest. Center: the corresponding wavefronts at a fixed time. The small closed loop arises from rays undergoing very large deflections. \textit{Right}: a second wavefront traced backwards from the observer (dashed) is superimposed on the frozen source wavefront (solid). Lensed images form where the two wavefronts share the same local direction of propagation, which corresponds to the stationary points of the Fermat potential \eqref{eq:fermat_potential}. Source: \cite{essentialsstronggravitationallensing}.}
     \label{fig:wavefronts}
 \end{figure}
 
@@ -2654,7 +2652,7 @@ in Fig.~\ref{fig:amplification_regimes}.
     (high $w$, $|F|$ converges to the sum of image 
     magnifications). \textit{Right:} time-domain waveforms 
     of a $30+30\,M_\odot$ BBH system (unlensed in black, 
-    lensed in colour) for three effective lens masses 
+    lensed in color) for three effective lens masses 
     representative of each regime (panels a, b, c). In 
     the geometric optics limit (panel c), the two images 
     are clearly separated in time by $\Delta t_{12}$ and 

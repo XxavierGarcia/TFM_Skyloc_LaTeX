@@ -18,7 +18,7 @@ where $\Delta_{90}^{(i)}$ denotes the width of the $90\%$ credible interval (5th
 {\newcommand{\hi}[1]{\textcolor[HTML]{ED935C}{\textbf{#1}}}%
 \begin{tabular}{lcccccccc}
 \hline\hline
-Event & $\rho_\mathrm{net}^{\mathrm{inj}}$ & $\mathcal{M}$ & $q$ & $D_L^{\mathrm{eff}}$ & $a_1$ & $a_2$ & $\chi_\mathrm{eff}$ & $\chi_\mathrm{p}$ \\
+Event & $\rho_\mathrm{inj}$ & $\mathcal{M}$ & $q$ & $D_L^{\mathrm{eff}}$ & $a_1$ & $a_2$ & $\chi_\mathrm{eff}$ & $\chi_\mathrm{p}$ \\
 \hline
 \texttt{inj113} & 38.9 & \hi{1.91} & 1.44 & \hi{3.53} & \hi{1.81} & 1.07 & \hi{2.20} & 1.24 \\
 \texttt{inj122} & 41.2 & \hi{1.55} & 1.29 & \hi{2.16} & 1.25 & 1.11 & \hi{1.50} & 1.19 \\
@@ -47,7 +47,7 @@ Event & $\rho_\mathrm{net}^{\mathrm{inj}}$ & $\mathcal{M}$ & $q$ & $D_L^{\mathrm
 \texttt{inj035} & 21.5 & 1.22 & 0.99 & \hi{1.51} & 1.06 & 1.03 & 1.18 & 1.07 \\
 \hline
 \end{tabular}}
-\caption[Improvement factors of the top 25 events ranked by effective distance]{Improvement factors $\mathrm{IF}_\theta$ (Eq.~\eqref{eq:improvement_factor}) for the top 25 events ranked by $D_L^{\mathrm{eff}}$, with the injected network SNR $\rho_\mathrm{net}^{\mathrm{inj}}$ (computed by \textsc{LeR}, \S\ref{sec:LER_population}) shown for context. Values highlighted in bold orange mark $\mathrm{IF}_\theta\geq 1.5$, where the joint analysis narrows the $90\%$ credible interval by at least a factor of $1.5$ relative to the better of the two single-image analyses. Values below $1$ appear only sporadically for $a_1$, $a_2$, and $\chi_\mathrm{p}$, which remain effectively prior-dominated across the sample, and occasionally for $\mathcal{M}$ or $q$ (e.g.\ \texttt{inj085}, $\mathrm{IF}_q=0.80$), where a single high-SNR image happens to yield an anomalously narrow posterior that the joint analysis correctly broadens (\S\ref{sec:parameter_recovery}).}
+\caption[Improvement factors of the top 25 events ranked by effective distance]{Improvement factors $\mathrm{IF}_\theta$ (Eq.~\eqref{eq:improvement_factor}) for the top 25 events ranked by $D_L^{\mathrm{eff}}$, with the injected pair network SNR $\rho_\mathrm{inj}$ (the quadrature sum of the two per-image network SNRs computed by \textsc{LeR}, \S\ref{sec:parameter_recovery}) shown for context. Values highlighted in bold orange mark $\mathrm{IF}_\theta\geq 1.5$, where the joint analysis narrows the $90\%$ credible interval by at least a factor of $1.5$ relative to the better of the two single-image analyses. Values below $1$ appear only sporadically for $a_1$, $a_2$, and $\chi_\mathrm{p}$, which remain effectively prior-dominated across the sample, and occasionally for $\mathcal{M}$ or $q$ (e.g.\ \texttt{inj085}, $\mathrm{IF}_q=0.80$), where a single high-SNR image happens to yield an anomalously narrow posterior that the joint analysis correctly broadens (\S\ref{sec:parameter_recovery}).}
 \label{tab:improvement_factors_top20}
 \end{table}
 

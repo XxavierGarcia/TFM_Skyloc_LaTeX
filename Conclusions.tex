@@ -1,14 +1,45 @@
 \chapter{Conclusions}
 \label{Conclusions}
 
-Future work
+In this thesis we have investigated whether the joint PE improves sky localization compared to the analysis of individual images. To this end, we have developed and executed a complete simulation and analysis pipeline, from population generation to sky map comparison, targeting the H1+L1 LIGO network under projected O5a sensitivity. The main original results of this work are:
 
- In this thesis work we have obtained two original results:
- 1. ...
- 2. ...
- These results are shown in Chapter ? and in Chapter ?, respectively. In particular,
- in Section ? we have shown... . Instead, in Sections ?
- and ? we have studied... 
+\begin{enumerate}
+  \item The construction of a realistic strongly lensed BBH injection set of 157 events (150 successfully analyzed), generated with \textsc{LeR} under O5a sensitivity and filtered through a detector duty cycle, and the development of a fully automated PE pipeline that processes each event through single-image analysis with \textsc{Bilby} and joint analysis with \textsc{Hanabi} on the Picasso HPC cluster.
 
+  \item A systematic validation of the recovered parameters across the 150 analyzed events, demonstrating unbiased recovery of the chirp mass and effective spin, quantifying the magnification-distance degeneracy and its impact on source-frame mass estimation, and confirming the lensed nature of all 150 injected pairs through the coherence ratio.
 
- mencionar aixó: Several idealizations in the pipeline described above should be kept in mind when interpreting the results of this thesis. The noise realizations added to each injection are stationary and Gaussian (\texttt{gaussian-noise=True}), so none of the non-Gaussian transients \ref{sec:noise} (glitches) that affect real LIGO data are present; a real search would need to contend with this additional source of PE bias and false coincidences. The same projected O5a PSD is used for both H1 and L1, whereas the two real detectors have distinct, time-varying noise budgets; this symmetry is not expected to qualitatively change the sky localization results, which depend primarily on the relative antenna pattern and time delay between the two sites, but it does idealize the relative sensitivity assumed for each detector. Finally, the analysis assumes perfect detector calibration and does not marginalize over calibration uncertainty, an additional source of systematic error present in real LVK analyses that is not modelled here.
+  \item The demonstration that the joint analysis of two lensed images produces a universal improvement in sky localization: the median 90\% credible area drops from $571\,\mathrm{deg}^2$ (best single image) to $99.9\,\mathrm{deg}^2$ (joint), corresponding to a median per-event improvement factor of $5.1$, with all 150 events showing improvement and five reaching below the $10\,\mathrm{deg}^2$ threshold relevant for multimessenger follow-up.
+\end{enumerate}
+
+Table~\ref{tab:conclusions_summary} collects the key figures behind these three results.
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lc}
+\hline\hline
+\multicolumn{1}{c}{Quantity} & Value \\
+\hline
+Injection set (successfully analyzed) & 157 (150) \\
+Compute cost (Picasso HPC) & $\sim830{,}000$ CPU-hours \\
+Chirp mass recovery bias & $\tilde{y}=-0.002\,M_\odot$ \\
+Naive source-frame mass bias (median) & $\sim11.5\,M_\odot$ \\
+Source-frame mass bias, SIS-corrected (median) & $4.34\,M_\odot$ \\
+Coherence ratio, all pairs & $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}>0$ (median $6.92$) \\
+Median $A_{90}$: best single image $\to$ joint & $571\to99.9\,\mathrm{deg}^2$ \\
+Median per-event improvement factor $\mathrm{IF}_{A_{90}}$ & $5.1$ (range $1.1$-$28.0$) \\
+Events with joint $A_{90}<10\,\mathrm{deg}^2$ & $5/150$ ($3.3\%$) \\
+Median constellation fraction: single $\to$ joint & $41\%\to68.6\%$ \\
+\hline
+\end{tabular}
+\caption{Summary of the key quantitative results of this thesis, drawn from Chapters~\ref{ch:simulation}--\ref{Skyloc}.}
+\label{tab:conclusions_summary}
+\end{table}
+
+These results are presented in Chapters~\ref{ch:simulation}--\ref{Skyloc}. Chapter~\ref{ch:simulation} described the construction of the population with \textsc{LeR} v0.4.2, drawing approximately 152\,000 candidate events to collect 500 detectable ones ($\mathcal{R}_L\approx0.75\,\mathrm{yr}^{-1}$), reduced to the final 157-event injection set by a realistic duty cycle filter. Chapter~\ref{Parameter_estimation_pipeline} presented the PE pipeline, consuming approximately $830{,}000$ CPU-hours, and its validation: the chirp mass and effective spin are recovered without significant bias, the individual spin magnitudes and $\chi_\mathrm{p}$ remain prior-dominated as expected from their weak imprint on the signal, and the magnification-distance degeneracy introduces a source-frame mass bias (median $\sim11.5\,M_\odot$) that an assumed SIS lens model partially corrects (down to $4.34\,M_\odot$). All 150 pairs yield a positive coherence ratio (median $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}=6.92$), confirming that the joint likelihood correctly favors the lensed hypothesis throughout the sample. Chapter~\ref{Skyloc} presented the sky localization results themselves: individual improvement factors range from $1.1$ to $28.0$, the constellation localization fraction rises from a median of $41\%$ to $68.6\%$, and the joint analysis with two detectors reaches constellation fractions comparable to those of the three-detector HLV network on real GWTC-5 events.
+
+These results extend the first systematic study of lensed-pair sky localization by Li and Hannuksela \cite{Hannuksela_skyloc}, who found an order-of-magnitude improvement using \textsc{Bayestar} sky maps on a three-detector (HLV) simulated population. The smaller median improvement factor found here ($5.1$) is expected from the use of only two detectors, where single-image localization already relies primarily on antenna pattern rather than triangulation, leaving comparatively less room for the joint analysis to improve upon it. Both studies nonetheless agree qualitatively: combining two lensed images produces a substantial, consistent sky localization gain regardless of detector network or analysis method, and the present work extends this conclusion to full Bayesian PE, a more realistic O5a population with a duty cycle filter, and a direct comparison with real GWTC-5 data.
+
+Several idealizations should be kept in mind when interpreting these results: the noise is stationary and Gaussian, with none of the glitches present in real LIGO data; the same O5a PSD is assumed for both detectors, whereas real detectors have distinct, time-varying sensitivities; detector calibration is treated as perfect; and the waveform model used for recovery (\texttt{IMRPhenomXPNR}) differs from the one used for injection (\texttt{IMRPhenomXPHM}). None of these idealizations are expected to change the qualitative conclusion, but they mark natural directions for follow-up work, together with extending the analysis to a three-detector network (H1, L1, Virgo), which should further tighten both the absolute localization and the improvement factor; computing the full population-informed lensing Bayes factor $\mathcal{B}_\mathrm{U}^\mathrm{L}$ rather than the coherence ratio alone; refining the source-frame mass correction with more sophisticated lens reconstruction, particularly where electromagnetic identification of the lens is available; and simulating targeted electromagnetic follow-up campaigns for the events reaching joint sky areas below $10\,\mathrm{deg}^2$, to assess the practical feasibility of host galaxy identification.
+
+Taken together, the results of this thesis demonstrate that the joint analysis of strongly lensed GW image pairs is a powerful tool for improving sky localization, even with a two-detector network. As detector sensitivity improves and the rate of detections grows, lensed pairs will become an increasingly common feature of the GW landscape, and the pipeline and methodology developed here provide a foundation for analyzing them systematically.

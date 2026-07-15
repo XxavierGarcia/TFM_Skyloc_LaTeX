@@ -153,100 +153,125 @@ Angle between $\mathbf{J}$ and $\mathbf{L}$ projected on the sky plane [angle] \
 
 
 \renewcommand{\thechapter}{B} 
-\chapter{Reproducibility tutorial. Linux environment and supercomputing tasks.}
+\chapter{Practical guide to HPC workflows}
 \label{Reproducibility tutorial}
 
+The motivation for including this appendix comes from the desire to make life easier for future students who will use the same tools, especially since many parts of this tutorial came with their fair share of headaches. It collects the day-to-day commands, configuration patterns, and troubleshooting notes accumulated while running the analyses of this thesis on two HPC clusters. It is not a repetition of the pipeline described in \S\ref{sec:automation_picasso}, but a practical reference for a student facing the same kind of environment for the first time. All pipeline-specific reproducibility details (configuration files, directory layout, job dependency logic) are documented in \S\ref{sec:automation_picasso} and Appendix~$\S$\ref{implementataion_pipeline}; the complete code is publicly available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material}.
 
-The motivation for including this section comes from the desire to make life easier for future students who will use the same tools, especially since many parts of this tutorial came with their fair share of headaches.
+\section{SSH access and aliases}
 
-This appendix provides a detailed, step-by-step overview of the workflow followed to run my experiments on a Linux-based high-performance computing (HPC) system. The goal is to ensure full reproducibility and transparency. The system used was Picasso, which uses a Linux environment and the SLURM workload manager.
-
-\section*{Accessing the supercomputer}
-Access to the Picasso cluster (SCBI, Universidad de M\'alaga) was provided via secure shell (SSH):
+Both clusters are accessed via SSH (Secure Shell), a protocol that opens an encrypted terminal session on a remote machine: once connected, commands typed locally are executed directly on the cluster, as if sitting in front of it. On a Linux machine, an SSH client is available out of the box:
 
 \begin{verbatim}
 ssh username@picasso.scbi.uma.es
 \end{verbatim}
 
-For convenience, an SSH configuration file was set up so that the cluster can be reached with a short alias (\texttt{ssh picasso}):
+(Users connecting from Windows Subsystem for Linux may need to append \texttt{-o KexAlgorithms=\allowbreak ecdh-sha2-nistp521} to this and every following \texttt{ssh}/\texttt{scp} command, since its older default OpenSSH client does not otherwise offer an algorithm accepted by Picasso's server; this flag is omitted from the rest of this tutorial.)
+
+On CIT, the IGWN LDAS head nodes serve as the entry point (LIGO.ORG credentials required):
 
 \begin{verbatim}
-# ~/.ssh/config
+ssh username@ldas-grid.ligo.caltech.edu
+\end{verbatim}
+
+Typing these every time quickly becomes impractical. Two alternatives exist. The first is to define shell aliases in \texttt{\textasciitilde/.bashrc}:
+
+\begin{verbatim}
+alias picasso='ssh username@picasso.scbi.uma.es'
+alias caltech='ssh username@ldas-grid.ligo.caltech.edu'
+\end{verbatim}
+
+Once these lines are added and the shell configuration is reloaded (\texttt{source \textasciitilde/.bashrc} or a new terminal), the full commands above are replaced by simply typing \texttt{picasso} or \texttt{caltech}.
+
+The second, more robust option is to add entries to \texttt{\textasciitilde/.ssh/config}:
+
+\begin{verbatim}
 Host picasso
     HostName picasso.scbi.uma.es
     User username
     IdentityFile ~/.ssh/id_rsa
 \end{verbatim}
 
-The CIT (Caltech) cluster used for the post-processing track (\S\ref{sec:automation_picasso}) is reached analogously through the IGWN LDAS head nodes, after obtaining LIGO.ORG credentials.
+With this configuration, \texttt{ssh picasso} and \texttt{scp picasso:path/file .} work directly.
 
-\section*{File and directory organization}
-The working directory on Picasso was structured as follows (see Figure~\ref{fig:pipeline_picasso} for the full diagram):
+\section{Remote editing with VS Code}
+
+Editing files on the cluster through \texttt{nano} or \texttt{vim} works but is slow for larger scripts. VS Code's {Remote - SSH} extension provides a full graphical editor connected to the cluster filesystem:
+
+\begin{enumerate}
+  \item Install the \textit{Remote - SSH} extension from the VS Code marketplace.
+  \item Open the command palette (\texttt{Ctrl+Shift+P}), type \textit{Remote-SSH: Connect to Host}, and select the host (or add a new one pointing to \texttt{picasso.scbi.uma.es}).
+  \item Once connected, use \textit{File $\to$ Open Folder} to navigate to the working directory.
+\end{enumerate}
+
+This allows browsing the directory tree, viewing output figures directly, and editing configuration files without leaving the editor.
+
+\section{Transferring files with \texttt{scp}}
+
+\texttt{scp} (secure copy) transfers files between any two machines reachable via SSH. The basic syntax is \texttt{scp [options] source destination}, where either side can be \texttt{host:path}.
 
 \begin{verbatim}
-resh000464/
- noise_curves/            # O5a PSD (T2500310-v2)
- lenskyloc/
-  ini_templates/          # single-image and joint .ini templates
-  Generator_inis_lenskyloc.py
-  n_lensed_params_bbh_filtered.txt
-  lenskyloc_runs/
-   inj001/
-    inj001_img1/          # bilby_pipe run, image 1
-    inj001_img2/          # bilby_pipe run, image 2
-    inj001_joint/         # hanabi_joint_pipe run
-   inj002/
-    ...
+# Copy a single file from the local machine to the cluster
+scp local_file.py username@picasso.scbi.uma.es:~/lenskyloc/
+
+# Copy an entire directory (-r for recursive)
+scp -r username@picasso.scbi.uma.es:~/lenskyloc/inj001/result/ .
+
+# Transfer between two clusters (run from CIT)
+scp -r username@picasso.scbi.uma.es:~/lenskyloc/pesummary_jsons .
 \end{verbatim}
 
-Each per-run directory is created and populated automatically by \texttt{bilby\_pipe} or \texttt{hanabi\_joint\_pipe} (subdirectories \texttt{data/}, \texttt{submit/}, \texttt{result/}, \texttt{log\_data\_analysis/}, etc.).
+On CIT, the Jupyter interface (\url{https://jupyter.ligo.caltech.edu}) provides an alternative for downloading files: compress them first with \texttt{zip -r archive.zip directory/} and download the archive through the browser.
 
-\section*{Working environment}
-Jobs run directly inside a dedicated \texttt{conda}/\texttt{miniforge} environment, with no containers involved. After installing \texttt{miniforge} in the user's home directory, the analysis environment was created and activated as:
+\section{Persistent terminal sessions with \texttt{screen}}
+
+An SSH connection that drops (timeout, laptop closing, network change) kills any process running inside it. The \texttt{screen} utility creates a persistent terminal session on the cluster that survives disconnections:
+
+\begin{verbatim}
+screen -S analysis         # create a named session
+# ... run any long command ...
+# detach: Ctrl+a, then d
+screen -ls                 # list active sessions
+screen -r analysis         # reattach
+exit                       # close the session permanently
+\end{verbatim}
+
+This is essential for interactive tasks that take more than a few minutes (monitoring logs, running quick post-processing scripts) but are not worth submitting as batch jobs.
+
+\section{Conda environments}
+
+Both clusters use \texttt{conda} environments to manage Python dependencies. On Picasso, the analysis environment was created and maintained manually:
 
 \begin{verbatim}
 conda create -n hanabi_bilby260 python=3.10
 conda activate hanabi_bilby260
+pip install bilby bilby_pipe hanabi lalsuite dynesty ...
 \end{verbatim}
 
-with \texttt{bilby}, \texttt{bilby\_pipe}, \texttt{hanabi}, and their dependencies (\texttt{LALSuite}, \texttt{dynesty}, etc.) installed inside it via \texttt{pip}. The activation line is included in every generated SLURM script, so that each job runs in the same environment. On CIT, no environment needs to be built: the \texttt{igwn} conda environment distributed via CVMFS is activated directly.
+The activation line is included in every generated SLURM script, so each job runs in the correct environment automatically. On CIT, the \texttt{igwn} environment distributed via CVMFS is activated directly instead.
 
-\section*{Key commands and utilities}
-Here is a summary of the most commonly used commands:
+When the home directory quota on Picasso fills up (check with \texttt{quota}), the most effective remedy is to clear the conda cache, which accumulates downloaded packages and can grow to several gigabytes:
 
-\begin{center}
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Command} & \textbf{Description} \\
-\hline
-\texttt{ssh} & Secure connection to the HPC server. \\
-\texttt{scp} & Copy files between local and remote systems. \\
-\texttt{sbatch} & Submit job scripts to SLURM. \\
-\texttt{squeue} & View active jobs in the queue. \\
-\texttt{ls} & List files and directories. \\
-\texttt{ll} & Detailed list of files (usually alias for ls -l). \\
-\texttt{cd} & Change directory. \\
-\texttt{pwd} & Show current working directory. \\
-\texttt{mkdir} & Create a new directory. \\
-\texttt{rm} & Remove files or directories. \\
-\texttt{cp} & Copy files or directories. \\
-\texttt{mv} & Move or rename files or directories. \\
-\texttt{less} & View file contents page by page. \\
-\texttt{tail} & Display the last lines of a file (useful for logs). \\
-\texttt{head} & Display the first lines of a file. \\
-\texttt{grep} & Search for patterns in files. \\
-\texttt{nano} & Simple terminal text editor. \\
-\texttt{df} & Show disk space usage. \\
-\hline
-\end{tabular}
-\end{center}
+\begin{verbatim}
+conda clean --all
+\end{verbatim}
 
-\section*{Job submission and SLURM scripts}
-The SLURM scripts are not written by hand: \texttt{bilby\_pipe} and \texttt{hanabi\_joint\_pipe} generate them automatically from the scheduler options of each \texttt{.ini} file (\S\ref{implementataion_pipeline}). The resulting headers follow this pattern (values for a single-image job; the joint jobs request 180\,GB and a 71:30:00 wall time instead):
+\section{SLURM: submitting and monitoring jobs on Picasso}
+
+Picasso uses the SLURM workload manager. Jobs are submitted with \texttt{sbatch}, monitored with \texttt{squeue}, and cancelled with \texttt{scancel}:
+
+\begin{verbatim}
+sbatch job_script.sh           # submit a job
+squeue -u username             # list your running/pending jobs
+scancel JOB_ID                 # cancel one job
+scancel --user username        # cancel all your jobs
+\end{verbatim}
+
+A typical SLURM header for a single-image PE job in this thesis (\S\ref{sec:bilby_config}) looks like:
 
 \begin{verbatim}
 #!/bin/bash
-#SBATCH --job-name=lenskyloc_inj_001_hanabi_single_img1
+#SBATCH --job-name=lenskyloc_inj_001_img1
 #SBATCH --cpus-per-task=128
 #SBATCH --mem=110G
 #SBATCH --time=48:00:00
@@ -256,7 +281,9 @@ export MPLCONFIGDIR=$LOCALSCRATCH/$USER
 conda activate hanabi_bilby260
 \end{verbatim}
 
-Submission is handled by \texttt{submit\_all\_part1.sh}, which for each event submits the two single-image jobs and then the joint job with an explicit dependency on both, so that the joint analysis only starts once both single-image runs have finished successfully:
+The \texttt{-{}-constraint=cal} flag restricts the job to nodes of a specific hardware class; \texttt{MPLCONFIGDIR} is redirected to the node-local scratch space to avoid \texttt{matplotlib} cache errors on compute nodes whose home filesystem is read-only.
+
+For dependent jobs (e.g.\ a joint analysis that must wait for both single-image jobs), SLURM's \texttt{-{}-dependency} flag is used:
 
 \begin{verbatim}
 JOB1=$(sbatch img1.sh | awk '{print $4}')
@@ -264,40 +291,74 @@ JOB2=$(sbatch img2.sh | awk '{print $4}')
 sbatch --dependency=afterok:$JOB1:$JOB2 joint.sh
 \end{verbatim}
 
-Job status was monitored with \texttt{squeue -u username}, and progress within a run by inspecting the sampler logs, e.g.
+To monitor a running job's progress in real time, inspect the sampler log:
 
 \begin{verbatim}
-tail -f lenskyloc_runs/inj001/inj001_img1/log_data_analysis/*.err
+tail -f log_data_analysis/*.err
 \end{verbatim}
 
-\section*{Post-processing tracks}
-Once the joint analyses complete, \texttt{submit\_all\_part2.sh} launches the SNR-recovery track on Picasso: \texttt{hanabi\_postprocess\_result} recomputes the single-image and network SNRs for every event, and the helper scripts \texttt{compute\_snr.py} and \texttt{snr\_combined\_table.py} collect them into the summary table used in \S\ref{sec:parameter_recovery}.
+If a job is killed by the wall-time limit, it can be resubmitted and will resume from the last \texttt{Dynesty} checkpoint (written every 30 minutes by default via \texttt{check\_point\_delta\_t=1800}).
 
-The sky-map track runs on CIT instead: \texttt{Pesummaries\_automated\_condor\_all.py} and \texttt{Skymap\_condor.py} are each launched as an HTCondor job array of 157 processes (\texttt{condor\_submit}, monitored with \texttt{condor\_q}), generating the \texttt{PESummary} metafiles and the \texttt{ligo.skymap} products for all events in parallel (\S\ref{sec:automation_picasso}).
+\section{HTCondor: submitting and monitoring jobs on CIT}
 
-\section*{Troubleshooting and common issues}
-Typical problems encountered included:
+CIT uses HTCondor instead of SLURM. The analogous commands are:
+
+\begin{verbatim}
+condor_submit file.submit      # submit a job
+condor_q                       # list your running/pending jobs
+condor_rm JOB_ID               # cancel one job
+condor_q -hold                 # diagnose jobs stuck in "held" state
+\end{verbatim}
+
+One common pitfall: HTCondor requires the executable specified in the \texttt{.submit} file to have the Unix execute permission. If a \texttt{.sh} script submitted as \texttt{executable} produces \texttt{errno=13: Permission denied}, the fix is:
+
+\begin{verbatim}
+chmod +x script.sh
+\end{verbatim}
+
+The permissions can be verified with \texttt{ls -l}: the file should show \texttt{-rwxr-xr-x} (the \texttt{x} flags) rather than \texttt{-rw-r-{}-r-{}-}.
+
+\section{Useful everyday commands}
+
+The following commands were used daily throughout this project:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+\hline\hline
+\textbf{Task} & \textbf{Command} \\
+\hline
+Search for a string inside a file & \texttt{grep pattern file} \\
+Compare two files line by line & \texttt{diff file1 file2} \\
+Check the size of a file or directory & \texttt{du -sh path} \\
+Check sizes of everything in home & \texttt{du -sh \textasciitilde/*} \\
+Jump to the end of a large file & \texttt{less file}, then \texttt{Shift+G} \\
+View the last/first lines of a log & \texttt{tail -n 50 file} / \texttt{head -n 50 file} \\
+Check available disk quota (Picasso) & \texttt{quota} \\
+See all options of a command & \texttt{command -{}-help} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Troubleshooting summary}
+
+The most common issues encountered during this project, and their solutions:
 
 \begin{itemize}
-  \item \textbf{Wall-time kills:} jobs interrupted at the wall-time limit can be resubmitted and resume from the \texttt{Dynesty} checkpoint files, written every 30 minutes (\texttt{check\_point\_delta\_t=1800}). This is also what limited the last seven joint jobs when the allocation cap dropped to 24\,h (\S\ref{sec:incomplete_events}).
-  \item \textbf{Matplotlib cache errors on compute nodes:} solved by pointing \texttt{MPLCONFIGDIR} to the node-local scratch space (see the header above), since the home filesystem is not writable from all nodes.
-  \item \textbf{Broken \texttt{PESummary} installation on Picasso:} the version available in the Picasso environment produced errors, so the summary-page and sky-map generation was moved to CIT, where the \texttt{igwn} environment runs it correctly (\S\ref{sec:automation_picasso}).
+  \item \textbf{Wall-time kills on Picasso:} resubmit the same script; \texttt{Dynesty} resumes from the latest checkpoint. This was also the mechanism that limited the last seven joint analyses when the allocation dropped to 24\,h (\S\ref{sec:incomplete_events}).
+  \item \textbf{Matplotlib cache errors on compute nodes:} redirect \texttt{MPLCONFIGDIR} to node-local scratch (already included in the SLURM headers above).
+  \item \textbf{PESummary failing on Picasso:} the version available in the Picasso environment produced errors; the workaround was to run the summary-page and sky-map generation on CIT instead, where the \texttt{igwn} environment handles it correctly (\S\ref{sec:automation_picasso}).
+  \item \textbf{HTCondor ``held'' jobs on CIT:} diagnose with \texttt{condor\_q -hold}; the most frequent cause was a missing execute permission on the \texttt{.sh} script (see above).
+  \item \textbf{Home directory quota full on Picasso:} run \texttt{conda clean -{}-all} to free cached packages.
 \end{itemize}
 
-\section*{Optimization and performance tuning}
-The main resource choices were matched to the cluster hardware:
-
-\begin{itemize}
-  \item \texttt{npool=128} in the sampler settings matches \texttt{--cpus-per-task=128}, so each likelihood evaluation pool uses the full node allocation.
-  \item \texttt{n-parallel=3} runs three independent \texttt{Dynesty} analyses per image, merged into a single posterior to mitigate sampler variance.
-  \item The data segment duration and the chirp-mass prior range are computed per event (\S\ref{sec:bilby_config}), keeping each run as short as its signal allows instead of adopting a single conservative configuration for the whole population.
-\end{itemize}
-
-\section*{Additional resources}
+\section{Additional resources}
 \begin{itemize}
   \item SLURM documentation: \url{https://slurm.schedmd.com/documentation.html}
+  \item HTCondor documentation: \url{https://htcondor.readthedocs.io/en/latest/}
   \item Picasso user guide (SCBI): \url{https://www.scbi.uma.es/site/}
-  \item GitHub repository with the complete pipeline code: \url{https://github.com/XxavierGarcia/TFM_reproducibility_material}
+  \item IGWN Computing Guide (CIT access): \url{https://computing.docs.ligo.org/guide/}
+  \item Complete pipeline code: \url{https://github.com/XxavierGarcia/TFM_reproducibility_material}
 \end{itemize}
 
 
@@ -400,11 +461,10 @@ catch-waveform-errors=True
 pn-amplitude-order=1
 \end{lstlisting}
 
-The injection uses \texttt{pn\_amplitude\_order=0} while the analysis uses \texttt{pn-amplitude-order=1}. This argument, inherited from the post-Newtonian waveform families supported by \textsc{LALSimulation}, is not used by the phenomenological \texttt{IMRPhenomXPNR} model to construct its amplitude: generating the same waveform with \texttt{pn\_amplitude\_order} set to $0$ and to $1$, keeping all other parameters fixed, changes the frequency-domain strain by only $4\times10^{-5}$ in relative amplitude, several orders of magnitude below the scale of a genuine PN amplitude correction. This configuration mismatch is therefore a leftover setting from the template with no real effect on the results of this thesis.
-
-Similarly, the injection uses \texttt{minimum\_frequency=20} while the analysis generates the waveform from \texttt{minimum\_frequency=13.33}, starting the dominant $(2,2)$ mode earlier so that the $(3,3)$ mode has fully accumulated content by the true low-frequency cutoff of $20$\,Hz (Table~\ref{tab:bilby_settings}). Since \texttt{IMRPhenomXPHM}/\texttt{IMRPhenomXPNR} evaluate each frequency independently rather than through a sequential time-domain integration, generating the waveform from a lower starting frequency does not alter its content at frequencies above that starting point: comparing the two choices directly, the generated strain in the $20$-$40$\,Hz band, where the analysis actually operates, is identical to machine precision (maximum relative difference $4\times10^{-14}$, overlap $=1.000000$). This confirms that the injection/analysis mismatch in \texttt{minimum\_frequency} has no effect on the results of this thesis.
+The injection uses \texttt{pn\_amplitude\_order=0} while the analysis uses \texttt{pn-amplitude-order=1}. This argument, inherited from the PN waveform families supported by \textsc{LALSimulation}, is not used by the phenomenological \texttt{IMRPhenomXPNR} model to construct its amplitude: generating the same waveform with \texttt{pn\_amplitude\_order} set to $0$ and to $1$, keeping all other parameters fixed, leaves the frequency-domain strain unchanged. This configuration mismatch is therefore a leftover setting from the template with no real effect on the results of this thesis.
 
 
+\newpage
 \section{Joint configuration}
 \label{app:joint_ini_example}
 
@@ -450,7 +510,7 @@ lensing-prior-dict={relative-magnification^(1): 1, image_type^(1) = hanabi.lensi
 
 \end{lstlisting}
 
-
+Figures~\ref{fig:pipeline_picasso} and \ref{fig:pipeline_cit} lay out, script by script, the two branches of the pipeline introduced in \S\ref{sec:automation_picasso}: the SLURM job generation and submission chain running on Picasso, and the HTCondor post-processing chain running on CIT.
 
 %\begin{landscape}
 %\begin{figure}[p]
@@ -471,14 +531,14 @@ lensing-prior-dict={relative-magnification^(1): 1, image_type^(1) = hanabi.lensi
 %\end{landscape}
 
 
-\newpage
-
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\linewidth]{Figures/diagrama_pipeline_picasso.drawio.pdf}
     \caption[Detailed implementation of the Picasso branch of the pipeline]{Detailed implementation of the Picasso (SLURM) branch of the pipeline, referenced in \S\ref{sec:automation_picasso}. Best viewed digitally, zoomed in. An interactive version with clickable links to each script is available at \url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/diagrama_pipeline.drawio.pdf} (download to enable links).}
     \label{fig:pipeline_picasso}
 \end{figure}
+
+\newpage
 
 \begin{figure}[h!]
     \centering
