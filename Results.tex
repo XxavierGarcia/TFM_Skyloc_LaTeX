@@ -470,7 +470,7 @@ The joint likelihood is evaluated over both images simultaneously, using the sam
 
 Running this pipeline for all 157 events relies on two components: a script that generates every configuration and job file automatically, and a two-stage submission mechanism that enforces the job dependencies of \S\ref{sec:pipeline_overview}. Appendix~$\S$\ref{Reproducibility tutorial} complements this section with a practical, day-to-day guide to working on these two HPC clusters (SSH access, job monitoring, troubleshooting), aimed at future students rather than at reproducing this specific pipeline. Jobs execute directly inside a dedicated \texttt{conda}/\texttt{miniforge} environment (\href{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/environment_full.yml}{\texttt{hanabi\_bilby260}}\footnote{\url{https://github.com/XxavierGarcia/TFM_reproducibility_material/blob/main/environment_full.yml}}) on Picasso, whose exact specification is provided for reproducibility.
 
-Summed over the sampling time reported in the logs of every parallel \textsc{Dynesty} run (\texttt{n-parallel\allowbreak =\allowbreak 3} per image or per joint analysis, each requesting 128 CPUs), the full PE campaign consumed approximately $830{,}000$ CPU-hours ($\sim\!6{,}500$ node-hours, or $\sim\!270$ node-days on 128-core nodes), split roughly evenly between the 942 single-image parallel runs and the 431 completed joint parallel runs. This scale of computational cost motivates several of the efficiency choices described below and in \S\ref{sec:bilby_config}, such as the per-event chirp-mass prior and the segment duration computed individually from each event's parameters, rather than adopting a single conservative configuration for the whole population.
+Summed over the sampling time reported in the logs of every parallel \textsc{Dynesty} run (\texttt{n-parallel\allowbreak =\allowbreak 3} per image or per joint analysis, each requesting 128 CPUs), the full PE campaign consumed approximately $830{,}000$ CPU-hours ($\sim\!6{,}500$ node-hours, or $\sim\!270$ node-days on 128-core nodes), split roughly evenly between the 942 single-image parallel runs and the 450 completed joint parallel runs. This scale of computational cost motivates several of the efficiency choices described below and in \S\ref{sec:bilby_config}, such as the per-event chirp-mass prior and the segment duration computed individually from each event's parameters, rather than adopting a single conservative configuration for the whole population.
 
 \subsection{Configuration and script generation}
 
@@ -585,7 +585,7 @@ Figure~\ref{fig:snr_recovery_consistency} closes this residual comparison with a
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.55\linewidth]{Figures/residuals_summary_05.png}
-    \caption[Recovered posterior versus injected network SNR, for all 150 events.]{Difference between the recovered posterior network SNR $\rho_\mathrm{post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S\ref{sec:automation_picasso}) and the injected network SNR $\rho_\mathrm{inj}$ (quadrature sum of the two per-image network SNRs computed by \textsc{LeR}, \S\ref{sec:LER_population}), as a function of $\rho_\mathrm{inj}$, for all 150 events. The residual is centered close to zero with no systematic trend ($\tilde{y}=-0.335$, $\sigma=2.89$).}
+    \caption[Recovered posterior versus injected network SNR, for all 150 events]{Difference between the recovered posterior network SNR $\rho_\mathrm{post}$ (median of the combined network SNR recomputed from the joint posterior samples, \S\ref{sec:automation_picasso}) and the injected network SNR $\rho_\mathrm{inj}$ (quadrature sum of the two per-image network SNRs computed by \textsc{LeR}, \S\ref{sec:LER_population}), as a function of $\rho_\mathrm{inj}$, for all 150 events. The residual is centered close to zero with no systematic trend ($\tilde{y}=-0.335$, $\sigma=2.89$).}
     \label{fig:snr_recovery_consistency}
 \end{figure}
 
@@ -660,7 +660,7 @@ Fraction with $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}>0$ & $150/150$ ($100\%$) \\
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.69\textwidth]{Figures/coherence_ratio_hist.png}
-  \caption[Distribution of the coherence ratio $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}$ across the 150 analyzed pairs.]{Distribution of the coherence ratio $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}$ across the 150 successfully analyzed pairs. All events lie above $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}=0$, the threshold above which the lensed hypothesis $\mathcal{H}_L$ is favored over the unlensed hypothesis $\mathcal{H}_U$.}
+  \caption[Distribution of the coherence ratio $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}$ across the 150 analyzed pairs]{Distribution of the coherence ratio $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}$ across the 150 successfully analyzed pairs. All events lie above $\ln\mathcal{C}_\mathrm{U}^\mathrm{L}=0$, the threshold above which the lensed hypothesis $\mathcal{H}_L$ is favored over the unlensed hypothesis $\mathcal{H}_U$.}
   \label{fig:coherence_ratio_hist}
 \end{figure}
 
@@ -695,7 +695,7 @@ Figure~\ref{fig:skymap_example} illustrates the effect of the joint analysis on 
       \includegraphics[width=\textwidth]{Figures/inj002_skyloc_joint.png}
     \end{subfigure}%
   }
-  \caption[Sky localization for injection~002 ($\Delta t \approx 5.6$\,h).]{Sky localization for injection~002 ($\Delta t \approx 5.6$\,h). \textit{Top left}: image~1 ($A_{90}\approx970\,\mathrm{deg}^2$). \textit{Top right}: image~2 ($A_{90}\approx416\,\mathrm{deg}^2$). \textit{Bottom}: joint analysis ($A_{90}\approx27\,\mathrm{deg}^2$).}
+  \caption[Sky localization for injection~002 ($\Delta t \approx 5.6$\,h)]{Sky localization for injection~002 ($\Delta t \approx 5.6$\,h). \textit{Top left}: image~1 ($A_{90}\approx970\,\mathrm{deg}^2$). \textit{Top right}: image~2 ($A_{90}\approx416\,\mathrm{deg}^2$). \textit{Bottom}: joint analysis ($A_{90}\approx27\,\mathrm{deg}^2$).}
   \label{fig:skymap_example}
 \end{figure}
 
@@ -721,7 +721,7 @@ Figure~\ref{fig:cdf_area} shows the cumulative and probability density distribut
       \includegraphics[width=\textwidth]{Figures/pdf_90_area.png}
     \end{subfigure}%
   }
-  \caption[CDF and PDF of the 90\% credible sky area.]{CDF (\textit{left}) and probability density (\textit{right}) of the 90\% credible sky area for the best single-image analysis and the joint analysis across the 150 events. The vertical dashed line marks $10\,\mathrm{deg}^2$.}
+  \caption[CDF and PDF of the 90\% credible sky area]{CDF (\textit{left}) and probability density (\textit{right}) of the 90\% credible sky area for the best single-image analysis and the joint analysis across the 150 events. The vertical dashed line marks $10\,\mathrm{deg}^2$.}
   \label{fig:cdf_area}
 \end{figure}
 
@@ -748,7 +748,7 @@ Figure~\ref{fig:area_vs_snr} shows the 90\% credible area as a function of netwo
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Figures/sky_area_vs_snr_hl.png}
-  \caption[90\% credible sky area versus network SNR for image~1 and image~2.]{90\% credible sky area versus network SNR for image~1 (\textit{left}) and image~2 (\textit{right}). Blue crosses: single-image analysis; orange crosses: joint analysis for the same event.}
+  \caption[90\% credible sky area versus network SNR for image~1 and image~2]{90\% credible sky area versus network SNR for image~1 (\textit{left}) and image~2 (\textit{right}). Blue crosses: single-image analysis; orange crosses: joint analysis for the same event.}
   \label{fig:area_vs_snr}
 \end{figure}
 
@@ -764,7 +764,7 @@ A high constellation fraction also has a practical use beyond visualization: nam
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Figures/top_constellation_vs_snr_hl.png}
-  \caption[Probability fraction in the dominant constellation versus network SNR for image~1 and image~2.]{Probability fraction in the dominant constellation versus network SNR for image~1 (\textit{left}) and image~2 (\textit{right}). Blue crosses: single-image analysis; orange crosses: joint analysis.}
+  \caption[Probability fraction in the dominant constellation versus network SNR for image~1 and image~2]{Probability fraction in the dominant constellation versus network SNR for image~1 (\textit{left}) and image~2 (\textit{right}). Blue crosses: single-image analysis; orange crosses: joint analysis.}
   \label{fig:constellation_vs_snr}
 \end{figure}
 
@@ -773,7 +773,7 @@ To place these results in the context of real observations, Figure~\ref{fig:cons
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.66\textwidth]{Figures/constellation_vs_SNR_GWTC5.png}
-  \caption[Probability fraction in the dominant constellation versus network SNR for 104 GWTC-5 events.]{Probability fraction in the dominant constellation versus network SNR for 104 GWTC-5 events, colored by detector network. The HL subset (orange), which matches the detector configuration used in this work, is confined below $\sim\!50\%$.}
+  \caption[Probability fraction in the dominant constellation versus network SNR for 104 GWTC-5 events]{Probability fraction in the dominant constellation versus network SNR for 104 GWTC-5 events, colored by detector network. The HL subset (orange), which matches the detector configuration used in this work, is confined below $\sim\!50\%$.}
   \label{fig:constellation_gwtc5}
 \end{figure}
 
